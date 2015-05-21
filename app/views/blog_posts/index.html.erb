@@ -1,0 +1,237 @@
+<!-- Page Title
+============================================= -->
+<section id="page-title">
+
+    <div class="container clearfix">
+        <h1>Blog</h1>
+        <span>All Things Learning to Code</span>
+        <ol class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li class="active">Blog</li>
+        </ol>
+    </div>
+
+</section><!-- #page-title end -->
+
+<!-- Content
+============================================= -->
+<section id="content">
+
+    <div class="content-wrap">
+
+        <div class="container clearfix">
+
+            <!-- Post Content
+            ============================================= -->
+            <div class="postcontent nobottommargin clearfix">
+
+                <!-- Posts
+                ============================================= -->
+                    <% @blog_posts.each do |blog_post| %>
+                      <div id="posts">
+                          <div class="entry clearfix">
+                              <div class="entry-title">
+                                  <h2><a href="blog-single.html"><%= blog_post.title %></a></h2>
+                              </div>
+                              <ul class="entry-meta clearfix">
+                                  <li><i class="icon-calendar3"></i><%= blog_post.human_time %></li>
+                                  <li><a href="#"><i class="icon-user"></i> admin</a></li>
+                                  <li><i class="icon-folder-open"></i> <a href="#">General</a>, <a href="#">Media</a></li>
+                                  <li><a href="blog-single.html#comments"><i class="icon-comments"></i> 13 Comments</a></li>
+                                  <li><a href="#"><i class="icon-camera-retro"></i></a></li>
+                              </ul>
+                              <div class="entry-content">
+                                  <p><%= blog_post.content %></p>
+                                  <%= link_to "Read More", blog_post_path(blog_post.id), class: "more-link" %>
+                              </div>
+                          </div>
+                      </div><!-- #posts end -->
+                    <% end %>
+
+                <!-- Pagination
+                ============================================= -->
+                <ul class="pager nomargin">
+                    <li class="previous"><a href="#">&larr; Older</a></li>
+                    <li class="next"><a href="#">Newer &rarr;</a></li>
+                </ul><!-- .pager end -->
+
+            </div><!-- .postcontent end -->
+
+            <!-- Sidebar
+            ============================================= -->
+            <div class="sidebar nobottommargin col_last clearfix">
+                <div class="sidebar-widgets-wrap">
+
+                    <div class="widget widget-twitter-feed clearfix">
+
+                        <h4>Twitter Feed</h4>
+                        <ul id="sidebar-twitter-list-1" class="iconlist">
+                            <li></li>
+                        </ul>
+
+                        <a href="#" class="btn btn-default btn-sm fright">Follow Us on Twitter</a>
+
+                        <script type="text/javascript">
+                            jQuery( function($){
+                                $.getJSON('include/twitter/tweets.php?username=envato', function(tweets){
+                                    $("#sidebar-twitter-list-1").html(sm_format_twitter(tweets));
+                                });
+                            });
+                        </script>
+
+                    </div>
+
+
+                    <div class="widget clearfix">
+
+                        <div class="tabs nobottommargin clearfix" id="sidebar-tabs">
+
+                            <ul class="tab-nav clearfix">
+                                <li><a href="#tabs-1">Popular</a></li>
+                                <li><a href="#tabs-2">Recent</a></li>
+                                <li><a href="#tabs-3"><i class="icon-comments-alt norightmargin"></i></a></li>
+                            </ul>
+
+                            <div class="tab-container">
+
+                                <div class="tab-content clearfix" id="tabs-1">
+                                    <div id="popular-post-list-sidebar">
+
+                                        <div class="spost clearfix">
+                                            <div class="entry-image">
+                                                <a href="#" class="nobg"><img class="img-circle" src="images/magazine/small/3.jpg" alt=""></a>
+                                            </div>
+                                            <div class="entry-c">
+                                                <div class="entry-title">
+                                                    <h4><a href="#">Debitis nihil placeat, illum est nisi</a></h4>
+                                                </div>
+                                                <ul class="entry-meta">
+                                                    <li><i class="icon-comments-alt"></i> 35 Comments</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="spost clearfix">
+                                            <div class="entry-image">
+                                                <a href="#" class="nobg"><img class="img-circle" src="images/magazine/small/2.jpg" alt=""></a>
+                                            </div>
+                                            <div class="entry-c">
+                                                <div class="entry-title">
+                                                    <h4><a href="#">Elit Assumenda vel amet dolorum quasi</a></h4>
+                                                </div>
+                                                <ul class="entry-meta">
+                                                    <li><i class="icon-comments-alt"></i> 24 Comments</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="spost clearfix">
+                                            <div class="entry-image">
+                                                <a href="#" class="nobg"><img class="img-circle" src="images/magazine/small/1.jpg" alt=""></a>
+                                            </div>
+                                            <div class="entry-c">
+                                                <div class="entry-title">
+                                                    <h4><a href="#">Lorem ipsum dolor sit amet, consectetur</a></h4>
+                                                </div>
+                                                <ul class="entry-meta">
+                                                    <li><i class="icon-comments-alt"></i> 19 Comments</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="tab-content clearfix" id="tabs-2">
+                                    <div id="recent-post-list-sidebar">
+
+                                        <div class="spost clearfix">
+                                            <div class="entry-image">
+                                                <a href="#" class="nobg"><img class="img-circle" src="images/magazine/small/1.jpg" alt=""></a>
+                                            </div>
+                                            <div class="entry-c">
+                                                <div class="entry-title">
+                                                    <h4><a href="#">Lorem ipsum dolor sit amet, consectetur</a></h4>
+                                                </div>
+                                                <ul class="entry-meta">
+                                                    <li>10th July 2014</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="spost clearfix">
+                                            <div class="entry-image">
+                                                <a href="#" class="nobg"><img class="img-circle" src="images/magazine/small/2.jpg" alt=""></a>
+                                            </div>
+                                            <div class="entry-c">
+                                                <div class="entry-title">
+                                                    <h4><a href="#">Elit Assumenda vel amet dolorum quasi</a></h4>
+                                                </div>
+                                                <ul class="entry-meta">
+                                                    <li>10th July 2014</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="spost clearfix">
+                                            <div class="entry-image">
+                                                <a href="#" class="nobg"><img class="img-circle" src="images/magazine/small/3.jpg" alt=""></a>
+                                            </div>
+                                            <div class="entry-c">
+                                                <div class="entry-title">
+                                                    <h4><a href="#">Debitis nihil placeat, illum est nisi</a></h4>
+                                                </div>
+                                                <ul class="entry-meta">
+                                                    <li>10th July 2014</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="tab-content clearfix" id="tabs-3">
+                                    <div id="recent-post-list-sidebar">
+
+                                        <div class="spost clearfix">
+                                            <div class="entry-image">
+                                                <a href="#" class="nobg"><img class="img-circle" src="images/icons/avatar.jpg" alt=""></a>
+                                            </div>
+                                            <div class="entry-c">
+                                                <strong>John Doe:</strong> Veritatis recusandae sunt repellat distinctio...
+                                            </div>
+                                        </div>
+
+                                        <div class="spost clearfix">
+                                            <div class="entry-image">
+                                                <a href="#" class="nobg"><img class="img-circle" src="images/icons/avatar.jpg" alt=""></a>
+                                            </div>
+                                            <div class="entry-c">
+                                                <strong>Mary Jane:</strong> Possimus libero, earum officia architecto maiores....
+                                            </div>
+                                        </div>
+
+                                        <div class="spost clearfix">
+                                            <div class="entry-image">
+                                                <a href="#" class="nobg"><img class="img-circle" src="images/icons/avatar.jpg" alt=""></a>
+                                            </div>
+                                            <div class="entry-c">
+                                                <strong>Site Admin:</strong> Deleniti magni labore laboriosam odio...
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+            </div><!-- .sidebar end -->
+
+        </div>
+
+    </div>
+
+</section><!-- #content end -->
