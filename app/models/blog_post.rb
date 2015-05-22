@@ -7,5 +7,13 @@ class BlogPost < ActiveRecord::Base
   def human_time
     updated_at.strftime("%d %B %y")
   end
+
+  def next
+    self.class.where("id > ?", id).first
+  end
+
+  def previous
+    self.class.where("id < ?", id).last
+  end
   
 end

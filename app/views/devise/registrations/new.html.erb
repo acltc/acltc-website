@@ -14,14 +14,21 @@
   </div>
 
   <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
     <%= f.label :title %><br />
     <%= f.text_field :title, placeholder: " **** This is the title that will appear on blog posts **** " %>
   </div>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.label :bio %><br />
+    <%= f.text_field :bio, placeholder: " **** This is the bio that will appear on blog posts **** " %>
   </div>
+
+
 
   <div class="field">
     <%= f.label :password %>
