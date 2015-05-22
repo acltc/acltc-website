@@ -31,14 +31,13 @@
                       <div id="posts">
                           <div class="entry clearfix">
                               <div class="entry-title">
-                                  <h2><a href="blog-single.html"><%= blog_post.title %></a></h2>
+                                  <h2><%= link_to blog_post.title, blog_post_path(blog_post.id) %></h2>
                               </div>
                               <ul class="entry-meta clearfix">
                                   <li><i class="icon-calendar3"></i><%= blog_post.human_time %></li>
-                                  <li><a href="#"><i class="icon-user"></i> admin</a></li>
+                                  <li><a href="#"><i class="icon-user"></i><%= "#{blog_post.admin.full_name} - #{blog_post.admin.title}" %></a></li>
                                   <li><i class="icon-folder-open"></i> <a href="#">General</a>, <a href="#">Media</a></li>
                                   <li><a href="blog-single.html#comments"><i class="icon-comments"></i> 13 Comments</a></li>
-                                  <li><a href="#"><i class="icon-camera-retro"></i></a></li>
                               </ul>
                               <div class="entry-content">
                                   <p><%= blog_post.content %></p>

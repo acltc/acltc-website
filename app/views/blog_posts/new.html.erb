@@ -1,0 +1,83 @@
+<div class="col_two_third col_last nobottommargin">
+
+
+  <h3>Create a New Blog Post.</h3>
+
+  <p>Create a super fly blog post for Anyone Can Learn to Code. The name and email address you used to create an account will appear with your blog post.</p>
+
+  <%= form_for @blog_post, :html => {:class => 'nobottommargin'} do |f| %>
+
+  <div class="col_half">
+    <%= f.label :title %><br />
+    <%= f.text_field :title, autofocus: true, class: "required form-control input-block-level" %>
+  </div>
+
+  <%= f.fields_for :blog_categories do |ff| %>
+    <div class="col_half">
+        <%= ff.label :category %><br />
+        <%= ff.text_field :category, class: "required form-control input-block-level" %>
+    </div>
+  <% end %>
+
+  <div class="col_half">
+    <%= f.label :content %><br />
+    <%= f.text_area :content, autofocus: true, class: "required form-control input-block-level" %>
+  </div>
+
+
+
+  <% end %>
+
+
+
+
+
+
+
+
+<!--   <form id="register-form" name="register-form" class="nobottommargin" action="#" method="post">
+
+    <div class="col_half">
+      <label for="register-form-name">Name:</label>
+      <input type="text" id="register-form-name" name="register-form-name" value="" class="required form-control input-block-level" />
+    </div>
+
+    <div class="col_half col_last">
+      <label for="register-form-email">Email Address:</label>
+      <input type="text" id="register-form-email" name="register-form-email" value="" class="required form-control input-block-level" />
+    </div>
+
+    <div class="clear"></div>
+
+    <div class="col_half">
+      <label for="register-form-username">Choose a Username:</label>
+      <input type="text" id="register-form-username" name="register-form-username" value="" class="required form-control input-block-level" />
+    </div>
+
+    <div class="col_half col_last">
+      <label for="register-form-phone">Phone:</label>
+      <input type="text" id="register-form-phone" name="register-form-phone" value="" class="required form-control input-block-level" />
+    </div>
+
+    <div class="clear"></div>
+
+    <div class="col_half">
+      <label for="register-form-password">Choose Password:</label>
+      <input type="password" id="register-form-password" name="register-form-password" value="" class="required form-control input-block-level" />
+    </div>
+
+    <div class="col_half col_last">
+      <label for="register-form-repassword">Re-enter Password:</label>
+      <input type="password" id="register-form-repassword" name="register-form-repassword" value="" class="required form-control input-block-level" />
+    </div>
+
+    <div class="clear"></div>
+
+    <div class="col_full nobottommargin">
+      <button class="button button-3d button-black nomargin" id="register-form-submit" name="register-form-submit" value="register">Register Now</button>
+    </div>
+
+  </form> -->
+
+
+</div>

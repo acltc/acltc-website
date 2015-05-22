@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :admins, :controllers => { registrations: 'registrations' }
   root 'pages#home'
   resources :blog_posts 
 
