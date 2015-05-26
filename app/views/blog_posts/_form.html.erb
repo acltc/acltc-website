@@ -14,6 +14,12 @@
       <p class="help-block">Select one or multiple categories.</p>
     </div>
     <div class="form-group">
+      <%= f.label :blog_pics do %>
+        <%= f.file_field :blog_pics, multiple: true, name: "post_attachments[blog_pic][]"%>
+      <% end %>
+      <p class="help-block">Add pics to your blog post.</p>
+    </div>
+    <div class="form-group">
       <%= f.label :content %>
       <%= f.text_area :content, class: "form-control", placeholder: " **** Write HTML here ****" %>
       <p class="help-block">This will compile to HTML.</p>

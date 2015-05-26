@@ -8,11 +8,11 @@
             <% @blog_posts.first(5).each do |blog_post| %>
               <div class="spost clearfix">
                 <div class="entry-image">
-                  <a href="#" class="nobg"><img class="img-circle" src="images/magazine/small/3.jpg" alt=""></a>
+                  <%= image_tag blog_post.admin.avatar.url, class: "img-circle" %></a>
                 </div>
                 <div class="entry-c">
                   <div class="entry-title">
-                    <h4><a href="#"> <%= blog_post.title %></a></h4>
+                    <h4><%= link_to blog_post.title, blog_post_path(blog_post) %></a></h4>
                   </div>
                   <ul class="entry-meta">
                     <li><i class="icon-tags"></i> <%= blog_post.blog_categories.pluck(:name).join(", ") %> </li>

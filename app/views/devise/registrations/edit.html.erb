@@ -23,6 +23,11 @@
     <%= f.email_field :email, autofocus: true %>
   </div>
 
+  <%= f.label :avatar do %>
+    <%= f.file_field :avatar  %>
+    <%= f.hidden_field :avatar_cache %>
+  <% end %>
+
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>

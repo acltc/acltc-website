@@ -125,7 +125,7 @@
                                 </div>
                                 <div class="panel-body">
                                     <div class="author-image">
-                                        <img src="images/author/1.jpg" alt="" class="img-circle">
+                                        <%= image_tag @blog_post.admin.avatar.url, class: "img-circle" %>
                                     </div>
                                     <div>
                                       <%= @blog_post.admin.bio %>

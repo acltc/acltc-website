@@ -1,5 +1,5 @@
 class BlogPostsController < ApplicationController
-  before_filter :authenticate_admin!, only: [:new, :create, :delete]
+  before_filter :authenticate_admin!, only: [:new, :create, :update, :delete]
 
   def index
     @blog_posts = BlogPost.includes(:admin).order(id: :desc).all
@@ -8,6 +8,7 @@ class BlogPostsController < ApplicationController
   def new
     @blog_post = BlogPost.new
     @blog_post.blog_categories.build
+    @blog_post.blog_pics.build
   end
 
   def create
@@ -32,10 +33,17 @@ class BlogPostsController < ApplicationController
     @blog_post = BlogPost.find(params[:id])
   end
 
+  def update
+    @blog_post = BlogPost.find_by(:id => params[:id])
+    @blog_post.update(blog_post_params)
+    flash[:success] = "Blog Post successfully updated"
+    redirect_to blog_post_path(@blog_post)
+  end
+
   private
 
   def blog_post_params
-    params.required(:blog_post).permit(:title, :content, blog_category_ids: [])
+    params.required(:blog_post).permit(:title, :content, blog_pics: [], blog_category_ids: [])
   end
 
   

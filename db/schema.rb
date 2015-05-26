@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150522195944) do
+ActiveRecord::Schema.define(version: 20150526204714) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20150522195944) do
     t.string   "last_name"
     t.string   "title"
     t.text     "bio"
+    t.string   "avatar"
   end
 
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
@@ -47,6 +48,11 @@ ActiveRecord::Schema.define(version: 20150522195944) do
   create_table "blog_categories_posts", id: false, force: :cascade do |t|
     t.integer "blog_post_id",     null: false
     t.integer "blog_category_id", null: false
+  end
+
+  create_table "blog_pics", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "blog_posts", force: :cascade do |t|
