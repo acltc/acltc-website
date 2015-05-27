@@ -4,7 +4,11 @@ class BlogPost < ActiveRecord::Base
   has_and_belongs_to_many :blog_categories
   accepts_nested_attributes_for :blog_categories
   has_many :blog_pics
-  accepts_nested_attributes_for :blog_pics
+
+  def blog_pics=(attrs)
+    puts "This is the attrs #{attrs}"
+    attrs.each { |attr| self.blog_pics.build(:blog_pic => attr) }
+  end
 
   def human_time
     updated_at.strftime("%d %B %y")

@@ -12,16 +12,19 @@
       <%= f.label :blog_categories %>
       <%= f.select :blog_category_ids, BlogCategory.all.collect {|category| [category.name, category.id]}, {}, :multiple => true, class: "form-control" %>
       <p class="help-block">Select one or multiple categories.</p>
+      <p class="help-block">Your blog category and/or categories not here? <%= link_to "Add a new one here.", new_blog_category_path %></p>
     </div>
+    
     <div class="form-group">
-      <%= f.label :blog_pics do %>
-        <%= f.file_field :blog_pics, multiple: true, name: "post_attachments[blog_pic][]"%>
-      <% end %>
-      <p class="help-block">Add pics to your blog post.</p>
+        <%= f.label :blog_pics %>
+        <%= f.file_field :blog_pics, multiple: true %>
+        <p class="help-block">Add pic(s) to your blog post.</p>
     </div>
+
     <div class="form-group">
       <%= f.label :content %>
-      <%= f.text_area :content, class: "form-control", placeholder: " **** Write HTML here ****" %>
+      <p class="help-block">Write HTML below. To Add images, make the src='IMAGE1' for the first image, src='IMAGE2' for the second, etc.</p>
+      <%= f.text_area :content, class: "form-control", placeholder: " **** Write HTML here. ****" %>
       <p class="help-block">This will compile to HTML.</p>
     </div>
     <%= f.submit submit_button, class: "btn btn-primary btn-lg" %>

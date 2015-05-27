@@ -8,15 +8,22 @@ class BlogPostsController < ApplicationController
   def new
     @blog_post = BlogPost.new
     @blog_post.blog_categories.build
-    @blog_post.blog_pics.build
   end
 
   def create
     @blog_post = BlogPost.new(blog_post_params)
     @blog_post.admin_id = current_admin.id
     if @blog_post.save
-      flash[:success] = "Post should appear on this page."
-      redirect_to blog_post_path(@blog_post)
+      @blog_post.blog_pics.each_with_index do |file, index|
+        image_placeholder = "IMAGE#{index+1}"
+        @blog_post.content.sub!(image_placeholder, file.blog_pic.url)
+      end
+      if @blog_post.save
+        flash[:success] = "Post should appear on this page."
+        redirect_to blog_post_path(@blog_post)
+      else
+        render 'new'
+      end
     else
       render 'new'
     end
