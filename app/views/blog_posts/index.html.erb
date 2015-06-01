@@ -1,0 +1,60 @@
+<!-- Page Title
+============================================= -->
+<section id="page-title">
+
+    <div class="container clearfix">
+        <h1>Blog</h1>
+        <span>All Things Learning to Code</span>
+    </div>
+
+</section><!-- #page-title end -->
+
+<!-- Content
+============================================= -->
+<section id="content">
+
+    <div class="content-wrap">
+
+        <div class="container clearfix">
+
+            <!-- Post Content
+            ============================================= -->
+            <div class="postcontent nobottommargin clearfix">
+
+                <!-- Posts
+                ============================================= -->
+                    <% @blog_posts.each do |blog_post| %>
+                      <div id="posts">
+                          <div class="entry clearfix">
+                              <div class="entry-title">
+                                  <h2><%= link_to blog_post.title, blog_post_path(blog_post.id) %></h2>
+                              </div>
+                              <ul class="entry-meta clearfix">
+                                  <li><i class="icon-calendar3"></i><%= blog_post.human_time %></li>
+                                  <li><a href="#"><i class="icon-user"></i><%= "#{blog_post.admin.full_name} - #{blog_post.admin.title}" %></a></li>
+                                  <li><i class="icon-tags"></i><%= blog_post.blog_categories.pluck(:name).join(", ") %></li>
+                              </ul>
+                              <div class="entry-content">
+                                  <p><%= blog_post.content.html_safe %></p>
+                                  <%= link_to "Read More", blog_post_path(blog_post.id), class: "more-link" %>
+                              </div>
+                          </div>
+                      </div><!-- #posts end -->
+                    <% end %>
+
+                <!-- Pagination
+                ============================================= -->
+                <ul class="pager nomargin">
+                    <li class="previous"><a href="#">&larr; Older</a></li>
+                    <li class="next"><a href="#">Newer &rarr;</a></li>
+                </ul><!-- .pager end -->
+
+            </div><!-- .postcontent end -->
+
+            <%= render "side_bar" %>
+
+        </div>
+
+    </div>
+
+</section><!-- #content end -->

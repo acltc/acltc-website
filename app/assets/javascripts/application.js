@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require theme/jquery
+//= require jquery_ujs
 //= require theme/plugins
 //= require theme/functions
 //= require_tree .
