@@ -14,3 +14,6 @@
 
 #ignore theme (On Mark's Drive)
 /canvas
+
+#environmental variables
+.env
