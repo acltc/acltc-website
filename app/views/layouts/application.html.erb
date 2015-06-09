@@ -39,7 +39,6 @@
                             <li class="mega-menu"><a href="#"><div>FAQ</div></a></li>
                             <li class="mega-menu"><%= link_to "Blog", blog_posts_path %></a></li>
                           <% if admin_signed_in? %>
-                              <li><%= link_to('Create Blog Post', new_blog_post_path) %></li>
                               <li><%= link_to('Logout Admin', destroy_admin_session_path, method: :delete) %></li>
                           <% end %>
                         </ul>
@@ -51,8 +50,15 @@
             </div>
 
         </header><!-- #header end -->
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
+
+              <% flash.each do |name, message| %>
+                   <div class="alert alert-<%= name %> alert-dismissible" role="alert"> 
+                       <button type="button" class="close" data-dismiss="alert"><span aria-
+                      hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                       <%= message %>  
+                   </div>
+              <% end %>
+
 
         <%= yield %>
 

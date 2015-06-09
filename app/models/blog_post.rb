@@ -5,10 +5,6 @@ class BlogPost < ActiveRecord::Base
   accepts_nested_attributes_for :blog_categories
   has_many :blog_pics
 
-  def to_param  # overridden
-    [id, title.parameterize].join("-")
-  end
-
   def blog_pics=(attrs)
     puts "This is the attrs #{attrs}"
     attrs.each { |attr| self.blog_pics.build(:blog_pic => attr) }

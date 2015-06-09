@@ -1,13 +1,4 @@
-<!-- Page Title
-============================================= -->
-<section id="page-title">
-
-    <div class="container clearfix">
-        <h1>Blog</h1>
-        <span>All Things Learning to Code</span>
-    </div>
-
-</section><!-- #page-title end -->
+<%= render "/layouts/page_title", page_title: "Blog", page_subtitle: "All Things Learning to Code" %>
 
 <!-- Content
 ============================================= -->
@@ -23,6 +14,9 @@
 
                 <!-- Posts
                 ============================================= -->
+                    <ul id="blog_admin_list">
+                      <li><%= link_to('Create Blog Post', new_blog_post_path) %></li>
+                    </ul>
                     <% @blog_posts.each do |blog_post| %>
                       <div id="posts">
                           <div class="entry clearfix">

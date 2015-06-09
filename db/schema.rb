@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150527163514) do
+ActiveRecord::Schema.define(version: 20150608204312) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,27 @@ ActiveRecord::Schema.define(version: 20150527163514) do
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
 
+  create_table "applications", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "phone"
+    t.integer  "location_id"
+    t.text     "learn_about_acltc"
+    t.text     "current_occupation"
+    t.text     "primary_goals"
+    t.text     "programming_experience"
+    t.string   "preferred_work_location"
+    t.text     "capstone_idea"
+    t.text     "work_concurrently"
+    t.text     "tinker_example"
+    t.text     "why_better"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  add_index "applications", ["location_id"], name: "index_applications_on_location_id", using: :btree
+
   create_table "blog_categories", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -65,4 +86,18 @@ ActiveRecord::Schema.define(version: 20150527163514) do
     t.integer  "admin_id"
   end
 
+  create_table "faqs", force: :cascade do |t|
+    t.text     "question"
+    t.text     "answer"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "applications", "locations"
 end

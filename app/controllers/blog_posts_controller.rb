@@ -11,16 +11,16 @@ class BlogPostsController < ApplicationController
   end
 
   def create
-    @blog_post = BlogPost.new(blog_post_params)
-    @blog_post.admin_id = current_admin.id
-    if @blog_post.save
-      @blog_post.blog_pics.each_with_index do |file, index|
+    blog_post = BlogPost.new(blog_post_params)
+    blog_post.admin_id = current_admin.id
+    if blog_post.save
+      blog_post.blog_pics.each_with_index do |file, index|
         image_placeholder = "IMAGE#{index+1}"
-        @blog_post.content.sub!(image_placeholder, file.blog_pic.url)
+        blog_post.content.sub!(image_placeholder, file.blog_pic.url)
       end
-      if @blog_post.save
+      if blog_post.save
         flash[:success] = "Post should appear on this page."
-        redirect_to blog_post_path(@blog_post)
+        redirect_to blog_post_path(blog_post)
       else
         render 'new'
       end
@@ -41,10 +41,16 @@ class BlogPostsController < ApplicationController
   end
 
   def update
-    @blog_post = BlogPost.find_by(:id => params[:id])
+    @blog_post = BlogPost.find(params[:id])
     @blog_post.update(blog_post_params)
     flash[:success] = "Blog Post successfully updated"
     redirect_to blog_post_path(@blog_post)
+  end
+
+  def destroy
+    BlogPost.find(params[:id]).destroy
+    flash[:warning] = "Blog Post successfully deleted"
+    redirect_to blog_posts_path
   end
 
   private

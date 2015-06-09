@@ -1,13 +1,4 @@
-<!-- Page Title
-  ============================================= -->
-  <section id="page-title">
-
-    <div class="container clearfix">
-      <h1>Blog</h1>
-      <span>All Things Learning to Code</span>
-    </div>
-
-  </section><!-- #page-title end -->
+<%= render "/layouts/page_title", page_title: "Blog", page_subtitle: "All Things Learning to Code" %>
 
         <!-- Content
         ============================================= -->
@@ -61,6 +52,8 @@
                                     </div><!-- .tagcloud end -->
 
                                     <div class="clear"></div>
+                                      <%= link_to "Edit", edit_blog_post_path(@blog_post) if current_admin %> |
+                                      <%= link_to "Delete", blog_post_path(@blog_post), method: :delete, data: {:confirm => 'Are you sure?'} if current_admin %>
 
                                     <!-- Post Single - Share
                                     ============================================= -->
