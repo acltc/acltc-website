@@ -27,6 +27,7 @@ gem 'devise'
 gem 'carrierwave', github:'carrierwaveuploader/carrierwave'
 gem 'fog'
 gem 'quiet_assets', group: :development
+gem 'friendly_id', '~> 5.1.0' # Note: You MUST use 5.0.0 or greater for Rails 4.0+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -1,6 +1,20 @@
 Rails.application.routes.draw do
   devise_for :admins, :controllers => { registrations: 'registrations' }
   root 'pages#home'
+  
+  scope format: false do
+    # get '/:year/*month/*day/*title', to: 'blog_posts#show', constraints: { year: /(19|20)\d{2}/}
+    get '/*date/*title', to: 'blog_posts#show', date: %r[\d{4}/\d{2}/\d{2}], as: 'post'
+  end
+  # scope "/blog" do
+  #   resources :year, controller: :blog_posts, only: :show, path: "" do
+  #     resources :month, controller: :blog_posts, only: :show, path: "" do
+  #       resources :day, controller: :blog_posts, only: :show, path: "" do
+  #         resources :title, controller: :blog_posts, only: :show, path: ""
+  #       end
+  #     end
+  #   end
+  # end
   resources :blog_posts
   resources :blog_categories
   resources :applications
