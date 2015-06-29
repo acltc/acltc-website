@@ -2,11 +2,12 @@
 <html>
 <head>
   <title>AcltcWebsite</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all'  %>
   
   <%= csrf_meta_tags %>
   <link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <%= javascript_include_tag 'application' %>
 </head>
 <body class="stretched">
 
@@ -33,10 +34,10 @@
                     <nav id="primary-menu">
 
                         <ul class="one-page-menu">
-                            <li class="current"><a href="index.html"><div>Home</div></a></li>
-                            <li><a href="#" data-href="#apply"><div>Apply</div></a></li>
+                            <li class="current"><%= link_to "Home", root_path %></li>
+                            <li class="mega-menu"><%= link_to "Apply", new_application_path %></li>
                             <li class="mega-menu"><a href="#"><div>Contact Us</div></a></li>
-                            <li class="mega-menu"><a href="#"><div>FAQ</div></a></li>
+                            <li class="mega-menu"><%= link_to "FAQ", faqs_path %></li>
                             <li class="mega-menu"><%= link_to "Blog", blog_posts_path %></a></li>
                           <% if admin_signed_in? %>
                               <li><%= link_to('Logout Admin', destroy_admin_session_path, method: :delete) %></li>
@@ -308,7 +309,7 @@
 
     </div><!-- #wrapper end -->
 
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    
     <!-- Go To Top
     ============================================= -->
     <div id="gotoTop" class="icon-angle-up"></div>

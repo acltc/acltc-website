@@ -2,7 +2,12 @@ class BlogPostsController < ApplicationController
   before_filter :authenticate_admin!, only: [:new, :create, :update, :delete]
 
   def index
-    @blog_posts = BlogPost.includes(:admin).order(id: :desc).all
+    @blog_posts_all = BlogPost.friendly.includes(:admin).order(id: :desc).all
+    if params[:category]
+      @blog_posts = BlogPost.friendly.includes(:blog_categories, :admin).where(blog_categories: {name: params[:category]}).order(id: :desc)
+    else
+      @blog_posts = @blog_posts_all
+    end
   end
 
   def new
@@ -30,25 +35,38 @@ class BlogPostsController < ApplicationController
   end
 
   def show
-    @blog_post = BlogPost.find(params[:id])
+    @blog_posts_all = BlogPost.friendly.includes(:admin).order(id: :desc).all
+    @blog_post = BlogPost.friendly.find(params[:id]) if params[:id]
+    @blog_post = BlogPost.friendly.find(params[:title]) if params[:title]
     @blog_post_next = @blog_post.next
     @blog_post_previous = @blog_post.previous
-    @blog_posts = BlogPost.order(id: :desc).all
   end
 
   def edit
-    @blog_post = BlogPost.find(params[:id])
+    @blog_post = BlogPost.friendly.find(params[:id])
   end
 
   def update
-    @blog_post = BlogPost.find(params[:id])
-    @blog_post.update(blog_post_params)
-    flash[:success] = "Blog Post successfully updated"
-    redirect_to blog_post_path(@blog_post)
+    blog_post = BlogPost.friendly.find(params[:id])
+    blog_post.admin_id = current_admin.id
+    if blog_post.update(blog_post_params)
+      blog_post.blog_pics.each_with_index do |file, index|
+        image_placeholder = "IMAGE#{index+1}"
+        blog_post.content.sub!(image_placeholder, file.blog_pic.url)
+      end
+      if blog_post.save
+        flash[:success] = "Updated Post should appear on this page."
+        redirect_to blog_post_path(blog_post)
+      else
+        render 'edit'
+      end
+    else
+      render 'edit'
+    end
   end
 
   def destroy
-    BlogPost.find(params[:id]).destroy
+    BlogPost.friendly.find(params[:id]).destroy
     flash[:warning] = "Blog Post successfully deleted"
     redirect_to blog_posts_path
   end

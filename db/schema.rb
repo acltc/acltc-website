@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150610211334) do
+ActiveRecord::Schema.define(version: 20150623005909) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,11 @@ ActiveRecord::Schema.define(version: 20150610211334) do
 
   add_index "applications", ["location_id"], name: "index_applications_on_location_id", using: :btree
 
+  create_table "applications_locations", id: false, force: :cascade do |t|
+    t.integer "application_id", null: false
+    t.integer "location_id",    null: false
+  end
+
   create_table "blog_categories", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -85,6 +90,22 @@ ActiveRecord::Schema.define(version: 20150610211334) do
     t.datetime "updated_at", null: false
     t.integer  "admin_id"
     t.string   "slug"
+  end
+
+  create_table "contacts", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "subject"
+    t.text     "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "contacts_locations", id: false, force: :cascade do |t|
+    t.integer "contact_id",  null: false
+    t.integer "location_id", null: false
   end
 
   create_table "faqs", force: :cascade do |t|

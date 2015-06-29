@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   resources :blog_categories
   resources :applications
   resources :faqs
+  resources :contacts
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

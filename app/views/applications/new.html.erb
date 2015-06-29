@@ -21,7 +21,7 @@
     </div>
     <div class="form-group">
       <%= f.label :locations, "Select which city or cities you want to take course" %><br />
-      <%= f.select :location_id, Location.all.collect {|location| [location.name, location.id]}, {}, :multiple => true, class: "form-control" %>
+      <%= f.collection_check_boxes :location_ids, Location.all, :id, :name %>
     </div>
     <div class="form-group">
       <%= f.label :learn_about_acltc, "How did you hear about Anyone Can Learn To Code?" %><br />

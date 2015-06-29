@@ -5,7 +5,7 @@
       <div class="widget clearfix">
         <div class="tabs nobottommargin clearfix" id="sidebar-tabs">
           <div class="tab-container">
-            <% @blog_posts.first(5).each do |blog_post| %>
+            <% @blog_posts_all.first(5).each do |blog_post| %>
               <div class="spost clearfix">
                 <div class="entry-image">
                   <%= image_tag blog_post.admin.avatar.url, class: "img-circle" %></a>
@@ -14,9 +14,9 @@
                   <div class="entry-title">
                     <h4><%= link_to blog_post.title, blog_post_path(blog_post) %></a></h4>
                   </div>
-                  <ul class="entry-meta">
-                    <li><i class="icon-tags"></i> <%= blog_post.blog_categories.pluck(:name).join(", ") %> </li>
-                  </ul>
+                  <div class="entry-meta"> <!-- I have no idea why, but an infinite loop will start if this is a ul tag -->
+                    <li><i class="icon-tags"></i><%= blog_post.blog_categories.map { |category| link_to category.name, "/blog_posts?category=#{category.name}" }.join(', ').html_safe %></li>
+                  </div>
                 </div>
               </div>
             <% end %>

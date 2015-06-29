@@ -1,0 +1,41 @@
+<h3><%= location %> Location</h3>
+<div class="col_half col_last">
+
+  <section id="google-map_<%= map_number %>" class="gmap" style="height: 410px;"></section>
+
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+
+
+  <script type="text/javascript">
+
+    jQuery('#google-map_<%= map_number %>').gMap({
+
+      address: '222 W Merchandise Mart Plaza, Chicago, IL 60654',
+      maptype: 'ROADMAP',
+      zoom: 14,
+      markers: [
+      {
+        address: "222 W Merchandise Mart Plaza, Chicago, IL 60654",
+        html: '<div style="width: 300px;"><h4 style="margin-bottom: 8px;"><span>222 W Merchandise Mart Plaza, Chicago, IL 60654</span></h4><p class="nobottommargin">222 W Merchandise Mart Plaza, Chicago, IL 60654</p></div>',
+        icon: {
+          image: "../assets/theme/icons/map-icon-red.png",
+          iconsize: [32, 39],
+          iconanchor: [32,39]
+        }
+      }
+      ],
+      doubleclickzoom: false,
+      controls: {
+        panControl: true,
+        zoomControl: true,
+        mapTypeControl: true,
+        scaleControl: false,
+        streetViewControl: false,
+        overviewMapControl: false
+      }
+
+    });
+
+  </script>
+
+</div>

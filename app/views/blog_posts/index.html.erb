@@ -26,10 +26,10 @@
                               <ul class="entry-meta clearfix">
                                   <li><i class="icon-calendar3"></i><%= blog_post.human_time %></li>
                                   <li><a href="#"><i class="icon-user"></i><%= "#{blog_post.admin.full_name} - #{blog_post.admin.title}" %></a></li>
-                                  <li><i class="icon-tags"></i><%= blog_post.blog_categories.pluck(:name).join(", ") %></li>
+                                  <li><i class="icon-tags"></i><%= BlogPost.find(blog_post.id).blog_categories.map { |category| link_to category.name, "/blog_posts?category=#{category.name}" }.join(', ').html_safe %></li>
                               </ul>
                               <div class="entry-content">
-                                  <p><%= blog_post.content.html_safe %></p>
+                                  <p><%= blog_post.truncate_blog_post %></p>
                                   <%= link_to "Read More", blog_post_path(blog_post.id), class: "more-link" %>
                               </div>
                           </div>
@@ -38,10 +38,10 @@
 
                 <!-- Pagination
                 ============================================= -->
-                <ul class="pager nomargin">
+<!--                 <ul class="pager nomargin">
                     <li class="previous"><a href="#">&larr; Older</a></li>
                     <li class="next"><a href="#">Newer &rarr;</a></li>
-                </ul><!-- .pager end -->
+                </ul> --><!-- .pager end -->
 
             </div><!-- .postcontent end -->
 

@@ -1,0 +1,18 @@
+// Place all the styles related to the contacts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+input[type="checkbox"] {
+  display: inline-block;
+  width: 1%;
+}
+
+input[type="checkbox"] + label {
+  display: inline-block;
+  margin-left: 1%;
+  width: 98%;
+}
+
+textarea.sm-form-control {
+  height: 250px;
+}

@@ -3,7 +3,7 @@ class FaqsController < ApplicationController
 
 
   def index
-    @blog_posts = BlogPost.includes(:admin).order(id: :desc).all
+    @blog_posts_all = BlogPost.friendly.includes(:admin).order(id: :desc).all
     @faqs = Faq.all
   end
 
