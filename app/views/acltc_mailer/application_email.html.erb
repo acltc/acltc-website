@@ -1,0 +1,62 @@
+<h1>Hello <%= @application.full_name %>!</h1>
+<h2>
+  Thank you for submitting your application.
+</h2>
+<table>
+  <tr>
+    <td>First Name:</td>
+    <td><%= @application.first_name %></td>
+  </tr>
+  <tr>
+    <td>Last Name:</td>
+    <td><%= @application.last_name %></td>
+  </tr>
+  <tr>
+    <td>Email:</td>
+    <td><%= @application.email %></td>
+  </tr>
+  <tr>
+    <td>Phone:</td>
+    <td><%= @application.phone %></td>
+  </tr>
+  <tr>
+    <td>Location(s):</td>
+    <td><%= @application.locations.pluck(:name).join(", ") %></td>
+  </tr>
+  <tr>
+    <td>How did you learn about ACLTC?:</td>
+    <td><%= @application.learn_about_acltc %></td>
+  </tr>
+  <tr>
+    <td>Primary Goals?:</td>
+    <td><%= @application.primary_goals %></td>
+  </tr>
+  <tr>
+    <td>Previous Coding Experience?:</td>
+    <td><%= @application.programming_experience %></td>
+  </tr>
+  <tr>
+    <td>Which city are you looking to work?:</td>
+    <td><%= @application.preferred_work_location %></td>
+  </tr>
+  <tr>
+    <td>Capstone Idea?:</td>
+    <td><%= @application.capstone_idea %></td>
+  </tr>
+  <tr>
+    <td>Will/How will you keep your job during the bootcamp?:</td>
+    <td><%= @application.work_concurrently %></td>
+  </tr>
+  <tr>
+    <td>Analytical/Tinkering Examples?:</td>
+    <td><%= @application.tinker_example %></td>
+  </tr>
+  <tr>
+    <td>What sets you apart?:</td>
+    <td><%= @application.why_better %></td>
+  </tr>
+
+</table>
+
+<p>Sincerely,</p>
+<p>ACLTC Team</p>

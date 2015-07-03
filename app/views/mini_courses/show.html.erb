@@ -1,0 +1,22 @@
+<%= render "/layouts/page_title", page_title: "Mini Courses", page_subtitle: "Get Additional Skills" %>
+
+<!-- Content
+============================================= -->
+<section id="content">
+    <div class="content-wrap">
+        <div class="container clearfix">
+            <div class="postcontent nobottommargin clearfix">
+              <h3><%= @mini_course.name %></h3>
+              <h4>Description:</h4>
+                <p><%= @mini_course.description %></p>
+              <h4>You’ll Learn About:</h4>
+                <p><%= @mini_course.skills_learned %></p>
+              <h4>Prerequisites:</h4>
+                <p><%= @mini_course.prerequisites %></p>
+
+            </div>
+            <%= render "/blog_posts/side_bar" %>
+        </div>
+    </div>
+</section><!-- #content end -->
+

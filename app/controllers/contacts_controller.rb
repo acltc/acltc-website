@@ -7,8 +7,23 @@ class ContactsController < ApplicationController
   end
 
   def create
+    @contact = Contact.new(contact_params)
+    if @contact.save
+      AcltcMailer.contact_us_email(@contact).deliver_now
+      flash[:success] = "Message sent. You should receive a confirmation message shortly."
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def show
   end
+
+  private
+
+  def contact_params
+    params.require(:contact).permit(:first_name, :last_name, :email, :subject, :phone, :message, :location_ids => [])
+  end
+
 end

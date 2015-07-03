@@ -58,6 +58,7 @@
                           <li class="mega-menu"><a href="#"><div>Contact Us</div></a></li>
                           <li class="mega-menu"><%= link_to "FAQ", faqs_path %></li>
                           <li class="mega-menu"><%= link_to "Blog", blog_posts_path %></a></li>
+                          <li class="mega-menu"><%= link_to "Mini Courses", mini_courses_path %></a></li>
                           <% if admin_signed_in? %>
                               <li><%= link_to('Logout Admin', destroy_admin_session_path, method: :delete) %></li>
                           <% end %>

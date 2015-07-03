@@ -12,8 +12,8 @@ class FaqsController < ApplicationController
   end
 
   def create
-    faq = Faq.new(faq_params)
-    if faq.save
+    @faq = Faq.new(faq_params)
+    if @faq.save
       flash[:success] = "FAQ has been added"
       redirect_to faqs_path
     else
@@ -26,8 +26,8 @@ class FaqsController < ApplicationController
   end
 
   def update
-    faq = Faq.find(params[:id])
-    if faq.save
+    @faq = Faq.find(params[:id])
+    if @faq.save
       flash[:success] = "FAQ has been updated"
       redirect_to faqs_path
     else
