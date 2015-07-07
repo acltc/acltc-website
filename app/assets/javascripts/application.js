@@ -15,4 +15,5 @@
 //= require theme/functions
 //= require theme/jquery.gmap
 //= require jquery_ujs
+//= require bootstrap.min
 //= require_tree .
