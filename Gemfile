@@ -17,6 +17,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'thematic'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'seed_dump'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
@@ -27,7 +28,6 @@ gem 'carrierwave', github:'carrierwaveuploader/carrierwave'
 gem 'fog'
 gem 'quiet_assets', group: :development
 gem 'friendly_id', '~> 5.1.0' # Note: You MUST use 5.0.0 or greater for Rails 4.0+
-gem 'pg', group: :production
 gem 'rails_12factor', group: :production
 
 group :development, :test do
