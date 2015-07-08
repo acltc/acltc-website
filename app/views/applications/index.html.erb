@@ -1,0 +1,26 @@
+<%= render "/layouts/page_title", page_title: "Applications", page_subtitle: "" %>
+<section id="content">
+  <div class="content-wrap">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <table class="table table-striped">
+          <tr>
+          <th>Name</th>
+            <th>Application Submitted</th> 
+            <th>Location</th>
+          </tr>
+          <% @applications.each do |application| %>
+          <tr>
+            <td><%= link_to application.full_name, application_path(application) %></td>
+            <td><%= application.applications_human_time %></td> 
+            <td><%= application.locations.pluck(:name).join(", ") %></td>
+          </tr>
+          <% end %>
+        </table>
+
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</section>

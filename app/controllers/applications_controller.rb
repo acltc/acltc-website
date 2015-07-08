@@ -1,4 +1,14 @@
 class ApplicationsController < ApplicationController
+  before_action :authenticate_admin!, except: [:new, :create]
+
+  def index
+    @applications = Application.all
+  end
+
+  def show
+    @application = Application.find(params[:id])
+  end
+
 
   def new
     @application = Application.new

@@ -1,0 +1,23 @@
+<%= render "/layouts/page_title", page_title: "Admin Dashboard", page_subtitle: "Directory of all Admin functions" %>
+<section id="content">
+  <div class="content-wrap">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <h4>Change Website Content</h4>
+        <ul>
+          <li><%= link_to "Create New Blog Post", new_blog_post_path %></li>
+          <li><%= link_to "Create New FAQ", new_faq_path %></li>
+          <li><%= link_to "Create New Mini Course", new_mini_course_path %></li>
+        </ul>
+        <h4>User Submitted Data</h4>
+        <ul>
+          <li><%= link_to "Contact Us Messages Received", contacts_path %></li>
+          <li><%= link_to "Applications Received", applications_path %></li>
+          <li><%= link_to "Mini Course Applications Received", mini_course_applications_path %></li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</section>

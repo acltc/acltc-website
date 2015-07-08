@@ -1,5 +1,8 @@
 class ContactsController < ApplicationController
+  before_action :authenticate_admin!, except: [:new, :create]
+
   def index
+    @contacts = Contact.all
   end
 
   def new
@@ -18,6 +21,7 @@ class ContactsController < ApplicationController
   end
 
   def show
+    @contact = Contact.find(params[:id])
   end
 
   private

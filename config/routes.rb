@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   root 'pages#home'
   devise_for :admins, :controllers => { registrations: 'registrations' }
-  
+  get 'admins/dashboard' => 'admins#dashboard'
+
   scope format: false do
     get '/*date/*title', to: 'blog_posts#show', date: %r[\d{4}/\d{2}/\d{2}], as: 'post'
   end

@@ -1,4 +1,13 @@
 class MiniCourseApplicationsController < ApplicationController
+  before_action :authenticate_admin!, except: [:create]
+
+  def index
+    @mini_course_applications = MiniCourseApplication.all
+  end
+
+  def show
+    @mini_course_application = MiniCourseApplication.find(params[:id])
+  end
 
   def create
     @mini_course_application = MiniCourseApplication.new(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], phone: params[:phone], statement: params[:statement], mini_course_id: params[:mini_course_id])

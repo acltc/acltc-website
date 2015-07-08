@@ -1,0 +1,26 @@
+<%= render "/layouts/page_title", page_title: "Mini Course Applications", page_subtitle: "" %>
+<section id="content">
+  <div class="content-wrap">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <table class="table table-striped">
+          <tr>
+            <th>Name</th>
+            <th>Application Submitted</th> 
+            <th>Course</th>
+          </tr>
+          <% @mini_course_applications.each do |mini_course_application| %>
+            <tr>
+              <td><%= link_to mini_course_application.full_name, mini_course_application_path(mini_course_application) %></td>
+              <td><%= mini_course_application.mini_course_applications_human_time %></td> 
+              <td><%= mini_course_application.mini_course.name %></td>
+            </tr>
+          <% end %>
+        </table>
+
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</section>
