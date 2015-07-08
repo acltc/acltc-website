@@ -1,5 +1,5 @@
 class BlogPostsController < ApplicationController
-  before_filter :authenticate_admin!, only: [:new, :create, :update, :delete]
+  before_action :authenticate_admin!, only: [:new, :create, :update, :delete]
 
   def index
     @blog_posts_all = BlogPost.friendly.includes(:admin).order(id: :desc).all

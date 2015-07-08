@@ -11,7 +11,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 </head>
 <body class="stretched">
-
+<div class="container">
+  <% flash.each do |name, message| %>
+    <div class="alert alert-<%= name %> alert-dismissible fade in" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</span><span class="sr-only">Close</span></button>
+      <%= message %>  
+    </div>
+  <% end %>
+</div>
     <!-- Document Wrapper
     ============================================= -->
     <div id="wrapper" class="clearfix">
@@ -55,7 +62,7 @@
                       <ul class="one-page-menu">
                           <li class="current"><%= link_to "Home", root_path %></li>
                           <li class="mega-menu"><%= link_to "Apply", new_application_path %></li>
-                          <li class="mega-menu"><a href="#"><div>Contact Us</div></a></li>
+                          <li class="mega-menu"><%= link_to "Contact Us", new_contact_path %></li>
                           <li class="mega-menu"><%= link_to "FAQ", faqs_path %></li>
                           <li class="mega-menu"><%= link_to "Blog", blog_posts_path %></a></li>
                           <li class="mega-menu"><%= link_to "Mini Courses", mini_courses_path %></a></li>
@@ -72,15 +79,7 @@
 
               </header><!-- #header end -->
 
-                  <% flash.each do |name, message| %>
-                       <div class="alert alert-<%= name %> alert-dismissible" role="alert"> 
-                           <button type="button" class="close" data-dismiss="alert"><span aria-
-                          hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                           <%= message %>  
-                       </div>
-                  <% end %>
-
-              <%= yield %>
+            <%= yield %>
 
 
         <!-- Footer

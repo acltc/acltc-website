@@ -15,7 +15,7 @@
                 <!-- Posts
                 ============================================= -->
                     <ul id="blog_admin_list">
-                      <li><%= link_to('Create Blog Post', new_blog_post_path) %></li>
+                      <li><%= link_to('Create Blog Post', new_blog_post_path) if current_admin%></li>
                     </ul>
                     <% @blog_posts.each do |blog_post| %>
                       <div id="posts">

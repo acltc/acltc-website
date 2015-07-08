@@ -9,3 +9,13 @@
 .press-box {
   height: 164px;
 }
+
+
+.alert-dismissible {
+  position: fixed;
+  top: 47px;
+  left: 0;
+  right: 0;
+  z-index: 7000;
+  margin: 0% 5% 0% 5%;
+}

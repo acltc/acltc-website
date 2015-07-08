@@ -7,15 +7,18 @@
     <div class="content-wrap">
         <div class="container clearfix">
             <div class="postcontent nobottommargin clearfix">
+              <ul id="blog_admin_list">
+                <li><%= link_to('Create Mini Course', new_mini_course_path) if current_admin %></li>
+              </ul>
               <h3>ACLTC is now offering one week professional development courses on a variety of tech topics.</h3>
               <p> These courses adopt our signature format, taking place on Sundays and weeknights with a healthy balance of instruction and hands-on exercises. Note that different courses target various skill levels. Here are the currently scheduled courses, with more to come shortly! You can explore the course details for any scheduled course by clicking on the course title.</p>
               <p>SPECIAL LIMITED TIME PROMOTION: If you see a Mini Course that might be perfect for someone you know, refer them and get $100, no questions asked! Simply use the contact form below and provide us with the full name of the person you will be referring, and to which course you’re referring them to. Be sure to include your own email, phone number, and home address as well. Then, if the person you refer actually attends the course, you’ll receive $100 in the mail. This offer applies only for courses that take place prior to Oct. 1, 2015.</p>
               <h4>Scheduled Courses</h4>
               <table class="table table-striped">
                 <tr>
-                  <td>Course</td>
-                  <td>Location</td> 
-                  <td>Dates</td>
+                  <th>Course</th>
+                  <th>Location</th> 
+                  <th>Dates</th>
                 </tr>
                 <% @mini_courses.each do |course| %>
                 <tr>
