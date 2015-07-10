@@ -22,15 +22,17 @@
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
+  <div class="field">
+    <label>Avatar Image</label><br />
+    <%= f.label :avatar do %>
+      <%= f.file_field :avatar  %>
+      <%= f.hidden_field :avatar_cache %>
+    <% end %>
 
-  <%= f.label :avatar do %>
-    <%= f.file_field :avatar  %>
-    <%= f.hidden_field :avatar_cache %>
-  <% end %>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <% end %>
+  </div>
 
   <div class="field">
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
