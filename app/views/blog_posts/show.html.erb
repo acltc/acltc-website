@@ -17,6 +17,7 @@
                             <!-- Single Post
                             ============================================= -->
                             <div class="entry clearfix">
+                                <%= button_to "Publish", blog_post_path,  class: "btn btn-success btn-lg", method: :patch, params: {publish: true} unless @blog_post.published? %>
 
                                 <!-- Entry Title
                                 ============================================= -->

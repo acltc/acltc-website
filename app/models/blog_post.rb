@@ -19,11 +19,11 @@ class BlogPost < ActiveRecord::Base
   end
 
   def next
-    self.class.where("id > ?", id).first
+    self.class.where("id > '%s'", id).where(published?: true).first
   end
 
   def previous
-    self.class.where("id < ?", id).last
+    self.class.where("id < '%s'", id).where(published?: true).last
   end
 
   def get_category_names
