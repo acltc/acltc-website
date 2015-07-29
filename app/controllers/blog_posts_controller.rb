@@ -62,7 +62,7 @@ class BlogPostsController < ApplicationController
   end
 
   def update
-    if params[:publish]
+    if params[:publish] && current_admin
       @blog_post = BlogPost.friendly.find(params[:id])
       @blog_post.update(published?: true)
       @blog_posts_all = BlogPost.where(published?: true).friendly.includes(:admin).order(id: :desc).all
