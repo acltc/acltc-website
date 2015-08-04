@@ -1,8 +1,22 @@
 class BlogPostsController < ApplicationController
-  before_filter :authenticate_admin!, only: [:new, :create, :update, :delete]
+  before_action :authenticate_admin!, only: [:new, :create, :update, :delete]
 
   def index
-    @blog_posts = BlogPost.includes(:admin).order(id: :desc).all
+    if current_admin
+      @blog_posts_all = BlogPost.friendly.includes(:admin).order(id: :desc).all
+      if params[:category]
+        @blog_posts = BlogPost.friendly.includes(:blog_categories, :admin).where(blog_categories: {name: params[:category]}).order(id: :desc)
+      else
+        @blog_posts = @blog_posts_all
+      end
+    else
+      @blog_posts_all = BlogPost.where(published?: true).friendly.includes(:admin).order(id: :desc).all
+      if params[:category]
+        @blog_posts = BlogPost.where(published?: true).friendly.includes(:blog_categories, :admin).where(blog_categories: {name: params[:category]}).order(id: :desc)
+      else
+        @blog_posts = @blog_posts_all
+      end
+    end
   end
 
   def new
@@ -11,16 +25,16 @@ class BlogPostsController < ApplicationController
   end
 
   def create
-    @blog_post = BlogPost.new(blog_post_params)
-    @blog_post.admin_id = current_admin.id
-    if @blog_post.save
-      @blog_post.blog_pics.each_with_index do |file, index|
+    blog_post = BlogPost.new(blog_post_params)
+    blog_post.admin_id = current_admin.id
+    if blog_post.save
+      blog_post.blog_pics.each_with_index do |file, index|
         image_placeholder = "IMAGE#{index+1}"
-        @blog_post.content.sub!(image_placeholder, file.blog_pic.url)
+        blog_post.content.sub!(image_placeholder, file.blog_pic.url)
       end
-      if @blog_post.save
+      if blog_post.save
         flash[:success] = "Post should appear on this page."
-        redirect_to blog_post_path(@blog_post)
+        redirect_to blog_post_path(blog_post)
       else
         render 'new'
       end
@@ -30,27 +44,60 @@ class BlogPostsController < ApplicationController
   end
 
   def show
-    @blog_post = BlogPost.find(params[:id])
+    @blog_posts_all = BlogPost.where(published?: true).friendly.includes(:admin).order(id: :desc).all
+    published = BlogPost.friendly.find(params[:id]).published? if params[:id]
+    published = BlogPost.friendly.find(params[:title]).published? if params[:title]
+    if current_admin || published
+      @blog_post = BlogPost.friendly.find(params[:id]) if params[:id]
+      @blog_post = BlogPost.friendly.find(params[:title]) if params[:title]
+    else
+      redirect_to blog_posts_path
+    end
     @blog_post_next = @blog_post.next
     @blog_post_previous = @blog_post.previous
-    @blog_posts = BlogPost.order(id: :desc).all
   end
 
   def edit
-    @blog_post = BlogPost.find(params[:id])
+    @blog_post = BlogPost.friendly.find(params[:id])
   end
 
   def update
-    @blog_post = BlogPost.find_by(:id => params[:id])
-    @blog_post.update(blog_post_params)
-    flash[:success] = "Blog Post successfully updated"
-    redirect_to blog_post_path(@blog_post)
+    if params[:publish] && current_admin
+      @blog_post = BlogPost.friendly.find(params[:id])
+      @blog_post.update(published?: true)
+      @blog_posts_all = BlogPost.where(published?: true).friendly.includes(:admin).order(id: :desc).all
+      flash[:success] = "Blog Post Successfully Published"
+      render 'show'
+    else
+      blog_post = BlogPost.friendly.find(params[:id])
+      blog_post.admin_id = current_admin.id
+      if blog_post.update(blog_post_params)
+        blog_post.blog_pics.each_with_index do |file, index|
+          image_placeholder = "IMAGE#{index+1}"
+          blog_post.content.sub!(image_placeholder, file.blog_pic.url)
+        end
+        if blog_post.save
+          flash[:success] = "Updated Post should appear on this page."
+          redirect_to blog_post_path(blog_post)
+        else
+          render 'edit'
+        end
+      else
+        render 'edit'
+      end
+    end
+  end
+
+  def destroy
+    BlogPost.friendly.find(params[:id]).destroy
+    flash[:warning] = "Blog Post successfully deleted"
+    redirect_to blog_posts_path
   end
 
   private
 
   def blog_post_params
-    params.required(:blog_post).permit(:title, :content, blog_pics: [], blog_category_ids: [])
+    params.require(:blog_post).permit(:title, :content, blog_pics: [], blog_category_ids: [])
   end
 
   

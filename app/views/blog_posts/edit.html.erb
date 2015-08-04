@@ -1,3 +1,5 @@
+<%= render "/layouts/page_title", page_title: "Blog", page_subtitle: "All Things Learning to Code" %>
+
 <div class="row">
   <div class="col-md-2"></div>
   <div class="col-md-8">
@@ -5,7 +7,7 @@
   </div>
   <div class="col-md-2"></div>
 </div>
-<%= render "form", submit_button: "Edit Blog Post" %>
+<%= render "form", submit_button: "Edit Blog Post", additional_edit_info: "If editing and you want to keep current images, keep the generated photo urls (do not convert back to IMAGE1 etc.) You can still add additional images, using the IMAGE1 etc. notation." %>
 
 
 

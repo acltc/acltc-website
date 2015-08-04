@@ -1,0 +1,140 @@
+<%= render "/layouts/page_title", page_title: "Contact Us", page_subtitle: "Questions? Comments?" %>
+  <section id="content">
+
+    <div class="content-wrap">
+
+      <div class="container clearfix">
+
+            <!-- Contact Form
+            ============================================= -->
+            <div class="col_half">
+
+              <div class="fancy-title title-dotted-border">
+                <h3>Send us a Message</h3>
+              </div>
+
+              <div id="contact-form-result" data-notify-type="success" data-notify-msg="<i class=icon-ok-sign></i> Message Sent Successfully!"></div>
+
+              <%= form_for @contact do |f|  %>
+
+              <div class="form-process"></div>
+
+              <div class="col_one_third">
+                <%= f.label :first_name, class: "template-contactform-name" %>
+                <%= f.text_field :first_name, class: "sm-form-control required" %>
+              </div>
+
+              <div class="col_one_third">
+                <%= f.label :last_name, class: "template-contactform-name" %>
+                <%= f.text_field :last_name, class: "sm-form-control required" %>
+              </div>
+
+              <div class="col_one_third col_last">
+                <%= f.label :email, class: "template-contactform-name" %>
+                <%= f.text_field :email, class: "sm-form-control required" %>
+              </div>
+
+              <div class="clear"></div>
+
+              <div class="col_two_third">
+                <%= f.label :subject, class: "template-contactform-name" %>
+                <%= f.text_field :subject, class: "sm-form-control required" %>
+              </div>
+
+              <div class="col_one_third col_last">
+                <%= f.label :phone, class: "template-contactform-name" %>
+                <%= f.text_field :phone, class: "sm-form-control required" %>
+              </div>
+
+              <div class="clear"></div>
+
+              <div class="col_full">
+                <%= f.label :locations, "Which location(s) does this message reference?" %><br />
+                <%= f.collection_check_boxes :location_ids, Location.all, :id, :name, {:item_wrapper_class => 'checkbox_container'} %>
+              </div>
+
+              <div class="col_full">
+                <%= f.label :message, class: "template-contactform-message" %>
+                <%= f.text_area :message, class: "required sm-form-control" %>
+              </div>
+
+              <div class="col_full hidden">
+                <input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />
+              </div>
+
+              <div class="col_full">
+                <%= f.submit "Submit Message", class: "button button-3d nomargin" %>
+              </div>
+
+              <% end %>
+
+              <script type="text/javascript">
+
+              //   $("#template-contactform").validate({
+              //     submitHandler: function(form) {
+              //       $('.form-process').fadeIn();
+              //       $(form).ajaxSubmit({
+              //         target: '#contact-form-result',
+              //         success: function() {
+              //           $('.form-process').fadeOut();
+              //           $('#template-contactform').find('.sm-form-control').val('');
+              //           $('#contact-form-result').attr('data-notify-msg', $('#contact-form-result').html()).html('');
+              //           SEMICOLON.widget.notifications($('#contact-form-result'));
+              //         }
+              //       });
+              //     }
+              //   });
+
+              // </script>
+
+
+
+<div class="clear"></div>
+
+            <!-- Contact Info
+            ============================================= -->
+            <div class="row clear-bottommargin">
+
+             <!--  <div class="col-md-3 col-sm-6 bottommargin clearfix">
+                <div class="feature-box fbox-center fbox-bg fbox-plain">
+                  <div class="fbox-icon">
+                    <a href="#"><i class="icon-map-marker2"></i></a>
+                  </div>
+                  <h3>Our Headquarters<span class="subtitle">Melbourne, Australia</span></h3>
+                </div>
+              </div>
+
+              <div class="col-md-3 col-sm-6 bottommargin clearfix">
+                <div class="feature-box fbox-center fbox-bg fbox-plain">
+                  <div class="fbox-icon">
+                    <a href="#"><i class="icon-phone3"></i></a>
+                  </div>
+                  <h3>Speak to Us<span class="subtitle">(123) 456 7890</span></h3>
+                </div>
+              </div>
+
+              <div class="col-md-3 col-sm-6 bottommargin clearfix">
+                <div class="feature-box fbox-center fbox-bg fbox-plain">
+                  <div class="fbox-icon">
+                    <a href="#"><i class="icon-skype2"></i></a>
+                  </div>
+                  <h3>Make a Video Call<span class="subtitle">CanvasOnSkype</span></h3>
+                </div>
+              </div>
+
+              <div class="col-md-3 col-sm-6 bottommargin clearfix">
+                <div class="feature-box fbox-center fbox-bg fbox-plain">
+                  <div class="fbox-icon">
+                    <a href="#"><i class="icon-twitter2"></i></a>
+                  </div>
+                  <h3>Follow on Twitter<span class="subtitle">2.3M Followers</span></h3>
+                </div>
+              </div> -->
+
+            </div><!-- Contact Info End -->
+
+          </div>
+
+        </div>
+
+</section><!-- #content end

@@ -1,23 +1,14 @@
-<!-- Page Title
-        ============================================= -->
-        <section id="page-title">
-
-            <div class="container clearfix">
-                <h1>Blog</h1>
-                <span>All Things Learning to Code</span>
-            </div>
-
-        </section><!-- #page-title end -->
+<%= render "/layouts/page_title", page_title: "Blog", page_subtitle: "All Things Learning to Code" %>
 
         <!-- Content
         ============================================= -->
         <section id="content">
 
-            <div class="content-wrap">
+          <div class="content-wrap">
 
-                <div class="container clearfix">
+            <div class="container clearfix">
 
-                    <div class="single-post nobottommargin">
+              <div class="single-post nobottommargin">
 
                         <!-- Post Content
                         ============================================= -->
@@ -26,92 +17,101 @@
                             <!-- Single Post
                             ============================================= -->
                             <div class="entry clearfix">
+                                <%= button_to "Publish", blog_post_path,  class: "btn btn-success btn-lg", method: :patch, params: {publish: true} unless @blog_post.published? %>
 
                                 <!-- Entry Title
                                 ============================================= -->
                                 <div class="entry-title">
-                                    <h2><%= @blog_post.title %></h2>
+                                  <h2><%= @blog_post.title %></h2>
                                 </div><!-- .entry-title end -->
 
                                 <!-- Entry Meta
                                 ============================================= -->
                                 <ul class="entry-meta clearfix">
-                                <ul class="entry-meta clearfix">
-                                  <li><i class="icon-calendar3"></i><%= @blog_post.human_time %></li>
-                                  <li><a href="#"><i class="icon-user"></i><%= "#{@blog_post.admin.full_name} - #{@blog_post.admin.title}" %></a></li>
-                                  <li><i class="icon-tags"></i><%= @blog_post.blog_categories.pluck(:name).join(", ") %></li>
-                                </ul><!-- .entry-meta end -->
+                                  <ul class="entry-meta clearfix">
+                                    <li><i class="icon-calendar3"></i><%= @blog_post.human_time %></li>
+                                    <li><a href="#"><i class="icon-user"></i><%= "#{@blog_post.admin.full_name} - #{@blog_post.admin.title}" %></a></li>
+                                    <li><i class="icon-tags"></i><%= @blog_post.blog_categories.map { |category| link_to category.name, "/blog_posts?category=#{category.name}" }.join(', ').html_safe %></li>
+                                  </ul><!-- .entry-meta end -->
 
                                 <!-- Entry Content
                                 ============================================= -->
                                 <div class="entry-content notopmargin">
-                                    <div>
-                                      <%= @blog_post.content.html_safe %>
-                                    </div> 
+                                  <div>
+                                    <%= @blog_post.content.html_safe %>
+                                  </div> 
 
 
-                                    <!-- Post Single - Content End -->
+                                  <!-- Post Single - Content End -->
 
                                     <!-- Tag Cloud
                                     ============================================= -->
-                                    <div class="tagcloud clearfix bottommargin">
-                                        <% @blog_post.blog_categories.each do |blog_category| %>
-                                          <a href="#"><%= blog_category.name %></a>
-                                        <% end %>
+                                    <div class="tagcloud clearfix bottommargin main-text">
+                                      <% @blog_post.blog_categories.each do |blog_category| %>
+                                        <a href="#"><%= blog_category.name %></a>
+                                      <% end %>
                                     </div><!-- .tagcloud end -->
 
                                     <div class="clear"></div>
+                                      <%= link_to "Edit", edit_blog_post_path(@blog_post) if current_admin %> |
+                                      <%= link_to "Delete", blog_post_path(@blog_post), method: :delete, data: {:confirm => 'Are you sure?'} if current_admin %>
 
                                     <!-- Post Single - Share
                                     ============================================= -->
-                                    <div class="si-share noborder clearfix">
-                                        <span>Share this Post:</span>
-                                        <div>
-                                            <a href="#" class="social-icon si-borderless si-facebook">
-                                                <i class="icon-facebook"></i>
-                                                <i class="icon-facebook"></i>
-                                            </a>
-                                            <a href="#" class="social-icon si-borderless si-twitter">
-                                                <i class="icon-twitter"></i>
-                                                <i class="icon-twitter"></i>
-                                            </a>
-                                            <a href="#" class="social-icon si-borderless si-pinterest">
-                                                <i class="icon-pinterest"></i>
-                                                <i class="icon-pinterest"></i>
-                                            </a>
-                                            <a href="#" class="social-icon si-borderless si-gplus">
-                                                <i class="icon-gplus"></i>
-                                                <i class="icon-gplus"></i>
-                                            </a>
-                                            <a href="#" class="social-icon si-borderless si-rss">
-                                                <i class="icon-rss"></i>
-                                                <i class="icon-rss"></i>
-                                            </a>
-                                            <a href="#" class="social-icon si-borderless si-email3">
-                                                <i class="icon-email3"></i>
-                                                <i class="icon-email3"></i>
-                                            </a>
-                                        </div>
-                                    </div><!-- Post Single - Share End -->
+<!--                                     <div class="si-share noborder clearfix">
+                                      <span>Share this Post:</span>
+                                      <div>
+                                        <a href="#" class="social-icon si-borderless si-facebook">
+                                          <i class="icon-facebook"></i>
+                                          <i class="icon-facebook"></i>
+                                        </a>
+                                        <a href="#" class="social-icon si-borderless si-twitter">
+                                          <i class="icon-twitter"></i>
+                                          <i class="icon-twitter"></i>
+                                        </a>
+                                        <a href="#" class="social-icon si-borderless si-pinterest">
+                                          <i class="icon-pinterest"></i>
+                                          <i class="icon-pinterest"></i>
+                                        </a>
+                                        <a href="#" class="social-icon si-borderless si-gplus">
+                                          <i class="icon-gplus"></i>
+                                          <i class="icon-gplus"></i>
+                                        </a>
+                                        <a href="#" class="social-icon si-borderless si-rss">
+                                          <i class="icon-rss"></i>
+                                          <i class="icon-rss"></i>
+                                        </a>
+                                        <a href="#" class="social-icon si-borderless si-email3">
+                                          <i class="icon-email3"></i>
+                                          <i class="icon-email3"></i>
+                                        </a>
+                                      </div>
+                                    </div> -->
 
-                                </div>
-                            </div><!-- .entry end -->
+                                    <!-- Post Single - Share End -->
+
+                                  </div>
+                                </div><!-- .entry end -->
 
                             <!-- Post Navigation
                             ============================================= -->
                             <div class="post-navigation clearfix">
 
+                              <% if @blog_post_previous %>
+                              <div class="col_half nobottommargin">
                                 <% if @blog_post_previous %>
-                                  <div class="col_half nobottommargin">
-                                      <a href="#">&lArr; <%= link_to @blog_post_previous.title, blog_post_path(@blog_post_previous) if @blog_post_previous %></a>
-                                  </div>
+                                <a href="<%= blog_post_path(@blog_post_previous) %>"> &lArr; <%= @blog_post_previous.title %></a>
                                 <% end %>
+                              </div>
+                              <% end %>
 
+                              <% if @blog_post_next %>
+                              <div class="col_half col_last tright nobottommargin">
                                 <% if @blog_post_next %>
-                                  <div class="col_half col_last tright nobottommargin">
-                                      <a href="#"><%= link_to @blog_post_next.title, blog_post_path(@blog_post_next) if @blog_post_next %> &rArr;</a>
-                                  </div>
+                                  <a href="<%= blog_post_path(@blog_post_next) %>"> <%= @blog_post_next.title %> &rArr;</a>
                                 <% end %>
+                              </div>
+                              <% end %>
 
                             </div><!-- .post-navigation end -->
 
@@ -120,31 +120,31 @@
                             <!-- Post Author Info
                             ============================================= -->
                             <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">Posted by <span><a href="#"><%= @blog_post.admin.full_name %></a></span></h3>
+                              <div class="panel-heading">
+                                <h3 class="panel-title">Posted by <span><a href="#"><%= @blog_post.admin.full_name %></a></span></h3>
+                              </div>
+                              <div class="panel-body">
+                                <div class="author-image">
+                                  <%= image_tag @blog_post.admin.avatar.url, class: "img-circle" %>
                                 </div>
-                                <div class="panel-body">
-                                    <div class="author-image">
-                                        <%= image_tag @blog_post.admin.avatar.url, class: "img-circle" %>
-                                    </div>
-                                    <div>
-                                      <%= @blog_post.admin.bio %>
-                                    </div>
+                                <div>
+                                  <%= @blog_post.admin.bio %>
                                 </div>
+                              </div>
                             </div><!-- Post Single - Author End -->
 
                             <div class="line"></div>
 
-         
 
-                        </div><!-- .postcontent end -->
 
-                        <%= render "side_bar" %>
+                          </div><!-- .postcontent end -->
+
+                          <%= render "side_bar" %>
+
+                        </div>
+
+                      </div>
 
                     </div>
-
-                </div>
-
-            </div>
 
         </section><!-- #content end -->

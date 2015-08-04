@@ -1,0 +1,47 @@
+<%= render "/layouts/page_title", page_title: "Mini Course Applications", page_subtitle: "" %>
+<section id="content">
+  <div class="content-wrap">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+      <%= link_to "Back to Index", mini_course_applications_path %>
+        <table class="table table-striped">
+          <tr>
+            <th>First Name:</th>
+            <th><%= @mini_course_application.first_name %></th> 
+          </tr>
+          <tr>
+            <th>Last Name:</th>
+            <th><%= @mini_course_application.last_name %></th> 
+          </tr>
+          <tr>
+            <th>Email:</th>
+            <th><%= @mini_course_application.email %></th> 
+          </tr>
+          <tr>
+            <th>Phone:</th>
+            <th><%= @mini_course_application.phone %></th> 
+          </tr>
+          <tr>
+            <th>Course:</th>
+            <th><%= @mini_course_application.mini_course.name %></th> 
+          </tr>
+          <tr>
+            <th>Location:</th>
+            <th><%= @mini_course_application.mini_course.location.name %></th> 
+          </tr>
+          <tr>
+            <th>Statement:</th>
+            <th><%= @mini_course_application.statement %></th> 
+          </tr>          
+          <tr>
+            <th>Application Received:</th>
+            <th><%= @mini_course_application.mini_course_applications_human_time %></th> 
+          </tr>
+        </table>
+
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,73 @@
+<%= render "/layouts/page_title", page_title: "Apply", page_subtitle: "Fill out the form below to apply for admission" %>
+
+<section id="content">
+  <div class="content-wrap">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+      <%= form_for @application do |f| %>
+        <div class="form-group">
+          <%= f.label :first_name %><br />
+          <%= f.text_field :first_name, autofocus: true, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :last_name %><br />
+          <%= f.text_field :last_name, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :email, "Your primary email address" %><br />
+          <%= f.text_field :email, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :phone, "Your primary phone number" %><br />
+          <%= f.text_field :phone, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :locations, "Select which city or cities you want to take course" %><br />
+          <%= f.collection_check_boxes :location_ids, Location.all, :id, :name %>
+        </div>
+        <div class="form-group">
+          <%= f.label :learn_about_acltc, "How did you hear about Anyone Can Learn To Code?" %><br />
+          <%= f.text_area :learn_about_acltc, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :current_occupation, "Tell us more about what you're currently doing (job or school, etc.)" %><br />
+          <%= f.text_area :current_occupation, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :primary_goals, "What are your primary goals in learning how to code?" %><br />
+          <%= f.text_area :primary_goals, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :programming_experience, "Do you have any previous programming experience? Working on online tutorials certainly counts!" %><br />
+          <%= f.text_area :programming_experience, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :preferred_work_location, "If you are seeking a job in web development, in what city do you want to work?" %><br />
+          <%= f.text_area :preferred_work_location, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :capstone_idea, "Is there a specific project you would like to work on for your Capstone project?" %><br />
+          <%= f.text_area :capstone_idea, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :work_concurrently, "Will you keep your job during the bootcamp? If so, how do you realistically plan to do both?" %><br />
+          <%= f.text_area :work_concurrently, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :tinker_example, "Programming requires complex problem solving and logical analysis, and the ability to tinker around with something until it works. Give examples of when you’ve had these experiences." %><br />
+          <%= f.text_area :tinker_example, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :why_better, "Why should we accept you over other well-qualified candidates?" %><br />
+          <%= f.text_area :why_better, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.submit "Submit Application", class: "btn btn-primary btn-lg" %>
+        </div>
+      <% end %>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</section>

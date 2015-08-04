@@ -1,0 +1,47 @@
+<%= render "/layouts/page_title", page_title: "Messages", page_subtitle: "" %>
+<section id="content">
+  <div class="content-wrap">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+      <%= link_to "Back to Index", contacts_path %>
+        <table class="table table-striped">
+          <tr>
+            <th>First Name:</th>
+            <th><%= @contact.first_name %></th> 
+          </tr>
+          <tr>
+            <th>Last Name:</th>
+            <th><%= @contact.last_name %></th> 
+          </tr>
+          <tr>
+            <th>Email:</th>
+            <th><%= @contact.email %></th> 
+          </tr>
+          <tr>
+            <th>Phone:</th>
+            <th><%= @contact.phone %></th> 
+          </tr>
+          <tr>
+            <th>Subject:</th>
+            <th><%= @contact.subject %></th> 
+          </tr>
+          <tr>
+            <th>Location(s):</th>
+            <th><%= @contact.locations.pluck(:name).join(", ") %></th> 
+          </tr>
+          <tr>
+            <th>Message:</th>
+            <th><%= @contact.message %></th> 
+          </tr>          
+          <tr>
+            <th>Message Sent:</th>
+            <th><%= @contact.contacts_human_time %></th> 
+          </tr>
+        </table>
+
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</section>

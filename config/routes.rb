@@ -1,9 +1,19 @@
 Rails.application.routes.draw do
-  devise_for :admins, :controllers => { registrations: 'registrations' }
   root 'pages#home'
+  devise_for :admins, :controllers => { registrations: 'registrations' }
+  get 'admins/dashboard' => 'admins#dashboard'
+
+  scope format: false do
+    get '/*date/*title', to: 'blog_posts#show', date: %r[\d{4}/\d{2}/\d{2}], as: 'post'
+  end
+  
   resources :blog_posts
   resources :blog_categories
-
+  resources :applications
+  resources :faqs
+  resources :contacts
+  resources :mini_courses
+  resources :mini_course_applications
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

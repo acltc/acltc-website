@@ -7,6 +7,18 @@
   height: 500px;
 }
 
-textarea.form-control {
+textarea.write-html{
   height: 1000px;
+}
+
+#blog_admin_list {
+  list-style-type: none;
+}
+
+.main-text {
+ margin-top: 20px; 
+}
+
+.publish-warning {
+  color: red !important;
 }

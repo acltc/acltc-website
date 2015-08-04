@@ -1,0 +1,39 @@
+<h1>Hello <%= @mini_course_application.full_name %>!</h1>
+<h2>
+  Thank you for registering for the Mini Course. Someone will contact you shortly.
+</h2>
+<table>
+  <tr>
+    <td>First Name:</td>
+    <td><%= @mini_course_application.first_name %></td>
+  </tr>
+  <tr>
+    <td>Last Name:</td>
+    <td><%= @mini_course_application.last_name %></td>
+  </tr>
+  <tr>
+    <td>Email:</td>
+    <td><%= @mini_course_application.email %></td>
+  </tr>
+  <tr>
+    <td>Phone:</td>
+    <td><%= @mini_course_application.phone %></td>
+  </tr>
+  <tr>
+    <td>Mini Course:</td>
+    <td><%= @mini_course_application.mini_course.name %></td>
+  </tr>
+  <tr>
+    <td>Location(s):</td>
+    <td><%= @mini_course_application.mini_course.location.name %></td>
+  </tr>
+  <tr>
+    <td>Statement of Purpose:</td>
+    <td><%= @mini_course_application.statement %></td>
+  </tr>
+ 
+
+</table>
+
+<p>Sincerely,</p>
+<p>ACLTC Team</p>

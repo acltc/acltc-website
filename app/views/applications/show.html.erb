@@ -1,0 +1,75 @@
+<%= render "/layouts/page_title", page_title: "Applications", page_subtitle: "" %>
+<section id="content">
+  <div class="content-wrap">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+      <%= link_to "Back to Index", applications_path %>
+        <table class="table table-striped">
+          <tr>
+            <th>First Name:</th>
+            <th><%= @application.first_name %></th> 
+          </tr>
+          <tr>
+            <th>Last Name:</th>
+            <th><%= @application.last_name %></th> 
+          </tr>
+          <tr>
+            <th>Email:</th>
+            <th><%= @application.email %></th> 
+          </tr>
+          <tr>
+            <th>Phone:</th>
+            <th><%= @application.phone %></th> 
+          </tr>
+          <tr>
+            <th>Location(s):</th>
+            <th><%= @application.locations.pluck(:name).join(", ") %></th> 
+          </tr>        
+          <tr>
+            <th>Application Sent:</th>
+            <th><%= @application.applications_human_time %></th> 
+          </tr>
+          <tr>
+            <th>How did you hear about Anyone Can Learn To Code?:</th>
+            <th><%= @application.learn_about_acltc %></th> 
+          </tr>
+          <tr>
+            <th>Tell us more about what you're currently doing (job or school, etc.):</th>
+            <th><%= @application.current_occupation %></th> 
+          </tr>
+          <tr>
+            <th>What are your primary goals in learning how to code?:</th>
+            <th><%= @application.primary_goals %></th> 
+          </tr>
+          <tr>
+            <th>Do you have any previous programming experience? Working on online tutorials certainly counts!:</th>
+            <th><%= @application.programming_experience %></th> 
+          </tr>
+          <tr>
+            <th>If you were seeking a job in web development, in what city do you want to work?:</th>
+            <th><%= @application.preferred_work_location %></th> 
+          </tr>
+          <tr>
+            <th>Is there a specific project you would like to work on for your capstone project?:</th>
+            <th><%= @application.capstone_idea %></th> 
+          </tr>
+          <tr>
+            <th>Will you keep your job during the bootcamp? If so, how do you realistically plan to do both?:</th>
+            <th><%= @application.work_concurrently %></th> 
+          </tr>
+          <tr>
+            <th>Programming requires complex problem solving and logical analysis, and the ability to tinker around with something until it works. Give examples of when you’ve had these experiences.:</th>
+            <th><%= @application.tinker_example %></th> 
+          </tr>
+          <tr>
+            <th>Why should we accept you over well-qualified candidates?:</th>
+            <th><%= @application.why_better %></th> 
+          </tr>
+        </table>
+
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</section>
