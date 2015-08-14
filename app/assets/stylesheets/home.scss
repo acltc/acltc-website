@@ -1,12 +1,49 @@
 /* Mixins */
 
+@mixin rounded($radius: 5px) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
 $color-primary: #17a396;
 $color-primary-bright: lighten($color-primary, 10%);
 $color-secondary: #ebe7d9;
 $color-accent: #f25252;
+$color-neutral: #eaeaea;
 $color-danger: $color-accent;
 
+h1,h2,h3,h4,p {
+  -webkit-font-smoothing: antialiased !important;
+}
+h2 {
+  color: $color-primary;
+}
+h3{
+  color: black;
+  font-size: 1.5em;
+}
 
+p{
+  font-size: 1.2em;
+}
+
+button {
+  background-color: $color-neutral;
+  padding: 12px 25px;
+  border-color: none;
+  color: $color-primary;
+  font-size: 1.2em;
+  border: 1px solid darken($color-neutral, 15%);
+  @include rounded;
+  margin: 10px 0;
+}
+
+.button-primary{
+  background-color: $color-accent;
+  color: white;
+  border: none;
+}
 
 
 
@@ -78,7 +115,17 @@ $color-danger: $color-accent;
       color: white;
       font-size: 1.4em;
       line-height: 1.5em;
+      font-weight: normal;
+
     }
+    h3, h4{
+      color: $color-primary-bright;
+    }
+    h4 {
+      font-size: 1em;
+      font-weight: normal;
+    }
+
   }
   .col-md-12 {
     min-height: 580px;
@@ -97,7 +144,69 @@ $color-danger: $color-accent;
       opacity: .7;
     }
   }
-
 }
+
+
+.home-section {
+  padding-top: 30px;
+}
+
+.our-program {
+  .section-header{
+    text-align: center;
+    padding: 1em 3.5em;
+  }
+
+  .phase{
+    background: $color-secondary;
+    overflow: auto;
+    margin-bottom: 20px;
+    .phase-block{
+        width: 50%;
+        float: left;
+        min-height: 350px;
+        padding: 50px 40px 50px 60px;
+
+      &.block-image{
+        border-right: 4px solid $color-primary;
+        position: relative;
+        background-size: cover;
+
+      span{
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        background-color: $color-accent;
+        top:20%;
+        right: -30px;
+        text-align:center;
+        font-size: 2em;
+        color: white;
+        line-height: 2em;
+        @include rounded(30px);
+      };
+
+      &.phase1-img{background-image: url("phase1.jpg");}
+      &.phase2-img{background-image: url("phase2.jpg");}
+      &.phase3-img{background-image: url("phase3.jpg");}
+        
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
