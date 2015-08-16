@@ -6,10 +6,33 @@
   border-radius: $radius;
 }
 
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+@mixin keyframe-fadeIn {
+  0%   { opacity:0; }
+  100% { opacity:1; }
+}
+
+@keyframes pulse {
+  0% {
+    @include opacity(0);
+  }
+  100% {
+    @include opacity(1);
+  }
+}
+
+
+
+
 $color-primary: #17a396;
 $color-primary-bright: lighten($color-primary, 10%);
 $color-secondary: #ebe7d9;
 $color-accent: #f25252;
+$color-text: #555555;
 $color-neutral: #eaeaea;
 $color-danger: $color-accent;
 
@@ -30,7 +53,7 @@ p{
 
 button {
   background-color: $color-neutral;
-  padding: 12px 25px;
+  padding: 10px 25px;
   border-color: none;
   color: $color-primary;
   font-size: 1.2em;
@@ -43,6 +66,18 @@ button {
   background-color: $color-accent;
   color: white;
   border: none;
+}
+
+.button-simple{
+  background:rgba(0,0,0,0.7);
+  border: 1px solid white;
+  padding: 5px 15px;
+  color: white;
+  @include rounded;
+
+  i.fa{
+    color: $color-accent;
+  } 
 }
 
 
@@ -141,22 +176,26 @@ button {
       width: 100%;
       min-height: 580px;
       z-index: 100;
-      opacity: .7;
+      @include opacity(.7);
     }
   }
 }
 
 
 .home-section {
-  padding-top: 30px;
+  padding: 2em 0 4em; 
+}
+.section-header{
+  text-align: center;
+  padding: 1.3em 4em;
+  h2 {
+    margin-bottom: 20px;
+  }
+  p{color: $color-text;
+  }
 }
 
 .our-program {
-  .section-header{
-    text-align: center;
-    padding: 1em 3.5em;
-  }
-
   .phase{
     background: $color-secondary;
     overflow: auto;
@@ -195,13 +234,135 @@ button {
   }
 }
 
+.skills-wrapper{
+  background-color: $color-primary;
+  padding: 1em 0 5em;
+  color: white;
+  text-align: center;
+  background-image: url("skills-bg.png");
+  background-position: center;
+
+  .skills{
+    color: white;
+    position: relative;
+
+    p{color: white;
+    }
+
+    .skill-description {
+      background-color: $color-accent;
+      padding: 1em;
+      display: none;
+      position: absolute;
+      top: 300px;
+    }
+
+    h2, h3{
+      color: white;
+    };
+    hr{
+      width: 100%;
+      border-top: 1px solid $color-primary-bright;
+      margin: 0px;
+    }
+    .skill{
+      min-height: 100px;
+      padding: 3em 0;
+      h3 {
+        font-size: 1.2em;
+        font-weight: bold;
+        color: white!important;
+      }
+
+      &:hover{
+        .skill-description{
+          display: block;
+          position: absolute;
+          top: 0;
+          height: 100%;
+          overflow: scroll;
+          animation: pulse 1s;
+        }
+      }
+
+    }
+  .button-simple {
+    margin: 10px 10px;
+  }
+
+  }
+}
 
 
 
+.homepage-slider{
 
+  .carousel-inner{
+    min-height: 500px;
+    text-align: center;
 
+    h2{
+      text-shadow: none;
+      text-align: center;
+      padding-bottom: 10px;
+    }
 
+    .carousel-caption{
+      position: relative;
+      left: 0;
 
+      p{
+        color: $color-text;
+        text-shadow: none;
+        padding: 2em;
+      }
+      strong{
+        color: $color-accent;
+        text-shadow: none;
+      }
+    }
+
+    .item img{
+      width: 150px;
+      margin: auto;
+
+    }
+  }
+  .carousel-control.right, .carousel-control.left{background: none;
+
+    & span:before{
+      color: lighten($color-primary, 30%);
+      text-shadow: none;
+    };
+  }
+}
+
+.locations-wrapper{
+  background-color: $color-secondary;
+  text-align: center;
+
+  h2 {
+    padding-bottom: 1em;
+  }
+
+  .location{
+    min-height: 400px;
+    background-color: white;
+    padding: 5em 4em 4em;
+    position: relative;
+
+    i {
+      position: absolute;
+      top: 10px;
+      left: 15px;
+      font-size: 2em;
+    }
+
+    h3{
+      padding-bottom: 1em;
+    }
+  }
+}
 
 
 
