@@ -122,7 +122,8 @@ button {
       filter: alpha(opacity=70); }
 
 .home-section {
-  padding: 2em 0 4em; }
+  padding-top: 2em;
+  padding-bottom: 4em; }
 
 .section-header {
   text-align: center;
@@ -250,3 +251,9 @@ button {
       font-size: 2em; }
     .locations-wrapper .location h3 {
       padding-bottom: 1em; }
+
+.apply-wrapper {
+  background-color: #f25252;
+  text-align: center; }
+  .apply-wrapper h2, .apply-wrapper h3, .apply-wrapper p, .apply-wrapper a {
+    color: white; }

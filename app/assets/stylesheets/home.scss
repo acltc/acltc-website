@@ -183,7 +183,8 @@ button {
 
 
 .home-section {
-  padding: 2em 0 4em; 
+  padding-top: 2em;
+  padding-bottom: 4em;
 }
 .section-header{
   text-align: center;
@@ -361,6 +362,14 @@ button {
     h3{
       padding-bottom: 1em;
     }
+  }
+}
+
+.apply-wrapper{
+  background-color: $color-accent;
+  text-align: center;
+  h2,h3,p,a{
+    color: white
   }
 }
 
