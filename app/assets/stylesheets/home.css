@@ -93,6 +93,18 @@ button, input[type=submit] {
     padding: 1em .5em; }
   .navigation .navbar-toggle {
     margin-top: 20px; }
+  @media (max-width: 768px) {
+    .navigation .navbar-collapse .nav {
+      width: 100%; }
+    .navigation .navbar-collapse .navbar-nav > li > a:focus, .navigation .navbar-collapse .navbar-nav > li > a:hover {
+      background-color: #17a396;
+      color: white; } }
+  .navigation .navbar-toggle {
+    background-color: #17a396; }
+    .navigation .navbar-toggle:hover, .navigation .navbar-toggle:focus {
+      background-color: #1ab9ab; }
+    .navigation .navbar-toggle .icon-bar {
+      background-color: white; }
 
 .marquee {
   background-image: url("marquee-bg");
@@ -135,6 +147,11 @@ button, input[type=submit] {
       z-index: 100;
       opacity: 0.7;
       filter: alpha(opacity=70); }
+  @media (max-width: 768px) {
+    .marquee {
+      margin-top: -143px; }
+      .marquee .marquee-content {
+        padding: 2em 0; } }
 
 .home-section {
   padding-top: 2em;
@@ -155,8 +172,26 @@ button, input[type=submit] {
   .our-program .phase .phase-block {
     width: 50%;
     float: left;
-    min-height: 350px;
+    min-height: 360px;
     padding: 50px 40px 50px 60px; }
+    @media (max-width: 992px) {
+      .our-program .phase .phase-block {
+        min-height: 450px; }
+        .our-program .phase .phase-block.block-image {
+          background-position-x: -130px; } }
+    @media (max-width: 768px) {
+      .our-program .phase .phase-block {
+        width: 100%;
+        min-height: 300px; }
+        .our-program .phase .phase-block.block-image {
+          border-top: 4px solid #17a396;
+          border-right: 0px !important;
+          background-position-x: 0px; }
+        .our-program .phase .phase-block span {
+          left: 0;
+          margin-left: 5px;
+          top: 5px !important;
+          z-index: 99999; } }
     .our-program .phase .phase-block.block-image {
       border-right: 4px solid #17a396;
       position: relative;
@@ -258,7 +293,8 @@ button, input[type=submit] {
     min-height: 400px;
     background-color: white;
     padding: 5em 4em 4em;
-    position: relative; }
+    position: relative;
+    margin-top: 10px; }
     .locations-wrapper .location i {
       position: absolute;
       top: 10px;
@@ -273,6 +309,8 @@ button, input[type=submit] {
   line-height: 1.5em;
   padding-top: 4em;
   padding-bottom: 3em; }
+  .apply-wrapper .apply {
+    padding-bottom: 30px; }
   .apply-wrapper .cta-faqs {
     padding-top: 3em; }
   .apply-wrapper h2, .apply-wrapper h3, .apply-wrapper p, .apply-wrapper a {
@@ -282,7 +320,8 @@ button, input[type=submit] {
   min-height: 200px;
   padding: 3.5em 3em;
   background-color: #ebe7d9;
-  text-align: center; }
+  text-align: center;
+  margin-top: 10px; }
 .events-wrapper h2 {
   text-align: center;
   padding-bottom: .5em; }
@@ -301,7 +340,8 @@ footer {
   footer input[type=submit] {
     border: none; }
   footer .icons {
-    text-align: center; }
+    text-align: center;
+    margin-top: 10px; }
     footer .icons a {
       padding: 10px 5px 30px; }
   footer .inquiries {
