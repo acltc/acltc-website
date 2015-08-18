@@ -124,7 +124,7 @@ button, input[type=submit] {
     width: 100%;
     height: 10px;
     z-index: 100;
-    background-image: url("border.png");
+    background-image: url("<%= asset_path('border.png') %>");
     background-repeat: repeat-x;
   }
 
@@ -144,7 +144,7 @@ button, input[type=submit] {
 
 
 .marquee {
-  background-image: url("marquee-bg");
+  background-image: url("<%= asset_path('marquee-bg.jpg') %>");
   min-height: 700px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -242,9 +242,9 @@ button, input[type=submit] {
         @include rounded(30px);
       };
 
-      &.phase1-img{background-image: url("phase1.jpg");}
-      &.phase2-img{background-image: url("phase2.jpg");}
-      &.phase3-img{background-image: url("phase3.jpg");}
+      &.phase1-img{background-image: url("<%= asset_path('phase1.jpg') %>");}
+      &.phase2-img{background-image: url("<%= asset_path('phase2.jpg') %>");}
+      &.phase3-img{background-image: url("<%= asset_path('phase3.jpg') %>");}
         
       }
     }
@@ -256,7 +256,7 @@ button, input[type=submit] {
   padding: 1em 0 5em;
   color: white;
   text-align: center;
-  background-image: url("skills-bg.png");
+  background-image: url("<%= asset_path('skills-bg.png') %>");
   background-position: center;
 
   .skills{
