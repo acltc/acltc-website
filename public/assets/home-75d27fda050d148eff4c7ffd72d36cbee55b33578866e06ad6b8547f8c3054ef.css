@@ -1,4 +1,5 @@
 /* Mixins */
+
 @keyframes pulse {
   0% {
     opacity: 0;
@@ -84,7 +85,7 @@ button, input[type=submit] {
     width: 100%;
     height: 10px;
     z-index: 100;
-    background-image: url("border.png");
+    background-image: url("/assets/border-612fb9f5ee61096b235c7050525c883a662c9d2618a2683ae54be643b69b5681.png");
     background-repeat: repeat-x; }
   .navigation .navbar-brand {
     padding: 1em 2em 0 0; }
@@ -107,7 +108,7 @@ button, input[type=submit] {
       background-color: white; }
 
 .marquee {
-  background-image: url("marquee-bg");
+  background-image: url("/assets/marquee-bg-3571563b94b08edc9e092ba3b33733dc4b72bcf018abe2ac66d12f656cfaceec.jpg");
   min-height: 700px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -210,19 +211,16 @@ button, input[type=submit] {
         -webkit-border-radius: 30px;
         -moz-border-radius: 30px;
         border-radius: 30px; }
-      .our-program .phase .phase-block.block-image.phase1-img {
-        background-image: url("phase1.jpg"); }
-      .our-program .phase .phase-block.block-image.phase2-img {
-        background-image: url("phase2.jpg"); }
-      .our-program .phase .phase-block.block-image.phase3-img {
-        background-image: url("phase3.jpg"); }
+      .our-program .phase .phase-block.block-image.phase1-img {background-image: url("/assets/phase1-264842597f1d0b0260976395bb062b9b39972137f3ab82bd6201208d703e5c5b.jpg");}
+      .our-program .phase .phase-block.block-image.phase2-img {background-image: url("/assets/phase2-24a11077bae6faf7e412fc9a956507f78a8b18ec04776eef123a16bb99814ea2.jpg");}
+      .our-program .phase .phase-block.block-image.phase3-img {background-image: url("/assets/phase3-b06f785a039d76e818f17375bfa1919cc3aa12d8a3949e7389c8bed65c648a78.jpg");}
 
 .skills-wrapper {
   background-color: #17a396;
   padding: 1em 0 5em;
   color: white;
   text-align: center;
-  background-image: url("skills-bg.png");
+  background-image: url("/assets/skills-bg-014b5a5c478e7c6c0227dc22c1b6ff19a3b89d97d2a2eed8213987d1a327e30c.png");
   background-position: center; }
   .skills-wrapper .skills {
     color: white;
