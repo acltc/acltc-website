@@ -19,7 +19,18 @@ h3 {
 p {
   font-size: 1.2em; }
 
-button {
+input {
+  width: 100%;
+  border: 1px solid black;
+  min-height: 34px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  color: black;
+  padding-left: 1em; }
+
+button, input[type=submit] {
   background-color: #eaeaea;
   padding: 10px 25px;
   border-color: none;
@@ -35,6 +46,10 @@ button {
   background-color: #f25252;
   color: white;
   border: none; }
+
+.button-secondary, footer input[type=submit] {
+  background-color: #17a396;
+  color: white; }
 
 .button-simple {
   background: rgba(0, 0, 0, 0.7);
@@ -87,7 +102,7 @@ button {
   margin-top: -100px;
   background-position: center; }
   .marquee .marquee-content {
-    padding: 3.5em;
+    padding: 8em 3.5em;
     text-align: center;
     z-index: 99999;
     position: relative; }
@@ -204,7 +219,7 @@ button {
         top: 0;
         height: 100%;
         overflow: scroll;
-        animation: pulse 1s; }
+        animation: pulse .5s; }
     .skills-wrapper .skills .button-simple {
       margin: 10px 10px; }
 
@@ -254,6 +269,44 @@ button {
 
 .apply-wrapper {
   background-color: #f25252;
-  text-align: center; }
+  text-align: center;
+  line-height: 1.5em;
+  padding-top: 4em;
+  padding-bottom: 3em; }
+  .apply-wrapper .cta-faqs {
+    padding-top: 3em; }
   .apply-wrapper h2, .apply-wrapper h3, .apply-wrapper p, .apply-wrapper a {
     color: white; }
+
+.events-wrapper .event {
+  min-height: 200px;
+  padding: 3.5em 3em;
+  background-color: #ebe7d9;
+  text-align: center; }
+.events-wrapper h2 {
+  text-align: center;
+  padding-bottom: .5em; }
+.events-wrapper strong {
+  font-size: 1.3em;
+  margin-bottom: 1em; }
+.events-wrapper p {
+  padding-top: 1em; }
+
+footer {
+  background-color: #222222;
+  padding: 2em 0;
+  color: white; }
+  footer p {
+    font-size: 1em; }
+  footer input[type=submit] {
+    border: none; }
+  footer .icons {
+    text-align: center; }
+    footer .icons a {
+      padding: 10px 5px 30px; }
+  footer .inquiries {
+    text-align: center;
+    line-height: 2em; }
+    footer .inquiries i {
+      font-size: 2em;
+      color: #f25252; }

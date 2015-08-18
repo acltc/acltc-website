@@ -194,26 +194,86 @@
             <div class="container home-section">
                 <div class="row">
                     <div class="col-md-6">
+                        <div class="col-md-3">
+                        </div>
                         <div class="apply">
                             <h2>Apply Today!</h2>
                             <p>Classes start:</p>
-                            <h3>Sep 15th</h2>
-                            <p>Application deadline (TBD)</p>
-                            <h3>Tuition ($11,500)</h3>
-                            <a href="">View Financing Options </a>
-                            <p>Class times: <br>(M-T 6:30-9pm, Sunday 9-5pm)</p>
+                            <h3><i class="fa fa-calendar"></i> Sep 15th</h3>
+                            <p>Application deadline (TBD)</p><br>
+                            <h3><i class="fa fa-graduation-cap"></i> Tuition ($11,500)</h3>
+                            <a href="">View Financing Options </a><br><br>
+                            <h3><i class="fa fa-clock-o"></i>  Class times:</h3>
+                            <p>(M-T 6:30-9pm, Sunday 9-5pm)</p><br>
+                            <button href="#">Start Application
+                            </button>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="video">
-                            <p> Check out the video below to learn more</p>
-                            
-
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/FR1kkL9ON74?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div class="cta-faqs">
+                            <br>
+                            <p>Check out our <a class="button-simple" href="">
+                                <i class="fa fa-play-circle"></i>
+                                FAQs </a>  &#xa0; page for more information.
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="events-wrapper">
+            <div class="container home-section">
+                <h2> Events </h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="event">
+                            <h2>Mini Courses</h2>
+                            <strong>Aenean lacinia bibendum nulla sed.</strong><br>
+                            <p>Vestibulum id ligula porta felis euismod semper. Donec id elit non mi porta gravida at eget metus. Sed posuere consectetur est at lobortis. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+                            <button class="button-secondary"> I want to Register </button>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="event">
+                            <h2>Meetups</h2>
+                            <strong>Aenean lacinia bibendum nulla sed.</strong><br>
+                            <p>Vestibulum id ligula porta felis euismod semper. Donec id elit non mi porta gravida at eget metus. Sed posuere consectetur est at lobortis. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+                            <button class="button-secondary"> View Upcoming Meetups </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="container footer">
+                <div class="col-md-4">
+                    <p>Sign Up for news about upcomming courses and updates about ACLTC, events in your area, and many resources.</p>
+
+                    <%= form_tag("/search", method: "get") do %>
+                      <%= text_field_tag(:q) %>
+                      <%= text_field_tag(:q) %>
+                      <%= text_field_tag(:q) %>
+                      <%= submit_tag("Sign Up") %>
+                    <% end %>
+                </div>
+                <div class="col-md-4 icons">
+                    <a href=""><img src="<%= asset_path 'facebook.png'%>"></a>
+                    <a href=""><img src="<%= asset_path 'twitter.png'%>"></a>
+                    <a href=""><img src="<%= asset_path 'meetup.png'%>"></a><br><br>
+                    <p>ACLTC Inc, 2015. All rights reserved.</p>
+                </div>
+                <div class="col-md-4 inquiries">
+                    <p>For general Inquiries contact us at: <br>
+                        <i class="fa fa-envelope"></i><br>
+                    info@anyonecanlearntocode.com</p>
+                </div>
+            </div>
+        </footer>
 
 
 
