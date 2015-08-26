@@ -1,13 +1,12 @@
 <footer>
     <div class="container footer">
         <div class="col-md-4">
-            <p>Sign Up for news about upcomming courses and updates about ACLTC, events in your area, and many resources.</p>
+            <p id="subscribe-instructions">Sign Up for news about upcomming courses and updates about ACLTC, events in your area, and many resources.</p>
 
-            <%= form_tag("/search", method: "get") do %>
-              <%= text_field_tag(:q) %>
-              <%= text_field_tag(:q) %>
-              <%= text_field_tag(:q) %>
-              <%= submit_tag("Sign Up") %>
+            <%= form_tag("/subscribers", method: "post", remote: true) do %>
+              <%= text_field_tag :email, nil, placeholder: "Email" %>
+              
+              <%= submit_tag "Sign Up" %>
             <% end %>
         </div>
         <div class="col-md-4 icons">
@@ -17,7 +16,7 @@
         </div>
         <div class="col-md-4 inquiries">
             <p>Have a question? Click here: <br>
-                <a href="/contacts/new"><i class="fa fa-envelope"></i></a><br>
+                <a href="/contacts/new" data-remote="true"><i class="fa fa-envelope"></i></a><br>
                 Or email us at:<br>
             hello@anyonecanlearntocode.com</p>
         </div>
