@@ -29718,6 +29718,9 @@ footer {
     footer .inquiries i {
       font-size: 2em;
       color: #f25252; }
+  footer #subscribe-instructions {
+    min-height: 70px;
+  }
 /* Mixins */
 @keyframes pulse {
   0% {
@@ -30262,7 +30265,7 @@ footer .inquiries i {
   height: 164px;
 }
 
-/* line 24, /Users/jaywengrow/acltc/acltc-website/app/assets/stylesheets/pages.scss */
+/* line 14, /Users/jaywengrow/acltc/acltc-website/app/assets/stylesheets/pages.scss */
 .admin-dashboard {
   list-style: none;
 }
