@@ -1,0 +1,25 @@
+<footer>
+    <div class="container footer">
+        <div class="col-md-4">
+            <p>Sign Up for news about upcomming courses and updates about ACLTC, events in your area, and many resources.</p>
+
+            <%= form_tag("/search", method: "get") do %>
+              <%= text_field_tag(:q) %>
+              <%= text_field_tag(:q) %>
+              <%= text_field_tag(:q) %>
+              <%= submit_tag("Sign Up") %>
+            <% end %>
+        </div>
+        <div class="col-md-4 icons">
+            <a href=""><img src="<%= asset_path 'facebook.png'%>"></a>
+            <a href=""><img src="<%= asset_path 'twitter.png'%>"></a>
+            <a href=""><img src="<%= asset_path 'meetup.png'%>"></a><br><br>
+            <p>ACLTC Inc, 2015. All rights reserved.</p>
+        </div>
+        <div class="col-md-4 inquiries">
+            <p>For general Inquiries contact us at: <br>
+                <i class="fa fa-envelope"></i><br>
+            hello@anyonecanlearntocode.com</p>
+        </div>
+    </div>
+</footer>
