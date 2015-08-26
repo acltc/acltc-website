@@ -13,6 +13,13 @@
                 <h3>Send us a Message</h3>
               </div>
 
+              <% flash.each do |name, message| %>
+                <div class="alert alert-<%= name %> alert-dismissible fade in" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</span><span class="sr-only">Close</span></button>
+                  <%= message %>  
+                </div>
+              <% end %>
+
               <div id="contact-form-result" data-notify-type="success" data-notify-msg="<i class=icon-ok-sign></i> Message Sent Successfully!"></div>
 
               <%= form_for @contact do |f|  %>
@@ -36,23 +43,6 @@
 
               <div class="clear"></div>
 
-              <div class="col_two_third">
-                <%= f.label :subject, class: "template-contactform-name" %>
-                <%= f.text_field :subject, class: "sm-form-control required" %>
-              </div>
-
-              <div class="col_one_third col_last">
-                <%= f.label :phone, class: "template-contactform-name" %>
-                <%= f.text_field :phone, class: "sm-form-control required" %>
-              </div>
-
-              <div class="clear"></div>
-
-              <div class="col_full">
-                <%= f.label :locations, "Which location(s) does this message reference?" %><br />
-                <%= f.collection_check_boxes :location_ids, Location.all, :id, :name, {:item_wrapper_class => 'checkbox_container'} %>
-              </div>
-
               <div class="col_full">
                 <%= f.label :message, class: "template-contactform-message" %>
                 <%= f.text_area :message, class: "required sm-form-control" %>
@@ -63,33 +53,15 @@
               </div>
 
               <div class="col_full">
-                <%= f.submit "Submit Message", class: "button button-3d nomargin" %>
+                <%= f.submit "Submit Message", class: "button button-3d nomargin nopadding" %>
               </div>
 
               <% end %>
 
-              <script type="text/javascript">
-
-              //   $("#template-contactform").validate({
-              //     submitHandler: function(form) {
-              //       $('.form-process').fadeIn();
-              //       $(form).ajaxSubmit({
-              //         target: '#contact-form-result',
-              //         success: function() {
-              //           $('.form-process').fadeOut();
-              //           $('#template-contactform').find('.sm-form-control').val('');
-              //           $('#contact-form-result').attr('data-notify-msg', $('#contact-form-result').html()).html('');
-              //           SEMICOLON.widget.notifications($('#contact-form-result'));
-              //         }
-              //       });
-              //     }
-              //   });
-
-              // </script>
 
 
 
-<div class="clear"></div>
+            <div class="clear"></div>
 
             <!-- Contact Info
             ============================================= -->

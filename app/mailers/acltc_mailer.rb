@@ -1,9 +1,9 @@
 class AcltcMailer < ApplicationMailer
-  default from: "info@anyonecanlearntocode.com"
+  default from: "hello@anyonecanlearntocode.com"
 
   def contact_us_email(contact)
     @contact = contact
-    mail(from: "hello@anyonecanlearntocode.com", to: @contact.email, subject: 'Thanks for Contacting Us!', bcc: "mark@anyonecanlearntocode.com")
+    mail(from: @contact.email, to: "hello@anyonecanlearntocode.com", subject: 'Contact Us')
   end
 
   def application_email(application)

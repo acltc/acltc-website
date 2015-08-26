@@ -13,8 +13,8 @@ class ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
     if @contact.save
       AcltcMailer.contact_us_email(@contact).deliver_now
-      flash[:success] = "Message sent. You should receive a confirmation message shortly."
-      redirect_to root_path
+      flash[:success] = "Thanks for reaching out! We will get back to you shortly."
+      redirect_to new_contact_path
     else
       render :new
     end
