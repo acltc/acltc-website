@@ -17,3 +17,4 @@
 
 #environmental variables
 .env
+.DS_Store
