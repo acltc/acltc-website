@@ -1,4 +1,4 @@
-/* Mixins */
+<!-- /* Mixins */
 
 @mixin rounded($radius: 5px) {
   -webkit-border-radius: $radius;
@@ -63,6 +63,17 @@ input {
 
 
 button, input[type=submit] {
+  background-color: $color-neutral;
+  padding: 10px 25px;
+  border-color: none;
+  color: $color-primary;
+  font-size: 1.2em;
+  border: 1px solid darken($color-neutral, 15%);
+  @include rounded;
+  margin: 10px 0;
+}
+
+.link-button {
   background-color: $color-neutral;
   padding: 10px 25px;
   border-color: none;
@@ -505,3 +516,4 @@ footer{
 
 
 
+ -->
