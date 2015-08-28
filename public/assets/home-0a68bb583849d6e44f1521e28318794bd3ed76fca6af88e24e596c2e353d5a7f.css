@@ -1,4 +1,3 @@
-/* Mixins */
 
 @keyframes pulse {
   0% {
@@ -43,10 +42,61 @@ button, input[type=submit] {
   border-radius: 5px;
   margin: 10px 0; }
 
+#application-button {
+  background-color: #eaeaea;
+  padding: 10px 25px;
+  border-color: none;
+  color: #17a396;
+  font-size: 1.2em;
+  border: 1px solid #c4c4c4;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+#application-button:hover {
+  text-decoration: none;
+}
+
+#meetups-button:hover {
+  color: white;
+}
+
+#cohort-schedule {
+  margin: auto;
+}
+
+#cohort-schedule td{
+  padding: 0 7px;
+}
+
+.pushpin {
+  color: #17a396;
+}
+
+.pushpin:hover {
+  color: #1dd0bf;
+}
+
 .button-primary {
   background-color: #f25252;
   color: white;
-  border: none; }
+  border: none; 
+}
+
+#top-application-button {
+  padding: 10px 25px;
+  border-color: none;
+  font-size: 1.2em;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  margin: 10px 0;
+  background-color: #f25252;
+  color: white;
+  border: none; 
+}
 
 .button-secondary, footer input[type=submit] {
   background-color: #17a396;
@@ -174,7 +224,7 @@ button, input[type=submit] {
     width: 50%;
     float: left;
     min-height: 360px;
-    padding: 50px 40px 50px 60px; }
+    padding: 38px 40px 38px 60px; }
     @media (max-width: 992px) {
       .our-program .phase .phase-block {
         min-height: 450px; }
