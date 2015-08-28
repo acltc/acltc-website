@@ -401,3 +401,28 @@ footer {
   footer #subscribe-instructions {
     min-height: 70px;
   }
+
+  .video-wrap {
+    z-index: 1;
+    /*position: absolute;*/
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+  }
+
+  .video-wrap video {
+    position: relative;
+  }
+
+  .video-overlay {
+    z-index: 5;
+    /*position: absolute;*/
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background: url(http://canvashtml-cdn.semicolonweb.com/images/grid.png);
+  }
