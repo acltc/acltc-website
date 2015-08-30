@@ -42,12 +42,16 @@ button, input[type=submit] {
   border-radius: 5px;
   margin: 10px 0; }
 
+#application-button-wrapper {
+  margin-top: 50px;
+}
+
 #application-button {
   background-color: #eaeaea;
   padding: 10px 25px;
   border-color: none;
   color: #17a396;
-  font-size: 1.2em;
+  font-size: 1.8em;
   border: 1px solid #c4c4c4;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -306,6 +310,49 @@ button, input[type=submit] {
     .skills-wrapper .skills .button-simple {
       margin: 10px 10px; }
 
+.showcase {
+  text-align: center;
+  /*background-image: url("/assets/showcase-536771c28c4989f2dd3c65ad3237d6cc2fe822376a76034ca0a74402d332ca6d.jpg");*/
+  /*min-height: 700px;*/
+  background-repeat: no-repeat;
+  background-size: cover;
+  /*margin-top: -100px;*/
+  background-position: center; 
+}
+
+.showcase {
+  min-height: 380px;
+}
+
+.showcase-content {
+  text-align: center;
+  margin-top: 260px;
+}
+
+.showcase-button {
+  padding: 10px 25px;
+  border-color: none;
+  font-size: 1.2em;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #f25252;
+  color: white;
+  border: none; 
+}
+
+.showcase-button:hover {
+  color: white;
+}
+
+#capstone-button {
+  background-color: #17A396;
+}
+
+.showcase h3 {
+  color: #222;
+}
+
 .homepage-slider .carousel-inner {
   min-height: 500px;
   text-align: center; }
@@ -351,17 +398,17 @@ button, input[type=submit] {
     .locations-wrapper .location h3 {
       padding-bottom: 1em; }
 
-.apply-wrapper {
+.summary-info-wrapper {
   background-color: #f25252;
   text-align: center;
   line-height: 1.5em;
   padding-top: 4em;
   padding-bottom: 3em; }
-  .apply-wrapper .apply {
+  .summary-info-wrapper .summary-info {
     padding-bottom: 30px; }
-  .apply-wrapper .cta-faqs {
+  .summary-info-wrapper .cta-faqs {
     padding-top: 3em; }
-  .apply-wrapper h2, .apply-wrapper h3, .apply-wrapper p, .apply-wrapper a {
+  .summary-info-wrapper h2, .summary-info-wrapper h3, .summary-info-wrapper p, .summary-info-wrapper a {
     color: white; }
 
 .events-wrapper .event {
