@@ -16,4 +16,5 @@
 //= require theme/functions
 //= require theme/jquery.gmap
 //= require jquery_ujs
+//= require parallax
 //= require_tree .
