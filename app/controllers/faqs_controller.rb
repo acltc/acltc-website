@@ -1,9 +1,8 @@
 class FaqsController < ApplicationController
   before_filter :authenticate_admin!, only: [:new, :create, :update, :delete]
 
-
   def index
-    @faqs = Faq.all
+    @faqs = Faq.all.order(:priority)
   end
 
   def new
@@ -40,24 +39,10 @@ class FaqsController < ApplicationController
     redirect_to faqs_path
   end
 
-
-
-
-
-
   private
 
   def faq_params
-    params.require(:faq).permit(:question, :answer)
+    params.require(:faq).permit(:question, :answer, :priority)
   end
-
-
-
-
-
-
-
-
-
 
 end
