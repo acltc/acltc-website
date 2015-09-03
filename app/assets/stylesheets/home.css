@@ -229,6 +229,8 @@ button, input[type=submit] {
     position: relative; }
     .skills-wrapper .skills p {
       color: white; }
+    .skills-wrapper .skills p.text-cta {
+      line-height: 2.2em; }
     .skills-wrapper .skills .skill-description {
       background-color: #f25252;
       padding: 1em;
