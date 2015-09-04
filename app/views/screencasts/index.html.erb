@@ -1,0 +1,64 @@
+<%= render "/layouts/page_title", page_title: "Ruby Screencasts", page_subtitle: "You don't need get a computer science degree to learn how to code. These fun Ruby tutorial screencasts teach the Ruby programming language from the ground up, in plain English. In fact, this tutorial assumes you've never seen a programming language in your life, or don't even know what a programming language is. One new episode is scheduled to be published each week. When complete, this screencast series will enable you to write your own Ruby programs proficiently and give you a solid foundation in computer programming so that you can explore more advanced concepts on your own." %>
+<section id="content">
+  <div class="content-wrap">
+    <div class="container clearfix">
+
+      <!-- Portfolio Items
+      ============================================= -->
+      <div id="portfolio" class="portfolio-4 clearfix">
+        <% @screencasts.each do |screencast| %>
+
+          <article class="portfolio-item pf-uielements pf-icons">
+              <div class="portfolio-image">
+                      <%= image_tag "screencasts/screencast-#{screencast.priority}.png" %>
+                  <div class="portfolio-overlay">
+                      <a href="http://www.youtube.com/watch?v=<%= screencast.youtube_id %>" class="center-icon" data-lightbox="iframe"><i class="icon-line-play"></i></a>
+                  </div>
+              </div>
+              <div class="portfolio-desc">
+                  <h3>#<%= screencast.priority%>: <%= screencast.name %></h3>
+                  <span></span>
+              </div>
+          </article>
+        <% end %>
+
+      </div><!-- #portfolio end -->
+
+      <!-- Portfolio Script
+      ============================================= -->
+      <script type="text/javascript">
+
+          jQuery(window).load(function(){
+
+              var $container = $('#portfolio');
+
+              $container.isotope({ transitionDuration: '0.65s' });
+
+              $('#portfolio-filter a').click(function(){
+                  $('#portfolio-filter li').removeClass('activeFilter');
+                  $(this).parent('li').addClass('activeFilter');
+                  var selector = $(this).attr('data-filter');
+                  $container.isotope({ filter: selector });
+                  return false;
+              });
+
+              $('#portfolio-shuffle').click(function(){
+                  $container.isotope('updateSortData').isotope({
+                      sortBy: 'random'
+                  });
+              });
+
+              $(window).resize(function() {
+                  $container.isotope('layout');
+              });
+
+          });
+
+      </script><!-- Portfolio Script End -->
+
+    </div>
+
+
+
+  </div>
+</section>

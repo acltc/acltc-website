@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150901030930) do
+ActiveRecord::Schema.define(version: 20150904170457) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -165,6 +165,16 @@ ActiveRecord::Schema.define(version: 20150901030930) do
     t.text     "description"
     t.text     "skills_learned"
     t.text     "prerequisites"
+  end
+
+  create_table "screencasts", force: :cascade do |t|
+    t.string   "cover_image"
+    t.string   "youtube_id"
+    t.string   "name"
+    t.text     "description"
+    t.integer  "priority"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "subscribers", force: :cascade do |t|
