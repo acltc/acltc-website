@@ -15,7 +15,7 @@ Faq.create([
     {question: "Do you offer any financial assistance?", answer: "We have partnered with Pave, a lending institution that offers loans for tuition. One must first be accepted into ACLTC before applying for a loan through Pave. All of the other details can be found <a href='http://hello.pave.com/anyone' target='_blank'>here</a>.", priority: 6},
     {question: "How does payment work?", answer: "Assuming one does not secure a loan through Pave, payment is made in three phases. $1,000 must be put down as a non-refundable deposit in order to secure your spot in the course. Of the remainder, 50% is due by the first day of Phase 1, and the other 50% is due by the fifth week of Phase 2.", priority: 7},
     {question: "Can I set up a payment plan?", answer: "Other than getting a loan through Pave, we do not currently offer payment plans, unfortunately.", priority: 8},
-    {question: "If one voluntarily withdraws from the course within 30 days from the beginning of Phase 1, the tuition is refunded minus the $1,000 deposit.", answer: "", priority: 9},
+    {question: "Do you have a refund policy?", answer: "If one voluntarily withdraws from the course within 30 days from the beginning of Phase 1, the tuition is refunded minus the $1,000 deposit.", priority: 9},
     {question: "What are the details of the application process?", answer: "The first step is to fill out the form <a href='http://goo.gl/forms/zrdY395j8w' target='_blank'>here</a>. Next, an Admissions Officer will reach out to schedule an interview over Skype. At the end of the interview, you will be given a brief programming exercise for homework (which includes watching some tutorial videos). Once you submit the homework, the Admissions Committee will review your entire application and inform you within one week whether you’ve been accepted to ACLTC. If you have, you will be given a student contract to review and sign. Once you’ve signed it, you can officially reserve your spot in the course by submitting a non-refundable deposit of $1,000 which goes towards your tuition.", priority: 10},
     {question: "What percentage of students get accepted to the program?", answer: "Of those that complete the entire interview process (including submitting the programming homework), approximately 70% are accepted.", priority: 11},
     {question: "What topics are covered during Phase 1 (prework)?", answer: "During the prework phase you will be working on the fundamentals of Ruby and programming in general. We also introduce you to Object Oriented Programming, and sneak in a tiny amount of HTML and CSS as well.", priority: 20},
@@ -39,3 +39,28 @@ Faq.create([
     {question: "I have some questions not listed here. How can I learn more?", answer: "Please reach out to us at hello@anyonecanlearntocode.com with any other questions you may have. To speak to someone live, we recommend that you begin the application process, and our Admissions Officer can answer your questions at length during the interview.", priority: 1000}
 
 ])
+
+Screencast.destroy_all
+Screencast.create([
+    {priority: 1, name: "Intro To Ruby  ", youtube_id: "oUC0hNTZrzM"},
+    {priority: 2, name: "Variables", youtube_id: "1jwwkolNEcs"},
+    {priority: 3, name: "Objects and Classes", youtube_id: "sm5RI7baE6Y"},
+    {priority: 4, name: "Methods", youtube_id: "vwD-xxyFrp8"},
+    {priority: 5, name: "The Terminal", youtube_id: "ceXWZUii_bg"},
+    {priority: 6, name: "Your First Ruby Program", youtube_id: "rNiTr8HMNLY"},
+    {priority: 7, name: "Conditionals", youtube_id: "V01p6Yotg7c"},
+    {priority: 8, name: "Loops", youtube_id: "LAxot1JTLZ4"},
+    {priority: 9, name: "Arrays", youtube_id: "vaeXc2knEyU"},
+    {priority: 10, name: "More About Arrays", youtube_id: "QYlDARCm4rw"},
+    {priority: 11, name: "The Each Method", youtube_id: "zCzizprf538"},
+    {priority: 12, name: "Experimentation", youtube_id: "ce67-VT9ATI"},
+    {priority: 13, name: "Hashes", youtube_id: "p_i4W1aUi74"},
+    {priority: 14, name: "Creating Classes", youtube_id: "bSBC_A1zokc"},
+    {priority: 15, name: "Creating Methods", youtube_id: "alMLJIiUvBA"},
+    {priority: 16, name: "Return Values", youtube_id: "-XI1ASw77ak"},
+    {priority: 17, name: "Arguments", youtube_id: "PnFdTMzZHRE"},
+    {priority: 18, name: "Instance Variables", youtube_id: "ypRrpgP6iLI"},
+    {priority: 19, name: "Constructors", youtube_id: "H8W6KdFkPFI"},
+    {priority: 20, name: "Getters", youtube_id: "TKv99qYgONs"}
+])
+puts "Done!"
