@@ -18,6 +18,10 @@ class BlogPost < ActiveRecord::Base
     updated_at.strftime("%d %B %y")
   end
 
+  def posted_date_human
+    posted_date.strftime("%d %B %y")
+  end
+
   def next
     self.class.where("id > '%s'", id).where(published?: true).first
   end

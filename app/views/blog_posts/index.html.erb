@@ -24,7 +24,7 @@
                                   <h2><%= link_to blog_post.title, blog_post_path(blog_post) %><span class="publish-warning"><%= " **Unpublished**" if current_admin && !blog_post.published? %></span></h2>
                               </div>
                               <ul class="entry-meta clearfix">
-                                  <li><i class="icon-calendar3"></i><%= blog_post.human_time %></li>
+                                  <li><i class="icon-calendar3"></i><%= blog_post.posted_date_human %></li>
                                   <li><a href="#"><i class="icon-user"></i><%= "#{blog_post.admin.full_name} - #{blog_post.admin.title}" %></a></li>
                                   <li><i class="icon-tags"></i><%= blog_post.blog_categories.map { |category| link_to category.name, "/blog_posts?category=#{category.name}" }.join(', ').html_safe %></li>
                               </ul>
