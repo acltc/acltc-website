@@ -97,7 +97,7 @@ class BlogPostsController < ApplicationController
   private
 
   def blog_post_params
-    params.require(:blog_post).permit(:title, :content, blog_pics: [], blog_category_ids: [])
+    params.require(:blog_post).permit(:title, :posted_date, :content, blog_pics: [], blog_category_ids: [])
   end
 
   

@@ -26,6 +26,10 @@
       <%= f.text_area :content, class: "form-control write-html", placeholder: " **** Write HTML here. ****" %>
       <p class="help-block">This will compile to HTML.</p>
     </div>
+    <div class="form-group">
+      <%= f.label :posted_date, "Date that will appear on blog post" %></br>
+      <%= f.date_select :posted_date, order: [:month, :day, :year] %>
+    </div>
     <%= f.submit submit_button, class: "btn btn-primary btn-lg" %>
     <% end %>
   </div>
