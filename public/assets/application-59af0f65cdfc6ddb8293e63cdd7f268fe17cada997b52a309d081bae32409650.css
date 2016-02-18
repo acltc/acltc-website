@@ -29765,7 +29765,7 @@ button, input[type=submit] {
   .locations-wrapper h2 {
     padding-bottom: 1em; }
   .locations-wrapper .location {
-    min-height: 400px;
+    min-height: 500px;
     background-color: white;
     padding: 5em 4em 4em;
     position: relative;
