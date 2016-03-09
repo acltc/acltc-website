@@ -1,0 +1,17 @@
+// Diversity Page
+
+#header.transparent-header {
+  background-color: #ebe7d9;
+}
+
+.diversity-page-wrapper .marquee {
+  min-height: 500px;
+  height: 500px;
+}
+
+.diversity-page-wrapper .marquee .col-md-12:before {
+  bottom: none;
+  top: 0;
+  height: 380px;
+  min-height: 380px!important;
+}
