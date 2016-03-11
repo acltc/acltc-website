@@ -6,25 +6,25 @@
       <div class="col-md-2"></div>
       <div class="col-md-8">
       <%= form_for @application do |f| %>
-        <div class="form-group">
-          <%= f.label :first_name %><br />
-          <%= f.text_field :first_name, autofocus: true, class: "form-control" %>
+        <div class="form-group required">
+          <%= f.label :legal_name %><br />
+          <%= f.text_field :legal_name, autofocus: true, class: "form-control" %>
         </div>
         <div class="form-group">
-          <%= f.label :last_name %><br />
-          <%= f.text_field :last_name, class: "form-control" %>
-        </div>
-        <div class="form-group">
-          <%= f.label :email, "Your primary email address" %><br />
+          <%= f.label :email, "Email Address" %><br />
           <%= f.text_field :email, class: "form-control" %>
         </div>
         <div class="form-group">
-          <%= f.label :phone, "Your primary phone number" %><br />
+          <%= f.label :phone, "Phone Number" %><br />
           <%= f.text_field :phone, class: "form-control" %>
         </div>
         <div class="form-group">
-          <%= f.label :locations, "Select which city or cities you want to take course" %><br />
-          <%= f.collection_check_boxes :location_ids, Location.all, :id, :name %>
+          <%= f.label :address, "Street Address" %><br />
+          <%= f.text_field :address, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :emergency_contact, "Emergency Contact Name and Phone Number" %><br />
+          <%= f.text_field :emergency_contact, class: "form-control" %>
         </div>
         <div class="form-group">
           <%= f.label :learn_about_acltc, "How did you hear about Anyone Can Learn To Code?" %><br />
@@ -33,6 +33,19 @@
         <div class="form-group">
           <%= f.label :current_occupation, "Tell us more about what you're currently doing (job or school, etc.)" %><br />
           <%= f.text_area :current_occupation, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :locations, "Select which city or cities you want to take course" %><br />
+          <%= f.collection_check_boxes :location_ids, Location.all, :id, :name %>
+        </div>
+        <div class="form-group">
+          <label>Are you a Diversity in Tech Scholarship applicant?</label><br />
+          <div class="radio radio-margin">
+            <%= radio_button_tag(:scholarship_applicant, "Yes") %>
+            <%= label_tag(:scholarship_applicant, "Yes") %><br />
+            <%= radio_button_tag(:scholarship_applicant, "No") %>
+            <%= label_tag(:scholarship_applicant, "No") %>
+          </div>
         </div>
         <div class="form-group">
           <%= f.label :primary_goals, "What are your primary goals in learning how to code?" %><br />
