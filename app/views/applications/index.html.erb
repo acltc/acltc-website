@@ -14,7 +14,7 @@
           <tr>
             <td><%= link_to application.full_name, application_path(application) %></td>
             <td><%= application.applications_human_time %></td> 
-            <td><%= application.locations.pluck(:name).join(", ") %></td>
+            <td><%= application.location %></td>
           </tr>
           <% end %>
         </table>

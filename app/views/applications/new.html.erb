@@ -20,8 +20,12 @@
           </div>
         <% end %>
         <div class="form-group">
-          <%= f.label :legal_name, class: "required" %><br />
-          <%= f.text_field :legal_name, autofocus: true, class: "form-control" %>
+          <%= f.label :first_name, class: "required" %><br />
+          <%= f.text_field :first_name, autofocus: true, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :last_name, class: "required" %><br />
+          <%= f.text_field :last_name, autofocus: true, class: "form-control" %>
         </div>
         <div class="form-group">
           <%= f.label :email, "Email Address", class: "required" %><br />
@@ -50,7 +54,12 @@
         <div class="form-group">
           <label class="required">Which location are you applying for?</label>
           <div class="radio">
-            <%= f.collection_radio_buttons :location_ids, Location.all, :id, :name %><br />
+            <%= f.radio_button :location, "Chicago" %>
+            <%= f.label :location, "Chicago", :value => "Chicago" %><br />
+            <%= f.radio_button :location, "San Francisco" %>
+            <%= f.label :location, "San Francisco", :value => "San Francisco" %><br />
+            <%= f.radio_button :location, "New York City" %>
+            <%= f.label :location, "New York City", :value => "New York City" %>
           </div>
         </div>
         <div class="form-group">

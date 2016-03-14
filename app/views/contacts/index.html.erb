@@ -16,7 +16,7 @@
             <td><%= link_to contact.full_name, contact_path(contact) %></td>
             <td><%= contact.contacts_human_time %></td> 
             <td><%= contact.subject %></td>
-            <td><%= contact.locations.pluck(:name).join(", ") %></td>
+            <td><%= contact.location %></td>
           </tr>
           <% end %>
         </table>
