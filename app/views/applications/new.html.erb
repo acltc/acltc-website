@@ -1,4 +1,4 @@
-<%= render "/layouts/page_title", page_title: "Apply", page_subtitle: "Fill out the form below to apply for admission" %>
+<%= render "/layouts/page_title", page_title: "Apply", page_subtitle: "Please fill out the form below to apply for admission. Fields with an asterisk are required." %>
 
 <section id="content">
   <div class="content-wrap">
@@ -6,73 +6,88 @@
       <div class="col-md-2"></div>
       <div class="col-md-8">
       <%= form_for @application do |f| %>
-        <div class="form-group required">
-          <%= f.label :legal_name %><br />
+        <% if @application.errors.any? %>
+          <div class="alert alert-dismissible alert-warning center-warning">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <h2>Oops! You forgot to fill out
+              <%= pluralize(@application.errors.count, "field") %>:
+            </h2>
+            <ul>
+              <% @application.errors.full_messages.each do |msg| %>
+                <h4><%= msg %></h4>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <div class="form-group">
+          <%= f.label :legal_name, class: "required" %><br />
           <%= f.text_field :legal_name, autofocus: true, class: "form-control" %>
         </div>
         <div class="form-group">
-          <%= f.label :email, "Email Address" %><br />
+          <%= f.label :email, "Email Address", class: "required" %><br />
           <%= f.text_field :email, class: "form-control" %>
         </div>
         <div class="form-group">
-          <%= f.label :phone, "Phone Number" %><br />
+          <%= f.label :phone, "Phone Number", class: "required" %><br />
           <%= f.text_field :phone, class: "form-control" %>
         </div>
         <div class="form-group">
-          <%= f.label :address, "Street Address" %><br />
+          <%= f.label :address, "Street Address", class: "required" %><br />
           <%= f.text_field :address, class: "form-control" %>
         </div>
         <div class="form-group">
-          <%= f.label :emergency_contact, "Emergency Contact Name and Phone Number" %><br />
+          <%= f.label :emergency_contact, "Emergency Contact Name and Phone Number", class: "required" %><br />
           <%= f.text_field :emergency_contact, class: "form-control" %>
         </div>
         <div class="form-group">
-          <%= f.label :learn_about_acltc, "How did you hear about Anyone Can Learn To Code?" %><br />
+          <%= f.label :learn_about_acltc, "How did you hear about Anyone Can Learn To Code?", class: "required" %><br />
           <%= f.text_area :learn_about_acltc, class: "form-control" %>
         </div>
         <div class="form-group">
-          <%= f.label :current_occupation, "Tell us more about what you're currently doing (job or school, etc.)" %><br />
+          <%= f.label :current_occupation, "Tell us more about what you're currently doing (job or school, etc.)", class: "required" %><br />
           <%= f.text_area :current_occupation, class: "form-control" %>
         </div>
         <div class="form-group">
-          <%= f.label :locations, "Select which city or cities you want to take course" %><br />
-          <%= f.collection_check_boxes :location_ids, Location.all, :id, :name %>
-        </div>
-        <div class="form-group">
-          <label>Are you a Diversity in Tech Scholarship applicant?</label><br />
-          <div class="radio radio-margin">
-            <%= radio_button_tag(:scholarship_applicant, "Yes") %>
-            <%= label_tag(:scholarship_applicant, "Yes") %><br />
-            <%= radio_button_tag(:scholarship_applicant, "No") %>
-            <%= label_tag(:scholarship_applicant, "No") %>
+          <label class="required">Which location are you applying for?</label>
+          <div class="radio">
+            <%= f.collection_radio_buttons :location_ids, Location.all, :id, :name %><br />
           </div>
         </div>
         <div class="form-group">
-          <%= f.label :primary_goals, "What are your primary goals in learning how to code?" %><br />
+          <label>Are you a Diversity in Tech Scholarship applicant?</label><br />
+          <div class="radio">
+            <%= f.radio_button :scholarship_applicant, true %>
+            <%= f.label :scholarship_applicant, "Yes", :value => "true" %><br />
+            <%= f.radio_button :scholarship_applicant, false %>
+            <%= f.label :scholarship_applicant, "No", :value => "false" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :primary_goals, "What are your primary goals in learning how to code?", class: "required" %><br />
           <%= f.text_area :primary_goals, class: "form-control" %>
         </div>
         <div class="form-group">
-          <%= f.label :programming_experience, "Do you have any previous programming experience? Working on online tutorials certainly counts!" %><br />
+          <%= f.label :programming_experience, "Do you have previous programming experience? Working on online tutorials counts!", class: "required" %><br />
           <%= f.text_area :programming_experience, class: "form-control" %>
         </div>
         <div class="form-group">
-          <%= f.label :preferred_work_location, "If you are seeking a job in web development, in what city do you want to work?" %><br />
-          <%= f.text_area :preferred_work_location, class: "form-control" %>
+          <%= f.label :preferred_work_location, "If you are seeking a job in web development, in what city do you want to work?", class: "required" %><br />
+          <%= f.text_field :preferred_work_location, class: "form-control" %>
         </div>
         <div class="form-group">
-          <%= f.label :capstone_idea, "Is there a specific project you would like to work on for your Capstone project?" %><br />
+          <%= f.label :capstone_idea, "Is there a specific project you would like to work on for your Capstone project?", class: "required" %><br />
           <%= f.text_area :capstone_idea, class: "form-control" %>
         </div>
         <div class="form-group">
-          <%= f.label :work_concurrently, "Will you keep your job during the bootcamp? If so, how do you realistically plan to do both?" %><br />
+          <%= f.label :work_concurrently, "Will you keep your job during the bootcamp? If so, how do you plan to do both?", class: "required" %><br />
           <%= f.text_area :work_concurrently, class: "form-control" %>
         </div>
         <div class="form-group">
-          <%= f.label :tinker_example, "Programming requires complex problem solving and logical analysis, and the ability to tinker around with something until it works. Give examples of when you’ve had these experiences." %><br />
+          <%= f.label :tinker_example, "Programming requires complex problem solving, logical analysis, and the ability to tinker with something until it works. Give examples of these experiences.", class: "required" %><br />
           <%= f.text_area :tinker_example, class: "form-control" %>
         </div>
         <div class="form-group">
-          <%= f.label :why_better, "Why should we accept you over other well-qualified candidates?" %><br />
+          <%= f.label :why_better, "Tell us why you should be accepted into the bootcamp over other applicants.", class: "required" %><br />
           <%= f.text_area :why_better, class: "form-control" %>
         </div>
         <div class="form-group">

@@ -7,6 +7,25 @@ textarea.form-control {
   height: 250px;
 }
 
-#scholarship_applicant_No, #scholarship_applicant_Yes {
+#application_scholarship_applicant_true, #application_scholarship_applicant_false {
+  margin-left: -5px;
+}
+
+.center-warning {
+  text-align: center;
+}
+
+label.required:after {
+  content: "*";
+  color: red;
+  font-size: 25px;
+  vertical-align: middle;
+}
+
+.radio label {
+  margin-right: 10px; 
+}
+
+#application_location_ids_1, #application_location_ids_2, #application_location_ids_3 {
   margin-left: -5px;
 }
