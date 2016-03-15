@@ -1,62 +1,58 @@
-<h1>Hello <%= @application.full_name %>!</h1>
-<h2>
-  Thank you for submitting your application.
-</h2>
-<table>
+<table style="max-width: 800px;">
+  <th><H2>Hello, Glenn. We received an application for <%= @application.location %>! </h2></th>
   <tr>
-    <td>First Name:</td>
-    <td><%= @application.first_name %></td>
+    <td><strong>First Name:</strong> <%= @application.first_name %></td>
   </tr>
   <tr>
-    <td>Last Name:</td>
-    <td><%= @application.last_name %></td>
+    <td><strong>Last Name:</strong> <%= @application.last_name %></td>
   </tr>
   <tr>
-    <td>Email:</td>
-    <td><%= @application.email %></td>
+    <td><strong>Email:</strong> <%= @application.email %></td>
   </tr>
   <tr>
-    <td>Phone:</td>
-    <td><%= @application.phone %></td>
+    <td><strong>Phone:</strong> <%= @application.phone %></td>
   </tr>
   <tr>
-    <td>Location(s):</td>
-    <td><%= @application.location %></td>
+    <td><strong>Location Applying To:</strong> <%= @application.location %></td>
   </tr>
   <tr>
-    <td>How did you learn about ACLTC?:</td>
-    <td><%= @application.learn_about_acltc %></td>
+    <td><h3>How they learned about ACLTC:</h3> <%= @application.learn_about_acltc %></td>
   </tr>
   <tr>
-    <td>Primary Goals?:</td>
-    <td><%= @application.primary_goals %></td>
+    <td><h3>What they are currently doing (job, school, etc.):</h3> <%= @application.current_occupation %></td>
   </tr>
   <tr>
-    <td>Previous Coding Experience?:</td>
-    <td><%= @application.programming_experience %></td>
+    <td><h3>Applying for Scholarship?</h3> <%= @application.scholarship_applicant %></td>
   </tr>
   <tr>
-    <td>Which city are you looking to work?:</td>
-    <td><%= @application.preferred_work_location %></td>
+    <td><h3>How they learned about the scholarship:</h3> <%= @application.learn_about_scholarship %></td>
   </tr>
   <tr>
-    <td>Capstone Idea?:</td>
-    <td><%= @application.capstone_idea %></td>
+    <td><h3>Scholarship category:</h3> Woman: <%= @application.woman %> <br /> Minority: <%= @application.minority %> </td>
   </tr>
   <tr>
-    <td>Will/How will you keep your job during the bootcamp?:</td>
-    <td><%= @application.work_concurrently %></td>
+    <td><h3>Why they deserve the scholarship:</h3> <%= @application.why_scholarship %></td>
   </tr>
   <tr>
-    <td>Analytical/Tinkering Examples?:</td>
-    <td><%= @application.tinker_example %></td>
+    <td><h3>Primary Goals:</h3> <%= @application.primary_goals %></td>
   </tr>
   <tr>
-    <td>What sets you apart?:</td>
-    <td><%= @application.why_better %></td>
+    <td><h3>Previous Coding Experience:</h3> <%= @application.programming_experience %></td>
+  </tr>
+  <tr>
+    <td><h3>City where they will seek employment:</h3> <%= @application.preferred_work_location %></td>
+  </tr>
+  <tr>
+    <td><h3>Capstone Idea:</h3> <%= @application.capstone_idea %></td>
+  </tr>
+  <tr>
+    <td><h3>How they will manage work and the bootcamp:</h3> <%= @application.work_concurrently %></td>
+  </tr>
+  <tr>
+    <td><h3>Analytical/Tinkering Examples:</h3><%= @application.tinker_example %></td>
+  </tr>
+  <tr>
+    <td><h3>What sets them apart:</h3><%= @application.why_better %></td>
   </tr>
 
 </table>
-
-<p>Sincerely,</p>
-<p>ACLTC Team</p>

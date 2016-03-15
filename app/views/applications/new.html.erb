@@ -65,10 +65,38 @@
         <div class="form-group">
           <label>Are you a Diversity in Tech Scholarship applicant?</label><br />
           <div class="radio">
-            <%= f.radio_button :scholarship_applicant, true %>
+            <%= f.radio_button :scholarship_applicant, true, { :class => "diversity_applicant diversity_applicant_yes" } %>
             <%= f.label :scholarship_applicant, "Yes", :value => "true" %><br />
-            <%= f.radio_button :scholarship_applicant, false %>
+            <%= f.radio_button :scholarship_applicant, false, { :class => "diversity_applicant diversity_applicant_no" } %>
             <%= f.label :scholarship_applicant, "No", :value => "false" %>
+          </div>
+        </div>
+        <div id="scholarship-hidden" style="display:none;">
+          <div class="form-group">
+            <%= f.label :learn_about_scholarship, "How did you hear about the Diversity in Tech Scholarship?" %><br />
+            <%= f.text_area :learn_about_scholarship, class: "form-control" %>
+          </div>
+          <div class="form-group">
+          <label>Do you identify as a woman or as gender-diverse (trans*, gender-queer, gender non-conforming, etc.)</label><br />
+            <div class="radio">
+              <%= f.radio_button :woman, true %>
+              <%= f.label :woman, "Yes", :value => "true" %><br />
+              <%= f.radio_button :woman, false %>
+              <%= f.label :woman, "No", :value => "false" %>
+            </div>
+          </div>
+          <div class="form-group">
+          <label>Do you belong to a racial group that is underrepresented in tech (Black/African American, Chicano/Latino, Native American/Native Hawaiian, Pacific Islander)</label><br />
+            <div class="radio">
+              <%= f.radio_button :minority, true %>
+              <%= f.label :minority, "Yes", :value => "true" %><br />
+              <%= f.radio_button :minority, false %>
+              <%= f.label :minority, "No", :value => "false" %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.label :why_scholarship, "Why you should be awarded a scholarship over other qualified applicants?" %><br />
+            <%= f.text_area :why_scholarship, class: "form-control" %>
           </div>
         </div>
         <div class="form-group">
@@ -108,3 +136,8 @@
     </div>
   </div>
 </section>
+<script type="text/javascript">
+  $(".diversity_applicant").on("change", function(){
+  $("#scholarship-hidden").toggle($(this).hasClass("diversity_applicant_yes"));
+});
+</script>
