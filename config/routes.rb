@@ -17,6 +17,9 @@ Rails.application.routes.draw do
   resources :subscribers, only: [:create]
   resources :capstones, only: [:index]
   resources :screencasts, only: [:index]
+
+  get "/pages/:page" => "pages#show", :to => redirect('/thank_you')
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

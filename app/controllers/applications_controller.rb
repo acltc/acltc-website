@@ -18,8 +18,7 @@ class ApplicationsController < ApplicationController
     @application = Application.new(application_params)
     if @application.save
       AcltcMailer.application_email(@application).deliver_now
-      flash[:success] = "Thank you for submitting an application! We will contact you regarding next steps."
-      redirect_to root_path
+      redirect_to "/pages/thank_you.com"
     else
       render :new
     end
