@@ -100,9 +100,9 @@ button, input[type=submit] {
 }
 
 #top-application-button {
-  padding: 10px 25px;
+  padding: 15px 40px;
   border-color: none;
-  font-size: 1.2em;
+  font-size: 1.3em;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
@@ -155,7 +155,7 @@ button, input[type=submit] {
     padding: 1em 2em 0 0; }
   .navigation .nav {
     float: right;
-    padding: 1em .5em; }
+    padding: 1.2em .5em; }
   .navigation .navbar-toggle {
     margin-top: 20px; }
   @media (max-width: 768px) {
@@ -170,6 +170,13 @@ button, input[type=submit] {
       background-color: #1ab9ab; }
     .navigation .navbar-toggle .icon-bar {
       background-color: white; }
+  .navbar-default .navbar-nav>li>a {
+    color: black;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
 
 .marquee {
   background-image: url("/assets/marquee-bg-3571563b94b08edc9e092ba3b33733dc4b72bcf018abe2ac66d12f656cfaceec.jpg");
