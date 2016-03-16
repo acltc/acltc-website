@@ -33,15 +33,15 @@
         </div>
         <div class="form-group">
           <%= f.label :phone, "Phone Number", class: "required" %><br />
-          <%= f.text_field :phone, class: "form-control" %>
+          <%= f.text_field :phone, class: "form-control", placeholder: "xxx-xxx-xxxx" %>
         </div>
         <div class="form-group">
-          <%= f.label :address, "Street Address", class: "required" %><br />
-          <%= f.text_field :address, class: "form-control" %>
+          <%= f.label :address, "Address", class: "required" %><br />
+          <%= f.text_field :address, class: "form-control", placeholder:"Street, City, State, Zip" %>
         </div>
         <div class="form-group">
           <%= f.label :emergency_contact, "Emergency Contact Name and Phone Number", class: "required" %><br />
-          <%= f.text_field :emergency_contact, class: "form-control" %>
+          <%= f.text_field :emergency_contact, class: "form-control", placeholder: "Ada Lovelace xxx-xxx-xxxx" %>
         </div>
         <div class="form-group">
           <%= f.label :learn_about_acltc, "How did you hear about Anyone Can Learn To Code?", class: "required" %><br />
@@ -77,7 +77,7 @@
             <%= f.text_area :learn_about_scholarship, class: "form-control" %>
           </div>
           <div class="form-group">
-          <label>Do you identify as a woman or as gender-diverse (trans*, gender-queer, gender non-conforming, etc.)</label><br />
+          <label>Do you identify as a woman or as gender-diverse (trans*, gender-queer, gender non-conforming, etc.)?</label><br />
             <div class="radio">
               <%= f.radio_button :woman, true %>
               <%= f.label :woman, "Yes", :value => "true" %><br />
@@ -86,7 +86,7 @@
             </div>
           </div>
           <div class="form-group">
-          <label>Do you belong to a racial group that is underrepresented in tech (Black/African American, Chicano/Latino, Native American/Native Hawaiian, Pacific Islander)</label><br />
+          <label>Do you belong to a racial group that is underrepresented in tech (Black/African American, Chicano/Latino, Native American/Native Hawaiian, Pacific Islander)?</label><br />
             <div class="radio">
               <%= f.radio_button :minority, true %>
               <%= f.label :minority, "Yes", :value => "true" %><br />
