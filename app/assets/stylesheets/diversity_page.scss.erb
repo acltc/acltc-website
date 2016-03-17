@@ -1,0 +1,53 @@
+// Diversity Page
+
+#header.transparent-header {
+  background-color: #ebe7d9;
+}
+
+.diversity-page-wrapper .marquee {
+  min-height: 500px;
+  height: 500px;
+  background-image: url("<%= asset_path('diversity-page-marquee-bg.jpg')%>");
+  background-position-y: 50px;
+}
+
+.diversity-page-wrapper .marquee .col-md-12:before {
+  bottom: none;
+  top: 0;
+  height: 380px;
+  min-height: 380px!important;
+}
+
+.diversity-page-wrapper .marquee .col-md-12 {
+  min-height: 300px;
+}
+
+.diversity-page-wrapper .marquee .marquee-content {
+  padding: 4.5em 3.5em 1.5em;
+}
+.diversity-page-wrapper .marquee .marquee-content h3 {
+  color: white;
+}
+
+.diversity-page-wrapper .description {
+  padding: 4em 3em 3em;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .container, #header.full-header .container, .container-fullwidth {
+    width: 100%!important;
+  }
+  .diversity-page-wrapper .marquee .marquee-content {
+    padding: 1em;
+  }
+  .diversity-page-wrapper .marquee .marquee-content h2 {
+    font-size: 2em;
+  }
+  .diversity-page-wrapper .description {
+    padding: 2.5em .5!important;
+  }
+  .diversity-page-wrapper .section-header {
+    padding: 1em .5;
+  }
+}
