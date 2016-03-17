@@ -44,8 +44,8 @@
           <%= f.text_field :emergency_contact, class: "form-control", placeholder: "Ada Lovelace xxx-xxx-xxxx" %>
         </div>
         <div class="form-group">
-          <%= f.label :learn_about_acltc, "How did you hear about Anyone Can Learn To Code (please be as specific as you can)?", class: "required" %><br />
-          <%= f.text_area :learn_about_acltc, class: "form-control" %>
+          <label class="required">How did you hear about Anyone Can Learn To Code?</label>
+          <%= f.select(:learn_about_acltc, options_for_select([['Course Report'], ['Google Search'], ['Meetup'], ['Quora'], ['Referral'], ['SkilledUp'], ['SwitchUp'], ['Thinkful'], ['Word of Mouth'], ['Other']]), {:prompt => "Please Select One"}, { class: 'form-control' })%>
         </div>
         <div class="form-group">
           <%= f.label :current_occupation, "Tell us more about what you're currently doing (job or school, etc.)", class: "required" %><br />
@@ -104,27 +104,27 @@
           <%= f.text_area :primary_goals, class: "form-control" %>
         </div>
         <div class="form-group">
-          <%= f.label :programming_experience, "Do you have previous programming experience? Working on online tutorials counts!", class: "required" %><br />
+          <%= f.label :programming_experience, "Do you have previous programming experience? Online tutorials count!", class: "required" %><br />
           <%= f.text_area :programming_experience, class: "form-control" %>
         </div>
         <div class="form-group">
-          <%= f.label :preferred_work_location, "If you are seeking a job in web development, in what city do you want to work?", class: "required" %><br />
+          <%= f.label :preferred_work_location, "If you want a job in web development, in which city will you seek employment?", class: "required label-leading" %><br />
           <%= f.text_field :preferred_work_location, class: "form-control" %>
         </div>
         <div class="form-group">
-          <%= f.label :capstone_idea, "Is there a specific project you would like to work on for your Capstone project?", class: "required" %><br />
+          <%= f.label :capstone_idea, "Is there a specific project you want to work on for your Capstone project?", class: "required" %><br />
           <%= f.text_area :capstone_idea, class: "form-control" %>
         </div>
         <div class="form-group">
-          <%= f.label :work_concurrently, "Will you keep your job during the bootcamp? If so, how do you plan to do both?", class: "required" %><br />
+          <%= f.label :work_concurrently, "Will you keep your job during the bootcamp? If so, how will you do both?", class: "required" %><br />
           <%= f.text_area :work_concurrently, class: "form-control" %>
         </div>
         <div class="form-group">
-          <%= f.label :tinker_example, "Programming requires complex problem solving, logical analysis, and the ability to tinker with something until it works. Give examples of these experiences.", class: "required" %><br />
+          <%= f.label :tinker_example, "Programming requires complex problem solving, logical analysis, and the ability to tinker with something until it works. Give examples of these experiences.", class: "required label-leading" %><br />
           <%= f.text_area :tinker_example, class: "form-control" %>
         </div>
         <div class="form-group">
-          <%= f.label :why_better, "Tell us why you should be accepted into the bootcamp over other applicants.", class: "required" %><br />
+          <%= f.label :why_better, "Why should you be accepted into the bootcamp over other applicants?", class: "required" %><br />
           <%= f.text_area :why_better, class: "form-control" %>
         </div>
         <div class="form-group">

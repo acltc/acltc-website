@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
+/****** Global Styles ******/
 textarea.form-control {
   height: 250px;
 }
@@ -26,11 +26,32 @@ label.required:after {
   margin-right: 10px; 
 }
 
-#application_location_chicago, #application_location_san_francisco, #application_location_new_york_city, #application_woman_true, #application_woman_false, #application_minority_true, #application_minority_false {
-  margin-left: -5px;
+#application_location_chicago, #application_location_san_francisco, #application_location_new_york_city, #application_woman_true, #application_scholarship_applicant_true, #application_scholarship_applicant_false, #application_woman_false, #application_minority_true, #application_minority_false {
+  margin-left: 0;
 }
 
 .jumbo-thanks {
   text-align: center;
   margin: 50px 0 100px 0;
+}
+
+/***** min 992 width Styles ******/
+
+@media (min-width: 992px) {
+  form#new_application {
+    width: 650px;
+    margin: 0 auto;
+  }
+  .label-leading {
+    letter-spacing: 0.5px;
+  }
+}
+
+/***** max 991 width Styles ******/
+
+@media (max-width: 991px) {
+  .content-wrap {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
