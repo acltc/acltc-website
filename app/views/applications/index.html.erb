@@ -1,16 +1,18 @@
 <%= render "/layouts/page_title", page_title: "Applications", page_subtitle: "" %>
+
 <section id="content">
   <div class="content-wrap">
     <div class="row">
       <div class="col-md-2"></div>
       <div class="col-md-8">
+        <%= link_to "Download Applications CSV", applications_path(format: "csv"), :class => 'button btn-secondary csv-button'  %>
         <table class="table table-striped">
           <tr>
           <th>Name</th>
             <th>Application Submitted</th> 
             <th>Location</th>
           </tr>
-          <% @applications.each do |application| %>
+          <% @applications.order("created_at desc").each do |application| %>
           <tr>
             <td><%= link_to application.full_name, application_path(application) %></td>
             <td><%= application.applications_human_time %></td> 

@@ -3,6 +3,11 @@ class ApplicationsController < ApplicationController
 
   def index
     @applications = Application.all
+
+    respond_to do |format|
+      format.html
+      format.csv { send_data @applications.to_csv }
+    end
   end
 
   def show
@@ -25,6 +30,7 @@ class ApplicationsController < ApplicationController
   end
 
   private
+
 
   def application_params
     params.require(:application).permit(:first_name, :last_name, :email, :phone, :address, :emergency_contact, :learn_about_acltc, :learn_about_acltc_specify, :current_occupation, :scholarship_applicant, :learn_about_scholarship, :minority, :woman, :why_scholarship, :primary_goals, :programming_experience, :preferred_work_location, :capstone_idea, :work_concurrently, :tinker_example, :why_better, :location )
