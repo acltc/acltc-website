@@ -44,15 +44,68 @@
           <%= f.text_field :emergency_contact, class: "form-control", placeholder: "Ada Lovelace xxx-xxx-xxxx" %>
         </div>
         <div class="form-group">
-          <label class="required">How did you hear about Anyone Can Learn To Code?</label>
-          <%= f.select(:learn_about_acltc, options_for_select([['Course Report'], ['Google Search'], ['Meetup'], ['Quora'], ['Referral'], ['SkilledUp'], ['SwitchUp'], ['Thinkful'], ['Word of Mouth'], ['Other']]), {:prompt => "Please Select One"}, { class: 'form-control' })%>
+          <label class="required label-radio">How did you hear about Anyone Can Learn To Code?</label><br />
+          <div class="radio row">
+            <div class="col-md-4">
+              <%= f.radio_button :learn_about_acltc, "Course Report", { :class => "learn-about-acltc" } %>
+              <%= f.label :learn_about_acltc, "Course Report", :value => "Course Report" %>
+            </div>
+            <div class="col-md-4">
+              <%= f.radio_button :learn_about_acltc, "Google Search", { :class => "learn-about-acltc" } %>
+              <%= f.label :learn_about_acltc, "Google Search", :value => "Google Search" %>
+            </div>
+            <div class="col-md-4">
+              <%= f.radio_button :learn_about_acltc, "Meetup", { :class => "learn-about-acltc" } %>
+              <%= f.label :learn_about_acltc, "Meetup", :value => "Meetup" %>
+            </div>
+          </div>
+          <div class="radio row">
+            <div class="col-md-4">
+              <%= f.radio_button :learn_about_acltc, "Quora", { :class => "learn-about-acltc" } %>
+              <%= f.label :learn_about_acltc, "Quora", :value => "Quora" %>
+            </div>
+            <div class="col-md-4">
+              <%= f.radio_button :learn_about_acltc, "Referral", { :class => "learn-about-acltc" } %>
+              <%= f.label :learn_about_acltc, "Referral", :value => "Referral" %>
+            </div>
+            <div class="col-md-4">
+              <%= f.radio_button :learn_about_acltc, "SkilledUp", { :class => "learn-about-acltc" } %>
+              <%= f.label :learn_about_acltc, "SkilledUp", :value => "SkilledUp" %>
+            </div>
+          </div>
+          <div class="radio row">
+            <div class="col-md-4">
+              <%= f.radio_button :learn_about_acltc, "SwitchUp", { :class => "learn-about-acltc" } %>
+              <%= f.label :learn_about_acltc, "SwitchUp", :value => "SwitchUp" %>
+            </div>
+            <div class="col-md-4">
+              <%= f.radio_button :learn_about_acltc, "Thinkful", { :class => "learn-about-acltc" } %>
+              <%= f.label :learn_about_acltc, "Thinkful", :value => "Thinkful" %>
+            </div>
+            <div class="col-md-4">
+              <%= f.radio_button :learn_about_acltc, "Word of Mouth", { :class => "learn-about-acltc" } %>
+              <%= f.label :learn_about_acltc, "Word of Mouth", :value => "Word of Mouth" %>
+            </div>
+          </div>
+          <div class="radio row">
+            <div class="col-md-4">
+              <%= f.radio_button :learn_about_acltc, "Other", { :class => "learn-about-acltc learn-about-acltc-other" } %>
+              <%= f.label :learn_about_acltc, "Other", :value => "Other" %>
+            </div>
+          </div>
+        </div>
+        <div id="learn-acltc-hidden" style="display:none;">
+          <div class="form-group">
+            <%= f.label :learn_about_acltc_specify, "Please specify how you learned about Anyone Can Learn to Code:" %><br />
+            <%= f.text_field :learn_about_acltc_specify, class: "form-control" %>
+          </div>
         </div>
         <div class="form-group">
           <%= f.label :current_occupation, "Tell us more about what you're currently doing (job or school, etc.)", class: "required" %><br />
           <%= f.text_area :current_occupation, class: "form-control" %>
         </div>
         <div class="form-group">
-          <label class="required">Which location are you applying for?</label>
+          <label class="required label-radio">Which location are you applying for?</label>
           <div class="radio">
             <%= f.radio_button :location, "Chicago" %>
             <%= f.label :location, "Chicago", :value => "Chicago" %><br />
@@ -63,7 +116,7 @@
           </div>
         </div>
         <div class="form-group">
-          <label>Are you a Diversity in Tech Scholarship applicant?</label><br />
+          <label class="label-radio">Are you a Diversity in Tech Scholarship applicant?</label><br />
           <div class="radio">
             <%= f.radio_button :scholarship_applicant, true, { :class => "diversity_applicant diversity_applicant_yes" } %>
             <%= f.label :scholarship_applicant, "Yes", :value => "true" %><br />
@@ -77,7 +130,7 @@
             <%= f.text_area :learn_about_scholarship, class: "form-control" %>
           </div>
           <div class="form-group">
-          <label>Do you identify as a woman or as gender-diverse (trans*, gender-queer, gender non-conforming, etc.)?</label><br />
+          <label class="label-radio">Do you identify as a woman or as gender-diverse (trans*, gender-queer, gender non-conforming, etc.)?</label><br />
             <div class="radio">
               <%= f.radio_button :woman, true %>
               <%= f.label :woman, "Yes", :value => "true" %><br />
@@ -139,5 +192,10 @@
 <script type="text/javascript">
   $(".diversity_applicant").on("change", function(){
   $("#scholarship-hidden").toggle($(this).hasClass("diversity_applicant_yes"));
+});
+</script>
+<script type="text/javascript">
+  $(".learn-about-acltc").on("change", function(){
+  $("#learn-acltc-hidden").toggle($(this).hasClass("learn-about-acltc-other"));
 });
 </script>

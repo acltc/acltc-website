@@ -35,6 +35,14 @@ label.required:after {
   margin: 50px 0 100px 0;
 }
 
+.radio input[type="radio"] {
+  margin-left: 0;
+}
+
+.label-radio {
+  margin-bottom: 0;
+}
+
 /***** min 992 width Styles ******/
 
 @media (min-width: 992px) {

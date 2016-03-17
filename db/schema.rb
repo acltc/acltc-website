@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160315145706) do
+ActiveRecord::Schema.define(version: 20160317185227) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,8 +53,8 @@ ActiveRecord::Schema.define(version: 20160315145706) do
     t.text     "work_concurrently"
     t.text     "tinker_example"
     t.text     "why_better"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.string   "address"
     t.string   "emergency_contact"
     t.boolean  "scholarship_applicant"
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 20160315145706) do
     t.boolean  "minority"
     t.text     "why_scholarship"
     t.string   "location"
+    t.text     "learn_about_acltc_specify"
   end
 
   create_table "blog_categories", force: :cascade do |t|
