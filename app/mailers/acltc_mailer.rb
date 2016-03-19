@@ -8,7 +8,7 @@ class AcltcMailer < ApplicationMailer
 
   def application_email(application)
     @application = application
-    mail(from: "appdb5c8c1f9bbf41eb997e36fdbb7df8d4.mailgun.org", to: 'ryan@anyonencanhaveawebsite.com', subject: 'Application Submitted', reply_to: @application.email )
+    mail(from: "appdb5c8c1f9bbf41eb997e36fdbb7df8d4.mailgun.org", to: 'ryan@anyonecanhaveawebsite.com', subject: 'Application Submitted', reply_to: @application.email )
   end
 
   def mini_course_application_email(mini_course_application)
