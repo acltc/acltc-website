@@ -10,7 +10,7 @@
                             <h2> Become a Web Developer <br> Without Quitting Your Day Job</h2>
                             <p>Learn full-stack web development through in-class instruction <br> on weeknights and Sundays and then work for real clients through a guaranteed apprenticeship.</p><br>
                             <h3>San Francisco - Chicago - New York City</h3>
-                            <a href="http://goo.gl/forms/zrdY395j8w" class="btn" id="top-application-button">Apply Now</a>
+                            <%= link_to "Apply Now", new_application_path, class: "btn", id: "top-application-button" %>
                         </div>
                     </div>
                 </div>
@@ -252,7 +252,7 @@
                         FAQs </a>  &#xa0; page for more information.
                         </p>
                         <div id="application-button-wrapper">
-                            <a href="http://goo.gl/forms/zrdY395j8w" id="application-button" role="button">Apply Now</a>
+                            <%= link_to "Apply Now", new_application_path, id: "application-button" %>
                         </div>
                     </div>
                     
