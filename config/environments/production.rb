@@ -83,7 +83,7 @@ Rails.application.configure do
     :address => "smtp.mailgun.org",
     :port => 587,
     :domain => "staging-acltc.herokuapp.com",
-    :user_name => ENV["MAILGUN_HEROKU_USER_NAME"],
-    :password => ENV["MAILGUN_HEROKU_PASSWORD"]
+    :user_name => ENV["MAILGUN_USER_NAME"],
+    :password => ENV["MAILGUN_PASSWORD"]
   }
 end
