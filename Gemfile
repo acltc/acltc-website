@@ -20,8 +20,8 @@ gem 'thematic'
 gem 'jquery-rails'
 gem 'seed_dump'
 
-#highcharts 
-gem "highcharts-rails"
+#Chartkick graphs and charts
+gem "chartkick"
 
 gem 'airbrake'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

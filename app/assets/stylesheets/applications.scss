@@ -49,6 +49,13 @@ label.required:after {
   margin-bottom: 20px;
   margin-left: 0;
 }
+
+.pie-chart h4 {
+  text-align: center;
+  margin-top: 20px;
+  text-transform: uppercase;
+}
+
 /***** min 992 width Styles ******/
 
 @media (min-width: 992px) {

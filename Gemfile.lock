@@ -63,6 +63,7 @@ GEM
     builder (3.2.2)
     byebug (4.0.5)
       columnize (= 0.9.0)
+    chartkick (1.4.2)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -188,8 +189,6 @@ GEM
       activerecord (>= 4.0.0)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
-    highcharts-rails (4.1.9)
-      railties (>= 3.1)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
     i18n (0.7.0)
@@ -312,12 +311,12 @@ DEPENDENCIES
   bootstrap-sass
   byebug
   carrierwave!
+  chartkick
   coffee-rails (~> 4.1.0)
   devise
   dotenv-rails
   fog
   friendly_id (~> 5.1.0)
-  highcharts-rails
   jbuilder (~> 2.0)
   jquery-rails
   mailgun

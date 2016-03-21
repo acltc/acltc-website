@@ -1,5 +1,9 @@
 <%= render "/layouts/page_title", page_title: "Applications", page_subtitle: "" %>
-
+<%= javascript_include_tag "https://www.google.com/jsapi", "chartkick" %>
+<div class="pie-chart">
+  <h4>How Applicants Learned About ACLTC:</h4>
+  <%= pie_chart Application.group(:learn_about_acltc).count %>
+</div>
 <section id="content">
   <div class="content-wrap">
     <div class="row">
