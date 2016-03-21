@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   resources :contacts
   resources :mini_courses
   resources :mini_course_applications
-  resources :subscribers, only: [:create]
+  resources :subscribers, :only => [:create, :index]
   resources :capstones, only: [:index]
   resources :screencasts, only: [:index]
   resources :diversity_applications, only: [:index]
