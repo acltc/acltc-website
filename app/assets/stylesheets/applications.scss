@@ -37,6 +37,8 @@ label.required:after {
 
 .radio input[type="radio"] {
   margin-left: 0;
+  border-radius: 50% !important;
+  min-height: 5px !important;
 }
 
 .label-radio {
@@ -67,15 +69,5 @@ label.required:after {
   .content-wrap {
     padding-left: 10px;
     padding-right: 10px;
-  }
-}
-
-/***** max 768 width Styles *****/
-
-@media (max-width: 768px) {
-  .radio input[type="radio"],
-  .radio-inline input[type="radio"] {
-    border-radius: 50% !important;
-    min-height: 5px !important;
   }
 }
