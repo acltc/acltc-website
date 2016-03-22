@@ -1,0 +1,5 @@
+.radio input[type="radio"] {
+  margin-left: 0;
+  border-radius: 50% !important;
+  min-height: 5px !important;
+}
