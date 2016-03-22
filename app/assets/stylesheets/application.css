@@ -19,4 +19,5 @@
  *= require theme/responsive
  *= require_tree .
  *= require_self
+ *= require my_styles
  */
