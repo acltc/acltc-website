@@ -22,6 +22,8 @@ gem 'seed_dump'
 
 #Chartkick graphs and charts
 gem "chartkick"
+#For grouping with Chartkick
+gem 'groupdate'
 
 gem 'airbrake'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
