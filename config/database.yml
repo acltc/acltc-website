@@ -80,4 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: acltc-website_development
+  database: acltc-website_production
+  username: acltc-website
+  password: <%= ENV['ACLTC-WEBSITE_DATABASE_PASSWORD'] %>
