@@ -20,6 +20,8 @@ gem 'thematic'
 gem 'jquery-rails'
 gem 'seed_dump'
 
+gem 'aws-sdk', '~> 2'
+
 #Chartkick graphs and charts
 gem "chartkick"
 #For grouping with Chartkick
