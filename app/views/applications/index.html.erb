@@ -6,7 +6,7 @@
 </div>
 <div class="pie-chart">
   <h4>How Applicants Learned About ACLTC:</h4>
-  <%= pie_chart Application.group(:learn_about_acltc).count %>
+  <%= pie_chart Application.group(:learn_about_acltc).where.not(:learn_about_acltc => nil).count %>
 </div>
 <section id="content">
   <div class="content-wrap">
