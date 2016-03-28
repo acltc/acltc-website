@@ -29,6 +29,14 @@ class ApplicationsController < ApplicationController
     end
   end
 
+  def destroy
+    @application = Application.find(params[:id])
+    @application.destroy
+
+    flash[:warning] = "Application successfully deleted!"
+    redirect_to "/applications"
+  end
+
   private
 
 

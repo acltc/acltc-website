@@ -5,6 +5,7 @@
       <div class="col-md-2"></div>
       <div class="col-md-8">
       <%= link_to "Back to Index", applications_path %>
+      <%= link_to 'Delete', application_path(@application), method: :delete, data: { confirm: 'Are you sure you want to delete this application?' } %>
         <table class="table table-striped">
           <tr>
             <th>First Name:</th>

@@ -33,6 +33,12 @@
 
               <!-- Primary Navigation
               ============================================= -->
+              <% flash.each do |name, message| %>
+                <div class="alert alert-<%= name %> alert-dismissible fade in" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</span><span class="sr-only">Close</span></button>
+                  <%= message %>  
+                </div>
+              <% end %>
               <nav id="primary-menu">
 
                 <ul class="one-page-menu">
@@ -54,7 +60,6 @@
           </div>
 
         </header><!-- #header end -->
-        
         <%= yield %>
 
         <%= render 'shared/ga' %>
