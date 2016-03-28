@@ -1,11 +1,11 @@
 <%= render "/layouts/page_title", page_title: "Applications", page_subtitle: "" %>
 <%= javascript_include_tag "https://www.google.com/jsapi", "chartkick" %>
 <div class="line-chart">
-  <h4>Applications Per Month by Location:</h4>
-  <%= line_chart Application.group(:location).group_by_month(:created_at, format: "%Y %m", last: 11).count %>
+  <h4>Applications Per Month by Location</h4>
+  <%= line_chart Application.group(:location).group_by_month(:created_at, format: "%Y %m", last: 11).count, xtitle: "Month", ytitle: "Number of Applications" %>
 </div>
 <div class="pie-chart">
-  <h4>How Applicants Learned About ACLTC:</h4>
+  <h4>How Applicants Learned About ACLTC</h4>
   <%= pie_chart Application.group(:learn_about_acltc).where.not(:learn_about_acltc => nil).count %>
 </div>
 <section id="content">
