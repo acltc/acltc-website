@@ -23,7 +23,7 @@
           <% @applications.order("created_at desc").each do |application| %>
           <tr>
             <td><%= link_to application.full_name, application_path(application) %></td>
-            <td><%= application.applications_human_time %></td> 
+            <td><%= application.created_at.strftime("%A %B %d, %Y") %></td> 
             <td><%= application.location %></td>
           </tr>
           <% end %>

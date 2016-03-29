@@ -68,6 +68,19 @@ label.required:after {
   font-weight: 700;
 }
 
+.table-striped td {
+  color: #000;
+}
+
+.left-link {
+  float: left;
+  margin-bottom: 10px;
+}
+
+.right-link {
+  float: right;
+  margin-bottom: 10px;
+}
 /***** min 992 width Styles ******/
 
 @media (min-width: 992px) {
