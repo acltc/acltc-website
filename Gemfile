@@ -20,6 +20,14 @@ gem 'thematic'
 gem 'jquery-rails'
 gem 'seed_dump'
 
+#Amazon Web Services 
+gem 'aws-sdk', '~> 2'
+
+#Chartkick graphs and charts
+gem "chartkick"
+#For grouping with Chartkick
+gem 'groupdate'
+
 gem 'airbrake'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
