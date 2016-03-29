@@ -72,15 +72,31 @@ label.required:after {
   color: #000;
 }
 
-.left-link {
-  float: left;
-  margin-bottom: 10px;
+form#edit_application_18277 {
+  margin-bottom: 0;
 }
 
-.right-link {
-  float: right;
-  margin-bottom: 10px;
+select#application_status {
+  width: 250px;
+  display: inline;
+  margin-right: 10px;
 }
+
+input.btn.btn-primary.select-button {
+  width: 110px;
+  padding: 0px;
+  font-size: 14px;
+  color: #fff;
+}
+
+.application-status {
+  margin: 30px 0 0 0;
+}
+
+a.btn.btn-danger.right-link {
+  float: right;
+}
+
 /***** min 992 width Styles ******/
 
 @media (min-width: 992px) {
