@@ -14,6 +14,9 @@ class ApplicationsController < ApplicationController
     @application = Application.find(params[:id])
   end
 
+  def edit
+    @application = Application.find(params[:id])
+  end
 
   def new
     @application = Application.new
@@ -32,11 +35,12 @@ class ApplicationsController < ApplicationController
   def update
     @application = Application.find(params[:id])
 
-    if @application.update(application_params)
-      flash[:warning] = "Application status updated!"
+    if @application.update_attributes(application_params)
+      flash[:info] = "Application status updated!"
       redirect_to @application
     else
-      render 'edit'
+      flash[:danger] = "Something went wrong!"
+      redirect_to @application
     end
   end
 
@@ -44,7 +48,7 @@ class ApplicationsController < ApplicationController
     @application = Application.find(params[:id])
     @application.destroy
 
-    flash[:warning] = "Application successfully deleted!"
+    flash[:danger] = "Application successfully deleted!"
     redirect_to "/applications"
   end
 

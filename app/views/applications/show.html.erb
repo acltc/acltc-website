@@ -2,8 +2,6 @@
 <section id="content">
   <div class="content-wrap">
     <div class="row">
-        
-      
       <div class="col-md-2"></div>
       <div class="col-md-8">
         <div class="application-links">
@@ -12,10 +10,8 @@
         </div>
         <div class="application-status">
           <%= form_for @application do |f| %>
-            <%= f.select(:status, options_for_select([['waiting to schedule interview'], ['interviewed'], ['waiting for code'], ['rejected'], ['accepted '], ['registered'], ['declined (financial)'], ['declined (schedule)'], ['declined (competitor)'], ['declined (other)']]), {:prompt => "Status"}, { class: 'form-control'})%>
-             
+            <%= f.select(:status, options_for_select([['Waiting to Schedule Interview'], ['Interviewed'], ['Waiting for Code'], ['Rejected'], ['Accepted'], ['Registered'], ['Declined (Financial)'], ['Declined (Schedule)'], ['Declined (Competitor)'], ['Declined (Other)']]), {:include_blank => "Status"}, { class: 'form-control'})%>
             <%= f.submit "Update Status", class: "btn btn-primary select-button"%>
-
           <% end %>
         </div>
         <table class="table table-striped">
@@ -112,9 +108,12 @@
             <td class="col-md-5"><%= @application.why_better %></td> 
           </tr>
         </table>
-
       </div>
       <div class="col-md-2"></div>
     </div>
   </div>
 </section>
+
+             
+        
+      
