@@ -28,7 +28,7 @@
               ============================================= -->
               <div id="logo">
                 <a href="/" class="standard-logo" data-dark-logo="assets/theme/acltc_logo.png"><%= image_tag "acltc_logo.png", height: 45 %></a>
-                <!-- <a href="/" class="retina-logo" data-dark-logo="assets/theme/logo-dark@2x.png"><img src="assets/theme/logo@2x.png" alt="Canvas Logo"></a> -->
+                <a href="/" class="retina-logo" data-dark-logo="assets/theme/acltc_logo.png"><%= image_tag "acltc_logo.png", height: 45 %></a>
               </div><!-- #logo end -->
 
               <!-- Primary Navigation
@@ -57,7 +57,7 @@
         <% flash.each do |name, message| %>
           <div class="alert alert-<%= name %> alert-dismissible fade in" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</span><span class="sr-only">Close</span></button>
-            <%= message %>  
+            <%= message %>
           </div>
         <% end %>
         <%= yield %>
