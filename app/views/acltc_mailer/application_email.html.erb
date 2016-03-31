@@ -24,15 +24,17 @@
   <tr>
     <td><h3>Applying for Scholarship?</h3> <%= @application.scholarship_applicant %></td>
   </tr>
-  <tr>
-    <td><h3>How they learned about the scholarship:</h3> <%= @application.learn_about_scholarship %></td>
-  </tr>
-  <tr>
-    <td><h3>Scholarship category:</h3> Woman: <%= @application.woman %> <br /> Minority: <%= @application.minority %> </td>
-  </tr>
-  <tr>
-    <td><h3>Why they deserve the scholarship:</h3> <%= @application.why_scholarship %></td>
-  </tr>
+  <% if @application.scholarship_applicant == true %>
+    <tr>
+      <td><h3>How they learned about the scholarship:</h3> <%= @application.learn_about_scholarship %></td>
+    </tr>
+    <tr>
+      <td><h3>Scholarship category:</h3> Woman: <%= @application.woman %> <br /> Minority: <%= @application.minority %> </td>
+    </tr>
+    <tr>
+      <td><h3>Why they deserve the scholarship:</h3> <%= @application.why_scholarship %></td>
+    </tr>
+  <% end %>
   <tr>
     <td><h3>Primary Goals:</h3> <%= @application.primary_goals %></td>
   </tr>

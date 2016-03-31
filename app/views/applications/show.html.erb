@@ -10,7 +10,7 @@
         </div>
         <div class="application-status">
           <%= form_for @application do |f| %>
-            <%= f.select(:status, options_for_select([['Waiting to Schedule Interview'], ['Interviewed'], ['Waiting for Code'], ['Rejected'], ['Accepted'], ['Registered'], ['Declined (Financial)'], ['Declined (Schedule)'], ['Declined (Competitor)'], ['Declined (Other)']]), {:include_blank => "Status"}, { class: 'form-control'})%>
+            <%= f.select(:status, options_for_select([['Waiting to Schedule Interview'], ['Interviewed'], ['Waiting for Code'], ['Rejected'], ['Accepted'], ['Registered'], ['Declined (Financial)'], ['Declined (Schedule)'], ['Declined (Competitor)'], ['Declined (Other)']], @application.status), {:include_blank => 'Select Status'}, { class: 'form-control' })%>
             <%= f.submit "Update Status", class: "btn btn-primary select-button"%>
           <% end %>
         </div>
@@ -45,7 +45,7 @@
           </tr>        
           <tr>
             <th>Application Sent:</th>
-            <td class="col-md-5"><%= @application.applications_human_time %></td> 
+            <td class="col-md-5"><%= @application.created_at.strftime("%A %B %d, %Y") %></td> 
           </tr>
           <tr class="active">
             <th>How they heard about Anyone Can Learn To Code:</th>
