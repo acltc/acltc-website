@@ -9,17 +9,18 @@
   <%= pie_chart Application.group(:learn_about_acltc).where.not(:learn_about_acltc => nil).count %>
 </div>
 <section id="content">
-  <div class="content-wrap">
+  <div class="content-wrap dash-wrap">
     <div class="row">
       <div class="col-md-2"></div>
       <div class="col-md-8">
         <%= link_to "Download Applications CSV", applications_path(format: "csv"), :class => 'button btn-secondary csv-button'  %>
-        <table class="table table-striped">
+        <table class="table table-striped index-dash-table">
           <tr>
           <th>Name</th>
             <th>Submitted On</th> 
             <th>Location</th>
             <th>Status</th>
+            <th>Cohort</th>
           </tr>
           <% @applications.order("created_at desc").each do |application| %>
           <tr>
@@ -27,6 +28,7 @@
             <td><%= application.created_at.strftime("%A %B %d, %Y") %></td> 
             <td><%= application.location %></td>
             <td><%= application.status %></td>
+            <td><%= application.cohort %></td>
           </tr>
           <% end %>
         </table>

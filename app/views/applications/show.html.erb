@@ -1,6 +1,6 @@
 <%= render "/layouts/page_title", page_title: "Applications", page_subtitle: "" %>
 <section id="content">
-  <div class="content-wrap">
+  <div class="content-wrap dash-wrap">
     <div class="row">
       <div class="col-md-2"></div>
       <div class="col-md-8">
@@ -8,102 +8,105 @@
           <%= link_to "Back to Index", applications_path, class: "btn btn-success left-link" %>
           <%= link_to 'Delete', application_path(@application), method: :delete, data: { confirm: 'Are you sure you want to delete this application?' }, class: "btn btn-danger right-link" %>
         </div>
-        <div class="application-status">
-          <%= form_for @application do |f| %>
+        <div class="status-cohort">
+          <%= form_for @application, :html => {:class => 'status-cohort-form'} do |f| %>
             <%= f.select(:status, options_for_select([['Waiting to Schedule Interview'], ['Interviewed'], ['Waiting for Code'], ['Rejected'], ['Accepted'], ['Registered'], ['Declined (Financial)'], ['Declined (Schedule)'], ['Declined (Competitor)'], ['Declined (Other)']], @application.status), {:include_blank => 'Select Status'}, { class: 'form-control' })%>
-            <%= f.submit "Update Status", class: "btn btn-primary select-button"%>
+            <%= f.select(:cohort, options_for_select([['CHI 4/16'], ['SF 6/16'], ['NYC 6/16']], @application.cohort), {:include_blank => 'Select Cohort'}, { class: 'form-control' })%>
+            <%= f.submit "Update", class: "btn btn-primary select-button"%>
           <% end %>
         </div>
         <table class="table table-striped">
           <tr class="active">
+            <th class="col-md-3">Cohort:</th>
+            <td class="col-md-5"><%= @application.cohort %></td> 
+          </tr>
             <th class="col-md-3">Status:</th>
             <td class="col-md-5"><%= @application.status %></td> 
-          </tr>
-          <tr>
+          <tr "active">
             <th class="col-md-3">First Name:</th>
             <td class="col-md-5"><%= @application.first_name %></td> 
           </tr>
-          <tr class="active">
+          <tr>
             <th class="col-md-3">Last Name:</th>
             <td class="col-md-5"><%= @application.last_name %></td> 
           </tr>
-          <tr>
+          <tr class="active">
             <th>Email:</th>
             <td class="col-md-5"><%= @application.email %></td> 
           </tr>
-          <tr class="active">
+          <tr>
             <th>Phone:</th>
             <td class="col-md-5"><%= @application.phone %></td> 
           </tr>
-          <tr>
+          <tr class="active">
             <th>Address:</th>
             <td class="col-md-5"><%= @application.address %></td> 
           </tr>
-          <tr class="active">
+          <tr>
             <th>Location:</th>
             <td class="col-md-5"><%= @application.location %></td> 
           </tr>        
-          <tr>
+          <tr class="active">
             <th>Application Sent:</th>
             <td class="col-md-5"><%= @application.created_at.strftime("%A %B %d, %Y") %></td> 
           </tr>
-          <tr class="active">
+          <tr>
             <th>How they heard about Anyone Can Learn To Code:</th>
             <td class="col-md-5"><%= @application.learn_about_acltc %></td> 
           </tr>
-          <tr>
+          <tr class="active">
             <th>If "Other," how they heard about Anyone Can Learn To Code:</th>
             <td class="col-md-5"><%= @application.learn_about_acltc_specify %></td> 
           </tr>
-          <tr class="active">
+          <tr>
             <th>Diversity in Tech Scholarship applicant:</th>
             <td class="col-md-5"><%= @application.scholarship_applicant %></td> 
           </tr>
-          <tr>
+          <tr class="active">
             <th>How they heard about Diversity Scholarship:</th>
             <td class="col-md-5"><%= @application.learn_about_scholarship %></td> 
           </tr>
-          <tr class="active">
+          <tr>
             <th>Identifies as a woman or as gender-diverse:</th>
             <td class="col-md-5"><%= @application.woman %></td> 
           </tr>
-          <tr>
+          <tr class="active">
             <th>Belongs to a racial group that is underrepresented in tech:</th>
             <td class="col-md-5"><%= @application.minority %></td> 
           </tr>
-          <tr class="active">
+          <tr>
             <th>Why they should be awarded scholarship over other applicants:</th>
             <td class="col-md-5"><%= @application.why_scholarship %></td> 
           </tr>
-          <tr>
+          <tr class="active">
             <th>What they're currently doing (job or school, etc.):</th>
             <td class="col-md-5"><%= @application.current_occupation %></td> 
           </tr>
-          <tr class="active">
+          <tr>
             <th>Their primary goals in learning how to code?:</th>
             <td class="col-md-5"><%= @application.primary_goals %></td> 
           </tr>
-          <tr>
+          <tr class="active">
             <th>Previous programming experience:</th>
             <td class="col-md-5"><%= @application.programming_experience %></td> 
           </tr>
-          <tr class="active">
+          <tr>
             <th>City where they will search for web development jobs:</th>
             <td class="col-md-5"><%= @application.preferred_work_location %></td> 
           </tr>
-          <tr>
+          <tr class="active">
             <th>Capstone idea:</th>
             <td class="col-md-5"><%= @application.capstone_idea %></td> 
           </tr>
-          <tr class="active">
+          <tr>
             <th>How they will manage a job and the bootcamp, if applicable:</th>
             <td class="col-md-5"><%= @application.work_concurrently %></td> 
           </tr>
-          <tr>
+          <tr class="active">
             <th>Examples of complex problem solving and logical analysis:</th>
             <td class="col-md-5"><%= @application.tinker_example %></td> 
           </tr>
-          <tr class="active">
+          <tr>
             <th>Why they should be accepted over well-qualified candidates?:</th>
             <td class="col-md-5"><%= @application.why_better %></td> 
           </tr>
@@ -117,3 +120,4 @@
              
         
       
+          
