@@ -54,6 +54,12 @@ GEM
     autoprefixer-rails (5.2.0)
       execjs
       json
+    aws-sdk (2.1.15)
+      aws-sdk-resources (= 2.1.15)
+    aws-sdk-core (2.1.15)
+      jmespath (~> 1.0)
+    aws-sdk-resources (2.1.15)
+      aws-sdk-core (= 2.1.15)
     bcrypt (3.1.9)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
@@ -195,10 +201,14 @@ GEM
       domain_name (~> 0.5)
     i18n (0.7.0)
     inflecto (0.0.2)
+    invisible_captcha (0.8.0)
+      rails
     ipaddress (0.8.0)
     jbuilder (2.2.13)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
+    jmespath (1.0.2)
+      multi_json (~> 1.0)
     jquery-rails (4.0.3)
       rails-dom-testing (~> 1.0)
       railties (>= 4.2.0)
@@ -310,6 +320,7 @@ PLATFORMS
 
 DEPENDENCIES
   airbrake
+  aws-sdk (~> 2)
   bootstrap-sass
   byebug
   carrierwave!
@@ -320,6 +331,7 @@ DEPENDENCIES
   fog
   friendly_id (~> 5.1.0)
   groupdate
+  invisible_captcha
   jbuilder (~> 2.0)
   jquery-rails
   mailgun

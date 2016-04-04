@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160317185227) do
+ActiveRecord::Schema.define(version: 20160401015610) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,6 +64,8 @@ ActiveRecord::Schema.define(version: 20160317185227) do
     t.text     "why_scholarship"
     t.string   "location"
     t.text     "learn_about_acltc_specify"
+    t.string   "status"
+    t.string   "cohort"
   end
 
   create_table "blog_categories", force: :cascade do |t|
