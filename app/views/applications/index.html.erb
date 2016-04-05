@@ -21,7 +21,7 @@
         <table class="table table-striped index-dash-table">
           <tr>
           <th>Name</th>
-            <th>Submitted On</th> 
+            <th>Submitted On</th>
             <th>Location</th>
             <th>Status</th>
             <th>Cohort</th>
@@ -29,7 +29,7 @@
           <% @applications.order("created_at desc").each do |application| %>
           <tr>
             <td><%= link_to application.full_name, application_path(application) %></td>
-            <td><%= application.created_at.strftime("%A %B %d, %Y") %></td> 
+            <td><%= application.created_at.strftime("%A %B %d, %Y") %></td>
             <td><%= application.location %></td>
             <td><%= application.status %></td>
             <td><%= application.cohort %></td>

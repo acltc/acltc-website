@@ -27,7 +27,7 @@ label.required:after {
 }
 
 .radio label {
-  margin-right: 10px; 
+  margin-right: 10px;
 }
 
 #application_location_chicago, #application_location_san_francisco, #application_location_new_york_city, #application_woman_true, #application_scholarship_applicant_true, #application_scholarship_applicant_false, #application_woman_false, #application_minority_true, #application_minority_false {
@@ -70,6 +70,10 @@ label.required:after {
   margin: 30px 0 0 0;
   text-transform: uppercase;
   font-weight: 700;
+}
+
+.bar-chart {
+  margin-top: 50px;
 }
 
 .table-striped td {
