@@ -3,5 +3,6 @@ class LessonsController < ApplicationController
   end
 
   def show
+    render params[:title]
   end
 end

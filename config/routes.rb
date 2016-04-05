@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   resources :diversity_applications, only: [:index]
 
   get "/tutorial/lessons" => "lessons#index"
-  get "/tutorial/lessons/:id" => "lessons#show"
+  get "/tutorial/lessons/:title" => "lessons#show"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
