@@ -8,6 +8,10 @@
   <h4>How Applicants Learned About ACLTC</h4>
   <%= pie_chart Application.group(:learn_about_acltc).where.not(:learn_about_acltc => nil).count %>
 </div>
+<div class="pie-chart">
+  <h4>Cohorts</h4>
+  <%= bar_chart Application.group(:cohort).where(:status => 'Registered').count %>
+</div>
 <section id="content">
   <div class="content-wrap dash-wrap">
     <div class="row">
