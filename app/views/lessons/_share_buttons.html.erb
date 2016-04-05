@@ -3,29 +3,17 @@
 <div id="tutorial-share" class="si-share noborder clearfix">
 	<span>Share this Lesson:</span>
 	<div>
-		<a href="#" class="social-icon si-borderless si-facebook">
+		<a href="javascript:window.location=%22http://www.facebook.com/sharer.php?u=%22+encodeURIComponent(document.location)+%22&#38;t=%22+encodeURIComponent(document.title)" class="social-icon si-borderless si-facebook">
 			<i class="icon-facebook"></i>
 			<i class="icon-facebook"></i>
 		</a>
-		<a href="https://twitter.com/share" class="social-icon si-borderless si-twitter twitter-share-button"  data-text="Check out this lesson from @ACLearnToCode -">
+		<a href="javascript:window.location=%22https://twitter.com/share?url=%22+encodeURIComponent(document.location)+%22&text=%22+encodeURIComponent('Check out this lesson from @ACLearnToCode -')" class="social-icon si-borderless si-twitter twitter-share-button">
 			<i class="icon-twitter"></i>
 			<i class="icon-twitter"></i>
 		</a>
-		<a href="#" class="social-icon si-borderless si-pinterest">
-			<i class="icon-pinterest"></i>
-			<i class="icon-pinterest"></i>
-		</a>
-		<a href="#" class="social-icon si-borderless si-gplus">
+		<a href="https://plusone.google.com/_/+1/confirm?hl=en&url=<?php if(is_home()){echo home_url();}else{the_permalink();} ?>" target="_blank" class="social-icon si-borderless si-gplus">
 			<i class="icon-gplus"></i>
 			<i class="icon-gplus"></i>
-		</a>
-		<a href="#" class="social-icon si-borderless si-rss">
-			<i class="icon-rss"></i>
-			<i class="icon-rss"></i>
-		</a>
-		<a href="#" class="social-icon si-borderless si-email3">
-			<i class="icon-email3"></i>
-			<i class="icon-email3"></i>
 		</a>
 	</div>
 </div><!-- Post Single - Share End -->
