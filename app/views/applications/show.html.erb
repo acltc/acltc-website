@@ -13,8 +13,8 @@
             <%= f.select(:status, options_for_select([['Waiting to Schedule Interview'], ['Interview Scheduled'],
             ['Missed Interview'], ['Interviewed/Waiting for Code'], ['Code Submitted'], ['Rejected'], ['Accepted'],
             ['Registered'], ['Signed'], ['Declined (Financial)'], ['Declined (Schedule)'], ['Declined (Competitor)'],
-            ['Declined (Other)']], @application.status), {:include_blank => 'Select Status'}, { class: 'form-control' })%>
-            <%= f.select(:cohort, options_for_select([['CHI 4/16'], ['SF 6/16'], ['NYC 6/16']], @application.cohort), {:include_blank => 'Select Cohort'}, { class: 'form-control' })%>
+            ['Declined (Location)'], ['Declined (Other)']], @application.status), {:include_blank => 'Select Status'}, { class: 'form-control' })%>
+            <%= f.select(:cohort, options_for_select([['CHI 4/16'], ['SF 6/16'], ['NYC 6/16'], ['CHI 6/16']], @application.cohort), {:include_blank => 'Select Cohort'}, { class: 'form-control' })%>
             <%= f.submit "Update", class: "btn btn-primary select-button"%>
           <% end %>
         </div>
