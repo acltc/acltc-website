@@ -14,7 +14,9 @@
               <h4><%= lesson[:text] %></h4>
             </div>
             <ul class="entry-meta">
-              <li><i class="icon-time"></i> <%= lesson[:time] %></li>
+              <% if lesson[:time] %>
+                <li><i class="icon-time"></i> <%= lesson[:time] %></li>
+              <% end %>
             </ul>
           </div>
         </a>
