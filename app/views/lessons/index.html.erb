@@ -11,48 +11,24 @@
 <section id="content">
   <div class="content-wrap">
     <div class="container clearfix">
-        <div class="fancy-title title-bottom-border">
-          <h3>Phase 0: Computer Literacy</h3>
-        </div>
-				<div class="list-group">
-					<a href="/tutorial/lessons/manage-your-programs" class="list-group-item">
-						<h4 class="list-group-item-heading"><i class="icon-laptop2"></i>&emsp;Manage your programs!<span style="float:right" class="lesson-time hidden-xs"><i class="icon-time"></i> 3:09</span></h4>
-					</a>
-					<a href="/tutorial/lessons/analyze-your-disk-space" class="list-group-item">
-						<h4 class="list-group-item-heading"><i class="icon-laptop2"></i>&emsp;Analyze your disk space!<span style="float:right" class="lesson-time hidden-xs"><i class="icon-time"></i> 4:51</span></h4>
-					</a>
-					<a href="/tutorial/lessons/monitor-your-system" class="list-group-item">
-						<h4 class="list-group-item-heading"><i class="icon-laptop2"></i>&emsp;Monitor your system!<span style="float:right" class="lesson-time hidden-xs"><i class="icon-time"></i> 5:17</span></h4>
-					</a>
-					</a>
-					<a href="/tutorial/lessons/customize-your-system-preferences" class="list-group-item">
-						<h4 class="list-group-item-heading"><i class="icon-laptop2"></i>&emsp;Customize your system preferences!<span style="float:right" class="lesson-time hidden-xs"><i class="icon-time"></i> 4:52</span></h4>
-					</a>
+			<% @categories.each do |category| %>
+				<div class="fancy-title title-bottom-border">
+					<h3><%= category[:title] %></h3>
 				</div>
-				<br>
-        <div class="fancy-title title-bottom-border">
-          <h3>Phase 1: Computer Programming</h3>
-        </div>
 				<div class="list-group">
-					<a href="#" class="list-group-item">
-						<h4 class="list-group-item-heading"><i class="icon-keyboard"></i>&emsp;Intro to Ruby</h4>
-					</a>
-					<a href="#" class="list-group-item">
-						<h4 class="list-group-item-heading"><i class="icon-keyboard"></i>&emsp;Variables</h4>
-					</a>
-					<a href="#" class="list-group-item">
-						<h4 class="list-group-item-heading"><i class="icon-keyboard"></i>&emsp;Objects and Classes</h4>
-					</a>
-					</a>
-					<a href="#" class="list-group-item">
-						<h4 class="list-group-item-heading"><i class="icon-keyboard"></i>&emsp;Methods</h4>
-					</a>
+					<% category[:lessons].each do |lesson| %>
+						<a href="/tutorial/lessons/<%= lesson[:title].parameterize %>" class="list-group-item">
+							<h4 class="list-group-item-heading">
+								<i class="<%= category[:icon] %>"></i>&emsp;<%= lesson[:title] %>
+								<span style="float:right" class="lesson-time hidden-xs"><i class="icon-time"></i> <%= lesson[:length] %></span>
+							</h4>
+						</a>
+					<% end %>
 				</div>
-				<br>
-        <div class="fancy-title title-bottom-border">
-          <h3>Phase 1: Computer Programming</h3>
-        </div>
-				<p>&emsp;<i class="icon-cog"></i> Coming soon!</p>
+				<% if category[:lessons].length == 0 %>
+					<p>&emsp;<i class="icon-cog"></i> Coming soon!</p>
+				<% end %>
+			<% end %>
     </div>
   </div>
 </section><!-- #content end -->

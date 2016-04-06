@@ -70,16 +70,7 @@
 							<%= render 'share_buttons.html.erb' %>
 						</div>
 					</div><!-- .entry end -->
-					<!-- Post Navigation
-					============================================= -->
-					<div class="post-navigation clearfix">
-						<div class="col_half nobottommargin">
-							<a href="/tutorial/lessons/manage-your-programs">&lArr; Manage your programs!</a>
-						</div>
-						<div class="col_half col_last tright nobottommargin">
-							<a href="/tutorial/lessons/monitor-your-system">Monitor your system! &rArr;</a>
-						</div>
-					</div><!-- .post-navigation end -->
+					<%= render 'post_navigation.html.erb' %>
 					<div class="line"></div>
 				</div>
 			</div><!-- .postcontent end -->
@@ -87,44 +78,7 @@
 			============================================= -->
 			<div class="sidebar nobottommargin col_last clearfix">
 				<div class="sidebar-widgets-wrap">
-					<div class="widget clearfix nobottommargin">
-						<h4>Next up:</h4>
-						<div id="post-list-footer">
-							<div class="spost clearfix">
-								<a href="/tutorial/lessons/monitor-your-system">
-									<div class="entry-image">
-										<i class="i-rounded i-bordered icon-laptop2"></i>
-									</div>
-									<div class="entry-c">
-										<div class="entry-title">
-											<h4>Monitor your system!</h4>
-										</div>
-										<ul class="entry-meta">
-											<li><i class="icon-time"></i> 5:17</li>
-										</ul>
-									</div>
-								</a>
-							</div>
-							<div class="spost clearfix">
-								<a href="/tutorial/lessons/customize-your-system-preferences">
-									<div class="entry-image">
-										<i class="i-rounded i-bordered icon-laptop2"></i>
-									</div>
-									<div class="entry-c">
-										<div class="entry-title">
-											<h4>Customize your system preferences!</h4>
-										</div>
-										<ul class="entry-meta">
-											<li><i class="icon-time"></i> 4:52</li>
-										</ul>
-									</div>
-								</a>
-							</div>
-							<div class="spost clearfix">
-								<h4><a href="/tutorial/lessons">Back to all lessons</a></h4>
-							</div>
-						</div>
-					</div>
+					<%= render 'next_lessons.html.erb' %>
 				</div>
 			</div><!-- .sidebar end -->
 		</div>
