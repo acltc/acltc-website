@@ -201,6 +201,8 @@ GEM
       domain_name (~> 0.5)
     i18n (0.7.0)
     inflecto (0.0.2)
+    invisible_captcha (0.8.0)
+      rails
     ipaddress (0.8.0)
     jbuilder (2.2.13)
       activesupport (>= 3.0.0, < 5)
@@ -329,6 +331,7 @@ DEPENDENCIES
   fog
   friendly_id (~> 5.1.0)
   groupdate
+  invisible_captcha
   jbuilder (~> 2.0)
   jquery-rails
   mailgun
