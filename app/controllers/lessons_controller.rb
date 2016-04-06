@@ -6,14 +6,14 @@ class LessonsController < ApplicationController
   ].freeze
   
   LESSONS = [
-    { title: "Manage your programs!", length: "3:09", category_id: 0 },
-    { title: "Analyze your disk space!", length: "4:51", category_id: 0 },
-    { title: "Monitor your system!", length: "5:17", category_id: 0 },
-    { title: "Customize your system preferences!", length: "4:52", category_id: 0 },
-    { title: "Intro to Ruby", length: "3:09", category_id: 1 },
-    { title: "Variables", length: "4:51", category_id: 1 },
-    { title: "Objects and Classes", length: "5:17", category_id: 1 },
-    { title: "Methods", length: "4:52", category_id: 1 }
+    { title: "Manage your programs!", time: "3:09", category_id: 0 },
+    { title: "Analyze your disk space!", time: "4:51", category_id: 0 },
+    { title: "Monitor your system!", time: "5:17", category_id: 0 },
+    { title: "Customize your system preferences!", time: "4:52", category_id: 0 },
+    { title: "Intro to Ruby", time: "3:09", category_id: 1 },
+    { title: "Variables", time: "4:51", category_id: 1 },
+    { title: "Objects and Classes", time: "5:17", category_id: 1 },
+    { title: "Methods", time: "4:52", category_id: 1 }
   ].freeze
   
   def index
@@ -39,7 +39,7 @@ class LessonsController < ApplicationController
       {
         text: lesson[:title],
         href: lesson[:title].parameterize,
-        length: lesson[:length],
+        time: lesson[:time],
         icon: CATEGORIES[lesson[:category_id]][:icon]
       }
     end
