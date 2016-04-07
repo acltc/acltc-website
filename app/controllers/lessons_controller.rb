@@ -10,6 +10,7 @@ class LessonsController < ApplicationController
     { title: "Analyze your disk space!", time: "4:51", category_id: 0 },
     { title: "Monitor your system!", time: "5:17", category_id: 0 },
     { title: "Customize your system preferences!", time: "4:52", category_id: 0 },
+    { title: "Save time with keyboard shortcuts!", time: "5:41", category_id: 0 },
     { title: "Intro to Ruby", time: nil, category_id: 1 },
     { title: "Variables", time: nil, category_id: 1 },
     { title: "Objects and Classes", time: nil, category_id: 1 },
