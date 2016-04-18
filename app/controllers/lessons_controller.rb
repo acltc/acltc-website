@@ -5,11 +5,11 @@ class LessonsController < ApplicationController
   ].freeze
   
   LESSONS = [
-    { title: "Episode 1 - Manage your programs!", time: "3:09", category_id: 0 },
-    { title: "Episode 2 - Analyze your disk space!", time: "4:51", category_id: 0 },
-    { title: "Episode 3 - Monitor your system!", time: "5:17", category_id: 0 },
-    { title: "Episode 4 - Customize your system preferences!", time: "4:52", category_id: 0 },
-    { title: "Episode 5 - Save time with keyboard shortcuts!", time: "5:41", category_id: 0 },
+    { title: "Episode 1 - Manage Your Programs!", time: "3:09", category_id: 0 },
+    { title: "Episode 2 - Analyze Your Disk Space!", time: "4:51", category_id: 0 },
+    { title: "Episode 3 - Monitor Your System!", time: "5:17", category_id: 0 },
+    { title: "Episode 4 - Customize Your System Preferences!", time: "4:52", category_id: 0 },
+    { title: "Episode 5 - Save Time With Keyboard Shortcuts!", time: "5:41", category_id: 0 },
     
     { title: "Episode 1 - Intro to Ruby", time: "5:11", category_id: 1 },
     { title: "Episode 1a - Running Ruby: Things That Can Go Wrong", time: "5:27", category_id: 1 },
