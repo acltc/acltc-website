@@ -1,0 +1,56 @@
+<section id="content">
+	<div class="content-wrap">
+		<div class="container clearfix">
+			<div class="postcontent nobottommargin clearfix">
+				<div class="single-post nobottommargin">
+					<div class="entry clearfix">
+						<div class="col_full portfolio-single-image">
+							<!-- VIDEO CONTENT -->
+							<iframe width="500" height="315" src="https://www.youtube.com/embed/Re3TzegrhsI" frameborder="0" allowfullscreen></iframe>
+						</div>
+						<div id="tutorial-content" class="entry-content notopmargin">
+							<div class="fancy-title title-dotted-border title-center">
+								<h2><%= @lesson_title %></h2>
+							</div>
+							<!-- BODY START -->
+							<h3>Manage text and files:</h3>
+							<ul>
+								<li>Copy: <kbd>Command ⌘</kbd> + <kbd>C</kbd></li>
+								<li>Paste: <kbd>Command ⌘</kbd> + <kbd>V</kbd></li>
+								<li>Undo: <kbd>Command ⌘</kbd> + <kbd>Z</kbd></li>
+								<li>Redo: <kbd>Command ⌘</kbd> + <kbd>Shift ⇧</kbd> + <kbd>Z</kbd></li>
+							</ul>
+							<h3>Create new tabs or windows:</h3>
+							<ul>
+								<li>New tab: <kbd>Command ⌘</kbd> + <kbd>T</kbd></li>
+								<li>New window: <kbd>Command ⌘</kbd> + <kbd>N</kbd></li>
+								<li>Close tab or window: <kbd>Command ⌘</kbd> + <kbd>W</kbd></li>
+							</ul>
+							<h3>Navigating between windows:</h3>
+							<ul>
+								<li>Switch between windows for different programs: <kbd>Command ⌘</kbd> + <kbd>Tab ⇥</kbd></li>
+								<li>Switch between windows for the same program: <kbd>Command ⌘</kbd> + <kbd>`</kbd></li>
+							</ul>
+							<h2>Exercises:</h2>
+							<ul>
+								<li>Practice keyboard shortcuts by avoiding the mouse as much as possible. Each time you are forced to use the mouse, look up the keyboard shortcut that accomplishes the same effect.</li>
+								<li>Explore the menu of any program to learn new keyboard shortcuts.</li>
+							</ul>
+							<!-- BODY END -->
+							<div class="clear"></div>
+							<br>
+							<%= render 'share_buttons.html.erb' %>
+						</div>
+					</div>
+					<%= render 'post_navigation.html.erb' %>
+					<div class="line"></div>
+				</div>
+			</div>
+			<div class="sidebar nobottommargin col_last clearfix">
+				<div class="sidebar-widgets-wrap">
+					<%= render 'next_lessons.html.erb' %>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,36 @@
+<!-- Page Title
+============================================= -->
+<section id="page-title">
+	<div class="container clearfix">
+		<h1>Learn to Code</h1>
+		<span>Thinking about learning how to code but don't know where to start? This series of videos and exercises is designed to teach you the fundamentals of computer programming, starting from ground zero.</span>
+	</div>
+</section><!-- #page-title end -->
+<!-- Content
+============================================= -->
+<section id="content">
+  <div class="content-wrap">
+    <div class="container clearfix">
+			<% @categories.each do |category| %>
+				<div class="fancy-title title-bottom-border">
+					<h3><%= category[:title] %></h3>
+				</div>
+				<div class="list-group">
+					<% category[:lessons].each do |lesson| %>
+						<a href="/tutorial/lessons/<%= lesson[:title].parameterize %>" class="list-group-item">
+							<h4 class="list-group-item-heading">
+								<i class="<%= category[:icon] %>"></i>&emsp;<%= lesson[:title] %>
+								<% if lesson[:time] %>
+									<span class="lesson-time hidden-xs"><i class="icon-time"></i> <%= lesson[:time] %></span>
+								<% end %>
+							</h4>
+						</a>
+					<% end %>
+				</div>
+				<% if category[:lessons].length == 0 %>
+					<p>&emsp;<i class="icon-cog"></i> Coming soon!</p>
+				<% end %>
+			<% end %>
+    </div>
+  </div>
+</section><!-- #content end -->

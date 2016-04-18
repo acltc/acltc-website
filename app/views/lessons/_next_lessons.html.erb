@@ -1,0 +1,29 @@
+<div class="widget clearfix nobottommargin">
+  <% if @next_lessons.length > 0 %>
+    <h4>Next up:</h4>
+  <% end %>
+  <div id="post-list-footer">
+    <% @next_lessons.each do |lesson| %>
+      <div class="spost clearfix">
+        <a href="<%= lesson[:href] %>">
+          <div class="entry-image">
+            <i class="i-rounded i-bordered <%= lesson[:icon] %>"></i>
+          </div>
+          <div class="entry-c">
+            <div class="entry-title">
+              <h4><%= lesson[:text] %></h4>
+            </div>
+            <ul class="entry-meta">
+              <% if lesson[:time] %>
+                <li><i class="icon-time"></i> <%= lesson[:time] %></li>
+              <% end %>
+            </ul>
+          </div>
+        </a>
+      </div>
+    <% end %>
+    <div class="spost clearfix">
+      <h4><a href="/tutorial/lessons">Back to all episodes</a></h4>
+    </div>
+  </div>
+</div>

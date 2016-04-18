@@ -1,0 +1,77 @@
+<section id="content">
+	<div class="content-wrap">
+		<div class="container clearfix">
+			<div class="postcontent nobottommargin clearfix">
+				<div class="single-post nobottommargin">
+					<div class="entry clearfix">
+						<div class="col_full portfolio-single-image">
+							<!-- VIDEO CONTENT -->
+							<iframe width="500" height="315" src="https://www.youtube.com/embed/ZpgP2KQ1zgk" frameborder="0" allowfullscreen></iframe>
+						</div>
+						<div id="tutorial-content" class="entry-content notopmargin">
+							<div class="fancy-title title-dotted-border title-center">
+								<h2><%= @lesson_title %></h2>
+							</div>
+							<!-- BODY START -->
+							<h3>To view your files sorted by disk space:</h3>
+							<ul>
+								<li>Click on the Finder icon in the Dock</li>
+								<li>Navigate to the folder you’re interested in</li>
+								<li>Select the list view icon in the Finder toolbar</li>
+							</ul>
+							<h3>To see an overview of what’s taking up space on your computer:</h3>
+							<ul>
+								<li>Click the Apple logo at the top left of the screen</li>
+								<li>Select About this Mac</li>
+								<li>Select Storage at the top toolbar </li>
+							</ul>
+							<h3>To delete a file and increase disk space:</h3>
+							<ul>
+								<li>Navigate to the file in Finder</li>
+								<li>Right click the file</li>
+								<li>Select Move to Trash</li>
+								<li>Right click the Trash icon in the Dock</li>
+								<li>Select Empty Trash</li>
+							</ul>
+							<h3>To delete an application:</h3>
+							<ul>
+								<li>
+									If you installed the app through the App Store:
+									<ul>
+										<li>Press F4 to open the Launchpad</li>
+										<li>Long press any application until the icons start shaking</li>
+										<li>Press “x” on the application you want to uninstall</li>
+									</ul>
+								</li>
+								<li>
+									If you installed the app manually (not using the App Store)
+									<ul>
+										<li>Open Finder</li>
+										<li>Select the Applications folder on the left navigation</li>
+										<li>Right click the application you want to uninstall</li>
+										<li>Select Move to Trash</li>
+									</ul>
+								</li>
+							</ul>
+							<h2>Exercises:</h2>
+							<ul>
+								<li>Read more about how computers measure file sizes: <a href=" http://www.itbuddy.org/file-sizes.html"> http://www.itbuddy.org/file-sizes.html</a></li>
+							</ul>
+							<!-- BODY END -->
+							<div class="clear"></div>
+							<br>
+							<%= render 'share_buttons.html.erb' %>
+						</div>
+					</div>
+					<%= render 'post_navigation.html.erb' %>
+					<div class="line"></div>
+				</div>
+			</div>
+			<div class="sidebar nobottommargin col_last clearfix">
+				<div class="sidebar-widgets-wrap">
+					<%= render 'next_lessons.html.erb' %>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
