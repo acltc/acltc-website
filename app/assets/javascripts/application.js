@@ -13,7 +13,6 @@
 //= require theme/jquery
 //= require bootstrap
 //= require theme/plugins
-//= require theme/functions
 //= require theme/jquery.gmap
 //= require jquery_ujs
 //= require parallax

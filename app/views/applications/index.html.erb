@@ -1,12 +1,16 @@
 <%= render "/layouts/page_title", page_title: "Applications", page_subtitle: "" %>
 <%= javascript_include_tag "https://www.google.com/jsapi", "chartkick" %>
-<div class="line-chart">
+<div class="chart">
   <h4>Applications Per Month by Location</h4>
   <%= line_chart Application.group(:location).group_by_month(:created_at, format: "%b %Y", last: 11).count, discrete: true, xtitle: "Month", ytitle: "Number of Applications" %>
 </div>
-<div class="pie-chart">
+<div class="chart">
   <h4>How Applicants Learned About ACLTC</h4>
   <%= pie_chart Application.group(:learn_about_acltc).where.not(:learn_about_acltc => nil).count %>
+</div>
+<div class="chart">
+  <h4>Students Registered per Cohort</h4>
+  <%= column_chart Application.group(:cohort).where(:status => 'Registered').count %>
 </div>
 <section id="content">
   <div class="content-wrap dash-wrap">
@@ -17,7 +21,7 @@
         <table class="table table-striped index-dash-table">
           <tr>
           <th>Name</th>
-            <th>Submitted On</th> 
+            <th>Submitted On</th>
             <th>Location</th>
             <th>Status</th>
             <th>Cohort</th>
@@ -25,7 +29,7 @@
           <% @applications.order("created_at desc").each do |application| %>
           <tr>
             <td><%= link_to application.full_name, application_path(application) %></td>
-            <td><%= application.created_at.strftime("%A %B %d, %Y") %></td> 
+            <td><%= application.created_at.strftime("%A %B %d, %Y") %></td>
             <td><%= application.location %></td>
             <td><%= application.status %></td>
             <td><%= application.cohort %></td>
