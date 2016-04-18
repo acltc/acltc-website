@@ -1,8 +1,7 @@
 class LessonsController < ApplicationController
   CATEGORIES = [
-    { title: "Phase 0: Computer Literacy", icon: "icon-laptop2" },
-    { title: "Phase 1: Computer Programming", icon: "icon-keyboard" },
-    { title: "Phase 2: Computer Masters", icon: "icon-keyboard" }
+    { title: "Season 1: Becoming a Power User", icon: "icon-laptop2" },
+    { title: "Season 2: Becoming a Programmer", icon: "icon-keyboard" }
   ].freeze
   
   LESSONS = [
@@ -11,10 +10,37 @@ class LessonsController < ApplicationController
     { title: "Monitor your system!", time: "5:17", category_id: 0 },
     { title: "Customize your system preferences!", time: "4:52", category_id: 0 },
     { title: "Save time with keyboard shortcuts!", time: "5:41", category_id: 0 },
-    { title: "Intro to Ruby", time: nil, category_id: 1 },
-    { title: "Variables", time: nil, category_id: 1 },
-    { title: "Objects and Classes", time: nil, category_id: 1 },
-    { title: "Methods", time: nil, category_id: 1 }
+    { title: "Episode 1 - Intro to Ruby", time: "5:11", category_id: 1 },
+    { title: "Episode 1a - Running Ruby: Things That Can Go Wrong", time: "5:27", category_id: 1 },
+    { title: "Episode 2 - Code Flow: Top Down", time: "2:34", category_id: 1 },
+    { title: "Episode 3 - Code Flow: Left to Right", time: "4:45", category_id: 1 },
+    { title: "Episode 4 - Strings", time: "2:37", category_id: 1 },
+    { title: "Episode 4a - Things That Can Go Wrong With Strings", time: "3:10", category_id: 1 },
+    { title: "Episode 5 - Intro to Methods", time: "4:28", category_id: 1 },
+    { title: "Episode 6 - Variables", time: "4:38", category_id: 1 },
+    { title: "Episode 6a - Things That Can Go Wrong With Variables", time: "2:37", category_id: 1 },
+    { title: "Episode 7 - More About Variables", time: "3:06", category_id: 1 },
+    { title: "Episode 8 - User Input", time: "5:46", category_id: 1 },
+    { title: "Episode 8a - More About User Input", time: "2:37", category_id: 1 },
+    { title: "Episode 8b - Things That Can Go Wrong With User Input", time: "2:33", category_id: 1 },
+    { title: "Episode 8c - Synthesis: Strings, Variables, and User Input", time: "4:28", category_id: 1 },
+    { title: "Episode 9 - Intro to Conditionals", time: "4:58", category_id: 1 },
+    { title: "Episode 9a - Things That Can Go Wrong With Conditionals", time: "3:20", category_id: 1 },
+    { title: "Episode 10 - Naming Variables", time: "3:30", category_id: 1 },
+    { title: "Episode 11 - Conditionals: Else", time: "5:21", category_id: 1 },
+    { title: "Episode 12 - Conditionals: Elsif", time: "7:40", category_id: 1 },
+    { title: "Episode 12a - Synthesis: Variables, User Input, and Conditionals", time: "6:13", category_id: 1 },
+    { title: "Episode 12b - More About Conditionals", time: "2:58", category_id: 1 },
+    { title: "Episode 13 - Loops", time: "7:24", category_id: 1 },
+    { title: "Episode 13a - Code Flow With Loops", time: "2:21", category_id: 1 },
+    { title: "Episode 13b - Synthesis: Variables, Conditionals, and Loops", time: "6:07", category_id: 1 },
+    { title: "Episode 13c - Things That Can Go Wrong With Loops", time: "2:06", category_id: 1 },
+    { title: "Episode 14 - Indentation", time: "2:55", category_id: 1 },
+    { title: "Episode 15 - Arrays", time: "6:48", category_id: 1 },
+    { title: "Episode 16 - Reading Documentation", time: "12:10", category_id: 1 },
+    { title: "Episode 17 - The Each Method", time: "7:42", category_id: 1 },
+    { title: "Episode 17a - Synthesis: Arrays Plus More", time: "6:43", category_id: 1 },
+    { title: "Episode 18 - Hashes", time: "9:24", category_id: 1 }
   ].freeze
   
   def index
@@ -44,6 +70,7 @@ class LessonsController < ApplicationController
         icon: CATEGORIES[lesson[:category_id]][:icon]
       }
     end
+    @lesson_title = LESSONS[lesson_index][:title]
     render params[:title]
   end
 end
