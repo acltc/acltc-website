@@ -1,26 +1,18 @@
-<!-- Content
-============================================= -->
 <section id="content">
 	<div class="content-wrap">
 		<div class="container clearfix">
-			<!-- Post Content
-			============================================= -->
 			<div class="postcontent nobottommargin clearfix">
 				<div class="single-post nobottommargin">
-					<!-- Single Post
-					============================================= -->
 					<div class="entry clearfix">
 						<div class="col_full portfolio-single-image">
+							<!-- VIDEO CONTENT -->
 							<iframe width="500" height="315" src="https://www.youtube.com/embed/WVpKsyIr3qE" frameborder="0" allowfullscreen></iframe>
 						</div>
-						<!-- Entry Content
-						============================================= -->
 						<div id="tutorial-content" class="entry-content notopmargin">
-							<!-- Entry Title
-							============================================= -->
 							<div class="fancy-title title-dotted-border title-center">
-								<h2>Monitor your system!</h2>
-							</div><!-- .entry-title end -->
+								<h2><%= @lesson_title %></h2>
+							</div>
+							<!-- BODY START -->
 							<h3>To open up Activity Monitor:</h3>
 							<ul>
 								<li>Press F4 to open up Launchpad</li>
@@ -53,22 +45,21 @@
 							<h2>Exercises:</h2>
 							<ul>
 							</ul>
+							<!-- BODY END -->
 							<div class="clear"></div>
 							<br>
 							<%= render 'share_buttons.html.erb' %>
 						</div>
-					</div><!-- .entry end -->
+					</div>
 					<%= render 'post_navigation.html.erb' %>
 					<div class="line"></div>
 				</div>
-			</div><!-- .postcontent end -->
-			<!-- Sidebar
-			============================================= -->
+			</div>
 			<div class="sidebar nobottommargin col_last clearfix">
 				<div class="sidebar-widgets-wrap">
 					<%= render 'next_lessons.html.erb' %>
 				</div>
-			</div><!-- .sidebar end -->
+			</div>
 		</div>
 	</div>
-</section><!-- #content end -->
+</section>
