@@ -55,25 +55,37 @@ class LessonsController < ApplicationController
   end
 
   def show
+    # Find the current lesson based on the parameterized url
     lesson_index = LESSONS.index { |lesson| params[:title] == lesson[:title].parameterize }
-    lesson_links = LESSONS.map do |lesson|
-      { text: lesson[:title], href: "/tutorial/lessons/#{lesson[:title].parameterize}" }
+    lesson = LESSONS[lesson_index]
+    @lesson_title = lesson[:title]
+    # Create the next and previous links
+    lesson_links = LESSONS.map do |each_lesson|
+      { text: each_lesson[:title], href: "/tutorial/lessons/#{each_lesson[:title].parameterize}" }
     end
     index_link = { text: "All lessons", href: "/tutorial/lessons" }
     lesson_links = [index_link] + lesson_links + [index_link]
     @previous_link = lesson_links[1 + lesson_index - 1]
     @next_link = lesson_links[1 + lesson_index + 1]
-    @next_lessons = LESSONS[(lesson_index + 1)..-1].map do |lesson|
+    # Create the links to the remaining lessons in the season
+    # If it's the last episode in the season, create links for next season lessons
+    remaining_lessons = LESSONS[(lesson_index + 1)..-1].select do |each_lesson|
+      each_lesson[:category_id] == lesson[:category_id]
+    end
+    if remaining_lessons.length == 0
+      remaining_lessons = LESSONS[(lesson_index + 1)..-1].select do |each_lesson|
+        each_lesson[:category_id] == lesson[:category_id] + 1
+      end
+    end
+    @next_lessons = remaining_lessons.map do |each_lesson|
       {
-        text: lesson[:title],
-        href: lesson[:title].parameterize,
-        time: lesson[:time],
-        icon: CATEGORIES[lesson[:category_id]][:icon]
+        text: each_lesson[:title],
+        href: each_lesson[:title].parameterize,
+        time: each_lesson[:time],
+        icon: CATEGORIES[each_lesson[:category_id]][:icon]
       }
     end
-    lesson = LESSONS[lesson_index]
     category_path = CATEGORIES[lesson[:category_id]][:title].parameterize
-    @lesson_title = lesson[:title]
     render "/lessons/#{category_path}/#{params[:title]}"
   end
 end
