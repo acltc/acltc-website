@@ -13,8 +13,7 @@ class ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
     if @contact.save
       AcltcMailer.contact_us_email(@contact).deliver_now
-      flash[:success] = "Thanks for reaching out! We will get back to you shortly."
-      redirect_to new_contact_path
+      redirect_to "/pages/contacts_thank_you"
     else
       render :new
     end

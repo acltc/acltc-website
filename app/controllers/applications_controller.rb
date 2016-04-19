@@ -26,7 +26,7 @@ class ApplicationsController < ApplicationController
     @application = Application.new(application_params)
     if @application.save
       AcltcMailer.application_email(@application).deliver_now
-      redirect_to "/pages/thank_you.com"
+      redirect_to "/pages/thank_you"
     else
       render :new
     end

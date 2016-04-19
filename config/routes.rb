@@ -6,9 +6,10 @@ Rails.application.routes.draw do
   scope format: false do
     get '/*date/*title', to: 'blog_posts#show', date: %r[\d{4}/\d{2}/\d{2}], as: 'post'
   end
-  
-  get "/pages/:page" => "pages#show", :to => redirect('/thank_you')
-  
+
+  get '/pages/thank_you'
+  get '/pages/contacts_thank_you'
+
   resources :blog_posts
   resources :blog_categories
   resources :applications

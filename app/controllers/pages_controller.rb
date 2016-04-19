@@ -3,7 +3,11 @@ class PagesController < ApplicationController
     render :layout => 'home_application'
   end
 
-  def show
-    render template: "pages/#{params[:page]}"
+  def thank_you
+
+  end
+
+  def contacts_thank_you
+
   end
 end
