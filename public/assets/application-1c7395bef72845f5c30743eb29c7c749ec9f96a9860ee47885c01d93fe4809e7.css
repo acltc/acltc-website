@@ -28856,22 +28856,28 @@ a.btn.btn-danger.right-link {
   margin-bottom: 0;
 }
 
+/* line 106, /Users/ryanmcmahon/Desktop/acltc-website/app/assets/stylesheets/applications.scss */
+#application_notes {
+  width: 47%;
+  display: inline;
+}
+
 /***** min 992 width Styles ******/
 @media (min-width: 992px) {
-  /* line 109, /Users/ryanmcmahon/Desktop/acltc-website/app/assets/stylesheets/applications.scss */
+  /* line 114, /Users/ryanmcmahon/Desktop/acltc-website/app/assets/stylesheets/applications.scss */
   form#new_application {
     width: 650px;
     margin: 0 auto;
   }
 
-  /* line 113, /Users/ryanmcmahon/Desktop/acltc-website/app/assets/stylesheets/applications.scss */
+  /* line 118, /Users/ryanmcmahon/Desktop/acltc-website/app/assets/stylesheets/applications.scss */
   .label-leading {
     letter-spacing: 0.5px;
   }
 }
 /***** max 991 width Styles ******/
 @media (max-width: 991px) {
-  /* line 121, /Users/ryanmcmahon/Desktop/acltc-website/app/assets/stylesheets/applications.scss */
+  /* line 126, /Users/ryanmcmahon/Desktop/acltc-website/app/assets/stylesheets/applications.scss */
   .content-wrap {
     padding-left: 10px;
     padding-right: 10px;
@@ -30583,6 +30589,31 @@ footer .inquiries {
 footer .inquiries i {
   font-size: 2em;
   color: #f25252;
+}
+/* line 4, /Users/ryanmcmahon/Desktop/acltc-website/app/assets/stylesheets/lessons.scss */
+#tutorial-content ul {
+  margin-left: 2em;
+  font-size: 1.1em;
+}
+
+/* line 9, /Users/ryanmcmahon/Desktop/acltc-website/app/assets/stylesheets/lessons.scss */
+#tutorial-content code {
+  background-color: rgba(128, 128, 128, 0.075);
+  color: #3f3f3f;
+  font-family: monospace;
+}
+
+/* line 15, /Users/ryanmcmahon/Desktop/acltc-website/app/assets/stylesheets/lessons.scss */
+#tutorial-share div {
+  float: inherit;
+}
+
+/* line 19, /Users/ryanmcmahon/Desktop/acltc-website/app/assets/stylesheets/lessons.scss */
+.lesson-time {
+  float: right;
+  color: #aaa !important;
+  margin: 0;
+  padding: 0;
 }
 /* line 6, /Users/ryanmcmahon/Desktop/acltc-website/app/assets/stylesheets/mini_courses.scss */
 .skills-learned {

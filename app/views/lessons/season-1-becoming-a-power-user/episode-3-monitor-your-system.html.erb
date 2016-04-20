@@ -1,0 +1,65 @@
+<section id="content">
+	<div class="content-wrap">
+		<div class="container clearfix">
+			<div class="postcontent nobottommargin clearfix">
+				<div class="single-post nobottommargin">
+					<div class="entry clearfix">
+						<div class="col_full portfolio-single-image">
+							<!-- VIDEO CONTENT -->
+							<iframe width="500" height="315" src="https://www.youtube.com/embed/WVpKsyIr3qE" frameborder="0" allowfullscreen></iframe>
+						</div>
+						<div id="tutorial-content" class="entry-content notopmargin">
+							<div class="fancy-title title-dotted-border title-center">
+								<h2><%= @lesson_title %></h2>
+							</div>
+							<!-- BODY START -->
+							<h3>To open up Activity Monitor:</h3>
+							<ul>
+								<li>Press F4 to open up Launchpad</li>
+								<li>Start typing “Activity Monitor”</li>
+								<li>Press Enter when it appears</li>
+							</ul>
+							<h3>To analyze your system:</h3>
+							<ul>
+								<li>Open Activity Monitor</li>
+								<li>Look for any processes that are taking more than 10% over time</li>
+								<li>Quit any programs related to that process</li>
+								<li>Right click the Dock icon and select “Quit”</li>
+								<li>If you’re not sure where a process is coming from, do an internet search</li>
+							</ul>
+							<h3>To kill a process directly (exercise caution!):</h3>
+							<ul>
+								<li>Select the process in Activity Monitor</li>
+								<li>Click on the “x” icon near the top left</li>
+								<li>Choose “Quit” or “Force Quit”</li>
+								<li>Only use “Force Quit” if “Quit” doesn’t work. Don’t kill any processes that you don’t know about, do an internet search first to see what’s recommended!</li>
+							</ul>
+							<h3>To monitor your system from the Dock:</h3>
+							<ul>
+								<li>Open Activity Monitor</li>
+								<li>Right click the icon in the Dock</li>
+								<li>Select Options => Keep in Dock</li>
+								<li>Right click the icon in the Dock</li>
+								<li>Select Dock Icon => Show CPU Usage</li>
+							</ul>
+							<h2>Exercises:</h2>
+							<ul>
+							</ul>
+							<!-- BODY END -->
+							<div class="clear"></div>
+							<br>
+							<%= render 'share_buttons.html.erb' %>
+						</div>
+					</div>
+					<%= render 'post_navigation.html.erb' %>
+					<div class="line"></div>
+				</div>
+			</div>
+			<div class="sidebar nobottommargin col_last clearfix">
+				<div class="sidebar-widgets-wrap">
+					<%= render 'next_lessons.html.erb' %>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
