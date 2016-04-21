@@ -1,7 +1,7 @@
 class LessonsController < ApplicationController
   CATEGORIES = [
     { title: "Season 1: Becoming a Power User", icon: "icon-laptop2" },
-    { title: "Season 2: Learning the Tools", icon: "icon-wrench" },
+    { title: "Season 2: Preparing Your Tools", icon: "icon-wrench" },
     { title: "Season 3: Becoming a Programmer", icon: "icon-keyboard" }
   ].freeze
   
@@ -11,6 +11,8 @@ class LessonsController < ApplicationController
     { title: "Episode 3 - Monitor Your System!", time: "5:17", category_id: 0 },
     { title: "Episode 4 - Customize Your System Preferences!", time: "4:52", category_id: 0 },
     { title: "Episode 5 - Save Time With Keyboard Shortcuts!", time: "5:41", category_id: 0 },
+
+    { title: "Episode 1 - Text Editor: Installation", time_mac: "3:28", time_win: "2:22", category_id: 1 },
     
     { title: "Episode 1 - Intro to Ruby", time: "5:11", category_id: 2 },
     { title: "Episode 1a - Running Ruby: Things That Can Go Wrong", time: "5:27", category_id: 2 },
@@ -83,6 +85,8 @@ class LessonsController < ApplicationController
         text: each_lesson[:title],
         href: each_lesson[:title].parameterize,
         time: each_lesson[:time],
+        time_mac: each_lesson[:time_mac],
+        time_win: each_lesson[:time_win],
         icon: CATEGORIES[each_lesson[:category_id]][:icon]
       }
     end

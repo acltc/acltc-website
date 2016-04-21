@@ -23,6 +23,12 @@
 								<% if lesson[:time] %>
 									<span class="lesson-time hidden-xs"><i class="icon-time"></i> <%= lesson[:time] %></span>
 								<% end %>
+								<% if lesson[:time_mac] %>
+									<span class="macintosh lesson-time hidden-xs"><i class="icon-time"></i> <%= lesson[:time_mac] %></span>
+								<% end %>
+								<% if lesson[:time_win] %>
+									<span class="windows lesson-time hidden-xs"><i class="icon-time"></i> <%= lesson[:time_win] %></span>
+								<% end %>
 							</h4>
 						</a>
 					<% end %>
