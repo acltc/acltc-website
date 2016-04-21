@@ -23,10 +23,10 @@
   padding: 0;
 }
 
-html.plat_osx .windows {
+html.plat_osx .plat_win {
   display: none;
 }
 
-html.plat_win .macintosh {
+html.plat_win .plat_osx {
   display: none;
 }
