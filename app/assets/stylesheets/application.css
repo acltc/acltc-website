@@ -17,6 +17,7 @@
  *= require theme/animate
  *= require theme/magnific-popup
  *= require theme/responsive
+ *= require prism
  *= require_tree .
  *= require_self
  */

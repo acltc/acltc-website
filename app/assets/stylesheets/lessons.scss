@@ -1,15 +1,18 @@
 // Place all the styles related to the lessons controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.tutorial-content ul {
+.tutorial-content ul, ol {
   margin-left: 2em;
   font-size: 1.1em;
 }
 
-.tutorial-content code {
-  background-color: rgba(128,128,128,0.075);
-  color: #3f3f3f;
-  font-family: monospace; 
+.tutorial-content ol > li {
+  margin-bottom: 3em;
+}
+
+.tutorial-content pre {
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 .tutorial-share div {

@@ -16,4 +16,5 @@
 //= require theme/jquery.gmap
 //= require jquery_ujs
 //= require parallax
+//= require prism
 //= require_tree .
