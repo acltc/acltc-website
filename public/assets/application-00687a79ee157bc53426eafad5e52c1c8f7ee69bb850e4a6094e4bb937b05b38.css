@@ -28856,22 +28856,28 @@ a.btn.btn-danger.right-link {
   margin-bottom: 0;
 }
 
+/* line 106, /Users/jaywengrow/acltc/acltc-website/app/assets/stylesheets/applications.scss */
+#application_notes {
+  width: 47%;
+  display: inline;
+}
+
 /***** min 992 width Styles ******/
 @media (min-width: 992px) {
-  /* line 109, /Users/jaywengrow/acltc/acltc-website/app/assets/stylesheets/applications.scss */
+  /* line 114, /Users/jaywengrow/acltc/acltc-website/app/assets/stylesheets/applications.scss */
   form#new_application {
     width: 650px;
     margin: 0 auto;
   }
 
-  /* line 113, /Users/jaywengrow/acltc/acltc-website/app/assets/stylesheets/applications.scss */
+  /* line 118, /Users/jaywengrow/acltc/acltc-website/app/assets/stylesheets/applications.scss */
   .label-leading {
     letter-spacing: 0.5px;
   }
 }
 /***** max 991 width Styles ******/
 @media (max-width: 991px) {
-  /* line 121, /Users/jaywengrow/acltc/acltc-website/app/assets/stylesheets/applications.scss */
+  /* line 126, /Users/jaywengrow/acltc/acltc-website/app/assets/stylesheets/applications.scss */
   .content-wrap {
     padding-left: 10px;
     padding-right: 10px;
@@ -30585,29 +30591,44 @@ footer .inquiries i {
   color: #f25252;
 }
 /* line 4, /Users/jaywengrow/acltc/acltc-website/app/assets/stylesheets/lessons.scss */
-#tutorial-content ul {
+.tutorial-content ul {
   margin-left: 2em;
   font-size: 1.1em;
 }
 
 /* line 9, /Users/jaywengrow/acltc/acltc-website/app/assets/stylesheets/lessons.scss */
-#tutorial-content code {
+.tutorial-content code {
   background-color: rgba(128, 128, 128, 0.075);
   color: #3f3f3f;
   font-family: monospace;
 }
 
 /* line 15, /Users/jaywengrow/acltc/acltc-website/app/assets/stylesheets/lessons.scss */
-#tutorial-share div {
+.tutorial-share div {
   float: inherit;
 }
 
 /* line 19, /Users/jaywengrow/acltc/acltc-website/app/assets/stylesheets/lessons.scss */
+.tutorial-tabs > div {
+  margin-top: 10px;
+}
+
+/* line 23, /Users/jaywengrow/acltc/acltc-website/app/assets/stylesheets/lessons.scss */
 .lesson-time {
   float: right;
   color: #aaa !important;
   margin: 0;
   padding: 0;
+}
+
+/* line 30, /Users/jaywengrow/acltc/acltc-website/app/assets/stylesheets/lessons.scss */
+html.plat_osx .plat_win {
+  display: none;
+}
+
+/* line 34, /Users/jaywengrow/acltc/acltc-website/app/assets/stylesheets/lessons.scss */
+html.plat_win .plat_osx {
+  display: none;
 }
 /* line 6, /Users/jaywengrow/acltc/acltc-website/app/assets/stylesheets/mini_courses.scss */
 .skills-learned {

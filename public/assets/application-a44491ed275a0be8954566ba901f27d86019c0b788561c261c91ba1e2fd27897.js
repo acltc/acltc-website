@@ -4142,7 +4142,11 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
 
 }).call(this);
 (function() {
-
+  if (/Mac OS X|Linux|FreeBSD/.test(navigator.userAgent)) {
+    document.documentElement.className += ' plat_osx';
+  } else {
+    document.documentElement.className += ' plat_win';
+  }
 
 }).call(this);
 (function() {
