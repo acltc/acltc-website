@@ -13,6 +13,10 @@ class LessonsController < ApplicationController
     { title: "Episode 5 - Save Time With Keyboard Shortcuts!", time: "5:41", category_id: 0 },
 
     { title: "Episode 1 - Text Editor: Installation", time_mac: "3:28", time_win: "2:22", category_id: 1 },
+    { title: "Episode 2 - Text Editor: Basic Features", time_mac: "4:23", time_win: "5:02", category_id: 1 },
+    { title: "Episode 3 - Command Line: Navigation", time_mac: "5:19", time_win: "5:10", category_id: 1 },
+    { title: "Episode 4 - Command Line: Running Commands", time_mac: "4:39", time_win: "4:16", category_id: 1 },
+    { title: "Episode 5 - Command Line: Installing Ruby", time_mac: nil, time_win: "3:13", category_id: 1 },
     
     { title: "Episode 1 - Intro to Ruby", time: "5:11", category_id: 2 },
     { title: "Episode 1a - Running Ruby: Things That Can Go Wrong", time: "5:27", category_id: 2 },
