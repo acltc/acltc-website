@@ -17,6 +17,12 @@
               <% if lesson[:time] %>
                 <li><i class="icon-time"></i> <%= lesson[:time] %></li>
               <% end %>
+              <% if lesson[:time_mac] %>
+                <li class="plat_osx"><i class="icon-time"></i> <%= lesson[:time_mac] %></li>
+              <% end %>
+              <% if lesson[:time_win] %>
+                <li class="plat_win"><i class="icon-time"></i> <%= lesson[:time_win] %></li>
+              <% end %>
             </ul>
           </div>
         </a>

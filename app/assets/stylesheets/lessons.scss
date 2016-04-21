@@ -1,19 +1,23 @@
 // Place all the styles related to the lessons controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-#tutorial-content ul {
+.tutorial-content ul {
   margin-left: 2em;
   font-size: 1.1em;
 }
 
-#tutorial-content code {
+.tutorial-content code {
   background-color: rgba(128,128,128,0.075);
   color: #3f3f3f;
   font-family: monospace; 
 }
 
-#tutorial-share div {
+.tutorial-share div {
   float: inherit;
+}
+
+.tutorial-tabs > div {
+  margin-top: 10px;
 }
 
 .lesson-time {
@@ -21,4 +25,12 @@
   color: #aaa !important;
   margin: 0;
   padding: 0;
+}
+
+html.plat_osx .plat_win {
+  display: none;
+}
+
+html.plat_win .plat_osx {
+  display: none;
 }

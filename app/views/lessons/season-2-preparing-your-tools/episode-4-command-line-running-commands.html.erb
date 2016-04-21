@@ -1,0 +1,72 @@
+
+<section id="content">
+	<div class="content-wrap">
+		<div class="container clearfix">
+			<div class="postcontent nobottommargin clearfix">
+				<div class="single-post nobottommargin">
+				  <ul id="os-tabs" class="nav nav-tabs" role="tablist">
+				    <li role="presentation" class="active"><a href="#mac-version" aria-controls="home" role="tab" data-toggle="tab">Mac</a></li>
+				    <li role="presentation"><a href="#win-version" aria-controls="profile" role="tab" data-toggle="tab">Windows</a></li>
+				  </ul>
+				  <div class="tab-content tutorial-tabs">
+						<!-- MAC VERSION -->
+				    <div role="tabpanel" class="tab-pane active" id="mac-version">
+							<div class="os_mac entry clearfix">
+								<div class="col_full portfolio-single-image">
+									<!-- VIDEO CONTENT -->
+									<iframe width="500" height="315" src="https://www.youtube.com/embed/zAGAbUcKL4s" frameborder="0" allowfullscreen></iframe>
+								</div>
+								<div class="tutorial-content" class="entry-content notopmargin">
+									<div class="fancy-title title-dotted-border title-center">
+										<h2><%= @lesson_title %></h2>
+									</div>
+									<!-- BODY START -->
+
+									<!-- BODY END -->
+									<div class="clear"></div>
+									<br>
+									<%= render 'share_buttons.html.erb' %>
+								</div>
+							</div>
+				    </div>
+						<!-- WINDOWS VERSION -->
+				    <div role="tabpanel" class="tab-pane" id="win-version">
+							<div class="os_win entry clearfix">
+								<div class="col_full portfolio-single-image">
+									<!-- VIDEO CONTENT -->
+									<iframe width="420" height="315" src="https://www.youtube.com/embed/dWzzcgJHRoA" frameborder="0" allowfullscreen></iframe>
+								</div>
+								<div class="tutorial-content" class="entry-content notopmargin">
+									<div class="fancy-title title-dotted-border title-center">
+										<h2><%= @lesson_title %></h2>
+									</div>
+									<!-- BODY START -->
+									
+									<!-- BODY END -->
+									<div class="clear"></div>
+									<br>
+									<%= render 'share_buttons.html.erb' %>
+								</div>
+							</div>
+				    </div>
+				  </div>
+					<%= render 'post_navigation.html.erb' %>
+					<div class="line"></div>
+				</div>
+			</div>
+			<div class="sidebar nobottommargin col_last clearfix">
+				<div class="sidebar-widgets-wrap">
+					<%= render 'next_lessons.html.erb' %>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<script type="text/javascript">
+	if (document.documentElement.classList.contains('plat_osx')) {
+		$('#os-tabs a[href="#mac-version"]').tab('show');
+	} else {
+		$('#os-tabs a[href="#win-version"]').tab('show');
+	}
+</script>
