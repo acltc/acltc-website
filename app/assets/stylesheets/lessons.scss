@@ -22,3 +22,11 @@
   margin: 0;
   padding: 0;
 }
+
+html.plat_osx .windows {
+  display: none;
+}
+
+html.plat_win .macintosh {
+  display: none;
+}
