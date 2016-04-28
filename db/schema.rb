@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160419141030) do
+ActiveRecord::Schema.define(version: 20160428184854) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,7 +67,10 @@ ActiveRecord::Schema.define(version: 20160419141030) do
     t.string   "status"
     t.string   "cohort"
     t.text     "notes"
+    t.integer  "interview_id"
   end
+
+  add_index "applications", ["interview_id"], name: "index_applications_on_interview_id", using: :btree
 
   create_table "blog_categories", force: :cascade do |t|
     t.string   "name"
@@ -139,6 +142,13 @@ ActiveRecord::Schema.define(version: 20160419141030) do
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
+  create_table "interviews", force: :cascade do |t|
+    t.datetime "starts_at"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "booked",     default: false
+  end
+
   create_table "mini_course_applications", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -178,4 +188,5 @@ ActiveRecord::Schema.define(version: 20160419141030) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "applications", "interviews"
 end

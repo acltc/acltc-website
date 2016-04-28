@@ -44,6 +44,10 @@
           <%= f.text_field :emergency_contact, class: "form-control", placeholder: "Ada Lovelace xxx-xxx-xxxx" %>
         </div>
         <div class="form-group">
+          <%= f.label "Schedule a Phone Interview", class: "required" %><br />
+          <%= f.collection_select :interview_id, Interview.where(booked: false), :id, :interview_date_human, {:include_blank => 'Select Interview Slot'}, { class: 'form-control shorten-select' } %>
+        </div>
+        <div class="form-group">
           <label class="required label-radio">How did you hear about Anyone Can Learn To Code?</label><br />
           <div class="radio row">
             <div class="col-md-4">

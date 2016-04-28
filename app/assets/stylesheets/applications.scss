@@ -107,6 +107,14 @@ a.btn.btn-danger.right-link {
     display: inline;
 }
 
+/***** min 769 width Styles ******/
+
+@media (min-width: 769px) {
+  .shorten-select {
+    width: 50%;
+  }
+}
+
 /***** min 992 width Styles ******/
 
 @media (min-width: 992px) {

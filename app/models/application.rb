@@ -3,6 +3,8 @@ class Application < ActiveRecord::Base
   attr_accessor :subtitle #virtual attribute to prevent spam via the invisible_captcha gem
   validates :subtitle, :invisible_captcha => true
 
+  belongs_to :interview
+  
   def full_name
     "#{first_name} #{last_name}"
   end
@@ -11,7 +13,7 @@ class Application < ActiveRecord::Base
     updated_at.strftime("%A, %d %b %Y %l:%M %p")
   end
 
-  def self.to_csv(options = {})    
+  def self.to_csv(options = {})
     CSV.generate(options) do |csv|
       csv << column_names
       all.each do |application|

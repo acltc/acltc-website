@@ -20,7 +20,7 @@
             <%= f.submit "Update", class: "btn btn-primary select-button"%>
           <% end %>
         </div>
-
+        <h2><%= @application.interview.starts_at.strftime("%B %d, %Y %l:%M %P") %></h2>
         <table class="table table-striped">
           <tr class="active">
             <th class="col-md-3">Notes:</th>
