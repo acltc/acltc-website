@@ -23,7 +23,7 @@ gem 'seed_dump'
 #honeypot/invisible captcha to thwart spam
 gem 'invisible_captcha'
 
-#Amazon Web Services 
+#Amazon Web Services
 gem 'aws-sdk', '~> 2'
 
 #Chartkick graphs and charts
