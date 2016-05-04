@@ -182,7 +182,7 @@
         </div>
         <div class="form-group">
           <%= f.label "Schedule a Google Hangouts Interview (All times Central)", class: "required" %><br />
-          <%= f.collection_select :interview_id, Interview.where('starts_at > ?', DateTime.now).where(booked: false ), :id, :interview_date_human, {:include_blank => 'Select Interview Date and Time'}, { class: 'form-control shorten-select' } %>
+          <%= f.collection_select :interview_id, Interview.where('starts_at > ?', DateTime.now).where(booked: false ).order(starts_at: :asc), :id, :interview_date_human, {:include_blank => 'Select Interview Date and Time'}, { class: 'form-control shorten-select' } %>
         </div>
         <div class="form-group">
           <%= f.label "Google Hangouts email or username" %><br />
