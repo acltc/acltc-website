@@ -47,6 +47,7 @@ class ApplicationsController < ApplicationController
 
   def destroy
     @application = Application.find(params[:id])
+    @application.interview.update(booked: false)
     @application.destroy
 
     flash[:danger] = "Application successfully deleted!"
@@ -60,7 +61,7 @@ class ApplicationsController < ApplicationController
     params.require(:application).permit(:first_name, :last_name, :email, :phone, :address,
     :emergency_contact, :learn_about_acltc, :learn_about_acltc_specify, :current_occupation,
     :scholarship_applicant, :learn_about_scholarship, :minority, :woman, :why_scholarship,
-    :primary_goals, :programming_experience, :preferred_work_location, :capstone_idea,
+    :primary_goals, :programming_experience, :preferred_work_location,
     :work_concurrently, :tinker_example, :why_better, :location, :status, :cohort, :subtitle,
     :notes, :hangouts_email, :interview_id )
   end
