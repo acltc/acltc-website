@@ -1,0 +1,48 @@
+<div>
+  <%= link_to "View Booked & Open Interviews", interviews_path, class: "btn btn-info index-new-interview-button" %>
+</div>
+<div class="content-wrap">
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <%= form_for @interview do |f| %>
+      <% if @interview.errors.any? %>
+      <div class="alert alert-dismissible alert-warning center-warning">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <h2>Oops! You forgot to fill out
+          <%= pluralize(@interview.errors.count, "field") %>:
+        </h2>
+        <ul>
+          <% @interview.errors.full_messages.each do |msg| %>
+          <h4><%= msg %></h4>
+          <% end %>
+        </ul>
+      </div>
+      <% end %>
+      <div class="form-group">
+        <%= f.label :starts_at, "Pick a date and time to create an interview slot", class: "required" %>
+          <div class='input-group date' id='datetimepicker1'>
+              <%= f.text_field :starts_at, autofocus: true, type: 'text', class: "form-control" %>
+              <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-calendar"></span>
+              </span>
+          </div>
+      </div>
+      <div class="form-group">
+        <%= f.submit "Create Interview Slot", class: "button button-3d nomargin nopadding" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  $(function () {
+    $('#datetimepicker1').datetimepicker({
+      format: 'dddd, MMM Do h:mm A'
+    });
+  });
+</script>
+
+
+
+

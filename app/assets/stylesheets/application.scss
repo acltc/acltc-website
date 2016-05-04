@@ -18,6 +18,28 @@
  *= require theme/magnific-popup
  *= require theme/responsive
  *= require prism
- *= require_tree .
  *= require_self
+ *= require_tree .
  */
+
+ @import 'bootstrap-sprockets';
+ @import 'bootstrap';
+ @import 'bootstrap-datetimepicker';
+
+ .admin-dashboard a {
+   text-decoration: none;
+   color: #1ABC9C;
+   line-height: 21px;
+ }
+
+ .index-dash-table a {
+   color: #1ABC9C;
+ }
+
+ ul {
+   margin-bottom: 30px;
+ }
+
+ .h4-margin {
+   font-weight: 600;
+ }

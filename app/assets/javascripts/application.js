@@ -17,4 +17,6 @@
 //= require jquery_ujs
 //= require parallax
 //= require prism
+//= require moment
+//= require bootstrap-datetimepicker
 //= require_tree .

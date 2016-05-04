@@ -1,0 +1,19 @@
+// Place all the styles related to the Interviews controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.interview-table-header {
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #179A8C;
+  text-align: center;
+}
+
+.interview-button {
+  font-weight: 700;
+  margin: 0 5px;
+}
+
+.index-new-interview-button {
+  margin: 20px;
+}

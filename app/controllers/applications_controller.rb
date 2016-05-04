@@ -62,7 +62,7 @@ class ApplicationsController < ApplicationController
     :scholarship_applicant, :learn_about_scholarship, :minority, :woman, :why_scholarship,
     :primary_goals, :programming_experience, :preferred_work_location, :capstone_idea,
     :work_concurrently, :tinker_example, :why_better, :location, :status, :cohort, :subtitle,
-    :notes, :interview_id )
+    :notes, :hangouts_email, :interview_id )
   end
 
 end

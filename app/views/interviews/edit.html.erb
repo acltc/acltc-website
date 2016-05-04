@@ -1,0 +1,41 @@
+<div class="content-wrap">
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <%= form_for :interview, url: interview_path(@interview), method: :patch do |f| %>
+        <% if @interview.errors.any? %>
+          <div id="error_explanation">
+            <h2>
+              <%= pluralize(@interview.errors.count, "error") %> prohibited
+              this interview slot from being updated:
+            </h2>
+            <ul>
+              <% @interview.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+          <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <div class="form-group">
+          <%= f.label :starts_at, "Edit date and time to update the interview slot" %>
+            <div class='input-group date' id='datetimepicker1'>
+                <%= f.text_field :starts_at, autofocus: true, type: 'text', class: "form-control" %>
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+          <%= f.submit "Edit Interview Slot", class: "button button-3d nomargin nopadding" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  $(function () {
+    $('#datetimepicker1').datetimepicker({
+      format: 'dddd, MMM Do h:mm A'
+    });
+  });
+</script>

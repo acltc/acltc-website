@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160428184854) do
+ActiveRecord::Schema.define(version: 20160503215118) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 20160428184854) do
     t.string   "cohort"
     t.text     "notes"
     t.integer  "interview_id"
+    t.string   "hangouts_email"
   end
 
   add_index "applications", ["interview_id"], name: "index_applications_on_interview_id", using: :btree
