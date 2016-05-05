@@ -26,6 +26,7 @@ class ApplicationsController < ApplicationController
     @application = Application.new(application_params)
     if @application.save
       @application.interview.update(booked: true)
+      converted!("form_page")
       AcltcMailer.application_email(@application).deliver_now
       redirect_to "/pages/thank_you"
     else
@@ -54,6 +55,12 @@ class ApplicationsController < ApplicationController
     redirect_to "/applications"
   end
 
+  def form_ab
+    @form_page = ab_test("form_page", ["short", "long"])
+
+    render action: 'form_ab'
+  end
+
   private
 
 
@@ -65,5 +72,6 @@ class ApplicationsController < ApplicationController
     :work_concurrently, :tinker_example, :why_better, :location, :status, :cohort, :subtitle,
     :notes, :hangouts_email, :interview_id )
   end
+
 
 end
