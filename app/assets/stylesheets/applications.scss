@@ -107,6 +107,10 @@ a.btn.btn-danger.right-link {
     display: inline;
 }
 
+.form-label {
+  text-transform: none;
+  font-size: 14px;
+}
 /***** min 769 width Styles ******/
 
 @media (min-width: 769px) {
