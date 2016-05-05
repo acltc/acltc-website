@@ -12,7 +12,7 @@
           <% @interview.where(booked: true).each do |interview| %>
             <tr>
               <td><h5><%= interview.interview_date_human %></h5></td>
-              <td><h5><%= "#{interview.application.first_name} #{interview.application.last_name}" %></h5></td>
+              <td><h5><%= link_to "#{interview.application.first_name} #{interview.application.last_name}", application_path(interview.application.id) %></h5></td>
           <% end %>
           </tr>
         </table>

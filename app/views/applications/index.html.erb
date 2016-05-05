@@ -1,6 +1,10 @@
 <%= render "/layouts/page_title", page_title: "Applications", page_subtitle: "" %>
 <%= javascript_include_tag "https://www.google.com/jsapi", "chartkick" %>
 <div class="chart">
+  <h4>Total Applications Per Month</h4>
+  <%= line_chart Application.group_by_month(:created_at, format: "%b %Y", last: 11).count, colors: ["#18A497"], discrete: true, xtitle: "Month", ytitle: "Number of Applications" %>
+</div>
+<div class="chart">
   <h4>Applications Per Month by Location</h4>
   <%= line_chart Application.group(:location).group_by_month(:created_at, format: "%b %Y", last: 11).count, discrete: true, xtitle: "Month", ytitle: "Number of Applications" %>
 </div>
