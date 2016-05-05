@@ -20,6 +20,7 @@ class ApplicationsController < ApplicationController
 
   def new
     @application = Application.new
+    @form_page = ab_test("form_page", ["short", "long"])
   end
 
   def create
@@ -55,14 +56,7 @@ class ApplicationsController < ApplicationController
     redirect_to "/applications"
   end
 
-  def form_ab
-    @form_page = ab_test("form_page", ["short", "long"])
-
-    render action: 'form_ab'
-  end
-
   private
-
 
   def application_params
     params.require(:application).permit(:first_name, :last_name, :email, :phone, :address,
