@@ -117,6 +117,14 @@ a.btn.btn-danger.right-link {
   text-transform: none;
   font-size: 14px;
 }
+
+.tutorial-link {
+  text-decoration: underline !important;
+}
+
+.tutorial-link:hover {
+  text-decoration: none !important;
+}
 /***** min 769 width Styles ******/
 
 @media (min-width: 769px) {
