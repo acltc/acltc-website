@@ -152,7 +152,6 @@
             <%= f.text_area :why_scholarship, class: "form-control" %>
           </div>
         </div>
-        <% if @form_page == "long" %>
           <div class="form-group">
             <%= f.label :primary_goals, "What are your primary goals in learning how to code?", class: "required form-label" %><br />
             <%= f.text_area :primary_goals, class: "form-control" %>
@@ -169,7 +168,6 @@
             <%= f.label :work_concurrently, "Will you keep your job during the bootcamp? If so, how will you do both?", class: "required form-label" %><br />
             <%= f.text_area :work_concurrently, class: "form-control" %>
           </div>
-        <% end %>
         <div class="form-group">
           <%= f.label :tinker_example, "Programming requires complex problem solving, logical analysis, and the ability to tinker with something until it works. Give examples of when you've had these experiences.", class: "required label-leading form-label" %><br />
           <%= f.text_area :tinker_example, class: "form-control" %>
