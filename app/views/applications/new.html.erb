@@ -23,6 +23,7 @@
           <%= f.label :first_name, "First Name", class: "required form-label" %><br />
           <%= f.text_field :first_name, autofocus: true, class: "form-control" %>
         </div>
+        <%= f.hidden_field :hidden, :value => @form_page %>
         <div class="form-group">
           <%= f.label :last_name, "Last Name", class: "required form-label" %><br />
           <%= f.text_field :last_name, autofocus: true, class: "form-control" %>
@@ -152,14 +153,15 @@
             <%= f.text_area :why_scholarship, class: "form-control" %>
           </div>
         </div>
-          <div class="form-group">
-            <%= f.label :primary_goals, "What are your primary goals in learning how to code?", class: "required form-label" %><br />
-            <%= f.text_area :primary_goals, class: "form-control" %>
-          </div>
-          <div class="form-group">
-            <%= f.label :programming_experience, "Do you have previous programming experience? Online tutorials count!", class: "required form-label" %><br />
-            <%= f.text_area :programming_experience, class: "form-control" %>
-          </div>
+        <div class="form-group">
+          <%= f.label :primary_goals, "What are your primary goals in learning how to code?", class: "required form-label" %><br />
+          <%= f.text_area :primary_goals, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :programming_experience, "Do you have previous programming experience? Online tutorials count!", class: "required form-label" %><br />
+          <%= f.text_area :programming_experience, class: "form-control" %>
+        </div>
+        <% if @form_page == "long" %>
           <div class="form-group">
             <%= f.label :preferred_work_location, "If you want a job in web development, in which city will you seek employment?", class: "required label-leading form-label" %><br />
             <%= f.text_field :preferred_work_location, class: "form-control" %>
@@ -168,14 +170,15 @@
             <%= f.label :work_concurrently, "Will you keep your job during the bootcamp? If so, how will you do both?", class: "required form-label" %><br />
             <%= f.text_area :work_concurrently, class: "form-control" %>
           </div>
-        <div class="form-group">
-          <%= f.label :tinker_example, "Programming requires complex problem solving, logical analysis, and the ability to tinker with something until it works. Give examples of when you've had these experiences.", class: "required label-leading form-label" %><br />
-          <%= f.text_area :tinker_example, class: "form-control" %>
-        </div>
-        <div class="form-group">
-          <%= f.label :why_better, "Why should you be accepted into the bootcamp over other applicants?", class: "required form-label" %><br />
-          <%= f.text_area :why_better, class: "form-control" %>
-        </div>
+          <div class="form-group">
+            <%= f.label :tinker_example, "Programming requires complex problem solving, logical analysis, and the ability to tinker with something until it works. Give examples of when you've had these experiences.", class: "required label-leading form-label" %><br />
+            <%= f.text_area :tinker_example, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :why_better, "Why should you be accepted into the bootcamp over other applicants?", class: "required form-label" %><br />
+            <%= f.text_area :why_better, class: "form-control" %>
+          </div>
+        <% end %>
         <div class="form-group">
           <%= f.label :interview_id, "Thanks for filling out the application! The next step is to join us on a Google Hangouts or phone interview. This way we can learn a little more about you, tell you more about ACLTC, and answer any questions you may have.", class: "required form-label" %><br />
           <%= f.collection_select :interview_id, Interview.where('starts_at > ?', DateTime.now).where(booked: false ).order(starts_at: :asc), :id, :interview_date_human, {:include_blank => 'Select Interview Date and Time'}, { class: 'form-control shorten-select' } %>

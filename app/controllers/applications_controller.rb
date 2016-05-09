@@ -31,6 +31,7 @@ class ApplicationsController < ApplicationController
       AcltcMailer.application_email(@application).deliver_now
       redirect_to "/pages/thank_you"
     else
+      @form_page = ab_test("form_page", ["short", "long"])
       render :new
     end
   end
@@ -64,7 +65,7 @@ class ApplicationsController < ApplicationController
     :scholarship_applicant, :learn_about_scholarship, :minority, :woman, :why_scholarship,
     :primary_goals, :programming_experience, :preferred_work_location,
     :work_concurrently, :tinker_example, :why_better, :location, :status, :cohort, :subtitle,
-    :notes, :hangouts_email, :interview_id )
+    :notes, :hangouts_email, :interview_id, :hidden )
   end
 
 
