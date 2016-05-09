@@ -1,11 +1,18 @@
 class Application < ActiveRecord::Base
   validates :first_name, :last_name, :email, :phone, :address, :emergency_contact, :learn_about_acltc,
+<<<<<<< HEAD
   :current_occupation, :location, :primary_goals, :programming_experience, :hangouts_email, presence: true, on: :create
   validates :interview_id, presence: true, uniqueness: true, on: :create
 
   validates :preferred_work_location, :work_concurrently, :tinker_example, :why_better, presence: true, on: :create, unless: Proc.new { |m| m.hidden == 'short' }
 
   attr_accessor :hidden
+=======
+  :current_occupation, :location, :primary_goals, :programming_experience, :preferred_work_location,
+  :work_concurrently, :tinker_example, :why_better, :hangouts_email, presence: true, on: :create
+  validates :interview_id, presence: true, uniqueness: true, on: :create
+
+>>>>>>> master
   attr_accessor :subtitle #virtual attribute to prevent spam via the invisible_captcha gem
   validates :subtitle, :invisible_captcha => true
 

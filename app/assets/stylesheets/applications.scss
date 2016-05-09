@@ -3,6 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 /****** Global Styles ******/
+@-moz-document url-prefix() {
+  input[type="radio"] {
+      width: 13px !important;
+      margin-top: -6px;
+  }
+}
 textarea.form-control {
   height: 250px;
 }

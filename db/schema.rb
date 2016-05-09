@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160505145449) do
+ActiveRecord::Schema.define(version: 20160506153920) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,7 +82,7 @@ ActiveRecord::Schema.define(version: 20160505145449) do
     t.string   "hangouts_email"
   end
 
-  add_index "applications", ["interview_id"], name: "index_applications_on_interview_id", using: :btree
+  add_index "applications", ["interview_id"], name: "index_applications_on_interview_id", unique: true, using: :btree
 
   create_table "blog_categories", force: :cascade do |t|
     t.string   "name"
