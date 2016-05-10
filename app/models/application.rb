@@ -19,6 +19,16 @@ class Application < ActiveRecord::Base
     updated_at.strftime("%A, %d %b %Y %l:%M %p")
   end
 
+  def self.conversion_rate_long_form
+    a = SimpleAbs::Alternative.first
+    a.conversions.to_f / a.participants.to_f * 100
+  end
+
+  def self.conversion_rate_short_form
+    a = SimpleAbs::Alternative.second
+    a.conversions.to_f / a.participants.to_f * 100
+  end
+
   def self.to_csv(options = {})
     CSV.generate(options) do |csv|
       csv << column_names
