@@ -14,7 +14,7 @@
 </div>
 <div class="chart">
   <h4>Students Registered per Cohort</h4>
-  <%= column_chart Application.group(:cohort).where(:status => 'Registered').count %>
+  <%= column_chart Application.group(:cohort).where(:status => 'Registered').where.not(:cohort => 'CHI 4/16').count %>
 </div>
 <div class="chart">
   <h4>Every Applicant's Status</h4>
