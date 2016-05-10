@@ -1,5 +1,27 @@
 <%= render "/layouts/page_title", page_title: "Applications", page_subtitle: "" %>
 <%= javascript_include_tag "https://www.google.com/jsapi", "chartkick" %>
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    <table class="table table-striped">
+      <h4 class="ab-test-table-header">Application Form A/B Test</h4>
+      <tr>
+        <th>Test Version</th>
+        <th>Participants</th>
+        <th>Conversions</th>
+        <th>Conversion Rate</th>
+      </tr>
+      <% SimpleAbs::Alternative.all.each do |version| %>
+        <tr>
+          <td><%= version.which %></td>
+          <td><%= version.participants %></td>
+          <td><%= version.conversions %></td>
+          <td><%= (version.conversions.to_f / version.participants.to_f * 100).round(2) %> %</td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
 <div class="chart">
   <h4>Total Applications Per Month</h4>
   <%= line_chart Application.group_by_month(:created_at, format: "%b %Y", last: 11).count, colors: ["#18A497"], discrete: true, xtitle: "Month", ytitle: "Number of Applications" %>

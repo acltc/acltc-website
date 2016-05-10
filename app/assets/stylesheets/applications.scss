@@ -125,6 +125,14 @@ a.btn.btn-danger.right-link {
 .tutorial-link:hover {
   text-decoration: none !important;
 }
+
+.ab-test-table-header {
+  text-align: center;
+  margin: 30px 0 20px 0;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
 /***** min 769 width Styles ******/
 
 @media (min-width: 769px) {
