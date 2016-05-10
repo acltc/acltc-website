@@ -1,0 +1,10 @@
+<div class="divider divider-left divider-rounded"><i class="icon-pencil"></i></div>
+  
+<%= form_tag "/tutorial_submissions", method: :post do %>
+  <%= hidden_field_tag :lesson_title, @lesson_title %>
+  <div class="form-group">
+    <%= label_tag :gist_url, "Solutions Gist URL" %>
+    <%= text_field_tag :gist_url, nil, class: "form-control", placeholder: "Submit your solutions in a GitHub Gist URL to be reviewed!" %>
+    <%= submit_tag "Submit Solutions" %>
+  </div>
+<% end %>
