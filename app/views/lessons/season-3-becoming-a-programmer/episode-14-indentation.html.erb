@@ -13,7 +13,23 @@
 								<h2><%= @lesson_title %></h2>
 							</div>
 							<!-- BODY START -->
-							
+							<h3>Exercises</h3>
+							<ol>
+								<li>
+									Add proper indentation to the following code:
+<pre class="language-ruby"><code>puts "Welcome! We're going to ask you to enter 5 words, one at a time."
+5.times do
+puts "Please enter a word:"
+word = gets.chomp
+if word == "bye"
+puts "No, please don't leave!"
+elsif word == "hello"
+puts "Hello to you!"
+else
+puts "That's quite a word!"
+end
+end</code></pre>
+								</li>
 							<!-- BODY END -->
 							<div class="clear"></div>
 							<br>
