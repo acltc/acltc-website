@@ -4,7 +4,7 @@
   <%= hidden_field_tag :lesson_title, @lesson_title %>
   <div class="form-group">
     <%= label_tag :gist_url, "Solutions Gist URL" %>
-    <%= text_field_tag :gist_url, nil, class: "form-control", placeholder: "Submit your solutions in a GitHub Gist URL to be reviewed!" %>
+    <%= text_field_tag :gist_url, nil, class: "form-control", placeholder: "https://gist.github.com/your-user-name/..." %>
     <%= submit_tag "Submit Solutions" %>
   </div>
 <% end %>
