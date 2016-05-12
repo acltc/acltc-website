@@ -1,7 +1,7 @@
 class ApplicationsController < ApplicationController
   before_action :authenticate_admin!, except: [:new, :create]
-  invisible_captcha only: [:create, :update], honeypot: :subtitle
-  
+  invisible_captcha only: [:create], honeypot: :subtitle
+
   def index
     @applications = Application.all
 
