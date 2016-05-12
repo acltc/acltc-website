@@ -6,8 +6,6 @@ class Application < ActiveRecord::Base
   validates :current_occupation, :preferred_work_location, :work_concurrently, :why_better, presence: true, on: :create, unless: Proc.new { |m| m.hidden == 'short' }
 
   attr_accessor :hidden
-  attr_accessor :subtitle #virtual attribute to prevent spam via the invisible_captcha gem
-  validates :subtitle, :invisible_captcha => true
 
   belongs_to :interview
 
