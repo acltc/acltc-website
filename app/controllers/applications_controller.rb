@@ -1,5 +1,6 @@
 class ApplicationsController < ApplicationController
   before_action :authenticate_admin!, except: [:new, :create]
+  invisible_captcha only: [:create], honeypot: :subtitle
 
   def index
     @applications = Application.all
@@ -64,7 +65,7 @@ class ApplicationsController < ApplicationController
     :emergency_contact, :learn_about_acltc, :learn_about_acltc_specify, :current_occupation,
     :scholarship_applicant, :learn_about_scholarship, :minority, :woman, :why_scholarship,
     :primary_goals, :programming_experience, :preferred_work_location,
-    :work_concurrently, :tinker_example, :why_better, :location, :status, :cohort, :subtitle,
+    :work_concurrently, :tinker_example, :why_better, :location, :status, :cohort,
     :notes, :hangouts_email, :interview_id, :hidden )
   end
 
