@@ -161,3 +161,12 @@ a.btn.btn-danger.right-link {
     padding-right: 10px;
   }
 }
+
+/***** max 768 width Styles ******/
+
+@media (max-width: 768px) {
+  input[type="radio"] {
+      width: 13px !important;
+      margin-top: -6px;
+  }
+}
