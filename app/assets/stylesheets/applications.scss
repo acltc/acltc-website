@@ -3,12 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 /****** Global Styles ******/
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-  input[type="radio"] {
-      width: 13px !important;
-      margin-top: 3px;
-  }
-}
 
 @-moz-document url-prefix() {
   input[type="radio"] {
@@ -177,3 +171,19 @@ a.btn.btn-danger.right-link {
       margin-top: -6px;
   }
 }
+
+/****** This is for targeting the radio button bug in the application form on Windows Chrome ******/
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  input[type="radio"] {
+    width: 13px !important;
+    margin-top: 3px;
+  }
+}
+
+
+
+
+
+
+
+
