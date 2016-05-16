@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Tutorial Submissions</h1>
+  <% @grouped_submissions.each do |title, submissions| %>
+    <% if submissions.length > 0 %>
+      <div class="widget widget_links clearfix">
+        <h4><%= title %></h4>
+        <ul>
+          <% submissions.each do |submission| %>
+            <li>
+              <%= check_box_tag 'receive_email', 'yes', submission.reviewed, class: "submission-reviewed", "data-gist-url": submission.gist_url %>
+              <a href="<%= submission.gist_url %>" target="_blank"><%= submission.gist_url %></a>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+<br>
