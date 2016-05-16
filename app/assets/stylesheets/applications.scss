@@ -163,6 +163,13 @@ a.btn.btn-danger.right-link {
   }
 }
 
+/****** This is for targeting the radio button bug in the application form on Windows Chrome ******/
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  input[type="radio"] {
+    width: 13px !important;
+    margin-top: 3px;
+  }
+}
 /***** max 768 width Styles ******/
 
 @media (max-width: 768px) {
@@ -172,13 +179,6 @@ a.btn.btn-danger.right-link {
   }
 }
 
-/****** This is for targeting the radio button bug in the application form on Windows Chrome ******/
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-  input[type="radio"] {
-    width: 13px !important;
-    margin-top: 3px;
-  }
-}
 
 
 
