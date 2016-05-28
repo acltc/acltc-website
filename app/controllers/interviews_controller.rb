@@ -1,6 +1,6 @@
 class InterviewsController < ApplicationController
 before_action :authenticate_admin!
-
+#
   def index
     @interview = Interview.all
   end
