@@ -64,7 +64,7 @@
             <td><%= application.location %></td>
             <td><a href="/applications?status=<%= application.status %>"><%= application.status %></a></td>
             <td><%= application.cohort %></td>
-            <td><% application.interview ? application.interview.starts_at.strftime("%A %B %d, %Y") : "" %></td>
+            <td><%= application.interview ? application.interview.starts_at.strftime("%A %B %d, %Y") : "" %></td>
           </tr>
           <% end %>
         </table>
