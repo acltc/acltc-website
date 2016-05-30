@@ -1,5 +1,5 @@
 class InterviewsController < ApplicationController
-before_action :authenticate_admin!
+before_action :authenticate_admin!, except: [:interview_options]
 
 
   def index
