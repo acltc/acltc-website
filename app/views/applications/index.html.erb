@@ -61,7 +61,7 @@
             <td><%= link_to application.full_name, application_path(application) %></td>
             <td><%= application.created_at.strftime("%A %B %d, %Y") %></td>
             <td><%= application.location %></td>
-            <td><%= application.status %></td>
+            <td><a href="/applications/status=<%= application.status %>"><%= application.status %></a></td>
             <td><%= application.cohort %></td>
           </tr>
           <% end %>
