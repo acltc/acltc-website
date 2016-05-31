@@ -1,5 +1,6 @@
 class InterviewsController < ApplicationController
-before_action :authenticate_admin!
+before_action :authenticate_admin!, except: [:interview_options]
+
 
   def index
     @interview = Interview.all
@@ -46,10 +47,23 @@ before_action :authenticate_admin!
     redirect_to "/interviews"
   end
 
+  def interview_options
+    @interviews = Interview.where('starts_at > ?', DateTime.now).where(booked: false).where(location: params[:id]).order(starts_at: :asc)
+
+    @interviews_friendly_date = []
+    @interviews.each do |interview|
+      @interviews_friendly_date << { id: interview.id, starts_at: interview.interview_time_zone}
+    end
+
+    respond_to do |format|
+      format.json { render json: @interviews_friendly_date }
+    end
+  end
+
   private
 
   def interview_params
-    params.require(:interview).permit(:starts_at, :booked)
+    params.require(:interview).permit(:starts_at, :booked, :location)
   end
 
 end

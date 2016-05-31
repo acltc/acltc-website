@@ -7,11 +7,12 @@
       <div class="col-md-6">
         <table class="table table-striped">
           <tr>
-            <th colspan="2"><h4 class="interview-table-header">Booked Interviews</h4></th>
+            <th colspan="3"><h4 class="interview-table-header">Booked Interviews</h4></th>
           </tr>
           <% @interview.where('starts_at > ?', DateTime.now).where(booked: true).order(starts_at: :asc).each do |interview| %>
             <tr>
-              <td><h5><%= interview.interview_date_human %></h5></td>
+              <td><h5><%= interview.interview_time_zone %></h5></td>
+              <td><h5><%= interview.location %></h5></td>
               <td><h5><%= link_to "#{interview.application.first_name} #{interview.application.last_name}", application_path(interview.application.id) %></h5></td>
           <% end %>
           </tr>
@@ -20,11 +21,12 @@
       <div class="col-md-6">
         <table class="table table-striped">
           <tr>
-            <th colspan="3"><h4 class="interview-table-header">Available Interview Slots</h4></th>
+            <th colspan="4"><h4 class="interview-table-header">Available Interview Slots</h4></th>
           </tr>
           <% @interview.where('starts_at > ?', DateTime.now).where(booked: false).order(starts_at: :asc).each do |interview| %>
             <tr>
-              <td><h5><%= interview.interview_date_human %></h5></td>
+              <td><h5><%= interview.interview_time_zone %></h5></td>
+              <td><h5><%= interview.location %></h5></td>
               <td><%= link_to 'Edit', edit_interview_path(interview), class: "btn btn-success btn-xs interview-button" %></td>
               <td><%= link_to 'Delete', interview_path(interview), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs interview-button" %></td>
           <% end %>

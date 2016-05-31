@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   resources :screencasts, only: [:index]
   resources :diversity_applications, only: [:index]
   resources :interviews
+
+  get "/options/" => "interviews#interview_options"
   
   get "/tutorial/lessons" => "lessons#index"
   get "/tutorial/lessons/:title" => "lessons#show"

@@ -11,10 +11,10 @@
 // about supported directives.
 //
 //= require theme/jquery
-//= require bootstrap
 //= require theme/plugins
 //= require theme/jquery.gmap
 //= require jquery_ujs
+//= require bootstrap
 //= require parallax
 //= require prism
 //= require moment
