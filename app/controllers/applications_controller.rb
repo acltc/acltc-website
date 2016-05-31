@@ -4,6 +4,8 @@ class ApplicationsController < ApplicationController
 
   def index
     @applications = Application.all
+    @applications = Application.order(params[:sort]) if params[:sort]
+    @applications = Application.where(status: params[:status]) if params[:status]
 
     respond_to do |format|
       format.html

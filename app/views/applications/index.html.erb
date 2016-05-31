@@ -55,14 +55,16 @@
             <th>Location</th>
             <th>Status</th>
             <th>Cohort</th>
+            <th>Interview Time</th>
           </tr>
           <% @applications.order("created_at desc").each do |application| %>
           <tr>
             <td><%= link_to application.full_name, application_path(application) %></td>
             <td><%= application.created_at.strftime("%A %B %d, %Y") %></td>
             <td><%= application.location %></td>
-            <td><%= application.status %></td>
+            <td><a href="/applications?status=<%= application.status %>"><%= application.status %></a></td>
             <td><%= application.cohort %></td>
+            <td><%= application.interview ? application.interview.starts_at.strftime("%A %B %d, %Y") : "" %></td>
           </tr>
           <% end %>
         </table>
