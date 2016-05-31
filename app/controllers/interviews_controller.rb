@@ -52,7 +52,7 @@ before_action :authenticate_admin!, except: [:interview_options]
 
     @interviews_friendly_date = []
     @interviews.each do |interview|
-      @interviews_friendly_date << { id: interview.id, starts_at: interview.interview_time_zone(params[:id])}
+      @interviews_friendly_date << { id: interview.id, starts_at: interview.interview_time_zone}
     end
 
     respond_to do |format|
