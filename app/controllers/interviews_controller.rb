@@ -48,7 +48,7 @@ before_action :authenticate_admin!, except: [:interview_options]
   end
 
   def interview_options
-    @interviews = Interview.where('starts_at > ?', DateTime.now).where(booked: false).order(starts_at: :asc)
+    @interviews = Interview.where('starts_at > ?', DateTime.now).where(booked: false).where("location = '" + params[:id] + "' OR location IS NULL").order(starts_at: :asc)
 
     @interviews_friendly_date = []
     @interviews.each do |interview|
