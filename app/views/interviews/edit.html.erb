@@ -18,12 +18,24 @@
         <% end %>
         <div class="form-group">
           <%= f.label :starts_at, "Edit date and time to update the interview slot" %>
+          <h6 style="margin-top: 0px;"><i>(All times are in Central)</i></h6>
             <div class='input-group date' id='datetimepicker1'>
                 <%= f.text_field :starts_at, autofocus: true, type: 'text', class: "form-control" %>
                 <span class="input-group-addon">
                     <span class="glyphicon glyphicon-calendar"></span>
                 </span>
             </div>
+        </div>
+        <div class="form-group">
+          <label class="required label-radio">SELECT LOCATION APPLICANT IS INTERVIEWING FOR</label>
+          <div class="radio">
+            <%= f.radio_button :location, "Chicago" %>
+            <%= f.label :location, "Chicago", :value => "Chicago" %><br />
+            <%= f.radio_button :location, "San Francisco" %>
+            <%= f.label :location, "San Francisco", :value => "San Francisco" %><br />
+            <%= f.radio_button :location, "New York City" %>
+            <%= f.label :location, "New York City", :value => "New York City" %>
+          </div>
         </div>
         <div class="form-group">
           <%= f.submit "Edit Interview Slot", class: "button button-3d nomargin nopadding" %>

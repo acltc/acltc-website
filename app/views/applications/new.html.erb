@@ -103,7 +103,7 @@
         </div>
         <div class="form-group">
           <label class="required label-radio form-label">Which location are you applying for?</label>
-          <div class="radio">
+          <div id="location" class="radio">
             <%= f.radio_button :location, "Chicago" %>
             <%= f.label :location, "Chicago", :value => "Chicago" %><br />
             <%= f.radio_button :location, "San Francisco" %>
@@ -181,7 +181,7 @@
         </div>
         <div class="form-group">
           <%= f.label :interview_id, "Thanks for filling out the application! The next step is to join us on a Google Hangouts or phone interview. This way we can learn a little more about you, tell you more about ACLTC, and answer any questions you may have.", class: "required form-label" %><br />
-          <%= f.collection_select :interview_id, Interview.where('starts_at > ?', DateTime.now).where(booked: false).order(starts_at: :asc), :id, :interview_date_human, {:include_blank => 'Select Interview Date and Time'}, { class: 'form-control shorten-select' } %>
+          <%= f.collection_select :interview_id, Interview.where('starts_at > ?', DateTime.now).where(booked: false).order(starts_at: :asc), :id, :interview_date_human, {:include_blank => 'Select Interview Date and Time'}, { id: 'interviews', class: 'form-control shorten-select' } %>
         </div>
         <div class="form-group">
           <%= f.label :hangouts_email, "Google Hangouts email or username (enter 'phone' if you prefer a phone interview).", class: "required form-label" %>
