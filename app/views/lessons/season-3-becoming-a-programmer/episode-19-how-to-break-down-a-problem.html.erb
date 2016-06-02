@@ -16,7 +16,68 @@
               <h3>Exercises</h3>
               <ol>
                 <li>
-                  Write a program that serves as a dictionary. To keep it simple, the dictionary will only contain five words and their definitions. When the user starts the program, the program lists all five words that the user can look up. The user can then enter a word, and the program will return its definition.
+                  Start your program with this line of code:
+
+<pre class="language-ruby"><code>letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]</code></pre>
+
+The rest of your program should print out every other letter. That is, the result in your terminal should be:
+
+<pre>
+a
+c
+e
+g
+i
+</pre>
+                </li>
+                <li>
+                Start your program with this line of code:
+
+<pre class="language-ruby"><code>letters = [["a", "b"], ["c", "d"], ["e", "f"], ["g", "h"], ["i", "j"]]</code></pre>
+
+The rest of your program should print out the second letter from each inner array. That is, the result in your terminal should be:
+<pre>
+b
+d
+f
+h
+j
+</pre>
+                </li>
+                <li>
+                  Start your program with this line of code:
+<pre class="language-ruby"><code>numbers = [4, 6, 1, 4, 2, 8, 3, 4, 1, 7]</code></pre>
+
+The rest of your program should create and print out an array that only contains unique values from this original array. That is, the resulting array should look like: 
+
+<code>[4, 6, 1, 2, 8, 3, 7]</code>
+
+The one catch: Don't use the "uniq" method available to arrays! (That would do this for you.)
+                </li>
+                <li>
+                  Fibonacci numbers are numbers that follow the pattern:
+<pre>0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144...</pre>
+
+That is, each number is the sum of the two numbers that precede it.
+
+Write a program that prints out the first 100 fibonacci numbers. Use a loop!
+<br>
+<img src="http://commoninterview.com/images/Fibonacci_Series_Question.jpg">
+                </li>
+                <li>
+Start with this line of code:
+
+<pre class="language-ruby"><code>array = [["a", "b", "z"], ["c", "d"], ["e", "f"], ["g", "h", "i", "j"]]</code></pre>
+
+It's a two dimensional array (yay!).
+
+Write code that will take each of those letters and put them into a brand new one dimensional array. So the resulting array should be:
+
+<pre>["a", "b", "z", "c", "d", "e", "f", "g", "h", "i", "j"]</pre>
+
+Your last line of code should use the p command (e.g. p new_array) to make sure that your new array looks right.
+
+<em>Hint</em>: You'll want to use an each loop <strong>within</strong> an each loop.
                 </li>
               </ol>
               <%= render 'form_solutions.html.erb' %>
