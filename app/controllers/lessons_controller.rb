@@ -48,7 +48,13 @@ class LessonsController < ApplicationController
     { title: "Episode 16 - Reading Documentation", time: "12:10", category_id: 2 },
     { title: "Episode 17 - The Each Method", time: "7:42", category_id: 2 },
     { title: "Episode 17a - Synthesis: Arrays Plus More", time: "6:43", category_id: 2 },
-    { title: "Episode 18 - Hashes", time: "9:24", category_id: 2 }
+    { title: "Episode 18 - Hashes", time: "9:24", category_id: 2 },
+    { title: "Episode 18a - Things That Can Go Wrong With Hashes", time: "11:02", category_id: 2},
+    { title: "Episode 19 - How To Break Down A Problem", time: "29:30", category_id: 2},
+    { title: "Episode 20 - Hashes As Objects", time: "8:38", category_id: 2},
+    { title: "Episode 20a - Arrays of Hashes", time: "10:19", category_id: 2},
+    { title: "Episode 21 - RubyGems", time: "5:19", category_id: 2},
+    { title: "Episode 22 - API Gems", time: "12:18", category_id: 2}
   ].freeze
   
   def index

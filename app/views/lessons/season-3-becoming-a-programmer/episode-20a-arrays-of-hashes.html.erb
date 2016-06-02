@@ -1,0 +1,74 @@
+<section id="content">
+  <div class="content-wrap">
+    <div class="container clearfix">
+      <div class="postcontent nobottommargin clearfix">
+        <div class="single-post nobottommargin">
+          <div class="entry clearfix">
+            <div class="col_full portfolio-single-image">
+              <!-- VIDEO CONTENT -->
+              <iframe width="500" height="315" src="https://www.youtube.com/embed/8-GiD-F6PN8" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="tutorial-content" class="entry-content notopmargin">
+              <div class="fancy-title title-dotted-border title-center">
+                <h2><%= @lesson_title %></h2>
+              </div>
+              <!-- BODY START -->
+              <h3>Exercises</h3>
+              <ol>
+                <li>
+                  Start with this code:
+                  <pre class="language-ruby"><code>
+people = [
+  {
+    "first_name" => "Bob",
+    "last_name" => "Jones", 
+    "hobbies" => ["basketball", "chess", "phone tag"]
+   },
+   {
+    "first_name" => "Molly",
+    "last_name" => "Barker",
+    "hobbies" => ["programming", "reading", "jogging"]
+   },
+   {
+    "first_name" => "Kelly",
+    "last_name" => "Miller",
+    "hobbies" => ["cricket", "baking", "stamp collecting"]
+   }
+]
+</code></pre>
+
+It's an array of hashes that is used to represent data about different people. Using an each loop, the rest of your program should add additional keys and values to each person (in addition to the existing first_name, last_name, and hobbies), as follows:
+
+Each person should be given a random age.
+
+<em>Hint:</em> Using <code>rand(100)</code> will help you generate a random number from 0 to 99.
+
+Each person should given an email address that consists of their first name + last name @ gmail.com. For example, Bob Jones will have an email of bobjones@gmail.com.
+
+The program should end with:
+
+<pre class="language-ruby"><code>p people</code></pre>
+
+so that you can see if the correct modifications were made to each hash.                     
+                  
+                </li>
+              </ol>
+              <%= render 'form_solutions.html.erb' %>
+              <!-- BODY END -->
+              <div class="clear"></div>
+              <br>
+              <%= render 'share_buttons.html.erb' %>
+            </div>
+          </div>
+          <%= render 'post_navigation.html.erb' %>
+          <div class="line"></div>
+        </div>
+      </div>
+      <div class="sidebar nobottommargin col_last clearfix">
+        <div class="sidebar-widgets-wrap">
+          <%= render 'next_lessons.html.erb' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

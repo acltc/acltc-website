@@ -1,0 +1,56 @@
+<section id="content">
+  <div class="content-wrap">
+    <div class="container clearfix">
+      <div class="postcontent nobottommargin clearfix">
+        <div class="single-post nobottommargin">
+          <div class="entry clearfix">
+            <div class="col_full portfolio-single-image">
+              <!-- VIDEO CONTENT -->
+              <iframe width="500" height="315" src="https://www.youtube.com/embed/FPhgTmFLv10" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="tutorial-content" class="entry-content notopmargin">
+              <div class="fancy-title title-dotted-border title-center">
+                <h2><%= @lesson_title %></h2>
+              </div>
+              <!-- BODY START -->
+              <h3>Exercises</h3>
+              <ol>
+                <li>
+                  Use hashes to define three types of cars. Identify the cars' make (brand), model, color, and year. (Example: a silver 2006 Honda Accord)
+                </li>
+                <li>
+                  Assume you have the following code:
+                  <pre class="language-ruby"><code>
+drink1 = {"name" => "Seltzer", "ingredients" => ["water", "bubbles"]}
+drink2 = {"name" => "Coca Cola", "ingredients" => ["water", "bubbles", "sugar", "brown food coloring"]}
+drink3 = {"name" => "water", "ingredients" => ["hydrogen", "oxygen"]}                    
+                  </code></pre>
+                  Write additional code so that the terminal outputs:
+
+                  <pre><code>
+The drink Seltzer has the ingredients: water, bubbles.
+The drink Coca Cola has the ingredients: water, bubbles, sugar, brown food coloring.
+The drink water has the ingredients: hydrogen, oxygen.                    
+                  </code></pre>
+                  Note: Write the code in such a way that it would still work even if someone went into the hashes and changed the number of ingredients for any particular drink.
+                </li>
+              </ol>
+              <%= render 'form_solutions.html.erb' %>
+              <!-- BODY END -->
+              <div class="clear"></div>
+              <br>
+              <%= render 'share_buttons.html.erb' %>
+            </div>
+          </div>
+          <%= render 'post_navigation.html.erb' %>
+          <div class="line"></div>
+        </div>
+      </div>
+      <div class="sidebar nobottommargin col_last clearfix">
+        <div class="sidebar-widgets-wrap">
+          <%= render 'next_lessons.html.erb' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
