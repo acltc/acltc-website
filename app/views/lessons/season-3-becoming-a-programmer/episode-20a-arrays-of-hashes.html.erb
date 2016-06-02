@@ -16,6 +16,37 @@
               <h3>Exercises</h3>
               <ol>
                 <li>
+                Assuming we have the following code:
+
+                <pre class="language-ruby"><code>
+people = [
+  {
+    "first_name" => "Bob",
+    "last_name" => "Jones", 
+    "hobbies" => ["basketball", "chess", "phone tag"]
+   },
+   {
+    "first_name" => "Molly",
+    "last_name" => "Barker",
+    "hobbies" => ["programming", "reading", "jogging"]
+   },
+   {
+    "first_name" => "Kelly",
+    "last_name" => "Miller",
+    "hobbies" => ["cricket", "baking", "stamp collecting"]
+   }
+]
+
+people.each do |person|
+  person["hobbies"].each do |hobby|
+    puts hobby.upcase
+  end
+end
+
+                </code></pre>
+                Perform an exercise similar to <a href="/tutorial/lessons/episode-13a-code-flow-with-loops" target="_blank">Episode 13a</a>, in which you mark down the order in which each line of code runs.
+                </li>
+                <li>
                   Start with this code:
                   <pre class="language-ruby"><code>
 people = [
