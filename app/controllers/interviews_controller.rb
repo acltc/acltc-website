@@ -34,7 +34,7 @@ before_action :authenticate_admin!, except: [:interview_options]
     if params[:release]
       @interview.update(booked: false)
       @application = Application.find(params[:application_id])
-      @application.update(interview_id: nil)
+      @application.update(status: "Rejected, Interview Released", interview_id: nil)
       flash[:info] = "Interview slot released!"
       redirect_to "/interviews"
     elsif @interview.update_attributes(interview_params)
