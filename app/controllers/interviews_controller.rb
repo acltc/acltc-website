@@ -30,7 +30,14 @@ before_action :authenticate_admin!, except: [:interview_options]
 
   def update
     @interview = Interview.find(params[:id])
-    if @interview.update_attributes(interview_params)
+
+    if params[:release]
+      @interview.update(booked: false)
+      @application = Application.find(params[:application_id])
+      @application.update(interview_id: nil)
+      flash[:info] = "Interview slot released!"
+      redirect_to "/interviews"
+    elsif @interview.update_attributes(interview_params)
       flash[:info] = "Interview slot updated!"
       redirect_to new_interview_path
     else
