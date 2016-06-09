@@ -33,7 +33,7 @@
           <%= f.text_field :email, class: "form-control" %>
         </div>
         <div class="form-group">
-          <%= f.label :phone, "Phone Number", class: "required form-label" %><br />
+          <%= f.label :phone, "Cell Phone Number", class: "required form-label" %><br />
           <%= f.text_field :phone, class: "form-control", placeholder: "xxx-xxx-xxxx" %>
         </div>
         <div class="form-group">
@@ -113,43 +113,6 @@
           </div>
         </div>
         <div class="form-group">
-          <label class="label-radio form-label">Are you a Diversity in Tech Scholarship applicant?</label><br />
-          <div class="radio">
-            <%= f.radio_button :scholarship_applicant, true, { :class => "diversity_applicant diversity_applicant_yes" } %>
-            <%= f.label :scholarship_applicant, "Yes", :value => "true" %><br />
-            <%= f.radio_button :scholarship_applicant, false, { :class => "diversity_applicant diversity_applicant_no" } %>
-            <%= f.label :scholarship_applicant, "No", :value => "false" %>
-          </div>
-        </div>
-        <div id="scholarship-hidden" style="display:none;">
-          <div class="form-group">
-            <%= f.label :learn_about_scholarship, "How did you hear about the Diversity in Tech Scholarship?", class: "form-label" %><br />
-            <%= f.text_area :learn_about_scholarship, class: "form-control" %>
-          </div>
-          <div class="form-group">
-          <label class="label-radio form-label">Do you identify as a woman or as gender-diverse (trans*, gender-queer, gender non-conforming, etc.)?</label><br />
-            <div class="radio">
-              <%= f.radio_button :woman, true %>
-              <%= f.label :woman, "Yes", :value => "true" %><br />
-              <%= f.radio_button :woman, false %>
-              <%= f.label :woman, "No", :value => "false" %>
-            </div>
-          </div>
-          <div class="form-group">
-          <label class="form-label">Do you belong to a racial group that is underrepresented in tech (Black/African American, Chicano/Latino, Native American/Native Hawaiian, Pacific Islander)?</label><br />
-            <div class="radio">
-              <%= f.radio_button :minority, true %>
-              <%= f.label :minority, "Yes", :value => "true" %><br />
-              <%= f.radio_button :minority, false %>
-              <%= f.label :minority, "No", :value => "false" %>
-            </div>
-          </div>
-          <div class="form-group">
-            <%= f.label :why_scholarship, "Why should you be awarded a scholarship over other qualified applicants?", class: "form-label" %><br />
-            <%= f.text_area :why_scholarship, class: "form-control" %>
-          </div>
-        </div>
-        <div class="form-group">
           <%= f.label :primary_goals, "What are your primary goals in learning how to code?", class: "required form-label" %><br />
           <%= f.text_area :primary_goals, class: "form-control" %>
         </div>
@@ -157,7 +120,6 @@
           <%= f.label :programming_experience, "Do you have previous programming experience? Online tutorials count!", class: "required form-label" %><br />
           <%= f.text_area :programming_experience, class: "form-control" %>
         </div>
-        <% if @form_page == "long" %>
           <div class="form-group">
             <%= f.label :current_occupation, "Tell us more about what you're currently doing (job or school, etc.)", class: "required form-label" %><br />
             <%= f.text_area :current_occupation, class: "form-control" %>
@@ -174,7 +136,6 @@
             <%= f.label :why_better, "Why should you be accepted into the bootcamp over other applicants?", class: "required form-label" %><br />
             <%= f.text_area :why_better, class: "form-control" %>
           </div>
-        <% end %>
         <div class="form-group">
           <%= f.label :tinker_example, "Programming requires complex problem solving, logical analysis, and the ability to tinker with something until it works. Give examples of when you've had these experiences.", class: "required label-leading form-label" %><br />
           <%= f.text_area :tinker_example, class: "form-control" %>
@@ -197,11 +158,6 @@
     </div>
   </div>
 </section>
-<script type="text/javascript">
-  $(".diversity_applicant").on("change", function(){
-  $("#scholarship-hidden").toggle($(this).hasClass("diversity_applicant_yes"));
-});
-</script>
 <script type="text/javascript">
   $(".learn-about-acltc").on("change", function(){
   $("#learn-acltc-hidden").toggle($(this).hasClass("learn-about-acltc-other"));

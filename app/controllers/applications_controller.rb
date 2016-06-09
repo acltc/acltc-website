@@ -23,18 +23,15 @@ class ApplicationsController < ApplicationController
 
   def new
     @application = Application.new
-    @form_page = ab_test("form_page", ["short", "long"])
   end
 
   def create
     @application = Application.new(application_params)
     if @application.save
       @application.interview.update(booked: true)
-      converted!("form_page")
       AcltcMailer.application_email(@application).deliver_now
       redirect_to "/pages/thank_you"
     else
-      @form_page = ab_test("form_page", ["short", "long"])
       render :new
     end
   end
