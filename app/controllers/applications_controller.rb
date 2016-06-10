@@ -62,10 +62,9 @@ class ApplicationsController < ApplicationController
   def application_params
     params.require(:application).permit(:first_name, :last_name, :email, :phone, :address,
     :emergency_contact, :learn_about_acltc, :learn_about_acltc_specify, :current_occupation,
-    :scholarship_applicant, :learn_about_scholarship, :minority, :woman, :why_scholarship,
     :primary_goals, :programming_experience, :preferred_work_location,
     :work_concurrently, :tinker_example, :why_better, :location, :status, :cohort,
-    :notes, :hangouts_email, :interview_id, :hidden )
+    :notes, :hangouts_email, :interview_id)
   end
 
 
