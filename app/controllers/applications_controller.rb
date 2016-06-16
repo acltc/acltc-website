@@ -23,6 +23,7 @@ class ApplicationsController < ApplicationController
 
   def new
     @application = Application.new
+    @page_title = "Scholarship Application" if params[:application_type] == "scholarship"
   end
 
   def create
