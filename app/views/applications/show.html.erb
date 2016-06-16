@@ -14,7 +14,7 @@
             ['Missed Interview'], ['Interviewed/Waiting for Code'], ['Code Submitted'], ['Rejected'], ['Accepted'],
             ['Registered'], ['Deferred'], ['Declined (Financial)'], ['Declined (Schedule)'], ['Declined (Competitor)'],
             ['Declined (Location)'], ['Declined (Other)'], ['Interview Never Scheduled'], ['Code Never Submitted']], @application.status), {:include_blank => 'Select Status'}, { class: 'form-control' })%>
-            <%= f.select(:cohort, options_for_select([['SF 6/16'], ['NYC 6/16'], ['CHI 6/16'], ['CHI 8/16']], @application.cohort), {:include_blank => 'Select Cohort'}, { class: 'form-control' })%>
+            <%= f.select(:cohort, options_for_select([['SF 6/16'], ['NYC 6/16'], ['CHI 6/16'], ['CHI 8/16'], ['CHI 10/16'], ['SF 10/16'], ['NYC 10/16']], @application.cohort), {:include_blank => 'Select Cohort'}, { class: 'form-control' })%>
             <%= f.label :notes, class: "sr-only" %>
             <%= f.text_field :notes, placeholder: "Add a note", class: "form-control" %>
             <%= f.submit "Update", class: "btn btn-primary select-button"%>

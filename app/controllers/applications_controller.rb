@@ -28,6 +28,7 @@ class ApplicationsController < ApplicationController
       @application.first_name = subscriber.first_name
       @application.email = subscriber.email
     end
+    @page_title = "Scholarship Application" if params[:application_type] == "scholarship"
   end
 
   def create
