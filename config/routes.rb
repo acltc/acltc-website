@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   resources :interviews
 
   get "/options/" => "interviews#interview_options"
+  get "/apply" => "subscribers#apply"
   
   get "/tutorial/lessons" => "lessons#index"
   get "/tutorial/lessons/:title" => "lessons#show"

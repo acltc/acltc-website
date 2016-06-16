@@ -12,4 +12,8 @@ class SubscribersController < ApplicationController
   def create
     Subscriber.create(email: params[:email]) unless params[:email].blank?
   end
+
+  def apply
+    @subscriber = Subscriber.new
+  end
 end
