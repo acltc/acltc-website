@@ -10,10 +10,25 @@ class SubscribersController < ApplicationController
   end
 
   def create
-    Subscriber.create(email: params[:email]) unless params[:email].blank?
+    if params[:subscriber][:mousetrap]
+      @subscriber = Subscriber.new(email: params[:subscriber][:email], first_name: params[:subscriber][:first_name], mousetrap: params[:subscriber][:mousetrap])
+      if @subscriber.save
+        converted!("subscriber")
+        redirect_to "/applications/new/#{@subscriber.id}"
+      else
+        render :apply
+      end
+    else  
+      Subscriber.create(email: params[:email]) unless params[:email].blank?
+    end
   end
 
   def apply
-    @subscriber = Subscriber.new
+    @test = ab_test("subscriber", ["capture_email", "regular"])
+    if @test == "capture_email"
+      @subscriber = Subscriber.new
+    else
+      redirect_to "/applications/new"
+    end
   end
 end

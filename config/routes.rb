@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   get '/pages/thank_you'
   get '/pages/contacts_thank_you'
 
+  get "/apply" => "subscribers#apply", :as => :new_application #new_application_path has been altered for split test
+  get "/applications/new/:id" => "applications#new"
+  
   resources :blog_posts
   resources :blog_categories
   resources :applications
@@ -24,7 +27,6 @@ Rails.application.routes.draw do
   resources :interviews
 
   get "/options/" => "interviews#interview_options"
-  get "/apply" => "subscribers#apply"
   
   get "/tutorial/lessons" => "lessons#index"
   get "/tutorial/lessons/:title" => "lessons#show"

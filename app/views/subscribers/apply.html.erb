@@ -1,10 +1,10 @@
-<%= render "/layouts/page_title", page_title: "Begin an application", page_subtitle: "Let's get started. PLease enter you name and email below." %>
+<%= render "/layouts/page_title", page_title: "Begin an application", page_subtitle: "Let's get started. Please enter you name and email below." %>
 
 <section id="content">
   <div class="content-wrap">
     <div class="row">
-      <div class="col-md-2"></div>
-      <div class="col-md-8">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
       <%= form_for @subscriber do |f| %>
         <% if @subscriber.errors.any? %>
           <div class="alert alert-dismissible alert-warning center-warning">
@@ -20,39 +20,20 @@
           </div>
         <% end %>
         <div class="form-group">
+          <%= f.label :first_name, "First Name", class: "required form-label" %><br />
+          <%= f.text_field :first_name, class: "form-control" %>
+        </div>
+        <div class="form-group">
           <%= f.label :email, "Email Address", class: "required form-label" %><br />
           <%= f.text_field :email, class: "form-control" %>
         </div>
-        <%= f.invisible_captcha :subtitle %> <!-- This is an invisible field that only spambots see. If it is filled in, the application won't save. -->
+        <%= f.hidden_field :mousetrap, :value => @test %>
         <div class="form-group">
-          <%= f.submit "Submit Application", class: "button button-3d nomargin nopadding" %>
+          <%= f.submit "Get Started!", class: "button button-3d nomargin nopadding" %>
         </div>
       <% end %>
       </div>
-      <div class="col-md-2"></div>
+      <div class="col-md-3"></div>
     </div>
   </div>
 </section>
-<script type="text/javascript">
-  $(".learn-about-acltc").on("change", function(){
-  $("#learn-acltc-hidden").toggle($(this).hasClass("learn-about-acltc-other"));
-});
-</script>
-<!-- Google Code for Apply Now Button Conversion Page -->
-<script type="text/javascript">
-  /* <![CDATA[ */
-  var google_conversion_id = 926873760;
-  var google_conversion_language = "en";
-  var google_conversion_format = "3";
-  var google_conversion_color = "ffffff";
-  var google_conversion_label = "8ZohCMXw8mQQoPH7uQM";
-  var google_remarketing_only = false;
-  /* ]]> */
-</script>
-<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
-</script>
-<noscript>
-  <div style="display:inline;">
-    <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/926873760/?label=8ZohCMXw8mQQoPH7uQM&amp;guid=ON&amp;script=0"/>
-  </div>
-</noscript>

@@ -23,6 +23,11 @@ class ApplicationsController < ApplicationController
 
   def new
     @application = Application.new
+    if params[:id] # auto populate subsciber fields from split test
+      subscriber = Subscriber.find(params[:id])
+      @application.first_name = subscriber.first_name
+      @application.email = subscriber.email
+    end
   end
 
   def create
@@ -30,6 +35,7 @@ class ApplicationsController < ApplicationController
     if @application.save
       @application.interview.update(booked: true)
       AcltcMailer.application_email(@application).deliver_now
+      converted!("subscriber")
       redirect_to "/pages/thank_you"
     else
       render :new
