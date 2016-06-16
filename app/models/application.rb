@@ -1,11 +1,8 @@
 class Application < ActiveRecord::Base
   validates :first_name, :last_name, :email, :phone, :address, :emergency_contact, :learn_about_acltc,
-  :location, :primary_goals, :programming_experience, :tinker_example, :hangouts_email, presence: true, on: :create
+  :location, :primary_goals, :programming_experience, :current_occupation, :preferred_work_location,
+  :work_concurrently, :why_better, :tinker_example, :hangouts_email, presence: true, on: :create
   validates :interview_id, presence: true, uniqueness: true, on: :create
-
-  validates :current_occupation, :preferred_work_location, :work_concurrently, :why_better, presence: true, on: :create, unless: Proc.new { |m| m.hidden == 'short' }
-
-  attr_accessor :hidden
 
   belongs_to :interview
 
