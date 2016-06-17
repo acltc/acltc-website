@@ -10,7 +10,7 @@ class SubscribersController < ApplicationController
   end
 
   def create
-    if params[:subscriber][:mousetrap]
+    if params[:subscriber]
       @subscriber = Subscriber.new(email: params[:subscriber][:email], first_name: params[:subscriber][:first_name], mousetrap: params[:subscriber][:mousetrap])
       if @subscriber.save
         converted!("subscriber")
