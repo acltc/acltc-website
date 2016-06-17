@@ -1,0 +1,53 @@
+<section id="content">
+  <div class="content-wrap">
+    <div class="container clearfix">
+      <div class="postcontent nobottommargin clearfix">
+        <div class="single-post nobottommargin">
+          <div class="entry clearfix">
+            <div class="col_full portfolio-single-image">
+              <!-- VIDEO CONTENT -->
+              <iframe width="500" height="315" src="https://www.youtube.com/embed/uVVLVAB6sBQ" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="tutorial-content" class="entry-content notopmargin">
+              <div class="fancy-title title-dotted-border title-center">
+                <h2><%= @lesson_title %></h2>
+              </div>
+              <!-- BODY START -->
+              <h3>Exercises</h3>
+              <ol>
+                <li>
+                  Recreate the Person class in your own text editor.
+                  <ul>
+                    <li>Add a method called full_name that returns the person’s full name as a string.</li>
+                    <li>Add a method called email that returns the person’s email address as a string. The person’s email is has the format: “firstname.lastname@gmail.com".</li>
+                    <li>Add a method called info that returns a string that describes the person in a user friendly format. The catch: Make sure it works no matter how many hobbies a person has! (Hint: Consider using an each loop.)</li>
+                  </ul>
+                </li>
+                <li>
+                  Below the Person class, create a ContactList class. The ContactList should have two attributes: <br>
+                     title - this represents what list this is (e.g. “friends”, “business contacts”)<br>
+                     contacts - this should be an array. It will contain numerous instances of the Person class.
+                </li>
+                <li>
+                  Add an instance method to the ContactList class called “add_contact” that will add a Person instance to the particular contact list.
+                </li>
+              </ol>
+              <%= render 'form_solutions.html.erb' %>
+              <!-- BODY END -->
+              <div class="clear"></div>
+              <br>
+              <%= render 'share_buttons.html.erb' %>
+            </div>
+          </div>
+          <%= render 'post_navigation.html.erb' %>
+          <div class="line"></div>
+        </div>
+      </div>
+      <div class="sidebar nobottommargin col_last clearfix">
+        <div class="sidebar-widgets-wrap">
+          <%= render 'next_lessons.html.erb' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

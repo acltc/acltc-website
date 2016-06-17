@@ -1,0 +1,60 @@
+<section id="content">
+  <div class="content-wrap">
+    <div class="container clearfix">
+      <div class="postcontent nobottommargin clearfix">
+        <div class="single-post nobottommargin">
+          <div class="entry clearfix">
+            <div class="col_full portfolio-single-image">
+              <!-- VIDEO CONTENT -->
+              <iframe width="500" height="315" src="https://www.youtube.com/embed/2z3-26LdCaE" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="tutorial-content" class="entry-content notopmargin">
+              <div class="fancy-title title-dotted-border title-center">
+                <h2><%= @lesson_title %></h2>
+              </div>
+              <!-- BODY START -->
+              <h3>Exercises</h3>
+              <ol>
+                <li>
+                  Add an ‘info’ instance method to your Song class that returns a string that contains information about the song in an easy to read format.
+                </li>
+                <li>
+                  Create a new class called Product, that will produce products that are available for sale. 
+                  <ul>
+                    <li>
+                      Each product should have a name, a description, and a price.
+                    </li>
+                    <li>
+                      It should have methods that return these three essential attributes.
+                    </li>
+                    <li>
+                      It should also have additional methods that allow us to change those attributes.
+                    </li>
+                    <li>
+                      Next, add a method called tax that returns the price multiplied by 0.09 (which will represent sales tax.) This tax method should call the ‘price’ method.
+                    </li>
+                    <li>
+                      Next add a method called total which returns the sum of the price plus the tax. This method should reference both the price method as well as the tax method.
+                    </li>
+                  </ul>
+                </li>
+              </ol>
+              <%= render 'form_solutions.html.erb' %>
+              <!-- BODY END -->
+              <div class="clear"></div>
+              <br>
+              <%= render 'share_buttons.html.erb' %>
+            </div>
+          </div>
+          <%= render 'post_navigation.html.erb' %>
+          <div class="line"></div>
+        </div>
+      </div>
+      <div class="sidebar nobottommargin col_last clearfix">
+        <div class="sidebar-widgets-wrap">
+          <%= render 'next_lessons.html.erb' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
