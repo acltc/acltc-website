@@ -24,8 +24,8 @@ class SubscribersController < ApplicationController
   end
 
   def apply
-    @test = ab_test("subscriber", ["capture_email", "regular"])
-    if @test == "capture_email"
+    @test = ab_test("subscriber", ["one_step", "two_step"])
+    if @test == "two_step"
       @subscriber = Subscriber.new
     else
       redirect_to "/applications/new"
