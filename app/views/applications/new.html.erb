@@ -111,14 +111,45 @@
             <%= f.label :location, "New York City", :value => "New York City" %>
           </div>
         </div>
-        <div class="form-group">
-          <%= f.label :primary_goals, "What are your primary goals in learning how to code?", class: "required form-label" %><br />
-          <%= f.text_area :primary_goals, class: "form-control" %>
-        </div>
-        <div class="form-group">
-          <%= f.label :programming_experience, "Do you have previous programming experience? Online tutorials count!", class: "required form-label" %><br />
-          <%= f.text_area :programming_experience, class: "form-control" %>
-        </div>
+
+        <% if @page_title == "Scholarship Application" %>
+
+          <div class="form-group">
+            <%= f.label :dreams_and_goals, "What are your dreams and goals?", class: "required form-label" %><br />
+            <%= f.text_area :dreams_and_goals, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :how_will_you_achieve_goals, "How will achieving these goals change your life for you, and those around you?", class: "required form-label" %><br />
+            <%= f.text_area :how_will_you_achieve_goals, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :target_date, "What is your target date for achieving your goals and reaching your dreams?", class: "required label-leading form-label" %><br />
+            <%= f.text_field :target_date, class: "form-control" %>
+          </div>  
+          <div class="form-group">
+            <%= f.label :why_are_you_the_perfect_candidate, "Why are you the perfect candidate for ACLTC?", class: "required form-label" %><br />
+            <%= f.text_area :why_are_you_the_perfect_candidate, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :interview_id, "Thanks for applying for the ACLTC Achievement Scholarship! The next step is to join us on a Google Hangouts or phone interview. This way we can learn a little more about you, tell you more about ACLTC, and answer any questions you may have.", class: "required form-label" %><br />
+            <%= f.collection_select :interview_id, Interview.where('starts_at > ? AND starts_at < ?', DateTime.now, DateTime.now + 200.hours).where(booked: false).order(starts_at: :asc), :id, :interview_date_human, {:include_blank => 'Select Interview Date and Time'}, { id: 'interviews', class: 'form-control shorten-select' } %>
+          </div>
+          <div class="form-group">
+            <%= f.label :hangouts_email, "Google Hangouts email or username (enter 'phone' if you prefer a phone interview).", class: "required form-label" %>
+            <%= f.text_field :hangouts_email, class: "form-control" %>
+          </div>
+          
+          <%= f.hidden_field :scholarship_applicant, :value => true %>
+        <% else %>
+
+          <div class="form-group">
+            <%= f.label :primary_goals, "What are your primary goals in learning how to code?", class: "required form-label" %><br />
+            <%= f.text_area :primary_goals, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :programming_experience, "Do you have previous programming experience? Online tutorials count!", class: "required form-label" %><br />
+            <%= f.text_area :programming_experience, class: "form-control" %>
+          </div>
           <div class="form-group">
             <%= f.label :current_occupation, "Tell us more about what you're currently doing (job or school, etc.)", class: "required form-label" %><br />
             <%= f.text_area :current_occupation, class: "form-control" %>
@@ -135,18 +166,24 @@
             <%= f.label :why_better, "Why should you be accepted into the bootcamp over other applicants?", class: "required form-label" %><br />
             <%= f.text_area :why_better, class: "form-control" %>
           </div>
-        <div class="form-group">
-          <%= f.label :tinker_example, "Programming requires complex problem solving, logical analysis, and the ability to tinker with something until it works. Give examples of when you've had these experiences.", class: "required label-leading form-label" %><br />
-          <%= f.text_area :tinker_example, class: "form-control" %>
-        </div>
-        <div class="form-group">
-          <%= f.label :interview_id, "Thanks for filling out the application! The next step is to join us on a Google Hangouts or phone interview. This way we can learn a little more about you, tell you more about ACLTC, and answer any questions you may have.", class: "required form-label" %><br />
-          <%= f.collection_select :interview_id, Interview.where('starts_at > ? AND starts_at < ?', DateTime.now, DateTime.now + 200.hours).where(booked: false).order(starts_at: :asc), :id, :interview_date_human, {:include_blank => 'Select Interview Date and Time'}, { id: 'interviews', class: 'form-control shorten-select' } %>
-        </div>
-        <div class="form-group">
-          <%= f.label :hangouts_email, "Google Hangouts email or username (enter 'phone' if you prefer a phone interview).", class: "required form-label" %>
-          <%= f.text_field :hangouts_email, class: "form-control" %>
-        </div>
+          <div class="form-group">
+            <%= f.label :tinker_example, "Programming requires complex problem solving, logical analysis, and the ability to tinker with something until it works. Give examples of when you've had these experiences.", class: "required label-leading form-label" %><br />
+            <%= f.text_area :tinker_example, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :interview_id, "Thanks for filling out the application! The next step is to join us on a Google Hangouts or phone interview. This way we can learn a little more about you, tell you more about ACLTC, and answer any questions you may have.", class: "required form-label" %><br />
+            <%= f.collection_select :interview_id, Interview.where('starts_at > ? AND starts_at < ?', DateTime.now, DateTime.now + 200.hours).where(booked: false).order(starts_at: :asc), :id, :interview_date_human, {:include_blank => 'Select Interview Date and Time'}, { id: 'interviews', class: 'form-control shorten-select' } %>
+          </div>
+          <div class="form-group">
+            <%= f.label :hangouts_email, "Google Hangouts email or username (enter 'phone' if you prefer a phone interview).", class: "required form-label" %>
+            <%= f.text_field :hangouts_email, class: "form-control" %>
+          </div>
+
+          <%= f.hidden_field :scholarship_applicant, :value => false %>
+
+        <% end %>
+        
+        <%= f.hidden_field :hidden, value: @page_title %>
         <%= f.invisible_captcha :subtitle %> <!-- This is an invisible field that only spambots see. If it is filled in, the application won't save. -->
         <div class="form-group">
           <%= f.submit "Submit Application", class: "button button-3d nomargin nopadding" %>

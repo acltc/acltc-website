@@ -73,7 +73,7 @@ class ApplicationsController < ApplicationController
     :emergency_contact, :learn_about_acltc, :learn_about_acltc_specify, :current_occupation,
     :primary_goals, :programming_experience, :preferred_work_location,
     :work_concurrently, :tinker_example, :why_better, :location, :status, :cohort,
-    :notes, :hangouts_email, :interview_id)
+    :notes, :hangouts_email, :interview_id, :dreams_and_goals, :how_will_you_achieve_goals, :target_date, :why_are_you_the_perfect_candidate, :scholarship_applicant, :hidden)
   end
 
 
