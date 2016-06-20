@@ -57,7 +57,9 @@ class ApplicationsController < ApplicationController
 
   def destroy
     @application = Application.find(params[:id])
-    @application.interview.update(booked: false)
+    if @application.interview
+      @application.interview.update(booked: false)
+    end
     @application.destroy
 
     flash[:danger] = "Application successfully deleted!"
