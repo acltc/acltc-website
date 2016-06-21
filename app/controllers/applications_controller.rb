@@ -37,7 +37,11 @@ class ApplicationsController < ApplicationController
       @application.interview.update(booked: true)
       AcltcMailer.application_email(@application).deliver_now
       converted!("subscriber")
-      redirect_to "/pages/thank_you"
+      if params[:application][:hidden] == "Scholarship Application"
+        redirect_to "/pages/scholarship_thank_you"
+      else
+        redirect_to "/pages/thank_you"
+      end
     else
       render :new
     end
@@ -73,7 +77,7 @@ class ApplicationsController < ApplicationController
     :emergency_contact, :learn_about_acltc, :learn_about_acltc_specify, :current_occupation,
     :primary_goals, :programming_experience, :preferred_work_location,
     :work_concurrently, :tinker_example, :why_better, :location, :status, :cohort,
-    :notes, :hangouts_email, :interview_id)
+    :notes, :hangouts_email, :interview_id, :dreams_and_goals, :how_will_you_achieve_goals, :target_date, :why_are_you_the_perfect_candidate, :scholarship_applicant, :hidden)
   end
 
 

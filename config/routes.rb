@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   get '/pages/thank_you'
   get '/pages/contacts_thank_you'
+  get '/pages/scholarship_thank_you'
 
   get "/apply" => "subscribers#apply", :as => :new_application #new_application_path has been altered for split test
   get "/applications/new/:id" => "applications#new"
