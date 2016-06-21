@@ -73,38 +73,40 @@
             <th>Scholarship applicant:</th>
             <td class="col-md-5"><%= @application.scholarship_applicant %></td>
           </tr>
-          <tr>
-            <th>How they heard about Diversity Scholarship:</th>
-            <td class="col-md-5"><%= @application.learn_about_scholarship %></td>
-          </tr>
-          <tr class="active">
-            <th>Identifies as a woman or as gender-diverse:</th>
-            <td class="col-md-5"><%= @application.woman %></td>
-          </tr>
-          <tr>
-            <th>Belongs to a racial group that is underrepresented in tech:</th>
-            <td class="col-md-5"><%= @application.minority %></td>
-          </tr>
-          <tr class="active">
-            <th>Why they should be awarded scholarship over other applicants:</th>
-            <td class="col-md-5"><%= @application.why_scholarship %></td>
-          </tr>
-          <tr class="active">
-            <th>What are their dreams and goals?:</th>
-            <td class="col-md-5"><%= @application.dreams_and_goals %></td>
-          </tr>
-          <tr class="active">
-            <th>How they plan to achieve those goals to change their life for them, and for those around them?:</th>
-            <td class="col-md-5"><%= @application.how_will_you_achieve_goals %></td>
-          </tr>
-          <tr class="active">
-            <th>What is their target date for achieving their goals and reaching your dreams?:</th>
-            <td class="col-md-5"><%= @application.target_date %></td>
-          </tr>
-          <tr class="active">
-            <th>Why are they the perfect candidate for ACLTC?:</th>
-            <td class="col-md-5"><%= @application.why_are_you_the_perfect_candidate %></td>
-          </tr>
+          <% if @application.scholarship_applicant %>
+            <tr>
+              <th class="diversity-scholarship">How they heard about Diversity Scholarship:</th>
+              <td class="col-md-5"><%= @application.learn_about_scholarship %></td>
+            </tr>
+            <tr class="active">
+              <th class="diversity-scholarship">Identifies as a woman or as gendeir-diverse:</th>
+              <td class="col-md-5"><%= @application.woman %></td>
+            </tr>
+            <tr>
+              <th class="diversity-scholarship">Belongs to a racial group that is underrepresented in tech:</th>
+              <td class="col-md-5"><%= @application.minority %></td>
+            </tr>
+            <tr class="active">
+              <th class="diversity-scholarship">Why they should be awarded scholarship over other applicants:</th>
+              <td class="col-md-5"><%= @application.why_scholarship %></td>
+            </tr>
+            <tr class="active">
+              <th class="new-scholarship">What are their dreams and goals?:</th>
+              <td class="col-md-5"><%= @application.dreams_and_goals %></td>
+            </tr>
+            <tr class="active">
+              <th class="new-scholarship">How they plan to achieve those goals to change their life for them, and for those around them?:</th>
+              <td class="col-md-5"><%= @application.how_will_you_achieve_goals %></td>
+            </tr>
+            <tr class="active">
+              <th class="new-scholarship">What is their target date for achieving their goals and reaching your dreams?:</th>
+              <td class="col-md-5"><%= @application.target_date %></td>
+            </tr>
+            <tr class="active">
+              <th class="new-scholarship">Why are they the perfect candidate for ACLTC?:</th>
+              <td class="col-md-5"><%= @application.why_are_you_the_perfect_candidate %></td>
+            </tr>
+          <% end %>
           <tr>
             <th>What they're currently doing (job or school, etc.):</th>
             <td class="col-md-5"><%= @application.current_occupation %></td>
