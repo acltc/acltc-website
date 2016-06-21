@@ -37,7 +37,11 @@ class ApplicationsController < ApplicationController
       @application.interview.update(booked: true)
       AcltcMailer.application_email(@application).deliver_now
       converted!("subscriber")
-      redirect_to "/pages/thank_you"
+      if params[:application][:hidden] == "Scholarship Application"
+        redirect_to "/pages/scholarship_thank_you"
+      else
+        redirect_to "/pages/thank_you"
+      end
     else
       render :new
     end
