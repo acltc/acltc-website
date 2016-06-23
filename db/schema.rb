@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160616192710) do
+ActiveRecord::Schema.define(version: 20160620211738) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,8 +64,8 @@ ActiveRecord::Schema.define(version: 20160616192710) do
     t.text     "work_concurrently"
     t.text     "tinker_example"
     t.text     "why_better"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.string   "address"
     t.string   "emergency_contact"
     t.boolean  "scholarship_applicant"
@@ -80,6 +80,10 @@ ActiveRecord::Schema.define(version: 20160616192710) do
     t.text     "notes"
     t.integer  "interview_id"
     t.string   "hangouts_email"
+    t.text     "dreams_and_goals"
+    t.text     "how_will_you_achieve_goals"
+    t.string   "target_date"
+    t.text     "why_are_you_the_perfect_candidate"
   end
 
   add_index "applications", ["interview_id"], name: "index_applications_on_interview_id", unique: true, using: :btree
