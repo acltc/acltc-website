@@ -27,7 +27,7 @@
                         <p>We also believe that you don't need to quit your job and put your life on hold to learn to code. We're often questioned as to how we cover on a part-time basis what other programs need full-time dedication to accomplish. The answer is that if the curriculum is designed and taught by top-notch educators – like ACLTC’s – you can learn a lot more in a much shorter time. Our graduates have proven this again and again.</p>
 
                         <div class="well">
-                            <p id="subscribe-download">Download our curriculum to learn more about our program.</p>
+                            <p class="subscribe-download" style="color:#17A396">Download our curriculum to learn more about our program.</p>
                                 <div class="row">
                                         <%= form_tag("/subscribers", method: "post", remote: true) do %>
                                     <div class="col-md-4">
@@ -145,6 +145,25 @@
                         </p>
                     </div>
                 </div>
+
+                <div class="well" style="margin:auto;margin-top:40px;">
+                    <p class="subscribe-download" style="color:#17A396">Download our curriculum to learn more about our program.</p>
+                        <div class="row">
+                                <%= form_tag("/subscribers", method: "post", remote: true) do %>
+                            <div class="col-md-4">
+                                <%= text_field_tag :first_name, nil, placeholder: "First Name" %>
+                            </div>
+                            <div class="col-md-4">
+                                <%= text_field_tag :email, nil, placeholder: "Email" %>
+                            </div>
+                            <div class="col-md-4">
+                                <%= hidden_field_tag :mousetrap, nil, value: "Curriculum Download" %>
+                                <%= submit_tag "Download", style: "padding:0;margin:0;" %>
+                            </div>
+                        </div>
+                    <% end %>
+                </div>
+
             </div>
         </div>
 

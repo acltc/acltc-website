@@ -20,11 +20,7 @@ class SubscribersController < ApplicationController
       end
     elsif params[:mousetrap] == "Curriculum Download"
       @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], mousetrap: params[:mousetrap])
-      if @subscriber.save
-        @success = true
-      else
-        @success = false
-      end
+      @subscriber.save ? @success = true : @success = false
     else  
       Subscriber.create(email: params[:email]) unless params[:email].blank?
     end
@@ -40,7 +36,6 @@ class SubscribersController < ApplicationController
   end
 
   def download
-    data = open("https://s3.amazonaws.com/acltc/ACLTC+Curriculum+2016+SM.pdf") 
-    send_data data.read, filename: "ACLTC Curriculum 2016 SM.pdf", type: "application/pdf", disposition: 'inline', stream: 'true', buffer_size: '4096'
+    render json: { message: "Download in progress"}, status: 200
   end
 end
