@@ -20,7 +20,12 @@ class SubscribersController < ApplicationController
       end
     elsif params[:mousetrap] == "Curriculum Download"
       @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], mousetrap: params[:mousetrap])
-      @subscriber.save ? @success = true : @success = false
+      if @subscriber.save
+        respond_to do |format|
+          @java_url = "/subscribers/download"
+          format.js {render :partial => "downloadFile"}
+        end
+      end
     else  
       Subscriber.create(email: params[:email]) unless params[:email].blank?
     end
@@ -36,6 +41,8 @@ class SubscribersController < ApplicationController
   end
 
   def download
-    render json: { message: "Download in progress"}, status: 200
+    url = 'https://s3.amazonaws.com/acltc/ACLTC+Curriculum+2016+SM.pdf'
+    data = open(url).read
+    send_data data, :disposition => 'attachment', :filename=>"curriculum.pdf"
   end
 end

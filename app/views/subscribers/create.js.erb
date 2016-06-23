@@ -1,21 +1,8 @@
 <% if @subscriber.mousetrap == "Application Split Test" %>
   $("#subscribe-instructions").html("Thank you! You've been added to our list.");
 <% elsif @subscriber.mousetrap == "Curriculum Download" %>
-  <% if @success %>  
-    $(".subscribe-download").html("Thank you for downloading our curriculum!");
-    $.ajax({
-        type: 'GET',
-        url: '/subscribers/download',
-        success: function(data){
-          window.open("https://s3.amazonaws.com/acltc/ACLTC+Curriculum+2016+SM.pdf", "_blank");
-        },
-        error: function (){
-          console.log("Error Downloading Curriculum");
-        }
-    });
-  <% else %>
-    $(".subscribe-download").css("color", "red");
-    $(".subscribe-download").html("Error, please enter your name and email to download the curriculum.");
-  <% end %>
+  $(".subscribe-download").css("color", "red");
+  $(".subscribe-download").html("Error, please enter your name and email to download the curriculum.");
 <% end %>
+
 
