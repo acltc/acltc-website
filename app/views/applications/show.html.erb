@@ -10,7 +10,7 @@
         </div>
         <div class="status-cohort">
           <%= form_for @application, :html => {:class => 'status-cohort-form'} do |f| %>
-            <%= f.select(:status, options_for_select([['Waiting to Schedule Interview'], ['Interview Scheduled'],
+            <%= f.select(:status, options_for_select([['Waiting to Schedule Interview'], ['Interview 1 Scheduled'], ['Interview 2 Scheduled'],
             ['Missed Interview'], ['Interviewed/Waiting for Code'], ['Code Submitted'], ['Rejected'], ['Accepted'],
             ['Registered'], ['Deferred'], ['Declined (Financial)'], ['Declined (Schedule)'], ['Declined (Competitor)'],
             ['Declined (Location)'], ['Declined (Other)'], ['Interview Never Scheduled'], ['Code Never Submitted']], @application.status), {:include_blank => 'Select Status'}, { class: 'form-control' })%>
