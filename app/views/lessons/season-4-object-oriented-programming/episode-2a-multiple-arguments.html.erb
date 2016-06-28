@@ -1,0 +1,42 @@
+<section id="content">
+  <div class="content-wrap">
+    <div class="container clearfix">
+      <div class="postcontent nobottommargin clearfix">
+        <div class="single-post nobottommargin">
+          <div class="entry clearfix">
+            <div class="col_full portfolio-single-image">
+              <!-- VIDEO CONTENT -->
+              <iframe width="500" height="315" src="https://www.youtube.com/embed/4rHQIhwh-tM" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="tutorial-content" class="entry-content notopmargin">
+              <div class="fancy-title title-dotted-border title-center">
+                <h2><%= @lesson_title %></h2>
+              </div>
+              <!-- BODY START -->
+              <h3>Exercises</h3>
+              <ol>
+                <li>Add the following methods to your Calculator class:<br>
+                <strong>multiply</strong> - returns the product of two numbers<br>
+                <strong>divide</strong> - returns the quotient of two numbers<br>
+                <strong>average</strong> - this method will accept 3 numbers as parameters and return the average. (The average would be the sum of the 3 numbers divided by 3.)<br>
+                </li>
+              </ol>
+              <%= render 'form_solutions.html.erb' %>
+              <!-- BODY END -->
+              <div class="clear"></div>
+              <br>
+              <%= render 'share_buttons.html.erb' %>
+            </div>
+          </div>
+          <%= render 'post_navigation.html.erb' %>
+          <div class="line"></div>
+        </div>
+      </div>
+      <div class="sidebar nobottommargin col_last clearfix">
+        <div class="sidebar-widgets-wrap">
+          <%= render 'next_lessons.html.erb' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
