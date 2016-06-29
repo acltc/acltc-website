@@ -10,13 +10,21 @@ class SubscribersController < ApplicationController
   end
 
   def create
-    if params[:subscriber]
-      @subscriber = Subscriber.new(email: params[:subscriber][:email], first_name: params[:subscriber][:first_name], mousetrap: params[:subscriber][:mousetrap])
+    if params[:mousetrap] == "Application Split Test"
+      @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], mousetrap: params[:mousetrap])
       if @subscriber.save
-        converted!("subscriber")
+        converted!("subscriber") #AB Split Test Converterd
         redirect_to "/applications/new/#{@subscriber.id}"
       else
         render :apply
+      end
+    elsif params[:mousetrap] == "Curriculum Download"
+      @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], mousetrap: params[:mousetrap])
+      if @subscriber.save
+        respond_to do |format|
+          @java_url = "/subscribers/download"
+          format.js {render :partial => "downloadFile"}
+        end
       end
     else  
       Subscriber.create(email: params[:email]) unless params[:email].blank?
@@ -30,5 +38,11 @@ class SubscribersController < ApplicationController
     else
       redirect_to "/applications/new"
     end
+  end
+
+  def download
+    url = 'https://s3.amazonaws.com/acltc/ACLTC+Curriculum+2016+SM.pdf'
+    data = open(url).read
+    send_data data, :disposition => 'attachment', :filename=>"curriculum.pdf"
   end
 end

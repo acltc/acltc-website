@@ -25,11 +25,30 @@
                         <p>At ACLTC, we believe that education involves much more than simply conveying information — it’s about studying and understanding how people think and learn as well as designing ways to ensure that students truly grasp the material at hand. We understand that every individual has a different way of thinking and that each new concept requires a unique approach. Even the most advanced subject-matter experts must also be well-trained educators, or the result will be a frustrating experience for students.</p>
                         <p>Our program is designed and taught by individuals who are not only highly talented web developers, but also expert educators. Our thoughtful, detailed curriculum was designed using educational best practices and careful consideration of how people learn and retain information. Every point in our methodology has been deliberated and debated upon by our instructors to the point of perfection – from the exact order in which to teach concepts and the analogies used to clarify them, to how exercises should be structured so they pack the maximum educational punch.</p>
                         <p>We also believe that you don't need to quit your job and put your life on hold to learn to code. We're often questioned as to how we cover on a part-time basis what other programs need full-time dedication to accomplish. The answer is that if the curriculum is designed and taught by top-notch educators – like ACLTC’s – you can learn a lot more in a much shorter time. Our graduates have proven this again and again.</p>
+
+                        <div class="well">
+                            <p class="subscribe-download" style="color:#17A396">Want to learn more? Download our full curriculum!</p>
+                                <div class="row">
+                                        <%= form_tag("/subscribers", method: "post", remote: true) do %>
+                                    <div class="col-md-4">
+                                        <%= text_field_tag :first_name, nil, placeholder: "First Name" %>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <%= text_field_tag :email, nil, placeholder: "Email" %>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <%= hidden_field_tag :mousetrap, nil, value: "Curriculum Download" %>
+                                        <%= submit_tag "Download", style: "padding:0;margin:0;background-color:#F25252;color:white;" %>
+                                    </div>
+                                </div>
+                            <% end %>
+                        </div>
+
                         <h2>Our Program</h2>
                     </div>
                     <div class="phase">
                         <div class="phase-block block-image phase1-img">
-                            <span>1</span >
+                            <span>1</span>
                         </div>
                         <div class="phase-block">
                             <h2>Phase One</h2>
@@ -126,6 +145,25 @@
                         </p>
                     </div>
                 </div>
+
+                <div class="well curriculum-well">
+                    <p class="subscribe-download">Download our full curriculum to see what we teach week-by-week!</p>
+                        <div class="row">
+                                <%= form_tag("/subscribers", method: "post", remote: true) do %>
+                            <div class="col-md-4">
+                                <%= text_field_tag :first_name, nil, placeholder: "First Name" %>
+                            </div>
+                            <div class="col-md-4">
+                                <%= text_field_tag :email, nil, placeholder: "Email" %>
+                            </div>
+                            <div class="col-md-4">
+                                <%= hidden_field_tag :mousetrap, nil, value: "Curriculum Download" %>
+                                <%= submit_tag "Download", class: "curriculum-download-btn", style: "padding:0;margin:0;background-color:#F25252;color:white;" %>
+                            </div>
+                        </div>
+                    <% end %>
+                </div>
+
             </div>
         </div>
 
