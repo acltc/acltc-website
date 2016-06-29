@@ -43,6 +43,6 @@ class SubscribersController < ApplicationController
   def download
     url = 'https://s3.amazonaws.com/acltc/ACLTC+Curriculum+2016+SM.pdf'
     data = open(url).read
-    send_data data, :disposition => 'attachment', :filename=>"curriculum.pdf"
+    send_data data, :disposition => 'attachment', :filename=>"ACLTC_Curriculum_2016.pdf"
   end
 end
