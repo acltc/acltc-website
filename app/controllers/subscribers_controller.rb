@@ -10,10 +10,9 @@ class SubscribersController < ApplicationController
   end
 
   def create
-    if params[:mousetrap] == "Application Split Test"
+    if params[:mousetrap] == "Application"
       @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], mousetrap: params[:mousetrap])
       if @subscriber.save
-        converted!("subscriber") #AB Split Test Converterd
         redirect_to "/applications/new/#{@subscriber.id}"
       else
         render :apply
@@ -27,17 +26,12 @@ class SubscribersController < ApplicationController
         end
       end
     else  
-      Subscriber.create(email: params[:email]) unless params[:email].blank?
+      @subscriber = Subscriber.create(email: params[:email], mousetrap: "Homepage") unless params[:email].blank?
     end
   end
 
   def apply
-    @test = ab_test("subscriber", ["one_step", "two_step"])
-    if @test == "two_step"
-      @subscriber = Subscriber.new
-    else
-      redirect_to "/applications/new"
-    end
+    @subscriber = Subscriber.new
   end
 
   def download

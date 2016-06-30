@@ -1,8 +1,8 @@
-<% if @subscriber.mousetrap == "Application Split Test" %>
-  $("#subscribe-instructions").html("Thank you! You've been added to our list.");
-<% elsif @subscriber.mousetrap == "Curriculum Download" %>
+<% if @subscriber.mousetrap == "Curriculum Download" %>
   $(".subscribe-download").css("color", "red");
   $(".subscribe-download").html("Error, please enter your name and email to download the curriculum.");
+<% elsif @subscriber.mousetrap == "Homepage" %>
+  $("#subscribe-instructions").html("Thank you! You've been added to our list.");
 <% end %>
 
 
