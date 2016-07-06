@@ -33,6 +33,14 @@
             <th class="col-md-3">Status:</th>
             <td class="col-md-5"><%= @application.status %></td>
           </tr>
+          <tr class="active">
+            <th class="col-md-3">History:</th>
+            <td class="col-md-5">
+              <% @application.statuses.each do |status| %>
+                <div><%= link_to("#{status.text} #{status.date}", edit_status_path(status)) %></div>
+              <% end %>
+            </td>
+          </tr>
           <tr>
             <th class="col-md-3">First Name:</th>
             <td class="col-md-5"><%= @application.first_name %></td>

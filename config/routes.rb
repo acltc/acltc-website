@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'statuses/show'
+
+  get 'statuses/edit'
+
   root 'pages#home'
   devise_for :admins, :controllers => { registrations: 'registrations' }
   get 'admins/dashboard' => 'admins#dashboard'
@@ -19,6 +23,7 @@ Rails.application.routes.draw do
   resources :blog_posts
   resources :blog_categories
   resources :applications
+  resources :statuses, only: [:edit, :update]
   resources :faqs
   resources :contacts
   resources :mini_courses

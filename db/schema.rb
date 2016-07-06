@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160620211738) do
+ActiveRecord::Schema.define(version: 20160706195920) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,7 +75,6 @@ ActiveRecord::Schema.define(version: 20160620211738) do
     t.text     "why_scholarship"
     t.string   "location"
     t.text     "learn_about_acltc_specify"
-    t.string   "status"
     t.string   "cohort"
     t.text     "notes"
     t.integer  "interview_id"
@@ -84,6 +83,7 @@ ActiveRecord::Schema.define(version: 20160620211738) do
     t.text     "how_will_you_achieve_goals"
     t.string   "target_date"
     t.text     "why_are_you_the_perfect_candidate"
+    t.string   "status"
   end
 
   add_index "applications", ["interview_id"], name: "index_applications_on_interview_id", unique: true, using: :btree
@@ -197,6 +197,14 @@ ActiveRecord::Schema.define(version: 20160620211738) do
     t.integer  "priority"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "statuses", force: :cascade do |t|
+    t.string   "text"
+    t.date     "date"
+    t.integer  "application_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "subscribers", force: :cascade do |t|

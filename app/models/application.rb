@@ -6,6 +6,7 @@ class Application < ActiveRecord::Base
 
   validates :primary_goals, :programming_experience, :current_occupation, :preferred_work_location, :work_concurrently, :why_better, :tinker_example, presence: true, on: :create
 
+  has_many :statuses
   belongs_to :interview
 
   def full_name

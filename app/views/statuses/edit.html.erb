@@ -1,0 +1,8 @@
+<h1>Edit Status</h1>
+
+<%= form_tag "/statuses/#{@status.id}", method: :patch do %>
+  <%= label_tag :date %>
+  <%= select_date %>
+
+  <%= submit_tag "Update Status" %>
+<% end %>

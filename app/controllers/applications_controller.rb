@@ -47,8 +47,12 @@ class ApplicationsController < ApplicationController
 
   def update
     @application = Application.find(params[:id])
+    status_changed = true unless @application.status == params[:application][:status]
 
     if @application.update_attributes(application_params)
+      if status_changed
+        @application.statuses.create(text: params[:application][:status], date: Date.today)
+      end
       flash[:info] = "Application status updated!"
       redirect_to @application
     else
@@ -74,7 +78,7 @@ class ApplicationsController < ApplicationController
     params.require(:application).permit(:first_name, :last_name, :email, :phone, :address,
     :emergency_contact, :learn_about_acltc, :learn_about_acltc_specify, :current_occupation,
     :primary_goals, :programming_experience, :preferred_work_location,
-    :work_concurrently, :tinker_example, :why_better, :location, :status, :cohort,
+    :work_concurrently, :tinker_example, :why_better, :status, :location, :cohort,
     :notes, :hangouts_email, :interview_id)
   end
 
