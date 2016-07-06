@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   get "/apply" => "subscribers#apply", :as => :new_application #new_application_path has been altered for split test
   get "/applications/new/:id" => "applications#new"
+
+  get "/subscribers/download"
   
   resources :blog_posts
   resources :blog_categories

@@ -22,13 +22,16 @@ class ApplicationsController < ApplicationController
   end
 
   def new
-    @application = Application.new
-    if params[:id] # auto populate subsciber fields from split test
-      subscriber = Subscriber.find(params[:id])
-      @application.first_name = subscriber.first_name
-      @application.email = subscriber.email
+    if params[:application_type] == "scholarship"
+      redirect_to '/pages/scholarship_thank_you'
+    else
+      @application = Application.new
+      if params[:id] # auto populate subsrciber fields from first step
+        subscriber = Subscriber.find(params[:id])
+        @application.first_name = subscriber.first_name
+        @application.email = subscriber.email
+      end
     end
-    @page_title = "Scholarship Application" if params[:application_type] == "scholarship"
   end
 
   def create
@@ -36,12 +39,7 @@ class ApplicationsController < ApplicationController
     if @application.save
       @application.interview.update(booked: true)
       AcltcMailer.application_email(@application).deliver_now
-      converted!("subscriber")
-      if params[:application][:hidden] == "Scholarship Application"
-        redirect_to "/pages/scholarship_thank_you"
-      else
-        redirect_to "/pages/thank_you"
-      end
+      redirect_to "/pages/thank_you"
     else
       render :new
     end
@@ -77,7 +75,7 @@ class ApplicationsController < ApplicationController
     :emergency_contact, :learn_about_acltc, :learn_about_acltc_specify, :current_occupation,
     :primary_goals, :programming_experience, :preferred_work_location,
     :work_concurrently, :tinker_example, :why_better, :location, :status, :cohort,
-    :notes, :hangouts_email, :interview_id, :dreams_and_goals, :how_will_you_achieve_goals, :target_date, :why_are_you_the_perfect_candidate, :scholarship_applicant, :hidden)
+    :notes, :hangouts_email, :interview_id)
   end
 
 
