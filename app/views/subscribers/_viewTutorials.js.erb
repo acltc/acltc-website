@@ -1,0 +1,6 @@
+<% if @tutorials_visible %> 
+  $('#myModal').modal('hide');
+  $("#message").html("Thanks, have fun!");
+<% else %>
+  $("#myModalLabel").html("Error! Name and Email are required to view the tutorials.");
+<% end %>
