@@ -1,4 +1,5 @@
 class LessonsController < ApplicationController
+  before_action :verify_subscriber, except: [:index]
   CATEGORIES = [
     { title: "Season 1: Becoming a Power User", icon: "icon-laptop2" },
     { title: "Season 2: Preparing Your Tools", icon: "icon-wrench" },

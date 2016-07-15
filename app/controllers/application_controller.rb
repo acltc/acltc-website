@@ -6,4 +6,12 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     admins_dashboard_path(current_admin)
   end
+
+  private
+
+  def verify_subscriber
+    if !cookies[:is_subscriber]
+      redirect_to tutorial_lessons_path
+    end  
+  end
 end
