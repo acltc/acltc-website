@@ -25,6 +25,7 @@ class FaqsController < ApplicationController
 
   def update
     @faq = Faq.find(params[:id])
+    @faq.update(faq_params)
     if @faq.save
       flash[:success] = "FAQ has been updated"
       redirect_to faqs_path
