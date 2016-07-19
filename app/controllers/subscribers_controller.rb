@@ -19,12 +19,19 @@ class SubscribersController < ApplicationController
         render :apply
       end
     elsif params[:mousetrap] == "Curriculum Download"
-      @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], mousetrap: params[:mousetrap])
-      if @subscriber.save
-        cookies[:is_subscriber] = true
+      if cookies[:is_subscriber]
         respond_to do |format|
           @java_url = "/subscribers/download"
           format.js {render :partial => "downloadFile"}
+        end
+      else
+        @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], mousetrap: params[:mousetrap])
+        if @subscriber.save
+          cookies[:is_subscriber] = true
+          respond_to do |format|
+            @java_url = "/subscribers/download"
+            format.js {render :partial => "downloadFile"}
+          end
         end
       end
     elsif params[:mousetrap] == "View Tutorials"
