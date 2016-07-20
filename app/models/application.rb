@@ -34,4 +34,8 @@ class Application < ActiveRecord::Base
     self.where("created_at >= '#{Date.new(year, month_number, 1)}' AND created_at < '#{Date.new(year, month_number, 1) + 1.month}'")
   end
 
+  def self.enrolled_in_month(month_number, year)
+    self.joins(:statuses).where("statuses.date >= '#{Date.new(year, month_number, 1)}' AND statuses.date < '#{Date.new(year, month_number, 1) + 1.month}' AND statuses.text = 'Paid Deposit'")
+  end
+
 end

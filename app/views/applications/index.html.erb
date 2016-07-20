@@ -37,7 +37,7 @@
             <td><%= Application.has_month(Date.today.month, Date.today.year).count %></td>
             <td><%= Application.has_month_and_status(Date.today.month, Date.today.year, "Had Interview 1").count %></td>
             <td><%= Application.has_month_and_status(Date.today.month, Date.today.year, "Had Interview 2").count %></td>
-            <td><%= Application.has_month_and_status(Date.today.month, Date.today.year, "Paid Deposit").count %></td>
+            <td><%= Application.enrolled_in_month(Date.today.month, Date.today.year).count %></td>
           </tr>
         </table>
 
