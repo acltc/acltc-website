@@ -28,17 +28,21 @@
       <div class="col-md-8">
         <table class="table table-striped index-dash-table">
           <tr>
+            <th>City</th>
             <th>Leads This Month</th>
             <th>First Appts</th>
             <th>Second Appts</th>
             <th>Enrollments</th>
           </tr>
-          <tr>
-            <td><%= Application.has_month(Date.today.month, Date.today.year).count %></td>
-            <td><%= Application.has_month_and_status(Date.today.month, Date.today.year, "Had Interview 1").count %></td>
-            <td><%= Application.has_month_and_status(Date.today.month, Date.today.year, "Had Interview 2").count %></td>
-            <td><%= Application.enrolled_in_month(Date.today.month, Date.today.year).count %></td>
-          </tr>
+          <% ["Chicago", "San Francisco", "New York City"].each do |city| %>
+            <tr>
+              <td><%= city %></td>
+              <td><%= Application.has_month(Date.today.month, Date.today.year, city).count %></td>
+              <td><%= Application.has_month_and_status(Date.today.month, Date.today.year, "Had Interview 1", city).count %></td>
+              <td><%= Application.has_month_and_status(Date.today.month, Date.today.year, "Had Interview 2", city).count %></td>
+              <td><%= Application.enrolled_in_month(Date.today.month, Date.today.year, city).count %></td>
+            </tr>
+          <% end %>
         </table>
 
         <%= link_to "Download Applications CSV", applications_path(format: "csv"), :class => 'button btn-secondary csv-button'  %>
