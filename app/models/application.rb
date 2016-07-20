@@ -26,4 +26,12 @@ class Application < ActiveRecord::Base
     end
   end
 
+  def self.has_month_and_status(month_number, year, status)
+    self.joins(:statuses).where("applications.created_at >= '#{Date.new(year, month_number, 1)}' AND applications.created_at < '#{Date.new(year, month_number, 1) + 1.month}' AND statuses.text = '#{status}'")
+  end
+
+  def self.has_month(month_number, year)
+    self.where("created_at >= '#{Date.new(year, month_number, 1)}' AND created_at < '#{Date.new(year, month_number, 1) + 1.month}'")
+  end
+
 end
