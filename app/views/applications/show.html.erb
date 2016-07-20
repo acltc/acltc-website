@@ -14,7 +14,7 @@
              ['Applicant Undecided'], ['Rejected'], ['Accepted'], ['Submitted Enrollment Agreement'],
             ['Paid Deposit'], ['Deferred'], ['Declined (Financial)'], ['Declined (Schedule)'], ['Declined (Competitor)'],
             ['Declined (Location)'], ['Declined (Other)'], ['Interview Never Scheduled']], @application.status), {:include_blank => 'Select Status'}, { class: 'form-control' })%>
-            <%= f.select(:cohort, options_for_select([['CHI 7/31/16'], ['CHI 9/18/16'], ['CHI 1/29/17'], ['SF 7/31/16'], ['SF 9/18/16'], ['SF 11/20/16'], ['SF 1/29/17'], ['SF 3/26/17'], ['NYC 7/31/16'], ['NYC 9/18/16'], ['NYC 11/20/16'], ['NYC 1/29/17'], ['NYC 3/26/17']], @application.cohort), {:include_blank => 'Select Cohort'}, { class: 'form-control' })%>
+            <%= f.select(:cohort, options_for_select([['CHI 12/13/15'], ['CHI 2/7/16'], ['SF 3/13/16'], ['CHI 4/10/16'], ['CHI 7/31/16'], ['CHI 9/18/16'], ['CHI 1/29/17'], ['SF 7/31/16'], ['SF 9/18/16'], ['SF 11/20/16'], ['SF 1/29/17'], ['SF 3/26/17'], ['NYC 7/31/16'], ['NYC 9/18/16'], ['NYC 11/20/16'], ['NYC 1/29/17'], ['NYC 3/26/17']], @application.cohort), {:include_blank => 'Select Cohort'}, { class: 'form-control' })%>
             <%= f.label :notes, class: "sr-only" %>
             <%= f.text_field :notes, placeholder: "Add a note", class: "form-control" %>
             <%= f.submit "Update", class: "btn btn-primary select-button"%>
