@@ -39567,7 +39567,7 @@ button, input[type=submit] {
 .marquee .marquee-content {
   padding: 8em 3.5em;
   text-align: center;
-  z-index: 99999;
+  z-index: 9999;
   position: relative;
 }
 /* line 191, /Users/MrBitey/Desktop/acltc/acltc-website/app/assets/stylesheets/home.scss.erb */
