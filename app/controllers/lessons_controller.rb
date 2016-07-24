@@ -81,6 +81,13 @@ class LessonsController < ApplicationController
         lessons: LESSONS.select { |lesson| lesson[:category_id] == index }
       }
     end
+    # Uses ip_address to see if the user has previously signed up?
+    # If so, they can have access to the tutorials.
+    if Subscriber.find_by(ip_address: request.remote_ip)
+        @returning_subscriber = true
+    else
+        @returning_subscriber = false
+    end
   end
 
   def show
