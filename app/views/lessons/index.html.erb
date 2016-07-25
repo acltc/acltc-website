@@ -76,7 +76,7 @@
 </section><!-- #content end -->
 <!-- modal js -->
 <script type="text/javascript">
-	<% if !cookies[:is_subscriber] %>
+	<% unless @returning_subscriber || cookies[:is_subscriber] %>
     $(window).load(function(){
         $('#myModal').appendTo("body").modal({
           'show': true,
