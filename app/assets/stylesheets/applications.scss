@@ -10,6 +10,27 @@
       margin-top: -6px;
   }
 }
+#page-title h1{
+  color: #31363a;
+  text-transform:none;
+}
+#page-title h1:before{
+    margin-right: .5em;
+    max-width: 50px;
+    content: url("actualize-logo-triangle-sm.png");}
+
+    #page-title {
+        position: relative;
+        padding: 3em 0 1em 0em;
+        background-color: #fff;
+        border-bottom: 3px solid #fa9f00;
+    }
+    #page-title span {
+        margin-top: 1.5em;
+
+        font-size: 1.1em;
+        padding-left: 3em;
+    }
 textarea.form-control {
   height: 250px;
 }
