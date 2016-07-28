@@ -29,28 +29,13 @@
           ============================================= -->
           <div id="logo">
             <a href="/" class="standard-logo" data-dark-logo="assets/theme/acltc_logo.png"><%= image_tag "acltc_logo.png", height: 25 %></a>
-            <a href="/" class="retina-logo" data-dark-logo="assets/theme/acltc_logo.png"><%= image_tag "acltc_logo@2x.png" %></a>
+            <a href="/" class="retina-logo" data-dark-logo="assets/theme/acltc-logo-180"><%= image_tag "acltc-logo-180.png" %></a>
           </div><!-- #logo end -->
 
 
           <!-- Primary Navigation
           ============================================= -->
-          <nav id="primary-menu">
-
-            <ul class="one-page-menu">
-              <li class="current"><%= link_to "Home", root_path %></li>
-              <li class="mega-menu"><%= link_to "Apply", new_application_path %></li>
-              <li class="mega-menu"><%= link_to "Contact Us", new_contact_path %></li>
-              <li class="mega-menu"><%= link_to "FAQ", faqs_path %></li>
-              <li class="mega-menu"><%= link_to "Blog", blog_posts_path %></li>
-              <li class="mega-menu"><%= link_to "Tutorials", tutorial_lessons_path %></li>
-              <% if admin_signed_in? %>
-              <li class="mega-menu"><%= link_to "Admin Dashboard", admins_dashboard_path %></li>
-              <li><%= link_to('Logout Admin', destroy_admin_session_path, method: :delete) %></li>
-              <% end %>
-            </ul>
-
-          </nav><!-- #primary-menu end -->
+          <%= render 'shared/navbar' %>
 
         </div>
 
@@ -66,6 +51,7 @@
     <% end %>
 
     <%= yield %>
+
 
     <%= render 'shared/inspectlet' %>
     <%= render 'shared/ga' %>

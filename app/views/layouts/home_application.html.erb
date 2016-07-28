@@ -59,26 +59,14 @@
                       <span class="icon-bar"></span>
                     </button>
                         <a class="navbar-brand" href="/">
-                          <img class="logo" src="<%= asset_path 'acltc_logo.png'%>">
+                          <img class="logo" src="<%= asset_path 'acltc-logo-180.png'%>">
                         </a>
                         <!-- <a href="/" class="retina-logo" data-dark-logo="assets/theme/logo-dark@2x.png"><img src="assets/theme/logo@2x.png" alt="Canvas Logo"></a> -->
                   </div>
 
                   <!-- Collect the nav links, forms, and other content for toggling -->
-                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                      <li><%= link_to "Home", root_path %></li>
-                      <li><%= link_to "Apply", new_application_path %></li>
-                      <li><%= link_to "Contact Us", new_contact_path %></li>
-                      <li><%= link_to "FAQ", faqs_path %></li>
-                      <li><%= link_to "Blog", blog_posts_path %></li>
-                      <li><%= link_to "Tutorials", tutorial_lessons_path %></li>
-                      <% if admin_signed_in? %>
-                      <li><%= link_to "Admin", admins_dashboard_path %></li>
-                      <li><%= link_to('Logout Admin', destroy_admin_session_path, method: :delete) %></li>
-                      <% end %>
-                    </ul>
-                  </div><!-- /.navbar-collapse -->
+        <%= render 'shared/navbar' %>
+                  
                 </div><!-- /.container-fluid -->
               </nav>
           </div>

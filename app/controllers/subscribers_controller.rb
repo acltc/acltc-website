@@ -11,10 +11,7 @@ class SubscribersController < ApplicationController
 
   def create
     if params[:mousetrap] == "Application"
-      @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], mousetrap: params[:mousetrap], ip_address: request.remote_ip)
-      if city = request.location.city
-        @subscriber.city = city
-      end
+      @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], mousetrap: params[:mousetrap])
       if @subscriber.save
         cookies[:is_subscriber] = true
         redirect_to "/applications/new/#{@subscriber.id}"
@@ -28,10 +25,7 @@ class SubscribersController < ApplicationController
           format.js {render :partial => "downloadFile"}
         end
       else
-        @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], mousetrap: params[:mousetrap], ip_address: request.remote_ip)
-        if city = request.location.city
-          @subscriber.city = city
-        end
+        @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], mousetrap: params[:mousetrap])
         if @subscriber.save
           cookies[:is_subscriber] = true
           respond_to do |format|
@@ -41,10 +35,7 @@ class SubscribersController < ApplicationController
         end
       end
     elsif params[:mousetrap] == "View Tutorials"
-      @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], mousetrap: params[:mousetrap], ip_address: request.remote_ip)
-      if city = request.location.city
-        @subscriber.city = city
-      end
+      @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], mousetrap: params[:mousetrap])
       if @subscriber.save
         cookies[:is_subscriber] = true
         @tutorials_visible = true

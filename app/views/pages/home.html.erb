@@ -1,323 +1,436 @@
        <!-- Content
         ============================================= -->
 
-
+        
         <div class="marquee">
             <div class="container">
                 <div class="row">
+                    
+                        <div class="marquee-content clearfix">
+                            <div class="col-md-6">
+                                <img class="logo" src="<%= asset_path 'actualize-logo-275.png'%>">
+                            </div>
+                            <div class="col-md-6">
+                                <h3> Become a web developer <br /> 
+                            in 15 weeks without without <br />quitting Your day job</h3>
+                            </div>
+                            <p>Learn to code through in-class instruction on weeknights and Sundays. Then, gain the real-world experience you need through our guaranteed four-month apprenticeship.  <a href class="bold-upper" ="#">LEARN MORE</a></p><br />
+                         
+                           <div class="col-md-12">
+                               <%= link_to "Apply Now", new_application_path, class: "btn", id: "top-application-button" %>
+                           </div>
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="locations-wrapper">
+            <div class="container home-section">
+                <div class="row">
+                    <h2 class="actualize-logo">Upcoming Courses</h2>
+                    <div class="col-md-4">
+                        <div class="location">
+                            
+                            <img class="logo" src="<%= asset_path 'chicago.png'%>"><br />
+                            <h3>Chicago</h3>
+                            <p>Cycle #11 prework begins June 5</p>
+                            
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="location">
+                            
+                            <img class="logo" src="<%= asset_path 'nyc.png'%>"><br />
+                            <h3>New York City</h3>
+                            <p>Cycle #12 begins June 19</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="location">
+                           
+                            <img class="logo" src="<%= asset_path 'san-francisco.png'%>"><br />
+                            <h3>San Francisco</h3>
+                            <p>Cycle #13 begins June 19</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
                     <div class="col-md-12">
-                        <div class="marquee-content">
-                            <h2> Become a Web Developer <br> Without Quitting Your Day Job</h2>
-                            <p>Learn full-stack web development through in-class instruction <br> on weeknights and Sundays and then work for real clients through a guaranteed apprenticeship.</p><br>
-                            <h3>San Francisco - Chicago - New York City</h3>
+                        <h3><a class="bold-upper dark-gray" href="#"> view Full Schedule</a></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="our-philosophy-wrapper">
+            <div class="container home-section">
+                <div class="row">
+                <h2 class = "actualize-logo">Our Philosophy</h2>
+                    <div class="col-md-4 centered">
+                    <img class="philosophy-icon" src="<%= asset_path 'philosophy-brain-icon.png'%>">
+
+                      <h3>Learning is more than conveying information</h3>
+                      <p class="philosophy">
+                          At Anyone Can Learn To Code, we believe that education is about more than conveying information - it’s about understanding how people think, learn, and truly grasp the material at hand. We understand that every new concept requires a unique approach, and that even the most advanced subject-matter experts must also be well-trained educators to produce great results. 
+                      </p> 
+                    </div>
+                    <div class="col-md-4 centered">
+                    <img class="philosophy-icon" src="<%= asset_path 'phliosophy-methodology-icon.png'%>">
+                        <h3>Methodology taught by experienced educators</h3>
+                        <p class="philosophy">
+                            Our ACTUALIZE bootcamp program is designed and taught by Lead Instructors who are not only skilled web developers, but also experienced educators. Together, we designed our curriculum using educational best practices and careful consideration of how people learn and retain information. We’ve debated on every facet of our methodology, from the order in which to teach concepts and the analogies used to clarify them to how exercises should be structured to deliver the maximum educational punch.
+                        </p>
+                    </div>
+                    <div class="col-md-4 centered">
+                    <img class="philosophy-icon" src="<%= asset_path 'philosphy-suitcase-icon.png'%>">
+                        <h3>Don't put your life on hold to learn to code</h3>
+                        <p class="philosophy">
+                            We also believe that you don’t need to quit your day job and put your life on hold to learn to code. We’re often asked how we cover on a part-time basis what other programs need full time to accomplish. The answer is that with an excellent curriculum and top-notch educators like ours, you can learn more in less time. Our graduates have proven this again and again. Hear from them <a href="#">here</a>.
+                        </p>
+
+                    </div>
+                </div>
+                <div class="col-md-12 centered">
+                    <%= link_to "Apply Now", new_application_path, class: "btn", id: "top-application-button" %>
+                </div>
+            </div>
+        </div>
+        <div class="our-program-wrapper">
+            <div class="container home-section">
+                <div class="row">
+                    <div class="col-md-12 our-program">
+                        <div class="section-header">
+                            <h2 class = "actualize-logo">Actualize Program</h2>
+                        </div>
+                        <div class="phase">
+                            
+
+                            <div class="phase-block phase-border">
+                            <div class="phase-point-right"></div>
+                                <h2>PREWORK</h2>
+                                <h3>Three weeks of in-home exercises</h3>
+                                <p>During the pre-work phase, you’ll get acquainted with the fundamentals of the Ruby programming language. Instructors review your work, provide feedback, and answer questions via video conferencing and email.</p>
+                            </div>
+                            <div class="phase-block">
+                            
+                            <img class="philosophy-icon" src="<%= asset_path 'program-prework-icon.png'%>">
+                                
+                            </div>
+                        </div>
+                        <div class="phase">
+                            <div class="phase-block phase-border">
+                            <img class="philosophy-icon" src="<%= asset_path 'program-bootcamp-icon.png'%>">
+                                
+                            </div>
+                            <div class="phase-block">
+                            <div class="phase-point-left"></div>
+                                <h2>BOOTCAMP</h2>
+                                <h3>Twelve weeks of in-class instruction</h3>
+                                <p>In ACTUALIZE classrooms, we flip back and forth between instruction and exercises. Your instructor will clarify a new concept and demonstrate it visually, then give you an exercise using that concept in a different and more challenging context. You’ll also work on your individual Capstone project, which is demonstrated at your cohort’s graduate Showcase and seen by potential employers.</p>
+                            </div>
+                        </div>
+                        <div class="phase">
+                            <div class="phase-block phase-border">
+                            <div class="phase-point-right"></div>
+                                <h2>APPRENTICESHIP</h2>
+                                <h3>Up to 17 weeks of apprenticeship</h3>
+                                <p>Our guaranteed apprenticeship with our pro-bono web agency [The Difference Engine gives you the chance to put your skills to work. For up to four months, you will develop web applications for real-world clients while being supervised and trained by experienced developers. This unique opportunity will give you the chance to develop the skills, experience, and portfolio that employers look for.</p>
+                            </div>
+                            <div class="phase-block">
+                            <div class="phase-point"></div>
+                            <img class="philosophy-icon" src="<%= asset_path 'program-apprenticeship-icon.png'%>">
+                                
+                            </div>
+                            <div class="phase-point"></div>
+                        </div>
+                    </div>
+                </div> <!-- /row -->
+                <div class="row">
+                    <div class="col-12-md centered">
+                        <p class="vertical-margin">Actualize tuition in all cities is $12,500.</p>
+                        <div class="col-md-12 centered">
                             <%= link_to "Apply Now", new_application_path, class: "btn", id: "top-application-button" %>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="container home-section">
-            <div class="row">
-                <div class="col-md-12 our-program">
-                    <div class="section-header">
-                        <h2>Our Philosophy</h2>
-                        <p>At ACLTC, we believe that education involves much more than simply conveying information — it’s about studying and understanding how people think and learn as well as designing ways to ensure that students truly grasp the material at hand. We understand that every individual has a different way of thinking and that each new concept requires a unique approach. Even the most advanced subject-matter experts must also be well-trained educators, or the result will be a frustrating experience for students.</p>
-                        <p>Our program is designed and taught by individuals who are not only highly talented web developers, but also expert educators. Our thoughtful, detailed curriculum was designed using educational best practices and careful consideration of how people learn and retain information. Every point in our methodology has been deliberated and debated upon by our instructors to the point of perfection – from the exact order in which to teach concepts and the analogies used to clarify them, to how exercises should be structured so they pack the maximum educational punch.</p>
-                        <p>We also believe that you don't need to quit your job and put your life on hold to learn to code. We're often questioned as to how we cover on a part-time basis what other programs need full-time dedication to accomplish. The answer is that if the curriculum is designed and taught by top-notch educators – like ACLTC’s – you can learn a lot more in a much shorter time. Our graduates have proven this again and again.</p>
-
-                        <div class="well">
-                            <p class="subscribe-download" style="color:#17A396">Want to learn more? Download our full curriculum!</p>
-                                <div class="row">
-                                        <%= form_tag("/subscribers", method: "post", remote: true) do %>
-                                    <div class="col-md-4">
-                                        <%= text_field_tag :first_name, nil, placeholder: "First Name" %>
+        </div> <!-- /home-section -->
+            
+            <div class="curriculum-wrapper">
+                <div class="container home-section">
+                    <div class="row">
+                        <div class="col-md-12 skills">
+                            <div class="section-header">
+                                <h2 class = "actualize-logo-circular">ACTUALIZE Curriculum</h2>
+                                <p>Gain the skills you need to land a full-time entry-level web development position.  ACTUALIZE teaches the in-demand skills you need to build interactive website and web applications. In Just 15 weeks, you’ll learn the fundamentals of:</p>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-xs-6 col-md-3">
+                                    <div class="skill gray-skill-wrapper border-bottom-aqua">
+                                        <img class="curriculum-icon" src="<%= asset_path 'curriculum-programming-icon.png'%>">
+                                        <h3>Core Programming Skills</h3>
                                     </div>
-                                    <div class="col-md-4">
-                                        <%= text_field_tag :email, nil, placeholder: "Email" %>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <%= hidden_field_tag :mousetrap, nil, value: "Curriculum Download" %>
-                                        <%= submit_tag "Download", style: "padding:0;margin:0;background-color:#F25252;color:white;" %>
+                                    <div class="skill-list">
+                                    Ruby <br />
+                                    OOP<br />
+                                    Data Structures and Algorithms
                                     </div>
                                 </div>
-                            <% end %>
-                        </div>
-
-                        <h2>Our Program</h2>
-                    </div>
-                    <div class="phase">
-                        <div class="phase-block block-image phase1-img">
-                            <span>1</span>
-                        </div>
-                        <div class="phase-block">
-                            <h2>Phase One</h2>
-                            <h3>Three weeks of at-home exercises</h3>
-                            <p>During this phase, you will become acquainted with the fundamentals of the Ruby programming language. Instructors review your work and provide feedback, and answer questions via video conferencing and email.</p>
-                        </div>
-                    </div>
-                    <div class="phase">
-                        <div class="phase-block block-image phase2-img">
-                            <span>2</span >
-                        </div>
-                        <div class="phase-block">
-                            <h2>Phase Two</h2>
-                            <h3>Twelve weeks of in-class instruction</h3>
-                            <p>In ACLTC classrooms, we flip back and forth between instruction and exercises. The instructor clarifies a new concept and demonstrates it visually, then gives an exercise that requires you to use that concept in a different and more challenging context. You will also have time in class to work on your individual Capstone project, which is demonstrated at your cohort’s Showcase and seen by potential employers.</p>
-                        </div>
-                    </div>
-                    <div class="phase">
-                        <div class="phase-block block-image phase3-img">
-                            <span>3</span >
-                        </div>
-                        <div class="phase-block">
-                            <h2>Phase Three</h2>
-                            <h3>The Apprenticeship</h3>
-                            <p>Our unique apprenticeship provides you the chance to put your skills to use! For up to four months, you will develop web applications for actual clients while being supervised and trained by experienced developers. This opportunity will give you the chance to develop the skills, experience, and portfolio that employers are looking for.</p>
+                                
+                                <div class="col-xs-6 col-md-3">
+                                    <div class="skill gray-skill-wrapper border-bottom-blue">
+                                        <img class="curriculum-icon" src="<%= asset_path 'curriculum-backend-icon.png'%>">
+                                        <h3>Back End Development</h3>
+                                    </div>
+                                <div class="skill-list">
+                                Rails<br />
+                                APIs
+                                </div>
+                                </div>
+                                <div class="col-xs-6 col-md-3">
+                                    <div class="skill gray-skill-wrapper border-bottom-orange">
+                                        <img class="curriculum-icon" src="<%= asset_path 'curriculum-databases-icon.png'%>">
+                                        <h3>Databases</h3>
+                                    </div>
+                                <div class="skill-list">
+                                SQL<br />
+                                Postgres
+                                </div>
+                                </div>
+                                <div class="col-xs-6 col-md-3">
+                                    <div class="skill gray-skill-wrapper border-bottom-yellow">
+                                        <img class="curriculum-icon" src="<%= asset_path 'curriculum-frontend-icon.png'%>">
+                                        <h3>Front End Development</h3>
+                                    </div>
+                                <div class="skill-list">
+                                HTML<br />
+                                CSS<br />
+                                JavaScript<br />
+                                Angular JS
+                                </div>
+                                </div>
+                               
+                            </div>
+                            <br />
+                            <p class ="after-word">We’ll also delve into important concepts such as Git, Test Driven Development, and the soft skills you need to land a web developer position. At Actualize, we focus on best practices and the skills employers are looking for now.</p><br /><br />
+                            <%= link_to "Download Full Curriculum", new_application_path, class: "btn", id: "top-application-button" %>
                         </div>
                     </div>
                 </div>
+        
+
             </div>
         </div>
-
-        <div class="skills-wrapper">
+        <div class="apprenticeship-wrapper">
             <div class="container home-section">
+                <div class="row section-header">
+                    <h2 class = "actualize-logo">The Difference Engine Apprenticeship</h2>
+                </div>
                 <div class="row">
-                    <div class="col-md-12 skills">
-                        <div class="section-header">
-                            <h2>Gain the skills you need to land an entry-level web-development position</h2>
-                            <p>Anyone Can Learn To Code teaches the in-demand skills to build interactive websites and web applications. In just 15 weeks, you’ll learn the fundamentals of:</p>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-xs-6 col-md-2 skill">
-                                <img class="logo" src="<%= asset_path 'ror-logo.png'%>">
-                                <h3>RUBY ON RAILS</h3>
-                                <div class="skill-description">
-                                Ruby is an open-source programming language that focuses on simplicity and productivity. Rails is a web framework that allows developers to get a web app up and running very quickly.
-                                </div>
-                            </div>
-                            <div class="col-xs-6 col-md-2 skill">
-                                <img class="logo" src="<%= asset_path 'html-logo.png'%>">
-                                <h3>HTML</h3>
-                                <div class="skill-description">
-                                HTML is a markup language used to outline the form of a webpage. It defines where headlines, paragraphs, images, etc. are located on the page.
-                                </div>
-                            </div>
-                            <div class="col-xs-6 col-md-2 skill">
-                                <img class="logo" src="<%= asset_path 'css3-logo.png'%>">
-                                <h3>CSS</h3>
-                                <div class="skill-description">
-                                CSS is used to style HTML elements. It defines the color of text, a headline's font style, an image's size, etc.
-                                </div>
-                            </div>
-                            <div class="col-xs-6 col-md-2 skill">
-                                <img class="logo" src="<%= asset_path 'js-logo.png'%>">
-                                <h3>JAVASCRIPT</h3>
-                                <div class="skill-description">
-                                JavaScript is the front-end programming language that allows developers to create dynamic, interactive features on the web.
-                                </div>
-                            </div>
-                            <div class="col-xs-6 col-md-2 skill">
-                                <img class="logo" src="<%= asset_path 'angular-logo.png'%>">
-                                <h3>ANGULAR</h3>
-                                <div class="skill-description">
-                                AngularJS is a front-end JavaScript framework that allows developers to build dynamic web applications more easily.
-                                </div>
-                            </div>
-                            <div class="col-xs-6 col-md-2 skill">
-                                <img class="logo" src="<%= asset_path 'git-logo.png'%>">
-                                <h3>GIT</h3>
-                                <div class="skill-description">
-                                Git is an open-source version-control system designed for saving code that allows teams to collaborate more effectively.
-                                </div>
-                            </div>
-                        </div>
-                        <hr><br>
-                        <p>We'll also delve into important concepts such as database design, SQL, Test-Driven Development, creating and consuming APIs, and more. We focus on best practices and the skills that employers are looking for today.</p><br><br>
-                        <h5>Want to learn more about our curriculum and program? Check out our <a class="button-simple" href="/faqs">
-                                <i class="fa fa-question-circle"></i>
-                                FAQs </a>  &#xa0; for more information.
-                        </h5>
-                        <p>Or start learning today with one of our <a class="button-simple" href="/tutorial/lessons">
-                            <i class="fa fa-play-circle"></i>
-                            Screencasts! </a>
-                        </p>
+                    <div class="col-md-6">
+                    <img class="apprenticeship-photo" src="<%= asset_path 'difference-engine-photo.jpg'%>">
+                        
                     </div>
+                    <div class="col-md-6">
+                        <p>Beyond the bootcamp, our apprenticeship emphasizes real-world work experience, collaboration with a team of developers, project planning and management, pair programming, plus interview and resume preparation. By building an apprenticeship into the Actualize program, we ensure that our developers continue to grow post-bootcamp. Every day apprenticing makes you more competitive in the industry and more likely to land the web development position you want.</p>
+                    </div>
+                    </div>
+            
+            
+            <div class="row apprentice-ship-row">
+                
+                <div class="col-md-6 apprenticeship-block border-bottom-aqua">
+                <img class="apprenticeship-icon" src="<%= asset_path 'difference-engine-laptop-icon.png'%>">
+                    <h3>The Difference Engine</h3>
+                    <p>
+                    We created our independent web agency, The Difference Engine, to provide Actualize graduates with the professional experience they need to launch their coding careers. Our developer apprentices deliver polished web applications to startup and nonprofit clients such as Women Who Code, Just A Break, example, and example. Check out our portfolio here.
+                    </p>
+                </div>
+                
+                <div class="col-md-6 apprenticeship-block border-bottom-yellow">
+                <img class="apprenticeship-icon" src="<%= asset_path 'difference-engine-remote-icon.png'%>">
+                    <h3>Onsite and Remote</h3>
+                    <p>
+                    Difference Engine apprentices spend around 15 hours per week on client work, with six hours in person and nine remote. You’ll meet with your team for three hours on Tuesday and Thursday evenings and stay in touch on Slack when working from home.
+                    </p>
+                </div>
+                
+                <div class="col-md-6 apprenticeship-block border-bottom-orange">
+                <img class="apprenticeship-icon" src="<%= asset_path 'difference-engine-devs.png'%>">
+                    <h3>Work Alongside Experienced Devs</h3>
+                    <p>
+                    During your Difference Engine apprenticeship, you’ll practice pair programming with the agency’s more experienced web developers. This opportunity allows apprentices to learn from senior devs hands-on, plus gain experience programming in pairs - a common industry practice.
+                    </p>
                 </div>
 
-                <div class="well curriculum-well">
-                    <p class="subscribe-download">Download our full curriculum to see what we teach week-by-week!</p>
-                        <div class="row">
-                                <%= form_tag("/subscribers", method: "post", remote: true) do %>
-                            <div class="col-md-4">
-                                <%= text_field_tag :first_name, nil, placeholder: "First Name" %>
-                            </div>
-                            <div class="col-md-4">
-                                <%= text_field_tag :email, nil, placeholder: "Email" %>
-                            </div>
-                            <div class="col-md-4">
-                                <%= hidden_field_tag :mousetrap, nil, value: "Curriculum Download" %>
-                                <%= submit_tag "Download", class: "curriculum-download-btn", style: "padding:0;margin:0;background-color:#F25252;color:white;" %>
-                            </div>
-                        </div>
-                    <% end %>
+                
+                <div class="col-md-6 apprenticeship-block border-bottom-blue">
+                <img class="apprenticeship-icon" src="<%= asset_path 'difference-engine-cv-icon.png'%>">
+                    <h3>Job Prep Curriculum</h3>
+                    <p>
+                    Your apprenticeship with The Difference Engine also includes five hours per week spent on our three-part job prep curriculum. You’ll learn how to land interviews, improve the soft skills employers look for, and master computer science and technical topics likely to come up in interviews.
+                    </p>
                 </div>
-
+            </div> <!-- /row -->
+            <div class="row">
+                <h2 class="centered">Benefits</h2>
             </div>
-        </div>
-
-        <div class="showcase" data-parallax="scroll" data-image-src="<%= asset_path('showcase.jpg') %>">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2>The Showcase</h2>
-                        <div class="showcase-content">
-                            <a href="https://youtu.be/KOf3jdFAoqc" class="btn showcase-button" target="_blank">View Showcase Footage</a>
-                            <a href="/capstones" class="btn showcase-button" id="capstone-button">View Capstone Projects</a>
-                        </div>
-                    </div>
+            <hr>
+            <div class="row benefits-row">
+                <div class="col-md-3 benefits">
+                    Guaranteed way to gain real-world experience in your new profession and build an impressive portfolio
                 </div>
-            </div>
-        </div>
-
-        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-          <!-- Wrapper for slides -->
-          <div class="container homepage-slider home-section">
-              <div class="carousel-inner" role="listbox">
-                <div class="item active">
-                    <h2>Alumni</h2>
-                    <img class="logo" src="<%= asset_path 'zach_profileimage.png'%>">
-                    <div class="carousel-caption">
-                        <p>
-                            There wasn't a single lesson during this program where I didn't have fun and learn something. The instructors provide a structured environment, clear succinct exercises, and open-ended projects, helping you build your skills one step at a time. I can't rate this experience highly enough. I strongly recommend it to anyone. The connections you make with teachers, TAs, and even your classmates are worth the price of admission alone.
-                        </p>
-                        <strong>- Zach Bosteel</strong>
-                    </div>
-                    <!-- <button> View Alumni Projects</button> -->
+                <div class="col-md-3 benefits">
+                    Learn skills you can’t get in a classroom: collaborating on a team for a software development project, working professionally with clients, agile, and more
                 </div>
-                <div class="item">
-                    <h2>Alumni</h2>
-                    <img class="logo" src="<%= asset_path 'kimberly_profileimage.png'%>">
-                    <div class="carousel-caption">
-                        <p>
-                        The ACLTC boot camp is a very valuable and worthwhile opportunity to gain the confidence needed to become a full stack web developer. The instructor and assistants are patient, thorough and supportive during the entire process. I've also made a network of friends that I hope to stay in contact with for many years. This boot camp is just what one needs to boost their confidence and really go for it!
-                        </p>
-                        <strong>- Kimberly Lowe-Williams</strong>
-                    </div>
-                        <!-- <button> View Alumni Projects</button> -->
+                <div class="col-md-3 benefits">
+                    Work alongside and gain knowledge from the more experienced professional developers mentoring you throughout your apprenticeship
                 </div>
-              </div>
-
-              <!-- Controls -->
-              <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
-            </div>
-        </div>
-
+                <div class="col-md-3 benefits">
+                    Gain confidence and prove to yourself that you are now a professional web developer!
+                </div>
+                <div class="col-md-12 centered">
+                    <%= link_to "Apply Now", new_application_path, class: "btn", id: "top-application-button" %>
+                </div>
+            </div> <!-- /row -->
+          </div>  <!-- /container -->
+        </div> <!-- /apprenticeship-wrapper -->
 
         <div class="locations-wrapper">
             <div class="container home-section">
                 <div class="row">
-                    <h2> Locations </h2>
+                    <h2 class = "actualize-logo"> Locations </h2>
                     <div class="col-md-4">
-                        <div class="location">
-                            <a class="pushpin" href="https://www.google.com/maps/place/77+Geary+St,+San+Francisco,+CA+94108/@37.7876653,-122.4047894,17z/data=!3m1!4b1!4m2!3m1!1s0x80858088f19da4a5:0x55997ff84c10b76f" target="_blank"><i class="fa fa-map-marker"></i></a>
-                            <img class="logo" src="<%= asset_path 'location1.png'%>"><br>
-                            <h3>San Francisco</h3>
-                            <p>San Francisco classes are held in Union Square at <strong>TECHSPACE</strong>, a world-class provider of collaborative work spaces and state-of-the-art technology services for startups.</p>
-                            <h6>77 Geary St, San Francisco, CA 94108</h6>
+                        <div class="location-lower">
+                            
+                            <img class="logo" src="<%= asset_path 'chicago.png'%>"><br />
+                            <h3>CHICAGO</h3>
+                            <p>
+                                Chicago classes are held at <strong>1871</strong>, the entrepreneurial hub for digital startups in the Windy City. <strong>1871</strong> offers large classrooms, state-of-the-art equipment, and the drive and creativity of startup culture.
+                            </p>
+                            
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="location">
-                            <a class="pushpin" href="https://www.google.com/maps/place/222+W+Merchandise+Mart+Plaza,+Chicago,+IL+60654/@41.8885185,-87.6354802,17z/data=!3m1!4b1!4m2!3m1!1s0x880e2cb6fa650467:0xd94994faa9dd5715" target="_blank"><i class="fa fa-map-marker"></i></a>
-                            <img class="logo" src="<%= asset_path 'location2.png'%>"><br>
-                            <h3>Chicago</h3>
-                            <p>Chicago classes are held at <strong>1871</strong>, the entrepreneurial hub for digital startups in the Windy City. <strong>1871</strong> offers large classrooms, state-of-the-art equipment, and the drive and creativity of startup culture.</p>
-                            <h6>222 W Merchandise Mart Plaza, Chicago, IL 60654</h6>
+                        <div class="location-lower">
+                            
+                            <img class="logo" src="<%= asset_path 'nyc.png'%>"><br />
+                            <h3>NEW YORK CITY</h3>
+                            <p>
+                                NYC classes are held at <strong>LMHQ</strong>, a collaboration space in Lower Manhattan for creatives and creators. Lower Manhattan’s ecosystem boasts over 800 tech firms and startups, and we’re right in the middle of it all.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="location-lower">
+                            
+                            <img class="logo" src="<%= asset_path 'san-francisco.png'%>"><br />
+                            <h3>SAN FRANCISCO</h3>
+                            <p>
+                                SF classes are held at <strong>TECHSPACE</strong> in Union Square, a world-class provider of collaborative workspaces and technology services for startups. 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row address-row">
+                    <div class="col-md-4">
+                        <div class="address">
+                            <a class="pushpin" href="https://www.google.com/maps/place/222+W+Merchandise+Mart+Plaza,+Chicago,+IL+60654/@41.8885185,-87.6354802,17z/data=!3m1!4b1!4m2!3m1!1s0x880e2cb6fa650467:0xd94994faa9dd5715" target="_blank"><i class="fa fa-map-marker blue   "></i></a>
+                            <p>
+                                <strong>222 W Merchandise Mart Plaza, Chicago, IL 60654</strong>
+                            </p>
+                            <p>
+                                <strong>Next open classes</strong>
+                            </p>
+                                <p class="prework-details">
+                                Cycle #14 prework begins August 7<br />
+                                Cycle #15 prework begins October 9<br />
+                                </p>
+                                <p>Tuition: $12,500</p>
+                                <p class="apply-aqua">
+                                    <%= link_to "APPLY", new_application_path, class: "btn", id: "top-application-button" %>
+                                </p>
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="location">
-                            <a class="pushpin" href="https://www.google.com/maps/place/150+Broadway,+New+York,+NY+10038/@40.7093102,-74.010236,17z" target="_blank"><i class="fa fa-map-marker"></i></a>
-                            <img class="logo" src="<%= asset_path 'ny-icon.png'%>"><br>
-                            <h3>New York City</h3>
-                            <p>New York City classes are held at <strong>LMHQ</strong>, a unique collaboration space in Lower Manhattan for creatives and creators. Lower Manhattan's ecosystem boasts over 800 tech firms and startups, and we're right in the middle of it all.</p><h6>150 Broadway, New York, NY 10038</h6>
+                        <div class="address">
+                            <a class="pushpin" href="https://www.google.com/maps/place/150+Broadway,+New+York,+NY+10038/@40.7093102,-74.010236,17z" target="_blank"><i class="fa fa-map-marker aqua"></i></a>
+                            <p>
+                                <strong>50 Broadway<br />
+                                New York, NY 10038</strong>
+                            </p>
+                            <p>
+                                <strong>Next open classes</strong>
+                            </p>
+                                <p class="prework-details">
+                                Cycle #12 prework begins June 19<br />
+                                Cycle #16 prework begins [unknown]<br />
+                                
+                            </p>
+                            <p>Tuition: $12,500</p>
+                            <p class="apply-blue">
+                                <%= link_to "APPLY", new_application_path, class: "btn", id: "top-application-button" %>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="address">
+                            <a class="pushpin" href="https://www.google.com/maps/place/77+Geary+St,+San+Francisco,+CA+94108/@37.7876653,-122.4047894,17z/data=!3m1!4b1!4m2!3m1!1s0x80858088f19da4a5:0x55997ff84c10b76f" target="_blank"><i class="fa fa-map-marker orange"></i></a>
+                            <p>
+                                <strong>77 Geary St<br />
+                                San Francisco, CA 94108</strong>
+                            </p>
+                            <p>
+                                <strong>Next open classes</strong>
+                            </p>
+                                <p class="prework-details">
+                                Cycle #13 prework begins June 19<br />
+                                Cycle #17 prework begins [unknown]
+                            </p>
+                            <p>Tuition: $12,500</p>
+                            <p class="apply-orange">
+                                <%= link_to "APPLY", new_application_path, class: "btn", id: "top-application-button" %>
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
+        
+          <div class="testimonial-wrapper">
+                <div class="container home-section centered">
+                      <div class="row">
+                          <h2 class = "actualize-logo">What our students are saying</h2>
+                          <div class="col-md-6 border-right">
+                              <img class="logo" src="<%= asset_path 'alumni-colleen-mcguckin.png'%>">
 
-        <div class="summary-info-wrapper">
-            <div class="container home-section">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="summary-info">
-                            <p>Next available classes begin:</p>
-                            <table id="cohort-schedule">
-                                <tr>
-                                    <td><h3><i class="fa fa-calendar"></i></h3></td>
-                                    <td><h3><strong>San Francisco:</strong></h3></td>
-                                    <td><h3>July 31, 2016</h3></td>
-                                </tr>
-                                <tr>
-                                    <td><h3><i class="fa fa-calendar"></i></h3></td>
-                                    <td><h3><strong>Chicago:</strong></h3></td>
-                                    <td><h3>July 31, 2016</h3></td>
-                                </tr>
-                                <tr>
-                                    <td><h3><i class="fa fa-calendar"></i></h3></td>
-                                    <td><h3><strong>New York City:</strong></h3></td>
-                                    <td><h3>July 31, 2016</h3></td>
-                                </tr>
-                            </table>
-                            <h3><i class="fa fa-graduation-cap"></i> Tuition: $12,500</h3>
-                            <a href="http://hello.pave.com/anyone/" target="_blank">View Financing Options</a><br><br>
-                            <h3><i class="fa fa-clock-o"></i>  Class times:</h3>
-                            <p>Sunday 9am-5pm, M-Th 6pm-9:30pm</p><br>
-                        </div>
-                        <p>Check out our <a class="button-simple" href="/faqs">
-                        <i class="fa fa-question-circle"></i>
-                        FAQs </a>  &#xa0; page for more information.
-                        </p>
-                        <div id="application-button-wrapper">
-                            <%= link_to "Apply Now", new_application_path, id: "application-button" %>
-                        </div>
-                    </div>
+                              <div class="testimonial">
+                                  <p>
+                                      “I attended ACLTC in to make a career pivot and become a Junior Developer. The course was well-structured, covered a TON of different stuff with just enough depth to be dangerous, and the teaching staff is clearly passionate about the success of their students. Deciding to attend ACLTC was the best career decision I have made."
+                                      
+                                  </p>
+                                  <strong>-Colleen McGuckin</strong>
+                              </div>
+                          </div>
+                          <div class="col-md-6">
+                          <img class="logo" src="<%= asset_path 'alumni-mark-bouslog.png'%>">
+                          <div class="testimonial">
+                              <p>
+                                  "With the technical skills, job placement assistance and infectious passion for programming from ACLTC, I was able to successfully shift careers from accounting to a dream job in web development. Looking back on the experience, the people (instructor, TAs, job-placement staff, etc.) and learning the mindset to become a programmer were the most valuable aspects of the experience. It was difficult, but also so much fun. I would highly recommend ACLTC.”
+                                  
+                              </p>
+                              <strong>-Mark Bouslog</strong>
+                          </div>
+                          </div>
+                          <div class="col- centered md-12">
+                      <%= link_to "Apply Now", new_application_path, class: "btn", id: "top-application-button" %>
+                          </div>
+                      </div>    
+                    
+              </div>
+          </div>
 
-                </div>
-            </div>
-        </div>
-
-        <div class="events-wrapper">
-            <div class="container home-section">
-                <!-- <h2> Events </h2> -->
-                <div class="row">
-                    <!-- <div class="col-md-6">
-                        <div class="event">
-                            <h2>Mini Courses</h2>
-                            <strong>Aenean lacinia bibendum nulla sed.</strong><br>
-                            <p>Vestibulum id ligula porta felis euismod semper. Donec id elit non mi porta gravida at eget metus. Sed posuere consectetur est at lobortis. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-                            <button class="button-secondary"> I want to Register </button>
-                        </div>
-                    </div> -->
-                    <div class="">
-                        <div class="event">
-                            <h2>Meetups</h2>
-                            <strong>Join our free coding meetups!</strong><br>
-                            <p>Meet others and explore the fundamentals of programming, including how to write code as well as how to develop a mindset that will enable you to learn anything technology-related. Each event is led by a tech expert who guides attendees in a new skill or concept and helps you get started with programming, whether as a career or as a hobby.</p>
-                            <a href="http://www.meetup.com/Anyone-Can-Learn-To-Code-Chicago/" id="meetups-button" class="btn button-secondary" role="button" target="_blank"> View Upcoming Meetups </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
