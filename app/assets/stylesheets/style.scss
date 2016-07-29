@@ -15,7 +15,9 @@ $color-dark-gray: #222222;
   border:none;
   box-shadow: none;
 }
-
+footer {
+  background-color: #31363a;
+}
 button, input[type=submit] {
   background-color: #eaeaea;
   padding: 10px 25px;
@@ -33,7 +35,7 @@ button, input[type=submit] {
      border: none;
      border-bottom: 1px solid #616972;
      min-height: 34px;
-     background-color: #222;
+     background-color: #31363a;
      margin-bottom: 15px;
      color: black;
      padding-left: 1em;
