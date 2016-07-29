@@ -188,6 +188,21 @@ a.btn.btn-danger.right-link {
   .postcontent{
     max-width:500px;
   }
+  .faq-text{
+    padding-left: 1em;
+  }
+.togglet.toggleta .faq-text,.togglet .faq-text:hover{
+    color:#fa9f00;
+  }
+  .togglet .faq-text{
+      color:gray;
+      font-weight: 500;
+    }
+  #faqs .fa{
+    font-size: 1.5em;
+    color:#8a8a8a;
+  }
+
 /***** min 769 width Styles ******/
 
 @media (min-width: 769px) {

@@ -19,7 +19,7 @@
                       <div id="faqs" class="faqs">
                         <% @faqs.each do |faq| %>             
                         <div class="toggle faq faq-marketplace faq-authors">
-                          <div class="togglet"><i class="toggle-closed icon-question-sign"></i><i class="toggle-open icon-question-sign"></i><%= faq.question %></div>
+                          <div class="togglet"><i class="toggle-closed fa fa-plus"></i><i class="toggle-open fa fa-minus"></i><p class=" toggle-open faq-text"><%= faq.question %></p></div>
                           <div class="togglec">
                             <%= faq.answer.html_safe %>
                             <%= link_to "| Edit", edit_faq_path(faq) if current_admin %>
