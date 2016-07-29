@@ -7,6 +7,7 @@
 .container {
     padding: 0 8%;
 }
+$color-neutral: #eaeaea;
 @-moz-document url-prefix() {
   input[type="radio"] {
       width: 13px !important;
@@ -22,16 +23,7 @@ input {
   margin-bottom: 15px;
   color: #fa9f00;
   padding-left: 1em; }
-  footer input[type=submit] {
-      background-color: #fa9f00;
-      color: #fff;
-      width: 33%;
-  }
   
- footer input:focus {
-      background: #eee;
-      color:#000;
-  }
 #page-title h1{
   color: #31363a;
   text-transform:none;
@@ -201,6 +193,9 @@ a.btn.btn-danger.right-link {
       background: #fa9f00;
       border: none;
       text-shadow: none;
+  }
+  .postcontent{
+    max-width:500px;
   }
 /***** min 769 width Styles ******/
 

@@ -51,31 +51,6 @@ h3{
 p{
   font-size: 1.2em;
 }
-input {
-    width: 100%;
-    border: none;
-    border-bottom: 1px solid #616972;
-    min-height: 34px;
-    background-color: #31363a;
-    margin-bottom: 15px;
-    color: black;
-    padding-left: 1em;
-}
-
-input:focus {
-    background: #eee;
-}
-
-button, input[type=submit] {
-  background-color: $color-neutral;
-  padding: 10px 25px;
-  border-color: none;
-  color: $color-primary;
-  font-size: 1.2em;
-  border: 1px solid darken($color-neutral, 15%);
-  @include rounded;
-  margin: 10px 0;
-}
 
 .link-button {
   background-color: $color-neutral;
@@ -493,10 +468,7 @@ footer{
   p {
     font-size: 1em;
   }
-  input[type=submit]{
-    @extend .button-secondary;
-    border: none;
-  }
+  
   .icons{
     text-align: center;
     margin-top: 10px;
