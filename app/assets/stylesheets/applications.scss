@@ -3,28 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 /****** Global Styles ******/
-@font-face {
-    font-family: 'maven_proregular';
-    src: url('theme/mavenpro-regular-webfont.woff2') format('woff2'),
-         url('theme/mavenpro-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'maven_promedium';
-    src: url('theme/mavenpro-medium-webfont.woff2') format('woff2'),
-         url('theme/mavenpro-medium-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
 
-}
-@font-face {
-    font-family: 'maven_probold';
-    src: url('theme/mavenpro-bold-webfont.woff2') format('woff2'),
-         url('theme/mavenpro-bold-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
 .container {
     padding: 0 8%;
 }
