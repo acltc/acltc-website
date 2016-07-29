@@ -47,13 +47,13 @@
     <div class="container clearfix">
 			<% @categories.each do |category| %>
 				<div class="fancy-title title-bottom-border">
-					<h3><%= category[:title] %></h3>
+					<h3><i class="<%= category[:icon] %>"></i>&emsp;<%= category[:title] %></h3>
 				</div>
 				<div class="list-group">
 					<% category[:lessons].each do |lesson| %>
 						<a href="/tutorial/lessons/<%= lesson[:title].parameterize %>" class="list-group-item">
 							<h4 class="list-group-item-heading">
-								<i class="<%= category[:icon] %>"></i>&emsp;<%= lesson[:title] %>
+								<%= lesson[:title] %>
 								<% if lesson[:time] %>
 									<span class="lesson-time hidden-xs"><i class="icon-time"></i> <%= lesson[:time] %></span>
 								<% end %>

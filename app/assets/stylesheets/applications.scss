@@ -25,6 +25,9 @@
     font-weight: normal;
     font-style: normal;
 }
+.container {
+    padding: 0 8%;
+}
 @-moz-document url-prefix() {
   input[type="radio"] {
       width: 13px !important;
@@ -189,7 +192,32 @@ a.btn.btn-danger.right-link {
   text-transform: uppercase;
   font-weight: 700;
 }
+.col-lg-4.portfolio-item {
+    width: 30%;
+  }
 
+ .fancy-title.title-bottom-border i{
+  color: #00e2ea;
+ }
+ .fancy-title.title-bottom-border h3{
+        background-color:#31363a;
+        color: #fff;
+        border: none;
+        padding:1em;
+        padding-left: 2em;
+  }
+  .fancy-title {
+    margin-bottom: 0;
+  }
+  a.list-group-item .list-group-item-heading{
+    padding-left: 3em;
+  }
+  input.button.button-3d.nomargin.nopadding {
+      color: #eee;
+      background: #fa9f00;
+      border: none;
+      text-shadow: none;
+  }
 /***** min 769 width Styles ******/
 
 @media (min-width: 769px) {
