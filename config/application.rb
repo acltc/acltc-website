@@ -36,5 +36,10 @@ module AcltcWebsite
     # Enable the asset pipeline
     config.assets.enabled = true
     config.assets.paths << Rails.root.join('/app/assets/fonts')
+    # Add the font path
+    config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+
+    # Include font files to Assets
+    config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
   end
 end
