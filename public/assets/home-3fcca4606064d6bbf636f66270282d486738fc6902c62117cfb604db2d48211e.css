@@ -217,7 +217,7 @@ input {
     width: 100%;
     height: 10px;
     z-index: 100;
-    background-image: url("<%= asset_path('border.png') %>");
+    background-image: url("/assets/border-612fb9f5ee61096b235c7050525c883a662c9d2618a2683ae54be643b69b5681.png");
     background-repeat: repeat-x; }
   .navigation .navbar-brand {
     padding: 1em 2em 0 0; }
@@ -282,7 +282,7 @@ input {
     border-radius: 0;
    }
  .marquee {
-  background-image: url("<%= asset_path('marquee-bg.jpg') %>");
+  background-image: url("/assets/marquee-bg-3571563b94b08edc9e092ba3b33733dc4b72bcf018abe2ac66d12f656cfaceec.jpg");
   height: 650px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -344,15 +344,15 @@ input {
   .actualize-logo:before{
     margin-right: .5em;
     max-width: 50px;
-    content: url("<%= asset_path('actualize-logo-triangle-sm.png') %>");}
+    content: url("/assets/actualize-logo-triangle-sm-066b42be2da1831a09f89d29c5dab957fe97ecb6043435fa1b86b2de36815ece.png");}
   .actualize-logo-circular:before{
     margin-right: .5em;
     top: 0.1em;
     position: relative;
-  content: url("<%= asset_path('actualize-logo-circle.png') %>");}
+  content: url("/assets/actualize-logo-circle-5d9347252ece9b867e229840941f1021e78697aada88e838992893d88488bb4c.png");}
   .benefits:before{
     
-    content: url("<%= asset_path('blue-check-mark-icon.png') %>");
+    content: url("/assets/blue-check-mark-icon-c0e8a6b463f3a48c3ed85c030321531cdea513d5a21ed5d8ca12ded8107a1af6.png");
     margin-left: -3em;
   }
   }
@@ -385,7 +385,7 @@ input {
     border-right:1px solid #c1c0bf;
   }
   .phase-point-right{
-    background-image: url("<%= asset_path('phase-point.png') %>");
+    background-image: url("/assets/phase-point-415740721c72af7aa9c99976dda76d7199cfc24513562de393ad0948b27728f9.png");
     background-repeat: no-repeat;
     background-position: 0% 0%;
     float:right;
@@ -395,7 +395,7 @@ input {
     margin-top: 23px;
   }
   .phase-point-left{
-    background-image: url("<%= asset_path('phase-point.png') %>");
+    background-image: url("/assets/phase-point-415740721c72af7aa9c99976dda76d7199cfc24513562de393ad0948b27728f9.png");
     background-repeat: no-repeat;
     background-position: 0% 0%;
     float: left;
@@ -448,9 +448,9 @@ input {
         border-radius: 30px; }
 
 
-      /*.our-program .phase .phase-block.block-image.phase1-img {background-image: url("<%= asset_path('program-prework-icon.png') %>");}*/
-      .our-program .phase .phase-block.block-image.phase2-img {background-image: url("<%= asset_path('program-bootcamp-icon.png') %>");}
-      .our-program .phase .phase-block.block-image.phase3-img {background-image: url("<%= asset_path('program-apprenticeship-icon.png') %>");}
+      /*.our-program .phase .phase-block.block-image.phase1-img {background-image: url("/assets/program-prework-icon-8070a658050681e5e1029a8e06474a36ee41424d5abe73e0c52a6a8e75ca8494.png");}*/
+      .our-program .phase .phase-block.block-image.phase2-img {background-image: url("/assets/program-bootcamp-icon-ae4882bfa26225c9b9ccb8647c539c9b33656accffa96ad01fa0f033790c5799.png");}
+      .our-program .phase .phase-block.block-image.phase3-img {background-image: url("/assets/program-apprenticeship-icon-2631f2f078022e23dd1871b285e3b2746b32a8b54d6da291e2d19c9c769fc5f6.png");}
 .col-md-4 .philosophy{
   text-align: left;
 }
@@ -459,7 +459,7 @@ input {
   padding: 1em 0 5em;
   color: #fff;
   text-align: center;
-  background-image: url("<%= asset_path('skills-bg.png') %>");
+  background-image: url("/skills-bg.png");
   background-position: center; }
 .curriculum-wrapper img.curriculum-icon {
     width: auto;
@@ -544,7 +544,7 @@ input {
 }
 .showcase {
   text-align: center;
-  /*background-image: url("<%= asset_path('showcase.jpg') %>");*/
+  /*background-image: url("/showcase.jpg");*/
   /*min-height: 700px;*/
   background-repeat: no-repeat;
   background-size: cover;
