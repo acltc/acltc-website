@@ -15,13 +15,14 @@
                             in 15 weeks without without <br />quitting Your day job</h3>
                             </div>
                             <p>Learn to code through in-class instruction on weeknights and Sundays. Then, gain the real-world experience you need through our guaranteed four-month apprenticeship.  <a href class="bold-upper" ="#">LEARN MORE</a></p><br />
-                         
-                           <div class="col-md-12">
-                               <%= link_to "Apply Now", new_application_path, class: "btn", id: "top-application-button" %>
-                           </div>
+                             <div class="row">
+                                   <div class="col-md-12">
+                                       <%= link_to "Apply Now", new_application_path, class: "btn", id: "top-application-button" %>
+                                   </div>
+                             </div>
                         </div>
                     
-                </div>
+                </div> <!-- /row -->
             </div>
         </div>
         <div class="locations-wrapper">
@@ -104,38 +105,37 @@
                         <div class="phase">
                             
 
-                            <div class="phase-block phase-border">
+                            <div class="phase-block col-6-xs phase-border">
                             <div class="phase-point-right"></div>
                                 <h2>PREWORK</h2>
                                 <h3>Three weeks of in-home exercises</h3>
                                 <p>During the pre-work phase, you’ll get acquainted with the fundamentals of the Ruby programming language. Instructors review your work, provide feedback, and answer questions via video conferencing and email.</p>
                             </div>
-                            <div class="phase-block">
+                            <div class="phase-block col-6-md">
                             
                             <img class="philosophy-icon" src="<%= asset_path 'program-prework-icon.png'%>">
                                 
                             </div>
                         </div>
                         <div class="phase">
-                            <div class="phase-block phase-border">
-                            <img class="philosophy-icon" src="<%= asset_path 'program-bootcamp-icon.png'%>">
-                                
-                            </div>
-                            <div class="phase-block">
-                            <div class="phase-point-left"></div>
+                            <div class="phase-block col-6-md phase-border">
+                            <div class="phase-point-right"></div>
                                 <h2>BOOTCAMP</h2>
                                 <h3>Twelve weeks of in-class instruction</h3>
                                 <p>In ACTUALIZE classrooms, we flip back and forth between instruction and exercises. Your instructor will clarify a new concept and demonstrate it visually, then give you an exercise using that concept in a different and more challenging context. You’ll also work on your individual Capstone project, which is demonstrated at your cohort’s graduate Showcase and seen by potential employers.</p>
                             </div>
+                            <div class="phase-block col-6-md">
+                            <img class="philosophy-icon" src="<%= asset_path 'program-bootcamp-icon.png'%>">
+                            </div>
                         </div>
                         <div class="phase">
-                            <div class="phase-block phase-border">
+                            <div class="phase-block col-6-xs phase-border">
                             <div class="phase-point-right"></div>
                                 <h2>APPRENTICESHIP</h2>
                                 <h3>Up to 17 weeks of apprenticeship</h3>
                                 <p>Our guaranteed apprenticeship with our pro-bono web agency [The Difference Engine gives you the chance to put your skills to work. For up to four months, you will develop web applications for real-world clients while being supervised and trained by experienced developers. This unique opportunity will give you the chance to develop the skills, experience, and portfolio that employers look for.</p>
                             </div>
-                            <div class="phase-block">
+                            <div class="phase-block col-6-xs">
                             <div class="phase-point"></div>
                             <img class="philosophy-icon" src="<%= asset_path 'program-apprenticeship-icon.png'%>">
                                 
@@ -165,7 +165,7 @@
                             </div>
                             
                             <div class="row">
-                                <div class="col-xs-6 col-md-3">
+                                <div class="col-xs-12 col-md-3">
                                     <div class="skill gray-skill-wrapper border-bottom-aqua">
                                         <img class="curriculum-icon" src="<%= asset_path 'curriculum-programming-icon.png'%>">
                                         <h3>Core Programming Skills</h3>
@@ -177,7 +177,7 @@
                                     </div>
                                 </div>
                                 
-                                <div class="col-xs-6 col-md-3">
+                                <div class="col-xs-12 col-md-3">
                                     <div class="skill gray-skill-wrapper border-bottom-blue">
                                         <img class="curriculum-icon" src="<%= asset_path 'curriculum-backend-icon.png'%>">
                                         <h3>Back End Development</h3>
@@ -187,7 +187,7 @@
                                 APIs
                                 </div>
                                 </div>
-                                <div class="col-xs-6 col-md-3">
+                                <div class="col-xs-12 col-md-3">
                                     <div class="skill gray-skill-wrapper border-bottom-orange">
                                         <img class="curriculum-icon" src="<%= asset_path 'curriculum-databases-icon.png'%>">
                                         <h3>Databases</h3>
@@ -197,7 +197,7 @@
                                 Postgres
                                 </div>
                                 </div>
-                                <div class="col-xs-6 col-md-3">
+                                <div class="col-xs-12 col-md-3">
                                     <div class="skill gray-skill-wrapper border-bottom-yellow">
                                         <img class="curriculum-icon" src="<%= asset_path 'curriculum-frontend-icon.png'%>">
                                         <h3>Front End Development</h3>
@@ -239,7 +239,7 @@
             
             <div class="row apprentice-ship-row">
                 
-                <div class="col-md-6 apprenticeship-block border-bottom-aqua">
+                <div class="col-xs-12 col-md-6 apprenticeship-block border-bottom-aqua">
                 <img class="apprenticeship-icon" src="<%= asset_path 'difference-engine-laptop-icon.png'%>">
                     <h3>The Difference Engine</h3>
                     <p>
@@ -247,7 +247,7 @@
                     </p>
                 </div>
                 
-                <div class="col-md-6 apprenticeship-block border-bottom-yellow">
+                <div class="col-xs-12 col-md-6 apprenticeship-block border-bottom-yellow">
                 <img class="apprenticeship-icon" src="<%= asset_path 'difference-engine-remote-icon.png'%>">
                     <h3>Onsite and Remote</h3>
                     <p>
@@ -255,7 +255,7 @@
                     </p>
                 </div>
                 
-                <div class="col-md-6 apprenticeship-block border-bottom-orange">
+                <div class="col-xs-12 col-md-6 apprenticeship-block border-bottom-orange">
                 <img class="apprenticeship-icon" src="<%= asset_path 'difference-engine-devs.png'%>">
                     <h3>Work Alongside Experienced Devs</h3>
                     <p>
@@ -264,7 +264,7 @@
                 </div>
 
                 
-                <div class="col-md-6 apprenticeship-block border-bottom-blue">
+                <div class="col-xs-12 col-md-6 apprenticeship-block border-bottom-blue">
                 <img class="apprenticeship-icon" src="<%= asset_path 'difference-engine-cv-icon.png'%>">
                     <h3>Job Prep Curriculum</h3>
                     <p>
@@ -277,16 +277,16 @@
             </div>
             <hr>
             <div class="row benefits-row">
-                <div class="col-md-3 benefits">
+                <div class="col-xs-12 col-md-3 benefits">
                     Guaranteed way to gain real-world experience in your new profession and build an impressive portfolio
                 </div>
-                <div class="col-md-3 benefits">
+                <div class="col-xs-12 col-md-3 benefits">
                     Learn skills you can’t get in a classroom: collaborating on a team for a software development project, working professionally with clients, agile, and more
                 </div>
-                <div class="col-md-3 benefits">
+                <div class="col-xs-12 col-md-3 benefits">
                     Work alongside and gain knowledge from the more experienced professional developers mentoring you throughout your apprenticeship
                 </div>
-                <div class="col-md-3 benefits">
+                <div class="col-xs-12 col-md-3 benefits">
                     Gain confidence and prove to yourself that you are now a professional web developer!
                 </div>
                 <div class="col-md-12 centered">
