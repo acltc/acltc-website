@@ -3,16 +3,15 @@
 
         
         <div class="marquee">
-            <div class="container">
+            <div id = "marquee" class="container">
                 <div class="row">
                     
                         <div class="marquee-content clearfix">
-                            <div class="col-md-6">
+                            <div class="col-md-5">
                                 <img class="logo" src="<%= asset_path 'actualize-logo-275.png'%>">
                             </div>
-                            <div class="col-md-6">
-                                <h3> Become a web developer <br /> 
-                            in 15 weeks without without <br />quitting Your day job</h3>
+                            <div class="col-md-7">
+                                <h3> Become a web developer in 15 weeks without without quitting Your day job</h3>
                             </div>
                             <p>Learn to code through in-class instruction on weeknights and Sundays. Then, gain the real-world experience you need through our guaranteed four-month apprenticeship.  <a href class="bold-upper" ="#">LEARN MORE</a></p><br />
                              <div class="row">
@@ -26,10 +25,10 @@
             </div>
         </div>
         <div class="locations-wrapper">
-            <div class="container home-section">
+            <div class="home-section">
                 <div class="row">
                     <h2 class="actualize-logo">Upcoming Courses</h2>
-                    <div class="col-md-4">
+                    <div class="col-sm-4">
                         <div class="location">
                             
                             <img class="logo" src="<%= asset_path 'chicago.png'%>"><br />
@@ -38,7 +37,7 @@
                             
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-sm-4">
                         <div class="location">
                             
                             <img class="logo" src="<%= asset_path 'nyc.png'%>"><br />
@@ -46,7 +45,7 @@
                             <p>Cycle #12 begins June 19</p>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-sm-4">
                         <div class="location">
                            
                             <img class="logo" src="<%= asset_path 'san-francisco.png'%>"><br />
@@ -62,11 +61,11 @@
                 </div>
             </div>
         </div>
-        <div class="our-philosophy-wrapper">
-            <div class="container home-section">
+        <div class="our-philosophy-wrapper clearfix">
+            <div class="home-section">
                 <div class="row">
                 <h2 class = "actualize-logo">Our Philosophy</h2>
-                    <div class="col-md-4 centered">
+                    <div class="col-sm-4 centered">
                     <img class="philosophy-icon" src="<%= asset_path 'philosophy-brain-icon.png'%>">
 
                       <h3>Learning is more than conveying information</h3>
@@ -74,14 +73,14 @@
                           At Anyone Can Learn To Code, we believe that education is about more than conveying information - it’s about understanding how people think, learn, and truly grasp the material at hand. We understand that every new concept requires a unique approach, and that even the most advanced subject-matter experts must also be well-trained educators to produce great results. 
                       </p> 
                     </div>
-                    <div class="col-md-4 centered">
+                    <div class="col-sm-4 centered">
                     <img class="philosophy-icon" src="<%= asset_path 'phliosophy-methodology-icon.png'%>">
                         <h3>Methodology taught by experienced educators</h3>
                         <p class="philosophy">
                             Our ACTUALIZE bootcamp program is designed and taught by Lead Instructors who are not only skilled web developers, but also experienced educators. Together, we designed our curriculum using educational best practices and careful consideration of how people learn and retain information. We’ve debated on every facet of our methodology, from the order in which to teach concepts and the analogies used to clarify them to how exercises should be structured to deliver the maximum educational punch.
                         </p>
                     </div>
-                    <div class="col-md-4 centered">
+                    <div class="col-sm-4 centered">
                     <img class="philosophy-icon" src="<%= asset_path 'philosphy-suitcase-icon.png'%>">
                         <h3>Don't put your life on hold to learn to code</h3>
                         <p class="philosophy">
@@ -96,7 +95,7 @@
             </div>
         </div>
         <div class="our-program-wrapper">
-            <div class="container home-section">
+            <div class="home-section">
                 <div class="row">
                     <div class="col-md-12 our-program">
                         <div class="section-header">
@@ -156,7 +155,7 @@
         </div> <!-- /home-section -->
             
             <div class="curriculum-wrapper">
-                <div class="container home-section">
+                <div class="home-section">
                     <div class="row">
                         <div class="col-md-12 skills">
                             <div class="section-header">
@@ -165,7 +164,7 @@
                             </div>
                             
                             <div class="row">
-                                <div class="col-xs-12 col-md-3">
+                                <div class="col-xs-12 col-sm-6 col-md-3">
                                     <div class="skill gray-skill-wrapper border-bottom-aqua">
                                         <img class="curriculum-icon" src="<%= asset_path 'curriculum-programming-icon.png'%>">
                                         <h3>Core Programming Skills</h3>
@@ -177,7 +176,7 @@
                                     </div>
                                 </div>
                                 
-                                <div class="col-xs-12 col-md-3">
+                                <div class="col-xs-12 col-sm-6 col-md-3">
                                     <div class="skill gray-skill-wrapper border-bottom-blue">
                                         <img class="curriculum-icon" src="<%= asset_path 'curriculum-backend-icon.png'%>">
                                         <h3>Back End Development</h3>
@@ -187,7 +186,7 @@
                                 APIs
                                 </div>
                                 </div>
-                                <div class="col-xs-12 col-md-3">
+                                <div class="col-xs-12 col-sm-6 col-md-3">
                                     <div class="skill gray-skill-wrapper border-bottom-orange">
                                         <img class="curriculum-icon" src="<%= asset_path 'curriculum-databases-icon.png'%>">
                                         <h3>Databases</h3>
@@ -197,7 +196,7 @@
                                 Postgres
                                 </div>
                                 </div>
-                                <div class="col-xs-12 col-md-3">
+                                <div class="col-xs-12 col-sm-6 col-md-3">
                                     <div class="skill gray-skill-wrapper border-bottom-yellow">
                                         <img class="curriculum-icon" src="<%= asset_path 'curriculum-frontend-icon.png'%>">
                                         <h3>Front End Development</h3>
@@ -222,16 +221,16 @@
             </div>
         </div>
         <div class="apprenticeship-wrapper">
-            <div class="container home-section">
+            <div class="home-section">
                 <div class="row section-header">
                     <h2 class = "actualize-logo">The Difference Engine Apprenticeship</h2>
                 </div>
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-sm-6 col-md-6">
                     <img class="apprenticeship-photo" src="<%= asset_path 'difference-engine-photo.jpg'%>">
                         
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-sm-6 col-md-6">
                         <p>Beyond the bootcamp, our apprenticeship emphasizes real-world work experience, collaboration with a team of developers, project planning and management, pair programming, plus interview and resume preparation. By building an apprenticeship into the Actualize program, we ensure that our developers continue to grow post-bootcamp. Every day apprenticing makes you more competitive in the industry and more likely to land the web development position you want.</p>
                     </div>
                     </div>
@@ -239,7 +238,7 @@
             
             <div class="row apprentice-ship-row">
                 
-                <div class="col-xs-12 col-md-6 apprenticeship-block border-bottom-aqua">
+                <div class="col-xs-12 col-sm-6 col-md-6 apprenticeship-block border-bottom-aqua">
                 <img class="apprenticeship-icon" src="<%= asset_path 'difference-engine-laptop-icon.png'%>">
                     <h3>The Difference Engine</h3>
                     <p>
@@ -247,7 +246,7 @@
                     </p>
                 </div>
                 
-                <div class="col-xs-12 col-md-6 apprenticeship-block border-bottom-yellow">
+                <div class="col-xs-12 col-sm-6 col-md-6 apprenticeship-block border-bottom-yellow">
                 <img class="apprenticeship-icon" src="<%= asset_path 'difference-engine-remote-icon.png'%>">
                     <h3>Onsite and Remote</h3>
                     <p>
@@ -255,7 +254,7 @@
                     </p>
                 </div>
                 
-                <div class="col-xs-12 col-md-6 apprenticeship-block border-bottom-orange">
+                <div class="col-xs-12 col-sm-6 col-md-6 apprenticeship-block border-bottom-orange">
                 <img class="apprenticeship-icon" src="<%= asset_path 'difference-engine-devs.png'%>">
                     <h3>Work Alongside Experienced Devs</h3>
                     <p>
@@ -264,7 +263,7 @@
                 </div>
 
                 
-                <div class="col-xs-12 col-md-6 apprenticeship-block border-bottom-blue">
+                <div class="col-xs-12 col-sm-6 col-md-6 apprenticeship-block border-bottom-blue">
                 <img class="apprenticeship-icon" src="<%= asset_path 'difference-engine-cv-icon.png'%>">
                     <h3>Job Prep Curriculum</h3>
                     <p>
@@ -297,10 +296,10 @@
         </div> <!-- /apprenticeship-wrapper -->
 
         <div class="locations-wrapper">
-            <div class="container home-section">
+            <div class="home-section">
                 <div class="row">
                     <h2 class = "actualize-logo"> Locations </h2>
-                    <div class="col-md-4">
+                    <div class="col-sm-4">
                         <div class="location-lower">
                             
                             <img class="logo" src="<%= asset_path 'chicago.png'%>"><br />
@@ -311,7 +310,7 @@
                             
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-sm-4">
                         <div class="location-lower">
                             
                             <img class="logo" src="<%= asset_path 'nyc.png'%>"><br />
@@ -322,7 +321,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-4">
+                    <div class="col-sm-4">
                         <div class="location-lower">
                             
                             <img class="logo" src="<%= asset_path 'san-francisco.png'%>"><br />
@@ -334,7 +333,7 @@
                     </div>
                 </div>
                 <div class="row address-row">
-                    <div class="col-md-4">
+                    <div class="col-sm-4">
                         <div class="address">
                             <a class="pushpin" href="https://www.google.com/maps/place/222+W+Merchandise+Mart+Plaza,+Chicago,+IL+60654/@41.8885185,-87.6354802,17z/data=!3m1!4b1!4m2!3m1!1s0x880e2cb6fa650467:0xd94994faa9dd5715" target="_blank"><i class="fa fa-map-marker blue   "></i></a>
                             <p>
@@ -353,7 +352,7 @@
                                 </p>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-sm-4">
                         <div class="address">
                             <a class="pushpin" href="https://www.google.com/maps/place/150+Broadway,+New+York,+NY+10038/@40.7093102,-74.010236,17z" target="_blank"><i class="fa fa-map-marker aqua"></i></a>
                             <p>
@@ -375,7 +374,7 @@
                         </div>
                     </div>
                     
-                    <div class="col-md-4">
+                    <div class="col-sm-4">
                         <div class="address">
                             <a class="pushpin" href="https://www.google.com/maps/place/77+Geary+St,+San+Francisco,+CA+94108/@37.7876653,-122.4047894,17z/data=!3m1!4b1!4m2!3m1!1s0x80858088f19da4a5:0x55997ff84c10b76f" target="_blank"><i class="fa fa-map-marker orange"></i></a>
                             <p>
@@ -401,7 +400,7 @@
 
         
           <div class="testimonial-wrapper">
-                <div class="container home-section centered">
+                <div class="home-section centered">
                       <div class="row">
                           <h2 class = "actualize-logo">What our students are saying</h2>
                           <div class="col-md-6 border-right">

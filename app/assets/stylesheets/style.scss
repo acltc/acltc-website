@@ -15,6 +15,10 @@ $color-dark-gray: #222222;
   border:none;
   box-shadow: none;
 }
+
+.navigation .navbar-toggle, .navigation .navbar-toggle:hover, .navigation .navbar-toggle:focus,.navigation .navbar-collapse .navbar-nav > li > a:focus, .navigation .navbar-collapse .navbar-nav > li > a:hover{
+    background-color: #fa9f00;
+}
 footer {
   background-color: #31363a;
 }
@@ -68,33 +72,114 @@ footer input[type=submit] {
       background: #eee;
       color:#000;
   }
+  .col_half {
+    width: 80%;
+    margin: 0 auto;
+  }
 // MEDIA QUERIES
-/* Custom, iPhone Retina */ 
-    @media only screen and (min-width : 320px) {
-      .navbar-header {
-          padding-bottom: 1em;
-          padding-left: .5em;
+/*==========  Non-Mobile First Method  ==========*/
+
+    /* Large Devices, Wide Screens */
+    @media only screen and (max-width : 1200px) {
+
+    }
+
+    /* Medium Devices, Desktops */
+    @media only screen and (max-width : 992px) {
+      .faq-text,#content #faqs p {
+          padding-left: 1em;
+          font-size: 1.5em;
+          line-height: 1.5em;
+
+      }
+      .togglec {
+          font-size: 1.5em;
+      }
+      .apply-page{
+        width: 70%;
+        margin: 0 auto;
+      }
+      .col_half {
+        width: 100%;
+      }
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (max-width : 768px) {
+      .apply-page{
+        width: 70%;
+        margin: 0 auto;
       }
     }
 
     /* Extra Small Devices, Phones */ 
-    @media only screen and (min-width : 480px) {
-      
+    @media only screen and (max-width : 480px) {
+        .navbar-header {
+            padding-bottom: 1em;
+            padding-left: .5em;
+        }
+        footer input[type=submit] {
+            background-color: #fa9f00;
+            color: #fff;
+            width: 50%;
+            border: none;
+            border-radius: 2px;
+        }
+        #page-title span {
+            margin-top: 1.5em;
+            font-size: 1.1em;
+            padding-left: 0em;
+        }
+        .togglec {
+          font-size: 1.1em;
+      }
+      .faq-text, #content #faqs p{
+        font-size: 1.1em;
+      }
+      // TUTORIALS
+      a.list-group-item .list-group-item-heading {
+          padding-left: 0em;
+      }
+      .content-wrap{
+        padding: 1em 15px;
+      }
     }
 
-    /* Small Devices, Tablets */
-    @media only screen and (min-width : 768px) {
-      
-    }
+    /* Custom, iPhone Retina */ 
+    @media only screen and (max-width : 320px) {
+        .navbar-header {
+            padding-bottom: 1em;
+            padding-left: .5em;
+        }
+        footer input[type=submit] {
+            background-color: #fa9f00;
+            color: #fff;
+            width: 50%;
+            border: none;
+            border-radius: 2px;
+        }
+        #page-title span {
+            margin-top: 1.5em;
+            font-size: 1.1em;
+            padding-left: 0em;
+        }
+        .faq-text,#content #faqs p {
+            padding-left: 1em;
+            font-size: 1em;
+            line-height: 1em;
 
-    /* Medium Devices, Desktops */
-    @media only screen and (min-width : 992px) {
-      
-    }
-
-    /* Large Devices, Wide Screens */
-    @media only screen and (min-width : 1200px) {
-      
+        }
+       .container #faqs{
+        padding: 0;
+       }
+       #portfolio:not(.portfolio-1) .portfolio-item .portfolio-image, #portfolio:not(.portfolio-1) .portfolio-item .portfolio-image a, #portfolio:not(.portfolio-1) .portfolio-item .portfolio-image img{
+        width: 100%;
+       }
+       // TUTORIALS
+       a.list-group-item .list-group-item-heading {
+           padding-left: 0em;
+           font-size: 1.1em;
+       }
     }
 
 
