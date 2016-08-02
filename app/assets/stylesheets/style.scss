@@ -17,7 +17,10 @@ $color-dark-gray: #222222;
 }
 
 .navigation .navbar-toggle, .navigation .navbar-toggle:hover, .navigation .navbar-toggle:focus,.navigation .navbar-collapse .navbar-nav > li > a:focus, .navigation .navbar-collapse .navbar-nav > li > a:hover{
-    background-color: #fa9f00;
+   color: #fa9f00;
+}
+footer .navbar-default .navbar-nav>li>a:hover {
+    color: #fa9f00;
 }
 footer {
   background-color: #31363a;
@@ -189,6 +192,8 @@ footer input[type=submit] {
        }
     }
 
-
+.navigation .navbar-toggle, .navigation .navbar-toggle:hover, .navigation .navbar-toggle:focus, .navigation .navbar-collapse .navbar-nav > li > a:focus, .navigation .navbar-collapse .navbar-nav > li > a:hover {
+    background-color: transparent;
+}
 
     
