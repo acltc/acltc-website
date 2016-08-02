@@ -9,9 +9,9 @@
             <p id="subscribe-instructions">Sign up for news about upcoming courses and updates about ACLTC, events in your area, and other resources.</p>
 
             <%= form_tag("/subscribers", method: "post", remote: true) do %>
-              <%= text_field_tag :firstname, nil, placeholder: "Name" %>
+              <%= text_field_tag :firstname, nil, placeholder: "First Name" %>
               <%= form_tag("/subscribers", method: "post", remote: true) %>
-                <%= text_field_tag :lastname, nil, placeholder: "Last name" %>
+                <%= text_field_tag :lastname, nil, placeholder: "Last Name" %>
                 <%= form_tag("/subscribers", method: "post", remote: true) %>
                   <%= text_field_tag :email, nil, placeholder: "Email" %>
               
@@ -20,11 +20,11 @@
         </div>
         
         <div class="col-md-6 inquiries">
-            <p>For general Inquiries contact us at: <strong><a href="mailto:info@anyonecanlearntocode.com" target="_blank">info@anyonecanlearntocode.com</a></strong>
+            <p>For general Inquiries contact us at: <strong><a href="mailto:hello@anyonecanlearntocode.com" target="_blank">hello@anyonecanlearntocode.com</a></strong>
             <div class="icons">
                         <a href="https://www.facebook.com/pages/Anyone-Can-Learn-To-Code/1544569925800363" target="_blank"><img src="<%= asset_path 'facebook.png'%>"></a>
                         <a href="http://twitter.com/aclearntocode" target="_blank"><img src="<%= asset_path 'twitter.png'%>"></a>
-                        <a href="http://medium.com/aclearntocode" target="_blank"><img src="<%= asset_path 'meetup.png'%>"></a><br><br>
+                        <br><br>
             </div>
             <p>ACLTC, <%= Time.now.year %>. All rights reserved.</p>
 
