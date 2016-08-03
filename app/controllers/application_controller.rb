@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   private
 
   def verify_subscriber
-    if !cookies[:is_subscriber]
+    unless @returning_subscriber || cookies[:is_subscriber]
       redirect_to tutorial_lessons_path
     end  
   end
