@@ -10,4 +10,8 @@ class PagesController < ApplicationController
   def contacts_thank_you
 
   end
+
+  def financing
+
+  end
 end
