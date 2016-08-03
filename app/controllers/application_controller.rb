@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   private
 
   def verify_subscriber
-    unless @returning_subscriber || cookies[:is_subscriber]
+    unless Subscriber.find_by(ip_address: request.remote_ip) || cookies[:is_subscriber]
       redirect_to tutorial_lessons_path
     end  
   end
