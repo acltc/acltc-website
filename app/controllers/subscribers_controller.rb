@@ -16,7 +16,7 @@ class SubscribersController < ApplicationController
         @subscriber.city = city
       end
       if @subscriber.save
-        cookies[:is_subscriber] = true
+        cookies.permanent[:is_subscriber] = true
         redirect_to "/applications/new/#{@subscriber.id}"
       else
         render :apply
@@ -33,7 +33,7 @@ class SubscribersController < ApplicationController
           @subscriber.city = city
         end
         if @subscriber.save
-          cookies[:is_subscriber] = true
+          cookies.permanent[:is_subscriber] = true
           respond_to do |format|
             @java_url = "/subscribers/download"
             format.js {render :partial => "downloadFile"}
@@ -46,7 +46,7 @@ class SubscribersController < ApplicationController
         @subscriber.city = city
       end
       if @subscriber.save
-        cookies[:is_subscriber] = true
+        cookies.permanent[:is_subscriber] = true
         @tutorials_visible = true
       else
         @tutorials_visible = false
