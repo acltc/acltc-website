@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Anyone Can Learn To Code</title>
+  <% if content_for?(:head) %>
+    <%= yield(:head) %>
+  <% else %>
+    <title> Actualize | Part-time coding bootcamp & apprenticeship </title>
+    <meta name="description" content='Become a web developer in 15 weeks without quitting your day job. Actualize is a part-time coding bootcamp with a guaranteed four-month apprenticeship.'>
+  <% end %>
   <%= stylesheet_link_tag    'application', media: 'all'  %>
   <%= favicon_link_tag %>
   <%= csrf_meta_tags %>
