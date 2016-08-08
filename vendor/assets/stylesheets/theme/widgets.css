@@ -64,8 +64,8 @@ body:not(.device-touch) .tagcloud a {
 }
 
 .tagcloud a:hover {
-	border-color: #1ABC9C !important;
-	color: #1ABC9C !important;
+	border-color: #fa9f00 !important;
+	color: #fa9f00 !important;
 }
 
 
@@ -318,7 +318,7 @@ body:not(.device-touch) .tagcloud a {
 
 .nav-tree li:hover > a,
 .nav-tree li.current > a,
-.nav-tree li.active > a { color: #1ABC9C !important; }
+.nav-tree li.active > a { color: #fa9f00 !important; }
 
 .nav-tree ul ul { display: none; }
 

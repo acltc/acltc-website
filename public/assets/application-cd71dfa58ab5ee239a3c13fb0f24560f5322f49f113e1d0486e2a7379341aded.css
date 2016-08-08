@@ -38126,7 +38126,13 @@ label.required:after {
   margin-left: 0;
 }
 
-/* line 104, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
+/* line 103, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
+.button.button-3d:hover {
+  background-color: #007afd !important;
+  opacity: 0.9;
+}
+
+/* line 107, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
 .chart h4 {
   text-align: center;
   margin: 30px 0 0 0;
@@ -38134,27 +38140,27 @@ label.required:after {
   font-weight: 700;
 }
 
-/* line 111, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
+/* line 114, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
 .table-striped td {
   color: #000;
 }
 
-/* line 115, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
+/* line 118, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
 .index-dash-table {
   font-size: 13px;
 }
 
-/* line 119, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
+/* line 122, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
 .status-cohort {
   margin: 50px 0 0 0;
 }
 
-/* line 123, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
+/* line 126, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
 .status-cohort-form {
   margin-bottom: 0;
 }
 
-/* line 127, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
+/* line 130, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
 input.btn.btn-primary.select-button {
   width: 75px;
   color: #fff;
@@ -38162,51 +38168,51 @@ input.btn.btn-primary.select-button {
   padding: 0;
 }
 
-/* line 134, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
+/* line 137, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
 select#application_status {
   width: 220px;
   display: inline;
 }
 
-/* line 139, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
+/* line 142, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
 select#application_cohort {
   width: 125px;
   display: inline;
 }
 
-/* line 144, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
+/* line 147, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
 a.btn.btn-danger.right-link {
   float: right;
 }
 
-/* line 148, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
+/* line 151, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
 .h4-margin {
   margin-bottom: 0;
 }
 
-/* line 152, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
+/* line 155, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
 #application_notes {
   width: 47%;
   display: inline;
 }
 
-/* line 157, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
+/* line 160, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
 .form-label {
   text-transform: none;
   font-size: 14px;
 }
 
-/* line 162, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
+/* line 165, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
 .tutorial-link {
   text-decoration: underline !important;
 }
 
-/* line 166, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
+/* line 169, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
 .tutorial-link:hover {
   text-decoration: none !important;
 }
 
-/* line 170, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
+/* line 173, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
 .ab-test-table-header {
   text-align: center;
   margin: 30px 0 20px 0;
@@ -38214,17 +38220,17 @@ a.btn.btn-danger.right-link {
   font-weight: 700;
 }
 
-/* line 176, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
+/* line 179, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
 .col-lg-4.portfolio-item {
   width: 30%;
 }
 
-/* line 180, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
+/* line 183, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
 .fancy-title.title-bottom-border i {
   color: #00e2ea;
 }
 
-/* line 183, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
+/* line 186, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
 .fancy-title.title-bottom-border h3 {
   background-color: #31363a;
   color: #fff;
@@ -38233,17 +38239,17 @@ a.btn.btn-danger.right-link {
   padding-left: 2em;
 }
 
-/* line 190, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
+/* line 193, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
 .fancy-title {
   margin-bottom: 0;
 }
 
-/* line 193, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
+/* line 196, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
 a.list-group-item .list-group-item-heading {
   padding-left: 3em;
 }
 
-/* line 196, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
+/* line 199, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
 input.button.button-3d.nomargin.nopadding {
   color: #eee;
   background: #fa9f00;
@@ -38251,28 +38257,28 @@ input.button.button-3d.nomargin.nopadding {
   text-shadow: none;
 }
 
-/* line 202, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
+/* line 205, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
 .postcontent {
   max-width: 500px;
 }
 
-/* line 205, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
+/* line 208, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
 .faq-text {
   padding-left: 1em;
 }
 
-/* line 208, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
+/* line 211, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
 .togglet.toggleta .faq-text, .togglet .faq-text:hover {
   color: #fa9f00;
 }
 
-/* line 211, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
+/* line 214, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
 .togglet .faq-text {
   color: gray;
   font-weight: 500;
 }
 
-/* line 215, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
+/* line 218, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
 #faqs .fa {
   font-size: 1.5em;
   color: #8a8a8a;
@@ -38280,7 +38286,7 @@ input.button.button-3d.nomargin.nopadding {
 
 /****** This is for targeting the radio button bug in the application form on Windows Chrome ******/
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
-  /* line 221, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
+  /* line 224, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
   input[type="radio"] {
     width: 13px !important;
     margin-top: 3px;
@@ -38288,27 +38294,27 @@ input.button.button-3d.nomargin.nopadding {
 }
 /***** min 769 width Styles ******/
 @media (min-width: 769px) {
-  /* line 230, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
+  /* line 233, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
   .shorten-select {
     width: 50%;
   }
 }
 /***** min 992 width Styles ******/
 @media (min-width: 992px) {
-  /* line 238, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
+  /* line 241, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
   form#new_application {
     width: 650px;
     margin: 0 auto;
   }
 
-  /* line 242, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
+  /* line 245, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
   .label-leading {
     letter-spacing: 0.5px;
   }
 }
 /***** max 991 width Styles ******/
 @media (max-width: 991px) {
-  /* line 250, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
+  /* line 253, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
   .content-wrap {
     padding-left: 10px;
     padding-right: 10px;
@@ -38316,7 +38322,7 @@ input.button.button-3d.nomargin.nopadding {
 }
 /***** max 768 width Styles ******/
 @media (max-width: 768px) {
-  /* line 259, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
+  /* line 262, /Users/sethaquittner/acltc_projects/acltc-website/app/assets/stylesheets/applications.scss */
   input[type="radio"] {
     width: 13px !important;
     margin-top: -6px;
@@ -39030,8 +39036,15 @@ textarea.sm-form-control {
     /* Generated by Font Squirrel (https://www.fontsquirrel.com) on July 26, 2016 */
 
    
-
-
+#rebranding{
+  z-index: 999999999999999;
+  margin-top: 6%;
+}
+.modal-dialog.modal-lg {
+    padding: 0;
+    width: 80%;
+    margin: 0 auto
+}
 body {
   font-family: 'Maven Pro', sans-serif;
   font-weight: 400;
@@ -39053,7 +39066,9 @@ h1, h2, h3, h4, p {
 
 h2 {
   color: #31363a; }
-
+h2.actualize-logo {
+    margin-bottom: 1.5em;
+}
 h3 {
   font-family: 'Maven Pro', sans-serif;
   font-weight: 700;
@@ -39095,6 +39110,7 @@ input {
 }
 .page-wrapper{
   padding: 0 9em;
+  padding-top: 2em;
 }
 .bold-upper{
   font-family: 'Maven Pro', sans-serif;
@@ -39319,18 +39335,17 @@ input {
     border-radius: 0;
    }
    .message {
-       /* display: none; */
-       /* visibility: hidden; */
-       height: 230px;
        margin-top: 0px;
        padding: 1.5em 8.5em;
        text-align: left;
        z-index: 99999;
        position: relative;
        color: #eee;
-       font-size: 1.3em;
+       line-height: 1.3em;
+       height: auto;
        line-height: 1.2em;
        background-color: rgba(0, 122, 253, 1);
+       border: 1px solid #eee;
    }
    .message a{
     color:#fff;
@@ -39357,7 +39372,7 @@ input {
     height: 648px;
     background-repeat: no-repeat;
     background-size: cover;
-    margin-top: -122px;
+    margin-top: -2px;
     background-position: top;
 }
 
@@ -39365,7 +39380,7 @@ input {
 
     height: 646px;
     margin-top: 2px;
-    padding: 12em 3.5em;
+    padding: 5em 3.5em;
     text-align: center;
     z-index: 9999;
     position: relative; 
@@ -39665,12 +39680,17 @@ input {
     background-color: #fff;
     margin: 1em;
     text-align: center;
-    padding: 1.5em;
+    padding: 2em;
+    box-sizing: border-box;
+    border: 1em solid #eaebeb;
     width: 29%;
 }
+.apprenticeship-wrapper .apprenticeship-block h3{
+              margin-bottom: 1em;
+            }
 .apprenticeship-wrapper{
   background-color: #eaebeb;
-/*  padding: 0 15px;*/
+  padding-left: 12em;
 }
 .apprenticeship-wrapper p{
   text-align: left;
@@ -39759,7 +39779,7 @@ hr{
     font-size: 2em;
   }
     .locations-wrapper .prework-details{
-    min-height: 100px;
+    min-height: 3em;
     font-size: 1.2em;
     }
     .locations-wrapper .location i {
@@ -39878,10 +39898,13 @@ footer {
               min-height: 0;
               background-color: #fff;
               margin: 0;
-              margin-bottom: 1em;
+              margin-bottom: 2em;
               text-align: center;
-              padding: 1.5em;
+              padding: 2em;
               width: 100%;
+          }
+          .apprenticeship-wrapper .apprenticeship-block h3{
+            margin-bottom: 1em;
           }
           .col-md-3.benefits {
               width: 21%;
@@ -39911,12 +39934,14 @@ footer {
           }
           .page-wrapper {
               padding: 0 2em;
+              padding-top: 2em;
           }
           .message {
                   padding: 1.5em 5em;
-                  font-size: .8em;
                   line-height: 1em;
-                  height: 140px;
+                  font-size: 1em;
+                  line-height: 1em;
+                  height: auto;
               
               }
             .marquee .marquee-content{
@@ -39990,6 +40015,12 @@ footer {
             .testimonial-wrapper .testimonial {
                  padding: 0; 
             }
+            .testimonial-wrapper .border-right {
+                border-right: none;
+            }
+            .testimonial-wrapper .border-left {
+                border-left: none;
+            }
         }
 
         /* Extra Small Devices, Phones */ 
@@ -40000,6 +40031,7 @@ footer {
           }
           .page-wrapper {
               padding: 0 1em;
+              padding-top: 2em;
           }
             .home-section,.section-header {
                padding: 0 15px;
@@ -40013,10 +40045,10 @@ footer {
                 border-radius: 2px;
               }
               .message {
-                  padding: 1.5em 5em;
-                  font-size: .8em;
+                  padding: 1.5em 1em;
                   line-height: 1em;
-                  height: 180px;
+                  font-size: 1em;
+                  height: auto
               
               }
 
@@ -40069,13 +40101,19 @@ footer {
                  width: 100%; 
                  padding: 0 15px;
            }
+           .apprenticeship-wrapper{
+              /*padding-left: 3em;*/
+            }
            .apprenticeship-wrapper p {
                padding: 0 15px;
            }
            .apprenticeship-wrapper .apprenticeship-block{
-            width: 91%;
-            padding: 1em 0;
+            width: 100%;
+            padding: 1.5em 0;
             min-height: 0;
+            }
+            .apprenticeship-wrapper .apprenticeship-block h3{
+              margin-bottom: 1em;
             }
            .col-md-3.benefits {
             width: 100%;
@@ -40093,6 +40131,12 @@ footer {
             .testimonial-wrapper .testimonial {
                  padding: 0; 
             }
+            .testimonial-wrapper .border-right {
+                border-right: none;
+            }
+            .testimonial-wrapper .border-left {
+                border-left: none;
+            }
 
         }
 
@@ -40104,12 +40148,17 @@ footer {
             }
             .page-wrapper {
                 padding: 0 1em;
+                padding-top: 2em;
             }
+           
             .home-section,.section-header {
                padding: 0 15px;
 
             }
-
+            .message{
+              font-size: 1em;
+              padding: 1em;
+            }
             
             #marquee.container{
               padding:0 15px;
@@ -40159,13 +40208,19 @@ footer {
                  width: 100%; 
                  padding: 0 15px;
            }
+           .apprenticeship-wrapper{
+             /*padding-left: 2em;*/
+           }
            .apprenticeship-wrapper p {
                padding: 0 15px;
            }
            .apprenticeship-wrapper .apprenticeship-block{
-            width: 91%;
-            padding: 1em 0;
+            width: 100%;
+            padding: 1.5em 0;
             min-height: 0;
+            }
+            .apprenticeship-wrapper .apprenticeship-block h3{
+              margin-bottom: 1em;
             }
            .col-md-3.benefits {
             width: 100%;
@@ -40182,6 +40237,12 @@ footer {
             }
             .testimonial-wrapper .testimonial {
                  padding: 0; 
+            }
+            .testimonial-wrapper .border-right {
+                border-right: none;
+            }
+            .testimonial-wrapper .border-left {
+                border-left: none;
             }
 
         }
