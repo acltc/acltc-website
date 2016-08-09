@@ -94,7 +94,7 @@ button, input[type=submit] {
 }
 
 .button-primary {
-  background-color: #f25252;
+  background-color: #fa9f00;
   color: white;
   border: none; 
 }
@@ -107,7 +107,7 @@ button, input[type=submit] {
   -moz-border-radius: 5px;
   border-radius: 5px;
   margin: 10px 0;
-  background-color: #f25252;
+  background-color: #fa9f00;
   color: white;
   border: none; 
 }
@@ -125,7 +125,7 @@ button, input[type=submit] {
   -moz-border-radius: 5px;
   border-radius: 5px; }
   .button-simple i.fa {
-    color: #f25252; }
+    color: #fa9f00; }
 
 /*  NAVIGATION */
 .navigation {
@@ -272,7 +272,7 @@ button, input[type=submit] {
         position: absolute;
         width: 60px;
         height: 60px;
-        background-color: #f25252;
+        background-color: #fa9f00;
         top: 20%;
         right: -30px;
         text-align: center;
@@ -299,7 +299,7 @@ button, input[type=submit] {
     .skills-wrapper .skills p {
       color: white; }
     .skills-wrapper .skills .skill-description {
-      background-color: #f25252;
+      background-color: #fa9f00;
       padding: 1em;
       display: none;
       position: absolute;
@@ -353,7 +353,7 @@ button, input[type=submit] {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  background-color: #f25252;
+  background-color: #fa9f00;
   color: white;
   border: none; 
 }
@@ -385,7 +385,7 @@ button, input[type=submit] {
       text-shadow: none;
       padding: 2em; }
     .homepage-slider .carousel-inner .carousel-caption strong {
-      color: #f25252;
+      color: #fa9f00;
       text-shadow: none; }
   .homepage-slider .carousel-inner .item img {
     width: 150px;
@@ -416,7 +416,7 @@ button, input[type=submit] {
       padding-bottom: 1em; }
 
 .summary-info-wrapper {
-  background-color: #f25252;
+  background-color: #fa9f00;
   text-align: center;
   line-height: 1.5em;
   padding-top: 4em;
@@ -461,7 +461,7 @@ footer {
     line-height: 2em; }
     footer .inquiries i {
       font-size: 2em;
-      color: #f25252; }
+      color: #fa9f00; }
   footer #subscribe-instructions {
     min-height: 70px;
   }

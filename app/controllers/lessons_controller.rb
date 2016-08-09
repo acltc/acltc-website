@@ -6,7 +6,7 @@ class LessonsController < ApplicationController
     { title: "Season 3: Becoming a Programmer", icon: "icon-keyboard" },
     { title: "Season 4: Object Oriented Programming", icon: "icon-keyboard" }
   ].freeze
-  
+
   LESSONS = [
     { title: "Episode 1 - Manage Your Programs!", time: "3:09", category_id: 0 },
     { title: "Episode 2 - Analyze Your Disk Space!", time: "4:51", category_id: 0 },
@@ -19,7 +19,7 @@ class LessonsController < ApplicationController
     { title: "Episode 3 - Command Line: Navigation", time_mac: "5:19", time_win: "5:10", category_id: 1 },
     { title: "Episode 4 - Command Line: Running Commands", time_mac: "4:39", time_win: "4:16", category_id: 1 },
     { title: "Episode 5 - Command Line: Installing Ruby", time_mac: nil, time_win: "3:13", category_id: 1 },
-    
+
     { title: "Episode 1 - Intro to Ruby", time: "5:11", category_id: 2 },
     { title: "Episode 1a - Running Ruby: Things That Can Go Wrong", time: "5:27", category_id: 2 },
     { title: "Episode 2 - Code Flow: Top Down", time: "2:34", category_id: 2 },
@@ -72,7 +72,7 @@ class LessonsController < ApplicationController
     { title: "Episode 8 - Converting Hashes To Objects", time: "7:41", category_id: 3}
 
   ].freeze
-  
+
   def index
     @categories = CATEGORIES.each_with_index.map do |category, index|
       {

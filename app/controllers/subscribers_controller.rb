@@ -1,5 +1,5 @@
 class SubscribersController < ApplicationController
-  
+
   def index
     @subscribers = Subscriber.all
 
@@ -43,7 +43,7 @@ class SubscribersController < ApplicationController
     elsif params[:mousetrap] == "View Tutorials"
       @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], mousetrap: params[:mousetrap], ip_address: request.remote_ip)
       if city = request.location.city
-        @subscriber.city = city
+          @subscriber.city = city
       end
       if @subscriber.save
         cookies.permanent[:is_subscriber] = true
@@ -54,8 +54,8 @@ class SubscribersController < ApplicationController
       respond_to do |format|
         format.js {render :partial => "viewTutorials"}
       end
-    else  
-      @subscriber = Subscriber.create(email: params[:email], mousetrap: "Homepage") unless params[:email].blank?
+    else
+      @subscriber = Subscriber.create(first_name: params[:firstname], email: params[:email], mousetrap: "Homepage Footer") unless params[:email].blank?
     end
   end
 
@@ -64,8 +64,8 @@ class SubscribersController < ApplicationController
   end
 
   def download
-    url = 'https://s3.amazonaws.com/acltc/ACLTC+Curriculum+2016+SM.pdf'
+    url = 'https://s3.amazonaws.com/acltc/Actualize_Curriculum_2016.pdf'
     data = open(url).read
-    send_data data, :disposition => 'attachment', :filename=>"ACLTC_Curriculum_2016.pdf"
+    send_data data, :disposition => 'attachment', :filename=>"Actualize_Curriculum_2016.pdf"
   end
 end

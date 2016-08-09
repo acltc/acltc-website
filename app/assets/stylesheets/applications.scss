@@ -4,12 +4,51 @@
 
 /****** Global Styles ******/
 
+.container {
+    // padding: 0 8%;
+}
+$color-neutral: #eaeaea;
 @-moz-document url-prefix() {
   input[type="radio"] {
       width: 13px !important;
       margin-top: -6px;
   }
 }
+  input {
+       width: 100%;
+       border: none;
+       border-bottom: 1px solid #616972;
+       min-height: 34px;
+       background-color: #31363a;
+       margin-bottom: 15px;
+       color: #31363a;
+       padding-left: 1em;
+   }
+   input:focus {
+       background: #eee;
+       color:#000;
+   }
+#page-title h1{
+  color: #31363a;
+  text-transform:none;
+}
+#page-title h1:before{
+    margin-right: .5em;
+    max-width: 50px;
+    content: url("/assets/actualize-logo-triangle-sm-066b42be2da1831a09f89d29c5dab957fe97ecb6043435fa1b86b2de36815ece.png")}
+
+    #page-title {
+        position: relative;
+        padding: 3em 0 1em 0em;
+        background-color: #fff;
+        border-bottom: 3px solid #fa9f00;
+    }
+    #page-title span {
+        margin-top: 1.5em;
+
+        font-size: 1.1em;
+        padding-left: 3em;
+    }
 textarea.form-control {
   height: 250px;
 }
@@ -60,7 +99,10 @@ label.required:after {
   margin-bottom: 20px;
   margin-left: 0;
 }
-
+.button.button-3d:hover {
+    background-color: #007afd !important;
+    opacity: 0.9;
+}
 .chart h4 {
   text-align: center;
   margin: 30px 0 0 0;
@@ -133,7 +175,57 @@ a.btn.btn-danger.right-link {
   text-transform: uppercase;
   font-weight: 700;
 }
+.col-lg-4.portfolio-item {
+    width: 30%;
+  }
 
+ .fancy-title.title-bottom-border i{
+  color: #00e2ea;
+ }
+ .fancy-title.title-bottom-border h3{
+        background-color:#31363a;
+        color: #fff;
+        border: none;
+        padding:1em;
+        padding-left: 2em;
+  }
+  .fancy-title {
+    margin-bottom: 0;
+  }
+  a.list-group-item .list-group-item-heading{
+    padding-left: 3em;
+  }
+  input.button.button-3d.nomargin.nopadding {
+      color: #eee;
+      background: #fa9f00;
+      border: none;
+      text-shadow: none;
+  }
+  .postcontent{
+    max-width:500px;
+  }
+  .faq-text{
+    padding-left: 1em;
+  }
+.togglet.toggleta .faq-text,.togglet .faq-text:hover{
+    color:#fa9f00;
+  }
+  .togglet .faq-text{
+      color:gray;
+      font-weight: 500;
+    }
+  #faqs .fa{
+    font-size: 1.5em;
+    color:#8a8a8a;
+  }
+/****** This is for targeting the radio button bug in the application form on Windows Chrome ******/
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  input[type="radio"] {
+    width: 13px !important;
+    margin-top: 3px;
+  }
+}
+// MEDIA QUERIES
 /***** min 769 width Styles ******/
 
 @media (min-width: 769px) {
@@ -163,13 +255,6 @@ a.btn.btn-danger.right-link {
   }
 }
 
-/****** This is for targeting the radio button bug in the application form on Windows Chrome ******/
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-  input[type="radio"] {
-    width: 13px !important;
-    margin-top: 3px;
-  }
-}
 /***** max 768 width Styles ******/
 
 @media (max-width: 768px) {

@@ -21,7 +21,6 @@ gem 'jquery-rails'
 gem 'seed_dump'
 # For ip_adress city lookup
 gem 'geocoder'
-
 #honeypot/invisible captcha to thwart spam
 gem 'invisible_captcha'
 

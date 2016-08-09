@@ -1,10 +1,14 @@
+<% content_for :head do %>
+  <title>Anyone Can Learn To Code free online video tutorials</title>
+    <meta name="description" content='Learn to code from scratch with our lead instructors in these introductory videos. Basic web development tutorial designed to introduce complete beginners to web development.'>
+  <% end %>
 <!-- Subsriber Modal
 ============================================= -->
 <div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div style="background-color:#EBE7D9" class="modal-header">
-        <h4 style="color:#18A497" class="modal-title" id="myModalLabel"><b>Start learning to code today!</b></h4>
+      <div style="background-color:#007AFD" class="modal-header">
+        <h4 style="color:#FFFFFF" class="modal-title" id="myModalLabel"><b>Start learning to code today!</b></h4>
         <h4 style="color:black" class="modal-title">Sign up to gain FREE access to our full library of video lessons.</h4>
       </div>
       <div class="modal-body">
@@ -47,13 +51,13 @@
     <div class="container clearfix">
 			<% @categories.each do |category| %>
 				<div class="fancy-title title-bottom-border">
-					<h3><%= category[:title] %></h3>
+					<h3><i class="<%= category[:icon] %>"></i>&emsp;<%= category[:title] %></h3>
 				</div>
 				<div class="list-group">
 					<% category[:lessons].each do |lesson| %>
 						<a href="/tutorial/lessons/<%= lesson[:title].parameterize %>" class="list-group-item">
 							<h4 class="list-group-item-heading">
-								<i class="<%= category[:icon] %>"></i>&emsp;<%= lesson[:title] %>
+								<%= lesson[:title] %>
 								<% if lesson[:time] %>
 									<span class="lesson-time hidden-xs"><i class="icon-time"></i> <%= lesson[:time] %></span>
 								<% end %>
