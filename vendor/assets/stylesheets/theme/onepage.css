@@ -229,7 +229,7 @@ body.side-push-panel.side-panel-open.stretched #header .container { right: 300px
 
 .link-border {
 	font-weight: 600;
-	border-bottom: 3px solid #1ABC9C;
+	border-bottom: 3px solid #fa9f00;
 	-webkit-transition: all .3s ease;
 	-o-transition: all .3s ease;
 	transition: all .3s ease;

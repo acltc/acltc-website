@@ -1,0 +1,199 @@
+$color-primary: #17a396;
+$color-primary-bright: lighten($color-primary, 10%);
+$color-secondary: #ebe7d9;
+$color-accent: #fa9f00;
+$color-text: #555555;
+$color-neutral: #eaeaea;
+$color-danger: $color-accent;
+$color-dark-gray: #222222;
+@mixin rounded($radius: 5px) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+.navbar-default{
+  border:none;
+  box-shadow: none;
+}
+
+.navigation .navbar-toggle, .navigation .navbar-toggle:hover, .navigation .navbar-toggle:focus,.navigation .navbar-collapse .navbar-nav > li > a:focus, .navigation .navbar-collapse .navbar-nav > li > a:hover{
+   color: #fa9f00;
+}
+footer .navbar-default .navbar-nav>li>a:hover {
+    color: #fa9f00;
+}
+footer {
+  background-color: #31363a;
+}
+button, input[type=submit] {
+  background-color: #eaeaea;
+  padding: 10px 25px;
+  border-color: none;
+  color: #17a396;
+  font-size: 1.2em;
+  border: 1px solid #c4c4c4;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  margin: 10px 0; }
+
+ input {
+     width: 100%;
+     border: none;
+     border-bottom: 1px solid #616972;
+     min-height: 34px;
+     background-color: #31363a;
+     margin-bottom: 15px;
+     color: black;
+     padding-left: 1em;
+ }
+
+ input:focus {
+     background: #eee;
+ }
+
+ button, input[type=submit] {
+   background-color: $color-neutral;
+   padding: 10px 25px;
+   border-color: none;
+   color: $color-primary;
+   font-size: 1.2em;
+   border: 1px solid darken($color-neutral, 15%);
+   @include rounded;
+   margin: 10px 0;
+ }
+
+
+footer input[type=submit] {
+      background-color: #fa9f00;
+      color: #fff;
+      width: 33%;
+    border: none;
+  }
+
+ footer input:focus {
+      background: #eee;
+      color:#000;
+  }
+  .col_half {
+    width: 80%;
+    margin: 0 auto;
+  }
+  #drip-16025 {
+    background: #fa9f00 !important;
+}
+/*tawk*/
+ .theme-background-color {
+     background-color: #fa9f00 !important;
+ }
+// MEDIA QUERIES
+/*==========  Non-Mobile First Method  ==========*/
+
+    /* Large Devices, Wide Screens */
+    @media only screen and (max-width : 1200px) {
+
+    }
+
+    /* Medium Devices, Desktops */
+    @media only screen and (max-width : 992px) {
+      .faq-text,#content #faqs p {
+          padding-left: 1em;
+          font-size: 1.5em;
+          line-height: 1.5em;
+
+      }
+      .togglec {
+          font-size: 1.5em;
+      }
+      .apply-page{
+        width: 70%;
+        margin: 0 auto;
+      }
+      .col_half {
+        width: 100%;
+      }
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (max-width : 768px) {
+      .apply-page{
+        width: 70%;
+        margin: 0 auto;
+      }
+    }
+
+    /* Extra Small Devices, Phones */ 
+    @media only screen and (max-width : 480px) {
+        .navbar-header {
+            padding-bottom: 1em;
+            padding-left: .5em;
+        }
+        footer input[type=submit] {
+            background-color: #fa9f00;
+            color: #fff;
+            width: 50%;
+            border: none;
+            border-radius: 2px;
+        }
+        #page-title span {
+            margin-top: 1.5em;
+            font-size: 1.1em;
+            padding-left: 0em;
+        }
+        .togglec {
+          font-size: 1.1em;
+      }
+      .faq-text, #content #faqs p{
+        font-size: 1.1em;
+      }
+      // TUTORIALS
+      a.list-group-item .list-group-item-heading {
+          padding-left: 0em;
+      }
+      .content-wrap{
+        padding: 1em 15px;
+      }
+    }
+
+    /* Custom, iPhone Retina */ 
+    @media only screen and (max-width : 320px) {
+        .navbar-header {
+            padding-bottom: 1em;
+            padding-left: .5em;
+        }
+        footer input[type=submit] {
+            background-color: #fa9f00;
+            color: #fff;
+            width: 50%;
+            border: none;
+            border-radius: 2px;
+        }
+        #page-title span {
+            margin-top: 1.5em;
+            font-size: 1.1em;
+            padding-left: 0em;
+        }
+        .faq-text,#content #faqs p {
+            padding-left: 1em;
+            font-size: 1em;
+            line-height: 1em;
+
+        }
+       .container #faqs{
+        padding: 0;
+       }
+       #portfolio:not(.portfolio-1) .portfolio-item .portfolio-image, #portfolio:not(.portfolio-1) .portfolio-item .portfolio-image a, #portfolio:not(.portfolio-1) .portfolio-item .portfolio-image img{
+        width: 100%;
+       }
+       // TUTORIALS
+       a.list-group-item .list-group-item-heading {
+           padding-left: 0em;
+           font-size: 1.1em;
+       }
+    }
+
+.navigation .navbar-toggle, .navigation .navbar-toggle:hover, .navigation .navbar-toggle:focus, .navigation .navbar-collapse .navbar-nav > li > a:focus, .navigation .navbar-collapse .navbar-nav > li > a:hover {
+    background-color: transparent;
+}
+
+    

@@ -25,15 +25,15 @@
  @import 'bootstrap-sprockets';
  @import 'bootstrap';
  @import 'bootstrap-datetimepicker';
-
+$color-neutral: #eaeaea;
  .admin-dashboard a {
    text-decoration: none;
-   color: #1ABC9C;
+   color: #fa9f00;
    line-height: 21px;
  }
 
  .index-dash-table a {
-   color: #1ABC9C;
+   color: #fa9f00;
  }
 
  ul {

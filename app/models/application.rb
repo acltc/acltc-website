@@ -26,16 +26,4 @@ class Application < ActiveRecord::Base
     end
   end
 
-  def self.has_month_and_status(month_number, year, status, city)
-    self.joins(:statuses).where("statuses.date >= '#{Date.new(year, month_number, 1)}' AND statuses.date < '#{Date.new(year, month_number, 1) + 1.month}' AND statuses.text = '#{status}' AND applications.location = '#{city}'")
-  end
-
-  def self.has_month(month_number, year, city)
-    self.where("created_at >= '#{Date.new(year, month_number, 1)}' AND created_at < '#{Date.new(year, month_number, 1) + 1.month}' AND location = '#{city}'")
-  end
-
-  def self.enrolled_in_month(month_number, year, city)
-    self.joins(:statuses).where("statuses.date >= '#{Date.new(year, month_number, 1)}' AND statuses.date < '#{Date.new(year, month_number, 1) + 1.month}' AND statuses.text = 'Paid Deposit' AND applications.location = '#{city}'")
-  end
-
 end
