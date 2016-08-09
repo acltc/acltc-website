@@ -3,44 +3,27 @@
   <div class="content-wrap">
     <div class="container clearfix">
 
-      <!-- Portfolio Filter
-      ============================================= -->
-      <!-- <ul id="portfolio-filter" class="clearfix">
-
-          <li class="activeFilter"><a href="#" data-filter="*">Show All</a></li>
-          <li><a href="#" data-filter=".pf-icons">Icons</a></li>
-          <li><a href="#" data-filter=".pf-illustrations">Illustrations</a></li>
-          <li><a href="#" data-filter=".pf-uielements">UI Elements</a></li>
-          <li><a href="#" data-filter=".pf-media">Media</a></li>
-          <li><a href="#" data-filter=".pf-graphics">Graphics</a></li>
-
-      </ul> --><!-- #portfolio-filter end -->
-
-<!--       <div id="portfolio-shuffle">
-          <i class="icon-random"></i>
-      </div>
-
-      <div class="clear"></div>
- -->
       <!-- Portfolio Items
       ============================================= -->
-      <div id="portfolio" class="portfolio-5 clearfix">
+      <div id="portfolio" class="row">
         <% @capstones.each do |capstone| %>
 
-          <article class="portfolio-item pf-uielements pf-icons">
-              <div class="portfolio-image">
-                  <a href="portfolio-single-video.php">
-                      <img src="https://i.ytimg.com/vi/<%= capstone.youtube_id %>/mqdefault.jpg">
-                  </a>
-                  <div class="portfolio-overlay">
-                      <a href="http://www.youtube.com/watch?v=<%= capstone.youtube_id %>" class="center-icon" data-lightbox="iframe"><i class="icon-line-play"></i></a>
-                  </div>
-              </div>
-              <div class="portfolio-desc">
-                  <h3><%= capstone.project_name %></h3>
-                  <span><%= capstone.student_name %></span>
-              </div>
-          </article>
+        
+            <div class="col-lg-4 col-sm-6 portfolio-item">
+                <div class="portfolio-image">
+                    <a href="portfolio-single-video.php">
+                        <img src="https://i.ytimg.com/vi/<%= capstone.youtube_id %>/mqdefault.jpg">
+                    </a>
+                    <div class="portfolio-overlay">
+                        <a href="http://www.youtube.com/watch?v=<%= capstone.youtube_id %>" class="center-icon" data-lightbox="iframe"><i class="icon-line-play"></i></a>
+                    </div>
+                </div>
+                <div class="portfolio-desc">
+                    <h3><%= capstone.project_name %></h3>
+                    <span><%= capstone.student_name %></span>
+                </div>
+            </div>
+   
         <% end %>
 
       </div><!-- #portfolio end -->

@@ -41,7 +41,7 @@
 
 .entry-title h2 a { color: #333; }
 
-.entry-title h2 a:hover { color: #1ABC9C; }
+.entry-title h2 a:hover { color: #fa9f00; }
 
 .entry-meta {
 	margin: 10px -10px -15px 0;
@@ -76,7 +76,7 @@
 
 .entry-meta li a { color: #999; }
 
-.entry-meta li a:hover { color: #1ABC9C; }
+.entry-meta li a:hover { color: #fa9f00; }
 
 .entry-meta li:first-child:before { display: none; }
 
@@ -118,7 +118,7 @@ body:not(.device-touch) .entry-link {
 
 .entry-link:hover {
 	color: #FFF;
-	background-color: #1ABC9C;
+	background-color: #fa9f00;
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
 }
 
@@ -421,8 +421,8 @@ body:not(.device-touch) .entry-link {
 
 .post-timeline .entry:hover .entry-timeline,
 .post-timeline .entry:hover .timeline-divider {
-	border-color: #1ABC9C;
-	color: #1ABC9C;
+	border-color: #fa9f00;
+	color: #fa9f00;
 }
 
 
@@ -483,7 +483,7 @@ body:not(.device-touch) .entry-link {
 .ipost .entry-title h4 a { color: #333; }
 
 .ipost .entry-title h3 a:hover,
-.ipost .entry-title h4 a:hover { color: #1ABC9C; }
+.ipost .entry-title h4 a:hover { color: #fa9f00; }
 
 .ipost .entry-meta { margin-right: -10px; }
 
@@ -499,7 +499,7 @@ body:not(.device-touch) .entry-link {
 
 .more-link {
 	display: inline-block;
-	border-bottom: 1px solid #1ABC9C;
+	border-bottom: 1px solid #fa9f00;
 	padding: 0 2px;
 	font-family: 'Crete Round', serif;
 	font-style: italic;
@@ -587,7 +587,7 @@ body:not(.device-touch) .entry-link {
 .mpost .entry-title h4 a { color: #333; }
 
 .spost .entry-title h4 a:hover,
-.mpost .entry-title h4 a:hover { color: #1ABC9C; }
+.mpost .entry-title h4 a:hover { color: #fa9f00; }
 
 .spost .entry-meta { margin: 8px -10px 0 0; }
 
@@ -763,7 +763,7 @@ body:not(.device-touch) .entry-link {
 	color: #333;
 }
 
-.comment-content .comment-author a:hover { color: #1ABC9C; }
+.comment-content .comment-author a:hover { color: #fa9f00; }
 
 .comment-content .comment-author span { display: block; }
 

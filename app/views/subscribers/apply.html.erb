@@ -1,7 +1,12 @@
-<%= render "/layouts/page_title", page_title: "Begin an application", page_subtitle: "Let's get started. Please enter you name and email below." %>
+<% content_for :head do %>
+  <title>Apply for Actualize part-time coding bootcamp
+</title>
+    <meta name="description" content='Application for Actualize coding bootcamp and apprenticeship program. Part-time schedule, small classes, and three locations: Chicago, New York, and San Francisco.
+'>
+  <% end %>
 
 <section id="content">
-  <div class="content-wrap">
+  <div class="content-wrap apply-page">
     <div class="row">
       <div class="col-md-3"></div>
       <div class="col-md-6">

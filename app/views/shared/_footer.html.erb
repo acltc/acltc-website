@@ -1,24 +1,31 @@
 <footer>
     <div class="container footer">
-        <div class="col-md-4">
+    <div class="row">
+        <div class="footer-nav">
+            <%= render 'shared/navbar' %>
+        </div>
+    </div>
+        <div class="col-md-6">
             <p id="subscribe-instructions">Sign up for news about upcoming courses and updates about ACLTC, events in your area, and other resources.</p>
 
             <%= form_tag("/subscribers", method: "post", remote: true) do %>
-              <%= text_field_tag :email, nil, placeholder: "Email" %>
-              
+              <%= text_field_tag :firstname, nil, placeholder: "First Name" %>
+              <%= form_tag("/subscribers", method: "post", remote: true) %>
+                  <%= text_field_tag :email, nil, placeholder: "Email" %>
+
               <%= submit_tag "Sign Up" %>
             <% end %>
         </div>
-        <div class="col-md-4 icons">
-            <a href="https://www.facebook.com/pages/Anyone-Can-Learn-To-Code/1544569925800363" target="_blank"><img src="<%= asset_path 'facebook.png'%>"></a>
-            <a href="http://twitter.com/aclearntocode" target="_blank"><img src="<%= asset_path 'twitter.png'%>"></a><br><br>
+
+        <div class="col-md-6 inquiries">
+            <p>For general Inquiries contact us at: <strong><a href="mailto:hello@anyonecanlearntocode.com" target="_blank">hello@anyonecanlearntocode.com</a></strong>
+            <div class="icons">
+                        <a href="https://www.facebook.com/pages/Anyone-Can-Learn-To-Code/1544569925800363" target="_blank"><img src="<%= asset_path 'facebook.png'%>"></a>
+                        <a href="http://twitter.com/aclearntocode" target="_blank"><img src="<%= asset_path 'twitter.png'%>"></a>
+                        <br><br>
+            </div>
             <p>ACLTC, <%= Time.now.year %>. All rights reserved.</p>
-        </div>
-        <div class="col-md-4 inquiries">
-            <p>Have a question? Click here: <br>
-                <a href="/contacts/new"><i class="fa fa-envelope"></i></a><br>
-                Or email us at:<br>
-            hello@anyonecanlearntocode.com</p>
+
         </div>
     </div>
 </footer>

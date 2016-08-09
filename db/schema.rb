@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160721023041) do
+ActiveRecord::Schema.define(version: 20160620211738) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -213,8 +213,6 @@ ActiveRecord::Schema.define(version: 20160721023041) do
     t.datetime "updated_at", null: false
     t.string   "first_name"
     t.string   "mousetrap"
-    t.string   "ip_address"
-    t.string   "city"
   end
 
   create_table "tutorial_submissions", force: :cascade do |t|

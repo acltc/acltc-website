@@ -2,17 +2,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Anyone Can Learn To Code | Part-time coding bootcamp & apprenticeship</title>
+  <title>Part-time coding bootcamp & apprenticeship | Actualize</title>
   <meta name="google-site-verification" content="DNbAIJwrmZGROVMiSvR2nvKeFtxr35P9sXzxm-FdN6s" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="description" content="Become a web developer in 15 weeks without quitting your day job. Actualize is a part-time coding bootcamp with a guaranteed four-month apprenticeship.">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <%= stylesheet_link_tag    'home', media: 'all' %>
   <%= favicon_link_tag %>
 
   <%= csrf_meta_tags %>
-  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <meta name="description" content="Become a web developer in 15 weeks without quitting your day job. ACLTC is a part-time coding bootcamp with a guaranteed four-month apprenticeship.">
+  <link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700' rel='stylesheet' type='text/css'>
 </head>
 <body class="stretched">
 <div class="container">
@@ -21,30 +21,12 @@
     ============================================= -->
     <div id="wrapper" class="clearfix">
 
-      <% %>
-  <!--     <section id="slider" class="slider-parallax full-screen with-header force-full-screen clearfix">
-
-        <div class="full-screen force-full-screen" style="background: url('assets/class.jpg') center center no-repeat; background-size: 100% 100%;">
-
-          <div class="container clearfix">
-            <div class="emphasis-title vertical-middle center">
-
-            </div>
-          </div>
-
-        </div>
-
-      </section> -->
 
         <!-- Header
         ============================================= -->
         <header id="header" class="transparent-header">
 
           <div id="header-wrap">
-
-            <!-- <div class="container clearfix"> -->
-                    <!-- Logo
-                    ============================================= -->
 
                     <!-- Primary Navigation
               ============================================= -->
@@ -59,26 +41,14 @@
                       <span class="icon-bar"></span>
                     </button>
                         <a class="navbar-brand" href="/">
-                          <img class="logo" src="<%= asset_path 'acltc_logo.png'%>">
+                          <img class="logo" src="<%= asset_path 'acltc-logo-180.png'%>">
                         </a>
                         <!-- <a href="/" class="retina-logo" data-dark-logo="assets/theme/logo-dark@2x.png"><img src="assets/theme/logo@2x.png" alt="Canvas Logo"></a> -->
                   </div>
 
                   <!-- Collect the nav links, forms, and other content for toggling -->
-                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                      <li><%= link_to "Home", root_path %></li>
-                      <li><%= link_to "Apply", new_application_path %></li>
-                      <li><%= link_to "Contact Us", new_contact_path %></li>
-                      <li><%= link_to "FAQ", faqs_path %></li>
-                      <li><%= link_to "Blog", blog_posts_path %></li>
-                      <li><%= link_to "Tutorials", tutorial_lessons_path %></li>
-                      <% if admin_signed_in? %>
-                      <li><%= link_to "Admin", admins_dashboard_path %></li>
-                      <li><%= link_to('Logout Admin', destroy_admin_session_path, method: :delete) %></li>
-                      <% end %>
-                    </ul>
-                  </div><!-- /.navbar-collapse -->
+        <%= render 'shared/navbar' %>
+                  
                 </div><!-- /.container-fluid -->
               </nav>
           </div>
