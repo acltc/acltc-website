@@ -24,6 +24,4 @@ $(document).ready(function(){
         }
        });
 });
-$(window).load(function(){
-        $('#rebranding').modal('show');
-    });
+

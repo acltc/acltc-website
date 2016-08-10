@@ -18,5 +18,6 @@
 //= require parallax
 //= require prism
 //= require moment
+//= require js.cookie
 //= require bootstrap-datetimepicker
 //= require_tree .
