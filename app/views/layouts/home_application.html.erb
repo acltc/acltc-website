@@ -70,28 +70,30 @@
     <div id="gotoTop" class="icon-angle-up"></div>
 
     <!-- Start of Stcky Footer -->
-    <div class="show-sticky-footer">
-      <nav class="navbar navbar-default navbar-fixed-bottom sticky-footer">
-        <div class="container">
-          <div class="row">
-            <%= form_tag("/subscribers", method: "post", remote: true) do %>
-              <div class="col-md-3 sticky-footer-col">
-                <%= text_field_tag :first_name, nil, placeholder: "First Name" %>
+    <% unless Subscriber.find_by(ip_address: request.remote_ip) || cookies[:is_subscriber] %>
+      <div class="show-sticky-footer">
+        <nav class="navbar navbar-default navbar-fixed-bottom sticky-footer">
+          <div class="container">
+            <div class="row">
+              <%= form_tag("/subscribers", method: "post", remote: true) do %>
+                <div class="col-md-3 sticky-footer-col">
+                  <%= text_field_tag :first_name, nil, placeholder: "First Name" %>
+                </div>
+                <div class="col-md-3 sticky-footer-col">
+                  <%= text_field_tag :email, nil, placeholder: "Email" %>
+                </div>
+                <div class="col-md-3 sticky-footer-col">
+                  <%= hidden_field_tag :mousetrap, nil, value: "Sticky Curriculum Download" %>
+                  <%= submit_tag "Download Our Curriculum", class: "curriculum-download-btn sticky-btn", style: "padding:0;margin:0;background-color:#F25252;color:white;" %>
+                </div>
+                <div class="col-md-3 sticky-footer-col">
+                </div>
               </div>
-              <div class="col-md-3 sticky-footer-col">
-                <%= text_field_tag :email, nil, placeholder: "Email" %>
-              </div>
-              <div class="col-md-3 sticky-footer-col">
-                <%= hidden_field_tag :mousetrap, nil, value: "Sticky Curriculum Download" %>
-                <%= submit_tag "Download Our Curriculum", class: "curriculum-download-btn sticky-btn", style: "padding:0;margin:0;background-color:#F25252;color:white;" %>
-              </div>
-              <div class="col-md-3 sticky-footer-col">
-              </div>
-            </div>
-          <% end %>
-        </div>
-      </nav>
-    </div>
+            <% end %>
+          </div>
+        </nav>
+      </div>
+    <% end %>
     <!-- End of Sticky Footer -->
 
     <script>
