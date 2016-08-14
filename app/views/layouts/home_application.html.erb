@@ -48,7 +48,7 @@
 
                   <!-- Collect the nav links, forms, and other content for toggling -->
         <%= render 'shared/navbar' %>
-                  
+
                 </div><!-- /.container-fluid -->
               </nav>
           </div>
@@ -68,6 +68,31 @@
     <!-- Go To Top
     ============================================= -->
     <div id="gotoTop" class="icon-angle-up"></div>
+
+    <!-- Start of Stcky Footer -->
+    <div class="show-sticky-footer">
+      <nav class="navbar navbar-default navbar-fixed-bottom sticky-footer">
+        <div class="container">
+          <div class="row">
+            <%= form_tag("/subscribers", method: "post", remote: true) do %>
+              <div class="col-md-3 sticky-footer-col">
+                <%= text_field_tag :first_name, nil, placeholder: "First Name" %>
+              </div>
+              <div class="col-md-3 sticky-footer-col">
+                <%= text_field_tag :email, nil, placeholder: "Email" %>
+              </div>
+              <div class="col-md-3 sticky-footer-col">
+                <%= hidden_field_tag :mousetrap, nil, value: "Sticky Curriculum Download" %>
+                <%= submit_tag "Download Our Curriculum", class: "curriculum-download-btn sticky-btn", style: "padding:0;margin:0;background-color:#F25252;color:white;" %>
+              </div>
+              <div class="col-md-3 sticky-footer-col">
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </nav>
+    </div>
+    <!-- End of Sticky Footer -->
 
     <script>
     $('.carousel').carousel({
@@ -101,6 +126,6 @@
       s.parentNode.insertBefore(dc, s);
     })();
   </script>
-  <!-- End Drip --> 
+  <!-- End Drip -->
   </body>
   </html>

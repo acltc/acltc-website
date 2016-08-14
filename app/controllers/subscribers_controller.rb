@@ -21,7 +21,7 @@ class SubscribersController < ApplicationController
       else
         render :apply
       end
-    elsif params[:mousetrap] == "Curriculum Download"
+    elsif params[:mousetrap] == "Curriculum Download" || params[:mousetrap] == "Sticky Curriculum Download"
       if cookies[:is_subscriber]
         respond_to do |format|
           @java_url = "/subscribers/download"

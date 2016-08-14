@@ -846,7 +846,7 @@ input.curriculum-download-btn {
       -moz-border-radius: 3px;
       border-radius: 3px;
       margin: 2em 0;
-      
+
       border: none;
   background: #fa9f00 !important;
   color:#eee !important;
@@ -1246,4 +1246,28 @@ input.curriculum-download-btn:hover{
         }
 .navigation .navbar-toggle, .navigation .navbar-toggle:hover, .navigation .navbar-toggle:focus, .navigation .navbar-collapse .navbar-nav > li > a:focus, .navigation .navbar-collapse .navbar-nav > li > a:hover {
     background-color: transparent;
+}
+
+@media (max-width: 800px) {
+  .show-sticky-footer {
+      display: none;
+    }
+}
+
+@media (max-width: 800px){
+  .show-spacer-col {
+      display: none;
+    }
+}
+
+.sticky-footer {
+  background: #B0AAAD;
+  width: 100%;
+  margin-bottom: -5px;
+  z-index: 10000;
+  opacity: 0.9;
+}
+
+.sticky-footer-col {
+  padding-top: 10px;
 }
