@@ -3,6 +3,7 @@ class DiversityApplicationsController < ApplicationController
 
   def index
     # @faqs = Faq.all.order(:priority)
+    render :layout => 'home_application'
   end
 
 end
