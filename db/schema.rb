@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160721023041) do
+ActiveRecord::Schema.define(version: 20160824134700) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -189,6 +189,22 @@ ActiveRecord::Schema.define(version: 20160721023041) do
     t.text     "prerequisites"
   end
 
+  create_table "profiles", force: :cascade do |t|
+    t.string   "gender"
+    t.string   "age"
+    t.string   "race"
+    t.integer  "times_applied"
+    t.string   "salary"
+    t.string   "credit_score"
+    t.string   "financial_network"
+    t.string   "savings"
+    t.integer  "experience_in_coding"
+    t.integer  "readiness"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.integer  "application_id"
+  end
+
   create_table "screencasts", force: :cascade do |t|
     t.string   "cover_image"
     t.string   "youtube_id"
@@ -209,12 +225,14 @@ ActiveRecord::Schema.define(version: 20160721023041) do
 
   create_table "subscribers", force: :cascade do |t|
     t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.string   "first_name"
     t.string   "mousetrap"
     t.string   "ip_address"
     t.string   "city"
+    t.string   "country"
+    t.string   "postal_code"
   end
 
   create_table "tutorial_submissions", force: :cascade do |t|

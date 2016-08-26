@@ -42,6 +42,10 @@ Rails.application.routes.draw do
   get "/tutorial_submissions" => "tutorial_submissions#index"
   post "/tutorial_submissions" => "tutorial_submissions#create"
   patch "/tutorial_submissions/ajax" => "tutorial_submissions#ajax_update"
+
+  get "/profiles" => "profiles#index"
+  patch "/profiles/:id" => "profiles#update"
+  post "/profiles" => "profiles#create"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
