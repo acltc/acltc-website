@@ -47,7 +47,7 @@
             <td><%= application.cohort %></td>
             <td><%= application.interview ? application.interview.starts_at.strftime("%A %B %d, %Y") : "" %></td>
             <td>
-              <%= link_to 'Modal', "/profiles/#{application.id}",  {:remote => true, 'data-target' => '#profile-modal'}  %>
+              <%= link_to 'Profile', "/profiles/#{application.id}",  {:remote => true, 'data-target' => '#profile-modal'}  %>
             </td>
           </tr>
           <% end %>
