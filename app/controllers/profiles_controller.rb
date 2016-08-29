@@ -14,7 +14,7 @@ class ProfilesController < ApplicationController
                                     experience_in_coding: params[:experience_in_coding],
                                     readiness: params[:readiness],
                                     application_id: params[:application_id])
-        
+
         respond_to do |format|
             format.js {render :partial => "closeModal"}
         end
@@ -36,6 +36,14 @@ class ProfilesController < ApplicationController
         respond_to do |format|
             format.js {render :partial => "closeModal"}
         end
+    end
+
+    def modal
+      @application = Application.find(params[:id])
+      respond_to do |format|
+        format.html
+        format.js
+      end
     end
 
 end

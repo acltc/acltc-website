@@ -46,6 +46,7 @@ Rails.application.routes.draw do
   get "/profiles" => "profiles#index"
   patch "/profiles/:id" => "profiles#update"
   post "/profiles" => "profiles#create"
+  get "/profiles/:id" => "profiles#modal"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
