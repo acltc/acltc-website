@@ -8,6 +8,7 @@ class Application < ActiveRecord::Base
 
   has_many :statuses
   belongs_to :interview
+  has_one :profile
 
   def full_name
     "#{first_name} #{last_name}"

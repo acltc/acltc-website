@@ -27,6 +27,7 @@
       <div class="col-md-2"></div>
       <div class="col-md-8">
         <%= link_to "Download Applications CSV", applications_path(format: "csv"), :class => 'button btn-secondary csv-button'  %>
+
         <table class="table table-striped index-dash-table">
           <tr>
           <th>Name</th>
@@ -35,6 +36,7 @@
             <th>Status</th>
             <th>Cohort</th>
             <th>Interview Time</th>
+            <th>View Profile</th>
           </tr>
           <% @applications.order("created_at desc").each do |application| %>
           <tr>
@@ -44,6 +46,9 @@
             <td><a href="/applications?status=<%= application.status %>"><%= application.status %></a></td>
             <td><%= application.cohort %></td>
             <td><%= application.interview ? application.interview.starts_at.strftime("%A %B %d, %Y") : "" %></td>
+            <td>
+              <%= link_to 'Profile', "/profiles/#{application.id}",  {:remote => true, 'data-target' => '#profile-modal'}  %>
+            </td>
           </tr>
           <% end %>
         </table>
