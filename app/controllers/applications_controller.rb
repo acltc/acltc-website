@@ -4,6 +4,12 @@ class ApplicationsController < ApplicationController
 
   def index
     @applications = Application.all
+
+    if params[:location_filter]
+      @applications = Application.where(location: params[:location_filter])
+      pp @applications
+    end
+
     @applications = Application.order(params[:sort]) if params[:sort]
     @applications = Application.where(status: params[:status]) if params[:status]
 

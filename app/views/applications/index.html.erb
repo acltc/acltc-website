@@ -32,7 +32,20 @@
           <tr>
           <th>Name</th>
             <th>Submitted On</th>
-            <th>Location</th>
+            <th>
+              <div class="dropdown">
+                <a class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="color:gray;">
+                  Location
+                  <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                  <li><a href="/applications?location_filter=Chicago">Chicago</a></li>
+                  <li><a href="/applications?location_filter=New York City">New York City</a></li>
+                  <li><a href="/applications?location_filter=San Francisco">San Francisco</a></li>
+                  <li><a href="/applications">All</a></li>
+                </ul>
+              </div>
+            </th>
             <th>Status</th>
             <th>Cohort</th>
             <th>Interview Time</th>
@@ -57,3 +70,7 @@
     </div>
   </div>
 </section>
+
+<script type="text/javascript">
+  $('.dropdown-toggle').dropdown();
+</script>
