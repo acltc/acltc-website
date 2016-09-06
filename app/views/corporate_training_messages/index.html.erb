@@ -6,7 +6,7 @@
       <div class="col-md-8">
         <table class="table table-striped">
           <tr>
-            <th>Name</th>
+            <th>Company Name</th>
             <th>Message Sent</th> 
             <th>Email</th>
             <th>Start Date</th>
@@ -14,7 +14,7 @@
           </tr>
           <% @corporate_training_messages.each do |corporate_training_message| %>
           <tr>
-            <td><%= link_to corporate_training_message.name, corporate_training_message_path(corporate_training_message) %></td>
+            <td><%= link_to corporate_training_message.company_name, corporate_training_message_path(corporate_training_message) %></td>
             <td><%= corporate_training_message.friendly_updated_at %></td> 
             <td><%= corporate_training_message.email %></td>
             <td><%= corporate_training_message.friendly_start_date %></td>

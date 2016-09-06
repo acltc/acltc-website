@@ -7,8 +7,12 @@
       <%= link_to "Back to Index", corporate_training_messages_path %>
         <table class="table table-striped">
           <tr>
-            <th>Name:</th>
-            <th><%= @corporate_training_message.name %></th> 
+            <th>Company Name:</th>
+            <th><%= @corporate_training_message.company_name %></th> 
+          </tr>
+          <tr>
+            <th>Reprentative Name:</th>
+            <th><%= @corporate_training_message.rep_name %></th> 
           </tr>
           <tr>
             <th>Email:</th>

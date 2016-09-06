@@ -20,16 +20,21 @@
               <div class="form-process"></div>
 
               <div class="col_one_third">
-                <%= f.label :name, class: "template-contactform-name" %>
-                <%= f.text_field :name, class: "sm-form-control required" %>
+                <%= f.label :company_name, class: "template-contactform-name" %>
+                <%= f.text_field :company_name, class: "sm-form-control required" %>
               </div>
 
               <div class="col_one_third">
+                <%= f.label :rep_name, class: "template-contactform-name" %>
+                <%= f.text_field :rep_name, class: "sm-form-control required" %>
+              </div>
+
+              <div class="col_one_third col_last">
                 <%= f.label :email, class: "template-contactform-name" %>
                 <%= f.email_field :email, class: "sm-form-control required" %>
               </div>
 
-              <div class="col_one_third col_last">
+              <div class="col_one_third">
                 <%= f.label :phone, class: "template-contactform-name" %>
                 <%= f.text_field :phone, class: "sm-form-control required" %>
               </div>
@@ -39,14 +44,14 @@
                 <%= f.text_field :team_size, class: "sm-form-control required" %>
               </div>
 
-              <div class="col_one_third">
-                <%= f.label :date, "Start Date", class: "template-contactform-name" %>
-                <%= f.date_field :date, class: "sm-form-control required" %>
-              </div>
-
               <div class="col_one_third col_last">
                 <%= f.label :city, class: "template-contactform-name" %>
                 <%= f.text_field :city, class: "sm-form-control required" %>
+              </div>
+
+              <div class="col_one_third">
+                <%= f.label :date, "Start Date", class: "template-contactform-name" %>
+                <%= f.date_field :date, class: "sm-form-control required" %>
               </div>
 
               <div class="field">
