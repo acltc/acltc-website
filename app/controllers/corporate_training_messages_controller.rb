@@ -27,6 +27,6 @@ class CorporateTrainingMessagesController < ApplicationController
   private
   
   def corporate_training_message_params
-    params.require(:corporate_training_message).permit(:name, :email, :phone, :team_size, :date, :message, :city, field_of_interest_ids: [])
+    params.require(:corporate_training_message).permit(:company_name, :rep_name, :email, :phone, :team_size, :date, :message, :city, field_of_interest_ids: [])
   end
 end

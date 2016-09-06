@@ -1,6 +1,8 @@
 You've received a message via the ACLTC corporate training form:
 
-Name: <%= @corporate_training_message.name %>
+Company Name: <%= @corporate_training_message.company_name %>
+
+Representative Name: <%= @corporate_training_message.rep_name %>
 
 Email: <%= @corporate_training_message.email %>
 
@@ -20,4 +22,4 @@ Fields of Interest:
 <%= interests %>
 
 Sincerely,
-<%= @corporate_training_message.name %>
+<%= @corporate_training_message.rep_name %>
