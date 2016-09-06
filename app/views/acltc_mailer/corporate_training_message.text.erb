@@ -1,0 +1,21 @@
+You've received a message from the Corporate Training form:
+
+Name: <%= @corporate_training_message.name %>
+
+Email: <%= @corporate_training_message.email %>
+
+Phone: <%= @corporate_training_message.phone %>
+
+Team Size: <%= @corporate_training_message.team_size %>
+
+Date: <%= @corporate_training_message.date %>
+
+City: <%= @corporate_training_message.city %>
+
+Fields of Interest: 
+<% @corporate_training_message.field_of_interests.each do |interest| %>
+  <%= interest.name %>
+<% end %>
+
+Sincerely,
+<%= @corporate_training_message.name %>

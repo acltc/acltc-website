@@ -1,0 +1,40 @@
+<h1>You've received a message from the Corporate Training form:</h1>
+<table>
+  <tr>
+    <td>Name:</td>
+    <td><%= @corporate_training_message.name %></td>
+  </tr>
+  <tr>
+    <td>Email:</td>
+    <td><%= @corporate_training_message.email %></td>
+  </tr>
+  <tr>
+    <td>Phone:</td>
+    <td><%= @corporate_training_message.phone %></td>
+  </tr>
+  <tr>
+    <td>Team Size:</td>
+    <td><%= @corporate_training_message.team_size %></td>
+  </tr>
+  <tr>
+    <td>Date:</td>
+    <td><%= @corporate_training_message.date %></td>
+  </tr>
+  <tr>
+    <td>City:</td>
+    <td><%= @corporate_training_message.city %></td>
+  </tr>
+  <tr>
+    <td>Fields of Interest:</td>
+    <% @corporate_training_message.field_of_interests.each do |interest| %>
+      <td><%= interest.name %></td>
+    <% end %>
+  </tr>
+  <tr>
+    <td>Message:</td>
+    <td><%= @corporate_training_message.message %></td>
+  </tr>
+</table>
+
+<p>Sincerely,</p>
+<p><%= @corporate_training_message.name %></p>

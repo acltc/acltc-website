@@ -8,6 +8,7 @@ class CorporateTrainingMessagesController < ApplicationController
 
     if @corporate_training_message.save
       flash[:success] = "Thank you for your message!"
+      AcltcMailer.corporate_training_message(@corporate_training_message).deliver_now
       redirect_to root_path
     else
       flash[:success] = "Unable to send your message!"
