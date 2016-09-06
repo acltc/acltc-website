@@ -11,6 +11,11 @@ class AcltcMailer < ApplicationMailer
     mail(from: @corporate_training_message.email, to: "dcam1901@gmail.com", subject: 'Corporate Training')
   end
 
+  def corporate_training_message_reply(corporate_training_message)
+    @corporate_training_message = corporate_training_message
+    mail(from: "dcam1901@gmail.com", to: "dcam1901@gmail.com", subject: 'Your Corporate Training Message To ACLTC')
+  end
+
   def application_email(application)
     @application = application
     mail(from: "sandboxd035c758dbb54757b1b13d910d57a6b3.mailgun.org", to: 'admissions@anyonecanlearntocode.com', subject: 'Application Submitted', reply_to: @application.email )
