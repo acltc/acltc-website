@@ -1,4 +1,4 @@
-You've received a message from the Corporate Training form:
+You've received a message from the ACLTC corporate training form:
 
 Name: <%= @corporate_training_message.name %>
 
@@ -13,9 +13,11 @@ Date: <%= @corporate_training_message.date %>
 City: <%= @corporate_training_message.city %>
 
 Fields of Interest: 
+<% interests = "" %>
 <% @corporate_training_message.field_of_interests.each do |interest| %>
-  <%= interest.name %>
+  <% interests = interests + interest.name + " " %>
 <% end %>
+<%= interests %>
 
 Sincerely,
 <%= @corporate_training_message.name %>
