@@ -7,7 +7,6 @@ class CorporateTrainingMessagesController < ApplicationController
     @corporate_training_message = CorporateTrainingMessage.new(corporate_training_message_params)
 
     if @corporate_training_message.save
-      flash[:success] = "Thank you for your message!"
       AcltcMailer.corporate_training_message(@corporate_training_message).deliver_now
       AcltcMailer.corporate_training_message_reply(@corporate_training_message).deliver_now
       redirect_to contacts_thank_you_path
