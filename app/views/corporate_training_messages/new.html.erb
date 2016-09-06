@@ -1,0 +1,85 @@
+<%= render "/layouts/page_title", page_title: "Contact Us", page_subtitle: "Questions? Comments?" %>
+<% content_for :head do %>
+  <title>Contact Anyone Can Learn To Code</title>
+    <meta name="description" content='Reach the Anyone Can Learn To Code / Actualize team with additional questions.'>
+  <% end %>
+  <section id="content">
+
+    <div class="content-wrap">
+
+      <div class="container clearfix">
+
+            <!-- Contact Form
+            ============================================= -->
+            <div class="col_half">
+
+              <div class="fancy-title">
+                <h3>Send us a Message</h3>
+              </div>
+
+              <div id="contact-form-result" data-notify-type="success" data-notify-msg="<i class=icon-ok-sign></i> Message Sent Successfully!"></div>
+
+              <%= form_for @corporate_training_message do |f|  %>
+
+              <div class="form-process"></div>
+
+              <div class="col_one_third">
+                <%= f.label :name, class: "template-contactform-name" %>
+                <%= f.text_field :name, class: "sm-form-control required" %>
+              </div>
+
+              <div class="col_one_third">
+                <%= f.label :email, class: "template-contactform-name" %>
+                <%= f.email_field :email, class: "sm-form-control required" %>
+              </div>
+
+              <div class="col_one_third col_last">
+                <%= f.label :phone, class: "template-contactform-name" %>
+                <%= f.text_field :phone, class: "sm-form-control required" %>
+              </div>
+
+              <div class="col_one_third">
+                <%= f.label :team_size, class: "template-contactform-name" %>
+                <%= f.text_field :team_size, class: "sm-form-control required" %>
+              </div>
+
+              <div class="col_one_third">
+                <%= f.label :date, class: "template-contactform-name" %>
+                <%= f.date_field :date, class: "sm-form-control required" %>
+              </div>
+
+              <div class="col_one_third col_last">
+                <%= f.label :city, class: "template-contactform-name" %>
+                <%= f.text_field :city, class: "sm-form-control required" %>
+              </div>
+
+              <div class="clear"></div>
+
+              <div class="col_full">
+                <%= f.label :message, class: "template-contactform-message" %>
+                <%= f.text_area :message, class: "required sm-form-control" %>
+              </div>
+
+              <div class="col_full hidden">
+                <input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />
+              </div>
+
+              <div class="col_full">
+                <%= f.submit "Submit Message", class: "button button-3d nomargin nopadding" %>
+              </div>
+
+              <% end %>
+
+            <div class="clear"></div>
+
+            <!-- Contact Info
+            ============================================= -->
+            <div class="row clear-bottommargin">
+
+            </div><!-- Contact Info End -->
+
+          </div>
+
+        </div>
+
+</section><!-- #content end
