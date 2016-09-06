@@ -26,11 +26,11 @@
   </tr>
   <tr>
     <td>Fields of Interest:</td>
-      <% interests = "" %>
-      <% @corporate_training_message.field_of_interests.each do |interest| %>
-        <% interests = interests + interest.name + " " %>
-      <% end %>
-      <td><%= interests %></td>
+    <% interests = "" %>
+    <% @corporate_training_message.field_of_interests.each do |interest| %>
+      <% interests = interests + interest.name + " " %>
+    <% end %>
+    <td><%= interests %></td>
   </tr>
   <tr>
     <td>Message:</td>
