@@ -1,4 +1,8 @@
 class CorporateTrainingMessagesController < ApplicationController
+  def index
+    @corporate_training_messages = CorporateTrainingMessage.all
+  end
+
   def new
     @corporate_training_message = CorporateTrainingMessage.new
   end
@@ -14,6 +18,10 @@ class CorporateTrainingMessagesController < ApplicationController
       flash[:success] = "Unable to send your message!"
       render :new
     end
+  end
+
+  def show
+    @corporate_training_message = CorporateTrainingMessage.find(params[:id])
   end
 
   private

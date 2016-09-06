@@ -1,0 +1,54 @@
+<%= render "/layouts/page_title", page_title: "Corporate Training Message", page_subtitle: "" %>
+<section id="content">
+  <div class="content-wrap">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+      <%= link_to "Back to Index", corporate_training_messages_path %>
+        <table class="table table-striped">
+          <tr>
+            <th>Name:</th>
+            <th><%= @corporate_training_message.name %></th> 
+          </tr>
+          <tr>
+            <th>Email:</th>
+            <th><%= @corporate_training_message.email %></th> 
+          </tr>
+          <tr>
+            <th>Phone:</th>
+            <th><%= @corporate_training_message.phone %></th> 
+          </tr>
+          <tr>
+            <th>Team Size:</th>
+            <th><%= @corporate_training_message.team_size %></th> 
+          </tr>
+          <tr>
+            <th>Start Date:</th>
+            <th><%= @corporate_training_message.date %></th> 
+          </tr>
+          <tr>
+            <th>City:</th>
+            <th><%= @corporate_training_message.city %></th> 
+          </tr>
+          <tr>
+            <th>Fields of Interest:</th>
+            <% interests = "" %>
+            <% @corporate_training_message.field_of_interests.each do |interest| %>
+              <% interests = interests + interest.name + " " %>
+            <% end %>
+            <td><%= interests %></td>
+          </tr>
+          <tr>
+            <th>Message:</th>
+            <th><%= @corporate_training_message.message %></th> 
+          </tr>          
+          <tr>
+            <th>Message Sent:</th>
+            <th><%= @corporate_training_message.friendly_updated_at %></th> 
+          </tr>
+        </table>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</section>

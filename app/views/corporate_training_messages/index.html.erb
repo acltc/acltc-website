@@ -1,0 +1,30 @@
+<%= render "/layouts/page_title", page_title: "Corporate Training Messages", page_subtitle: "" %>
+<section id="content">
+  <div class="content-wrap">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <table class="table table-striped">
+          <tr>
+            <th>Name</th>
+            <th>Message Sent</th> 
+            <th>Email</th>
+            <th>Start Date</th>
+            <th>City</th>
+          </tr>
+          <% @corporate_training_messages.each do |corporate_training_message| %>
+          <tr>
+            <td><%= link_to corporate_training_message.name, corporate_training_message_path(corporate_training_message) %></td>
+            <td><%= corporate_training_message.friendly_updated_at %></td> 
+            <td><%= corporate_training_message.email %></td>
+            <td><%= corporate_training_message.friendly_start_date %></td>
+            <td><%= corporate_training_message.city %></td>
+          </tr>
+          <% end %>
+        </table>
+
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</section>
