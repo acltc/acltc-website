@@ -33,6 +33,7 @@ Rails.application.routes.draw do
   resources :screencasts, only: [:index]
   resources :diversity_applications, only: [:index]
   resources :interviews
+  resources :corporate_training_messages, only: [:new, :create]
 
   get "/options/" => "interviews#interview_options"
   

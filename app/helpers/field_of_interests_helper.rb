@@ -1,0 +1,2 @@
+module FieldOfInterestsHelper
+end

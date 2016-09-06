@@ -1,0 +1,2 @@
+class FieldOfInterestsController < ApplicationController
+end
