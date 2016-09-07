@@ -24,6 +24,10 @@ class CorporateTrainingMessagesController < ApplicationController
     @corporate_training_message = CorporateTrainingMessage.find(params[:id])
   end
 
+  def corporate_training
+
+  end
+
   private
   
   def corporate_training_message_params
