@@ -16,6 +16,19 @@
               <div id="contact-form-result" data-notify-type="success" data-notify-msg="<i class=icon-ok-sign></i> Message Sent Successfully!"></div>
 
               <%= form_for @corporate_training_message do |f|  %>
+                <% if @corporate_training_message.errors.any? %>
+                  <div class="alert alert-dismissible alert-warning center-warning">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <h2>Oops! You forgot to fill out
+                      <%= pluralize(@corporate_training_message.errors.count, "field") %>:
+                    </h2>
+                    <ul>
+                      <% @corporate_training_message.errors.full_messages.each do |msg| %>
+                        <h4><%= msg %></h4>
+                      <% end %>
+                    </ul>
+                  </div>
+                <% end %>
 
               <div class="form-process"></div>
 
@@ -46,7 +59,7 @@
 
               <div class="col_one_third col_last">
                 <%= f.label :city, class: "template-contactform-name" %>
-                <%= f.text_field :city, class: "sm-form-control required" %>
+                <%= f.select(:city, options_for_select([["Chicago"], ["New York City"], ["San Francisco"]]), class: "sm-form-control required") %>
               </div>
 
               <div class="col_one_third">

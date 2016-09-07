@@ -15,7 +15,6 @@ class CorporateTrainingMessagesController < ApplicationController
       AcltcMailer.corporate_training_message_reply(@corporate_training_message).deliver_now
       redirect_to contacts_thank_you_path
     else
-      flash[:success] = "Unable to send your message!"
       render :new
     end
   end
