@@ -1,4 +1,7 @@
 class CorporateTrainingMessagesController < ApplicationController
+  # before_action :authenticate_admin!, except: [:new, :create, :corporate_training]
+  invisible_captcha only: [:create], honeypot: :subtitle
+
   def index
     @corporate_training_messages = CorporateTrainingMessage.all
   end
