@@ -1,7 +1,6 @@
 <div class="marquee corporate-training-background-image">
   <div id = "marquee" class="container">
     <div class="row">
-
       <div class="marquee-content clearfix">
         <div class="col-md-4">
           <img class="logo" src="<%= asset_path 'acltc-logo-180.png'%>">
@@ -16,111 +15,110 @@
           </div>
         </div>
       </div> <!-- Ends row for Corporate Training Intro" -->
+    </div>
+  </div>
+</div>
 
-      <div class="our-program-wrapper page-wrapper">
-        <div class="home-section">
-          <div class="row">
-            <div class="col-md-12 our-program">
-              <div class="section-header">
-                <h2 class = "actualize-logo">Corporate Training Program</h2>
-              </div>
-              <div class="phase">
+<div class="our-program-wrapper page-wrapper">
+  <div class="home-section">
+    <div class="row">
+      <div class="col-md-12 our-program">
+        <div class="section-header">
+          <h2 class = "actualize-logo">Corporate Training Program</h2>
+        </div>
+        <div class="phase">
+          <div class="phase-block col-6-xs phase-border">
+            <div class="phase-point-right"></div>
+              <h2>Training and Coaching</h2>
+              <h3>In Class Instruction</h3>
+              <p>ACLTC Corporate Training focuses on the client's production and revenue goals by providing a rich curriculum and thoughtful instruction developed with best education practices.</p>
+              <p>Training is the foundation that produces independent full-stack developers and prepares them for professional work.</p>
+          </div>
+          <div class="phase-block col-6-md">
+            <img class="philosophy-icon" src="<%= asset_path 'corporate_training_peter.png'%>">
+          </div>
+        </div>
+        <div class="phase">
+          <div class="phase-block col-6-md phase-border">
+            <div class="phase-point-right"></div>
+              <h2>Learning Outcomes</h2>
+              <h3>Functional Prototypes</h3>
+              <p>ACLTC services ensure that independent developers function as reflective practitioners and continue to refine their skills and appitude. Developers will be able to build prototypes independently and deploy applications to a working environment.</p>
+          </div>
+          <div class="phase-block col-6-md">
+            <img class="philosophy-icon" src="<%= asset_path 'corporate_training_terry.png'%>">
+          </div>
+        </div>
+      </div> <!-- col-12 -->
+    </div> <!-- /row -->
+    <div class="row">
+      <div class="col-12-md centered">
+        <div class="col-md-12 centered">
+          <%= link_to "Apply Now", new_corporate_training_message_path, class: "btn", id: "top-application-button" %>
+        </div>
+      </div>
+    </div>
+  </div> <!-- home-section -->
+</div> <!-- our-program-wrapper close corporate training description-->
 
-
-                <div class="phase-block col-6-xs phase-border">
-                  <div class="phase-point-right"></div>
-                    <h2>Training and Coaching</h2>
-                    <h3>In Class Instruction</h3>
-                    <p>ACLTC Corporate Training focuses on the client's production and revenue goals by providing a rich curriculum and thoughtful instruction developed with best education practices.</p>
-                    <p>Training is the foundation that produces independent full-stack developers and prepares them for professional work.</p>
-                </div>
-                <div class="phase-block col-6-md">
-                  <img class="philosophy-icon" src="<%= asset_path 'corporate_training_peter.png'%>">
-                </div>
-              </div>
-              <div class="phase">
-                <div class="phase-block col-6-md phase-border">
-                  <div class="phase-point-right"></div>
-                    <h2>Learning Outcomes</h2>
-                    <h3>Functional Prototypes</h3>
-                    <p>ACLTC services ensure that independent developers function as reflective practitioners and continue to refine their skills and appitude. Developers will be able to build prototypes independently and deploy applications to a working environment.</p>
-                </div>
-                <div class="phase-block col-6-md">
-                  <img class="philosophy-icon" src="<%= asset_path 'corporate_training_terry.png'%>">
-                </div>
-              </div>
-            </div> <!-- col-12 -->
-          </div> <!-- /row -->
-          <div class="row">
-            <div class="col-12-md centered">
-              <div class="col-md-12 centered">
-                <%= link_to "Apply Now", new_corporate_training_message_path, class: "btn", id: "top-application-button" %>
-              </div>
+<div class="curriculum-wrapper page-wrapper">
+  <div class="home-section">
+    <div class="row">
+      <div class="col-md-12 skills">
+        <div class="section-header">
+          <h2 class = "actualize-logo-circular"> Corporate Training Curriculum</h2>
+          <p>Gain the skills you need to land a full-time entry-level web development position.  Actualize teaches the in-demand skills you need to build interactive website and web applications. In just four months, you'll learn the fundamentals of:</p>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="skill gray-skill-wrapper border-bottom-aqua">
+              <img class="curriculum-icon" src="<%= asset_path 'curriculum-programming-icon.png'%>">
+              <h3>Core Programming Skills</h3>
+            </div>
+            <div class="skill-list">
+            Ruby<br />
+            OOP<br />
+            Data Structures and Algorithms
             </div>
           </div>
-        </div> <!-- home-section -->
-      </div> <!-- our-program-wrapper close corporate training description-->
-
-      <div class="curriculum-wrapper page-wrapper">
-        <div class="home-section">
-          <div class="row">
-            <div class="col-md-12 skills">
-              <div class="section-header">
-                <h2 class = "actualize-logo-circular"> Corporate Training Curriculum</h2>
-                <p>Gain the skills you need to land a full-time entry-level web development position.  Actualize teaches the in-demand skills you need to build interactive website and web applications. In just four months, you'll learn the fundamentals of:</p>
-              </div>
-
-              <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-3">
-                  <div class="skill gray-skill-wrapper border-bottom-aqua">
-                    <img class="curriculum-icon" src="<%= asset_path 'curriculum-programming-icon.png'%>">
-                    <h3>Core Programming Skills</h3>
-                  </div>
-                  <div class="skill-list">
-                  Ruby<br />
-                  OOP<br />
-                  Data Structures and Algorithms
-                  </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-3">
-                  <div class="skill gray-skill-wrapper border-bottom-blue">
-                    <img class="curriculum-icon" src="<%= asset_path 'curriculum-backend-icon.png'%>">
-                    <h3>Back End Development</h3>
-                  </div>
-                  <div class="skill-list">
-                    Rails<br />
-                    APIs<br />
-                    Microservices
-                  </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-3">
-                  <div class="skill gray-skill-wrapper border-bottom-orange">
-                    <img class="curriculum-icon" src="<%= asset_path 'curriculum-databases-icon.png'%>">
-                    <h3>Databases <br />&nbsp; </h3>
-                  </div>
-                  <div class="skill-list">
-                  SQL<br />
-                  Postgres<br />
-                  Database Design
-                  </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-3">
-                  <div class="skill gray-skill-wrapper border-bottom-yellow">
-                    <img class="curriculum-icon" src="<%= asset_path 'curriculum-frontend-icon.png'%>">
-                    <h3>Front End Development</h3>
-                  </div>
-                  <div class="skill-list">
-                    HTML<br />
-                    CSS<br />
-                    JavaScript<br />
-                    AngularJS
-                  </div>
-                </div>
-              </div>
-              <br />
-              <p class ="after-word">We'll also delve into important concepts such as Git, Test Driven Development, and the soft skills you need to land a web developer position. At Actualize, we focus on the skills that employers are looking for now.</p><br /><br />           
-
-            </div> <!-- col-12 -->
-          </div> <!-- row -->
-        </div> <!-- home section -->
-      </div><!-- curriculum wrapper close -->
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="skill gray-skill-wrapper border-bottom-blue">
+              <img class="curriculum-icon" src="<%= asset_path 'curriculum-backend-icon.png'%>">
+              <h3>Back End Development</h3>
+            </div>
+            <div class="skill-list">
+              Rails<br />
+              APIs<br />
+              Microservices
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="skill gray-skill-wrapper border-bottom-orange">
+              <img class="curriculum-icon" src="<%= asset_path 'curriculum-databases-icon.png'%>">
+              <h3>Databases <br />&nbsp; </h3>
+            </div>
+            <div class="skill-list">
+            SQL<br />
+            Postgres<br />
+            Database Design
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="skill gray-skill-wrapper border-bottom-yellow">
+              <img class="curriculum-icon" src="<%= asset_path 'curriculum-frontend-icon.png'%>">
+              <h3>Front End Development</h3>
+            </div>
+            <div class="skill-list">
+              HTML<br />
+              CSS<br />
+              JavaScript<br />
+              AngularJS
+            </div>
+          </div>
+        </div>
+        <br />
+        <p class ="after-word">We'll also delve into important concepts such as Git, Test Driven Development, and the soft skills you need to land a web developer position. At Actualize, we focus on the skills that employers are looking for now.</p><br /><br />           
+      </div> <!-- col-12 -->
+    </div> <!-- row -->
+  </div> <!-- home section -->
+</div><!-- curriculum wrapper close -->
