@@ -25,7 +25,7 @@ class CorporateTrainingMessagesController < ApplicationController
   end
 
   def corporate_training
-
+    render :layout => 'home_application'
   end
 
   private
