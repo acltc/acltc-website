@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .corporate-training-background-image {
-  background-image: url("/assets/corporate_training_background.png") !important;
+  background-image: image-url("corporate_training_background.png") !important;
   height: 648px;
   background-repeat: no-repeat;
   background-size: cover;
