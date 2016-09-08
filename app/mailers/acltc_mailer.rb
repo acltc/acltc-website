@@ -13,7 +13,7 @@ class AcltcMailer < ApplicationMailer
 
   def corporate_training_message_reply(corporate_training_message)
     @corporate_training_message = corporate_training_message
-    attachments.inline['acltc-logo-180.png'] = File.read('/assets/images/acltc-logo-180.png')
+    # attachments.inline['acltc-logo-180.png'] = File.read('/assets/images/acltc-logo-180.png')
     mail(from: "hello@anyonecanlearntocode.com", to: @corporate_training_message.email, subject: 'Your Corporate Training Message To ACLTC')
   end
 

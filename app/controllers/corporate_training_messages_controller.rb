@@ -8,6 +8,7 @@ class CorporateTrainingMessagesController < ApplicationController
 
   def new
     @corporate_training_message = CorporateTrainingMessage.new
+    @field_of_interests = FieldOfInterest.all
   end
 
   def create
