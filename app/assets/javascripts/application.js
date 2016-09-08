@@ -20,4 +20,6 @@
 //= require moment
 //= require js.cookie
 //= require bootstrap-datetimepicker
+//= require chosen.jquery.min
+//= require chosen.proto.min
 //= require_tree .
