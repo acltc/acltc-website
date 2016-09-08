@@ -73,7 +73,7 @@
           </div> -->
           <div class="col_full">
             <%= f.label :field_of_interest, "Fields of Interest", class: "template-contactform-name" %>
-            <%= f.collection_select(:field_of_interest_ids, FieldOfInterest.all, :id, :name, {}, {:prompt => 'Select Fields', class: "sm-form-control corp-select required", multiple: true }) %>
+            <%= f.collection_select(:field_of_interest_ids, FieldOfInterest.all, :id, :name, {}, {:prompt => 'Select Fields', class: "sm-form-control corp-select required chosen-select", multiple: true }) %>
           </div>
 
           <div class="clear"></div>
@@ -98,4 +98,10 @@
         </div>
       </div>
 
-</section><!-- #content end
+</section><!-- #content end -->
+<script>
+$(function(){
+    $(".chosen-select").chosen();
+});
+</script>
+
