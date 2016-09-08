@@ -19,3 +19,11 @@
     min-width: 6%;
   }
 }
+
+.chosen-container {
+  border: 2px solid #ddd;
+
+  .chosen-choices {
+    border: 0;
+  }
+}
