@@ -1,16 +1,6 @@
 // Place all the styles related to the corporate_training_messages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.corporate-training-background-image {
-  background-image: image-url("corporate_training_background.png");
-  // background-image: url("<%= asset_path('corporate_training_background.jpg')%>");
-  height: 648px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin-top: -2px;
-  background-position: top;
-}
-
 .corp-start-date {
   input {
     height: 41px;
