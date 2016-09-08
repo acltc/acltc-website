@@ -3,7 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .corporate-training-background-image {
   // background-image: url("corporate_training_background.png") !important;
-  background-image: url("<%= asset_path('corporate_training_background.jpg')%>");
+  background-image: url("/assets/corporate_training_background.png");
+  // background-image: url("<%= asset_path('corporate_training_background.jpg')%>");
   height: 648px;
   background-repeat: no-repeat;
   background-size: cover;
