@@ -14,4 +14,8 @@
 .collection-check-box {
   display: inline-block;
   margin: 10px;
+
+  input {
+    width: 6%;
+  }
 }
