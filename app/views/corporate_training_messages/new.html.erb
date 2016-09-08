@@ -4,104 +4,94 @@
     <meta name="description" content='Reach the Anyone Can Learn To Code / Actualize team with additional questions.'>
   <% end %>
   <section id="content">
-
     <div class="content-wrap">
-
       <div class="container clearfix">
-
-            <!-- Contact Form
-            ============================================= -->
-            <div class="col_half">
-            
-              <div id="contact-form-result" data-notify-type="success" data-notify-msg="<i class=icon-ok-sign></i> Message Sent Successfully!"></div>
-
-              <%= form_for @corporate_training_message do |f|  %>
-                <% if @corporate_training_message.errors.any? %>
-                  <div class="alert alert-dismissible alert-warning center-warning">
-                    <button type="button" class="close" data-dismiss="alert">×</button>
-                    <h2>Oops! You forgot to fill out
-                      <%= pluralize(@corporate_training_message.errors.count, "field") %>:
-                    </h2>
-                    <ul>
-                      <% @corporate_training_message.errors.full_messages.each do |msg| %>
-                        <h4><%= msg %></h4>
-                      <% end %>
-                    </ul>
-                  </div>
-                <% end %>
-
-              <div class="form-process"></div>
-
-              <div class="col_one_third">
-                <%= f.label :company_name, class: "template-contactform-name" %>
-                <%= f.text_field :company_name, class: "sm-form-control required" %>
+        <!-- Contact Form
+        ============================================= -->
+        <div class="col_half">
+          <div id="contact-form-result" data-notify-type="success" data-notify-msg="<i class=icon-ok-sign></i> Message Sent Successfully!"></div>
+          <%= form_for @corporate_training_message do |f|  %>
+            <% if @corporate_training_message.errors.any? %>
+              <div class="alert alert-dismissible alert-warning center-warning">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <h2>Oops! You forgot to fill out
+                  <%= pluralize(@corporate_training_message.errors.count, "field") %>:
+                </h2>
+                <ul>
+                  <% @corporate_training_message.errors.full_messages.each do |msg| %>
+                    <h4><%= msg %></h4>
+                  <% end %>
+                </ul>
               </div>
+            <% end %>
 
-              <div class="col_one_third">
-                <%= f.label :rep_name, "Reprentative Name", class: "template-contactform-name" %>
-                <%= f.text_field :rep_name, class: "sm-form-control required" %>
-              </div>
+          <div class="form-process"></div>
 
-              <div class="col_one_third col_last">
-                <%= f.label :email, class: "template-contactform-name" %>
-                <%= f.email_field :email, class: "sm-form-control required" %>
-              </div>
-
-              <div class="col_one_third">
-                <%= f.label :phone, class: "template-contactform-name" %>
-                <%= f.text_field :phone, class: "sm-form-control required" %>
-              </div>
-
-              <div class="col_one_third">
-                <%= f.label :team_size, class: "template-contactform-name" %>
-                <%= f.text_field :team_size, class: "sm-form-control required" %>
-              </div>
-
-              <div class="col_one_third col_last">
-                <%= f.label :city, class: "template-contactform-name" %>
-                <%= f.select(:city, options_for_select([["Chicago"], ["New York City"], ["San Francisco"]]), class: "sm-form-control required") %>
-              </div>
-
-              <div class="col_one_third">
-                <%= f.label :date, "Start Date", class: "template-contactform-name" %>
-                <%= f.date_field :date, class: "sm-form-control required" %>
-              </div>
-
-              <div class="field">
-                <%= f.label "Fields of Interest" %><br />
-                <%= f.collection_check_boxes :field_of_interest_ids, FieldOfInterest.all, :id, :name do |b| %>
-                  <div class="collection-check-box">
-                    <%= b.check_box %>
-                    <%= b.label %>
-                  </div>
-                <% end %>
-              </div>
-
-              <div class="clear"></div>
-
-              <div class="col_full">
-                <%= f.label :message, class: "template-contactform-message" %>
-                <%= f.text_area :message, class: "required sm-form-control" %>
-              </div>
-
-              <%= f.invisible_captcha :subtitle %>
-
-              <div class="col_full">
-                <%= f.submit "Submit Message", class: "button button-3d nomargin nopadding" %>
-              </div>
-
-              <% end %>
-
-            <div class="clear"></div>
-
-            <!-- Contact Info
-            ============================================= -->
-            <div class="row clear-bottommargin">
-
-            </div><!-- Contact Info End -->
-
+          <div class="col_full">
+            <%= f.label :company_name, class: "template-contactform-name" %>
+            <%= f.text_field :company_name, class: "sm-form-control required" %>
           </div>
 
+          <div class="col_one_third">
+            <%= f.label :rep_name, "Reprentative Name", class: "template-contactform-name" %>
+            <%= f.text_field :rep_name, class: "sm-form-control required" %>
+          </div>
+
+          <div class="col_one_third">
+            <%= f.label :email, class: "template-contactform-name" %>
+            <%= f.email_field :email, class: "sm-form-control required" %>
+          </div>
+
+          <div class="col_one_third col_last">
+            <%= f.label :phone, class: "template-contactform-name" %>
+            <%= f.text_field :phone, class: "sm-form-control required" %>
+          </div>
+
+          <div class="col_one_third">
+            <%= f.label :team_size, class: "template-contactform-name" %>
+            <%= f.text_field :team_size, class: "sm-form-control required" %>
+          </div>
+
+          <div class="col_one_third corp-start-date">
+            <%= f.label :date, "Start Date", class: "template-contactform-name" %>
+            <%= f.date_field :date, class: "sm-form-control required" %>
+          </div>
+
+          <div class="col_one_third col_last">
+            <%= f.label :city, class: "template-contactform-name" %>
+            <%= f.select(:city, options_for_select([["Chicago"], ["New York City"], ["San Francisco"]]), {}, class: "sm-form-control corp-city required") %>
+          </div>
+
+          <div class="field">
+            <%= f.label "Fields of Interest" %><br />
+            <%= f.collection_check_boxes :field_of_interest_ids, FieldOfInterest.all, :id, :name do |b| %>
+              <div class="collection-check-box">
+                <%= b.check_box %>
+                <%= b.label %>
+              </div>
+            <% end %>
+          </div>
+
+          <div class="clear"></div>
+
+          <div class="col_full">
+            <%= f.label :message, class: "template-contactform-message" %>
+            <%= f.text_area :message, class: "required sm-form-control" %>
+          </div>
+
+          <%= f.invisible_captcha :subtitle %>
+
+          <div class="col_full">
+            <%= f.submit "Submit Message", class: "button button-3d nomargin nopadding" %>
+          </div>
+
+          <% end %>
+
+          <div class="clear"></div>
+          <!-- Contact Info
+          ============================================= -->
+          <div class="row clear-bottommargin"></div><!-- Contact Info End -->
         </div>
+      </div>
 
 </section><!-- #content end
