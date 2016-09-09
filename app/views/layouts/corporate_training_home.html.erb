@@ -1,93 +1,86 @@
 <!--Theme places elements that can't easily abstracted into specific view, hence the specific layout -->
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Part-time coding bootcamp & apprenticeship | Actualize</title>
-  <meta name="google-site-verification" content="DNbAIJwrmZGROVMiSvR2nvKeFtxr35P9sXzxm-FdN6s" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <meta name="description" content="Become a web developer in 15 weeks without quitting your day job. Actualize is a part-time coding bootcamp with a guaranteed four-month apprenticeship.">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-  <%= stylesheet_link_tag    'home', media: 'all' %>
-  <%= favicon_link_tag %>
+  <head>
+    <title>Part-time coding bootcamp & apprenticeship | Actualize</title>
+    <meta name="google-site-verification" content="DNbAIJwrmZGROVMiSvR2nvKeFtxr35P9sXzxm-FdN6s" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Become a web developer in 15 weeks without quitting your day job. Actualize is a part-time coding bootcamp with a guaranteed four-month apprenticeship.">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <%= stylesheet_link_tag    'home', media: 'all' %>
+    <%= favicon_link_tag %>
 
-  <%= csrf_meta_tags %>
-  <link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700' rel='stylesheet' type='text/css'>
-</head>
-<body class="stretched">
-<div class="container">
-</div>
-    <!-- Document Wrapper
-    ============================================= -->
-    <div id="wrapper" class="clearfix">
-
-
-        <!-- Header
-        ============================================= -->
-        <header id="header" class="transparent-header">
-
-          <div id="header-wrap">
-
-                    <!-- Primary Navigation
-              ============================================= -->
-              <nav class="navbar navbar-default navigation">
-                <div class="container">
-                  <!-- Brand and toggle get grouped for better mobile display -->
-                  <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                      <span class="sr-only">Toggle navigation</span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                    </button>
+    <%= csrf_meta_tags %>
+    <link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700' rel='stylesheet' type='text/css'>
+  </head>
+  <body class="stretched">
+  <div class="container">
+  </div>
+      <!-- Document Wrapper
+      ============================================= -->
+      <div id="wrapper" class="clearfix">
+          <!-- Header
+          ============================================= -->
+          <header id="header" class="transparent-header">
+            <div id="header-wrap">
+                      <!-- Primary Navigation
+                ============================================= -->
+                <nav class="navbar navbar-default navigation">
+                  <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                      </button>
                         <a class="navbar-brand" href="/">
                           <img class="logo" src="<%= asset_path 'acltc-logo-180.png'%>">
                         </a>
                         <!-- <a href="/" class="retina-logo" data-dark-logo="assets/theme/logo-dark@2x.png"><img src="assets/theme/logo@2x.png" alt="Canvas Logo"></a> -->
-                  </div>
+                    </div>
 
-                  <!-- Collect the nav links, forms, and other content for toggling -->
-        <%= render 'shared/navbar' %>
-                  
-                </div><!-- /.container-fluid -->
-              </nav>
-          </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <%= render 'shared/navbar' %>
+                  </div><!-- /.container-fluid -->
+                </nav>
+            </div>
+          </header><!-- #header end -->
 
-        </header><!-- #header end -->
+          <%= yield %>
 
+          <%= render 'shared/inspectlet' %>
+          <%= render 'shared/ga' %>
+          <%= render 'shared/footer' %>
 
-        <%= yield %>
+          </div><!-- #wrapper end -->
 
-        <%= render 'shared/inspectlet' %>
-        <%= render 'shared/ga' %>
-        <%= render 'shared/footer' %>
+          <%= javascript_include_tag 'application' %>
+      <!-- Go To Top
+      ============================================= -->
+      <div id="gotoTop" class="icon-angle-up"></div>
 
-        </div><!-- #wrapper end -->
+      <script>
+        $('.carousel').carousel({
+            interval: 6000
+        })
+      </script>
+      <!-- Drip -->
+      <script type="text/javascript">
+        var _dcq = _dcq || [];
+        var _dcs = _dcs || {};
+        _dcs.account = '7528430';
 
-        <%= javascript_include_tag 'application' %>
-    <!-- Go To Top
-    ============================================= -->
-    <div id="gotoTop" class="icon-angle-up"></div>
-
-    <script>
-    $('.carousel').carousel({
-        interval: 6000
-    })
-    </script>
-    <!-- Drip -->
-    <script type="text/javascript">
-      var _dcq = _dcq || [];
-      var _dcs = _dcs || {};
-      _dcs.account = '7528430';
-
-      (function() {
-        var dc = document.createElement('script');
-        dc.type = 'text/javascript'; dc.async = true;
-        dc.src = '//tag.getdrip.com/7528430.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(dc, s);
-      })();
-    </script>
-    <!-- End Drip --> 
-  </body>
+        (function() {
+          var dc = document.createElement('script');
+          dc.type = 'text/javascript'; dc.async = true;
+          dc.src = '//tag.getdrip.com/7528430.js';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(dc, s);
+        })();
+      </script>
+      <!-- End Drip --> 
+    </body>
   </html>
