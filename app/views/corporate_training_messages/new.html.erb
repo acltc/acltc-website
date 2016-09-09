@@ -8,7 +8,7 @@
       <div class="container clearfix">
         <!-- Contact Form
         ============================================= -->
-        <div class="col_half">
+        <div class=">
           <div id="contact-form-result" data-notify-type="success" data-notify-msg="<i class=icon-ok-sign></i> Message Sent Successfully!"></div>
           <%= form_for @corporate_training_message do |f|  %>
             <% if @corporate_training_message.errors.any? %>
@@ -32,17 +32,22 @@
             <%= f.text_field :company_name, class: "sm-form-control required" %>
           </div>
 
-          <div class="col_one_third">
-            <%= f.label :rep_name, "Reprentative Name", class: "template-contactform-name" %>
-            <%= f.text_field :rep_name, class: "sm-form-control required" %>
+          <div class="col_half" >
+            <%= f.label :company_contact, "Reprentative Name", class: "template-contactform-name" %>
+            <%= f.text_field :company_contact, class: "sm-form-control required" %>
           </div>
 
-          <div class="col_one_third">
+          <div class="col_half col_last" >
+            <%= f.label :company_contact_title, "Reprentative Title", class: "template-contactform-name" %>
+            <%= f.text_field :company_contact_title, class: "sm-form-control required" %>
+          </div>
+
+          <div class="col_half" >
             <%= f.label :email, class: "template-contactform-name" %>
             <%= f.email_field :email, class: "sm-form-control required" %>
           </div>
 
-          <div class="col_one_third col_last">
+          <div class="col_half col_last" >
             <%= f.label :phone, class: "template-contactform-name" %>
             <%= f.text_field :phone, class: "sm-form-control required" %>
           </div>
