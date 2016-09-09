@@ -63,7 +63,7 @@
           </div>
           
           <div class="col_full select-field-dropdown">
-            <%= f.label :field_of_interest, "Fields of Interest", class: "template-contactform-name" %>
+            <%= f.label :field_of_interest, "Languages and Frameworks", class: "template-contactform-name" %>
             <%= f.collection_select(:field_of_interest_ids, FieldOfInterest.all, :id, :name, {}, {:prompt => 'Select Fields', class: "sm-form-control corp-select required chosen-select", id: "corp-select", multiple: true }) %>
           </div>
 
