@@ -61,16 +61,7 @@
             <%= f.label :city, class: "template-contactform-name" %>
             <%= f.select(:city, options_for_select([["Chicago"], ["New York City"], ["San Francisco - Bay Area"]]), {}, class: "sm-form-control corp-select required") %>
           </div>
-
-          <!-- <div class="col_full corp-checkboxes">
-            <#%= f.label "Fields of Interest" %><br />
-            <#%= f.collection_check_boxes :field_of_interest_ids, FieldOfInterest.all, :id, :name do |b| %>
-              <div class="collection-check-box col_one_sixth">
-                <#%= b.check_box %>
-                <#%= b.label %>
-              </div>
-            <#% end %>
-          </div> -->
+          
           <div class="col_full select-field-dropdown">
             <%= f.label :field_of_interest, "Fields of Interest", class: "template-contactform-name" %>
             <%= f.collection_select(:field_of_interest_ids, FieldOfInterest.all, :id, :name, {}, {:prompt => 'Select Fields', class: "sm-form-control corp-select required chosen-select", id: "corp-select", multiple: true }) %>
