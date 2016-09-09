@@ -1,6 +1,7 @@
 class CorporateTrainingMessagesController < ApplicationController
   # before_action :authenticate_admin!, except: [:new, :create, :corporate_training]
   invisible_captcha only: [:create], honeypot: :subtitle
+  layout 'corporate_training_messages', except: [:corporate_training]
 
   def index
     @corporate_training_messages = CorporateTrainingMessage.all
@@ -28,7 +29,7 @@ class CorporateTrainingMessagesController < ApplicationController
   end
 
   def corporate_training
-    render :layout => 'home_application'
+    render :layout => 'corporate_training_home'
   end
 
   private

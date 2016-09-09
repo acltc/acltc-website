@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <% if content_for?(:head) %>
+    <%= yield(:head) %>
+  <% else %>
+    <title> Actualize | Part-time coding bootcamp & apprenticeship </title>
+    <meta name="description" content='Become a web developer in 15 weeks without quitting your day job. Actualize is a part-time coding bootcamp with a guaranteed four-month apprenticeship.'>
+  <% end %>
+ <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <%= stylesheet_link_tag    'application', media: 'all'  %>
+  <%= favicon_link_tag %>
+   <link href='https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <%= javascript_include_tag 'application' %>
+</head>
+<body class="stretched">
+
+  <!-- Document Wrapper
+  ============================================= -->
+  <div id="container" class="clearfix">
+
+
+    <header id="header" class="transparent-header no-sticky">
+
+      <div id="header-wrap">
+
+                   <!-- Primary Navigation
+             ============================================= -->
+             <nav class="navbar navbar-default navigation">
+               <div class="container">
+                 <!-- Brand and toggle get grouped for better mobile display -->
+                 <div class="navbar-header">
+                   <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                     <span class="sr-only">Toggle navigation</span>
+                     <span class="icon-bar"></span>
+                     <span class="icon-bar"></span>
+                     <span class="icon-bar"></span>
+                   </button>
+                       <a class="navbar-brand" href="/">
+                         <img class="logo" src="<%= asset_path 'acltc-logo-180.png'%>">
+                       </a>
+                       <!-- <a href="/" class="retina-logo" data-dark-logo="assets/theme/logo-dark@2x.png"><img src="assets/theme/logo@2x.png" alt="Canvas Logo"></a> -->
+                 </div>
+
+                 <!-- Collect the nav links, forms, and other content for toggling -->
+       <%= render 'shared/navbar' %>
+                 
+               </div><!-- /.container-fluid -->
+             </nav>
+
+      </div>
+
+    </header><!-- #header end -->
+
+    <% flash.each do |name, message| %>
+      <div class="alert alert-<%= name %> alert-dismissible fade in" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</span><span class="sr-only">Close</span></button>
+        <%= message %>
+      </div>
+    <% end %>
+
+    <%= yield %>
+
+
+    <%= render 'shared/inspectlet' %>
+    <%= render 'shared/ga' %>
+    <%= render 'shared/footer' %>
+
+  </div><!-- #wrapper end -->
+
+
+  <!-- Go To Top
+  ============================================= -->
+  <div id="gotoTop" class="icon-angle-up"></div>
+  <script src="<%= asset_path 'theme/functions.js'%>"></script>
+  <div class="modal fade" id="profile-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"></div>
+</body>
+</html>
