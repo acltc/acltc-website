@@ -43,6 +43,25 @@
           </div>
 
           <div class="col_half" >
+            <%= f.label :address_1, "Address Line One", class: "template-contactform-name" %>
+            <%= f.text_field :address_1, class: "sm-form-control required" %>
+          </div>
+
+          <div class="col_half col_last" >
+            <%= f.label :address_2, "Address Line Two", class: "template-contactform-name" %>
+            <%= f.text_field :address_2, class: "sm-form-control required" %>
+          </div>
+
+          <div class="col_half" >
+            <%= f.label :company_city, "Company City", class: "template-contactform-name" %>
+            <%= f.text_field :company_city, class: "sm-form-control required" %>
+          </div>
+          <div class="col_half col_last" >
+            <%= f.label :state, class: "template-contactform-name" %>
+            <%= f.select(:state, options_for_select(us_states), {prompt: "Select State"}, { class: "sm-form-control corp-select required"} ) %>
+          </div>
+
+          <div class="col_half" >
             <%= f.label :email, class: "template-contactform-name" %>
             <%= f.email_field :email, class: "sm-form-control required" %>
           </div>
@@ -63,8 +82,8 @@
           </div>
 
           <div class="col_one_third col_last">
-            <%= f.label :city, class: "template-contactform-name" %>
-            <%= f.select(:city, options_for_select([["Chicago"], ["New York City"], ["San Francisco - Bay Area"]]), {}, class: "sm-form-control corp-select required") %>
+            <%= f.label :training_location, class: "template-contactform-name" %>
+            <%= f.select(:training_location, options_for_select([["Chicago"], ["New York City"], ["San Francisco - Bay Area"]]), {}, class: "sm-form-control corp-select required") %>
           </div>
           
           <div class="col_full select-field-dropdown">

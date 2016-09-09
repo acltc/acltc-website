@@ -2,7 +2,17 @@ You've received a message via the ACLTC corporate training form:
 
 Company Name: <%= @corporate_training_message.company_name %>
 
-Representative Name: <%= @corporate_training_message.rep_name %>
+Address One: <%= @corporate_training_message.address_1 %>
+
+Address Two: <%= @corporate_training_message.address_2 %>
+
+Company City: <%= @corporate_training_message.company_city %>
+
+State: <%= @corporate_training_message.state %>
+
+Company Contact: <%= @corporate_training_message.company_contact %>
+
+Company Contact Title: <%= @corporate_training_message.company_contact_title %>
 
 Email: <%= @corporate_training_message.email %>
 
@@ -12,7 +22,7 @@ Team Size: <%= @corporate_training_message.team_size %>
 
 Start Date: <%= @corporate_training_message.date %>
 
-City: <%= @corporate_training_message.city %>
+Training Location: <%= @corporate_training_message.training_location %>
 
 Fields of Interest: 
 <% interests = "" %>

@@ -11,8 +11,28 @@
             <th><%= @corporate_training_message.company_name %></th> 
           </tr>
           <tr>
-            <th>Reprentative Name:</th>
-            <th><%= @corporate_training_message.rep_name %></th> 
+            <th>Address One:</th>
+            <th><%= @corporate_training_message.address_1 %></th> 
+          </tr>
+          <tr>
+            <th>Address Two:</th>
+            <th><%= @corporate_training_message.address_2 %></th> 
+          </tr>
+          <tr>
+            <th>City:</th>
+            <th><%= @corporate_training_message.company_city %></th> 
+          </tr>
+          <tr>
+            <th>State:</th>
+            <th><%= @corporate_training_message.state %></th> 
+          </tr>
+          <tr>
+            <th>Company Contact:</th>
+            <th><%= @corporate_training_message.company_contact%></th> 
+          </tr>
+          <tr>
+            <th>Company Contact Title:</th>
+            <th><%= @corporate_training_message.company_contact_title %></th> 
           </tr>
           <tr>
             <th>Email:</th>
@@ -31,11 +51,11 @@
             <th><%= @corporate_training_message.friendly_start_date %></th> 
           </tr>
           <tr>
-            <th>City:</th>
-            <th><%= @corporate_training_message.city %></th> 
+            <th>Training Location:</th>
+            <th><%= @corporate_training_message.training_location %></th> 
           </tr>
           <tr>
-            <th>Fields of Interest:</th>
+            <th>Languages and Frameworks:</th>
             <% interests = "" %>
             <% @corporate_training_message.field_of_interests.each do |interest| %>
               <% interests = interests + interest.name + " " %>
