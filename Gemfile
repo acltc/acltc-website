@@ -35,6 +35,7 @@ gem 'groupdate'
 #datetime picker
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.37'
+gem 'bootstrap-datepicker-rails', '~> 1.6', '>= 1.6.4.1'
 
 #ab test
 gem 'simple_abs'

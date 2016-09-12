@@ -15,6 +15,7 @@
 //= require theme/jquery.gmap
 //= require jquery_ujs
 //= require bootstrap
+//= require bootstrap-datepicker
 //= require parallax
 //= require prism
 //= require moment
