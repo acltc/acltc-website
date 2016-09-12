@@ -1,6 +1,6 @@
 class CorporateTrainingMessagesController < ApplicationController
-  # before_action :authenticate_admin!, except: [:new, :create, :corporate_training]
-  # before_action :authenticate_corporate_training_access, only: [:index]
+  before_action :authenticate_admin!, except: [:new, :create, :corporate_training]
+  before_action :authenticate_corporate_training_access, only: [:index]
   invisible_captcha only: [:create], honeypot: :subtitle
   layout 'corporate_training_messages', except: [:corporate_training]
 
