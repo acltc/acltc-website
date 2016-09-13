@@ -1678,7 +1678,7 @@ var SEMICOLON = SEMICOLON || {};
 					var element = $(this),
 						elementState = element.attr('data-state');
 
-					if( elementState != 'open' ){
+					if( elementState == 'open' ){
 						element.find('.togglec').hide();
 					} else {
 						element.find('.togglet').addClass("toggleta");
