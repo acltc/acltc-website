@@ -22,17 +22,24 @@
                         <li><%= link_to('Create FAQ', new_faq_path) if current_admin %></li>
                       </ul>
                       <div id="faqs" class="faqs">
-                        <% @faqs.each do |faq| %>             
-                        <div class="toggle faq faq-marketplace faq-authors">
-                          <div class="togglet"><i class="toggle-closed fa fa-plus"></i><i class="toggle-open fa fa-minus"></i><p class=" toggle-open faq-text"><%= faq.question %></p></div>
-                          <div class="togglec">
-                            <%= faq.answer.html_safe %>
-                            <%= link_to "| Edit", edit_faq_path(faq) if current_admin %>
-                            <%= link_to "| Delete", faq_path(faq), method: :delete, data: {:confirm => 'Are you sure?'} if current_admin %>
-                          </div>
-
-                        </div>
+         
+                        <% @faq_categories.each do |category| %>
+                          <div><h3 style="color:#0093B1;padding-bottom:5px;"><i><%= category.upcase %></i></h3></div>
+                          <% @faqs.each do |faq| %>
+                            <% if faq.category == category %>             
+                              <div class="toggle faq faq-marketplace faq-authors">
+                                <div class="togglet"><i class="toggle-closed fa fa-plus"></i><i class="toggle-open fa fa-minus"></i><p class=" toggle-open faq-text"><%= faq.question %></p></div>
+                                <div class="togglec">
+                                  <%= faq.answer.html_safe %>
+                                  <%= link_to "| Edit", edit_faq_path(faq) if current_admin %>
+                                  <%= link_to "| Delete", faq_path(faq), method: :delete, data: {:confirm => 'Are you sure?'} if current_admin %>
+                                </div>
+                              </div>
+                            <% end %>
+                          <% end %>
+                          <br>
                         <% end %>
+                      
                       </div>
 
 
