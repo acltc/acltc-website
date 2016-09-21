@@ -1,194 +1,254 @@
-<div class="marquee corporate-training-background-image">
-  <div id = "marquee" class="container">
-    <div class="row">
-      <div class="marquee-content clearfix">
-        <div class="col-md-4">
-          <img class="logo" src="<%= asset_path 'acltc-logo-180.png'%>">
-        </div>
-        <div class="col-md-8">
-          <h3>Streamline and accelerate the prototype-creation process to meet organizational and revenue goals</h3>
-        </div>
-        <p>ACLTC's Corporate Training Program is designed to augment your team's technical knowledge base and provide them with the tools, skills, and mindset needed to develop outcomes that meet and exceed clients' expectations.</p><br />
-        <div class="row">
+<div id="corporate-training-home-page">
+  <div class="marquee corporate-training-background-image">
+    <div id = "marquee" class="container">
+      <div class="row">
+        <div class="marquee-content clearfix">
           <div class="col-md-12">
+            <img class="logo corporate-logo" src="<%= asset_path 'corporate_training_logo.png'%>">
+          </div>
+          <div class="col-md-12">
+            <h3>Top-notch technical training on your team's schedule</h3><br>
+          </div>
+          <p>Our corporate training program is designed to empower your team with the skills, tools, and mindset needed to streamline and accelerate your prototype-creation process, satisfy your clients’ expectations, and meet your organizational and revenue goals.</p><br />
+          <div class="row">
+            <div class="col-md-12">
+              <%= link_to "Schedule Consultation", new_corporate_training_message_path, class: "btn", id: "top-application-button" %>
+            </div>
+          </div>
+        </div> <!-- Ends row for Corporate Training Intro" -->
+      </div>
+    </div>
+  </div>
+
+  <div class="our-program-wrapper page-wrapper">
+    <div class="home-section">
+      <div class="row">
+        <div class="col-md-12 our-program">
+          <div class="section-header">
+            <h2 class = "actualize-logo">Corporate Training Program</h2>
+          </div>
+          <div class="phase">
+            <div class="phase-block col-6-xs phase-border">
+              <div class="phase-point-right"></div>
+                <h2>Teaching Philosophy</h2><br>
+                <p>At Anyone Can Learn To Code, we are educators above all else. Our commitment to educational best practices and pedagogy enables our trainees to master a new skill in a short time and empowers them to continue learning and growing throughout their tech careers. All of our trainers are professional teachers as well as professional programmers, and we keep classes small so each developer-in-training gets the hands-on instruction he or she needs.</p>
+            </div>
+            <div class="phase-block col-6-md">
+              <img class="philosophy-icon" src="<%= asset_path 'corporate_training_ny_trevor.png'%>">
+            </div>
+          </div>
+          <div class="phase">
+            <div class="phase-block col-6-md phase-border">
+              <div class="phase-point-right"></div>
+                <h2>Customizable Program</h2><br>
+                <p>The ACLTC Corporate Training program is fully customizable based on your team’s needs and goals. We collaborate with you to design an ideal curriculum from our full stack of technologies and frameworks, focusing on your organization’s production and revenue goals, then work together to create a training schedule that fits your team’s timeline.</p>
+            </div>
+            <div class="phase-block col-6-md">
+              <img class="philosophy-icon" src="<%= asset_path 'corporate_training_terry.png'%>">
+            </div>
+          </div>
+          <div class="phase">
+            <div class="phase-block col-6-md phase-border">
+              <div class="phase-point-right"></div>
+                <h2>Outcomes</h2><br>
+                <p>After completing our training program, your team of developers will be proficient in all technologies and frameworks taught throughout the course, familiar with industry best practices, and, have the skills and mindset needed to work efficiently and effectively together to produce excellent outcomes for your organization and for your clients. </p>
+            </div>
+            <div class="phase-block col-6-md">
+              <img class="philosophy-icon" src="<%= asset_path 'corporate_training_terry.png'%>">
+            </div>
+          </div>
+        </div> <!-- col-12 -->
+      </div> <!-- /row -->
+      <div class="row">
+        <div class="col-12-md centered">
+          <div class="col-md-12 centered">
             <%= link_to "Schedule Consultation", new_corporate_training_message_path, class: "btn", id: "top-application-button" %>
           </div>
         </div>
-      </div> <!-- Ends row for Corporate Training Intro" -->
-    </div>
-  </div>
-</div>
+      </div>
+    </div> <!-- home-section -->
+  </div> <!-- our-program-wrapper close corporate training description-->
 
-<div class="our-program-wrapper page-wrapper">
-  <div class="home-section">
-    <div class="row">
-      <div class="col-md-12 our-program">
-        <div class="section-header">
-          <h2 class = "actualize-logo">Corporate Training Program</h2>
+  <div class="curriculum-wrapper page-wrapper">
+    <div class="home-section">
+      <div class="row">
+        <div class="col-md-12 skills">
+          <div class="section-header">
+            <h2 class = "actualize-logo-circular">Curriculum</h2>
+            <p>Learn the fundamentals and gain proficiency with:</p>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="skill gray-skill-wrapper border-bottom-yellow">
+                <img class="curriculum-icon" src="<%= asset_path 'ruby_icon.png'%>">
+                <h3>Ruby</h3>
+              </div> 
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="skill gray-skill-wrapper border-bottom-yellow">
+                <img class="curriculum-icon" src="<%= asset_path 'rails_icon.png'%>">
+                <h3>Rails</h3>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="skill gray-skill-wrapper border-bottom-yellow">
+                <img class="curriculum-icon" src="<%= asset_path 'node_js_icon.png'%>">
+                <h3>NodeJS <br />&nbsp; </h3>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="skill gray-skill-wrapper border-bottom-yellow">
+                <img class="curriculum-icon" src="<%= asset_path 'python_icon.png'%>">
+                <h3>Python</h3>
+              </div>
+            </div>
+          </div> <!-- ends 1st row -->
+          <br>
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="skill gray-skill-wrapper border-bottom-yellow">
+                <img class="curriculum-icon" src="<%= asset_path 'angular_icon.png'%>">
+                <h3>AngularJS</h3>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="skill gray-skill-wrapper border-bottom-yellow">
+                <img class="curriculum-icon" src="<%= asset_path 'express_icon.png'%>">
+                <h3>Express</h3>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="skill gray-skill-wrapper border-bottom-yellow">
+                <img class="curriculum-icon" src="<%= asset_path 'javascript_icon.png'%>">
+                <h3>JavaScript</h3>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="skill gray-skill-wrapper border-bottom-yellow">
+                <%= image_tag "jquery_icon.png", class: "curriculum-icon" %>
+                <h3>jQuery</h3>
+              </div>
+            </div>
+          </div> <!--- ends 2nd row -->
+          <br>
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="skill gray-skill-wrapper border-bottom-yellow">
+                <img class="curriculum-icon" src="<%= asset_path 'html_icon.png'%>">
+                <h3>HTML</h3>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="skill gray-skill-wrapper border-bottom-yellow">
+                <img class="curriculum-icon" src="<%= asset_path 'css_icon.png'%>">
+                <h3>CSS</h3>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="skill gray-skill-wrapper border-bottom-yellow">
+                <img class="curriculum-icon" src="<%= asset_path 'mongodb_icon.png'%>"><br />
+                <h3>MongoDB</h3>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="skill gray-skill-wrapper border-bottom-yellow">
+                <img class="curriculum-icon" src="<%= asset_path 'git_icon.png'%>">
+                <h3>Git</h3>
+              </div>
+            </div>
+          </div>
+          <br /><br>
+          <p class ="after-word">Our training includes more than instruction. Best practices implemented throughout all modules include Understanding by Design (UbD), Guided Practice, Peer Review, Analysis & Evaluation, Collaboration, and Group & Independent Work.</p><br />
+          <br />          
+        </div> <!-- col-12 -->
+      </div> <!-- row -->
+    </div> <!-- home section -->
+  </div><!-- curriculum wrapper close -->
+<!--   <div class="locations-wrapper page-wrapper">
+    <div class="home-section">
+      <div class="section-header">
+        <h2 class = "actualize-logo-circular">Curriculum Stats</h2>
+      </div>
+      <div class="row">
+        <div class="corporate-charts">
+          <h3 class="text-center">Programming Language Popularity on GitHub</h3><br>
+          <div id="github-stats" style="height: 300px;"></div>
         </div>
-        <div class="phase">
-          <div class="phase-block col-6-xs phase-border">
-            <div class="phase-point-right"></div>
-              <h2>Training and Coaching</h2>
-              <h3>In Class Instruction</h3>
-              <p>ACLTC Corporate Training focuses on the client's production and revenue goals by providing a rich curriculum and thoughtful instruction developed with best education practices.</p>
-              <p>Training is the foundation that produces independent full-stack developers and prepares them for professional work.</p>
-          </div>
-          <div class="phase-block col-6-md">
-            <img class="philosophy-icon" src="<%= asset_path 'corporate_training_ny_trevor.png'%>">
-          </div>
-        </div>
-        <div class="phase">
-          <div class="phase-block col-6-md phase-border">
-            <div class="phase-point-right"></div>
-              <h2>Learning Outcomes</h2>
-              <h3>Functional Prototypes</h3>
-              <p>ACLTC services ensure that independent developers function as reflective practitioners and continue to refine their skills and appitude. Developers will be able to build prototypes independently and deploy applications to a working environment.</p>
-          </div>
-          <div class="phase-block col-6-md">
-            <img class="philosophy-icon" src="<%= asset_path 'corporate_training_terry.png'%>">
+      </div>
+    </div>
+  </div> -->
+  <div class="testimonial-wrapper page-wrapper">
+    <div class="home-section centered">
+      <div class="row">
+        <h2 class = "actualize-logo">Trainers</h2>
+        <div class="col-md-6 border-right">
+          <img class="logo" src="<%= asset_path 'alumni-colleen-mcguckin.png'%>">
+          <div class="testimonial">
+            <strong>Colleen McGuckin</strong>
+            <p>
+              “I attended ACLTC in to make a career pivot and become a Junior Developer. The course was well-structured, covered a TON of different stuff with just enough depth to be dangerous, and the teaching staff is clearly passionate about the success of their students. Deciding to attend ACLTC was the best career decision I have made."
+
+            </p>
           </div>
         </div>
-      </div> <!-- col-12 -->
-    </div> <!-- /row -->
-    <div class="row">
-      <div class="col-12-md centered">
+        <div class="col-md-6 border-right">
+          <img class="logo" src="<%= asset_path 'alumni-trent-childers.png'%>">
+          <div class="testimonial">
+            <strong>Trent Childers</strong>
+            <p>
+              "Attending Anyone Can Learn to Code has been one of the best decisions I've ever made. The staff has developed an excellent curriculum... [and] the coursework is intensive and challenging but never overwhelming. As a result of ACLTC, I have now begun a new and exciting career in web development. If you are looking to make a career change into the world of development, you can do no better than Anyone Can Learn to Code. Highly recommended."
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <img class="logo" src="<%= asset_path 'alumni-mark-bouslog.png'%>">
+          <div class="testimonial">
+            <strong>Mark Bouslog</strong>
+            <p>
+                "With the technical skills, job placement assistance and infectious passion for programming from ACLTC, I was able to successfully shift careers from accounting to a dream job in web development. Looking back on the experience, the people (instructor, TAs, job-placement staff, etc.) and learning the mindset to become a programmer were the most valuable aspects of the experience. It was difficult, but also so much fun. I would highly recommend ACLTC.”
+
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <img class="logo" src="<%= asset_path 'alumni-mark-bouslog.png'%>">
+          <div class="testimonial">
+            <strong>Mark Bouslog</strong>
+            <p>
+                "With the technical skills, job placement assistance and infectious passion for programming from ACLTC, I was able to successfully shift careers from accounting to a dream job in web development. Looking back on the experience, the people (instructor, TAs, job-placement staff, etc.) and learning the mindset to become a programmer were the most valuable aspects of the experience. It was difficult, but also so much fun. I would highly recommend ACLTC.”
+
+            </p>
+          </div>
+        </div>
         <div class="col-md-12 centered">
-          <%= link_to "Schedule Consultation", new_corporate_training_message_path, class: "btn", id: "top-application-button" %>
+          <%= link_to "Apply Now", new_application_path, class: "btn", id: "top-application-button" %>
         </div>
-      </div>
-    </div>
-  </div> <!-- home-section -->
-</div> <!-- our-program-wrapper close corporate training description-->
-
-<div class="curriculum-wrapper page-wrapper">
-  <div class="home-section">
-    <div class="row">
-      <div class="col-md-12 skills">
-        <div class="section-header">
-          <h2 class = "actualize-logo-circular"> Corporate Training Curriculum</h2>
-          <p>Learn the fundamentals and gain proficiency with:</p>
-        </div>
-        <div class="row">
-          <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="skill gray-skill-wrapper border-bottom-yellow">
-              <img class="curriculum-icon" src="<%= asset_path 'ruby_icon.png'%>">
-              <h3>Ruby</h3>
-            </div> 
-          </div>
-          <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="skill gray-skill-wrapper border-bottom-yellow">
-              <img class="curriculum-icon" src="<%= asset_path 'rails_icon.png'%>">
-              <h3>Rails</h3>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="skill gray-skill-wrapper border-bottom-yellow">
-              <img class="curriculum-icon" src="<%= asset_path 'node_js_icon.png'%>">
-              <h3>NodeJS <br />&nbsp; </h3>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="skill gray-skill-wrapper border-bottom-yellow">
-              <img class="curriculum-icon" src="<%= asset_path 'python_icon.png'%>">
-              <h3>Python</h3>
-            </div>
-          </div>
-        </div> <!-- ends 1st row -->
-        <br>
-        <div class="row">
-          <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="skill gray-skill-wrapper border-bottom-yellow">
-              <img class="curriculum-icon" src="<%= asset_path 'angular_icon.png'%>">
-              <h3>AngularJS</h3>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="skill gray-skill-wrapper border-bottom-yellow">
-              <img class="curriculum-icon" src="<%= asset_path 'express_icon.png'%>">
-              <h3>Express</h3>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="skill gray-skill-wrapper border-bottom-yellow">
-              <img class="curriculum-icon" src="<%= asset_path 'javascript_icon.png'%>">
-              <h3>JavaScript</h3>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="skill gray-skill-wrapper border-bottom-yellow">
-              <%= image_tag "jquery_icon.png", class: "curriculum-icon" %>
-              <h3>jQuery</h3>
-            </div>
-          </div>
-        </div> <!--- ends 2nd row -->
-        <br>
-        <div class="row">
-          <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="skill gray-skill-wrapper border-bottom-yellow">
-              <img class="curriculum-icon" src="<%= asset_path 'html_icon.png'%>">
-              <h3>HTML</h3>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="skill gray-skill-wrapper border-bottom-yellow">
-              <img class="curriculum-icon" src="<%= asset_path 'css_icon.png'%>">
-              <h3>CSS</h3>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="skill gray-skill-wrapper border-bottom-yellow">
-              <img class="curriculum-icon" src="<%= asset_path 'mongodb_icon.png'%>"><br />
-              <h3>MongoDB</h3>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="skill gray-skill-wrapper border-bottom-yellow">
-              <img class="curriculum-icon" src="<%= asset_path 'git_icon.png'%>">
-              <h3>Git</h3>
-            </div>
-          </div>
-        </div>
-        <br />          
-      </div> <!-- col-12 -->
-    </div> <!-- row -->
-  </div> <!-- home section -->
-</div><!-- curriculum wrapper close -->
-<div class="locations-wrapper page-wrapper">
-  <div class="home-section">
-    <div class="section-header">
-      <h2 class = "actualize-logo-circular">Curriculum Stats</h2>
-    </div>
-    <div class="row">
-      <div class="corporate-charts">
-        <h3 class="text-center">Programming Language Popularity on GitHub</h3><br>
-        <div id="github-stats" style="height: 300px;"></div>
       </div>
     </div>
   </div>
-</div>
-<div class="apprenticeship-wrapper page-wrapper">
-  <div class="home-section">
-    <div class="section-header">
-      <h2 class = "actualize-logo-circular">Training Locations</h2>
-    </div>
-    <div class="row">
-      <div class="col-sm-4">
-        <div class="location text-center">
-          <img class="logo" src="<%= asset_path 'chicago.png'%>"><br />
-          <h3>Chicago</h3>
-        </div>
+  <div class="apprenticeship-wrapper page-wrapper">
+    <div class="home-section">
+      <div class="section-header">
+        <h2 class = "actualize-logo-circular">Training Locations</h2>
       </div>
-      <div class="col-sm-4">
-        <div class="location text-center">
-          <img class="logo" src="<%= asset_path 'nyc.png'%>"><br />
-          <h3>New York City</h3>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="location text-center">
+            <img class="logo" src="<%= asset_path 'chicago.png'%>"><br />
+            <h3>Chicago</h3>
+          </div>
         </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="location text-center">
-          <img class="logo" src="<%= asset_path 'san-francisco.png'%>"><br />
-          <h3>San Francisco</h3>
+        <div class="col-sm-4">
+          <div class="location text-center">
+            <img class="logo" src="<%= asset_path 'nyc.png'%>"><br />
+            <h3>New York City</h3>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="location text-center">
+            <img class="logo" src="<%= asset_path 'san-francisco.png'%>"><br />
+            <h3>San Francisco</h3>
+          </div>
         </div>
       </div>
     </div>
