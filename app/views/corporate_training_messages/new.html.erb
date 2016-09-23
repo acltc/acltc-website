@@ -83,7 +83,7 @@
 
           <div class="col_one_third col_last">
             <%= f.label :training_location, class: "template-contactform-name" %>
-            <%= f.select(:training_location, options_for_select([["Chicago"], ["New York City"], ["San Francisco - Bay Area"]]), {}, class: "sm-form-control corp-select required") %>
+            <%= f.select(:training_location, options_for_select([["Chicagoland"], ["NYC Metropolitan Area"], ["San Francisco Bay Area"]]), {}, class: "sm-form-control corp-select required") %>
           </div>
           
           <div class="col_full select-field-dropdown">
@@ -94,7 +94,7 @@
           <div class="clear"></div>
 
           <div class="col_full">
-            <%= f.label :message, "Tell Us More About Your Needs", class: "template-contactform-message" %>
+            <%= f.label :message, "Tell us a bit about your training needs and goals", class: "template-contactform-message" %>
             <%= f.text_area :message, class: "required sm-form-control" %>
           </div>
 
