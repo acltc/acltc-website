@@ -1,7 +1,7 @@
 class CorporateTrainingMessage < ActiveRecord::Base
   has_and_belongs_to_many :field_of_interests, dependent: :destroy
 
-  validates :company_name, :company_contact, :company_contact_title, :email, :phone, :team_size, :date, :training_location, :address_1, :company_city, :state, presence: true
+  validates :company_name, :first_name, :last_name, :company_contact_title, :email, :phone, :team_size, :date, :training_location, :address_1, :company_city, :state, presence: true
   validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
 
   def friendly_updated_at
@@ -10,6 +10,10 @@ class CorporateTrainingMessage < ActiveRecord::Base
 
   def friendly_start_date
     date.strftime("%b %d, %Y")
+  end
+
+  def full_name
+    "#{first_name} #{last_name}"
   end
 
   def self.to_csv(options = {})

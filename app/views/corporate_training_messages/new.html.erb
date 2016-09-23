@@ -1,6 +1,6 @@
-<%= render "/layouts/page_title", page_title: "Corporate Training", page_subtitle: "Interested in corporate training? Contact us to learn more" %>
+<%= render "/layouts/page_title", page_title: "Schedule a Consultation", page_subtitle: "Interested in learning more about our corporate training program? Fill out the form below to get started and your Training Consultant will be in touch soon." %>
 <% content_for :head do %>
-  <title>Corporate Training</title>
+  <title>Web Development Corporate Training | Anyone Can Learn To Code</title>
     <meta name="description" content='Reach the Anyone Can Learn To Code / Actualize team with additional questions.'>
   <% end %>
   <section id="content">
@@ -27,19 +27,24 @@
 
           <div class="form-process"></div>
 
-          <div class="col_full">
+          <div class="col_half">
             <%= f.label :company_name, class: "template-contactform-name" %>
             <%= f.text_field :company_name, class: "sm-form-control required" %>
-          </div>
-
-          <div class="col_half" >
-            <%= f.label :company_contact, "Company Contact Name", class: "template-contactform-name" %>
-            <%= f.text_field :company_contact, class: "sm-form-control required" %>
           </div>
 
           <div class="col_half col_last" >
             <%= f.label :company_contact_title, "Company Contact Title", class: "template-contactform-name" %>
             <%= f.text_field :company_contact_title, class: "sm-form-control required" %>
+          </div>
+
+          <div class="col_half" >
+            <%= f.label :first_name, "Contact First Name", class: "template-contactform-name" %>
+            <%= f.text_field :first_name, class: "sm-form-control required" %>
+          </div>
+          
+          <div class="col_half col_last" >
+            <%= f.label :last_name, "Contact Last Name", class: "template-contactform-name" %>
+            <%= f.text_field :last_name, class: "sm-form-control required" %>
           </div>
 
           <div class="col_half" >
@@ -62,12 +67,12 @@
           </div>
 
           <div class="col_half" >
-            <%= f.label :email, class: "template-contactform-name" %>
+            <%= f.label :email, "Contact Email", class: "template-contactform-name" %>
             <%= f.email_field :email, class: "sm-form-control required" %>
           </div>
 
           <div class="col_half col_last" >
-            <%= f.label :phone, class: "template-contactform-name" %>
+            <%= f.label :phone, "Contact Phone", class: "template-contactform-name" %>
             <%= f.text_field :phone, class: "sm-form-control required" %>
           </div>
 
