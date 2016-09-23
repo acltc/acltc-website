@@ -16,7 +16,6 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_corporate_training_access
-
     if current_admin && current_admin.email == "jay@anyonecanlearntocode.com"
       @corporate_access = Admin.find_by(email: "jay@anyonecanlearntocode.com")
     elsif current_admin && current_admin.email == "zev@anyonecanlearntocode.com"

@@ -75,7 +75,7 @@
 
         <div class="col_half col_last" >
           <%= f.label :phone, "Contact Phone", class: "template-contactform-name" %>
-          <%= f.text_field :phone, class: "sm-form-control required" %>
+          <%= f.text_field :phone, class: "sm-form-control required phone_us" %>
         </div>
 
         <div class="col_half">
@@ -141,6 +141,10 @@
       $('.datepicker').datepicker({
         format: 'yyyy-mm-dd'
       });
+    });
+
+    $(document).ready(function(){
+      $('.phone_us').mask('(000) 000-0000');
     });
 
 </script>

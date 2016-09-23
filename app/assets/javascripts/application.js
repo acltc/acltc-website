@@ -23,4 +23,5 @@
 //= require bootstrap-datetimepicker
 //= require chosen.jquery.min
 //= require chosen.proto.min
+//= require jquery.mask.min
 //= require_tree .
