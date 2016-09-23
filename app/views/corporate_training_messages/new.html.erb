@@ -3,123 +3,123 @@
 </div>
 <% content_for :head do %>
   <title>Web Development Corporate Training | Anyone Can Learn To Code</title>
-    <meta name="description" content='Reach the Anyone Can Learn To Code / Actualize team with additional questions.'>
-  <% end %>
-  <section id="content">
-    <div class="content-wrap">
-      <div class="container clearfix">
-        <!-- Contact Form
-        ============================================= -->
-        <div class=">
-          <div id="contact-form-result" data-notify-type="success" data-notify-msg="<i class=icon-ok-sign></i> Message Sent Successfully!"></div>
-          <%= form_for @corporate_training_message do |f|  %>
-            <% if @corporate_training_message.errors.any? %>
-              <div class="alert alert-dismissible alert-warning center-warning">
-                <button type="button" class="close" data-dismiss="alert">×</button>
-                <h2>Oops! You forgot to fill out
-                  <%= pluralize(@corporate_training_message.errors.count, "field") %>:
-                </h2>
-                <ul>
-                  <% @corporate_training_message.errors.full_messages.each do |msg| %>
-                    <h4><%= msg %></h4>
-                  <% end %>
-                </ul>
-              </div>
-            <% end %>
-
-          <div class="form-process"></div>
-
-          <div class="col_half">
-            <%= f.label :company_name, class: "template-contactform-name" %>
-            <%= f.text_field :company_name, class: "sm-form-control required" %>
-          </div>
-
-          <div class="col_half col_last" >
-            <%= f.label :company_contact_title, "Company Contact Title", class: "template-contactform-name" %>
-            <%= f.text_field :company_contact_title, class: "sm-form-control required" %>
-          </div>
-
-          <div class="col_half" >
-            <%= f.label :first_name, "Contact First Name", class: "template-contactform-name" %>
-            <%= f.text_field :first_name, class: "sm-form-control required" %>
-          </div>
-          
-          <div class="col_half col_last" >
-            <%= f.label :last_name, "Contact Last Name", class: "template-contactform-name" %>
-            <%= f.text_field :last_name, class: "sm-form-control required" %>
-          </div>
-
-          <div class="col_half" >
-            <%= f.label :address_1, "Address Line One", class: "template-contactform-name" %>
-            <%= f.text_field :address_1, class: "sm-form-control required" %>
-          </div>
-
-          <div class="col_half col_last" >
-            <%= f.label :address_2, "Address Line Two", class: "template-contactform-name" %>
-            <%= f.text_field :address_2, class: "sm-form-control required" %>
-          </div>
-
-          <div class="col_half" >
-            <%= f.label :company_city, "Company City", class: "template-contactform-name" %>
-            <%= f.text_field :company_city, class: "sm-form-control required" %>
-          </div>
-          <div class="col_half col_last" >
-            <%= f.label :state, class: "template-contactform-name" %>
-            <%= f.select(:state, options_for_select(us_states), {prompt: "Select State"}, { class: "sm-form-control corp-select required"} ) %>
-          </div>
-
-          <div class="col_half" >
-            <%= f.label :email, "Contact Email", class: "template-contactform-name" %>
-            <%= f.email_field :email, class: "sm-form-control required" %>
-          </div>
-
-          <div class="col_half col_last" >
-            <%= f.label :phone, "Contact Phone", class: "template-contactform-name" %>
-            <%= f.text_field :phone, class: "sm-form-control required" %>
-          </div>
-
-          <div class="col_one_third">
-            <%= f.label :team_size, class: "template-contactform-name" %>
-            <%= f.text_field :team_size, class: "sm-form-control required" %>
-          </div>
-
-          <div class="col_one_third corp-start-date">
-            <%= f.label :date, "Start Date", class: "template-contactform-name" %>
-            <%= f.text_field :date, class: "sm-form-control required datepicker" %>
-          </div>
-
-          <div class="col_one_third col_last">
-            <%= f.label :training_location, class: "template-contactform-name" %>
-            <%= f.select(:training_location, options_for_select([["Chicagoland"], ["NYC Metropolitan Area"], ["San Francisco Bay Area"]]), {}, class: "sm-form-control corp-select required") %>
-          </div>
-          
-          <div class="col_full select-field-dropdown">
-            <%= f.label :field_of_interest, "Languages and Frameworks", class: "template-contactform-name" %>
-            <%= f.collection_select(:field_of_interest_ids, FieldOfInterest.all, :id, :name, {}, {:prompt => 'Select Fields', class: "sm-form-control corp-select required chosen-select", id: "corp-select", multiple: true }) %>
-          </div>
-
-          <div class="clear"></div>
-
-          <div class="col_full">
-            <%= f.label :message, "Tell us a bit about your training needs and goals", class: "template-contactform-message" %>
-            <%= f.text_area :message, class: "required sm-form-control" %>
-          </div>
-
-          <%= f.invisible_captcha :subtitle %>
-
-          <div class="col_full">
-            <%= f.submit "Send", class: "button button-3d nomargin nopadding" %>
-          </div>
-
+    <meta name="description" content='ACLTC’s customizable corporate training program coaches trainees at any level to become certified full-stack web developers.'>
+<% end %>
+<section id="content">
+  <div class="content-wrap">
+    <div class="container clearfix">
+      <!-- Contact Form
+      ============================================= -->
+      <div class="">
+        <div id="contact-form-result" data-notify-type="success" data-notify-msg="<i class=icon-ok-sign></i> Message Sent Successfully!"></div>
+        <%= form_for @corporate_training_message do |f|  %>
+          <% if @corporate_training_message.errors.any? %>
+            <div class="alert alert-dismissible alert-warning center-warning">
+              <button type="button" class="close" data-dismiss="alert">×</button>
+              <h2>Oops! You forgot to fill out
+                <%= pluralize(@corporate_training_message.errors.count, "field") %>:
+              </h2>
+              <ul>
+                <% @corporate_training_message.errors.full_messages.each do |msg| %>
+                  <h4><%= msg %></h4>
+                <% end %>
+              </ul>
+            </div>
           <% end %>
 
-          <div class="clear"></div>
-          <!-- Contact Info
-          ============================================= -->
-          <div class="row clear-bottommargin"></div><!-- Contact Info End -->
-        </div>
-      </div>
+        <div class="form-process"></div>
 
+        <div class="col_half">
+          <%= f.label :company_name, class: "template-contactform-name" %>
+          <%= f.text_field :company_name, class: "sm-form-control required" %>
+        </div>
+
+        <div class="col_half col_last" >
+          <%= f.label :company_contact_title, "Company Contact Title", class: "template-contactform-name" %>
+          <%= f.text_field :company_contact_title, class: "sm-form-control required" %>
+        </div>
+
+        <div class="col_half" >
+          <%= f.label :first_name, "Contact First Name", class: "template-contactform-name" %>
+          <%= f.text_field :first_name, class: "sm-form-control required" %>
+        </div>
+        
+        <div class="col_half col_last" >
+          <%= f.label :last_name, "Contact Last Name", class: "template-contactform-name" %>
+          <%= f.text_field :last_name, class: "sm-form-control required" %>
+        </div>
+
+        <div class="col_half" >
+          <%= f.label :address_1, "Address Line One", class: "template-contactform-name" %>
+          <%= f.text_field :address_1, class: "sm-form-control required" %>
+        </div>
+
+        <div class="col_half col_last" >
+          <%= f.label :address_2, "Address Line Two", class: "template-contactform-name" %>
+          <%= f.text_field :address_2, class: "sm-form-control required" %>
+        </div>
+
+        <div class="col_half" >
+          <%= f.label :company_city, "Company City", class: "template-contactform-name" %>
+          <%= f.text_field :company_city, class: "sm-form-control required" %>
+        </div>
+        <div class="col_half col_last" >
+          <%= f.label :state, class: "template-contactform-name" %>
+          <%= f.select(:state, options_for_select(us_states), {prompt: "Select State"}, { class: "sm-form-control corp-select required"} ) %>
+        </div>
+
+        <div class="col_half" >
+          <%= f.label :email, "Contact Email", class: "template-contactform-name" %>
+          <%= f.email_field :email, class: "sm-form-control required" %>
+        </div>
+
+        <div class="col_half col_last" >
+          <%= f.label :phone, "Contact Phone", class: "template-contactform-name" %>
+          <%= f.text_field :phone, class: "sm-form-control required" %>
+        </div>
+
+        <div class="col_one_third">
+          <%= f.label :team_size, class: "template-contactform-name" %>
+          <%= f.text_field :team_size, class: "sm-form-control required" %>
+        </div>
+
+        <div class="col_one_third corp-start-date">
+          <%= f.label :date, "Start Date", class: "template-contactform-name" %>
+          <%= f.text_field :date, class: "sm-form-control required datepicker" %>
+        </div>
+
+        <div class="col_one_third col_last">
+          <%= f.label :training_location, class: "template-contactform-name" %>
+          <%= f.select(:training_location, options_for_select([["Chicagoland"], ["NYC Metropolitan Area"], ["San Francisco Bay Area"]]), {}, class: "sm-form-control corp-select required") %>
+        </div>
+        
+        <div class="col_full select-field-dropdown">
+          <%= f.label :field_of_interest, "Languages and Frameworks", class: "template-contactform-name" %>
+          <%= f.collection_select(:field_of_interest_ids, FieldOfInterest.all, :id, :name, {}, {:prompt => 'Select Fields', class: "sm-form-control corp-select required chosen-select", id: "corp-select", multiple: true }) %>
+        </div>
+
+        <div class="clear"></div>
+
+        <div class="col_full">
+          <%= f.label :message, "Tell us a bit about your training needs and goals", class: "template-contactform-message" %>
+          <%= f.text_area :message, class: "required sm-form-control" %>
+        </div>
+
+        <%= f.invisible_captcha :subtitle %>
+
+        <div class="col_full">
+          <%= f.submit "Send", class: "button button-3d nomargin nopadding" %>
+        </div>
+
+        <% end %>
+
+        <div class="clear"></div>
+        <!-- Contact Info
+        ============================================= -->
+        <div class="row clear-bottommargin"></div><!-- Contact Info End -->
+      </div>
+    </div>
+  </div>
 </section><!-- #content end -->
 
 <script>
