@@ -5,6 +5,7 @@ class Application < ActiveRecord::Base
   validates :interview_id, presence: true, uniqueness: true, on: :create
 
   validates :primary_goals, :programming_experience, :current_occupation, :preferred_work_location, :work_concurrently, :why_better, :tinker_example, presence: true, on: :create
+  validates :primary_goals, :current_occupation, :work_concurrently, :why_better, :tinker_example, length: { minimum: 140 }
 
   has_many :statuses
   belongs_to :interview
