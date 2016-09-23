@@ -113,35 +113,35 @@
         </div>
 
         <div class="form-group">
-          <%= f.label :primary_goals, "What are your primary goals in learning how to code? (140 char. limit)", class: "required form-label" %><br />
-          <%= f.text_area :primary_goals, maxlength: 140, class: "form-control" %>
+          <%= f.label :primary_goals, "What are your primary goals in learning how to code? (140 char. minimum)", class: "required form-label" %><br />
+          <%= f.text_area :primary_goals, class: "form-control" %>
         </div>
         <div class="form-group">
           <%= f.label :programming_experience, "Do you have previous programming experience? Online tutorials count!", class: "required form-label" %><br />
           <%= f.text_area :programming_experience, class: "form-control" %>
         </div>
         <div class="form-group">
-          <%= f.label :current_occupation, "Tell us more about what you're currently doing (job or school, etc.) (140 char. limit)", class: "required form-label" %><br />
-          <%= f.text_area :current_occupation, maxlength: 140, class: "form-control" %>
+          <%= f.label :current_occupation, "Tell us more about what you're currently doing (job or school, etc.) (140 char. minimum)", class: "required form-label" %><br />
+          <%= f.text_area :current_occupation, class: "form-control" %>
         </div>
         <div class="form-group">
           <%= f.label :preferred_work_location, "If you want a job in web development, in which city will you seek employment?", class: "required label-leading form-label" %><br />
           <%= f.text_field :preferred_work_location, class: "form-control" %>
         </div>
         <div class="form-group">
-          <%= f.label :work_concurrently, "Will you keep your job during the bootcamp? If so, how will you do both? (140 char. limit)", class: "required form-label" %><br />
-          <%= f.text_area :work_concurrently, maxlength: 140, class: "form-control" %>
+          <%= f.label :work_concurrently, "Will you keep your job during the bootcamp? If so, how will you do both? (140 char. minimum)", class: "required form-label" %><br />
+          <%= f.text_area :work_concurrently, class: "form-control" %>
         </div>
         <div class="form-group">
-          <%= f.label :why_better, "Why should you be accepted into the bootcamp over other applicants? (140 char. limit)", class: "required form-label" %><br />
-          <%= f.text_area :why_better, maxlength: 140, class: "form-control" %>
+          <%= f.label :why_better, "Why should you be accepted into the bootcamp over other applicants? (140 char. minimum)", class: "required form-label" %><br />
+          <%= f.text_area :why_better, class: "form-control" %>
         </div>
         <div class="form-group">
-          <%= f.label :tinker_example, "Programming requires complex problem solving, logical analysis, and the ability to tinker with something until it works. Give examples of when you've had these experiences. (140 char. limit)", class: "required label-leading form-label" %><br />
-          <%= f.text_area :tinker_example, maxlength: 140, class: "form-control" %>
+          <%= f.label :tinker_example, "Programming requires complex problem solving, logical analysis, and the ability to tinker with something until it works. Give examples of when you've had these experiences. (140 char. minimum)", class: "required label-leading form-label" %><br />
+          <%= f.text_area :tinker_example, class: "form-control" %>
         </div>
         <div class="form-group">
-          <%= f.label :interview_id, "Thanks for filling out the application! The next step is to join us on a Google Hangouts or phone interview. This way we can learn a little more about you, tell you more about ACLTC, and answer any questions you may have.", class: "required form-label", id: "additional-interview-text"  %><br />
+          <%= f.label :interview_id, "Thanks for filling out the application! The next step is to join us on a Google Hangouts interview. This way we can learn a little more about you, tell you more about ACLTC, and answer any questions you may have.", class: "required form-label", id: "additional-interview-text"  %><br />
           <%= f.collection_select :interview_id, Interview.where('starts_at > ? AND starts_at < ?', DateTime.now, DateTime.now + 200.hours).where(booked: false).order(starts_at: :asc), :id, :interview_date_human, {:include_blank => 'Select Interview Date and Time'}, { id: 'interviews', class: 'form-control shorten-select' } %>
         </div>
         <div class="form-group">
