@@ -52,7 +52,7 @@ $color-neutral: #eaeaea;
 
 #corporate-training-new {
   #page-title h1:before {
-    content: url("<%= asset_path('acltc_new_penguin_small.png') %>");
+    content: url("/assets/acltc_new_penguin_small.png");
   }
 }
 
