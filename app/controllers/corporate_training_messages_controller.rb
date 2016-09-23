@@ -24,7 +24,7 @@ class CorporateTrainingMessagesController < ApplicationController
     if @corporate_training_message.save
       AcltcMailer.corporate_training_message(@corporate_training_message).deliver_now
       AcltcMailer.corporate_training_message_reply(@corporate_training_message).deliver_now
-      redirect_to contacts_thank_you_path
+      redirect_to corporate_training_thank_you_path
     else
       render :new
     end
@@ -36,6 +36,9 @@ class CorporateTrainingMessagesController < ApplicationController
 
   def corporate_training
     render :layout => 'corporate_training_home'
+  end
+
+  def thank_you
   end
 
   private

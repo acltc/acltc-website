@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get '/pages/contacts_thank_you', :as => :contacts_thank_you
   get '/pages/scholarship_thank_you'
   get '/corporate_training' => 'corporate_training_messages#corporate_training', :as => :corporate_training
+  get '/corporate_training_thank_you' => 'corporate_training_messages#thank_you', :as => :corporate_training_thank_you
 
   get "/apply" => "subscribers#apply", :as => :new_application #new_application_path has been altered for split test
   get "/applications/new/:id" => "applications#new"
