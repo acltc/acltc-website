@@ -55,7 +55,7 @@ class ApplicationsController < ApplicationController
     @application = Application.find(params[:id])
     status_changed = true unless @application.status == params[:application][:status]
 
-    if @application.update_attributes(application_params)
+    if @application.update(status: params[:application][:status], cohort: params[:application][:cohort], notes: params[:application][:notes])
       if status_changed
         @application.statuses.create(text: params[:application][:status], date: Date.today)
       end
