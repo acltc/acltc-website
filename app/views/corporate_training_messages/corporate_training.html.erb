@@ -12,7 +12,7 @@
           <p>Our corporate training program certifies your team as full-stack software developers. With a customized curriculum, our experienced educators coach trainees at any level of technical expertise in the skills that apply to your organization’s technology and software, driving efficiency and increasing revenue.</p><br />
           <div class="row">
             <div class="col-md-12">
-              <%= link_to "Schedule Consultation", new_corporate_training_message_path, class: "btn", id: "top-application-button" %>
+              <%= link_to "Schedule Consultation", new_corporate_training_message_path, class: "btn", id: "corporate-application-button" %>
             </div>
           </div>
         </div> <!-- Ends row for Corporate Training Intro" -->
@@ -24,14 +24,14 @@
     <div class="home-section">
       <div class="row">
         <div class="col-md-12 our-program">
-          <div class="section-header">
+        <!--   <div class="section-header">
             <h2 class = "acltc-penguin-logo-small">Program</h2>
-          </div>
+          </div> -->
           <div class="phase">
             <div class="phase-block col-6-xs phase-border">
               <div class="phase-point-right"></div>
                 <h2>Training Philosophy</h2><br>
-                <p>At Anyone Can Learn To Code, we are educators who understand how people learn. We bring our classroom to your company, bridging the gap between traditional education and your company’s organizational and revenue goals. Our training produces developers who not only have a full stack of skills, but who can apply their knowledge to your technology and software as well as your clients’.</p>
+                <p class="text-left">At Anyone Can Learn To Code, we are educators who understand how people learn. We bring our classroom to your company, bridging the gap between traditional education and your company’s organizational and revenue goals. Our training produces full-stack developers not only with a broad set of coding skills, but who can apply their knowledge to your technology as well as your clients’ own.</p>
             </div>
             <div class="phase-block col-6-md">
               <img class="philosophy-icon" src="<%= asset_path 'corporate_training_karen.png'%>">
@@ -41,7 +41,7 @@
             <div class="phase-block col-6-md phase-border">
               <div class="phase-point-right"></div>
                 <h2>Customizable Program</h2><br>
-                <p>The ACLTC Corporate Training program is fully customizable based on your team’s needs and goals. We collaborate with you to design an ideal curriculum focused on your organization’s production and revenue goals. We’ll work together to choose the technologies and frameworks raught, a program schedule (including length in weeks and hours in class per day), and deliverables.</p>
+                <p class="text-left">The ACLTC Corporate Training program is fully customizable based on your team’s needs and goals. We collaborate with you to design an ideal curriculum focused on your organization’s production and revenue goals. We’ll work together to choose the technologies and frameworks raught, a program schedule (including length in weeks and hours in class per day), and deliverables.</p>
             </div>
             <div class="phase-block col-6-md">
               <img class="philosophy-icon" src="<%= asset_path 'corporate_training_ny_trevor.png'%>">
@@ -51,7 +51,12 @@
             <div class="phase-block col-6-md phase-border">
               <div class="phase-point-right"></div>
                 <h2>Outcomes</h2><br>
-                <p>After completing our training program, your team of developers will be certified as full-stack developers. They will be proficient in all technologies and frameworks taught throughout the course, familiar with industry best practices, strategies, and methodologies, and able to work efficiently and effectively together to develop excellent products for your organization and for your clients.</p>
+                <p class="text-left">After completing our training program, your team of developers will be certified as full-stack developers. They will be:</p>
+                <ul>
+                  <li class="text-left outcome-text">Proficient in all technologies and frameworks taught throughout the course</li>
+                  <li class="text-left outcome-text">Familiar with industry best practices, strategies, and methodologies</li>
+                  <li class="text-left outcome-text">Able to work efficiently and effectively together to develop excellent products for your organization and for your clients</li>
+                </ul>
             </div>
             <div class="phase-block col-6-md">
               <img class="philosophy-icon" src="<%= asset_path 'corporate_training_terry.png'%>">
@@ -62,7 +67,7 @@
       <div class="row">
         <div class="col-12-md centered">
           <div class="col-md-12 centered">
-            <%= link_to "Schedule Consultation", new_corporate_training_message_path, class: "btn", id: "top-application-button" %>
+            <%= link_to "Schedule Consultation", new_corporate_training_message_path, class: "btn", id: "corporate-application-button" %>
           </div>
         </div>
       </div>
@@ -74,8 +79,8 @@
       <div class="row">
         <div class="col-md-12 skills">
           <div class="section-header">
-            <h2 class = "acltc-new-logo-circular">Curriculum</h2>
-            <p>Learn the fundamentals and gain proficiency with:</p>
+            <h2 class = "acltc-new-logo-circular">Curriculum & Instruction</h2>
+            <p>Below are the technologies, frameworks, and skills in which Anyone Can Learn To Code trains web developers. Your team’s curriculum is fully customizable, leaving your programmers proficient in any of the following:</p>
           </div>
           <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-3">
@@ -158,7 +163,7 @@
             </div>
           </div>
           <br /><br>
-          <p class ="after-word">Our training includes more than instruction. Best practices implemented throughout all modules include Understanding by Design (UbD), Guided Practice, Peer Review, Analysis & Evaluation, Collaboration, and Group & Independent Work.</p><br />
+          <p class ="after-word">Educational best practices and pedagogy remain a strong focus throughout the ACLTC Corporate Training program. Throughout all training modules, our educator-instructors implement a philosophy that includes Understanding by Design (UbD), Guided Practice, Peer Review, Analysis & Evaluation, Collaboration, and Group & Independent Work.</p><br />
           <br />          
         </div> <!-- col-12 -->
       </div> <!-- row -->
@@ -221,7 +226,7 @@
           </div>
         </div>
         <div class="col-md-12 centered">
-          <#%= link_to "Schedule Consultation", new_application_path, class: "btn", id: "top-application-button" %>
+          <#%= link_to "Schedule Consultation", new_application_path, class: "btn", id: "corporate-application-button" %>
         </div>
       </div>
     </div>
@@ -253,10 +258,10 @@
       </div>
       <div class="row">
         <div id="more-corp-locations">
-          <h3 class="text-center">Interested in another location? Contact us to learn more</h3>
+          <h3 class="text-center">Interested in another location? Contact us to learn more.</h3>
         </div>
         <div class="col-md-12 centered">
-          <%= link_to "Schedule Consultation", new_corporate_training_message_path, class: "btn", id: "top-application-button" %>
+          <%= link_to "Schedule Consultation", new_corporate_training_message_path, class: "btn", id: "corporate-application-button" %>
         </div>
       </div>
     </div>
