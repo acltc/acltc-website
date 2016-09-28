@@ -168,6 +168,7 @@ ActiveRecord::Schema.define(version: 20160926152924) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.integer  "priority",   default: 100
+    t.string   "category"
   end
 
   create_table "field_of_interests", force: :cascade do |t|

@@ -2,6 +2,7 @@ class FaqsController < ApplicationController
   before_filter :authenticate_admin!, only: [:new, :create, :update, :delete]
 
   def index
+    @faq_categories = ["General", "Tuition & Payment", "Application & Acceptance", "Actualize Program", "Etc."]
     @faqs = Faq.all.order(:priority)
   end
 
@@ -43,7 +44,7 @@ class FaqsController < ApplicationController
   private
 
   def faq_params
-    params.require(:faq).permit(:question, :answer, :priority)
+    params.require(:faq).permit(:question, :answer, :priority, :category)
   end
 
 end
