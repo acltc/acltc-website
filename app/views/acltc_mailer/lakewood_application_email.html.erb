@@ -1,0 +1,63 @@
+<table style="max-width: 800px;">
+  <th><H2>Hello! We received an application from Lakewood! </h2></th>
+  <tr>
+    <td><strong>First Name:</strong> <%= @lakewood_application.first_name %></td>
+  </tr>
+  <tr>
+    <td><strong>Last Name:</strong> <%= @lakewood_application.last_name %></td>
+  </tr>
+  <tr>
+    <td><strong>Email:</strong> <%= @lakewood_application.email %></td>
+  </tr>
+  <tr>
+    <td><strong>Phone:</strong> <%= @lakewood_application.phone %></td>
+  </tr>
+  <tr>
+    <td><strong>Google Hangouts Email:</strong> <%= @lakewood_application.hangouts_email %></td>
+  </tr>
+  <tr>
+    <td><strong>Location Applying To:</strong> <%= @lakewood_application.location %></td>
+  </tr>
+  <tr>
+    <td><h3>How they learned about ACLTC:</h3> <%= @lakewood_application.learn_about_acltc %> <%= @lakewood_application.learn_about_acltc_specify %></td>
+  </tr>
+  <tr>
+    <td><h3>What they are currently doing (job, school, etc.):</h3> <%= @lakewood_application.current_occupation %></td>
+  </tr>
+  <tr>
+    <td><h3>Applying for Scholarship?</h3> <%= @lakewood_application.scholarship_applicant %></td>
+  </tr>
+  <% if @lakewood_application.scholarship_applicant == true %>
+    <tr>
+      <td><h3>How they learned about the scholarship:</h3> <%= @lakewood_application.learn_about_scholarship %></td>
+    </tr>
+    <tr>
+      <td><h3>Scholarship category:</h3> Woman: <%= @lakewood_application.woman %> <br /> Minority: <%= @lakewood_application.minority %> </td>
+    </tr>
+    <tr>
+      <td><h3>Why they deserve the scholarship:</h3> <%= @lakewood_application.why_scholarship %></td>
+    </tr>
+  <% end %>
+  <tr>
+    <td><h3>Primary Goals:</h3> <%= @lakewood_application.primary_goals %></td>
+  </tr>
+  <tr>
+    <td><h3>Proficiency With Computers and Technology:</h3> <%= @lakewood_application.proficiency_with_computers_and_technology %></td>
+  </tr>
+  <tr>
+    <td><h3>Previous Coding Experience:</h3> <%= @lakewood_application.programming_experience %></td>
+  </tr>
+  <tr>
+    <td><h3>City where they will seek employment:</h3> <%= @lakewood_application.preferred_work_location %></td>
+  </tr>
+  <tr>
+    <td><h3>How they will manage work and the bootcamp:</h3> <%= @lakewood_application.work_concurrently %></td>
+  </tr>
+  <tr>
+    <td><h3>Analytical/Tinkering Examples:</h3><%= @lakewood_application.tinker_example %></td>
+  </tr>
+  <tr>
+    <td><h3>What sets them apart:</h3><%= @lakewood_application.why_better %></td>
+  </tr>
+
+</table>

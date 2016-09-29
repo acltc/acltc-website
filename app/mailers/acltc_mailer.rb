@@ -21,6 +21,11 @@ class AcltcMailer < ApplicationMailer
     mail(from: "sandboxd035c758dbb54757b1b13d910d57a6b3.mailgun.org", to: 'admissions@anyonecanlearntocode.com', subject: 'Application Submitted', reply_to: @application.email )
   end
 
+  def lakewood_application_email(application)
+    @lakewood_application = application
+    mail(from: "hello@anyonecanlearntocode.com", to: 'theonetrueemailtest@gmail.com', subject: 'Applicant From Lakewood Actualize', reply_to: @lakewood_application.email )
+  end
+
   def mini_course_application_email(mini_course_application)
     @mini_course_application = mini_course_application
     mail(from: "admissions@anyonecanlearntocode.com", to: @mini_course_application.email, subject: 'Mini Course Application Submission Successful', bcc: "mark@anyonecanlearntocode.com")

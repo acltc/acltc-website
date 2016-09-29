@@ -1,0 +1,44 @@
+Hello! We received an application from Lakewood! 
+
+First Name: <%= @lakewood_application.first_name %>
+  
+Last Name: <%= @lakewood_application.last_name %>
+  
+Email: <%= @lakewood_application.email %>
+  
+Phone: <%= @lakewood_application.phone %>
+  
+Google Hangouts Email: <%= @lakewood_application.hangouts_email %>
+  
+Location Applying To: <%= @lakewood_application.location %>
+  
+How they learned about ACLTC: <%= @lakewood_application.learn_about_acltc %> <%= @lakewood_application.learn_about_acltc_specify %>
+  
+What they are currently doing (job, school, etc.): <%= @lakewood_application.current_occupation %>
+  
+Applying for Scholarship? <%= @lakewood_application.scholarship_applicant %>
+
+<% if @lakewood_application.scholarship_applicant == true %>
+
+  How they learned about the scholarship: <%= @lakewood_application.learn_about_scholarship %>
+
+
+  Scholarship category: Woman: <%= @lakewood_application.woman %>Minority: <%= @lakewood_application.minority %> 
+
+
+  Why they deserve the scholarship: <%= @lakewood_application.why_scholarship %>
+
+<% end %>
+Primary Goals: <%= @lakewood_application.primary_goals %>
+
+Proficiency With Computers and Technology: <%= @lakewood_application.proficiency_with_computers_and_technology %>
+
+Previous Coding Experience: <%= @lakewood_application.programming_experience %>
+
+City where they will seek employment: <%= @lakewood_application.preferred_work_location %>
+
+How they will manage work and the bootcamp: <%= @lakewood_application.work_concurrently %>
+
+Analytical/Tinkering Examples:<%= @lakewood_application.tinker_example %>
+
+What sets them apart:<%= @lakewood_application.why_better %>
