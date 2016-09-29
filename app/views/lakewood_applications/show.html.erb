@@ -6,7 +6,7 @@
       <div class="col-md-8">
         <div class="application-links">
           <%= link_to "Back to Index", lakewood_applications_path, class: "btn btn-success left-link" %>
-          <%= link_to "Profile", "/profiles/#{@lakewood_application.id}", {:remote => true, 'data-target' => '#profile-modal', class: "btn btn-default left-link" } %>
+          <%= link_to "Profile", "/lakewood_profiles/#{@lakewood_application.id}", {:remote => true, 'data-target' => '#profile-modal', class: "btn btn-default left-link" } %>
           <%= link_to 'Delete', lakewood_application_path(@lakewood_application), method: :delete, data: { confirm: 'Are you sure you want to delete this application?' }, class: "btn btn-danger right-link" %>
         </div>
         <div class="status-cohort">

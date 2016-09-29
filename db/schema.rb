@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160929171246) do
+ActiveRecord::Schema.define(version: 20160929173509) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -233,6 +233,22 @@ ActiveRecord::Schema.define(version: 20160929171246) do
     t.datetime "updated_at",                                null: false
   end
 
+  create_table "lakewood_profiles", force: :cascade do |t|
+    t.string   "gender"
+    t.string   "age"
+    t.string   "race"
+    t.string   "times_applied"
+    t.string   "salary"
+    t.string   "credit_score"
+    t.string   "financial_network"
+    t.string   "savings"
+    t.string   "experience_in_coding"
+    t.string   "readiness"
+    t.integer  "lakewood_application_id"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
   create_table "mini_course_applications", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -267,10 +283,9 @@ ActiveRecord::Schema.define(version: 20160929171246) do
     t.string   "savings"
     t.string   "experience_in_coding"
     t.string   "readiness"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
     t.integer  "application_id"
-    t.integer  "lakewood_application_id"
   end
 
   create_table "screencasts", force: :cascade do |t|

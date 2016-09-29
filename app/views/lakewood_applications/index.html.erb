@@ -58,7 +58,7 @@
             <td><a href="/lakewood_applications?status=<%= lakewood_application.status %>"><%= lakewood_application.status %></a></td>
             <td><%= lakewood_application.cohort %></td>
             <td>
-              <%= link_to 'Profile', "/profiles/#{lakewood_application.id}",  {:remote => true, 'data-target' => '#profile-modal'}  %>
+              <%= link_to 'Profile', "/lakewood_profiles/#{lakewood_application.id}",  {:remote => true, 'data-target' => '#profile-modal'}  %>
             </td>
           </tr>
           <% end %>

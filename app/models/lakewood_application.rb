@@ -6,7 +6,7 @@ class LakewoodApplication < ActiveRecord::Base
   validates :primary_goals, :current_occupation, :work_concurrently, :why_better, :tinker_example,length: { minimum: 140 }, on: :create
 
   has_many :statuses
-  has_one :profile
+  has_one :lakewood_profile
 
   def full_name
     "#{first_name} #{last_name}"
