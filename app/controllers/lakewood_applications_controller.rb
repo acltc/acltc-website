@@ -1,0 +1,2 @@
+class LakewoodApplicationsController < ApplicationController
+end
