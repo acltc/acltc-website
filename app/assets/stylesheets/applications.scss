@@ -150,6 +150,25 @@ select#application_cohort {
   display: inline;
 }
 
+//------------LAKEWOOD APPLICATIONS ------------
+
+select#lakewood_application_status {
+  width: 220px;
+  display: inline;
+}
+
+select#lakewood_application_cohort {
+  width: 125px;
+  display: inline;
+}
+
+#lakewood_application_notes {
+    width: 47%;
+    display: inline;
+}
+
+//----------------------------------------------
+
 a.btn.btn-danger.right-link {
   float: right;
 }

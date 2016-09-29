@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   resources :blog_posts
   resources :blog_categories
   resources :applications
+  resources :lakewood_applications
   resources :statuses, only: [:edit, :update]
   resources :faqs
   resources :contacts
@@ -50,6 +51,13 @@ Rails.application.routes.draw do
   patch "/profiles/:id" => "profiles#update"
   post "/profiles" => "profiles#create"
   get "/profiles/:id" => "profiles#modal"
+
+  get "/lakewood_profiles" => "lakewood_profiles#index"
+  patch "/lakewood_profiles/:id" => "lakewood_profiles#update"
+  post "/lakewood_profiles" => "lakewood_profiles#create"
+  get "/lakewood_profiles/:id" => "lakewood_profiles#modal"
+
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

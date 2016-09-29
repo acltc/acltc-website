@@ -1,9 +1,9 @@
-class ProfilesController < ApplicationController
+class LakewoodProfilesController < ApplicationController
   def new
   end
 
   def create
-    @profile = Profile.create(  
+    @lakewood_profile = LakewoodProfile.new(
       gender: params[:gender], 
       age: params[:age],
       race: params[:race],
@@ -14,17 +14,23 @@ class ProfilesController < ApplicationController
       savings: params[:savings],
       experience_in_coding: params[:experience_in_coding],
       readiness: params[:readiness],
-      application_id: params[:application_id]
+      lakewood_application_id: params[:lakewood_application_id]
     )
 
-    respond_to do |format|
+    if @lakewood_profile.save 
+      respond_to do |format|
         format.js {render :partial => "closeModal"}
+      end
+    else
+      respond_to do |format|
+        format.js {render :partial => "modal"}
+      end
     end
   end
 
   def update
-    @profile = Profile.find(params[:id])
-    @profile.update(
+    @lakewood_profile = LakewoodProfile.find(params[:id])
+    @lakewood_profile.update(
       gender: params[:gender], 
       age: params[:age],
       race: params[:race],
@@ -43,7 +49,7 @@ class ProfilesController < ApplicationController
   end
 
   def modal
-    @application = Application.find(params[:id])
+    @lakewood_application = LakewoodApplication.find(params[:id])
     respond_to do |format|
       format.html
       format.js
