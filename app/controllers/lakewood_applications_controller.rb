@@ -65,13 +65,10 @@ class LakewoodApplicationsController < ApplicationController
 
   def destroy
     @lakewood_application = LakewoodApplication.find(params[:id])
-    if @lakewood_application.interview
-      @lakewood_application.interview.update(booked: false)
-    end
     @lakewood_application.destroy
 
-    flash[:danger] = "Application successfully deleted!"
-    redirect_to "/applications"
+    flash[:success] = "Application successfully deleted!"
+    redirect_to "/lakewood_applications"
   end
 
   private
