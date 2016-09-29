@@ -13,7 +13,7 @@ class AcltcMailer < ApplicationMailer
 
   def corporate_training_message_reply(corporate_training_message)
     @corporate_training_message = corporate_training_message
-    mail(from: "hello@anyonecanlearntocode.com", to: @corporate_training_message.contact_email, subject: 'Your Corporate Training Message To ACLTC')
+    mail(from: "training@anyonecanlearntocode.com", to: @corporate_training_message.contact_email, subject: 'Your Corporate Training Message To ACLTC')
   end
 
   def application_email(application)
