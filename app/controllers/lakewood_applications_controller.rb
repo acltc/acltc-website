@@ -1,4 +1,7 @@
 class LakewoodApplicationsController < ApplicationController
+  before_action :authenticate_admin!, except: [:new, :create]
+  invisible_captcha only: [:create], honeypot: :subtitle
+  
   def index
     @lakewood_applications = LakewoodApplication.all
 
