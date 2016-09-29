@@ -3,7 +3,19 @@ class LakewoodProfilesController < ApplicationController
   end
 
   def create
-    @lakewood_profile = LakewoodProfile.new(lakewood_profile_params)
+    @lakewood_profile = LakewoodProfile.new(
+      gender: params[:gender], 
+      age: params[:age],
+      race: params[:race],
+      times_applied: params[:times_applied],
+      salary: params[:salary],
+      credit_score: params[:credit_score],
+      financial_network: params[:financial_network],
+      savings: params[:savings],
+      experience_in_coding: params[:experience_in_coding],
+      readiness: params[:readiness],
+      lakewood_application_id: params[:lakewood_application_id]
+    )
 
     if @lakewood_profile.save 
       respond_to do |format|
@@ -18,7 +30,18 @@ class LakewoodProfilesController < ApplicationController
 
   def update
     @lakewood_profile = LakewoodProfile.find(params[:id])
-    @lakewood_profile.update(lakewood_profile_params)
+    @lakewood_profile.update(
+      gender: params[:gender], 
+      age: params[:age],
+      race: params[:race],
+      times_applied: params[:times_applied],
+      salary: params[:salary],
+      credit_score: params[:credit_score],
+      financial_network: params[:financial_network],
+      savings: params[:savings],
+      experience_in_coding: params[:experience_in_coding],
+      readiness: params[:readiness]
+    )
 
     respond_to do |format|
         format.js {render :partial => "closeModal"}
@@ -31,23 +54,5 @@ class LakewoodProfilesController < ApplicationController
       format.html
       format.js
     end
-  end
-
-  private
-
-  def lakewood_profile_params
-    params.require(:lakewood_profile).permit(
-      :gender, 
-      :age,
-      :race,
-      :times_applied,
-      :salary,
-      :credit_score,
-      :financial_network,
-      :savings,
-      :experience_in_coding,
-      :readiness,
-      :lakewood_application_id
-    )
   end
 end
