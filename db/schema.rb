@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160926152924) do
+ActiveRecord::Schema.define(version: 20160930160257) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -198,6 +198,66 @@ ActiveRecord::Schema.define(version: 20160926152924) do
     t.string   "location"
   end
 
+  create_table "job_openings", force: :cascade do |t|
+    t.string   "title"
+    t.string   "location"
+    t.string   "salary"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "lakewood_applications", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "hangouts_email"
+    t.string   "phone"
+    t.string   "address"
+    t.string   "emergency_contact"
+    t.string   "location"
+    t.text     "learn_about_acltc"
+    t.text     "learn_about_acltc_specify"
+    t.text     "primary_goals"
+    t.text     "proficiency_with_computers_and_technology"
+    t.text     "programming_experience"
+    t.text     "current_occupation"
+    t.string   "preferred_work_location"
+    t.text     "work_concurrently"
+    t.text     "why_better"
+    t.text     "tinker_example"
+    t.text     "dreams_and_goals"
+    t.text     "how_will_you_achieve_goals"
+    t.text     "capstone_idea"
+    t.text     "why_are_you_the_perfect_candidate"
+    t.string   "status"
+    t.string   "cohort"
+    t.text     "notes"
+    t.boolean  "scholarship_applicant"
+    t.text     "learn_about_scholarship"
+    t.boolean  "woman"
+    t.boolean  "minority"
+    t.text     "why_scholarship"
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
+  end
+
+  create_table "lakewood_profiles", force: :cascade do |t|
+    t.string   "gender"
+    t.string   "age"
+    t.string   "race"
+    t.string   "times_applied"
+    t.string   "salary"
+    t.string   "credit_score"
+    t.string   "financial_network"
+    t.string   "savings"
+    t.string   "experience_in_coding"
+    t.string   "readiness"
+    t.integer  "lakewood_application_id"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
   create_table "mini_course_applications", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -251,8 +311,9 @@ ActiveRecord::Schema.define(version: 20160926152924) do
     t.string   "text"
     t.date     "date"
     t.integer  "application_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.integer  "lakewood_application_id"
   end
 
   create_table "subscribers", force: :cascade do |t|
