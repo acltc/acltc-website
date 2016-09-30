@@ -37,6 +37,7 @@ Rails.application.routes.draw do
   resources :interviews
   resources :corporate_training_messages, only: [:index, :new, :create, :show]
   resources :job_openings
+  get "/careers" => "job_openings#index"
 
   get "/options/" => "interviews#interview_options"
   

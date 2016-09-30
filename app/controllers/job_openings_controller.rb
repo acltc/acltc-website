@@ -14,7 +14,7 @@ class JobOpeningsController < ApplicationController
 
     if @job_opening.save
       flash[:success] = "Job successfully created"
-      render :show
+      redirect_to job_openings_path
     else
       flash[:warning] = "Job wasn't created"
       render :new
