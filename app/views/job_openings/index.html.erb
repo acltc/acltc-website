@@ -1,23 +1,62 @@
+<% content_for :head do %>
+  <title>Careers | Anyone Can Learn To Code</title>
+<% end %>
+
 <div id="job-openings-index">
-  <div class="marquee corporate-training-background-image">
-    <div id = "marquee" class="container">
-      <div class="row">
-        <div class="marquee-content clearfix">
-          <div class="col-md-12">
-            <img class="logo corporate-logo" src="<%= asset_path 'acltc_careers_logo.png'%>">
-          </div>
-          <div class="col-md-12">
-            <h3>Work For Anyone Can Learn To Code</h3><br>
-          </div>
-          <p>Nam egestas maximus ultrices. Integer vel lectus sed sapien accumsan posuere ac nec tellus. Cras sit amet leo sed urna ultrices rhoncus. Sed egestas erat nec ex rhoncus laoreet. Vestibulum volutpat felis in velit vulputate commodo. Integer scelerisque nisi ac pretium vestibulum. Maecenas quis sodales augue, id semper purus.</p><br />
-          <div class="row">
-            <div class="col-md-12">
-              <%= link_to "Apply", new_job_opening_path, class: "btn", id: "top-application-button" %>
-            </div>
-            <br>
-          </div>
-        </div> <!-- Ends row for Corporate Training Intro" -->
+<div class="marquee corporate-training-background-image">
+  <div id = "marquee" class="container">
+    <div class="row">
+      <div class="marquee-content clearfix">
+        <div class="col-md-12">
+          <img class="logo corporate-logo" src="<%= asset_path 'acltc_careers_logo.png'%>">
+        </div>
+        <div class="col-md-12">
+          <h3>Work For Anyone Can Learn To Code</h3><br>
+        </div>
+        <p>Nam egestas maximus ultrices. Integer vel lectus sed sapien accumsan posuere ac nec tellus. Cras sit amet leo sed urna ultrices rhoncus. Sed egestas erat nec ex rhoncus laoreet. Vestibulum volutpat felis in velit vulputate commodo. Integer scelerisque nisi ac pretium vestibulum. Maecenas quis sodales augue, id semper purus.</p><br />
+      </div> <!-- Ends row for Corporate Training Intro" -->
+    </div>
+  </div>
+</div>
+
+<div class="testimonial-wrapper page-wrapper">
+  <div class="home-section centered">
+    <div class="row">
+      <h2 class = "acltc-penguin-logo-small corporate-trainers">Working at Anyone Can Learn To Code</h2>
+      <div class="col-md-4 border-right">
+        <img class="logo" src="<%= asset_path 'corporate_trainer_peter.png'%>">
+        <div class="testimonial">
+          <h3>Peter Jang</h3>
+          <h4>Dean of Instruction & Chicago Lead Instructor</h4>
+          <p>
+            Peter Jang is the Dean of Instruction and a lead instructor at the Chicago location of Actualize, ACLTC’s coding bootcamp & apprenticeship program. He has worked at several startups, taught high school for six years, authored and maintained AvsP (an open-source video editor), and worked as a mechanical engineering consultant for a Fortune 500 company. He is also well-known in the Chicago Pilsen neighborhood karaoke circuit for his performances in both English and Spanish.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4 border-right">
+        <img class="logo" src="<%= asset_path 'corporate_trainer_mark.png'%>">
+        <div class="testimonial">
+          <h3>Mark Richardson</h3>
+          <h4>San Francisco Lead Instructor</h4>
+          <p>
+            For more than half a decade, Mark taught English as a Second Language to adults in Japan, Spain, Russia, Korea, and Chile. After returning to the States, he began his career as a full-stack developer, working for a startup in Chicago. It wasn’t long before he got the itch to combine his two loves: teaching and web development. Mark is currently the Lead Instructor in San Francisco for Actualize, ACLTC’s coding bootcamp & apprenticeship program.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <img class="logo" src="<%= asset_path 'corporate_trainer_josh.png'%>">
+        <div class="testimonial">
+          <h3>Josh Nixon</h3>
+          <h4>Chicago Lead Instructor</h4>
+          <p>
+            Before making the switch to a serious coding career in 2013, Josh spent a little over a decade working as an entertainer in Los Angeles, starting with a BA in Theatre Arts. During that time he facilitated creativity workshops, taught improv classes, and coached privately for public speaking. After many years of playing with code Josh made it a career, working as a private consultant for phone and web applications. Before joining the Actualize program as a Lead Instructor, Josh was the Lead Rails Instructor at Code Chicago. He also has an affinity for robots.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-12 centered">
+        <%= link_to "Schedule Consultation", new_corporate_training_message_path, class: "btn", id: "top-application-button" %>
       </div>
     </div>
   </div>
+</div>
 </div>
