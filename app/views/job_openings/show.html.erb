@@ -1,0 +1,138 @@
+<%= render "/layouts/page_title", page_title: @job_opening.title , page_subtitle: "" %>
+<section id="content">
+  <div class="content-wrap dash-wrap">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <div class="application-links">
+          <%= link_to "Back to Careers", job_openings_path, class: "btn btn-success left-link" %>
+          <% if current_admin %>
+            <%= link_to 'Delete', job_opening_path(@job_opening), method: :delete, data: { confirm: 'Are you sure you want to delete this application?' }, class: "btn btn-danger right-link" %>
+          <% end %>
+        </div>
+        <div class="status-cohort">
+          <%= form_for @application, :html => {:class => 'status-cohort-form'} do |f| %>
+            <%= f.select(:status, options_for_select([['Initial Call Scheduled'], ['Missed Call'], ['Interview 1 Scheduled'], ['Had Interview 1'], ['Missed Interview 1'], ['Interview 2 Scheduled'], ['Had Interview 2'], ['Missed Interview 2'], ['Applicant Undecided'], ['Rejected'], ['Accepted'], ['Submitted Enrollment Agreement'], ['Paid Deposit'], ['Deferred'], ['Declined (Financial)'], ['Declined (Schedule)'], ['Declined (Competitor)'], ['Declined (Location)'], ['Declined (Other)'], ['Interview Never Scheduled']], @application.status), {:include_blank => 'Select Status'}, { class: 'form-control' })%>
+            <%= f.select(:cohort, options_for_select([['CHI 7/31/16'], ['CHI 9/18/16'], ['CHI 11/20/16'], ['CHI 1/29/17'], ['SF 7/31/16'], ['SF 9/18/16'], ['SF 11/20/16'], ['SF 1/29/17'], ['SF 3/26/17'], ['NYC 7/31/16'], ['NYC 9/18/16'], ['NYC 11/20/16'], ['NYC 1/29/17'], ['NYC 3/26/17']], @application.cohort), {:include_blank => 'Select Cohort'}, { class: 'form-control' })%>
+            <%= f.label :notes, class: "sr-only" %>
+            <%= f.text_field :notes, placeholder: "Add a note", class: "form-control" %>
+            <%= f.submit "Update", class: "btn btn-primary select-button"%>
+          <% end %>
+        </div>
+        <table class="table table-striped">
+          <tr class="active">
+            <th class="col-md-3">Notes:</th>
+            <td class="col-md-5"><%= @application.notes %></td>
+          </tr>
+          <tr>
+            <th class="col-md-3">Cohort:</th>
+            <td class="col-md-5"><%= @application.cohort %></td>
+          </tr>
+          <tr class="active">
+            <th class="col-md-3">Status:</th>
+            <td class="col-md-5"><%= @application.status %></td>
+          </tr>
+          <tr class="active">
+            <th class="col-md-3">History:</th>
+            <td class="col-md-5">
+              <% @application.statuses.each do |status| %>
+                <div><%= link_to("#{status.text} #{status.date}", edit_status_path(status)) %></div>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <th class="col-md-3">First Name:</th>
+            <td class="col-md-5"><%= @application.first_name %></td>
+          </tr>
+          <tr class="active">
+            <th class="col-md-3">Last Name:</th>
+            <td class="col-md-5"><%= @application.last_name %></td>
+          </tr>
+          <tr>
+            <th>Email:</th>
+            <td class="col-md-5"><%= @application.email %></td>
+          </tr>
+          <tr class="active">
+            <th>Phone:</th>
+            <td class="col-md-5"><%= @application.phone %></td>
+          </tr>
+          <tr>
+            <th>Address:</th>
+            <td class="col-md-5"><%= @application.address %></td>
+          </tr>
+          <tr class="active">
+            <th>Location:</th>
+            <td class="col-md-5"><%= @application.location %></td>
+          </tr>
+          <tr>
+            <th>Application Sent:</th>
+            <td class="col-md-5"><%= @application.created_at.strftime("%A %B %d, %Y") %></td>
+          </tr>
+          <tr class="active">
+            <th>How they heard about Anyone Can Learn To Code:</th>
+            <td class="col-md-5"><%= @application.learn_about_acltc %></td>
+          </tr>
+          <tr>
+            <th>If "Other," how they heard about Anyone Can Learn To Code:</th>
+            <td class="col-md-5"><%= @application.learn_about_acltc_specify %></td>
+          </tr>
+          <tr class="active">
+            <th>Scholarship applicant:</th>
+            <td class="col-md-5"><%= @application.scholarship_applicant %></td>
+          </tr>
+          <% if @application.scholarship_applicant %>
+            <tr>
+              <th class="diversity-scholarship">How they heard about Diversity Scholarship:</th>
+              <td class="col-md-5"><%= @application.learn_about_scholarship %></td>
+            </tr>
+            <tr class="active">
+              <th class="diversity-scholarship">Identifies as a woman or as gendeir-diverse:</th>
+              <td class="col-md-5"><%= @application.woman %></td>
+            </tr>
+            <tr>
+              <th class="diversity-scholarship">Belongs to a racial group that is underrepresented in tech:</th>
+              <td class="col-md-5"><%= @application.minority %></td>
+            </tr>
+            <tr class="active">
+              <th class="diversity-scholarship">Why they should be awarded scholarship over other applicants:</th>
+              <td class="col-md-5"><%= @application.why_scholarship %></td>
+            </tr>
+          <% end %>
+          <tr>
+            <th>What they're currently doing (job or school, etc.):</th>
+            <td class="col-md-5"><%= @application.current_occupation %></td>
+          </tr>
+          <tr class="active">
+            <th>Their primary goals in learning how to code?:</th>
+            <td class="col-md-5"><%= @application.primary_goals %></td>
+          </tr>
+          <tr>
+            <th>Previous programming experience:</th>
+            <td class="col-md-5"><%= @application.programming_experience %></td>
+          </tr>
+          <tr class="active">
+            <th>City where they will search for web development jobs:</th>
+            <td class="col-md-5"><%= @application.preferred_work_location %></td>
+          </tr>
+          <tr>
+            <th>How they will manage a job and the bootcamp, if applicable:</th>
+            <td class="col-md-5"><%= @application.work_concurrently %></td>
+          </tr>
+          <tr class="active">
+            <th>Examples of complex problem solving and logical analysis:</th>
+            <td class="col-md-5"><%= @application.tinker_example %></td>
+          </tr>
+          <tr>
+            <th>Why they should be accepted over well-qualified candidates?:</th>
+            <td class="col-md-5"><%= @application.why_better %></td>
+          </tr>
+          <tr class="active">
+            <th>Google Hangouts Email:</th>
+            <td class="col-md-5"><%= @application.hangouts_email %></td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</section>
