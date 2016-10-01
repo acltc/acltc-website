@@ -1,5 +1,6 @@
 class JobOpeningsController < ApplicationController
   before_action :set_job_opening, only: [:show, :edit, :update, :destroy]
+  
   def index
     @job_openings = JobOpening.all
     render :layout => 'corporate_training_home'
