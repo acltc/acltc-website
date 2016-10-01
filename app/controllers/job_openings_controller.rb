@@ -1,6 +1,7 @@
 class JobOpeningsController < ApplicationController
   before_action :set_job_opening, only: [:show, :edit, :update, :destroy]
-  
+  before_action :authenticate_admin!, only: [:new, :create, :edit, :update, :destroy]
+
   def index
     @job_openings = JobOpening.all
     render :layout => 'corporate_training_home'
