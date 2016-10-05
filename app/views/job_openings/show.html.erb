@@ -15,13 +15,13 @@
           <br>
 
           <div class="job-opening-description">
-            <h2 class="text-center"><%= @job_opening.title %></h2>
+            <h2 class="text-center" id="job-opening-yellow"><%= @job_opening.title %></h2>
             <br>
             <h3>Location: <span class="job-details"><%= @job_opening.location %></span></h3>
             <h3>Salary: <span class="job-details"><%= @job_opening.salary %></span></h3>
             <h3>Description</h3>
             <%= @job_opening.description.html_safe %>
-            <h2 class="text-center job-opening-apply">To apply for this position email: careers@anyonecanlearntocode.com</h2>
+            <h2 class="text-center" id="job-opening-yellow">To apply for this position email: careers@anyonecanlearntocode.com</h2>
           </div>
         </div>
         <br>
