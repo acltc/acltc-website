@@ -1,0 +1,184 @@
+<%= render "/layouts/page_title", page_title: @page_title || "Apply", page_subtitle: "Please fill out the form below to apply for admission. Fields with an asterisk are required." %>
+
+<section id="content">
+  <div class="content-wrap">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+      <%= form_for @lakewood_application do |f| %>
+        <% if @lakewood_application.errors.any? %>
+          <div class="alert alert-dismissible alert-warning center-warning">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <h2>Oops! You forgot to fill out
+              <%= pluralize(@lakewood_application.errors.count, "field") %>:
+            </h2>
+            <ul>
+              <% @lakewood_application.errors.full_messages.each do |msg| %>
+                <h4><%= msg %></h4>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <div class="form-group">
+          <%= f.label :first_name, "First Name", class: "required form-label" %><br />
+          <%= f.text_field :first_name, autofocus: true, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :last_name, "Last Name", class: "required form-label" %><br />
+          <%= f.text_field :last_name, autofocus: true, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :email, "Email Address", class: "required form-label" %><br />
+          <%= f.text_field :email, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :phone, "Cell Phone Number", class: "required form-label" %><br />
+          <%= f.text_field :phone, class: "form-control", placeholder: "xxx-xxx-xxxx" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :address, "Address", class: "required form-label" %><br />
+          <%= f.text_field :address, class: "form-control", placeholder:"Street, City, State, Zip" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :emergency_contact, "Emergency Contact Name and Phone Number", class: "required form-label" %><br />
+          <%= f.text_field :emergency_contact, class: "form-control", placeholder: "Ada Lovelace xxx-xxx-xxxx" %>
+        </div>
+        <div class="form-group">
+          <label class="required label-radio form-label">How did you hear about Anyone Can Learn To Code?</label><br />
+          <div class="radio row">
+            <div class="col-md-4">
+              <%= f.radio_button :learn_about_acltc, "Course Report", { :class => "learn-about-acltc" } %>
+              <%= f.label :learn_about_acltc, "Course Report", :value => "Course Report" %>
+            </div>
+            <div class="col-md-4">
+              <%= f.radio_button :learn_about_acltc, "Google Search", { :class => "learn-about-acltc" } %>
+              <%= f.label :learn_about_acltc, "Google Search", :value => "Google Search" %>
+            </div>
+            <div class="col-md-4">
+              <%= f.radio_button :learn_about_acltc, "Meetup", { :class => "learn-about-acltc" } %>
+              <%= f.label :learn_about_acltc, "Meetup", :value => "Meetup" %>
+            </div>
+          </div>
+          <div class="radio row">
+            <div class="col-md-4">
+              <%= f.radio_button :learn_about_acltc, "Quora", { :class => "learn-about-acltc" } %>
+              <%= f.label :learn_about_acltc, "Quora", :value => "Quora" %>
+            </div>
+            <div class="col-md-4">
+              <%= f.radio_button :learn_about_acltc, "Referral", { :class => "learn-about-acltc" } %>
+              <%= f.label :learn_about_acltc, "Referral", :value => "Referral" %>
+            </div>
+            <div class="col-md-4">
+              <%= f.radio_button :learn_about_acltc, "SkilledUp", { :class => "learn-about-acltc" } %>
+              <%= f.label :learn_about_acltc, "SkilledUp", :value => "SkilledUp" %>
+            </div>
+          </div>
+          <div class="radio row">
+            <div class="col-md-4">
+              <%= f.radio_button :learn_about_acltc, "SwitchUp", { :class => "learn-about-acltc" } %>
+              <%= f.label :learn_about_acltc, "SwitchUp", :value => "SwitchUp" %>
+            </div>
+            <div class="col-md-4">
+              <%= f.radio_button :learn_about_acltc, "Thinkful", { :class => "learn-about-acltc" } %>
+              <%= f.label :learn_about_acltc, "Thinkful", :value => "Thinkful" %>
+            </div>
+            <div class="col-md-4">
+              <%= f.radio_button :learn_about_acltc, "Word of Mouth", { :class => "learn-about-acltc" } %>
+              <%= f.label :learn_about_acltc, "Word of Mouth", :value => "Word of Mouth" %>
+            </div>
+          </div>
+          <div class="radio row">
+            <div class="col-md-4">
+              <%= f.radio_button :learn_about_acltc, "Other", { :class => "learn-about-acltc learn-about-acltc-other" } %>
+              <%= f.label :learn_about_acltc, "Other", :value => "Other" %>
+            </div>
+          </div>
+        </div>
+        <div id="learn-acltc-hidden" style="display:none;">
+          <div class="form-group">
+            <%= f.label :learn_about_acltc_specify, "Please specify how you learned about Anyone Can Learn to Code:", class: "form-label" %><br />
+            <%= f.text_field :learn_about_acltc_specify, class: "form-control" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="required label-radio form-label">Which location are you applying for?</label>
+          <div id="location" class="radio">
+            <%= f.radio_button :location, "Chicago" %>
+            <%= f.label :location, "Chicago", :value => "Chicago" %><br />
+            <%= f.radio_button :location, "San Francisco" %>
+            <%= f.label :location, "San Francisco", :value => "San Francisco" %><br />
+            <%= f.radio_button :location, "New York City" %>
+            <%= f.label :location, "New York City", :value => "New York City" %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :primary_goals, "What are your primary goals in learning how to code? (140 char. minimum)", class: "required form-label" %><br />
+          <%= f.text_area :primary_goals, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :proficiency_with_computers_and_technology, "Describe your proficiency with computers and technology? Microsoft Office, etc.", class: "required form-label" %><br />
+          <%= f.text_area :proficiency_with_computers_and_technology, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :programming_experience, "Do you have previous programming experience? Online tutorials count!", class: "required form-label" %><br />
+          <%= f.text_area :programming_experience, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :current_occupation, "Tell us more about what you're currently doing (job or school, etc.) (140 char. minimum)", class: "required form-label" %><br />
+          <%= f.text_area :current_occupation, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :preferred_work_location, "If you want a job in web development, in which city will you seek employment?", class: "required label-leading form-label" %><br />
+          <%= f.text_field :preferred_work_location, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :work_concurrently, "Will you keep your job during the bootcamp? If so, how will you do both? (140 char. minimum)", class: "required form-label" %><br />
+          <%= f.text_area :work_concurrently, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :why_better, "Why should you be accepted into the bootcamp over other applicants? (140 char. minimum)", class: "required form-label" %><br />
+          <%= f.text_area :why_better, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :tinker_example, "Programming requires complex problem solving, logical analysis, and the ability to tinker with something until it works. Give examples of when you've had these experiences. (140 char. minimum)", class: "required label-leading form-label" %><br />
+          <%= f.text_area :tinker_example, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :hangouts_email, "Google Hangouts email or username.", class: "required form-label" %>
+          <%= f.text_field :hangouts_email, class: "form-control" %>
+        </div>
+        
+        <%= f.invisible_captcha :subtitle %> <!-- This is an invisible field that only spambots see. If it is filled in, the application won't save. -->
+        <div class="form-group">
+          <%= f.submit "Submit Application", class: "button button-3d nomargin nopadding" %>
+        </div>
+      <% end %>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</section>
+<script type="text/javascript">
+  $(".learn-about-acltc").on("change", function(){
+  $("#learn-acltc-hidden").toggle($(this).hasClass("learn-about-acltc-other"));
+});
+</script>
+<!-- Google Code for Apply Now Button Conversion Page -->
+<script type="text/javascript">
+  /* <![CDATA[ */
+  var google_conversion_id = 926873760;
+  var google_conversion_language = "en";
+  var google_conversion_format = "3";
+  var google_conversion_color = "ffffff";
+  var google_conversion_label = "8ZohCMXw8mQQoPH7uQM";
+  var google_remarketing_only = false;
+  /* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+  <div style="display:inline;">
+    <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/926873760/?label=8ZohCMXw8mQQoPH7uQM&amp;guid=ON&amp;script=0"/>
+  </div>
+</noscript>
