@@ -5,7 +5,7 @@
       <div class="col-md-2"></div>
       <div class="col-md-8">
         <div class="application-links">
-          <%= link_to "Back to Careers", job_openings_path, class: "btn btn-success left-link" %>
+          <%= link_to "Back to Careers", "/careers", class: "btn btn-success left-link" %>
           <% if current_admin %>
             <%= link_to 'Delete', job_opening_path(@job_opening), method: :delete, data: { confirm: 'Are you sure you want to delete this job listing?' }, class: "btn btn-danger right-link" %>
           <% end %>
@@ -27,7 +27,7 @@
             </tr>
             <tr>
               <th>Description</th>
-              <td><%= @job_opening.description %></td>
+              <td><%= @job_opening.description.html_safe %></td>
             </tr>
           </tbody>
         </table>
