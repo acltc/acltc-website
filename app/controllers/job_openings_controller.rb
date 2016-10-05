@@ -16,7 +16,7 @@ class JobOpeningsController < ApplicationController
 
     if @job_opening.save
       flash[:success] = "Job listing successfully created"
-      redirect_to job_openings_path
+      redirect_to @job_opening
     else
       flash[:warning] = "Job listing was not created"
       render :new
@@ -30,6 +30,13 @@ class JobOpeningsController < ApplicationController
   end
 
   def update
+    if @job_opening.update(job_opening_params)
+      flash[:success] = "Job listing successfully updated"
+      redirect_to @job_opening
+    else
+      flash[:warning] = "Job listing was not updated"
+      render :edit
+    end
   end
 
   def destroy
