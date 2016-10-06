@@ -7,37 +7,39 @@ Last Name: <%= @lakewood_application.last_name %>
 Email: <%= @lakewood_application.email %>
   
 Phone: <%= @lakewood_application.phone %>
-  
-Google Hangouts Email: <%= @lakewood_application.hangouts_email %>
-  
+    
 Location Applying To: <%= @lakewood_application.location %>
   
-How they learned about ACLTC: <%= @lakewood_application.learn_about_acltc %> <%= @lakewood_application.learn_about_acltc_specify %>
+How they learned about Actualize: <%= @lakewood_application.learn_about_acltc %> <%= @lakewood_application.learn_about_acltc_specify %>
+
+Are they currently a student? <%= @lakewood_application.currently_a_student %>
+
+<% if @lakewood_application.currently_a_student == "Yes" %>
+  Student part-time or full-time: <%= @lakewood_application.student_part_or_full_time %>
+
+  Institution Name: <%= @lakewood_application.institution_name %>
   
-What they are currently doing (job, school, etc.): <%= @lakewood_application.current_occupation %>
-  
-Applying for Scholarship? <%= @lakewood_application.scholarship_applicant %>
+  Institution Location: <%= @lakewood_application.institution_location %>
 
-<% if @lakewood_application.scholarship_applicant == true %>
-
-  How they learned about the scholarship: <%= @lakewood_application.learn_about_scholarship %>
-
-
-  Scholarship category: Woman: <%= @lakewood_application.woman %>Minority: <%= @lakewood_application.minority %> 
-
-
-  Why they deserve the scholarship: <%= @lakewood_application.why_scholarship %>
-
+  Will they continue to be a student during the bootcamp: <%= @lakewood_application.student_concurrently %>
 <% end %>
+
+Are they currently employed? <%= @lakewood_application.currently_employed %>
+<% if @lakewood_application.currently_employed == "Yes" %>
+  Employed part-time or full-time: <%= @lakewood_application.employed_part_or_full_time %>
+
+  Employer Name: <%= @lakewood_application.employer_name %>
+
+  Employer Location: <%= @lakewood_application.employer_location %>
+
+  Will they continue to work during the bootcamp: <%= @lakewood_application.employed_concurrently %>
+<% end %>
+
 Primary Goals: <%= @lakewood_application.primary_goals %>
 
 Proficiency With Computers and Technology: <%= @lakewood_application.proficiency_with_computers_and_technology %>
 
 Previous Coding Experience: <%= @lakewood_application.programming_experience %>
-
-City where they will seek employment: <%= @lakewood_application.preferred_work_location %>
-
-How they will manage work and the bootcamp: <%= @lakewood_application.work_concurrently %>
 
 Analytical/Tinkering Examples:<%= @lakewood_application.tinker_example %>
 

@@ -13,29 +13,43 @@
     <td><strong>Phone:</strong> <%= @lakewood_application.phone %></td>
   </tr>
   <tr>
-    <td><strong>Google Hangouts Email:</strong> <%= @lakewood_application.hangouts_email %></td>
-  </tr>
-  <tr>
     <td><strong>Location Applying To:</strong> <%= @lakewood_application.location %></td>
   </tr>
   <tr>
-    <td><h3>How they learned about ACLTC:</h3> <%= @lakewood_application.learn_about_acltc %> <%= @lakewood_application.learn_about_acltc_specify %></td>
+    <td><h3>How they learned about Actualize:</h3> <%= @lakewood_application.learn_about_acltc %> <%= @lakewood_application.learn_about_acltc_specify %></td>
   </tr>
   <tr>
-    <td><h3>What they are currently doing (job, school, etc.):</h3> <%= @lakewood_application.current_occupation %></td>
+    <td><h3>Are they currently a student? </h3> <%= @lakewood_application.currently_a_student %></td>
   </tr>
+  <% if @lakewood_application.currently_a_student == "Yes" %>
+    <tr>
+      <td><h3>Student part-time or full-time: </h3> <%= @lakewood_application.student_part_or_full_time %></td>
+    </tr>
+    <tr>
+      <td><h3>Institution Name: </h3> <%= @lakewood_application.institution_name %></td>
+    </tr>
+    <tr>
+      <td><h3>Institution Location: </h3> <%= @lakewood_application.institution_location %></td>
+    </tr>
+    <tr>
+      <td><h3>Will they continue to be a student during the bootcamp: </h3> <%= @lakewood_application.student_concurrently %></td>
+    </tr>
+  <% end %>
   <tr>
-    <td><h3>Applying for Scholarship?</h3> <%= @lakewood_application.scholarship_applicant %></td>
+    <td><h3>Are they currently employed? </h3> <%= @lakewood_application.currently_employed %></td>
   </tr>
-  <% if @lakewood_application.scholarship_applicant == true %>
+  <% if @lakewood_application.currently_employed == "Yes" %>
     <tr>
-      <td><h3>How they learned about the scholarship:</h3> <%= @lakewood_application.learn_about_scholarship %></td>
+      <td><h3>Employed part-time or full-time: </h3> <%= @lakewood_application.employed_part_or_full_time %></td>
     </tr>
     <tr>
-      <td><h3>Scholarship category:</h3> Woman: <%= @lakewood_application.woman %> <br /> Minority: <%= @lakewood_application.minority %> </td>
+      <td><h3>Employer Name: </h3> <%= @lakewood_application.employer_name %></td>
     </tr>
     <tr>
-      <td><h3>Why they deserve the scholarship:</h3> <%= @lakewood_application.why_scholarship %></td>
+      <td><h3>Employer Location: </h3> <%= @lakewood_application.employer_location %></td>
+    </tr>
+    <tr>
+      <td><h3>Will they continue to work during the bootcamp: </h3> <%= @lakewood_application.employed_concurrently %></td>
     </tr>
   <% end %>
   <tr>
@@ -48,16 +62,9 @@
     <td><h3>Previous Coding Experience:</h3> <%= @lakewood_application.programming_experience %></td>
   </tr>
   <tr>
-    <td><h3>City where they will seek employment:</h3> <%= @lakewood_application.preferred_work_location %></td>
-  </tr>
-  <tr>
-    <td><h3>How they will manage work and the bootcamp:</h3> <%= @lakewood_application.work_concurrently %></td>
-  </tr>
-  <tr>
     <td><h3>Analytical/Tinkering Examples:</h3><%= @lakewood_application.tinker_example %></td>
   </tr>
   <tr>
     <td><h3>What sets them apart:</h3><%= @lakewood_application.why_better %></td>
   </tr>
-
 </table>
