@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160929173509) do
+ActiveRecord::Schema.define(version: 20161006170927) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -198,6 +198,15 @@ ActiveRecord::Schema.define(version: 20160929173509) do
     t.string   "location"
   end
 
+  create_table "job_openings", force: :cascade do |t|
+    t.string   "title"
+    t.string   "location"
+    t.string   "salary"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "lakewood_applications", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -231,6 +240,20 @@ ActiveRecord::Schema.define(version: 20160929173509) do
     t.text     "why_scholarship"
     t.datetime "created_at",                                null: false
     t.datetime "updated_at",                                null: false
+    t.string   "currently_a_student"
+    t.string   "student_part_or_full_time"
+    t.string   "institution_name"
+    t.string   "institution_city"
+    t.string   "institution_state"
+    t.string   "institution_zip"
+    t.text     "student_concurrently"
+    t.string   "currently_employed"
+    t.string   "employed_part_or_full_time"
+    t.string   "employer_name"
+    t.string   "employer_city"
+    t.string   "employer_state"
+    t.string   "employer_zip"
+    t.text     "employed_concurrently"
   end
 
   create_table "lakewood_profiles", force: :cascade do |t|

@@ -1,10 +1,22 @@
-<%= render "/layouts/page_title", page_title: @page_title || "Apply", page_subtitle: "Please fill out the form below to apply for admission. Fields with an asterisk are required." %>
+<section id="page-title">
+
+    <div class="container clearfix">
+        <h1>Actualize</h1>
+        <h2>Lakewood Bootcamp & Apprenticeship Program</h2>
+    </div>
+
+</section><!-- #page-title end -->
 
 <section id="content">
-  <div class="content-wrap">
+  <div class="content-wrap" id="lakewood-content-wrap">
     <div class="row">
       <div class="col-md-2"></div>
       <div class="col-md-8">
+      <div>
+        <h2>APPLICATION</h2>
+        <span>Please fill out the form below to apply for admission. Fields with an asterisk are required.</span>
+        <div class="lakewood-space"></div>
+      </div>
       <%= form_for @lakewood_application do |f| %>
         <% if @lakewood_application.errors.any? %>
           <div class="alert alert-dismissible alert-warning center-warning">
@@ -44,12 +56,8 @@
           <%= f.text_field :emergency_contact, class: "form-control", placeholder: "Ada Lovelace xxx-xxx-xxxx" %>
         </div>
         <div class="form-group">
-          <label class="required label-radio form-label">How did you hear about Anyone Can Learn To Code?</label><br />
+          <label class="required label-radio form-label">How did you hear about Actualize?</label><br />
           <div class="radio row">
-            <div class="col-md-4">
-              <%= f.radio_button :learn_about_acltc, "Course Report", { :class => "learn-about-acltc" } %>
-              <%= f.label :learn_about_acltc, "Course Report", :value => "Course Report" %>
-            </div>
             <div class="col-md-4">
               <%= f.radio_button :learn_about_acltc, "Google Search", { :class => "learn-about-acltc" } %>
               <%= f.label :learn_about_acltc, "Google Search", :value => "Google Search" %>
@@ -58,36 +66,16 @@
               <%= f.radio_button :learn_about_acltc, "Meetup", { :class => "learn-about-acltc" } %>
               <%= f.label :learn_about_acltc, "Meetup", :value => "Meetup" %>
             </div>
-          </div>
-          <div class="radio row">
-            <div class="col-md-4">
-              <%= f.radio_button :learn_about_acltc, "Quora", { :class => "learn-about-acltc" } %>
-              <%= f.label :learn_about_acltc, "Quora", :value => "Quora" %>
-            </div>
-            <div class="col-md-4">
-              <%= f.radio_button :learn_about_acltc, "Referral", { :class => "learn-about-acltc" } %>
-              <%= f.label :learn_about_acltc, "Referral", :value => "Referral" %>
-            </div>
-            <div class="col-md-4">
-              <%= f.radio_button :learn_about_acltc, "SkilledUp", { :class => "learn-about-acltc" } %>
-              <%= f.label :learn_about_acltc, "SkilledUp", :value => "SkilledUp" %>
-            </div>
-          </div>
-          <div class="radio row">
-            <div class="col-md-4">
-              <%= f.radio_button :learn_about_acltc, "SwitchUp", { :class => "learn-about-acltc" } %>
-              <%= f.label :learn_about_acltc, "SwitchUp", :value => "SwitchUp" %>
-            </div>
-            <div class="col-md-4">
-              <%= f.radio_button :learn_about_acltc, "Thinkful", { :class => "learn-about-acltc" } %>
-              <%= f.label :learn_about_acltc, "Thinkful", :value => "Thinkful" %>
-            </div>
             <div class="col-md-4">
               <%= f.radio_button :learn_about_acltc, "Word of Mouth", { :class => "learn-about-acltc" } %>
               <%= f.label :learn_about_acltc, "Word of Mouth", :value => "Word of Mouth" %>
             </div>
           </div>
           <div class="radio row">
+            <div class="col-md-4">
+              <%= f.radio_button :learn_about_acltc, "Ads", { :class => "learn-about-acltc" } %>
+              <%= f.label :learn_about_acltc, "Ads", :value => "Ads" %>
+            </div>
             <div class="col-md-4">
               <%= f.radio_button :learn_about_acltc, "Other", { :class => "learn-about-acltc learn-about-acltc-other" } %>
               <%= f.label :learn_about_acltc, "Other", :value => "Other" %>
@@ -101,23 +89,39 @@
           </div>
         </div>
         <div class="form-group">
-          <label class="required label-radio form-label">Which location are you applying for?</label>
-          <div id="location" class="radio">
-            <%= f.radio_button :location, "Chicago" %>
-            <%= f.label :location, "Chicago", :value => "Chicago" %><br />
-            <%= f.radio_button :location, "San Francisco" %>
-            <%= f.label :location, "San Francisco", :value => "San Francisco" %><br />
-            <%= f.radio_button :location, "New York City" %>
-            <%= f.label :location, "New York City", :value => "New York City" %>
+          <label class="required label-radio form-label">Are you currently a student?</label><br />
+          <div class="radio row">
+            <div class="col-md-4">
+              <%= f.radio_button :currently_a_student, "No", { :class => "currently-a-student" } %>
+              <%= f.label :currently_a_student, "No", :value => "No" %>
+            </div>
+            <div class="col-md-4">
+              <%= f.radio_button :currently_a_student, "Yes", { :class => "currently-a-student currently-a-student-yes" } %>
+              <%= f.label :currently_a_student, "Yes", :value => "Yes" %>
+            </div>
           </div>
         </div>
-
+        <div id="currently-a-student-hidden" style="display:none;">
+          <div class="form-group">
+            <label class="required label-radio form-label">Are you a part-time or full-time student?</label><br />
+            <div class="radio row">
+              <div class="col-md-4">
+                <%= f.radio_button :student_part_or_full_time, "Part-Time", { :class => "" } %>
+                <%= f.label :student_part_or_full_time, "Part-Time", :value => "Part-Time" %>
+              </div>
+              <div class="col-md-4">
+                <%= f.radio_button :student_part_or_full_time, "Full-Time", { :class => "" } %>
+                <%= f.label :student_part_or_full_time, "Full-Time", :value => "Full-Time" %>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="form-group">
           <%= f.label :primary_goals, "What are your primary goals in learning how to code? (140 char. minimum)", class: "required form-label" %><br />
           <%= f.text_area :primary_goals, class: "form-control" %>
         </div>
         <div class="form-group">
-          <%= f.label :proficiency_with_computers_and_technology, "Describe your proficiency with computers and technology? Microsoft Office, etc.", class: "required form-label" %><br />
+          <%= f.label :proficiency_with_computers_and_technology, "Describe your proficiency with computers and technology?", class: "required form-label" %><br />
           <%= f.text_area :proficiency_with_computers_and_technology, class: "form-control" %>
         </div>
         <div class="form-group">
@@ -128,14 +132,7 @@
           <%= f.label :current_occupation, "Tell us more about what you're currently doing (job or school, etc.) (140 char. minimum)", class: "required form-label" %><br />
           <%= f.text_area :current_occupation, class: "form-control" %>
         </div>
-        <div class="form-group">
-          <%= f.label :preferred_work_location, "If you want a job in web development, in which city will you seek employment?", class: "required label-leading form-label" %><br />
-          <%= f.text_field :preferred_work_location, class: "form-control" %>
-        </div>
-        <div class="form-group">
-          <%= f.label :work_concurrently, "Will you keep your job during the bootcamp? If so, how will you do both? (140 char. minimum)", class: "required form-label" %><br />
-          <%= f.text_area :work_concurrently, class: "form-control" %>
-        </div>
+        
         <div class="form-group">
           <%= f.label :why_better, "Why should you be accepted into the bootcamp over other applicants? (140 char. minimum)", class: "required form-label" %><br />
           <%= f.text_area :why_better, class: "form-control" %>
@@ -144,11 +141,7 @@
           <%= f.label :tinker_example, "Programming requires complex problem solving, logical analysis, and the ability to tinker with something until it works. Give examples of when you've had these experiences. (140 char. minimum)", class: "required label-leading form-label" %><br />
           <%= f.text_area :tinker_example, class: "form-control" %>
         </div>
-        <div class="form-group">
-          <%= f.label :hangouts_email, "Google Hangouts email or username.", class: "required form-label" %>
-          <%= f.text_field :hangouts_email, class: "form-control" %>
-        </div>
-        
+
         <%= f.invisible_captcha :subtitle %> <!-- This is an invisible field that only spambots see. If it is filled in, the application won't save. -->
         <div class="form-group">
           <%= f.submit "Submit Application", class: "button button-3d nomargin nopadding" %>
@@ -162,6 +155,10 @@
 <script type="text/javascript">
   $(".learn-about-acltc").on("change", function(){
   $("#learn-acltc-hidden").toggle($(this).hasClass("learn-about-acltc-other"));
+});
+
+  $(".currently-a-student").on("change", function(){
+  $("#currently-a-student-hidden").toggle($(this).hasClass("currently-a-student-yes"));
 });
 </script>
 <!-- Google Code for Apply Now Button Conversion Page -->
