@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   resources :statuses, only: [:edit, :update]
   resources :faqs
   resources :contacts
+  resources :k12_contacts, :only => [:new, :create]
   resources :mini_courses
   resources :mini_course_applications
   resources :subscribers, :only => [:create, :index]

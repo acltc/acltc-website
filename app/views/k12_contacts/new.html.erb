@@ -1,0 +1,135 @@
+<div class="our-program-wrapper page-wrapper">
+  <div class="home-section">
+    <div class="row">
+      <div class="col-md-12 our-program">
+        <div class="section-header">
+          <h2 class = "actualize-logo">Program</h2>
+        </div>
+
+
+
+
+      </div>
+    </div>
+  </div>
+</div> <!-- /home-section -->
+
+<div class="apprenticeship-wrapper page-wrapper">
+    <div class="home-section">
+        <div class="row section-header">
+            <h2 class = "actualize-logo">Apprenticeship</h2>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-md-6">
+            <img class="apprenticeship-photo" src="<%= asset_path 'difference-engine-photo.jpg'%>">
+
+            </div>
+            <div class="col-sm-6 col-md-6">
+                <p>Beyond the classroom, the Apprenticeship emphasizes real-world work experience, collaboration with a team of developers, project planning and management, and pair programming, as well as interview and resume preparation. By building professional experience into the Actualize program, we ensure that our developers continue to grow post-bootcamp. Every day apprenticing makes you more competitive in the industry and more likely to land the web development position of your dreams.</p>
+            </div>
+        </div>
+
+
+    <div class="row apprentice-ship-row">
+
+        <div class="col-xs-12 col-sm-12 col-md-12 apprenticeship-block border-bottom-aqua">
+        <img class="apprenticeship-icon" src="<%= asset_path 'difference-engine-laptop-icon.png'%>">
+            <h3>The Difference Engine</h3>
+            <p>
+            We created our independent web agency, <a href="http://www.thedifferenceengine.io/" target = "_blank">The Difference Engine</a>, to provide Actualize graduates with the professional experience they need to launch their coding careers. Our developers deliver polished web applications to clients such as Women Who Code and Just A Break. Check out our portfolio <a href="http://www.thedifferenceengine.io/" target = "_blank">here</a>.
+            </p>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12 apprenticeship-block border-bottom-orange">
+        <img class="apprenticeship-icon" src="<%= asset_path 'difference-engine-devs.png'%>">
+            <h3>Work Alongside Experienced Devs</h3>
+            <p>
+            During your Difference Engine apprenticeship, you'll pair program with the agency's more experienced web developers. This opportunity allows apprentices to learn from senior devs hands-on, plus gain experience programming in pairs - a common industry practice.
+            </p>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-12 col-md-12 apprenticeship-block border-bottom-blue">
+        <img class="apprenticeship-icon" src="<%= asset_path 'difference-engine-cv-icon.png'%>">
+            <h3>Job Prep Curriculum</h3>
+            <p>
+            Your apprenticeship with The Difference Engine also includes our three-part job-prep curriculum. You'll learn how to land interviews, improve the soft skills employers look for, and master computer science and technical topics likely to come up in interviews.
+            </p>
+        </div>
+    </div> <!-- /row -->
+    <div class="row">
+        <h2 class="centered">Benefits</h2>
+    </div>
+    <hr>
+    <div class="row benefits-row">
+        <div class="col-xs-12 col-md-3 benefits">
+            Guaranteed way to gain real-world experience in your new profession and build an impressive portfolio
+        </div>
+        <div class="col-xs-12 col-md-3 benefits">
+            Learn skills you can't get in a classroom: team collaboration, working professionally with clients, agile, and more
+        </div>
+        <div class="col-xs-12 col-md-3 benefits">
+            Work alongside and gain knowledge from the more experienced professional developers mentoring you throughout your apprenticeship
+        </div>
+        <div class="col-xs-12 col-md-3 benefits">
+            Gain confidence and prove to yourself that you are now a professional web developer!
+        </div>
+        <div class="col-md-12 centered">
+            <%= link_to "Apply Now", new_application_path, class: "btn", id: "top-application-button" %>
+        </div>
+    </div> <!-- /row -->
+  </div>  <!-- /container -->
+</div> <!-- /apprenticeship-wrapper page-wrapper -->
+  
+  <div class="curriculum-wrapper page-wrapper">
+    <div class="home-section">
+      <div class="row">
+        <div class="col-md-12 skills">
+          <div class="section-header">
+            <h2 class = "actualize-logo-circular"> Contact Us</h2>
+            <p>Ipsum Lorem Ipsum</p>
+          </div>
+
+          <div class=" ">
+            <p class="subscribe-download">Please leave us a message with any questions you have about teaching K-12</p>
+            <div class="row">
+              <div class="col-md-2">
+              </div>
+              <div class="col-md-8">
+                <%= form_for @k12_contact do |f| %>
+                  <div class="col-md-4">
+                    <%= f.text_field :first_name, placeholder: "First Name", class: "form-control k12-form-field" %>
+                  </div>
+                  <div class="col-md-4">
+                    <%= f.text_field :last_name, placeholder: "Last Name", class: "form-control k12-form-field" %>
+                  </div>
+                  <div class="col-md-4">
+                    <%= f.email_field :email, placeholder: "Email", class: "form-control k12-form-field" %>
+                  </div>
+                  <div class="col-md-12">
+                    <%= f.text_area :message, placeholder: "Type your message here", rows: "10", class: "form-control k12-form-field" %>
+                    <br>
+                  </div>
+                  <div class="col-md-12">
+                    <%= f.invisible_captcha :subtitle %>
+                    <%= submit_tag "Submit", class: "curriculum-download-btn", style: "padding:0;margin:0;background-color:#F25252;color:white;" %>
+                  </div>
+                <% end %>
+              </div>
+              <div class="col-md-2">
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+
+
+
+
+
+            
