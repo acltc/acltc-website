@@ -6,10 +6,6 @@
   <%= line_chart LakewoodApplication.group_by_month(:created_at, format: "%b %Y", last: 11).count, colors: ["#18A497"], discrete: true, xtitle: "Month", ytitle: "Number of Applications" %>
 </div>
 <div class="chart">
-  <h4>Applications Per Month by Location</h4>
-  <%= line_chart LakewoodApplication.group(:location).group_by_month(:created_at, format: "%b %Y", last: 11).count, discrete: true, xtitle: "Month", ytitle: "Number of Applications" %>
-</div>
-<div class="chart">
   <h4>How Applicants Learned About ACLTC</h4>
   <%= pie_chart LakewoodApplication.group(:learn_about_acltc).where.not(:learn_about_acltc => nil).count %>
 </div>

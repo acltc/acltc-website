@@ -78,9 +78,8 @@ class LakewoodApplicationsController < ApplicationController
 
   def lakewood_application_params
     params.require(:lakewood_application).permit(:first_name, :last_name, :email, :phone, :address,
-    :emergency_contact, :learn_about_acltc, :learn_about_acltc_specify, :current_occupation,
-    :primary_goals, :programming_experience, :preferred_work_location,
-    :work_concurrently, :tinker_example, :why_better, :status, :location, :cohort,
-    :notes, :hangouts_email, :proficiency_with_computers_and_technology)
+    :emergency_contact, :learn_about_acltc, :learn_about_acltc_specify,
+    :primary_goals, :programming_experience, :preferred_work_location, :tinker_example, :why_better, :status, :location, :cohort,
+    :notes, :hangouts_email, :proficiency_with_computers_and_technology, :currently_a_student, :student_part_or_full_time, :institution_name, :institution_city, :institution_state, :institution_zip, :student_concurrently, :currently_employed, :employed_part_or_full_time, :employer_name, :employer_city, :employer_state, :employer_zip, :employed_concurrently)
   end
 end
