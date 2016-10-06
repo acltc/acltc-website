@@ -19,7 +19,7 @@
           <% end %>
         </div>
         <table class="table table-striped">
-          <tr class="active">
+          <tr>
             <th class="col-md-3">Notes:</th>
             <td class="col-md-5"><%= @lakewood_application.notes %></td>
           </tr>
@@ -27,11 +27,11 @@
             <th class="col-md-3">Cohort:</th>
             <td class="col-md-5"><%= @lakewood_application.cohort %></td>
           </tr>
-          <tr class="active">
+          <tr>
             <th class="col-md-3">Status:</th>
             <td class="col-md-5"><%= @lakewood_application.status %></td>
           </tr>
-          <tr class="active">
+          <tr>
             <th class="col-md-3">History:</th>
             <td class="col-md-5">
             <% if @lakewood_application.statuses.any? %>
@@ -45,7 +45,7 @@
             <th class="col-md-3">First Name:</th>
             <td class="col-md-5"><%= @lakewood_application.first_name %></td>
           </tr>
-          <tr class="active">
+          <tr>
             <th class="col-md-3">Last Name:</th>
             <td class="col-md-5"><%= @lakewood_application.last_name %></td>
           </tr>
@@ -53,7 +53,7 @@
             <th>Email:</th>
             <td class="col-md-5"><%= @lakewood_application.email %></td>
           </tr>
-          <tr class="active">
+          <tr>
             <th>Phone:</th>
             <td class="col-md-5"><%= @lakewood_application.phone %></td>
           </tr>
@@ -61,7 +61,7 @@
             <th>Address:</th>
             <td class="col-md-5"><%= @lakewood_application.address %></td>
           </tr>
-          <tr class="active">
+          <tr>
             <th>Location:</th>
             <td class="col-md-5"><%= @lakewood_application.location %></td>
           </tr>
@@ -69,7 +69,7 @@
             <th>Application Sent:</th>
             <td class="col-md-5"><%= @lakewood_application.created_at.strftime("%A %B %d, %Y") %></td>
           </tr>
-          <tr class="active">
+          <tr>
             <th>How they heard about Anyone Can Learn To Code:</th>
             <td class="col-md-5"><%= @lakewood_application.learn_about_acltc %></td>
           </tr>
@@ -77,59 +77,65 @@
             <th>If "Other," how they heard about Anyone Can Learn To Code:</th>
             <td class="col-md-5"><%= @lakewood_application.learn_about_acltc_specify %></td>
           </tr>
-          <tr class="active">
-            <th>Scholarship applicant:</th>
-            <td class="col-md-5"><%= @lakewood_application.scholarship_applicant %></td>
+          <tr>
+            <th class="col-md-3">Currently a student:</th>
+            <td class="col-md-5"><%= @lakewood_application.currently_a_student %></td>
           </tr>
-          <% if @lakewood_application.scholarship_applicant %>
+          <% if @lakewood_application.currently_a_student == "Yes" %>
             <tr>
-              <th class="diversity-scholarship">How they heard about Diversity Scholarship:</th>
-              <td class="col-md-5"><%= @lakewood_application.learn_about_scholarship %></td>
-            </tr>
-            <tr class="active">
-              <th class="diversity-scholarship">Identifies as a woman or as gendeir-diverse:</th>
-              <td class="col-md-5"><%= @lakewood_application.woman %></td>
+              <th class="col-md-3">Student part-time or full-time:</th>
+              <td class="col-md-5"><%= @lakewood_application.student_part_or_full_time %></td>
             </tr>
             <tr>
-              <th class="diversity-scholarship">Belongs to a racial group that is underrepresented in tech:</th>
-              <td class="col-md-5"><%= @lakewood_application.minority %></td>
+              <th class="col-md-3">Institution Name:</th>
+              <td class="col-md-5"><%= @lakewood_application.institution_name %></td>
             </tr>
-            <tr class="active">
-              <th class="diversity-scholarship">Why they should be awarded scholarship over other applicants:</th>
-              <td class="col-md-5"><%= @lakewood_application.why_scholarship %></td>
+            <tr>
+              <th class="col-md-3">Institution Location:</th>
+              <td class="col-md-5"><%= @lakewood_application.institution_location %></td>
+            </tr>
+            <tr>
+              <th class="col-md-3">Will they continue to be a student during the bootcamp:</th>
+              <td class="col-md-5"><%= @lakewood_application.student_concurrently %></td>
             </tr>
           <% end %>
           <tr>
-            <th>What they're currently doing (job or school, etc.):</th>
-            <td class="col-md-5"><%= @lakewood_application.current_occupation %></td>
+            <th class="col-md-3">Currently employed:</th>
+            <td class="col-md-5"><%= @lakewood_application.currently_employed %></td>
           </tr>
-          <tr class="active">
-            <th>Their primary goals in learning how to code?:</th>
+          <% if @lakewood_application.currently_employed == "Yes" %>
+            <tr>
+              <th class="col-md-5">Employed part-time or full-time:</th>
+              <td class="col-md-5"><%= @lakewood_application.employed_part_or_full_time %></td>
+            </tr>
+            <tr>
+              <th class="col-md-3">Employer Name:</th>
+              <td class="col-md-5"><%= @lakewood_application.employer_name %></td>
+            </tr>
+            <tr>
+              <th class="col-md-3">Employer Location:</th>
+              <td class="col-md-5"><%= @lakewood_application.employer_location %></td>
+            </tr>
+            <tr>
+              <th class="col-md-3">Will they continue to work during the bootcamp:</th>
+              <td class="col-md-5"><%= @lakewood_application.employed_concurrently %></td>
+            </tr>
+          <% end %>
+          <tr>
+            <th>Their primary goals in learning how to code:</th>
             <td class="col-md-5"><%= @lakewood_application.primary_goals %></td>
           </tr>
           <tr>
             <th>Previous programming experience:</th>
             <td class="col-md-5"><%= @lakewood_application.programming_experience %></td>
           </tr>
-          <tr class="active">
-            <th>City where they will search for web development jobs:</th>
-            <td class="col-md-5"><%= @lakewood_application.preferred_work_location %></td>
-          </tr>
           <tr>
-            <th>How they will manage a job and the bootcamp, if applicable:</th>
-            <td class="col-md-5"><%= @lakewood_application.work_concurrently %></td>
-          </tr>
-          <tr class="active">
             <th>Examples of complex problem solving and logical analysis:</th>
             <td class="col-md-5"><%= @lakewood_application.tinker_example %></td>
           </tr>
           <tr>
-            <th>Why they should be accepted over well-qualified candidates?:</th>
+            <th>Why they should be accepted over well-qualified candidates:</th>
             <td class="col-md-5"><%= @lakewood_application.why_better %></td>
-          </tr>
-          <tr class="active">
-            <th>Google Hangouts Email:</th>
-            <td class="col-md-5"><%= @lakewood_application.hangouts_email %></td>
           </tr>
         </table>
       </div>
