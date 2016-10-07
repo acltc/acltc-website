@@ -1,0 +1,89 @@
+<% content_for :head do %>
+  <title>Careers | Anyone Can Learn To Code</title>
+<% end %>
+
+<div id="job-openings-index">
+  <div class="marquee job-openings-background-image">
+    <div id = "marquee" class="container">
+      <div class="row">
+        <div class="marquee-content clearfix">
+          <div class="col-md-12">
+            <img class="logo corporate-logo" src="<%= asset_path 'acltc_careers_logo.png'%>">
+          </div>
+          <div class="col-md-12">
+            <h3>Work For Anyone Can Learn To Code</h3><br>
+          </div>
+          <p>Nam egestas maximus ultrices. Integer vel lectus sed sapien accumsan posuere ac nec tellus. Cras sit amet leo sed urna ultrices rhoncus. Sed egestas erat nec ex rhoncus laoreet. Vestibulum volutpat felis in velit vulputate commodo. Integer scelerisque nisi ac pretium vestibulum. Maecenas quis sodales augue, id semper purus.</p><br />
+        </div> <!-- Ends row for Corporate Training Intro" -->
+      </div>
+    </div>
+  </div>
+
+  <div class="testimonial-wrapper page-wrapper">
+    <div class="home-section centered">
+      <div class="row">
+        <h2 class = "acltc-penguin-logo-small">Working at Anyone Can Learn To Code</h2><br>
+        <div class="col-md-6">
+          <p class="text-left">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tincidunt lorem id magna rutrum malesuada. Donec condimentum tempor laoreet. Vivamus metus mi, convallis nec ligula at, euismod auctor lectus. Fusce lorem turpis, efficitur vulputate arcu vel, tristique malesuada leo. Vivamus laoreet ipsum at erat bibendum, a vestibulum dolor suscipit. Maecenas elementum sem felis, et aliquam velit tempor id. Cras cursus tempus ex. Duis egestas, neque blandit fermentum gravida, leo massa aliquam erat, ac auctor leo eros sed nulla. Curabitur gravida mauris ac sem faucibus, sed volutpat nisi consequat. Curabitur vel tortor nec tortor tempus imperdiet. Nunc mattis lorem eget dui rutrum mattis. Aliquam a augue id justo feugiat interdum non ut quam. Duis nulla ligula, bibendum in ultricies at, vulputate non ex. Suspendisse urna nisl, consequat vel magna tincidunt, mattis consectetur arcu.
+          </p>
+        </div>
+        <div class="col-md-6">
+          <p class="text-left">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tincidunt lorem id magna rutrum malesuada. Donec condimentum tempor laoreet. Vivamus metus mi, convallis nec ligula at, euismod auctor lectus. Fusce lorem turpis, efficitur vulputate arcu vel, tristique malesuada leo. Vivamus laoreet ipsum at erat bibendum, a vestibulum dolor suscipit. Maecenas elementum sem felis, et aliquam velit tempor id. Cras cursus tempus ex. Duis egestas, neque blandit fermentum gravida, leo massa aliquam erat, ac auctor leo eros sed nulla. Curabitur gravida mauris ac sem faucibus, sed volutpat nisi consequat. Curabitur vel tortor nec tortor tempus imperdiet. Nunc mattis lorem eget dui rutrum mattis. Aliquam a augue id justo feugiat interdum non ut quam. Duis nulla ligula, bibendum in ultricies at, vulputate non ex. Suspendisse urna nisl, consequat vel magna tincidunt, mattis consectetur arcu.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="our-philosophy-wrapper page-wrapper clearfix">
+    <div class="home-section">
+      <div class="row">
+        <h2 class = "acltc-penguin-logo-small">Benefits</h2><br>
+          <div class="col-md-6">
+            <ul class="text-left career-benefits-list" style="list-style: none; display: table; margin: 0 auto">
+              <li><i class="fa fa-check" aria-hidden="true"></i> Cras cursus tempus ex.</li>
+              <li><i class="fa fa-check" aria-hidden="true"></i> Cras cursus tempus ex.</li>
+              <li><i class="fa fa-check" aria-hidden="true"></i> Cras cursus tempus ex.</li>
+              <li><i class="fa fa-check" aria-hidden="true"></i> Cras cursus tempus ex.</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <ul class="text-left career-benefits-list" style="list-style: none; display: table; margin: 0 auto">
+              <li><i class="fa fa-check" aria-hidden="true"></i> Cras cursus tempus ex.</li>
+              <li><i class="fa fa-check" aria-hidden="true"></i> Cras cursus tempus ex.</li>
+              <li><i class="fa fa-check" aria-hidden="true"></i> Cras cursus tempus ex.</li>
+              <li><i class="fa fa-check" aria-hidden="true"></i> Cras cursus tempus ex.</li>
+            </ul>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="testimonial-wrapper page-wrapper">
+    <div class="home-section centered">
+      <div class="row">
+        <h2 class = "acltc-penguin-logo-small">Job Openings</h2><br>
+        <% if @job_openings.any? %>
+          <table class="table table-striped text-left">
+            <thead>
+              <tr>
+                <th>Job Title</th>
+                <th>Location</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @job_openings.each do |job_opening| %>
+                <tr>
+                  <td><%= link_to job_opening.title, job_opening_path(job_opening) %></td>
+                  <td><%= job_opening.location %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -37,6 +37,8 @@ Rails.application.routes.draw do
   resources :diversity_applications, only: [:index]
   resources :interviews
   resources :corporate_training_messages, only: [:index, :new, :create, :show]
+  resources :job_openings
+  get "/careers" => "job_openings#index", as: :careers
 
   get "/options/" => "interviews#interview_options"
   
