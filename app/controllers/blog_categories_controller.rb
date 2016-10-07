@@ -17,10 +17,6 @@ class BlogCategoriesController < ApplicationController
     end
   end
 
-
-
-
-
   private
 
   def blog_category_params
