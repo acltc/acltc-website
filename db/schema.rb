@@ -198,10 +198,6 @@ ActiveRecord::Schema.define(version: 20161006170927) do
     t.string   "location"
   end
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> f08b805a5dc77bbb9a645b28ae8796af4aa693db
   create_table "job_openings", force: :cascade do |t|
     t.string   "title"
     t.string   "location"
@@ -211,11 +207,6 @@ ActiveRecord::Schema.define(version: 20161006170927) do
     t.datetime "updated_at",  null: false
   end
 
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 798733156f475a9b540c3a8e0c2f631194bf5622
->>>>>>> f08b805a5dc77bbb9a645b28ae8796af4aa693db
   create_table "lakewood_applications", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
