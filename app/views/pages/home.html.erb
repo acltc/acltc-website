@@ -1,20 +1,6 @@
        <!-- Content
         ============================================= -->
-        <!-- Large modal -->
-
-        <div id="rebranding" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-          <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-              <div class="message row">
-                 <p class="close-branding">x</p>
-                  <h3>We've got a new look! </h3>ACLTC's bootcamp and apprenticeship program has a new name: <strong>Actualize.</strong> <br/><br/>The name reflects the intensity and reputation of our program, the hard work and commitment of our developers, and our goal of helping people launch successful careers in web development. 
-                  <br/><br/><%= link_to "Enroll Today", new_application_path %>
-            </div>
-          </div>
-        </div>
-
-
-        </div>
+       
         <div class="marquee">
             <div id = "marquee" class="container">
                 <div class="row">
@@ -148,7 +134,7 @@
                             <div class="phase-point-right"></div>
                                 <h2>BOOTCAMP</h2>
                                 <h3>Twelve weeks of in-class instruction</h3>
-                                <p>In Actualize classrooms, we flip back and forth between instruction and exercises. Your instructor will clarify a new concept and demonstrate it visually, then give you an exercise using that concept in a different and more challenging context. You'll also work on your individual <%= link_to "Capstone project", "/capstones" %> , which is demonstrated at your cohort's graduate Showcase and seen by potential employers. Check out some examples of our graduates' <%= link_to "Capstone projects", "/capstones" %>!</p>
+                                <p>In Actualize classrooms, we flip back and forth between instruction and exercises. Your instructor will clarify a new concept and demonstrate it visually, then give you an exercise using that concept in a different and more challenging context. You'll also work on your individual <%= link_to "Capstone project", "/capstones" %> , which is demonstrated at your cohort's graduate Showcase and seen by potential employers. <%= link_to "Check out some examples of our graduates' Capstone projects!", "/capstones" %></p>
                             </div>
                             <div class="phase-block col-6-md">
                             <img class="philosophy-icon" src="<%= asset_path 'program-bootcamp-icon.png'%>">
