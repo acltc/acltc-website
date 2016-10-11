@@ -24,7 +24,7 @@
                       <div id="faqs" class="faqs">
          
                         <% @faq_categories.each do |category| %>
-                          <div><h3 class="faq-header"><%= category.upcase %></h3></div>
+                          <div><h3 class="faq-header" style="padding-bottom:15px;"><%= category.upcase %></h3></div>
                           <% @faqs.each do |faq| %>
                             <% if faq.category == category %>             
                               <div class="toggle faq faq-marketplace faq-authors">

@@ -23,7 +23,7 @@ class AcltcMailer < ApplicationMailer
 
   def lakewood_application_email(application)
     @lakewood_application = application
-    mail(from: "hello@anyonecanlearntocode.com", to: 'theonetrueemailtest@gmail.com', subject: 'Applicant From Lakewood Actualize', reply_to: @lakewood_application.email )
+    mail(from: "sandboxd035c758dbb54757b1b13d910d57a6b3.mailgun.org", to: ['zev@anyonecanlearntocode.com', 'ben@actualize.co', 'sal@anyonecanlearntocode.com'], subject: 'Lakewood Actualize Application', reply_to: @lakewood_application.email )
   end
 
   def mini_course_application_email(mini_course_application)
