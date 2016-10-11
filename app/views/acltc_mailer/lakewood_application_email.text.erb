@@ -1,0 +1,46 @@
+Hello! We received an application from Lakewood! 
+
+First Name: <%= @lakewood_application.first_name %>
+  
+Last Name: <%= @lakewood_application.last_name %>
+  
+Email: <%= @lakewood_application.email %>
+  
+Phone: <%= @lakewood_application.phone %>
+    
+Location Applying To: <%= @lakewood_application.location %>
+  
+How they learned about Actualize: <%= @lakewood_application.learn_about_acltc %> <%= @lakewood_application.learn_about_acltc_specify %>
+
+Are they currently a student? <%= @lakewood_application.currently_a_student %>
+
+<% if @lakewood_application.currently_a_student == "Yes" %>
+  Student part-time or full-time: <%= @lakewood_application.student_part_or_full_time %>
+
+  Institution Name: <%= @lakewood_application.institution_name %>
+  
+  Institution Location: <%= @lakewood_application.institution_location %>
+
+  Will they continue to be a student during the bootcamp: <%= @lakewood_application.student_concurrently %>
+<% end %>
+
+Are they currently employed? <%= @lakewood_application.currently_employed %>
+<% if @lakewood_application.currently_employed == "Yes" %>
+  Employed part-time or full-time: <%= @lakewood_application.employed_part_or_full_time %>
+
+  Employer Name: <%= @lakewood_application.employer_name %>
+
+  Employer Location: <%= @lakewood_application.employer_location %>
+
+  Will they continue to work during the bootcamp: <%= @lakewood_application.employed_concurrently %>
+<% end %>
+
+Primary Goals: <%= @lakewood_application.primary_goals %>
+
+Proficiency With Computers and Technology: <%= @lakewood_application.proficiency_with_computers_and_technology %>
+
+Previous Coding Experience: <%= @lakewood_application.programming_experience %>
+
+Analytical/Tinkering Examples:<%= @lakewood_application.tinker_example %>
+
+What sets them apart:<%= @lakewood_application.why_better %>

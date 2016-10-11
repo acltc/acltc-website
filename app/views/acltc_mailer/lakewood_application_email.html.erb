@@ -1,0 +1,70 @@
+<table style="max-width: 800px;">
+  <th><H2>Hello! We received an application from Lakewood! </h2></th>
+  <tr>
+    <td><strong>First Name:</strong> <%= @lakewood_application.first_name %></td>
+  </tr>
+  <tr>
+    <td><strong>Last Name:</strong> <%= @lakewood_application.last_name %></td>
+  </tr>
+  <tr>
+    <td><strong>Email:</strong> <%= @lakewood_application.email %></td>
+  </tr>
+  <tr>
+    <td><strong>Phone:</strong> <%= @lakewood_application.phone %><br><br></td>
+  </tr>
+  <tr>
+    <td><strong>Location Applying To:</strong> <%= @lakewood_application.location %></td>
+  </tr>
+  <tr>
+    <td><strong>How they learned about Actualize:</strong> <%= @lakewood_application.learn_about_acltc %> <%= @lakewood_application.learn_about_acltc_specify %><br><br></td>
+  </tr>
+  <tr>
+    <td><strong>Currently a student:</strong> <%= @lakewood_application.currently_a_student %></td>
+  </tr>
+  <% if @lakewood_application.currently_a_student == "Yes" %>
+    <tr>
+      <td><strong>Student part-time or full-time:</strong> <%= @lakewood_application.student_part_or_full_time %></td>
+    </tr>
+    <tr>
+      <td><strong>Institution Name:</strong> <%= @lakewood_application.institution_name %></td>
+    </tr>
+    <tr>
+      <td><strong>Institution Location:</strong> <%= @lakewood_application.institution_location %></td>
+    </tr>
+    <tr>
+      <td><strong>Will they continue to be a student during the bootcamp:</strong><br><%= @lakewood_application.student_concurrently %><br><br></td>
+    </tr>
+  <% end %>
+  <tr>
+    <td><strong>Currently employed:</strong> <%= @lakewood_application.currently_employed %></td>
+  </tr>
+  <% if @lakewood_application.currently_employed == "Yes" %>
+    <tr>
+      <td><strong>Employed part-time or full-time:</strong> <%= @lakewood_application.employed_part_or_full_time %></td>
+    </tr>
+    <tr>
+      <td><strong>Employer Name:</strong> <%= @lakewood_application.employer_name %></td>
+    </tr>
+    <tr>
+      <td><strong>Employer Location:</strong> <%= @lakewood_application.employer_location %></td>
+    </tr>
+    <tr>
+      <td><strong>Will they continue to work during the bootcamp:</strong><br><%= @lakewood_application.employed_concurrently %><br><br></td>
+    </tr>
+  <% end %>
+  <tr>
+    <td><strong>Primary Goals:</strong><br><%= @lakewood_application.primary_goals %><br><br></td>
+  </tr>
+  <tr>
+    <td><strong>Proficiency With Computers and Technology:</strong><br><%= @lakewood_application.proficiency_with_computers_and_technology %><br><br></td>
+  </tr>
+  <tr>
+    <td><strong>Previous Coding Experience:</strong><br><%= @lakewood_application.programming_experience %><br><br></td>
+  </tr>
+  <tr>
+    <td><strong>Analytical/Tinkering Examples:</strong><br><%= @lakewood_application.tinker_example %><br><br></td>
+  </tr>
+  <tr>
+    <td><strong>What sets them apart:</strong><br><%= @lakewood_application.why_better %><br><br></td>
+  </tr>
+</table>

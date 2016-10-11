@@ -1,0 +1,70 @@
+<%= render "/layouts/page_title", page_title: "Lakewood Applications", page_subtitle: "" %>
+<%= javascript_include_tag "https://www.google.com/jsapi", "chartkick" %>
+
+<div class="chart">
+  <h4>Total Applications Per Month</h4>
+  <%= line_chart LakewoodApplication.group_by_month(:created_at, format: "%b %Y", last: 11).count, colors: ["#18A497"], discrete: true, xtitle: "Month", ytitle: "Number of Applications" %>
+</div>
+<div class="chart">
+  <h4>How Applicants Learned About ACLTC</h4>
+  <%= pie_chart LakewoodApplication.group(:learn_about_acltc).where.not(:learn_about_acltc => nil).count %>
+</div>
+<div class="chart">
+  <h4>Students Registered per Cohort</h4>
+  <%= column_chart LakewoodApplication.group(:cohort).where(:status => 'Paid Deposit').where.not(:cohort => 'CHI 4/16').count %>
+</div>
+<div class="chart">
+  <h4>Every Applicant's Status</h4>
+  <%= pie_chart LakewoodApplication.group(:status).where.not(:status => nil).count %>
+</div>
+<section id="content">
+  <div class="content-wrap dash-wrap">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <%= link_to "Download Applications CSV", lakewood_applications_path(format: "csv"), :class => 'button btn-secondary csv-button'  %>
+
+        <table class="table table-striped index-dash-table">
+          <tr>
+          <th>Name</th>
+            <th>Submitted On</th>
+            <th>
+              <div class="dropdown">
+                <a class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="color:gray;">
+                  Location
+                  <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                  <li><a href="/applications?location_filter=Chicago">Chicago</a></li>
+                  <li><a href="/applications?location_filter=New York City">New York City</a></li>
+                  <li><a href="/applications?location_filter=San Francisco">San Francisco</a></li>
+                  <li><a href="/applications">All</a></li>
+                </ul>
+              </div>
+            </th>
+            <th>Status</th>
+            <th>Cohort</th>
+            <th>View Profile</th>
+          </tr>
+          <% @lakewood_applications.order("created_at desc").each do |lakewood_application| %>
+          <tr>
+            <td><%= link_to lakewood_application.full_name, lakewood_application_path(lakewood_application) %></td>
+            <td><%= lakewood_application.created_at.strftime("%A %B %d, %Y") %></td>
+            <td><%= lakewood_application.location %></td>
+            <td><a href="/lakewood_applications?status=<%= lakewood_application.status %>"><%= lakewood_application.status %></a></td>
+            <td><%= lakewood_application.cohort %></td>
+            <td>
+              <%= link_to 'Profile', "/lakewood_profiles/#{lakewood_application.id}",  {:remote => true, 'data-target' => '#profile-modal'}  %>
+            </td>
+          </tr>
+          <% end %>
+        </table>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</section>
+
+<script type="text/javascript">
+  $('.dropdown-toggle').dropdown();
+</script>
