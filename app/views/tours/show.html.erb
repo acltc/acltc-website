@@ -1,0 +1,43 @@
+<%= render "/layouts/page_title", page_title: "Tour for #{@tour.city}", page_subtitle: "" %>
+<section id="content">
+  <div class="content-wrap dash-wrap">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <div class="application-links">
+          <%= link_to "Back to Index", tours_path, class: "btn btn-success left-link" %>
+          <%= link_to "Edit", edit_tour_path(@tour), class: "btn btn-warning left-link" %>
+          <%= link_to 'Delete', tour_path(@tour), method: :delete, data: { confirm: 'Are you sure you want to delete this tour?' }, class: "btn btn-danger right-link" %>
+        </div>
+        <br>
+        <table class="table table-striped">
+          <tr>
+            <th class="col-md-3">City:</th>
+            <td class="col-md-5"><%= @tour.city %></td>
+          </tr>
+          <tr>
+            <th class="col-md-3">First Name:</th>
+            <td class="col-md-5"><%= @tour.first_name %></td>
+          </tr>
+          <tr class="active">
+            <th class="col-md-3">Last Name:</th>
+            <td class="col-md-5"><%= @tour.last_name %></td>
+          </tr>
+          <tr>
+            <th>Email:</th>
+            <td class="col-md-5"><%= @tour.email %></td>
+          </tr>
+          <tr class="active">
+            <th>Phone:</th>
+            <td class="col-md-5"><%= @tour.phone %></td>
+          </tr>
+          <tr class="active">
+            <th>Tour Scheduled For:</th>
+            <td class="col-md-5"><%= @tour.interview.interview_time_zone %></td>
+          </tr>          
+        </table>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</section>

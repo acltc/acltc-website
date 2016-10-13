@@ -1,0 +1,79 @@
+<section id="content">
+  <div class="content-wrap">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <%= form_for @tour do |f| %>
+          <% if @tour.errors.any? %>
+            <div class="alert alert-dismissible alert-warning center-warning">
+              <button type="button" class="close" data-dismiss="alert">×</button>
+              <h2>Oops! You forgot to fill out
+                <%= pluralize(@tour.errors.count, "field") %>:
+              </h2>
+              <ul>
+                <% @tour.errors.full_messages.each do |msg| %>
+                  <h4><%= msg %></h4>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <div class="form-group">
+            <label class="required label-radio form-label">Which location are you applying for?</label>
+            <div id="city" class="radio">
+              <%= f.radio_button :city, "Chicago" %>
+              <%= f.label :city, "Chicago", :value => "Chicago" %><br />
+              <%= f.radio_button :city, "San Francisco" %>
+              <%= f.label :city, "San Francisco", :value => "San Francisco" %><br />
+              <%= f.radio_button :city, "New York City" %>
+              <%= f.label :city, "New York City", :value => "New York City" %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.label :first_name, "First Name", class: "required form-label" %><br />
+            <%= f.text_field :first_name, autofocus: true, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :last_name, "Last Name", class: "required form-label" %><br />
+            <%= f.text_field :last_name, autofocus: true, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :email, "Email Address", class: "required form-label" %><br />
+            <%= f.text_field :email, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :phone, "Cell Phone Number", class: "required form-label" %><br />
+            <%= f.text_field :phone, class: "form-control", placeholder: "xxx-xxx-xxxx" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :interview_id, "Choose a tour date and time", class: "required form-label", id: "additional-tour-text"  %><br />
+            <%= f.collection_select :interview_id, Interview.where('starts_at > ? AND starts_at < ?', DateTime.now, DateTime.now + 200.hours).where(booked: false).order(starts_at: :asc), :id, :interview_date_human, {:include_blank => 'Select Date and Time'}, { id: 'tours', class: 'form-control shorten-select' } %>
+          </div>
+          <%= f.invisible_captcha :subtitle %> <!-- This is an invisible field that only spambots see. If it is filled in, the tour won't save. -->
+          <div class="form-group">
+            <%= f.submit "Submit", class: "button button-3d nomargin nopadding" %>
+          </div>
+        <% end %>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Google Code for Apply Now Button Conversion Page -->
+<script type="text/javascript">
+  /* <![CDATA[ */
+  var google_conversion_id = 926873760;
+  var google_conversion_language = "en";
+  var google_conversion_format = "3";
+  var google_conversion_color = "ffffff";
+  var google_conversion_label = "8ZohCMXw8mQQoPH7uQM";
+  var google_remarketing_only = false;
+  /* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+  <div style="display:inline;">
+    <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/926873760/?label=8ZohCMXw8mQQoPH7uQM&amp;guid=ON&amp;script=0"/>
+  </div>
+</noscript>

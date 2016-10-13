@@ -1,0 +1,57 @@
+<%= render "/layouts/page_title", page_title: "Tours", page_subtitle: "" %>
+<%= javascript_include_tag "https://www.google.com/jsapi", "chartkick" %>
+
+<div class="chart">
+  <h4>Total Tours Per Month</h4>
+  <%= line_chart Tour.group_by_month(:created_at, format: "%b %Y", last: 11).count, colors: ["#18A497"], discrete: true, xtitle: "Month", ytitle: "Number of Tours" %>
+</div>
+<div class="chart">
+  <h4>Tours Per Month by Location</h4>
+  <%= line_chart Tour.group(:city).group_by_month(:created_at, format: "%b %Y", last: 11).count, discrete: true, xtitle: "Month", ytitle: "Number of Tours" %>
+</div>
+
+<section id="content">
+  <div class="content-wrap dash-wrap">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <%= link_to "Download Tours CSV", tours_path(format: "csv"), :class => 'button btn-secondary csv-button'  %>
+
+        <table class="table table-striped index-dash-table">
+          <tr>
+          <th>Name</th>
+            <th>Submitted On</th>
+            <th>
+              <div class="dropdown">
+                <a class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="color:gray;">
+                  City
+                  <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                  <li><a href="/tours?location_filter=Chicago">Chicago</a></li>
+                  <li><a href="/tours?location_filter=New York City">New York City</a></li>
+                  <li><a href="/tours?location_filter=San Francisco">San Francisco</a></li>
+                  <li><a href="/tours">All</a></li>
+                </ul>
+              </div>
+            </th>
+            <th>Tour Time</th>
+          </tr>
+          <% @tours.order("created_at desc").each do |tour| %>
+            <tr>
+              <td><%= link_to tour.full_name, tour_path(tour) %></td>
+              <td><%= tour.created_at.strftime("%A %B %d, %Y") %></td>
+              <td><%= tour.city %></td>
+              <td><%= tour.interview ? tour.interview.starts_at.strftime("%A %B %d, %Y") : "" %></td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</section>
+
+<script type="text/javascript">
+  $('.dropdown-toggle').dropdown();
+</script>
