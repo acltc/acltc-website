@@ -23,7 +23,7 @@ class AcltcMailer < ApplicationMailer
 
   def tour_email(tour)
     @tour = tour
-    mail(from: "sandboxd035c758dbb54757b1b13d910d57a6b3.mailgun.org", to: 'dcam1901@gmail.com', subject: 'Tour Scheduled', reply_to: @tour.email )
+    mail(from: "sandboxd035c758dbb54757b1b13d910d57a6b3.mailgun.org", to: 'admissions@anyonecanlearntocode.com', subject: 'Tour Scheduled', reply_to: @tour.email )
   end
 
   def lakewood_application_email(application)
