@@ -1,0 +1,18 @@
+<table style="max-width: 800px;">
+  <th><H2>Hello! We received a tour request for <%= @tour.city %>! </h2></th>
+  <tr>
+    <td><strong>First Name:</strong> <%= @tour.first_name %></td>
+  </tr>
+  <tr>
+    <td><strong>Last Name:</strong> <%= @tour.last_name %></td>
+  </tr>
+  <tr>
+    <td><strong>Email:</strong> <%= @tour.email %></td>
+  </tr>
+  <tr>
+    <td><strong>Phone:</strong> <%= @tour.phone %></td>
+  </tr>
+  <tr>
+    <td><strong>Tour Scheduled For:</strong> <%= @tour.interview.interview_date_human %></td>
+  </tr>
+</table>
