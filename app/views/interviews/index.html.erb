@@ -7,14 +7,19 @@
       <div class="col-md-6">
         <table class="table table-striped">
           <tr>
-            <th colspan="4"><h4 class="interview-table-header">Booked Interviews</h4></th>
+            <th colspan="4"><h4 class="interview-table-header">Booked Interviews/Tours</h4></th>
           </tr>
           <% @interview.where('starts_at > ?', DateTime.now).where(booked: true).order(starts_at: :asc).each do |interview| %>
             <tr>
               <td><h5><%= interview.interview_time_zone %></h5></td>
               <td><h5><%= interview.location %></h5></td>
-              <td><h5><%= link_to "#{interview.application.first_name} #{interview.application.last_name}", application_path(interview.application.id) %></h5></td>
-              <td><%= link_to 'Release', "/interviews/#{interview.id}?release=true&application_id=#{interview.application.id}", method: :patch, data: { confirm: 'Are you sure you want to release this interview slot?' }, class: "btn btn-warning btn-xs interview-button" %></td>
+              <% if interview.application %>
+                <td><h5><%= link_to "#{interview.application.first_name} #{interview.application.last_name}", application_path(interview.application.id) %></h5></td>
+                <td><%= link_to 'Release', "/interviews/#{interview.id}?release=true&application_id=#{interview.application.id}", method: :patch, data: { confirm: 'Are you sure you want to release this interview slot?' }, class: "btn btn-warning btn-xs interview-button" %></td>
+              <% else %>
+                <td><h5><%= link_to "#{interview.tour.first_name} #{interview.tour.last_name}", tour_path(interview.tour.id) %></h5></td>
+                <td><%= link_to 'Release', "/interviews/#{interview.id}?release=true&tour_id=#{interview.tour.id}", method: :patch, data: { confirm: 'Are you sure you want to release this tour slot?' }, class: "btn btn-warning btn-xs interview-button" %></td>
+              <% end %>
           <% end %>
           </tr>
         </table>
@@ -22,7 +27,7 @@
       <div class="col-md-6">
         <table class="table table-striped">
           <tr>
-            <th colspan="4"><h4 class="interview-table-header">Available Interview Slots</h4></th>
+            <th colspan="4"><h4 class="interview-table-header">Available Interview/Tour Slots</h4></th>
           </tr>
           <% @interview.where('starts_at > ?', DateTime.now).where(booked: false).order(starts_at: :asc).each do |interview| %>
             <tr>
