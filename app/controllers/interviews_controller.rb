@@ -31,11 +31,17 @@ before_action :authenticate_admin!, except: [:interview_options]
   def update
     @interview = Interview.find(params[:id])
 
-    if params[:release]
+    if params[:release] && params[:application_id]
       @interview.update(booked: false)
       @application = Application.find(params[:application_id])
       @application.update(interview_id: nil)
       flash[:info] = "Interview slot released!"
+      redirect_to "/interviews"
+    elsif params[:release] && params[:tour_id]
+      @interview.update(booked: false)
+      @tour = Tour.find(params[:tour_id])
+      @tour.update(interview_id: nil)
+      flash[:info] = "Tour slot released!"
       redirect_to "/interviews"
     elsif @interview.update_attributes(interview_params)
       flash[:info] = "Interview slot updated!"
