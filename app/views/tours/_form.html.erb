@@ -44,10 +44,11 @@
             <%= f.label :phone, "Cell Phone Number", class: "required form-label" %><br />
             <%= f.text_field :phone, class: "form-control", placeholder: "xxx-xxx-xxxx" %>
           </div>
+          
           <% if @tour.interview_id.present? %>
             <div class="form-group">
               <%= f.label :interview_id, "Choose a tour date and time", class: "required form-label", id: "additional-tour-text"  %><br />
-              <%= f.collection_select :interview_id, Interview.where('starts_at > ? AND starts_at < ?', DateTime.now, DateTime.now + 200.hours).where(booked: false).order(starts_at: :asc), :id, :interview_date_human, {:include_blank => @tour.interview.interview_time_zone }, { id: 'tours', class: 'form-control shorten-select' } %>
+              <%= f.collection_select :interview_id, Interview.where('starts_at > ? AND starts_at < ?', DateTime.now, DateTime.now + 200.hours).where(booked: false).order(starts_at: :asc), :id, :interview_date_human, {:include_blank => @tour.interview.interview_time_zone || 'Select Date & Time' }, { id: 'tours', class: 'form-control shorten-select' } %>
             </div>
           <% else %>
             <div class="form-group">
