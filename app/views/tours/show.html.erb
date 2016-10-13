@@ -33,7 +33,11 @@
           </tr>
           <tr>
             <th>Tour Scheduled For:</th>
-            <td class="col-md-5"><%= @tour.interview.interview_time_zone %></td>
+            <% if @tour.interview_id.present? %>
+              <td class="col-md-5"><%= @tour.interview.interview_time_zone %></td>
+            <% else %>
+              <td class="col-md-5">Not Scheduled</td>
+            <% end %>
           </tr>          
         </table>
       </div>
