@@ -207,6 +207,15 @@ ActiveRecord::Schema.define(version: 20161013183356) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "k12_contacts", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.text     "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "lakewood_applications", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
