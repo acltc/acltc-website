@@ -68,4 +68,28 @@ class SubscribersController < ApplicationController
     data = open(url).read
     send_data data, :disposition => 'attachment', :filename=>"Actualize_Curriculum_2016.pdf"
   end
+
+  def drip_setup
+    client = Drip::Client.new do |c|
+      c.api_key = "DRIP_CLIENT_API_TOKEN"
+      c.account_id = "DRIP_CLIENT_ID"
+    end
+    @resp = Array(client.subscribers)
+    # @subscriber = resp.subscribers.first
+    # @accounts = Unirest.get("http://api.getdrip.com/v2/accounts").body
+  end
+
+  def drip_get
+    @subscribers = subscribers
+
+  end
+
+  # private
+
+  #   def authenticate
+  #     curl -H 'User-Agent: Your App Name (www.yourapp.com)' \
+  #       -u f4ff6a200e850131dca1040cce1ee51a: \
+  #       -d status=active \
+  #       https://api.getdrip.com/v2/9999999/campaigns
+  #   end
 end
