@@ -22,9 +22,6 @@ Rails.application.routes.draw do
   get "/applications/new/:id" => "applications#new"
 
   get "/subscribers/download"
-  get "/subscribers/drip" => "subscribers#drip_setup"
-  get "/:account_id/subscribers" => "subscribers#drip_get"
-  post "/:account_id/subscribers" => "subscribers#drip_post"
   
   resources :blog_posts
   resources :blog_categories
