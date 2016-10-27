@@ -17,11 +17,12 @@ class SubscribersController < ApplicationController
       end
       if @subscriber.save
         cookies.permanent[:is_subscriber] = true
+        subscriber_email = @subscriber.email.to_json
         response = Unirest.post(
           "https://api.getdrip.com/v2/7528430/subscribers", 
           headers:{ "Accept" => "application/json", "Content-Type" => "application/vnd.api+json" },
           parameters:{  
-            email: params[:email]  
+            email: @subscriber.email  
           }
         )
         p "---------------------------"
@@ -30,6 +31,8 @@ class SubscribersController < ApplicationController
         p "Response Headers: #{response.headers}"
         p "Response Body: #{response.body}"
         p response.body
+        p "Subscriber: #{@subscriber}"
+        p "Subscriber Email #{subscriber_email}"
         p "---------------------------"
         redirect_to "/applications/new/#{@subscriber.id}"
       else
