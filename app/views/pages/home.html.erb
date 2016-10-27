@@ -24,7 +24,7 @@
             </div>
         </div>
         <div class="locations-wrapper page-wrapper">
-            <div class="home-section">
+            <div class="home-section" id="home-upper-locations">
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="location">
@@ -81,7 +81,7 @@
                             </div>
                             <div class="tour-buttons-group">
                                 <p class="apply-orange">
-                                    <%=link_to "Coming Soon", "#", class: "btn", id:"top-application-button" %>
+                                    <%=link_to "Coming Soon", root_path(anchor: "home-upper-locations"), class: "btn", id:"top-application-button" %>
                                     <%#= link_to "Book A Tour", new_tour_path, class: "btn", id: "top-application-button" %>
                                 </p>
                             </div>
@@ -336,7 +336,7 @@
         </div> <!-- /apprenticeship-wrapper page-wrapper -->
 
         <div class="locations-wrapper page-wrapper">
-            <div class="home-section">
+            <div class="home-section" id="home-lower-locations">
                 <div class="row">
                     <h2 class = "actualize-logo">Locations</h2>
                     <div class="col-sm-4">
@@ -437,8 +437,10 @@
                             <p>Tuition: $12,500</p>
                             <div class="tour-buttons-group">
                                 <p class="apply-orange">
-                                    
-                                <%#= link_to "Book A Tour", new_tour_path, class: "btn", id: "top-application-button" %>
+                                    <%= link_to "Coming Soon", root_path(anchor: "home-lower-locations"), class: "btn", id:"top-application-button" %>
+                                    <%#= link_to "Book A Tour", new_tour_path, class: "btn", id: "top-application-button" %>
+                                </p>     
+                            </div>
                             </p>
                         </div>
                     </div>
