@@ -24,7 +24,7 @@
             </div>
         </div>
         <div class="locations-wrapper page-wrapper">
-            <div class="home-section">
+            <div class="home-section" id="home-upper-locations">
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="location">
@@ -39,7 +39,7 @@
                                 <h5 style="line-height:0.7;">Sundays 9a to 5p<h5>
                                 <h5 style="line-height:0.7;">Mon-Thurs 6 to 9:30p</h5>
                             </div>
-                            <div class="tour-buttons-top">
+                            <div class="tour-buttons-group">
                                 <p class="apply-aqua">
                                     <%= link_to "Book A Tour", new_tour_path, class: "btn btn-default", id: "top-application-button" %>
                                 </p>
@@ -59,7 +59,7 @@
                                 <h5 style="line-height:0.7;">Sundays 9a to 5p<h5>
                                 <h5 style="line-height:0.7;">Mon-Thurs 6 to 9:30p</h5>
                             </div>
-                            <div class="tour-buttons-top">
+                            <div class="tour-buttons-group">
                                 <p class="apply-blue">
                                     <%= link_to "Book A Tour", new_tour_path, class: "btn", id: "top-application-button" %>
                                 </p>
@@ -79,9 +79,9 @@
                                 <h5 style="line-height:0.7;">Sundays 9a to 5p<h5>
                                 <h5 style="line-height:0.7;">Mon-Thurs 6 to 9:30p</h5>
                             </div>
-                            <div class="tour-buttons-top">
+                            <div class="tour-buttons-group">
                                 <p class="apply-orange">
-                                    <%=link_to "Coming Soon", "#", class: "btn", id:"top-application-button" %>
+                                    <%=link_to "Coming Soon", root_path(anchor: "home-upper-locations"), class: "btn", id:"top-application-button" %>
                                     <%#= link_to "Book A Tour", new_tour_path, class: "btn", id: "top-application-button" %>
                                 </p>
                             </div>
@@ -119,7 +119,7 @@
                     </div>
                 </div>
                 <div class="col-md-12 centered">
-                    <%= link_to "Apply Now", new_application_path, class: "btn", id: "top-application-button" %>
+                    <%= link_to "Book A Tour", new_application_path, class: "btn", id: "book-a-tour-individual-button" %>
                 </div>
             </div>
         </div>
@@ -336,7 +336,7 @@
         </div> <!-- /apprenticeship-wrapper page-wrapper -->
 
         <div class="locations-wrapper page-wrapper">
-            <div class="home-section">
+            <div class="home-section" id="home-lower-locations">
                 <div class="row">
                     <h2 class = "actualize-logo">Locations</h2>
                     <div class="col-sm-4">
@@ -388,9 +388,11 @@
                                 <h5 style="line-height:0.7;">Mon-Thurs 6 to 9:30p</h5>
                             </div>
                             <p>Tuition: $12,500</p>
-                            <p class="apply-aqua">
-                                <%= link_to "Book A Tour", new_tour_path, class: "btn", id: "top-application-button" %>
-                            </p>
+                            <div class="tour-buttons-group">
+                                <p class="apply-aqua">
+                                    <%= link_to "Book A Tour", new_tour_path, class: "btn", id: "top-application-button" %>
+                                </p>
+                            </div>
                         </div>
                     </div>
                     <div class="col-sm-4">
@@ -409,9 +411,11 @@
                                 <h5 style="line-height:0.7;">Mon-Thurs 6 to 9:30p</h5>
                             </div>
                             <p>Tuition: $12,500</p>
-                            <p class="apply-blue">
-                                <%= link_to "Book A Tour", new_tour_path, class: "btn", id: "top-application-button" %>
-                            </p>
+                            <div class="tour-buttons-group">
+                                <p class="apply-blue">
+                                    <%= link_to "Book A Tour", new_tour_path, class: "btn", id: "top-application-button" %>
+                                </p>
+                            </div>
                         </div>
                     </div>
 
@@ -431,9 +435,12 @@
                                 <h5 style="line-height:0.7;">Mon-Thurs 6 to 9:30p</h5>
                             </div>
                             <p>Tuition: $12,500</p>
-                            <p class="apply-orange">
-                                <%=link_to "Coming Soon", "#", class: "btn", id:"top-application-button" %>
-                                <%#= link_to "Book A Tour", new_tour_path, class: "btn", id: "top-application-button" %>
+                            <div class="tour-buttons-group">
+                                <p class="apply-orange">
+                                    <%= link_to "Coming Soon", root_path(anchor: "home-lower-locations"), class: "btn", id:"top-application-button" %>
+                                    <%#= link_to "Book A Tour", new_tour_path, class: "btn", id: "top-application-button" %>
+                                </p>     
+                            </div>
                             </p>
                         </div>
                     </div>
