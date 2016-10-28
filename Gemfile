@@ -53,6 +53,7 @@ gem 'quiet_assets', group: :development
 gem 'friendly_id', '~> 5.1.0' # Note: You MUST use 5.0.0 or greater for Rails 4.0+
 gem 'rails_12factor', group: :production
 gem 'mailgun'
+gem 'tinymce-rails'
 
 group :development, :test do
   gem 'dotenv-rails'
