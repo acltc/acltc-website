@@ -20,10 +20,11 @@ class SubscribersController < ApplicationController
         subscriber_email = @subscriber.email.to_json
         response = Unirest.post(
           "https://api.getdrip.com/v2/7528430/subscribers", 
-          headers:{ "Accept" => "application/json", "Content-Type" => "application/vnd.api+json" },
-          parameters:{  
-            email: @subscriber.email  
-          }
+          auth: { username: "f9fimszgayddpikpqswh" },
+          headers:{ "Content-Type" => "application/vnd.api+json", "Authorization" => "Basic ZjlmaW1zemdheWRkcGlrcHFzd2g6" },
+          parameters: {  
+            subscribers: [{ email: @subscriber.email }]
+          }.to_json
         )
         p "---------------------------"
         p response
