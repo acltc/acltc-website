@@ -31,7 +31,6 @@ gem 'aws-sdk', '~> 2'
 gem "chartkick"
 #For grouping with Chartkick
 gem 'groupdate'
-
 #datetime picker
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.37'
@@ -53,6 +52,10 @@ gem 'quiet_assets', group: :development
 gem 'friendly_id', '~> 5.1.0' # Note: You MUST use 5.0.0 or greater for Rails 4.0+
 gem 'rails_12factor', group: :production
 gem 'mailgun'
+
+gem 'drip-ruby', '~> 0.0.7', require: 'drip'
+
+gem 'unirest'
 
 group :development, :test do
   gem 'dotenv-rails'

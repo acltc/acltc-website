@@ -10,6 +10,11 @@ class SubscribersController < ApplicationController
   end
 
   def create
+    client = Drip::Client.new do |c|
+      c.api_key = ENV["DRIP_CLIENT_API_TOKEN"]
+      c.account_id = ENV["DRIP_ACCOUNT_ID"]
+    end
+
     if params[:mousetrap] == "Application"
       @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], mousetrap: params[:mousetrap], ip_address: request.remote_ip)
       if city = request.location.city
@@ -17,6 +22,7 @@ class SubscribersController < ApplicationController
       end
       if @subscriber.save
         cookies.permanent[:is_subscriber] = true
+        client.create_or_update_subscriber(@subscriber.email)
         redirect_to "/applications/new/#{@subscriber.id}"
       else
         render :apply
@@ -34,6 +40,7 @@ class SubscribersController < ApplicationController
         end
         if @subscriber.save
           cookies.permanent[:is_subscriber] = true
+          client.create_or_update_subscriber(@subscriber.email)
           respond_to do |format|
             @java_url = "/subscribers/download"
             format.js {render :partial => "downloadFile"}
@@ -47,6 +54,7 @@ class SubscribersController < ApplicationController
       end
       if @subscriber.save
         cookies.permanent[:is_subscriber] = true
+        client.create_or_update_subscriber(@subscriber.email)
         @tutorials_visible = true
       else
         @tutorials_visible = false
@@ -56,6 +64,7 @@ class SubscribersController < ApplicationController
       end
     else
       @subscriber = Subscriber.create(first_name: params[:firstname], email: params[:email], mousetrap: "Homepage Footer") unless params[:email].blank?
+      client.create_or_update_subscriber(@subscriber.email)
     end
   end
 
