@@ -21,14 +21,19 @@ class AcltcMailer < ApplicationMailer
     mail(from: "sandboxd035c758dbb54757b1b13d910d57a6b3.mailgun.org", to: 'admissions@anyonecanlearntocode.com', subject: 'Application Submitted', reply_to: @application.email )
   end
 
-  def tour_email(tour)
-    @tour = tour
-    mail(from: "sandboxd035c758dbb54757b1b13d910d57a6b3.mailgun.org", to: 'admissions@anyonecanlearntocode.com', subject: 'Tour Scheduled', reply_to: @tour.email )
+  def subscriber_mousetrap_email(mousetrap)
+    @mousetrap = mousetrap
+    mail(from: @mousetrap.email, to: "theonetrueemailtest@gmail.com", subject: 'A Mouse Is In The Mousetrap')
   end
 
   def lakewood_application_email(application)
     @lakewood_application = application
     mail(from: "sandboxd035c758dbb54757b1b13d910d57a6b3.mailgun.org", to: ['zev@anyonecanlearntocode.com', 'ben@actualize.co', 'sal@anyonecanlearntocode.com'], subject: 'Lakewood Actualize Application', reply_to: @lakewood_application.email )
+  end
+
+  def tour_email(tour)
+    @tour = tour
+    mail(from: "sandboxd035c758dbb54757b1b13d910d57a6b3.mailgun.org", to: 'admissions@anyonecanlearntocode.com', subject: 'Tour Scheduled', reply_to: @tour.email )
   end
 
   def mini_course_application_email(mini_course_application)
