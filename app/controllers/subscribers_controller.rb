@@ -41,6 +41,9 @@ class SubscribersController < ApplicationController
         if city = request.location.city
           @subscriber.city = city
         end
+        if state = request.location.state
+          @subscriber.state = state
+        end
         if @subscriber.save
           cookies.permanent[:is_subscriber] = true
           client.create_or_update_subscriber(@subscriber.email)
@@ -55,6 +58,9 @@ class SubscribersController < ApplicationController
       if city = request.location.city
           @subscriber.city = city
       end
+      if state = request.location.state
+        @subscriber.state = state
+      end
       if @subscriber.save
         cookies.permanent[:is_subscriber] = true
         client.create_or_update_subscriber(@subscriber.email)
@@ -67,6 +73,12 @@ class SubscribersController < ApplicationController
       end
     else
       @subscriber = Subscriber.create(first_name: params[:firstname], email: params[:email], mousetrap: "Homepage Footer") unless params[:email].blank?
+      if city = request.location.city
+          @subscriber.city = city
+      end
+      if state = request.location.state
+        @subscriber.state = state
+      end
       client.create_or_update_subscriber(@subscriber.email)
     end
   end
