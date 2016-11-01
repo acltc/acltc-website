@@ -23,9 +23,13 @@ class SubscribersController < ApplicationController
       if state = request.location.state
         @subscriber.state = state
       end
+      if postal_code = request.location.postal_code
+        @subscriber.postal_code = postal_code
+      end
       if @subscriber.save
         cookies.permanent[:is_subscriber] = true
         client.create_or_update_subscriber(@subscriber.email)
+        AcltcMailer.subscriber_mousetrap_email(@subscriber).deliver_now
         redirect_to "/applications/new/#{@subscriber.id}"
       else
         render :apply
@@ -44,9 +48,13 @@ class SubscribersController < ApplicationController
         if state = request.location.state
           @subscriber.state = state
         end
+        if postal_code = request.location.postal_code
+          @subscriber.postal_code = postal_code
+        end
         if @subscriber.save
           cookies.permanent[:is_subscriber] = true
           client.create_or_update_subscriber(@subscriber.email)
+          AcltcMailer.subscriber_mousetrap_email(@subscriber).deliver_now
           respond_to do |format|
             @java_url = "/subscribers/download"
             format.js {render :partial => "downloadFile"}
@@ -61,9 +69,13 @@ class SubscribersController < ApplicationController
       if state = request.location.state
         @subscriber.state = state
       end
+      if postal_code = request.location.postal_code
+        @subscriber.postal_code = postal_code
+      end
       if @subscriber.save
         cookies.permanent[:is_subscriber] = true
         client.create_or_update_subscriber(@subscriber.email)
+        AcltcMailer.subscriber_mousetrap_email(@subscriber).deliver_now
         @tutorials_visible = true
       else
         @tutorials_visible = false
@@ -79,7 +91,11 @@ class SubscribersController < ApplicationController
       if state = request.location.state
         @subscriber.state = state
       end
+      if postal_code = request.location.postal_code
+        @subscriber.postal_code = postal_code
+      end
       client.create_or_update_subscriber(@subscriber.email)
+      AcltcMailer.subscriber_mousetrap_email(@subscriber).deliver_now
     end
   end
 
