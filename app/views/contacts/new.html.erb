@@ -23,17 +23,22 @@
 
               <div class="form-process"></div>
 
-              <div class="col_one_third">
+              <div class="col_half">
                 <%= f.label :first_name, class: "template-contactform-name" %>
                 <%= f.text_field :first_name, class: "sm-form-control required" %>
               </div>
 
-              <div class="col_one_third">
+              <div class="col_half col_last">
                 <%= f.label :last_name, class: "template-contactform-name" %>
                 <%= f.text_field :last_name, class: "sm-form-control required" %>
               </div>
 
-              <div class="col_one_third col_last">
+              <div class="col_half">
+                <%= f.label :phone, class: "template-contactform-name" %>
+                <%= f.text_field :phone, class: "sm-form-control required" %>
+              </div>
+
+              <div class="col_half col_last">
                 <%= f.label :email, class: "template-contactform-name" %>
                 <%= f.text_field :email, class: "sm-form-control required" %>
               </div>
