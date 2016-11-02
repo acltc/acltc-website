@@ -84,7 +84,7 @@ class SubscribersController < ApplicationController
         format.js {render :partial => "viewTutorials"}
       end
     else
-      @subscriber = Subscriber.create(first_name: params[:firstname], email: params[:email], mousetrap: "Homepage Footer", ip_address: request.remote_ip) unless params[:email].blank?
+      @subscriber = Subscriber.new(first_name: params[:firstname], email: params[:email], mousetrap: "Homepage Footer", ip_address: request.remote_ip) unless params[:email].blank?
       if city = request.location.city
           @subscriber.city = city
       end
@@ -94,8 +94,13 @@ class SubscribersController < ApplicationController
       if postal_code = request.location.postal_code
         @subscriber.postal_code = postal_code
       end
-      client.create_or_update_subscriber(@subscriber.email)
-      AcltcMailer.subscriber_mousetrap_email(@subscriber).deliver_now
+      if @subscriber.save
+        cookies.permanent[:is_subscriber] = true
+        client.create_or_update_subscriber(@subscriber.email)
+        AcltcMailer.subscriber_mousetrap_email(@subscriber).deliver_now
+      else
+        render :apply
+      end
     end
   end
 
