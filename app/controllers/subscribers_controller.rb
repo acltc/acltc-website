@@ -84,7 +84,7 @@ class SubscribersController < ApplicationController
         format.js {render :partial => "viewTutorials"}
       end
     else
-      @subscriber = Subscriber.create(first_name: params[:firstname], email: params[:email], mousetrap: "Homepage Footer") unless params[:email].blank?
+      @subscriber = Subscriber.create(first_name: params[:firstname], email: params[:email], mousetrap: "Homepage Footer", ip_address: request.remote_ip) unless params[:email].blank?
       if city = request.location.city
           @subscriber.city = city
       end
