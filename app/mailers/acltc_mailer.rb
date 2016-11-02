@@ -23,7 +23,15 @@ class AcltcMailer < ApplicationMailer
 
   def subscriber_mousetrap_email(subscriber)
     @subscriber = subscriber
-    mail(from: @subscriber.email, to: "theonetrueemailtest@gmail.com", subject: 'A Mouse Is In The Mousetrap')
+    if @subscriber.state == "Illinois"
+      mail(from: @subscriber.email, to: "theonetrueemailtest@gmail.com", subject: 'A Mouse Is In The Illinois Mousetrap')
+    elsif @subscriber.state == "California"
+      mail(from: @subscriber.email, to: "theonetrueemailtest@gmail.com", subject: 'A Mouse Is In The California Mousetrap')
+    elsif @subscriber.state == "New York"
+      mail(from: @subscriber.email, to: "theonetrueemailtest@gmail.com", subject: 'A Mouse Is In The New York Mousetrap')
+    else
+      mail(from: @subscriber.email, to: "theonetrueemailtest@gmail.com", subject: 'A Mouse Is In The Mousetrap, But They\'re Not From California, Illinois, or New York')
+    end
   end
 
   def tour_email(tour)
