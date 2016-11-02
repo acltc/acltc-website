@@ -16,7 +16,7 @@ class SubscribersController < ApplicationController
     end
 
     if params[:mousetrap] == "Application"
-      @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], mousetrap: params[:mousetrap], ip_address: request.remote_ip)
+      @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], mousetrap: params[:mousetrap], ip_address: "72.229.28.185")
       if city = request.location.city
         @subscriber.city = city
       end
