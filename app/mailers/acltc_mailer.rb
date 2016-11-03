@@ -21,9 +21,17 @@ class AcltcMailer < ApplicationMailer
     mail(from: "sandboxd035c758dbb54757b1b13d910d57a6b3.mailgun.org", to: 'admissions@anyonecanlearntocode.com', subject: 'Application Submitted', reply_to: @application.email )
   end
 
-  def subscriber_mousetrap_email(mousetrap)
-    @mousetrap = mousetrap
-    mail(from: @mousetrap.email, to: "theonetrueemailtest@gmail.com", subject: 'A Mouse Is In The Mousetrap')
+  def subscriber_mousetrap_email(subscriber)
+    @subscriber = subscriber
+    if @subscriber.state = "Illinois"
+      mail(from: @subscriber.email, to: "theonetrueemailtest@gmail.com", subject: 'Illinois Mousetrap Activated')
+    elsif @subscriber.state = "California"
+      mail(from: @subscriber.email, to: "theonetrueemailtest@gmail.com", subject: 'California Mousetrap Activated')
+    elsif @subscriber.state = "New York"
+      mail(from: @subscriber.email, to: "theonetrueemailtest@gmail.com", subject: 'New York Mousetrap Activated')
+    else
+      mail(from: @subscriber.email, to: "theonetrueemailtest@gmail.com", subject: ' Mousetrap Activated')
+    end
   end
 
   def lakewood_application_email(application)
