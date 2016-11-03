@@ -24,4 +24,5 @@
 //= require chosen.jquery.min
 //= require chosen.proto.min
 //= require jquery.mask.min
+//= require tinymce
 //= require_tree .

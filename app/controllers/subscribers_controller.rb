@@ -98,10 +98,17 @@ class SubscribersController < ApplicationController
       if postal_code = request.location.postal_code
         @subscriber.postal_code = postal_code
       end
+      if state = request.location.state
+        @subscriber.state = state
+      end
+      if postal_code = request.location.postal_code
+        @subscriber.postal_code = postal_code
+      end
       if @subscriber.save
         cookies.permanent[:is_subscriber] = true
         client.create_or_update_subscriber(@subscriber.email)
         AcltcMailer.subscriber_mousetrap_email(@subscriber).deliver_now
+        @tutorials_visible = true
       else
         render :apply
       end
