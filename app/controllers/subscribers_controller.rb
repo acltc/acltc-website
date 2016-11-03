@@ -62,31 +62,35 @@ class SubscribersController < ApplicationController
         end
       end
     elsif params[:mousetrap] == "View Tutorials"
-      @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], mousetrap: params[:mousetrap], ip_address: request.remote_ip)
-      if city = request.location.city
-          @subscriber.city = city
-      end
-      if state = request.location.state
-        @subscriber.state = state
-      end
-      if postal_code = request.location.postal_code
-        @subscriber.postal_code = postal_code
-      end
-      if @subscriber.save
-        cookies.permanent[:is_subscriber] = true
-        client.create_or_update_subscriber(@subscriber.email)
-        AcltcMailer.subscriber_mousetrap_email(@subscriber).deliver_now
-        @tutorials_visible = true
+      if cookies[:is_subscriber]
+        tutorials_visible = true
       else
-        @tutorials_visible = false
-      end
-      respond_to do |format|
-        format.js {render :partial => "viewTutorials"}
+        @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], mousetrap: params[:mousetrap], ip_address: request.remote_ip)
+        if city = request.location.city
+            @subscriber.city = city
+        end
+        if state = request.location.state
+          @subscriber.state = state
+        end
+        if postal_code = request.location.postal_code
+          @subscriber.postal_code = postal_code
+        end
+        if @subscriber.save
+          cookies.permanent[:is_subscriber] = true
+          client.create_or_update_subscriber(@subscriber.email)
+          AcltcMailer.subscriber_mousetrap_email(@subscriber).deliver_now
+          @tutorials_visible = true
+        else
+          @tutorials_visible = false
+        end
+        respond_to do |format|
+          format.js {render :partial => "viewTutorials"}
+        end
       end
     else
       @subscriber = Subscriber.new(first_name: params[:firstname], email: params[:email], mousetrap: "Homepage Footer", ip_address: request.remote_ip) unless params[:email].blank?
       if city = request.location.city
-          @subscriber.city = city
+        @subscriber.city = city
       end
       if state = request.location.state
         @subscriber.state = state
