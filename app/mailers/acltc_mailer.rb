@@ -23,14 +23,14 @@ class AcltcMailer < ApplicationMailer
 
   def subscriber_mousetrap_email(subscriber)
     @subscriber = subscriber
-    if @subscriber.state == "Illinois"
-      mail(from: @subscriber.email, to: "theonetrueemailtest@gmail.com", subject: 'A Mouse Is In The Illinois Mousetrap')
-    elsif @subscriber.state == "California"
-      mail(from: @subscriber.email, to: "theonetrueemailtest@gmail.com", subject: 'A Mouse Is In The California Mousetrap')
-    elsif @subscriber.state == "New York"
-      mail(from: @subscriber.email, to: "theonetrueemailtest@gmail.com", subject: 'A Mouse Is In The New York Mousetrap')
+    if @subscriber.state = "Illinois"
+      mail(from: @subscriber.email, to: "nick@anyonecanlearntocode.com", subject: 'Illinois Mousetrap Activated')
+    elsif @subscriber.state = "California"
+      mail(from: @subscriber.email, to: "jen@anyonecanlearntocode.com", subject: 'California Mousetrap Activated')
+    elsif @subscriber.state = "New York"
+      mail(from: @subscriber.email, to: "sal@anyonecanlearntocode.com", subject: 'New York Mousetrap Activated')
     else
-      mail(from: @subscriber.email, to: "theonetrueemailtest@gmail.com", subject: 'A Mouse Is In The Mousetrap, But They\'re Not From California, Illinois, or New York')
+      mail(from: @subscriber.email, to: "admissions@anyonecanlearntocode.com", subject: ' Mousetrap Activated')
     end
   end
 
@@ -42,6 +42,11 @@ class AcltcMailer < ApplicationMailer
   def lakewood_application_email(application)
     @lakewood_application = application
     mail(from: "sandboxd035c758dbb54757b1b13d910d57a6b3.mailgun.org", to: ['theonetrueemailtest@gmail.com', 'dcam1901@gmail.com'], subject: 'Lakewood Actualize Applicant', reply_to: @lakewood_application.email )
+  end
+
+  def tour_email(tour)
+    @tour = tour
+    mail(from: "sandboxd035c758dbb54757b1b13d910d57a6b3.mailgun.org", to: 'admissions@anyonecanlearntocode.com', subject: 'Tour Scheduled', reply_to: @tour.email )
   end
 
   def mini_course_application_email(mini_course_application)
