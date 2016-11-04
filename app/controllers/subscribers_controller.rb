@@ -67,7 +67,7 @@ class SubscribersController < ApplicationController
       else
         @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], mousetrap: params[:mousetrap], ip_address: request.remote_ip)
         if city = request.location.city
-            @subscriber.city = city
+          @subscriber.city = city
         end
         if state = request.location.state
           @subscriber.state = state
