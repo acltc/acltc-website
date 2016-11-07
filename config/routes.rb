@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   
   post 'subscribers_application' => 'subscribers#create_from_application'
   post 'subscribers_curriculum' => 'subscribers#create_from_curriculum'
-  post 'subscribers_tutorials' => 'subscribers#create_from_tutorials'
+  post 'subscribers_tutorial' => 'subscribers#create_from_tutorial'
   post 'subscribers_footer' => 'subscribers#create_from_footer'
   
   resources :blog_posts
