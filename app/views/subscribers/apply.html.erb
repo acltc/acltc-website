@@ -23,7 +23,7 @@
           </ul>
         </div>
       <% end %>
-      <%= form_tag '/subscribers', method: :post do %>
+      <%= form_tag '/subscribers_application', method: :post do %>
         <div class="form-group">
           <%= label :first_name, "First Name", class: "required form-label" %><br />
           <%= text_field_tag :first_name, @subscriber.first_name, class: "form-control" %>

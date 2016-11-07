@@ -23,6 +23,11 @@ Rails.application.routes.draw do
 
   get "/subscribers/download"
   
+  post 'subscribers_application' => 'subscribers#create_from_application'
+  post 'subscribers_curriculum' => 'subscribers#create_from_curriculum'
+  post 'subscribers_tutorial' => 'subscribers#create_from_tutorial'
+  post 'subscribers_footer' => 'subscribers#create_from_footer'
+  
   resources :blog_posts
   resources :blog_categories
   resources :applications
@@ -32,7 +37,7 @@ Rails.application.routes.draw do
   resources :contacts
   resources :mini_courses
   resources :mini_course_applications
-  resources :subscribers, :only => [:create, :index]
+  resources :subscribers, :only => [:index]
   resources :capstones, only: [:index]
   resources :screencasts, only: [:index]
   resources :diversity_applications, only: [:index]
