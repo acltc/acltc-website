@@ -21,10 +21,6 @@ class SubscribersController < ApplicationController
   end
 
   def create_from_curriculum
-    subscriber_setup
-    "-------------------------"
-    p @subscriber
-    "-------------------------"
     if cookies[:is_subscriber]
       respond_to do |format|
         @java_url = "/subscribers/download"
