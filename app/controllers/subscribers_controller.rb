@@ -59,7 +59,7 @@ class SubscribersController < ApplicationController
   end
 
   def create_from_footer
-    setup_subscriber
+    subscriber_setup
     
     if @subscriber.save
       subscriber_drip_setup
