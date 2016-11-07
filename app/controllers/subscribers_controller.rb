@@ -10,7 +10,7 @@ class SubscribersController < ApplicationController
   end
 
   def create_from_application
-    setup_subscriber
+    subscriber_setup
 
     if @subscriber.save
       subscriber_drip_setup
@@ -21,13 +21,17 @@ class SubscribersController < ApplicationController
   end
 
   def create_from_curriculum
+    subscriber_setup
+    "-------------------------"
+    p @subscriber
+    "-------------------------"
     if cookies[:is_subscriber]
       respond_to do |format|
         @java_url = "/subscribers/download"
         format.js {render :partial => "downloadFile"}
       end
     else
-      setup_subscriber
+      subscriber_setup
 
       if @subscriber.save
         subscriber_drip_setup
@@ -40,10 +44,11 @@ class SubscribersController < ApplicationController
   end
 
   def create_from_tutorial
+
     if cookies[:is_subscriber]
       @tutorials_visible = true
     else
-      setup_subscriber
+      subscriber_setup
 
       if @subscriber.save
         subscriber_drip_setup
@@ -58,8 +63,7 @@ class SubscribersController < ApplicationController
   end
 
   def create_from_footer
-    setup_subscriber
-
+    
     if @subscriber.save
       subscriber_drip_setup
     else
@@ -79,7 +83,7 @@ class SubscribersController < ApplicationController
 
   private
 
-  def setup_subscriber
+  def subscriber_setup
     @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], mousetrap: params[:mousetrap], ip_address: request.remote_ip)
     if city = request.location.city
       @subscriber.city = city
