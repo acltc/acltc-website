@@ -55,8 +55,7 @@ gem 'mailgun'
 gem 'tinymce-rails'
 
 gem 'drip-ruby', '~> 0.0.7', require: 'drip'
-
-gem 'unirest'
+gem 'will_paginate', '~> 3.1', '>= 3.1.5'
 
 group :development, :test do
   gem 'dotenv-rails'

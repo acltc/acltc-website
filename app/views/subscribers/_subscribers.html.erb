@@ -1,0 +1,25 @@
+<%= hidden_field_tag :direction, params[:direction] %>
+<%= hidden_field_tag :sort, params[:sort] %>
+<table class="table table-striped index-dash-table">
+  <tr>
+    <th><%= sortable "first_name" %></th>
+    <th>Submitted On</th>
+    <th>Email</th>
+    <th>Mousetrap</th>
+    <th>City</th>
+    <th>State</th>
+    <th>ZIP</th>
+  </tr>
+  <% @subscribers.order("created_at desc").each do |subscriber| %>
+  <tr>
+    <td><%= link_to subscriber.first_name, subscribers_path(subscriber) %></td>
+    <td><%= subscriber.created_at.strftime("%A %B %d, %Y") %></td>
+    <td><%= subscriber.email %></td>
+    <td><%= subscriber.mousetrap %></td>
+    <td><%= subscriber.city %></td>
+    <td><%= subscriber.state %></td>
+    <td><%= subscriber.postal_code %></td>
+  </tr>
+  <% end %>
+</table>
+<%= will_paginate @subscribers %>

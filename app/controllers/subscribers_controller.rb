@@ -1,7 +1,8 @@
 class SubscribersController < ApplicationController
   before_action :authenticate_admin!, only: [:index]
+  helper_method :sort_column, :sort_direction
   def index
-    @subscribers = Subscriber.all
+    @subscribers = Subscriber.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 10, :page => params[:page])
 
     respond_to do |format|
       format.html
@@ -104,5 +105,13 @@ class SubscribersController < ApplicationController
     cookies.permanent[:is_subscriber] = true
     client.create_or_update_subscriber(@subscriber.email)
     AcltcMailer.subscriber_mousetrap_email(@subscriber).deliver_now
+  end
+
+  def sort_column
+    Subscriber.column_names.include?(params[:sort]) ? params[:sort] : "first_name"
+  end
+    
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
   end
 end

@@ -22,29 +22,17 @@
       <div class="col-md-2"></div>
       <div class="col-md-8">
         <%= link_to "Download Subscribers CSV", subscribers_path(format: "csv"), :class => 'button btn-secondary csv-button'  %>
+        <%= form_tag subscribers_path, method: :get, :id => "subscribers-index-search" do %>
+          <p>
+            <%= text_field_tag :search, params[:search] %>
+            <%= submit_tag "Search", :name => nil %>
+          </p>
+        <% end %>
+        <div id="subscribers-index-table">
 
-        <table class="table table-striped index-dash-table">
-          <tr>
-            <th>First Name</th>
-            <th>Submitted On</th>
-            <th>Email</th>
-            <th>Mousetrap</th>
-            <th>City</th>
-            <th>State</th>
-            <th>ZIP</th>
-          </tr>
-          <% @subscribers.order("created_at desc").each do |subscriber| %>
-          <tr>
-            <td><%= link_to subscriber.first_name, subscribers_path(subscriber) %></td>
-            <td><%= subscriber.created_at.strftime("%A %B %d, %Y") %></td>
-            <td><%= subscriber.email %></td>
-            <td><%= subscriber.mousetrap %></td>
-            <td><%= subscriber.city %></td>
-            <td><%= subscriber.state %></td>
-            <td><%= subscriber.postal_code %></td>
-          </tr>
-          <% end %>
-        </table>
+          <%= render 'subscribers' %>
+        </div>
+        
       </div>
       <div class="col-md-2"></div>
     </div>
