@@ -1,1 +1,52 @@
-<h1>Subscribers Index</h1>
+<%= render "/layouts/page_title", page_title: "Subscribers", page_subtitle: "" %>
+<%= javascript_include_tag "https://www.google.com/jsapi", "chartkick" %>
+
+<div class="chart">
+  <h4>Total Subscribers Per Month</h4>
+  <%= line_chart Subscriber.group_by_month(:created_at, format: "%b %Y", last: 11).count, colors: ["#18A497"], discrete: true, xtitle: "Month", ytitle: "Number of Subscribers" %>
+</div>
+
+<div class="chart">
+  <h4>Subscribers Per Month by Location (not working)</h4>
+  <%= line_chart Subscriber.group(:mousetrap).group_by_month(:created_at, format: "%b %Y", last: 11).count, discrete: true, xtitle: "Month", ytitle: "Number of Subscribers" %>
+</div>
+
+<div class="chart">
+  <h4>Mousetraps Triggered</h4>
+  <%= pie_chart Subscriber.group(:mousetrap).where.not(:mousetrap => nil).count %>
+</div>
+
+<section id="content">
+  <div class="content-wrap dash-wrap">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <%= link_to "Download Subscribers CSV", subscribers_path(format: "csv"), :class => 'button btn-secondary csv-button'  %>
+
+        <table class="table table-striped index-dash-table">
+          <tr>
+            <th>First Name</th>
+            <th>Submitted On</th>
+            <th>Email</th>
+            <th>Mousetrap</th>
+            <th>City</th>
+            <th>State</th>
+            <th>ZIP</th>
+          </tr>
+          <% @subscribers.order("created_at desc").each do |subscriber| %>
+          <tr>
+            <td><%= link_to subscriber.first_name, subscribers_path(subscriber) %></td>
+            <td><%= subscriber.created_at.strftime("%A %B %d, %Y") %></td>
+            <td><%= subscriber.email %></td>
+            <td><%= subscriber.mousetrap %></td>
+            <td><%= subscriber.city %></td>
+            <td><%= subscriber.state %></td>
+            <td><%= subscriber.postal_code %></td>
+          </tr>
+          <% end %>
+        </table>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</section>
