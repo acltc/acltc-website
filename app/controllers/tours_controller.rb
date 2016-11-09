@@ -39,6 +39,7 @@ class ToursController < ApplicationController
   end
 
   def show
+    @tour = Tour.find_by(id: params[:id])
   end
 
   def edit
@@ -86,7 +87,8 @@ class ToursController < ApplicationController
         :last_name,
         :email,
         :phone,
-        :interview_id
+        :interview_id,
+        :notes
       )
     end
 end
