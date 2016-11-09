@@ -143,7 +143,7 @@
           <%= f.text_area :tinker_example, class: "form-control" %>
         </div>
         <div class="form-group">
-          <%= f.label :interview_id, "Thanks for filling out the application! The next step is to join us on a Google Hangouts interview. This way we can learn a little more about you, tell you more about ACLTC, and answer any questions you may have.", class: "required form-label", id: "additional-interview-text"  %><br />
+          <%= f.label :interview_id, "Thanks for filling out the application! The next step is to join us on a Google Hangouts interview. This way we can learn a little more about you, tell you more about Actualize, and answer any questions you may have.", class: "required form-label", id: "additional-interview-text"  %><br />
           <%= f.collection_select :interview_id, Interview.where('starts_at > ? AND starts_at < ?', DateTime.now, DateTime.now + 200.hours).where(booked: false).order(starts_at: :asc), :id, :interview_date_human, {:include_blank => 'Select Interview Date and Time'}, { id: 'interviews', class: 'form-control shorten-select' } %>
         </div>
         <div class="form-group">
