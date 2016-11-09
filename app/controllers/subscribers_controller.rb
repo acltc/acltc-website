@@ -1,5 +1,5 @@
 class SubscribersController < ApplicationController
-
+  before_action :authenticate_admin!, only: [:index]
   def index
     @subscribers = Subscriber.all
 
@@ -12,7 +12,10 @@ class SubscribersController < ApplicationController
   def create_from_application
     setup_subscriber
 
-    if @subscriber.save
+    if Subscriber.find_by(email: params[:email]) 
+      @subscriber = Subscriber.find_by(email: params[:email]) 
+      redirect_to "/applications/new/#{@subscriber.id}"
+    elsif @subscriber.save
       subscriber_drip_setup
       redirect_to "/applications/new/#{@subscriber.id}"
     else
@@ -29,7 +32,7 @@ class SubscribersController < ApplicationController
     else
       setup_subscriber
 
-      if @subscriber.save
+      if Subscriber.find_by(email: params[:email]) || @subscriber.save
         subscriber_drip_setup
         respond_to do |format|
           @java_url = "/subscribers/download"
@@ -45,7 +48,7 @@ class SubscribersController < ApplicationController
     else
       setup_subscriber
 
-      if @subscriber.save
+      if Subscriber.find_by(email: params[:email]) || @subscriber.save
         subscriber_drip_setup
         @tutorials_visible = true
       else
@@ -60,7 +63,7 @@ class SubscribersController < ApplicationController
   def create_from_footer
     setup_subscriber
 
-    if @subscriber.save
+    if Subscriber.find_by(email: params[:email]) || @subscriber.save
       subscriber_drip_setup
     else
       render :apply
