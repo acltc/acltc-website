@@ -1,12 +1,16 @@
  $(document).ready(function(){
   $('#location input').on('change', function() {
    var value = ($('input[type=radio]:checked', '#location').val());
-   if(value==='Chicago'){
-    $('#additional-interview-text').html("Thanks for filling out the application! The next step is to join us at the Merchandise Mart in Chicago for an interview. This way we can learn a little more about you, tell you more about ACLTC, and answer any questions you may have.");
-   } else {
-    $('#additional-interview-text').html( "Thanks for filling out the application! The next step is to join us on a Google Hangouts or phone interview. This way we can learn a little more about you, tell you more about ACLTC, and answer any questions you may have.");
-   }
-   $.ajax({
+    if(value==='Chicago'){
+      $('#additional-interview-text').html("Thanks for filling out the application! The next step is to join us at Merchandise Mart in Chicago for an in-person Interview. This way we can learn a little more about you, tell you more about Actualize, and answer any questions you may have.");
+    } else if(value === 'San Francisco'){
+      $('#additional-interview-text').html("Thanks for filling out the application! The next step is to join us at TechSpace in San Francisco for an in-person Interview. This way we can learn a little more about you, tell you more about Actualize, and answer any questions you may have.");
+    } else if(value === 'New York City'){
+      $('#additional-interview-text').html("Thanks for filling out the application! The next step is to join us at LMHQ in Manhattan for an in-person Interview. This way we can learn a little more about you, tell you more about Actualize, and answer any questions you may have.");
+    } else {
+      $('#additional-interview-text').html( "Thanks for filling out the application! The next step is to join us for an in-person Interview. This way we can learn a little more about you, tell you more about Actualize, and answer any questions you may have.");
+    }
+    $.ajax({
         type: 'GET',
         url: '/options/',
         data: {'id': value},
