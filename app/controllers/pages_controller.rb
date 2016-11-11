@@ -11,9 +11,10 @@ class PagesController < ApplicationController
   def contacts_thank_you
 
   end
+
   private
   
     def split_test
-      @phone_test = ab_test("phone_no_phone", ["phone", "no_phone"])
+      @phone_test = ab_test("Curriculum Phone Test", ["phone", "no_phone"])
     end
 end
