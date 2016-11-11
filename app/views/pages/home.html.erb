@@ -242,24 +242,46 @@
                             <br />
                             <p class ="after-word">We'll also delve into important concepts such as Git, Test Driven Development, and the soft skills you need to land a web developer position. At Actualize, we focus on the skills that employers are looking for now.</p><br /><br />
 
-                            <div class="well curriculum-well">
-                                <p class="subscribe-download">Download our full curriculum to see what we teach week-by-week!</p>
+                            <% if @phone_test == "no_phone" %>
+                                <div class="well curriculum-well">
+                                    <p class="subscribe-download">Download our full curriculum to see what we teach week-by-week!</p>
                                     <div class="row">
-                                            <%= form_tag("/subscribers_curriculum", method: "post", remote: true) do %>
-                                        <div class="col-md-4">
-                                            <%= text_field_tag :first_name, nil, placeholder: "First Name" %>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <%= text_field_tag :email, nil, placeholder: "Email" %>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <%= hidden_field_tag :mousetrap, nil, value: "Curriculum Download" %>
-                                            <%= submit_tag "Download Curriculum", class: "curriculum-download-btn", style: "padding:0;margin:0;background-color:#F25252;color:white;" %>
-                                        </div>
+                                        <%= form_tag("/subscribers_curriculum", method: "post", remote: true) do %>
+                                            <div class="col-md-4">
+                                                <%= text_field_tag :first_name, nil, placeholder: "First Name" %>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <%= text_field_tag :email, nil, placeholder: "Email" %>
+                                            </div>
+                                            <div class="col-md-4">
+                                               <%= hidden_field_tag :mousetrap, nil, value: "Curriculum Download" %>
+                                                <%= submit_tag "Download Curriculum", class: "curriculum-download-btn", style: "padding:0;margin:0;background-color:#F25252;color:white;" %>
+                                            </div>
+                                        <% end %>
                                     </div>
-                                <% end %>
-                            </div>
-
+                                </div>
+                            <% elsif @phone_test == "phone" %>
+                                <div class="well curriculum-well">
+                                     <p class="subscribe-download">Download our full curriculum to see what we teach week-by-week!</p>
+                                    <div class="row">
+                                        <%= form_tag("/subscribers_curriculum", method: "post", remote: true) do %>
+                                           <div class="col-md-3">
+                                                <%= text_field_tag :first_name, nil, placeholder: "First Name" %>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <%= text_field_tag :email, nil, placeholder: "Email" %>
+                                            </div>
+                                            <div class="col-md-3">
+                                               <%= text_field_tag :phone, nil, placeholder: "Phone" %>
+                                            </div>
+                                             <div class="col-md-3">
+                                                 <%= hidden_field_tag :mousetrap, nil, value: "Curriculum Download Phone Test" %>
+                                                 <%= submit_tag "Download Curriculum", class: "curriculum-download-btn", style: "padding:0;margin:0;background-color:#F25252;color:white;" %>
+                                             </div>
+                                         <% end %>
+                                     </div>
+                                 </div>  
+                             <% end %>
                         </div>
                     </div>
                 </div>
