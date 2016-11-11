@@ -10,7 +10,7 @@ class SubscribersController < ApplicationController
   end
 
   def create_from_application
-    setup_subscriber
+    subscriber_setup
 
     if Subscriber.find_by(email: params[:email]) 
       @subscriber = Subscriber.find_by(email: params[:email]) 
@@ -41,7 +41,6 @@ class SubscribersController < ApplicationController
         @subscriber.postal_code = postal_code
       end
 
-
       if Subscriber.find_by(email: params[:email]) || @subscriber.save
         subscriber_drip_setup
         converted!("phone_no_phone")
@@ -54,10 +53,11 @@ class SubscribersController < ApplicationController
   end
 
   def create_from_tutorial
+
     if cookies[:is_subscriber]
       @tutorials_visible = true
     else
-      setup_subscriber
+      subscriber_setup
 
       if Subscriber.find_by(email: params[:email]) || @subscriber.save
         subscriber_drip_setup
@@ -93,7 +93,7 @@ class SubscribersController < ApplicationController
 
   private
 
-  def setup_subscriber
+  def subscriber_setup
     @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], mousetrap: params[:mousetrap], ip_address: request.remote_ip)
     if city = request.location.city
       @subscriber.city = city
