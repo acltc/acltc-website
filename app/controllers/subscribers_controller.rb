@@ -43,7 +43,7 @@ class SubscribersController < ApplicationController
 
       if Subscriber.find_by(email: params[:email]) || @subscriber.save
         subscriber_drip_setup
-        converted!("phone_no_phone")
+        converted!("Curriculum Phone Test")
         respond_to do |format|
           @java_url = "/subscribers/download"
           format.js {render :partial => "downloadFile"}
