@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   def home
+    split_test
     render :layout => 'home_application'
   end
 
@@ -10,4 +11,9 @@ class PagesController < ApplicationController
   def contacts_thank_you
 
   end
+  private
+  
+    def split_test
+      @phone_test = ab_test("Curriculum Phone Test", ["phone", "no_phone"])
+    end
 end

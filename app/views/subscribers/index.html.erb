@@ -15,6 +15,28 @@
   <h4>Mousetraps Triggered</h4>
   <%= pie_chart Subscriber.group(:mousetrap).where.not(:mousetrap => nil).count %>
 </div>
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    <table class="table table-striped">
+      <h4 class="ab-test-table-header">Subscriber Split Test</h4>
+      <tr>
+        <th>Test Version</th>
+        <th>Participants</th>
+        <th>Conversions</th>
+        <th>Conversion Rate</th>
+      </tr>
+      <% SimpleAbs::Alternative.all.each do |version| %>
+        <tr>
+          <td><%= version.which %></td>
+          <td><%= version.participants %></td>
+         <td><%= version.conversions %></td>
+          <td><%= (version.conversions.to_f / version.participants.to_f * 100).round(2) %> %</td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
 
 <div class="row">
   <div class="col-md-12" id="subscriber-index-csv-button">
