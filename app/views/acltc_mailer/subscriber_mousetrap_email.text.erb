@@ -4,6 +4,10 @@ First Name: <%= @subscriber.first_name %>
 
 Email: <%= @subscriber.email %>
 
+<% if @subscriber.phone %>
+  Phone: <%= @subscriber.phone %>
+<% end %>
+
 Mousetrap: <%= @subscriber.mousetrap %>
 
 City: <%= @subscriber.city %>

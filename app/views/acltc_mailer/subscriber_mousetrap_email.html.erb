@@ -6,6 +6,11 @@
   <tr>
     <td><strong>Email:</strong> <%= @subscriber.email %></td>
   </tr>
+  <% if @subscriber.phone %>
+    <tr>
+      <td><strong>Phone:</strong> <%= @subscriber.phone %></td>
+    </tr>
+  <% end %>
   <tr>
     <td><strong>Mousetrap:</strong> <%= @subscriber.mousetrap %></td>
   </tr>
