@@ -55,6 +55,7 @@ gem 'mailgun'
 gem 'tinymce-rails'
 
 gem 'drip-ruby', '~> 0.0.7', require: 'drip'
+gem 'faker', '~> 1.6', '>= 1.6.6'
 
 group :development, :test do
   gem 'dotenv-rails'

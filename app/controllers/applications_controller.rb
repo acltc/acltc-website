@@ -87,6 +87,4 @@ class ApplicationsController < ApplicationController
     :work_concurrently, :tinker_example, :why_better, :status, :location, :cohort,
     :notes, :hangouts_email, :interview_id)
   end
-
-
 end
