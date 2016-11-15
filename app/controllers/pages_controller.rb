@@ -1,9 +1,6 @@
 class PagesController < ApplicationController
   def home
     split_test
-    p '-------------------------'
-    p @apply_buttons_test
-    p '-------------------------'
     render :layout => 'home_application'
   end
 
