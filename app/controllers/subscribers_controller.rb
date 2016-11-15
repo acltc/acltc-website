@@ -82,6 +82,7 @@ class SubscribersController < ApplicationController
   end
 
   def apply
+    converted!("Apply Buttons Test")
     @subscriber = Subscriber.new
   end
 
