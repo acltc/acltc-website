@@ -16,13 +16,13 @@ class LakewoodApplication < ActiveRecord::Base
   end
 
   def institution_location
-    if currently_a_student = "Yes"
+    if currently_a_student == "Yes"
       "#{institution_city}, #{institution_state}, #{institution_zip}"
     end
   end
 
   def employer_location
-    if currently_employed = "Yes"
+    if currently_employed == "Yes"
       "#{employer_city}, #{employer_state}, #{employer_zip}"
     end
   end
