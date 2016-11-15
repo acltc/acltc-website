@@ -40,7 +40,6 @@ Rails.application.routes.draw do
   resources :subscribers, :only => [:index]
   resources :capstones, only: [:index]
   resources :screencasts, only: [:index]
-  resources :diversity_applications, only: [:index]
   resources :interviews
   resources :corporate_training_messages, only: [:index, :new, :create, :show]
   resources :tours
