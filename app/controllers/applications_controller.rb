@@ -94,5 +94,4 @@ class ApplicationsController < ApplicationController
     @italics_test = ab_test("Application Italics Test", ["Italics", "No Italics"])
   end
 
-
 end
