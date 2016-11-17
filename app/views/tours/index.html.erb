@@ -42,7 +42,13 @@
               <td><%= link_to tour.full_name, tour_path(tour) %></td>
               <td><%= tour.created_at.strftime("%A %B %d, %Y") %></td>
               <td><%= tour.city %></td>
-              <td><%= tour.interview ? tour.interview.starts_at.strftime("%A %B %d, %Y") : "" %></td>
+              <% if tour.city == 'Chicago' %>
+                <td><%= tour.interview ? tour.interview.starts_at.in_time_zone('Central Time (US & Canada)').strftime("%A %B %d, %Y  %I:%M%p - %Z") : "" %></td>
+              <% elsif tour.city == 'New York City' %>
+                <td><%= tour.interview ? tour.interview.starts_at.in_time_zone('Eastern Time (US & Canada)').strftime("%A %B %d, %Y  %I:%M%p - %Z") : "" %></td>
+              <% elsif tour.city == 'San Francisco' %>
+                <td><%= tour.interview ? tour.interview.starts_at.in_time_zone('Pacific Time (US & Canada)').strftime("%A %B %d, %Y  %I:%M%p - %Z") : "" %></td>
+              <% end %>
             </tr>
           <% end %>
         </table>

@@ -22,6 +22,16 @@
   <h4>Every Applicant's Status</h4>
   <%= pie_chart Application.group(:status).where.not(:status => nil).count %>
 </div>
+
+<div class="chart">
+  <h4>Total Tours Per Month</h4>
+  <%= line_chart Tour.group_by_month(:created_at, format: "%b %Y", last: 11).count, colors: ["#18A497"], discrete: true, xtitle: "Month", ytitle: "Number of Tours" %>
+</div>
+<div class="chart">
+  <h4>Tours Per Month by Location</h4>
+  <%= line_chart Tour.group(:city).group_by_month(:created_at, format: "%b %Y", last: 11).count, discrete: true, xtitle: "Month", ytitle: "Number of Tours" %>
+</div>
+
 <section id="content">
   <div class="content-wrap dash-wrap">
     <div class="row">
@@ -59,7 +69,13 @@
             <td><%= application.location %></td>
             <td><a href="/applications?status=<%= application.status %>"><%= application.status %></a></td>
             <td><%= application.cohort %></td>
-            <td><%= application.interview ? application.interview.starts_at.strftime("%A %B %d, %Y") : "" %></td>
+            <% if application.location == 'Chicago' %>
+              <td><%= application.interview ? application.interview.starts_at.in_time_zone('Central Time (US & Canada)').strftime("%A %B %d, %Y  %I:%M%p - %Z") : "" %></td>
+            <% elsif application.location == 'New York City' %>
+              <td><%= application.interview ? application.interview.starts_at.in_time_zone('Eastern Time (US & Canada)').strftime("%A %B %d, %Y  %I:%M%p - %Z") : "" %></td>
+            <% elsif application.location == 'San Francisco' %>
+              <td><%= application.interview ? application.interview.starts_at.in_time_zone('Pacific Time (US & Canada)').strftime("%A %B %d, %Y  %I:%M%p - %Z") : "" %></td>
+            <% end %>
             <td>
               <%= link_to 'Profile', "/profiles/#{application.id}",  {:remote => true, 'data-target' => '#profile-modal'}  %>
             </td>
