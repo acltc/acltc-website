@@ -4,6 +4,7 @@ class ApplicationsController < ApplicationController
 
   def index
     @applications = Application.all
+    @tours = Tour.all
 
     if params[:location_filter]
       @applications = Application.where(location: params[:location_filter])
