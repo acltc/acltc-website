@@ -18,7 +18,7 @@
                                     <% if @apply_buttons_test == "Orange-Blue" %>
                                         <%= link_to "Apply Now", new_application_path, class: "btn single-apply-button orange-blue-apply-button" %>
                                     <% elsif @apply_buttons_test == "Aqua-Orange" %>
-                                        <%= link_to "Apply Now", new_application_path, class: "btn single-apply-button aqua-orange-apply-button" %>                    
+                                        <%= link_to "Apply Now", new_application_path, class: "btn single-apply-button aqua-orange-apply-button" %>
                                     <% end %>
                                 </div>
                             </div>
@@ -277,16 +277,16 @@
                                                 <%= text_field_tag :email, nil, placeholder: "Email" %>
                                             </div>
                                             <div class="col-md-3">
-                                               <%= text_field_tag :phone, nil, placeholder: "Phone" %>
+                                                <%= text_field_tag :phone, nil, placeholder: "Phone" %>
                                             </div>
-                                             <div class="col-md-3">
-                                                 <%= hidden_field_tag :mousetrap, nil, value: "Curriculum Download Phone Test" %>
-                                                 <%= submit_tag "Download Curriculum", class: "curriculum-download-btn", style: "padding:0;margin:0;background-color:#F25252;color:white;" %>
-                                             </div>
-                                         <% end %>
-                                     </div>
-                                 </div>  
-                             <% end %>
+                                            <div class="col-md-3">
+                                                <%= hidden_field_tag :mousetrap, nil, value: "Curriculum Download Phone Test" %>
+                                                <%= submit_tag "Download Curriculum", class: "curriculum-download-btn", style: "padding:0;margin:0;background-color:#F25252;color:white;" %>
+                                            </div>
+                                        <% end %>
+                                    </div>
+                                </div>  
+                            <% end %>
                         </div>
                     </div>
                 </div>
@@ -521,7 +521,7 @@
                               <% if @apply_buttons_test == "Orange-Blue" %>
                                   <%= link_to "Apply Now", new_application_path, class: "btn single-apply-button orange-blue-apply-button" %>
                               <% elsif @apply_buttons_test == "Aqua-Orange" %>
-                                  <%= link_to "Apply Now", new_application_path, class: "btn single-apply-button aqua-orange-apply-button" %> 
+                                  <%= link_to "Apply Now", new_application_path, class: "btn single-apply-button aqua-orange-apply-button" %>
                               <% end %>
                           </div>
                       </div>
