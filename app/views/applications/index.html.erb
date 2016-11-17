@@ -59,7 +59,13 @@
             <td><%= application.location %></td>
             <td><a href="/applications?status=<%= application.status %>"><%= application.status %></a></td>
             <td><%= application.cohort %></td>
-            <td><%= application.interview ? application.interview.starts_at.strftime("%A %B %d, %Y") : "" %></td>
+            <% if application.location == 'Chicago' %>
+              <td><%= application.interview ? application.interview.starts_at.in_time_zone('Central Time (US & Canada)').strftime("%A %B %d, %Y  %I:%M%p - %Z") : "" %></td>
+            <% elsif application.location == 'New York City' %>
+              <td><%= application.interview ? application.interview.starts_at.in_time_zone('Eastern Time (US & Canada)').strftime("%A %B %d, %Y  %I:%M%p - %Z") : "" %></td>
+            <% elsif application.location == 'San Francisco' %>
+              <td><%= application.interview ? application.interview.starts_at.in_time_zone('Pacific Time (US & Canada)').strftime("%A %B %d, %Y  %I:%M%p - %Z") : "" %></td>
+            <% end %>
             <td>
               <%= link_to 'Profile', "/profiles/#{application.id}",  {:remote => true, 'data-target' => '#profile-modal'}  %>
             </td>
