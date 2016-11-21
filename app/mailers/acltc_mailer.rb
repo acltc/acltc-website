@@ -21,6 +21,11 @@ class AcltcMailer < ApplicationMailer
     mail(from: "sandboxd035c758dbb54757b1b13d910d57a6b3.mailgun.org", to: 'admissions@anyonecanlearntocode.com', subject: 'Application Submitted', reply_to: @application.email )
   end
 
+  def application_email_reply(application)
+    @application = application
+    mail(from: "admissions@anyonecanlearntocode.com", to: @application.email, subject: 'Your Actualize Application')
+  end
+
   def subscriber_mousetrap_email(subscriber)
     @subscriber = subscriber
     if @subscriber.state == "Illinois"
@@ -37,6 +42,11 @@ class AcltcMailer < ApplicationMailer
   def tour_email(tour)
     @tour = tour
     mail(from: "sandboxd035c758dbb54757b1b13d910d57a6b3.mailgun.org", to: 'admissions@anyonecanlearntocode.com', subject: 'Tour Scheduled', reply_to: @tour.email )
+  end
+
+  def tour_email_reply(tour)
+    @tour = tour
+    mail(from: "admissions@anyonecanlearntocode.com", to: @tour.email, subject: 'Your Actualize Tour')
   end
 
   def lakewood_application_email(application)

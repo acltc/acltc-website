@@ -48,6 +48,7 @@ class ApplicationsController < ApplicationController
       @application.interview.update(booked: true)
       converted!("Application Italics Test")
       AcltcMailer.application_email(@application).deliver_now
+      AcltcMailer.application_email_reply(@application).deliver_now
       redirect_to "/pages/thank_you"
     else
       render :new

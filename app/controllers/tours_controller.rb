@@ -32,6 +32,7 @@ class ToursController < ApplicationController
     if @tour.save
       @tour.interview.update(booked: true)
       AcltcMailer.tour_email(@tour).deliver_now
+      AcltcMailer.tour_email_reply(@tour).deliver_now
       redirect_to tours_thank_you_path
     else
       render :new
