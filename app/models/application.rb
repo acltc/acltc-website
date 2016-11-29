@@ -1,6 +1,6 @@
 class Application < ActiveRecord::Base
   validates :first_name, :last_name, :email, :phone, :address, :emergency_contact, :learn_about_acltc,
-  :location, :hangouts_email, presence: true, on: :create
+  :location, presence: true, on: :create
 
   validates :interview_id, presence: true, uniqueness: true, on: :create
 
