@@ -29,7 +29,6 @@ class ApplicationsController < ApplicationController
   end
 
   def new
-    split_test
     if params[:application_type] == "scholarship"
       redirect_to '/pages/scholarship_thank_you'
     else
@@ -46,7 +45,6 @@ class ApplicationsController < ApplicationController
     @application = Application.new(application_params)
     if @application.save
       @application.interview.update(booked: true)
-      converted!("Application Italics Test")
       AcltcMailer.application_email(@application).deliver_now
       redirect_to "/pages/thank_you"
     else
@@ -88,11 +86,7 @@ class ApplicationsController < ApplicationController
     :emergency_contact, :learn_about_acltc, :learn_about_acltc_specify, :current_occupation,
     :primary_goals, :programming_experience, :preferred_work_location,
     :work_concurrently, :tinker_example, :why_better, :status, :location, :cohort,
-    :notes, :hangouts_email, :interview_id)
-  end
-
-  def split_test
-    @italics_test = ab_test("Application Italics Test", ["Italics", "No Italics"])
+    :notes, :interview_id)
   end
 
 
