@@ -89,5 +89,4 @@ class ApplicationsController < ApplicationController
     :notes, :interview_id)
   end
 
-
 end
