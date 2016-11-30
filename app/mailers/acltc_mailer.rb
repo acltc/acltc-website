@@ -23,7 +23,7 @@ class AcltcMailer < ApplicationMailer
 
   def application_email_reply(application)
     @application = application
-    mail(from: "admissions@anyonecanlearntocode.com", to: @application.email, subject: 'Your Actualize Application')
+    mail(from: "admissions@actualize.co", to: @application.email, subject: 'Your Application was Received')
   end
 
   def subscriber_mousetrap_email(subscriber)
@@ -46,7 +46,7 @@ class AcltcMailer < ApplicationMailer
 
   def tour_email_reply(tour)
     @tour = tour
-    mail(from: "admissions@anyonecanlearntocode.com", to: @tour.email, subject: 'Your Actualize Tour')
+    mail(from: "admissions@actualize.co", to: @tour.email, subject: 'Your Tour Request was Received')
   end
 
   def lakewood_application_email(application)
