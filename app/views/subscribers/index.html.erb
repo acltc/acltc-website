@@ -7,7 +7,7 @@
 </div>
 
 <div class="chart">
-  <h4>Subscribers Per Month by Location</h4>
+  <h4>Subscribers Per Month by Mousetrap</h4>
   <%= line_chart Subscriber.group(:mousetrap).group_by_month(:created_at, format: "%b %Y", last: 11).count, discrete: true, xtitle: "Month", ytitle: "Number of Subscribers" %>
 </div>
 
