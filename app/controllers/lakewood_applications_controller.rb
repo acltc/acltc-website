@@ -43,7 +43,7 @@ class LakewoodApplicationsController < ApplicationController
   def create
     @lakewood_application = LakewoodApplication.new(lakewood_application_params)
     if @lakewood_application.save
-      AcltcMailer.lakewood_application_email(@lakewood_application).deliver_now
+      #AcltcMailer.lakewood_application_email(@lakewood_application).deliver_now
       redirect_to "/pages/thank_you"
     else
       render :new
