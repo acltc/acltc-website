@@ -103,6 +103,7 @@ class SubscribersController < ApplicationController
     if postal_code = request.location.postal_code
       @subscriber.postal_code = postal_code
     end
+    return @subscriber
   end
 
   def subscriber_drip_setup
