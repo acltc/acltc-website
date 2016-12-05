@@ -12,7 +12,7 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contact_params)
     if @contact.save
-      #AcltcMailer.contact_us_email(@contact).deliver_now
+      AcltcMailer.contact_us_email(@contact).deliver_now
       redirect_to "/pages/contacts_thank_you"
     else
       render :new
