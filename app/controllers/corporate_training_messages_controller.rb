@@ -22,8 +22,8 @@ class CorporateTrainingMessagesController < ApplicationController
     @corporate_training_message = CorporateTrainingMessage.new(corporate_training_message_params)
 
     if @corporate_training_message.save
-      #AcltcMailer.corporate_training_message(@corporate_training_message).deliver_now
-      #AcltcMailer.corporate_training_message_reply(@corporate_training_message).deliver_now
+      AcltcMailer.corporate_training_message(@corporate_training_message).deliver_now
+      AcltcMailer.corporate_training_message_reply(@corporate_training_message).deliver_now
       redirect_to corporate_training_thank_you_path
     else
       render :new
