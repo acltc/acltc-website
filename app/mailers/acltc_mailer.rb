@@ -3,7 +3,7 @@ class AcltcMailer < ApplicationMailer
 
   def contact_us_email(contact)
     @contact = contact
-    mail(from: @contact.email, to: "hello@anyonecanlearntocode.com", subject: 'Contact Us')
+    mail(from: @contact.email, to: "theonetrueemailtest@gmail.com", subject: 'Contact Us')
   end
 
   def corporate_training_message(corporate_training_message)
