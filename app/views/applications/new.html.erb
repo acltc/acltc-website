@@ -19,9 +19,15 @@
             </ul>
           </div>
         <% end %>
+
+        <div id="app">
+          {{ message }}
+        </div>
+        
         <% if @progress_bar == "Progress Bar" %>
           <h1>Progress Bar Works</h1>
         <% end %>
+
         <div class="form-group">
           <%= f.label :first_name, "First Name", class: "required form-label" %><br />
           <%= f.text_field :first_name, autofocus: true, class: "form-control" %>
