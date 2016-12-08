@@ -7,6 +7,9 @@
 .container {
     // padding: 0 8%;
 }
+.radio {
+  padding-top: 20px;
+}
 $color-neutral: #eaeaea;
 @-moz-document url-prefix() {
   input[type="radio"] {

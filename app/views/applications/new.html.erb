@@ -5,25 +5,164 @@
     <div class="row">
       <div class="col-md-2"></div>
       <div class="col-md-8">
-      <%= form_for @application do |f| %>
-        <% if @application.errors.any? %>
-          <div class="alert alert-dismissible alert-warning center-warning">
-            <button type="button" class="close" data-dismiss="alert">×</button>
-            <h2>Oops! You forgot to fill out
-              <%= pluralize(@application.errors.count, "field") %>:
-            </h2>
-            <ul>
-              <% @application.errors.full_messages.each do |msg| %>
-                <h4><%= msg %></h4>
-              <% end %>
-            </ul>
-          </div>
-        <% end %>
-
-        <div id="app">
+      <div id="app">
+        <%= form_for @application do |f| %>
+          <% if @application.errors.any? %>
+            <div class="alert alert-dismissible alert-warning center-warning">
+              <button type="button" class="close" data-dismiss="alert">×</button>
+              <h2>Oops! You forgot to fill out
+                <%= pluralize(@application.errors.count, "field") %>:
+              </h2>
+              <ul>
+                <% @application.errors.full_messages.each do |msg| %>
+                  <h4><%= msg %></h4>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+        
           {{ message }}
+
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" :style="{ width: progressBar + '%' }" >
+              {{ progressBar }}%
+            </div>
+          </div>
+
+          <div class="form-group" @keyup="applicationFields">
+            <%= f.label :first_name, "First Name", class: "required form-label" %><br />
+            <%= f.text_field :first_name, autofocus: true, class: "form-control" %>
+          </div>
+          <div class="form-group" @keyup="applicationFields">
+            <%= f.label :last_name, "Last Name", class: "required form-label" %><br />
+            <%= f.text_field :last_name, autofocus: true, class: "form-control" %>
+          </div>
+          <div class="form-group" @keyup="applicationFields">
+            <%= f.label :email, "Email Address", class: "required form-label" %><br />
+            <%= f.text_field :email, class: "form-control" %>
+          </div>
+          <div class="form-group" @keyup="applicationFields">
+            <%= f.label :phone, "Cell Phone Number", class: "required form-label" %><br />
+            <%= f.text_field :phone, class: "form-control", placeholder: "xxx-xxx-xxxx" %>
+          </div>
+          <div class="form-group" @keyup="applicationFields">
+            <%= f.label :address, "Address", class: "required form-label" %><br />
+            <%= f.text_field :address, class: "form-control", placeholder:"Street, City, State, Zip" %>
+          </div>
+          <div class="form-group" @keyup="applicationFields">
+            <%= f.label :emergency_contact, "Emergency Contact Name and Phone Number", class: "required form-label" %><br />
+            <%= f.text_field :emergency_contact, class: "form-control", placeholder: "Ada Lovelace xxx-xxx-xxxx" %>
+          </div>
+          <div class="form-group" @click="applicationFields">
+            <label class="required label-radio form-label">Which location are you applying for?</label>
+            <div id="location" class="radio" style="{background-color: red;}">
+              <%= f.radio_button :location, "Chicago" %>
+              <%= f.label :location, "Chicago", :value => "Chicago" %><br />
+              <%= f.radio_button :location, "San Francisco" %>
+              <%= f.label :location, "San Francisco", :value => "San Francisco" %><br />
+              <%= f.radio_button :location, "New York City" %>
+              <%= f.label :location, "New York City", :value => "New York City" %>
+            </div>
+          </div>
+          <div class="form-group" @click="applicationFields">
+            <label class="required label-radio">How did you hear about Actualize?</label><br />
+            <div class="radio row">
+              <div class="col-md-4">
+                <%= f.radio_button :learn_about_acltc, "Course Report", { :class => "learn-about-acltc" } %>
+                <%= f.label :learn_about_acltc, "Course Report", :value => "Course Report" %>
+              </div>
+              <div class="col-md-4">
+                <%= f.radio_button :learn_about_acltc, "Google Search", { :class => "learn-about-acltc" } %>
+                <%= f.label :learn_about_acltc, "Google Search", :value => "Google Search" %>
+              </div>
+              <div class="col-md-4">
+                <%= f.radio_button :learn_about_acltc, "Meetup", { :class => "learn-about-acltc" } %>
+                <%= f.label :learn_about_acltc, "Meetup", :value => "Meetup" %>
+              </div>
+            </div>
+            <div class="radio row">
+              <div class="col-md-4">
+                <%= f.radio_button :learn_about_acltc, "Quora", { :class => "learn-about-acltc" } %>
+                <%= f.label :learn_about_acltc, "Quora", :value => "Quora" %>
+              </div>
+              <div class="col-md-4">
+                <%= f.radio_button :learn_about_acltc, "Referral", { :class => "learn-about-acltc" } %>
+                <%= f.label :learn_about_acltc, "Referral", :value => "Referral" %>
+              </div>
+              <div class="col-md-4">
+                <%= f.radio_button :learn_about_acltc, "SkilledUp", { :class => "learn-about-acltc" } %>
+                <%= f.label :learn_about_acltc, "SkilledUp", :value => "SkilledUp" %>
+              </div>
+            </div>
+            <div class="radio row">
+              <div class="col-md-4">
+                <%= f.radio_button :learn_about_acltc, "SwitchUp", { :class => "learn-about-acltc" } %>
+                <%= f.label :learn_about_acltc, "SwitchUp", :value => "SwitchUp" %>
+              </div>
+              <div class="col-md-4">
+                <%= f.radio_button :learn_about_acltc, "Thinkful", { :class => "learn-about-acltc" } %>
+                <%= f.label :learn_about_acltc, "Thinkful", :value => "Thinkful" %>
+              </div>
+              <div class="col-md-4">
+                <%= f.radio_button :learn_about_acltc, "Word of Mouth", { :class => "learn-about-acltc" } %>
+                <%= f.label :learn_about_acltc, "Word of Mouth", :value => "Word of Mouth" %>
+              </div>
+            </div>
+            <div class="radio row">
+              <div class="col-md-4">
+                <%= f.radio_button :learn_about_acltc, "Other", { :class => "learn-about-acltc learn-about-acltc-other" } %>
+                <%= f.label :learn_about_acltc, "Other", :value => "Other" %>
+              </div>
+            </div>
+          </div>
+          <div id="learn-acltc-hidden" style="display:none;">
+            <div class="form-group" @keyup="applicationFields">
+              <%= f.label :learn_about_acltc_specify, "Please specify how you learned about Actualize:", class: "form-label" %><br />
+              <%= f.text_field :learn_about_acltc_specify, class: "form-control" %>
+            </div>
+          </div>
+          <div class="form-group" @keyup="applicationFields">
+            <%= f.label :primary_goals, "What are your primary goals in learning how to code?", class: "required form-label" %><br />
+            <%= f.text_area :primary_goals, class: "form-control" %>
+          </div>
+          <div class="form-group" @keyup="applicationFields">
+            <%= f.label :programming_experience, "Do you have previous programming experience? Online tutorials count!", class: "required form-label" %><br />
+            <%= f.text_area :programming_experience, class: "form-control" %>
+          </div>
+          <div class="form-group" @keyup="applicationFields">
+            <%= f.label :current_occupation, "Tell us more about what you're currently doing (job or school, etc.)", class: "required form-label" %><br />
+            <%= f.text_area :current_occupation, class: "form-control" %>
+          </div>
+          <div class="form-group" @keyup="applicationFields">
+            <%= f.label :preferred_work_location, "If you want a job in web development, in which city will you seek employment?", class: "required label-leading form-label" %><br />
+            <%= f.text_field :preferred_work_location, class: "form-control" %>
+          </div>
+          <div class="form-group" @keyup="applicationFields">
+            <%= f.label :work_concurrently, "Will you keep your job during the bootcamp? If so, how will you do both?", class: "required form-label" %><br />
+            <%= f.text_area :work_concurrently, class: "form-control" %>
+          </div>
+          <div class="form-group" @keyup="applicationFields">
+            <%= f.label :why_better, "Why should you be accepted into the bootcamp over other applicants?", class: "required form-label" %><br />
+            <%= f.text_area :why_better, class: "form-control" %>
+          </div>
+          <div class="form-group" @keyup="applicationFields">
+            <%= f.label :tinker_example, "Programming requires complex problem solving, logical analysis, and the ability to tinker with something until it works. Give examples of when you've had these experiences.", class: "required label-leading form-label" %><br />
+            <%= f.text_area :tinker_example, class: "form-control" %>
+          </div>
+          <div class="form-group" @click="applicationFields">
+            <%= f.label :interview_id, "Thanks for filling out the application! The next step is to join us for an in-person Interview. This way we can learn a little more about you, tell you more about Actualize, and answer any questions you may have.", class: "required form-label", id: "additional-interview-text"  %><br />
+            <%= f.collection_select :interview_id, Interview.where('starts_at > ? AND starts_at < ?', DateTime.now, DateTime.now + 200.hours).where(booked: false).order(starts_at: :asc), :id, :interview_date_human, {:include_blank => 'Select Interview Date and Time'}, { id: 'interviews', class: 'form-control shorten-select' } %>
+          </div>
+          
+          <%= f.invisible_captcha :subtitle %> <!-- This is an invisible field that only spambots see. If it is filled in, the application won't save. -->
+          <br>
+          <br>
+          <div class="form-group">
+            <%= f.submit "Submit Application", class: "button button-3d nomargin nopadding" %>
+          </div>
         </div>
         
+
         <% if @progress_bar == "Progress Bar" %>
           <h1>Progress Bar Works</h1>
         <% end %>
