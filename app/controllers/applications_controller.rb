@@ -29,6 +29,7 @@ class ApplicationsController < ApplicationController
   end
 
   def new
+    split_test
     if params[:application_type] == "scholarship"
       redirect_to '/pages/scholarship_thank_you'
     else
@@ -44,6 +45,7 @@ class ApplicationsController < ApplicationController
   def create
     @application = Application.new(application_params)
     if @application.save
+      converted!("Application Progress Bar Test")
       @application.interview.update(booked: true)
       AcltcMailer.application_email(@application).deliver_now
       AcltcMailer.application_email_reply(@application).deliver_now
@@ -90,5 +92,8 @@ class ApplicationsController < ApplicationController
     :notes, :interview_id)
   end
 
+  def split_test
+    @progress_bar = ab_test("Application Progress Bar Test", ["Progress Bar", "No Progress Bar"])
+  end
 
 end
