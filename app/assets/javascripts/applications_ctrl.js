@@ -5,12 +5,12 @@ $(document).on('ready', function() {
       message: "Hello World!",
       progressBar: 0,
       answeredQuestions: 0,
-      totalQuestions: 16,
+      totalQuestions: 13,
     },
     methods: {
       applicationFields: function(){
         answeredQuestions = 0;
-        totalQuestions = 16;
+        totalQuestions = 13;
 
         formFilledIn = document.getElementsByClassName("form-control")
         // radioFilledIn = document.getElementsByClassName("radio")
@@ -32,25 +32,11 @@ $(document).on('ready', function() {
         var progress = answeredQuestions/totalQuestions
         // var formFilledIn = document.forms.new_application.application_first_name.value;
 
-        // console.log("Form filled in " + formFilledIn);
-        // if (formFilledIn !== ""){
-        //   answeredQuestions++;
-        //   unansweredQuestions--;
-        // }
-        // var progress = answeredQuestions / unansweredQuestions
-
-        // for (var subfield in this.field) {
-        //   if (this.field[subfield] !== "") {
-        //     answeredQuestions++;
-        //     unansweredQuestions--;
-        //   }
-        //   var progress = answeredQuestions/unansweredQuestions
-        // }
-        progressBar = progress * 100
+        progressBar = (progress * 100) - 1
         console.log("Fields filled in " + answeredQuestions);
         console.log("Fields not filled in " + totalQuestions);
         console.log("Progress Bar " + progressBar);
-        this.progressBar = progressBar.toFixed(2);
+        this.progressBar = progressBar.toFixed(0);
       }
     }
   })

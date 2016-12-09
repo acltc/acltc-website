@@ -59,6 +59,36 @@ $color-neutral: #eaeaea;
   }
 }
 
+/* ------------- PROGRESS BAR TEST ------------ */
+
+#progress-bar-container {
+  overflow: auto;
+  float: right;
+  max-width: 25%;
+  min-width: 25%;
+  position: fixed;
+  margin-left: 10px;
+  text-align: center;
+}
+
+.progress {
+  height: 30px;
+  font-size: 20px;
+}
+
+.progress-bar {
+  min-width: 3em;
+  width: 3%;
+  font-size: 20px;
+  line-height: 30px;
+  background-image: none !important;
+  background-color: #007AFD !important;
+}
+
+
+
+/* ----------- END PROGRESS BAR TEST ----------- */
+
 textarea.form-control {
   height: 250px;
 }

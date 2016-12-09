@@ -18,12 +18,12 @@ class AcltcMailer < ApplicationMailer
 
   def application_email(application)
     @application = application
-    mail(from: "mg.anyonecanlearntocode.com", to: 'theonetrueemailtest@gmail.com', subject: 'Application Submitted', reply_to: @application.email )
+    mail(from: "mg.anyonecanlearntocode.com", to: 'admissions@anyonecanlearntocode.com', subject: 'Application Submitted', reply_to: @application.email )
   end
 
   def application_email_reply(application)
     @application = application
-    mail(from: "admissions@actualize.co", to: 'theonetrueemailtest@gmail.com', subject: 'Your Application was Received')
+    mail(from: "admissions@actualize.co", to: '@application.email', subject: 'Your Application was Received')
   end
 
   def subscriber_mousetrap_email(subscriber)
