@@ -10,7 +10,7 @@ class SubscribersController < ApplicationController
   end
 
   def create_from_application
-    setup_subscriber
+    subscriber_setup
 
     if Subscriber.find_by(email: params[:email]) 
       @subscriber = Subscriber.find_by(email: params[:email]) 
@@ -40,6 +40,7 @@ class SubscribersController < ApplicationController
       if postal_code = request.location.postal_code
         @subscriber.postal_code = postal_code
       end
+
       if Subscriber.find_by(email: params[:email]) || @subscriber.save
         subscriber_drip_setup
         converted!("Curriculum Phone Test")
@@ -52,10 +53,11 @@ class SubscribersController < ApplicationController
   end
 
   def create_from_tutorial
+
     if cookies[:is_subscriber]
       @tutorials_visible = true
     else
-      setup_subscriber
+      subscriber_setup
 
       if Subscriber.find_by(email: params[:email]) || @subscriber.save
         subscriber_drip_setup
@@ -92,7 +94,7 @@ class SubscribersController < ApplicationController
 
   private
 
-  def setup_subscriber
+  def subscriber_setup
     @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], mousetrap: params[:mousetrap], ip_address: request.remote_ip)
     if city = request.location.city
       @subscriber.city = city
@@ -116,4 +118,6 @@ class SubscribersController < ApplicationController
     client.create_or_update_subscriber(@subscriber.email)
     AcltcMailer.subscriber_mousetrap_email(@subscriber).deliver_now
   end
+
+
 end
