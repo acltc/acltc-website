@@ -32,8 +32,8 @@ class AcltcMailer < ApplicationMailer
       mail(from: @subscriber.email, to: "nick@anyonecanlearntocode.com", subject: 'Illinois Mousetrap Activated')
     elsif @subscriber.state == "California"
       mail(from: @subscriber.email, to: "jen@anyonecanlearntocode.com", subject: 'California Mousetrap Activated')
-    elsif @subscriber.state == "New York"
-      mail(from: @subscriber.email, to: "sal@anyonecanlearntocode.com", subject: 'New York Mousetrap Activated')
+    elsif @subscriber.state == "New York" || @subscriber.state == "New Jersey" || @subscriber.state == "Connecticut" || @subscriber.state == "Massachusetts" || @subscriber.state == "Pennsylvania" || @subscriber.state == "Vermont" || @subscriber.state == "New Hampshire" || @subscriber.state == "Rhode Island"
+      mail(from: @subscriber.email, to: "sal@anyonecanlearntocode.com", subject: 'New York Area Mousetrap Activated')
     else
       mail(from: @subscriber.email, to: "admissions@anyonecanlearntocode.com", subject: ' Mousetrap Activated')
     end
