@@ -15,11 +15,11 @@ class BlogPost < ActiveRecord::Base
   end
 
   def human_time
-    updated_at.strftime("%d %B %y")
+    updated_at.strftime("%B %y, %Y")
   end
 
   def posted_date_human
-    posted_date.strftime("%d %B %y")
+    posted_date.strftime("%B %y, %Y")
   end
 
   def next
