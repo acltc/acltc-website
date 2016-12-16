@@ -114,6 +114,7 @@ class SubscribersController < ApplicationController
 
     cookies.permanent[:is_subscriber] = true
     client.create_or_update_subscriber(@subscriber.email)
+    client.subscribe(@subscriber.email, 59612478)
     AcltcMailer.subscriber_mousetrap_email(@subscriber).deliver_now
   end
 end
