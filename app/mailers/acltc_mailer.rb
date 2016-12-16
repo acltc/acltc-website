@@ -18,24 +18,25 @@ class AcltcMailer < ApplicationMailer
 
   def application_email(application)
     @application = application
-    mail(from: "mg.anyonecanlearntocode.com", to: 'admissions@anyonecanlearntocode.com', subject: 'Application Submitted', reply_to: @application.email )
+    mail(from: "mg.anyonecanlearntocode.com", to: 'theonetrueemailtest@gmail.com', subject: 'Application Submitted', reply_to: @application.email )
   end
 
   def application_email_reply(application)
     @application = application
-    mail(from: "admissions@actualize.co", to: @application.email, subject: 'Your Application was Received')
+
+    mail(from: "admissions@actualize.co", to: 'theonetrueemailtest@gmail.com', subject: 'Your Application was Received')
   end
 
   def subscriber_mousetrap_email(subscriber)
     @subscriber = subscriber
     if @subscriber.state == "Illinois"
-      mail(from: @subscriber.email, to: "nick@anyonecanlearntocode.com", subject: 'Illinois Mousetrap Activated')
+      mail(from: @subscriber.email, to: "theonetrueemailtest@gmail.com", subject: 'Illinois Mousetrap Activated')
     elsif @subscriber.state == "California"
-      mail(from: @subscriber.email, to: "jen@anyonecanlearntocode.com", subject: 'California Mousetrap Activated')
+      mail(from: @subscriber.email, to: "theonetrueemailtest@gmail.com", subject: 'California Mousetrap Activated')
     elsif @subscriber.state == "New York" || @subscriber.state == "New Jersey" || @subscriber.state == "Connecticut" || @subscriber.state == "Massachusetts" || @subscriber.state == "Pennsylvania" || @subscriber.state == "Vermont" || @subscriber.state == "New Hampshire" || @subscriber.state == "Rhode Island"
-      mail(from: @subscriber.email, to: "sal@anyonecanlearntocode.com", subject: 'New York Area Mousetrap Activated')
+      mail(from: @subscriber.email, to: "theonetrueemailtest@gmail.com", subject: 'New York Area Mousetrap Activated')
     else
-      mail(from: @subscriber.email, to: "admissions@anyonecanlearntocode.com", subject: ' Mousetrap Activated')
+      mail(from: @subscriber.email, to: "theonetrueemailtest@gmail.com", subject: ' Mousetrap Activated')
     end
   end
 
