@@ -11,6 +11,7 @@ class PagesController < ApplicationController
   def contacts_thank_you
 
   end
+
   private
   
     def split_test
