@@ -94,14 +94,16 @@ class SubscribersController < ApplicationController
 
   def setup_subscriber
     @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], mousetrap: params[:mousetrap], ip_address: request.remote_ip)
-    if city = request.location.city
-      @subscriber.city = city
-    end
-    if state = request.location.state
-      @subscriber.state = state
-    end
-    if postal_code = request.location.postal_code
-      @subscriber.postal_code = postal_code
+    if request.location
+      if city = request.location.city
+        @subscriber.city = city
+      end
+      if state = request.location.state
+        @subscriber.state = state
+      end
+      if postal_code = request.location.postal_code
+        @subscriber.postal_code = postal_code
+      end
     end
     return @subscriber
   end
