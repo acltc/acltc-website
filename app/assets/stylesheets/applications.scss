@@ -94,6 +94,14 @@ $color-neutral: #eaeaea;
 
 /* ----------- END PROGRESS BAR TEST ----------- */
 
+/* ------------- INVISIBLE CAPTCHA --------------*/
+
+.invisible-captcha {
+  display: none;
+}
+
+/* ------------- END INVISIBLE CAPTCHA --------------*/
+
 textarea.form-control {
   height: 250px;
 }
