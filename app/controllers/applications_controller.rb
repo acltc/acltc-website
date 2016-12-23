@@ -93,7 +93,8 @@ class ApplicationsController < ApplicationController
   end
 
   def split_test
-    @progress_bar = ab_test("Application Progress Bar Test", ["Progress Bar", "No Progress Bar"])
+    @long_form_short_form = ab_test("Long Form Vs. Short Form", ["Long Form", "Short Form"])
+    # @progress_bar = ab_test("Application Progress Bar Test", ["Progress Bar", "No Progress Bar"])
   end
 
 end
