@@ -1,10 +1,10 @@
 <%= render "/layouts/page_title", page_title: @page_title || "Apply", page_subtitle: "Please fill out the form below to apply for admission. Fields with an asterisk are required." %>
 <% if @long_form_short_form == "Long Form" %>
-  <div id="app">
+  <div id="">
     <section id="content">
       <div class="content-wrap">
         <div class="row">
-          <div class="col-md-8">
+          <div class="">
             <%= form_for @application do |f| %>
               <% if @application.errors.any? %>
                 <div class="alert alert-dismissible alert-warning center-warning">
@@ -151,7 +151,7 @@
               </div>
             <% end %>
           </div>
-          <div class="col-md-4">
+          <!-- <div class="col-md-4">
             <div id="progress-bar-container">
               <h3>Application Progress</h3>
               <div class="progress">
@@ -160,7 +160,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
