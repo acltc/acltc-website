@@ -1,0 +1,10 @@
+$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').focus()
+})
+
+$(window).scroll(function() {
+  if ($(document).scrollTop() > 3000 && $("#myModal").attr("displayed") === "false") {
+    $('#myModal').modal('show');
+    $("#myModal").attr("displayed", "true");
+  }
+});

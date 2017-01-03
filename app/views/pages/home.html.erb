@@ -5,24 +5,30 @@
             <div id = "marquee" class="container">
                 <div class="row">
 
-                        <div class="marquee-content clearfix">
-                            <div class="col-md-4">
-                                <img class="logo" src="<%= asset_path 'actualize-logo-275.png'%>">
-                            </div>
-                            <div class="col-md-8">
-                                <h3 style="margin-top:52px">Your mentor in becoming a software engineer.</h3>
-                            </div>
-                            <p>Learn to code in 12 weeks without quitting your day job through expert instruction and hands-on practice. Afterwards, we work directly with you on landing a job while you join our apprenticeship and build a portfolio showcasing work that you've built for real clients.</p><br />
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <% if @apply_buttons_test == "Orange-Blue" %>
-                                        <%= link_to "Apply Now", new_application_path, class: "btn single-apply-button orange-blue-apply-button" %>
-                                    <% elsif @apply_buttons_test == "Aqua-Orange" %>
-                                        <%= link_to "Apply Now", new_application_path, class: "btn single-apply-button aqua-orange-apply-button" %>                    
-                                    <% end %>
-                                </div>
+                    <div>
+                        <% render '/subscribers/popup' %>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@subscriber">Button to Modal</button>
+                        <%= link_to "Link To Modal", @subcriber, remote: true %>
+                    </div>
+
+                    <div class="marquee-content clearfix">
+                        <div class="col-md-4">
+                            <img class="logo" src="<%= asset_path 'actualize-logo-275.png'%>">
+                        </div>
+                        <div class="col-md-8">
+                            <h3 style="margin-top:52px">Your mentor in becoming a software engineer.</h3>
+                        </div>
+                        <p>Learn to code in 12 weeks without quitting your day job through expert instruction and hands-on practice. Afterwards, we work directly with you on landing a job while you join our apprenticeship and build a portfolio showcasing work that you've built for real clients.</p><br />
+                        <div class="row">
+                            <div class="col-md-12">
+                                <% if @apply_buttons_test == "Orange-Blue" %>
+                                    <%= link_to "Apply Now", new_application_path, class: "btn single-apply-button orange-blue-apply-button" %>
+                                <% elsif @apply_buttons_test == "Aqua-Orange" %>
+                                    <%= link_to "Apply Now", new_application_path, class: "btn single-apply-button aqua-orange-apply-button" %>                    
+                                <% end %>
                             </div>
                         </div>
+                    </div>
                 </div> <!-- /row -->
             </div>
         </div>

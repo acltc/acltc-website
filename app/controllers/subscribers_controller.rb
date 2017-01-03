@@ -69,6 +69,14 @@ class SubscribersController < ApplicationController
     end
   end
 
+  def create_from_popup
+    setup_subscriber
+
+    respond_to do |format|
+      format.json { render json: @subscriber }
+    end
+  end
+
   def create_from_footer
     setup_subscriber
 
