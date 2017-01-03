@@ -73,6 +73,8 @@ class SubscribersController < ApplicationController
     setup_subscriber
 
     respond_to do |format|
+      format.hmtl#
+      format.js
       format.json { render json: @subscriber }
     end
   end
