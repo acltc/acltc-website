@@ -1,0 +1,6 @@
+<% if @modal_visible %> 
+  $('#popupModal').modal('hide');
+  $("#message").html("Thanks, have fun!");
+<% else %>
+  $("#popupModalLabel").html("Error! First Name and a valid Email are required to view the tutorials.");
+<% end %>

@@ -70,6 +70,24 @@ class SubscribersController < ApplicationController
     end
   end
 
+  def create_from_popup
+    if cookies[:is_subscriber]
+      @modal_visible = true
+    else
+      setup_subscriber
+
+      if Subscriber.find_by(email: params[:email]) || @subscriber.save
+        subscriber_drip_setup
+        @modal_visible = true
+      else
+        @modal_visible = false
+      end
+      respond_to do |format|
+        format.js {render :partial => "viewModal"}
+      end
+    end
+  end
+
   def create_from_footer
     setup_subscriber
 
