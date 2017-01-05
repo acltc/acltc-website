@@ -1,4 +1,8 @@
 $(document).on('ready', function() {
+  Vue.component('modal', {
+    template: '#modal-template'
+  })
+
   new Vue({
     el: '#app',
     data: {
@@ -6,6 +10,7 @@ $(document).on('ready', function() {
       progressBar: 0,
       answeredQuestions: 0,
       totalQuestions: 13,
+      showModal: false
     },
     methods: {
       applicationFields: function(){

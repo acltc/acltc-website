@@ -23,6 +23,14 @@ class SubscribersController < ApplicationController
     end
   end
 
+  def create_from_popup
+    setup_subscriber
+    @subscriber.save
+    # respond_to do |format|
+    #   format.js {render :partial => "viewPopup"}
+    # end
+  end
+
   def create_from_curriculum
     if cookies[:is_subscriber]
       respond_to do |format|
