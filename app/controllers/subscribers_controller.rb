@@ -24,7 +24,7 @@ class SubscribersController < ApplicationController
   end
 
   def create_from_popup
-    setup_subscriber
+    subscriber_setup
 
     if request.location
       if city = request.location.city
@@ -96,7 +96,7 @@ class SubscribersController < ApplicationController
   end
 
   def create_from_footer
-    setup_subscriber
+    subscriber_setup
 
     if Subscriber.find_by(email: params[:email]) || @subscriber.save
       subscriber_drip_setup
