@@ -10,7 +10,11 @@ $(document).on('ready', function() {
       progressBar: 0,
       answeredQuestions: 0,
       totalQuestions: 13,
-      showModal: false
+      showModal: false,
+      subscriber: {
+        first_name: '',
+        email: ''
+      }
     },
     methods: {
       applicationFields: function(){
@@ -42,6 +46,14 @@ $(document).on('ready', function() {
         console.log("Fields not filled in " + totalQuestions);
         console.log("Progress Bar " + progressBar);
         this.progressBar = progressBar.toFixed(0);
+      },
+      newSubscriber: function(){
+        this.$http.post('/subscribers_popup.json', this.subscriber).then(response => {
+              console.log(response);
+            }, error => {
+              console.log(error);
+            });
+        this.showModal = !this.showModal
       }
     }
   })

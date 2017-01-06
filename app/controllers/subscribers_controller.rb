@@ -25,7 +25,22 @@ class SubscribersController < ApplicationController
 
   def create_from_popup
     setup_subscriber
-    @subscriber.save
+
+    if request.location
+      if city = request.location.city
+        @subscriber.city = city
+      end
+      if state = request.location.state
+        @subscriber.state = state
+      end
+      if postal_code = request.location.postal_code
+        @subscriber.postal_code = postal_code
+      end
+    end
+    
+    if @subscriber.save
+      render :nothing => true
+    end
     # respond_to do |format|
     #   format.js {render :partial => "viewPopup"}
     # end

@@ -44,15 +44,15 @@
     <h3 slot="header" id="ModalHead">Join Our Email List</h3>
     <button slot="header" type="button" class="btn btn-default" @click="showModal = !showModal">X</button>
     <div slot="body">
-        <%= form_tag("/subscribers_popup", method: "post") do %>
-            <div>
-                <%= text_field_tag :first_name, nil, placeholder: "First Name" %>
-            </div>
-            <div>
-                <%= text_field_tag :email, nil, placeholder: "Email" %>
-            </div>
-            <%= submit_tag "Join Now", class: "curriculum-download-btn", style: "padding:0;margin:0;background-color:#F25252;color:white;" %>
-        <% end %>
+        <div>
+            <label>First Name</label>
+            <input class="form-control" type="text" placeholder="First Name" v-model="subscriber.first_name">
+        </div>
+        <div>
+            <label>Email</label>
+            <input class="form-control" type="text" placeholder="Email" v-model="subscriber.email">
+        </div>
+        <button class="curriculum-download-btn" style="padding:0;margin:0;background-color:#F25252;color:white;" @click="newSubscriber">Sign Up</button>
     </div>
      <div slot="footer">
         
