@@ -69,7 +69,7 @@
 
                         <div class="marquee-content clearfix">
                             <div class="col-md-4">
-                                <img class="logo" src="<%= asset_path 'actualize-logo-275.png'%>">
+                                <img class="logo" src="<%= image_path 'actualize-logo-275.png'%>">
                             </div>
                             <div class="col-md-8">
                                 <h3 style="margin-top:52px">Your mentor in becoming a software engineer.</h3>
@@ -80,7 +80,7 @@
                                     <% if @apply_buttons_test == "Orange-Blue" %>
                                         <%= link_to "Apply Now", new_application_path, class: "btn single-apply-button orange-blue-apply-button" %>
                                     <% elsif @apply_buttons_test == "Aqua-Orange" %>
-                                        <%= link_to "Apply Now", new_application_path, class: "btn single-apply-button aqua-orange-apply-button" %>                    
+                                        <%= link_to "Apply Now", new_application_path, class: "btn single-apply-button aqua-orange-apply-button" %>
                                     <% end %>
                                 </div>
                             </div>
@@ -311,9 +311,7 @@
                             </div>
                             <br />
                             <p class ="after-word">We'll also delve into important concepts such as Git, Test Driven Development, and the soft skills you need to land a web developer position. At Actualize, we focus on the skills that employers are looking for now.</p><br /><br />
-
-                            
-                            
+ 
                             <div class="well curriculum-well">
                                  <p class="subscribe-download">Download our full curriculum to see what we teach week-by-week!</p>
                                 <div class="row">
@@ -334,6 +332,7 @@
                                      <% end %>
                                  </div>
                              </div>  
+
                         </div>
                     </div>
                 </div>
@@ -572,7 +571,7 @@
                               <% if @apply_buttons_test == "Orange-Blue" %>
                                   <%= link_to "Apply Now", new_application_path, class: "btn single-apply-button orange-blue-apply-button" %>
                               <% elsif @apply_buttons_test == "Aqua-Orange" %>
-                                  <%= link_to "Apply Now", new_application_path, class: "btn single-apply-button aqua-orange-apply-button" %> 
+                                  <%= link_to "Apply Now", new_application_path, class: "btn single-apply-button aqua-orange-apply-button" %>
                               <% end %>
                           </div>
                       </div>

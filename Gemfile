@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'bootstrap-sass'
 gem 'rails', '4.2.0'
-gem 'puma'
+gem 'puma', '3.6.2'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
@@ -39,7 +39,7 @@ gem 'bootstrap-datepicker-rails', '~> 1.6', '>= 1.6.4.1'
 #ab test
 gem 'simple_abs'
 
-gem 'airbrake'
+gem 'airbrake', '~> 4.3.1'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
@@ -55,7 +55,9 @@ gem 'mailgun'
 gem 'tinymce-rails'
 
 gem 'drip-ruby', '~> 0.0.7', require: 'drip'
+
 gem 'vuejs-rails'
+
 
 group :development, :test do
   gem 'dotenv-rails'

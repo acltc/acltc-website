@@ -4,7 +4,7 @@
     if(value==='Chicago'){
       $('#additional-interview-text').html("Thanks for filling out the application! The next step is to join us at Merchandise Mart in Chicago for an in-person Interview. This way we can learn a little more about you, tell you more about Actualize, and answer any questions you may have.");
     } else if(value === 'San Francisco'){
-      $('#additional-interview-text').html("Thanks for filling out the application! The next step is to join us at TechSpace in San Francisco for an in-person Interview. This way we can learn a little more about you, tell you more about Actualize, and answer any questions you may have.");
+      $('#additional-interview-text').html("Thanks for filling out the application! The next step is to join us at TechSpace in San Francisco for a Google Hangouts Interview. This way we can learn a little more about you, tell you more about Actualize, and answer any questions you may have.");
     } else if(value === 'New York City'){
       $('#additional-interview-text').html("Thanks for filling out the application! The next step is to join us at LMHQ in Manhattan for an in-person Interview. This way we can learn a little more about you, tell you more about Actualize, and answer any questions you may have.");
     } else {
