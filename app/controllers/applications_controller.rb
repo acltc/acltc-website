@@ -100,4 +100,5 @@ class ApplicationsController < ApplicationController
     # @progress_bar = ab_test("Application Progress Bar Test", ["Progress Bar", "No Progress Bar"])
   end
 
+
 end
