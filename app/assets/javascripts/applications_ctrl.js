@@ -11,9 +11,11 @@ $(document).on('ready', function() {
       answeredQuestions: 0,
       totalQuestions: 13,
       showModal: false,
+      counter: 0,
       subscriber: {
         first_name: '',
-        email: ''
+        email: '',
+        mousetrap: 'Popup'
       }
     },
     methods: {
@@ -54,6 +56,21 @@ $(document).on('ready', function() {
               console.log(error);
             });
         this.showModal = !this.showModal
+      },
+      // scrollPopup: function() {
+      //   window.onscroll = function(){
+      //     if (document.body.scrollTop > 5000 || document.documentElement.scrollTop > 5000){
+      //       this.showModal = !this.showModal; 
+      //     }   
+      //   } 
+      // },
+      togglePopup: function(){
+        console.log(this.counter + " this counter");
+        if (this.counter < 1){
+          this.showModal = true;
+          this.counter++;
+          console.log(this.counter + " if");
+        } 
       }
     }
   })
