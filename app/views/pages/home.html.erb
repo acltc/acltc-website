@@ -1,3 +1,65 @@
+<!-- template for the modal component -->
+<script type="text/x-template" id="modal-template">
+ <transition name="modal">
+   <div class="modal-mask">
+     <div class="modal-wrapper">
+       <div class="modal-container">
+
+         <div class="modal-header">
+           <slot name="header">
+             default header
+           </slot>
+         </div>
+
+         <div class="modal-body">
+           <slot name="body">
+             default body
+           </slot>
+         </div>
+
+         <div class="modal-footer">
+           <slot name="footer">
+             // <button class="modal-default-button" @click="$emit('close')">
+             //   Close
+             // </button>
+           </slot>
+         </div>
+       </div>
+     </div>
+   </div>
+ </transition>
+</script>
+
+<!-- app -->
+
+
+<div id="app">
+   <button id="show-modal" @click="showModal = true">Show Modal</button>
+   <!-- use the modal component, pass in the prop -->
+   <modal v-if="showModal" @close="showModal = false">
+   <!--
+     you can use custom content here to overwrite
+     default content
+ -->
+    <h3 slot="header" id="ModalHead">Join Our Email List</h3>
+    <button slot="header" type="button" class="btn btn-default" @click="showModal = !showModal">X</button>
+    <div slot="body">
+        <div>
+            <label>First Name</label>
+            <input class="form-control" type="text" placeholder="First Name" v-model="subscriber.first_name">
+        </div>
+        <div>
+            <label>Email</label>
+            <input class="form-control" type="text" placeholder="Email" v-model="subscriber.email">
+        </div>
+        <button class="curriculum-download-btn" style="padding:0;margin:0;background-color:#F25252;color:white;" @click="newSubscriber">Sign Up</button>
+    </div>
+     <div slot="footer">
+        
+    </div> 
+    </modal>
+</div>
+
        <!-- Content
         ============================================= -->
        
@@ -241,9 +303,7 @@
                             </div>
                             <br />
                             <p class ="after-word">We'll also delve into important concepts such as Git, Test Driven Development, and the soft skills you need to land a web developer position. At Actualize, we focus on the skills that employers are looking for now.</p><br /><br />
-
-                            
-                            
+ 
                             <div class="well curriculum-well">
                                  <p class="subscribe-download">Download our full curriculum to see what we teach week-by-week!</p>
                                 <div class="row">
@@ -264,6 +324,7 @@
                                      <% end %>
                                  </div>
                              </div>  
+
                         </div>
                     </div>
                 </div>
