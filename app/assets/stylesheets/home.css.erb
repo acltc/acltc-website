@@ -335,19 +335,26 @@ input {
   transition: all .3s ease;
   font-family: Helvetica, Arial, sans-serif;
   z-index: 100000;
+  border: 5px solid #f48b1b;
+  width: 35%;
 }
 
 .modal-header h3 {
   margin-top: 0;
-  color: #42b983;
+  color: #f48b1b;
+  text-align: center;
 }
 
 .modal-body {
   margin: 20px 0;
+  /*text-align: left;*/
+}
+.modal-body:label {
+  text-align: left !important;
 }
 
 .modal-default-button {
-  float: right;
+  text-align: right;
 }
 
 /*
@@ -371,6 +378,24 @@ input {
 .modal-leave-active .modal-container {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
+}
+
+#popup-close-button {
+  border: 0px solid transparent;
+  float: right;
+  position: relative;
+  top: -65px;
+  right: -45px;
+}
+
+#popup-close-button:hover {
+  background-color: transparent;
+}
+
+#popup-submit-button {
+  background-color: #f48b1b;
+  color: #fff; 
+  /*text-align: center;*/
 }
 
 /* ----------------- END POPUP MODAL-----------------*/
