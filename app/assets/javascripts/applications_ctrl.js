@@ -65,11 +65,9 @@ $(document).on('ready', function() {
       //   } 
       // },
       togglePopup: function(){
-        console.log(this.counter + " this counter");
         if (this.counter < 1){
           this.showModal = true;
           this.counter++;
-          console.log(this.counter + " if");
         } 
       }
     }

@@ -25,6 +25,7 @@ class SubscribersController < ApplicationController
   end
 
   def create_from_popup
+
     subscriber_setup
 
     if request.location
@@ -40,11 +41,9 @@ class SubscribersController < ApplicationController
     end
     
     if @subscriber.save
+      subscriber_drip_setup
       render :nothing => true
     end
-    # respond_to do |format|
-    #   format.js {render :partial => "viewPopup"}
-    # end
   end
 
   def create_from_curriculum
