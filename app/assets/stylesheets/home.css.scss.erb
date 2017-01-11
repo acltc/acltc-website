@@ -339,15 +339,30 @@ input {
   width: 35%;
 }
 
-.modal-header h3 {
+@media (max-width: 768px) {
+  .modal-container {
+    width: 100%;
+  }
+}
+
+.modal-header {
+  border-bottom: 0px;
+  padding: 15px 15px 0px 15px;
+}
+
+.modal-footer {
+  border-top: 0px;
+}
+
+.modal-header h1 {
   margin-top: 0;
   color: #f48b1b;
   text-align: center;
+  white-space: pre-line;
 }
 
 .modal-body {
   margin: 20px 0;
-  /*text-align: left;*/
 }
 .modal-body:label {
   text-align: left !important;
@@ -384,7 +399,7 @@ input {
   border: 0px solid transparent;
   float: right;
   position: relative;
-  top: -65px;
+  top: -80px;
   right: -45px;
 }
 
@@ -395,7 +410,11 @@ input {
 #popup-submit-button {
   background-color: #f48b1b;
   color: #fff; 
-  /*text-align: center;*/
+}
+
+#popup-submit-button-container {
+  text-align: center;
+  padding-top: 30px;
 }
 
 /* ----------------- END POPUP MODAL-----------------*/
@@ -773,7 +792,7 @@ li.outcome-text {
     content: url("<%= asset_path('blue-check-mark-icon.png') %>");
     margin-left: -3em;
   }
-  }
+
   @media (max-width: 768px) {
     .marquee {
       margin-top: -143px; }
@@ -793,7 +812,7 @@ li.outcome-text {
     color: #555555; }
 .our-program-wrapper{
   background-color: #fff;
-  text-align: center; }
+  text-align: center; 
 }
 .our-program .phase {
   background: #fff;
