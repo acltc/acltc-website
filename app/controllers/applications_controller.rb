@@ -48,7 +48,7 @@ class ApplicationsController < ApplicationController
   def create
     @application = Application.new(application_params)
     if @application.save
-      converted!("Application Progress Bar Test") unless params[:long]
+      converted!("Long Form Vs. Short Form") unless params[:long]
       @application.interview.update(booked: true)
       AcltcMailer.application_email(@application).deliver_now
       AcltcMailer.application_email_reply(@application).deliver_now

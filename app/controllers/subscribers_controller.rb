@@ -16,6 +16,7 @@ class SubscribersController < ApplicationController
       @subscriber = Subscriber.find_by(email: params[:email]) 
       redirect_to "/applications/new/#{@subscriber.id}"
     elsif @subscriber.save
+      converted!("Apply Phone Test")
       subscriber_drip_setup
       redirect_to "/applications/new/#{@subscriber.id}"
     else
@@ -106,7 +107,7 @@ class SubscribersController < ApplicationController
   end
 
   def apply
-    converted!("Apply Buttons Test")
+    split_test
     @subscriber = Subscriber.new
   end
 
@@ -146,5 +147,8 @@ class SubscribersController < ApplicationController
     AcltcMailer.subscriber_mousetrap_email(@subscriber).deliver_now
   end
 
+  def split_test
+    @apply_test = ab_test("Apply Phone Test", ["Subscriber Apply Phone", "No Subscriber Apply Phone"])
+  end
 
 end
