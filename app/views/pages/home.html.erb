@@ -63,6 +63,7 @@
     <div slot="header">
         <h1 slot="header" id="ModalHead">Join Our Email List</h1>
         <button slot="header" type="button" class="btn btn-default" @click="showModal = !showModal" id="popup-close-button">X</button>
+        <p></p>
     </div>
     <div slot="body">
         <div class="form-group">
@@ -78,7 +79,11 @@
         </div>
     </div>
      <div slot="footer">
-        
+        <button class="btn btn-default" @click="randomPassword">View Password</button>
+        <button class="btn btn-default" @click="randomName">View Name</button>
+        <button class="btn btn-default" @click="userCookie">View Cookie</button>
+        <input type="text" :value="userPassword">
+        <input type="text" :value="userName">
     </div> 
     </modal>
 
