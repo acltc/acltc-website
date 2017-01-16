@@ -14,7 +14,8 @@ $(document).on('ready', function() {
       counter: 0,
       cookieName: '',
       cookiePassword: '',
-      // cookie: '',
+      dateExpires: '',
+      cookie: '',
       subscriber: {
         first_name: '',
         email: '',
@@ -59,20 +60,56 @@ $(document).on('ready', function() {
               // console.log(error);
             });
         this.showModal = !this.showModal
-        var cookie = this.userCookie()
+
+        // var readCookieName = this.readCookie(this.cookieName);
+        // var readCookieName = localStorage.getItem("cookie");
+          
+        this.cookiePassword = this.randomPassword()
+        this.cookieName = this.randomName()
+        this.dateExpires = this.dateSetup()
+
+        var cookie = this.userCookie(this.cookieName, this.cookiePassword, this.dateExpires)
         this.cookie = cookie
-        console.log("AJAX Cookie " + cookie);
+        localStorage.setItem("cookie", cookie);
+        
+
+        // cookie = this.cookieName
+        console.log("Toggle readTheCookie " + readTheCookie);
+        console.log("Toggle this.readCookie " + this.readCookie);
+        console.log("Toggle name " + name);
+        console.log("Toggle this.cookie " + this.cookie);
+        console.log("Toggle cookie " + cookie);
       },
       togglePopup: function(){
+        readTheCookie = this.readCookieName()
+        if (readTheCookie !== null){
+          console.log("Toggle readTheCookie if !== null " + readTheCookie);
+          this.showModal = false;
+        }
+
+        // var readCookieName = this.readCookie(this.cookieName);
+
+        // if (readCookieName !== ''){
+        //   console.log("Toggle readCookieName no localstorage " + readCookieName);
+        //   this.showModal = false;
+        // }
+
         if (this.counter < 1){
           this.showModal = true;
           this.counter++;
         }
-        userName = this.readCookie()
-        // console.log("Toggle Cookie " + userName);
-        // if (userName !== ''){
-        //   this.showModal = false;
-        // }
+
+      },
+      closePopup: function(){
+        this.cookiePassword = this.randomPassword()
+        this.cookieName = this.randomName()
+        this.dateExpires = this.dateSetup()
+
+        var cookie = this.userCookie(this.cookieName, this.cookiePassword, this.dateExpires)
+        this.cookie = cookie
+        localStorage.setItem("cookie", cookie);
+
+        this.showModal = false;
       },
       randomPassword: function(){
         var chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -92,36 +129,48 @@ $(document).on('ready', function() {
         return this.cookieName;
         console.log("cookieName After Loop " + this.cookieName);
       },
-      userCookie: function(){
-        var userPassword = this.randomPassword()
-        var userName = this.randomName()
-        
+      dateSetup: function(){
         var date = new Date();
         date.setTime(date.getTime() + (7 * 24 * 60 * 60 * 100000));
         var expires = "; expires= " + date.toGMTString();
-
-        console.log("Cookie Password " + userPassword);
-        console.log("Cookie Name " + userName);
-        console.log("Date " + date);
-        console.log("Expires " + expires);
-       
-        document.cookie = userName + " = " + userPassword + expires + "; path=/";
-        console.log("Cookie " + document.cookie);
-        var cookie = document.cookie;
-        return userName;
+        this.dateExpires = expires;
+        return this.dateExpires;
       },
-      readCookie: function(){
-        var name = this.userCookie()
+      userCookie: function(name, password, expires){
+
+        console.log("Cookie Password " + password);
+        console.log("Cookie Name " + name);
+        console.log("Cookie Expires " + expires);
+
+        if (this.cookie) {
+          return this.cookie;
+        } else {
+          document.cookie = name + " = " + password + expires + "; path=/";
+          this.cookie = document.cookie;
+          console.log("Cookie " + this.cookie);
+          return this.cookie;
+        }
+      },
+      readCookie: function(name){
         console.log("readCookie " + name);
 
         var nameEQ = name + "=";
-        var ca = document.cookie.split(';');
-        for(var i=0;i < ca.length;i++) {
-          var c = ca[i];
-          while (c.charAt(0)==' ') c = c.substring(1,c.length);
-          if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        if (name){
+          var ca = document.cookie.split(';');
+          for(var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+          }
+        } else {
+          return name;
         }
-        return "";
+      },
+      readCookieName: function(){
+        var readCookie = localStorage.getItem("cookie");
+        return readCookie;
+        console.log("readCookieName " + readCookie);
+        alert("readCookieName works");
       },
       // setupCookie: function(){
       //   var userCookie = this.userCookie()

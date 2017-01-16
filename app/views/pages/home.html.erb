@@ -32,7 +32,7 @@
             <div class="modal-footer">
               <slot name="footer">
         
-             </slot>
+              </slot>
             </div>
           </div>
         </div>
@@ -62,7 +62,7 @@
  -->
     <div slot="header">
         <h1 slot="header" id="ModalHead">Join Our Email List</h1>
-        <button slot="header" type="button" class="btn btn-default" @click="showModal = !showModal" id="popup-close-button">X</button>
+        <button slot="header" type="button" class="btn btn-default" @click="closePopup" id="popup-close-button">X</button>
         <p></p>
     </div>
     <div slot="body">
