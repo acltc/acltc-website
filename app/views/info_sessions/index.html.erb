@@ -1,0 +1,22 @@
+<section id="content">
+  <div class="content-wrap dash-wrap">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <table class="table table-striped index-dash-table">
+          <tr>
+            <th>Date</th>
+            <th>Time</th>
+          </tr>
+          <% @info_sessions.each do |info_session| %>
+          <tr>
+            <td><%= info_session.date %></td>
+            <td><%= info_session.date %></td>
+          </tr>
+          <% end %>
+        </table>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</section>

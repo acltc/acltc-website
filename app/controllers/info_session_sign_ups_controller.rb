@@ -1,0 +1,2 @@
+class InfoSessionSignUpsController < ApplicationController
+end
