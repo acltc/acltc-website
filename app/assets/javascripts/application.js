@@ -15,6 +15,7 @@
 //= require theme/jquery.gmap
 //= require jquery_ujs
 //= require vue
+//= require vue-resource
 //= require bootstrap
 //= require bootstrap-datepicker
 //= require parallax

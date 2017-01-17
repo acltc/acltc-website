@@ -302,6 +302,79 @@ input {
 
 /* ---------------END SPLIT TESTS---------------- */
 
+/* ------------------ POPUP MODAL -------------------*/
+
+#modalHead {
+  color: blue;
+} 
+
+.modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  display: table;
+  transition: opacity .3s ease;
+}
+
+.modal-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.modal-container {
+  width: 300px;
+  margin: 0px auto;
+  padding: 20px 30px;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
+  transition: all .3s ease;
+  font-family: Helvetica, Arial, sans-serif;
+  z-index: 100000;
+}
+
+.modal-header h3 {
+  margin-top: 0;
+  color: #42b983;
+}
+
+.modal-body {
+  margin: 20px 0;
+}
+
+.modal-default-button {
+  float: right;
+}
+
+/*
+ * The following styles are auto-applied to elements with
+ * transition="modal" when their visibility is toggled
+ * by Vue.js.
+ *
+ * You can easily play with the modal transition by editing
+ * these styles.
+ */
+
+.modal-enter {
+  opacity: 0;
+}
+
+.modal-leave-active {
+  opacity: 0;
+}
+
+.modal-enter .modal-container,
+.modal-leave-active .modal-container {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+/* ----------------- END POPUP MODAL-----------------*/
+
 li.outcome-text {
   font-size: 16px;
 }
@@ -467,7 +540,7 @@ li.outcome-text {
     width: 100%;
     height: 10px;
     z-index: 100;
-    background-image: url("<%= asset_path('border.png') %>");
+    background-image: url("/assets/border-612fb9f5ee61096b235c7050525c883a662c9d2618a2683ae54be643b69b5681.png");
     background-repeat: repeat-x; }
   .navigation .navbar-brand {
     padding: 1em 2em 0 0; }
@@ -575,11 +648,11 @@ li.outcome-text {
     background-position: top;
 } 
   .corporate-training-background-image {
-  background-image: url("<%= asset_path('corporate_training_header_wide.png') %>");
+  background-image: url("/assets/corporate_training_header_wide-d6b35ed350f4500fe9c969722c9de3a4740551bcc49259ab0e983500942c55b7.png");
 }
 
  .job-openings-background-image {
-  background-image: url("<%= asset_path('job_openings_header.jpg') %>");
+  background-image: url("/assets/job_openings_header-76bd092703da27a0bc3d5e14d968b7fe7a085b018334de2ba306431472730bea.jpg");
 }
 
 
@@ -589,7 +662,7 @@ li.outcome-text {
     margin-top: 2px;
     padding: 5em 3.5em;
     text-align: center;
-    z-index: 9999;
+    z-index: 200;
     position: relative;
   background-color: rgba(0, 0, 0, .8);
 }
@@ -651,28 +724,28 @@ li.outcome-text {
   .actualize-logo:before{
     margin-right: .5em;
     max-width: 50px;
-    content: url("<%= asset_path('actualize-logo-triangle-sm.png') %>");}
+    content: url("/assets/actualize-logo-triangle-sm-066b42be2da1831a09f89d29c5dab957fe97ecb6043435fa1b86b2de36815ece.png");}
 
   .acltc-penguin-logo-small:before{
     margin-right: .5em;
     max-width: 50px;
-    content: url("<%= asset_path('acltc_new_penguin_small.png') %>");}
+    content: url("/assets/acltc_new_penguin_small-9402d1da381a732796ad1fdfbdaba7d891a752ee9c0df2600183bdafa99d54db.png");}
 
   .actualize-logo-circular:before{
     margin-right: .5em;
     top: 0.1em;
     position: relative;
-  content: url("<%= asset_path('actualize-logo-circle.png') %>");}
+  content: url("/assets/actualize-logo-circle-5d9347252ece9b867e229840941f1021e78697aada88e838992893d88488bb4c.png");}
 
   .acltc-new-logo-circular:before{
     margin-right: .5em;
     top: 0.1em;
     position: relative;
-  content: url("<%= asset_path('acltc_new_penguin_circle.png') %>");}
+  content: url("/assets/acltc_new_penguin_circle-c6dab421d18059526bfdae396a4d90e840027216e3d2522a2d7d71d6227ea28c.png");}
 
   .benefits:before{
 
-    content: url("<%= asset_path('blue-check-mark-icon.png') %>");
+    content: url("/assets/blue-check-mark-icon-c0e8a6b463f3a48c3ed85c030321531cdea513d5a21ed5d8ca12ded8107a1af6.png");
     margin-left: -3em;
   }
   }
@@ -705,7 +778,7 @@ li.outcome-text {
     border-right:1px solid #c1c0bf;
   }
   .phase-point-right{
-    background-image: url("<%= asset_path('phase-point.png') %>");
+    background-image: url("/assets/phase-point-415740721c72af7aa9c99976dda76d7199cfc24513562de393ad0948b27728f9.png");
     background-repeat: no-repeat;
     background-position: 0% 0%;
     float:right;
@@ -715,7 +788,7 @@ li.outcome-text {
     margin-top: 23px;
   }
   .phase-point-left{
-    background-image: url("<%= asset_path('phase-point.png') %>");
+    background-image: url("/assets/phase-point-415740721c72af7aa9c99976dda76d7199cfc24513562de393ad0948b27728f9.png");
     background-repeat: no-repeat;
     background-position: 0% 0%;
     float: left;
@@ -768,9 +841,9 @@ li.outcome-text {
         border-radius: 30px; }
 
 
-      /*.our-program .phase .phase-block.block-image.phase1-img {background-image: url("<%= asset_path('program-prework-icon.png') %>");}*/
-      .our-program .phase .phase-block.block-image.phase2-img {background-image: url("<%= asset_path('program-bootcamp-icon.png') %>");}
-      .our-program .phase .phase-block.block-image.phase3-img {background-image: url("<%= asset_path('program-apprenticeship-icon.png') %>");}
+      /*.our-program .phase .phase-block.block-image.phase1-img {background-image: url("/assets/program-prework-icon-8070a658050681e5e1029a8e06474a36ee41424d5abe73e0c52a6a8e75ca8494.png");}*/
+      .our-program .phase .phase-block.block-image.phase2-img {background-image: url("/assets/program-bootcamp-icon-ae4882bfa26225c9b9ccb8647c539c9b33656accffa96ad01fa0f033790c5799.png");}
+      .our-program .phase .phase-block.block-image.phase3-img {background-image: url("/assets/program-apprenticeship-icon-2631f2f078022e23dd1871b285e3b2746b32a8b54d6da291e2d19c9c769fc5f6.png");}
 .col-md-4 .philosophy{
   text-align: left;
 }
@@ -779,7 +852,7 @@ li.outcome-text {
  /* padding: 1em 0 5em;*/
   color: #fff;
   text-align: center;
-  background-image: url("<%= asset_path('skills-bg.png') %>");
+  background-image: url("/skills-bg.png");
   background-position: center; }
 .curriculum-wrapper img.curriculum-icon {
     width: auto;
@@ -864,7 +937,7 @@ li.outcome-text {
 }
 .showcase {
   text-align: center;
-  /*background-image: url("<%= asset_path('showcase.jpg') %>");*/
+  /*background-image: url("/showcase.jpg");*/
   /*min-height: 700px;*/
   background-repeat: no-repeat;
   background-size: cover;
@@ -1529,5 +1602,5 @@ input.curriculum-download-btn:hover{
 }
 
 .diversity-page-wrapper .marquee {
-  background-image: url("<%= asset_path('diversity-page-marquee-bg.jpg')%>");
+  background-image: url("/assets/diversity-page-marquee-bg-1095071a31c56952965ffca8f20eb1bfc6be8fb4b559ca2fac04ed335b2d9e50.jpg");
 }
