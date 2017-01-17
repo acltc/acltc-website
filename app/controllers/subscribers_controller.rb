@@ -10,7 +10,7 @@ class SubscribersController < ApplicationController
   end
 
   def create_from_application
-    subscriber_setup
+    setup_subscriber
 
     if Subscriber.find_by(email: params[:email]) 
       @subscriber = Subscriber.find_by(email: params[:email]) 
@@ -24,7 +24,7 @@ class SubscribersController < ApplicationController
   end
 
   def create_from_popup
-    subscriber_setup
+    setup_subscriber
 
     if request.location
       if city = request.location.city
@@ -81,7 +81,7 @@ class SubscribersController < ApplicationController
     if cookies[:is_subscriber]
       @tutorials_visible = true
     else
-      subscriber_setup
+      setup_subscriber
 
       if Subscriber.find_by(email: params[:email]) || @subscriber.save
         subscriber_drip_setup
@@ -96,7 +96,7 @@ class SubscribersController < ApplicationController
   end
 
   def create_from_footer
-    subscriber_setup
+    setup_subscriber
 
     if Subscriber.find_by(email: params[:email]) || @subscriber.save
       subscriber_drip_setup
