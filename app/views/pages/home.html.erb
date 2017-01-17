@@ -124,6 +124,36 @@
                 </div>
             </div>
         </div>
+        <div class="curriculum-wrapper page-wrapper">
+            <div class="home-section">
+                <div class="row">
+                    <div class="col-md-12 skills">
+                        <br />
+                        <p class ="after-word">Come to an info session, you'll hear about stuff.</p><br /><br />                        
+                        <div class="well curriculum-well">
+                             <p class="subscribe-download">Come to an info session, you'll hear about stuff.</p>
+                            <div class="row">
+                                <%= form_tag("/subscribers_curriculum", method: "post", remote: true) do %>
+                                    <div class="col-md-3">
+                                        <%= text_field_tag :first_name, nil, placeholder: "First Name" %>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <%= text_field_tag :email, nil, placeholder: "Email" %>
+                                    </div>
+                                    <div class="col-md-3">
+                                       <%= text_field_tag :phone, nil, placeholder: "Phone" %>
+                                    </div>
+                                    <div class="col-md-3">
+                                         <%= hidden_field_tag :mousetrap, nil, value: "Curriculum Download Phone Test" %>
+                                         <%= submit_tag "Sign Up", class: "curriculum-download-btn", style: "padding:0;margin:0;background-color:#F25252;color:white;" %>
+                                    </div>
+                                <% end %>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="our-program-wrapper page-wrapper">
             <div class="home-section">
                 <div class="row">
