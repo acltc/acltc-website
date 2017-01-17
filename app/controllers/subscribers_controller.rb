@@ -145,11 +145,4 @@ class SubscribersController < ApplicationController
     AcltcMailer.subscriber_mousetrap_email(@subscriber).deliver_now
   end
 
-<<<<<<< HEAD
-=======
-  def split_test
-    @apply_test = ab_test("Apply Phone Test", ["Subscriber Apply Phone", "No Subscriber Apply Phone"])
-  end
-
->>>>>>> f23e128db42be105ee532e2f1ec4bab00d9a7157
 end
