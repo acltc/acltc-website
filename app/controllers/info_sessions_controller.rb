@@ -1,7 +1,7 @@
 class InfoSessionsController < ApplicationController
   
   def index
-    @info_sessions = InfoSession.all
+    @info_sessions = InfoSession.current_sessions
   end
 
   def new
