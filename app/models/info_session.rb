@@ -1,10 +1,10 @@
 class InfoSession < ActiveRecord::Base
 
-  def index_date
+  def friendly_date
     date.strftime("%B %d, %Y")
   end
 
-  def index_time
+  def friendly_time
     date.strftime("%I:%M %p")
   end
 

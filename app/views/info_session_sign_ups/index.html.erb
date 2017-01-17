@@ -1,0 +1,34 @@
+<%= render "/layouts/page_title", page_title: "Booked Info Sessions", page_subtitle: "All Booked Info Sessions" %>
+
+<section id="content">
+  <div class="content-wrap dash-wrap">
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <table class="table table-striped">
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>City</th>
+            <th>Session Date</th>
+            <th>Session Time</th>
+            <th>Booked On</th>
+          </tr>
+          <% @info_session_sign_ups.each do |info_session_sign_up| %>
+          <tr>
+            <td style="vertical-align: middle;"><%= info_session_sign_up.name %></td>
+            <td style="vertical-align: middle;"><%= info_session_sign_up.email %></td>
+            <td style="vertical-align: middle;"><%= info_session_sign_up.phone %></td>
+            <td style="vertical-align: middle;"><%= info_session_sign_up.city %></td>
+            <td style="vertical-align: middle;"><%= info_session_sign_up.friendly_date %></td>
+            <td style="vertical-align: middle;"><%= info_session_sign_up.friendly_time %></td>
+            <td style="vertical-align: middle;"><%= info_session_sign_up.friendly_created_at %></td>
+          </tr>
+          <% end %>
+        </table>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+  </div>
+</section>
