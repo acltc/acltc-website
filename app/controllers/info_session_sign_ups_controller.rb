@@ -1,5 +1,5 @@
 class InfoSessionSignUpsController < ApplicationController  
-  before_action :authenticate_admin!, except: [:create, :new]
+  before_action :authenticate_admin!, except: [:create, :new, :show]
 
   def index
     current_info_session = InfoSession.current_info_session
