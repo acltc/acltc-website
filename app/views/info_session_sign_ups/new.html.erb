@@ -1,0 +1,61 @@
+<%= render "/layouts/page_title", page_title: "Info Session Sign Up", page_subtitle: "" %>
+  <section id="content">
+    <div class="content-wrap dash-wrap">
+      <div class="row">
+        <div class="col-md-1"></div>
+          <div class="col-md-10">
+            <% if @info_session_sign_up.errors.any? %>
+              <div class="alert alert-dismissible alert-warning center-warning">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <h2>Oops! You forgot to fill out
+                  <%= pluralize(@info_session_sign_up.errors.count, "field") %>:
+                </h2>
+                <ul>
+                  <% @info_session_sign_up.errors.full_messages.each do |msg| %>
+                    <h4><%= msg %></h4>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
+            <%= form_tag info_session_sign_ups_path, method: :post do %>
+              <div class="form-group" >
+                <label class="required label-radio form-label">Select a city to attend an info session on <%= @info_session_sign_up.friendly_date %> at <%= @info_session_sign_up.friendly_time %></label><br />
+                <div class="radio">
+                  <div>
+                    <%= radio_button_tag :city, "Chicago" %>
+                    <%= label_tag :city, "Chicago", :value => "Chicago" %><br />
+               
+                    <%= radio_button_tag :city, "San Francisco" %>
+                    <%= label_tag :city, "San Francisco", :value => "San Francisco" %><br />
+                  
+                    <%= radio_button_tag :city, "New York City" %>
+                    <%= label_tag :city, "New York City", :value => "New York City" %>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <%= label_tag :name, "Name", class: "required form-label" %><br />
+                <%= text_field_tag :name, @info_session_sign_up.name, autofocus: true, class: "form-control" %>
+              </div>
+              <div class="form-group">
+                <%= label_tag :email, "Email", class: "required form-label" %><br />
+                <%= text_field_tag :email, @info_session_sign_up.email, autofocus: true, class: "form-control" %>
+              </div>
+              <div class="form-group">
+                <%= label_tag :phone, "Phone", class: "required form-label" %><br />
+                <%= text_field_tag :phone, @info_session_sign_up.phone, class: "form-control" %>
+              </div>
+                <%= hidden_field_tag :date, @info_session_sign_up.date %>
+            
+              <br>
+              <br>
+              <div class="form-group">
+                <%= submit_tag "Sign Up", class: "button button-3d nomargin nopadding" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+    </div>
+  </section>

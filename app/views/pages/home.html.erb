@@ -130,32 +130,33 @@
                     <div class="col-md-12 skills">
                         <br />
                         <p class ="after-word">Come to an info session, you'll hear about stuff.</p><br /><br /> 
+                            
                         <div class="well curriculum-well">
-                             <p class="subscribe-download">Chose your city and sign up! The next info session is on <%= @current_info_session.index_date %> at <%= @current_info_session.index_time %></p>
-                            <%= form_tag("/info_session_sign_ups", method: :post) do %>
-                        <div class="row" style="padding-bottom: 20px;">
-                            <div class="col-md-4">
-                                <%= radio_button_tag :city, "Chicago" %>
-                                <%= label_tag :city, "Chicago" %>
-                            </div>
-                            <div class="col-md-4">
-                                <%= radio_button_tag :city, "New York City" %>
-                                <%= label_tag :city, "New York City" %>
-                            </div>
-                            <div class="col-md-4">
-                                <%= radio_button_tag :city, "San Francisco" %>
-                                <%= label_tag :city, "San Francisco" %>
-                            </div>
-                        </div>                       
+                             <p class="subscribe-download">Chose your city and sign up! The next info session is on <%= @current_info_session.friendly_date %> at <%= @current_info_session.friendly_time %></p>
+                            <%= form_tag("/info_session_sign_ups", id: "infoSessionSignUp", method: :post) do %>
+                            <div class="row" style="padding-bottom: 20px;">
+                                <div class="col-md-4">
+                                    <%= radio_button_tag :city, "Chicago" %>
+                                    <%= label_tag :city, "Chicago" %>
+                                </div>
+                                <div class="col-md-4">
+                                    <%= radio_button_tag :city, "New York City" %>
+                                    <%= label_tag :city, "New York City" %>
+                                </div>
+                                <div class="col-md-4">
+                                    <%= radio_button_tag :city, "San Francisco" %>
+                                    <%= label_tag :city, "San Francisco" %>
+                                </div>
+                            </div>                       
                             <div class="row">
                                 <div class="col-md-4">
-                                    <%= text_field_tag :name, "name", placeholder: "Name" %>
+                                    <%= text_field_tag :name, nil, placeholder: "Name", required: true %>
                                 </div>
                                 <div class="col-md-4">
-                                    <%= text_field_tag :email, "email", placeholder: "Email" %>
+                                    <%= text_field_tag :email, "email", placeholder: "Email", required: true %>
                                 </div>
                                 <div class="col-md-4">
-                                   <%= text_field_tag :phone, "phone", placeholder: "Phone" %>
+                                   <%= text_field_tag :phone, "phone", placeholder: "Phone", required: true %>
                                 </div>
                             </div>
                             <div class="row">
@@ -163,7 +164,7 @@
                                 <%= hidden_field_tag :date, @current_info_session.date %>
                                 <div class="col-md-4"></div>
                                 <div class="col-md-4">
-                                    <%= submit_tag "Sign Up", class: "curriculum-download-btn", style: "padding:0;margin:0;background-color:#F25252;color:white;" %>
+                                    <%= submit_tag "Sign Up", class: "curriculum-download-btn", id: "submit-session", style: "padding:0;margin:0;background-color:#F25252;color:white;" %>
                                 </div>
                             </div>
                             <% end %>
@@ -549,4 +550,23 @@
 
               </div>
           </div>
+<script>
+    $(document).ready(function(){
+        $('#infoSessionSignUp > input[required]').keyup(function() {
 
+        var empty1 = false;
+        $('#infoSessionSignUp > input[required]').each(function() {
+            if ($(this).val() === '') {
+                empty1 = true;
+            }
+        });
+
+        if (empty1) {
+            $('#submit-session').attr('disabled', 'disabled');
+        } else {
+        //$('#submit-session').removeAttr('disabled');
+            $('#submit-session').prop("disabled", false);
+        }
+        });
+    });
+</script>

@@ -1,4 +1,5 @@
 class InfoSessionsController < ApplicationController
+  before_action :authenticate_admin!
   
   def index
     @info_sessions = InfoSession.current_sessions
