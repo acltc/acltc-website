@@ -1,8 +1,93 @@
+
+
+<!-- template for the modal component -->
+<script type="text/x-template" id="modal-template">
+ <transition name="modal">
+   <div class="modal-mask">
+     <div class="modal-wrapper">
+       <div class="modal-container">
+
+         <div class="modal-header">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                   <slot name="header">
+                     
+                   </slot>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+             <div class="modal-body">
+               <slot name="body">
+                 
+               </slot>
+             </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="modal-footer">
+              <slot name="footer">
+        
+             </slot>
+            </div>
+          </div>
+        </div>
+       </div>
+     </div>
+   </div>
+ </transition>
+</script>
+
+<!-- app -->
+
+
+<div id="app" @mousemove="togglePopup">
+
+    <script id="toggle-popup">   
+        // window.onscroll = function(){
+        //   if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000){
+        //   }   
+        // }  
+    </script>
+   <!-- use the modal component, pass in the prop -->
+   <modal v-if="showModal" @close="showModal = false">
+
+   <!--
+     you can use custom content here to overwrite
+     default content
+ -->
+    <div slot="header">
+        <h1 slot="header" id="ModalHead">Join Our Email List</h1>
+        <button slot="header" type="button" class="btn btn-default" @click="showModal = !showModal" id="popup-close-button">X</button>
+    </div>
+    <div slot="body">
+        <div class="form-group">
+            <label>First Name</label>
+            <input class="form-control" type="text" placeholder="First Name" v-model="subscriber.first_name">
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input class="form-control" type="text" placeholder="Email" v-model="subscriber.email">
+        </div>
+        <div id="popup-submit-button-container">
+            <button class="btn btn-lg" id="popup-submit-button" @click="newSubscriber">Sign Up</button>
+        </div>
+    </div>
+     <div slot="footer">
+        
+    </div> 
+    </modal>
+
+
        <!-- Content
         ============================================= -->
        
         <div class="marquee">
-            <div id = "marquee" class="container">
+            <div id = "marquee" class="container" onscroll="scrollPopup">
                 <div class="row">
 
                         <div class="marquee-content clearfix">
@@ -290,9 +375,7 @@
                             </div>
                             <br />
                             <p class ="after-word">We'll also delve into important concepts such as Git, Test Driven Development, and the soft skills you need to land a web developer position. At Actualize, we focus on the skills that employers are looking for now.</p><br /><br />
-
-                            
-                            
+ 
                             <div class="well curriculum-well">
                                  <p class="subscribe-download">Download our full curriculum to see what we teach week-by-week!</p>
                                 <div class="row">
@@ -313,6 +396,7 @@
                                      <% end %>
                                  </div>
                              </div>  
+
                         </div>
                     </div>
                 </div>
