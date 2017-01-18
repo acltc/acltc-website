@@ -1,15 +1,16 @@
 class InfoSessionSignUp < ActiveRecord::Base
+  belongs_to :info_session
   validates :name, :email, :phone, :city, presence: true
 
   def friendly_date
-    if date
-      date.strftime("%B %d, %Y")
-    end
+      if info_session
+        info_session.date.strftime("%B %d, %Y")
+      end
   end
 
   def friendly_time
-    if date
-      date.strftime("%I:%M %p")
+    if info_session
+      info_session.date.strftime("%I:%M %p")
     end
   end
 
