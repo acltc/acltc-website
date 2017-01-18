@@ -25,6 +25,18 @@ class InfoSessionsController < ApplicationController
     @info_session = InfoSession.find(params[:id])
   end
 
+  def update
+    @info_session = InfoSession.find(params[:id])
+
+    if @info_session.update(info_session_params)
+     flash[:success] = "Info Session Updated"
+      redirect_to info_sessions_path
+    else
+      flash[:warning] = "Failed to update Info Session"
+      render :edit
+    end
+  end
+
   def destroy
     @info_session = InfoSession.find(params[:id])
 
