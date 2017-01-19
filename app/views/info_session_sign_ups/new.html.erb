@@ -2,8 +2,8 @@
   <section id="content">
     <div class="content-wrap dash-wrap">
       <div class="row">
-        <div class="col-md-1"></div>
-          <div class="col-md-10">
+        <div class="col-md-3"></div>
+          <div class="col-md-6">
             <% if @info_session_sign_up.errors.any? %>
               <div class="alert alert-dismissible alert-warning center-warning">
                 <button type="button" class="close" data-dismiss="alert">×</button>
@@ -19,17 +19,10 @@
             <% end %>
             <%= form_tag info_session_sign_ups_path, method: :post do %>
               <div class="form-group" >
-                <label class="required label-radio form-label">Select a city to attend an info session on <%= @info_session_sign_up.friendly_date %> at <%= @info_session_sign_up.friendly_time %></label><br />
+                <label class="required label-radio form-label">Select a city to attend an info session on <%= @current_info_session.friendly_date %> at <%= @current_info_session.friendly_time %></label><br />
                 <div class="radio">
                   <div>
-                    <%= radio_button_tag :city, "Chicago" %>
-                    <%= label_tag :city, "Chicago", :value => "Chicago" %><br />
-               
-                    <%= radio_button_tag :city, "San Francisco" %>
-                    <%= label_tag :city, "San Francisco", :value => "San Francisco" %><br />
-                  
-                    <%= radio_button_tag :city, "New York City" %>
-                    <%= label_tag :city, "New York City", :value => "New York City" %>
+                    <%= select_tag :city, options_for_select(["Chicago", "New York City", "San Francisco"], @info_session_sign_up.city), class: "form-control" %>
                   </div>
                 </div>
               </div>
@@ -55,7 +48,7 @@
             <% end %>
           </div>
         </div>
-        <div class="col-md-1"></div>
+        <div class="col-md-3"></div>
       </div>
     </div>
   </section>

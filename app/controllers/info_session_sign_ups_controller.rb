@@ -17,6 +17,7 @@ class InfoSessionSignUpsController < ApplicationController
 
   def new
     @info_session_sign_up = InfoSessionSignUp.new unless @info_session_sign_up
+    @current_info_session = InfoSession.current_info_session
   end
 
   def create
