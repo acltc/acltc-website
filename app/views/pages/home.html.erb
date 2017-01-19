@@ -221,27 +221,16 @@
                                  <p class="subscribe-download">Chose your city and sign up! The next info session is on <%= @current_info_session.friendly_date %> at <%= @current_info_session.friendly_time %></p>
                                 <%= form_tag("/info_session_sign_ups", id: "infoSessionSignUp", method: :post) do %>
                                 <div class="row" style="padding-bottom: 20px;">
-                                    <div class="col-md-4">
-                                        <%= radio_button_tag :city, "Chicago" %>
-                                        <%= label_tag :city, "Chicago" %>
+                                    <div class="col-md-3">
+                                        <%= select_tag :city, options_for_select(["Chicago", "New York City", "San Francisco"], @info_session_sign_up.city), prompt: "Select a city", class: "form-control", id: "session-city-select" %>
                                     </div>
-                                    <div class="col-md-4">
-                                        <%= radio_button_tag :city, "New York City" %>
-                                        <%= label_tag :city, "New York City" %>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <%= radio_button_tag :city, "San Francisco" %>
-                                        <%= label_tag :city, "San Francisco" %>
-                                    </div>
-                                </div>                       
-                                <div class="row">
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <%= text_field_tag :name, nil, placeholder: "Name", required: true %>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <%= text_field_tag :email, nil, placeholder: "Email", required: true %>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                        <%= text_field_tag :phone, nil, placeholder: "Phone", required: true %>
                                     </div>
                                 </div>
