@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  namespace :api do
+    namespace :v1 do
+      post 'subscribers_popup' => 'subscribers#create_from_popup'
+    end
+  end
+  
   get 'statuses/show'
 
   get 'statuses/edit'

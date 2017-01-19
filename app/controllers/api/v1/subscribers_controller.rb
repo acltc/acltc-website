@@ -6,7 +6,7 @@ class Api::V1::SubscribersController < ApplicationController
     if @subscriber.save
       render :nothing => true
     else
-      render json: {errors: @subscriber.errors.messages}, status: 422 
+      render json: {errors: @subscriber.errors.full_messages}, status: 422 
     end
   end
 

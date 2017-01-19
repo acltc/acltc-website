@@ -1,7 +1,21 @@
 
+<style type="text/css">
+    .hidden {display:none;}
+</style>
+<script
+  src="https://code.jquery.com/jquery-3.1.1.js"
+  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+  crossorigin="anonymous"></script>
+<script type="text/javascript">
+    $('html').addClass('hidden');
+    $(document).ready(function() {
+      $('html').removeClass('hidden');  // EDIT: Can also use $('html').removeClass('hidden'); 
+     });  
+</script>
 
 <!-- template for the modal component -->
 <script type="text/x-template" id="modal-template">
+
  <transition name="modal">
    <div class="modal-mask">
      <div class="modal-wrapper">
@@ -42,17 +56,12 @@
  </transition>
 </script>
 
-<!-- app -->
 
+
+<!-- app -->
 
 <div id="app" @mousemove="togglePopup">
 
-    <script id="toggle-popup">   
-        // window.onscroll = function(){
-        //   if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000){
-        //   }   
-        // }  
-    </script>
    <!-- use the modal component, pass in the prop -->
    <modal v-if="showModal" @close="showModal = false">
 
@@ -62,8 +71,14 @@
  -->
     <div slot="header">
         <h1 slot="header" id="ModalHead">Join Our Email List</h1>
+
         <button slot="header" type="button" class="btn btn-default" @click="closePopup" id="popup-close-button">X</button>
-        <p></p>
+
+        <div id="errors">
+            <ul>
+                <li v-for="error in errors">{{ error }}</li>
+            </ul>
+        </div>
     </div>
     <div slot="body">
         <div class="form-group">
@@ -592,3 +607,4 @@
           </div>
 
 </div>
+
