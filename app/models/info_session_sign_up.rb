@@ -19,12 +19,13 @@ class InfoSessionSignUp < ActiveRecord::Base
   end
 
   def self.to_csv(options = {})
+    csv_columns = ["id", "name", "email", "phone", "city", "created_at", "updated_at", "info_session_id", "session_date", "session_time"]
     CSV.generate(options) do |csv|
-      csv << column_names.insert(5, "session_date", "session_time")
+      csv << csv_columns
       all.each do |sign_up|
-        x = sign_up.attributes.values_at(*column_names)
-        x[5] = sign_up.info_session.friendly_date
-        x[6] = sign_up.info_session.friendly_time
+        x = sign_up.attributes.values_at(*csv_columns)
+        x[-2] = sign_up.info_session.friendly_date
+        x[-1] = sign_up.info_session.friendly_time
         csv << x
       end
     end
