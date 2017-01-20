@@ -28,16 +28,16 @@ class AcltcMailer < ApplicationMailer
 
   def subscriber_mousetrap_email(subscriber)
     @subscriber = subscriber
-    mail(from: @subscriber.email, to: "ben@anyonecanlearntocode.com", subject: 'Mousetrap Activated')
-    if @subscriber.state == "Illinois"
-      mail(from: @subscriber.email, to: "nick@anyonecanlearntocode.com", subject: 'Illinois Mousetrap Activated')
-    elsif @subscriber.state == "California"
-      mail(from: @subscriber.email, to: "zev@anyonecanlearntocode.com", subject: 'California Mousetrap Activated')
-    elsif @subscriber.state == "New York" || @subscriber.state == "New Jersey" || @subscriber.state == "Connecticut" || @subscriber.state == "Massachusetts" || @subscriber.state == "Pennsylvania" || @subscriber.state == "Vermont" || @subscriber.state == "New Hampshire" || @subscriber.state == "Rhode Island"
-      mail(from: @subscriber.email, to: "sal@anyonecanlearntocode.com", subject: 'New York Area Mousetrap Activated')
-    else
-      mail(from: @subscriber.email, to: "admissions@actualize.co", subject: ' Mousetrap Activated')
-    end
+    mail(from: @subscriber.email, to: ["ben@actualize.co", "jay@actualize.co"], subject: 'Mousetrap Activated')
+    # if @subscriber.state == "Illinois"
+    #   mail(from: @subscriber.email, to: "nick@anyonecanlearntocode.com", subject: 'Illinois Mousetrap Activated')
+    # elsif @subscriber.state == "California"
+    #   mail(from: @subscriber.email, to: "zev@anyonecanlearntocode.com", subject: 'California Mousetrap Activated')
+    # elsif @subscriber.state == "New York" || @subscriber.state == "New Jersey" || @subscriber.state == "Connecticut" || @subscriber.state == "Massachusetts" || @subscriber.state == "Pennsylvania" || @subscriber.state == "Vermont" || @subscriber.state == "New Hampshire" || @subscriber.state == "Rhode Island"
+    #   mail(from: @subscriber.email, to: "sal@anyonecanlearntocode.com", subject: 'New York Area Mousetrap Activated')
+    # else
+    #   mail(from: @subscriber.email, to: "admissions@actualize.co", subject: ' Mousetrap Activated')
+    # end
   end
 
   def tour_email(tour)
