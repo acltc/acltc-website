@@ -25,6 +25,7 @@ class InfoSessionSignUpsController < ApplicationController
     @info_session_sign_up = InfoSessionSignUp.new(name: params[:name], email: params[:email], phone: params[:phone], city: params[:city], info_session_id: params[:info_session_id])
 
     if @info_session_sign_up.save
+      AcltcMailer.info_session_sign_up_email(@info_session_sign_up).deliver_now
       redirect_to info_session_sign_up_path(@info_session_sign_up)
     else
       render :new

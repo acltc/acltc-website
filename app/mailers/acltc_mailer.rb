@@ -59,4 +59,9 @@ class AcltcMailer < ApplicationMailer
     @mini_course_application = mini_course_application
     mail(from: "admissions@anyonecanlearntocode.com", to: @mini_course_application.email, subject: 'Mini Course Application Submission Successful', bcc: "mark@anyonecanlearntocode.com")
   end
+
+  def info_session_sign_up_email(info_session_sign_up)
+    @info_session_sign_up = info_session_sign_up
+    mail(from: "mg.anyonecanlearntocode.com", to: "chris.g.connell@gmail.com", subject: "New Info Session Sign Up")
+  end
 end

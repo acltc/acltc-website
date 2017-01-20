@@ -6,7 +6,7 @@ class InfoSession < ActiveRecord::Base
   end
 
   def friendly_time
-    date.strftime("%I:%M %p")
+    date.strftime("%l:%M %p")
   end
 
   def self.current_sessions
