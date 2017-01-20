@@ -1,15 +1,16 @@
 class InfoSessionSignUp < ActiveRecord::Base
+  belongs_to :info_session
   validates :name, :email, :phone, :city, presence: true
 
   def friendly_date
-    if date
-      date.strftime("%B %d, %Y")
-    end
+      if info_session
+        info_session.date.strftime("%B %d, %Y")
+      end
   end
 
   def friendly_time
-    if date
-      date.strftime("%I:%M %p")
+    if info_session
+      info_session.date.strftime("%I:%M %p")
     end
   end
 
@@ -18,11 +19,14 @@ class InfoSessionSignUp < ActiveRecord::Base
   end
 
   def self.to_csv(options = {})
+    csv_columns = ["id", "name", "email", "phone", "city", "created_at", "updated_at", "info_session_id", "session_date", "session_time"]
     CSV.generate(options) do |csv|
-      csv << column_names
+      csv << csv_columns
       all.each do |sign_up|
-        if csv << sign_up.attributes.values_at(*column_names)
-        end
+        x = sign_up.attributes.values_at(*csv_columns)
+        x[-2] = sign_up.info_session.friendly_date
+        x[-1] = sign_up.info_session.friendly_time
+        csv << x
       end
     end
   end

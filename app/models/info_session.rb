@@ -1,4 +1,5 @@
 class InfoSession < ActiveRecord::Base
+  has_many :info_session_sign_ups
 
   def friendly_date
     date.strftime("%B %d, %Y")
