@@ -10,7 +10,7 @@
     $('html').addClass('hidden');
     $(document).ready(function() {
       $('html').removeClass('hidden');  // EDIT: Can also use $('html').removeClass('hidden'); 
-     });  
+    });  
 </script>
 
 <!-- template for the modal component -->
@@ -60,7 +60,7 @@
 
 <!-- app -->
 
-<div id="app" @mousemove="togglePopup">
+<div id="app">
 
    <!-- use the modal component, pass in the prop -->
    <modal v-if="showModal" @close="showModal = false">
@@ -70,10 +70,12 @@
      default content
  -->
     <div slot="header">
-        <h1 slot="header" id="ModalHead">Join Our Email List</h1>
-
         <button slot="header" type="button" class="btn btn-default" @click="closePopup" id="popup-close-button">X</button>
 
+        <h1 id="ModalHead">Are Coding Bootcamps A Good Fit For You?</h1>
+        <br>
+        <strong><p>Join the thousands of people who signed up for our free email mini-course that breaks down the facts and myths about coding bootcamps.</p></strong>
+        
         <div id="errors">
             <ul>
                 <li v-for="error in errors">{{ error }}</li>
@@ -94,11 +96,7 @@
         </div>
     </div>
      <div slot="footer">
-        <button class="btn btn-default" @click="randomPassword">View Password</button>
-        <button class="btn btn-default" @click="randomName">View Name</button>
-        <button class="btn btn-default" @click="userCookie">View Cookie</button>
-        <input type="text" :value="userPassword">
-        <input type="text" :value="userName">
+        
     </div> 
     </modal>
 
