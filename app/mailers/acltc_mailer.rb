@@ -64,4 +64,9 @@ class AcltcMailer < ApplicationMailer
     @info_session_sign_up = info_session_sign_up
     mail(from: "mg.anyonecanlearntocode.com", to: "chris.g.connell@gmail.com", subject: "New Info Session Sign Up")
   end
+
+    def info_session_sign_up_confirmation_email(info_session_sign_up)
+    @info_session_sign_up = info_session_sign_up
+    mail(from: "admissions@actualize.co", to: @info_session_sign_up.email, subject: "Your Actualize Info Session Has Been Scheduled")
+  end
 end

@@ -26,6 +26,7 @@ class InfoSessionSignUpsController < ApplicationController
 
     if @info_session_sign_up.save
       AcltcMailer.info_session_sign_up_email(@info_session_sign_up).deliver_now
+      AcltcMailer.info_session_sign_up_confirmation_email(@info_session_sign_up).deliver_now
       redirect_to info_session_sign_up_path(@info_session_sign_up)
     else
       render :new
