@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <%= form_for @info_session do |f| %>
+      <div class="form-group">
+        <%= f.label :date %><br />
+        <%= f.datetime_select :date, ampm: true, autofocus: true, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit submit_button, class: "btn btn-primary btn-lg" %>
+      </div>
+    <% end %>
+  </div>
+  <div class="col-md-4"></div>
+</div>

@@ -1,0 +1,94 @@
+<%= render "/layouts/page_title", page_title: "Booked Info Sessions", page_subtitle: "Current Booked Info Sessions" %>
+
+<section id="content">
+  <div class="content-wrap dash-wrap">
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <%= link_to "Download All Info Session Sign Ups CSV", info_session_sign_ups_path(format: "csv"), :class => 'button btn-secondary csv-button'  %>
+        <h3>Chicago</h3>
+        <table class="table table-striped">
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>City</th>
+            <th>Session Date</th>
+            <th>Session Time</th>
+            <th>Booked On</th>
+          </tr>
+          <% @chi_info_session_sign_ups.each do |info_session_sign_up| %>
+          <tr>
+            <td style="vertical-align: middle;"><%= info_session_sign_up.name %></td>
+            <td style="vertical-align: middle;"><%= info_session_sign_up.email %></td>
+            <td style="vertical-align: middle;"><%= info_session_sign_up.phone %></td>
+            <td style="vertical-align: middle;"><%= info_session_sign_up.city %></td>
+            <td style="vertical-align: middle;"><%= info_session_sign_up.friendly_date %></td>
+            <td style="vertical-align: middle;"><%= info_session_sign_up.friendly_time %></td>
+            <td style="vertical-align: middle;"><%= info_session_sign_up.friendly_created_at %></td>
+          </tr>
+          <% end %>
+        </table>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <h3>New York City</h3>
+        <table class="table table-striped">
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>City</th>
+            <th>Session Date</th>
+            <th>Session Time</th>
+            <th>Booked On</th>
+          </tr>
+          <% @nyc_info_session_sign_ups.each do |info_session_sign_up| %>
+          <tr>
+            <td style="vertical-align: middle;"><%= info_session_sign_up.name %></td>
+            <td style="vertical-align: middle;"><%= info_session_sign_up.email %></td>
+            <td style="vertical-align: middle;"><%= info_session_sign_up.phone %></td>
+            <td style="vertical-align: middle;"><%= info_session_sign_up.city %></td>
+            <td style="vertical-align: middle;"><%= info_session_sign_up.friendly_date %></td>
+            <td style="vertical-align: middle;"><%= info_session_sign_up.friendly_time %></td>
+            <td style="vertical-align: middle;"><%= info_session_sign_up.friendly_created_at %></td>
+          </tr>
+          <% end %>
+        </table>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <h3>San Francisco</h3>
+        <table class="table table-striped">
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>City</th>
+            <th>Session Date</th>
+            <th>Session Time</th>
+            <th>Booked On</th>
+          </tr>
+          <% @sf_info_session_sign_ups.each do |info_session_sign_up| %>
+          <tr>
+            <td style="vertical-align: middle;"><%= info_session_sign_up.name %></td>
+            <td style="vertical-align: middle;"><%= info_session_sign_up.email %></td>
+            <td style="vertical-align: middle;"><%= info_session_sign_up.phone %></td>
+            <td style="vertical-align: middle;"><%= info_session_sign_up.city %></td>
+            <td style="vertical-align: middle;"><%= info_session_sign_up.friendly_date %></td>
+            <td style="vertical-align: middle;"><%= info_session_sign_up.friendly_time %></td>
+            <td style="vertical-align: middle;"><%= info_session_sign_up.friendly_created_at %></td>
+          </tr>
+          <% end %>
+        </table>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+  </div>
+</section>

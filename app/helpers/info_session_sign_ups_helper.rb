@@ -1,0 +1,2 @@
+module InfoSessionSignUpsHelper
+end

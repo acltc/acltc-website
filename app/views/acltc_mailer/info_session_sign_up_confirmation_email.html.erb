@@ -1,0 +1,14 @@
+<h3>Hello, <%= @info_session_sign_up.name %>!</h3>
+<p>Thanks for signing up for an Actualize info session.</p>
+<p>Your info session is scheduled for <%= @info_session_sign_up.friendly_time %> on <%= @info_session_sign_up.friendly_date %></p>
+<p>at 
+  <% if @info_session_sign_up.city == "Chicago" %>
+    <a href="https://www.google.com/maps/place/222+W+Merchandise+Mart+Plaza,+Chicago,+IL+60654/@41.8885185,-87.6354802,17z/data=!3m1!4b1!4m2!3m1!1s0x880e2cb6fa650467:0xd94994faa9dd5715" target="_blank">222 W Merchandise Mart Plaza Chicago, IL 60654</a>
+  <% elsif @info_session_sign_up.city == "New York City" %>
+    <a href="https://www.google.com/maps/place/150+Broadway,+New+York,+NY+10038/@40.7093102,-74.010236,17z" target="_blank">150 Broadway New York, NY 10038</a>
+  <% else %>
+    <a href="https://www.google.com/maps/place/77+Geary+St,+San+Francisco,+CA+94108/@37.7876653,-122.4047894,17z/data=!3m1!4b1!4m2!3m1!1s0x80858088f19da4a5:0x55997ff84c10b76f" target="_blank">77 Geary St. San Francisco, CA 94108</a>
+  <% end %>.
+</p>
+
+<p>We look forward to seeing you and showing you all there is to know about Actualize!</p>
