@@ -1,5 +1,7 @@
 class InfoSession < ActiveRecord::Base
-  has_many :info_session_sign_ups
+  before_destroy :send_cancelation_emails
+  
+  has_many :info_session_sign_ups, dependent: :delete_all
 
   def friendly_date
     date.strftime("%B %d, %Y")
@@ -15,6 +17,14 @@ class InfoSession < ActiveRecord::Base
 
   def self.current_info_session
     InfoSession.current_sessions.first
+  end
+
+  private
+    
+  def send_cancelation_emails    
+    info_session_sign_ups.each do |sign_up|
+      AcltcMailer.info_session_cancel(self, sign_up.email).deliver_now
+    end
   end
 
 end
