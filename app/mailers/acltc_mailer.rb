@@ -29,6 +29,7 @@ class AcltcMailer < ApplicationMailer
 
   def subscriber_mousetrap_email(subscriber)
     @subscriber = subscriber
+    mail(from: @subscriber.email, to: "ben@anyonecanlearntocode.com", subject: 'Mousetrap Activated')
     if @subscriber.state == "Illinois"
       mail(from: @subscriber.email, to: "theonetrueemailtest@gmail.com", subject: 'Illinois Mousetrap Activated')
     elsif @subscriber.state == "California"

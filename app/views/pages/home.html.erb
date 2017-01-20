@@ -227,6 +227,46 @@
                 </div>
             </div>
         </div>
+        <% if @current_info_session %>
+            <div class="curriculum-wrapper page-wrapper">
+                <div class="home-section">
+                    <div class="row">
+                        <div class="col-md-12 skills">
+                            <br />
+                            <p class ="after-word">Come to an info session, you'll hear about stuff.</p><br /><br /> 
+                                
+                            <div class="well curriculum-well">
+                                 <p class="subscribe-download">Chose your city and sign up! The next info session is on <%= @current_info_session.friendly_date %> at <%= @current_info_session.friendly_time %></p>
+                                <%= form_tag("/info_session_sign_ups", id: "infoSessionSignUp", method: :post) do %>
+                                <div class="row" style="padding-bottom: 20px;">
+                                    <div class="col-md-3">
+                                        <%= select_tag :city, options_for_select(["Chicago", "New York City", "San Francisco"], @info_session_sign_up.city), prompt: "Select a city", class: "form-control", id: "session-city-select" %>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <%= text_field_tag :name, nil, placeholder: "Name", required: true %>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <%= text_field_tag :email, nil, placeholder: "Email", required: true %>
+                                    </div>
+                                    <div class="col-md-3">
+                                       <%= text_field_tag :phone, nil, placeholder: "Phone", required: true %>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    
+                                    <%= hidden_field_tag :info_session_id, @current_info_session.id %>
+                                    <div class="col-md-4"></div>
+                                    <div class="col-md-4">
+                                        <%= submit_tag "Sign Up", class: "curriculum-download-btn", id: "submit-session", style: "padding:0;margin:0;background-color:#F25252;color:white;" %>
+                                    </div>
+                                </div>
+                                <% end %>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% end %>
         <div class="our-program-wrapper page-wrapper">
             <div class="home-section">
                 <div class="row">
@@ -605,4 +645,3 @@
           </div>
 
 </div>
-

@@ -50,7 +50,8 @@ Rails.application.routes.draw do
   resources :interviews
   resources :corporate_training_messages, only: [:index, :new, :create, :show]
   resources :tours
-  resources :job_openings
+  resources :info_session_sign_ups
+  resources :info_sessions
 
   get "/careers" => "job_openings#index", as: :careers
 

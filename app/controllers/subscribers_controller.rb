@@ -10,13 +10,12 @@ class SubscribersController < ApplicationController
   end
 
   def create_from_application
-    subscriber_setup
+    setup_subscriber
 
     if Subscriber.find_by(email: params[:email]) 
       @subscriber = Subscriber.find_by(email: params[:email]) 
       redirect_to "/applications/new/#{@subscriber.id}"
     elsif @subscriber.save
-      converted!("Apply Phone Test")
       subscriber_drip_setup
       redirect_to "/applications/new/#{@subscriber.id}"
     else
@@ -25,8 +24,7 @@ class SubscribersController < ApplicationController
   end
 
   def create_from_popup
-
-    subscriber_setup
+    setup_subscriber
 
     if request.location
       if city = request.location.city
@@ -81,7 +79,7 @@ class SubscribersController < ApplicationController
     if cookies[:is_subscriber]
       @tutorials_visible = true
     else
-      subscriber_setup
+      setup_subscriber
 
       if Subscriber.find_by(email: params[:email]) || @subscriber.save
         subscriber_drip_setup
@@ -96,7 +94,7 @@ class SubscribersController < ApplicationController
   end
 
   def create_from_footer
-    subscriber_setup
+    setup_subscriber
 
     if Subscriber.find_by(email: params[:email]) || @subscriber.save
       subscriber_drip_setup
@@ -106,7 +104,6 @@ class SubscribersController < ApplicationController
   end
 
   def apply
-    split_test
     @subscriber = Subscriber.new
   end
 
@@ -118,8 +115,8 @@ class SubscribersController < ApplicationController
 
   private
 
-  def subscriber_setup
-    @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], mousetrap: params[:mousetrap], ip_address: request.remote_ip)
+  def setup_subscriber
+    @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], phone: params[:phone], mousetrap: params[:mousetrap], ip_address: request.remote_ip)
     if request.location
       if city = request.location.city
         @subscriber.city = city
@@ -144,10 +141,6 @@ class SubscribersController < ApplicationController
     client.create_or_update_subscriber(@subscriber.email)
     client.subscribe(@subscriber.email, 34197704)
     AcltcMailer.subscriber_mousetrap_email(@subscriber).deliver_now
-  end
-
-  def split_test
-    @apply_test = ab_test("Apply Phone Test", ["Subscriber Apply Phone", "No Subscriber Apply Phone"])
   end
 
 end
