@@ -21,11 +21,11 @@
             <label class="required label-radio form-label">Which location would you like to tour?</label>
             <div id="city" class="radio">
               <%= f.radio_button :city, "Chicago" %>
-              <%= f.label :city, "Chicago", :value => "Chicago" %><br />
-              <%= f.radio_button :city, "San Francisco" %>
-              <%= f.label :city, "San Francisco", :value => "San Francisco" %><br />
+              <%= f.label :city, "Chicago", :value => "Chicago" %><a href="https://www.google.com/maps/place/222+W+Merchandise+Mart+Plaza,+Chicago,+IL+60654/@41.8885185,-87.6354802,17z/data=!3m1!4b1!4m2!3m1!1s0x880e2cb6fa650467:0xd94994faa9dd5715" target="_blank">- 222 W Merchandise Mart Plaza Chicago, IL 60654</a><br />
               <%= f.radio_button :city, "New York City" %>
-              <%= f.label :city, "New York City", :value => "New York City" %>
+              <%= f.label :city, "New York City", :value => "New York City" %><a href="https://www.google.com/maps/place/150+Broadway,+New+York,+NY+10038/@40.7093102,-74.010236,17z" target="_blank">- 150 Broadway New York, NY 10038<br />
+              <%= f.radio_button :city, "San Francisco" %>
+              <%= f.label :city, "San Francisco", :value => "San Francisco" %><a href="https://www.google.com/maps/place/77+Geary+St,+San+Francisco,+CA+94108/@37.7876653,-122.4047894,17z/data=!3m1!4b1!4m2!3m1!1s0x80858088f19da4a5:0x55997ff84c10b76f" target="_blank">- 77 Geary St. San Francisco, CA 94108</a>
             </div>
           </div>
           <div class="form-group">
