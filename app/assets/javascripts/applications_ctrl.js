@@ -12,6 +12,7 @@ $(document).on('ready', function() {
       totalQuestions: 13,
       showModal: false,
       runTogglePopup: false,
+      runTogglePopup2: false,
       counter: 0,
       cookieName: '',
       cookiePassword: '',
@@ -124,13 +125,45 @@ $(document).on('ready', function() {
         // if (!this.runTogglePopup){
         //   var readTheCookie = this.readCookieName()
         //   this.runTogglePopup = true;
-        //   console.log("this.runTogglePopup " + this.runTogglePopup);
+        //   console.log("!this.runTogglePopup " + this.runTogglePopup);
 
         var readTheCookie = this.readCookieName()
         if (readTheCookie !== null){
           console.log("Toggle readTheCookie if !== null " + readTheCookie);
           this.showModal = false;
         }
+        // }
+
+        // if (!this.runTogglePopup2){
+        //   if (!this.runTogglePopup && readTheCookie === undefined){
+        //     var readTheCookie = this.readCookieName()
+        //     this.runTogglePopup = true;
+        //     this.showModal = false;
+        //   } else if (!this.runTogglePopup && readTheCookie !== null){
+        //     var readTheCookie = this.readCookieName()
+        //     this.runTogglePopup = true;
+        //     this.showModal = false;
+        //   } else if (this.runTogglePopup && readTheCookie === null){
+        //     this.showModal = false;
+        //     this.runTogglePopup2 = true;
+        //   } else if (this.runTogglePopup && readTheCookie !== null){
+        //     this.runTogglePopup2 = true;
+        //     this.showModal = false;
+        //   } 
+        // }
+        // console.log("Outside !this.runTogglePopup " + this.runTogglePopup);
+        // console.log("Outside !this.runTogglePopup2 " + this.runTogglePopup2);
+        // console.log("Outside readTheCookie " + readTheCookie);
+
+        // } else if (this.runTogglePopup){
+        //   var readTheCookie = this.readCookieName()
+        //   this.runTogglePopup = null;
+        //   console.log("this.runTogglePopup " + this.runTogglePopup);
+          
+        //   if (readTheCookie !== null){
+        //     console.log("Toggle readTheCookie if !== null " + readTheCookie);
+        //     this.showModal = false;
+        //   }
         // }
 
         // if (!this.runTogglePopup && readTheCookie !== null || readTheCookie !== undefined){
