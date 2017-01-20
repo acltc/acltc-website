@@ -40,7 +40,6 @@ $(document).on('ready', function() {
         for (var i = 0; i < formFilledIn.length; i++){
           if (formFilledIn[i].value !== ""){
             answeredQuestions++;
-            console.log("Form Answered Questions " + answeredQuestions);
           }
         }
        
@@ -56,7 +55,6 @@ $(document).on('ready', function() {
         } else if (readTheCookie === null){
           this.showModal = true;
         }
-        console.log("this.showModal = " + this.showModal);
       },
       newSubscriber: function(){
         this.$http.post('/api/v1/subscribers_popup.json', this.subscriber).then(function(response) {
