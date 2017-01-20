@@ -1,7 +1,7 @@
 class Api::V1::SubscribersController < ApplicationController
 
   def create_from_popup
-    @subscriber = Subscriber.new(subscriber_params)
+    setup_subscriber
 
     if @subscriber.save
       subscriber_drip_setup
@@ -13,14 +13,8 @@ class Api::V1::SubscribersController < ApplicationController
 
   private
 
-    def subscriber_params
-      params.require(:subscriber).permit(
-        :first_name,
-        :email,
-        :city,
-        :state,
-        :postal_code
-      )
+    def setup_subscriber
+      @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], phone: params[:phone], mousetrap: params[:mousetrap], ip_address: request.remote_ip)
       if request.location
         if city = request.location.city
           @subscriber.city = city
