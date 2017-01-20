@@ -16,7 +16,6 @@ class SubscribersController < ApplicationController
       @subscriber = Subscriber.find_by(email: params[:email]) 
       redirect_to "/applications/new/#{@subscriber.id}"
     elsif @subscriber.save
-      converted!("Apply Phone Test")
       subscriber_drip_setup
       redirect_to "/applications/new/#{@subscriber.id}"
     else
@@ -82,7 +81,6 @@ class SubscribersController < ApplicationController
   end
 
   def apply
-    split_test
     @subscriber = Subscriber.new
   end
 
@@ -95,7 +93,7 @@ class SubscribersController < ApplicationController
   private
 
   def setup_subscriber
-    @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], mousetrap: params[:mousetrap], ip_address: request.remote_ip)
+    @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], phone: params[:phone], mousetrap: params[:mousetrap], ip_address: request.remote_ip)
     if request.location
       if city = request.location.city
         @subscriber.city = city
@@ -122,7 +120,4 @@ class SubscribersController < ApplicationController
     AcltcMailer.subscriber_mousetrap_email(@subscriber).deliver_now
   end
 
-  def split_test
-    @apply_test = ab_test("Apply Phone Test", ["Subscriber Apply Phone", "No Subscriber Apply Phone"])
-  end
 end
