@@ -5,7 +5,9 @@
     <div class="row">
       <div class="col-md-1"></div>
       <div class="col-md-10">
-        <%= link_to "Download All Info Session Sign Ups CSV", info_session_sign_ups_path(format: "csv"), :class => 'button btn-secondary csv-button'  %>
+        <% if @all_info_sessions.any? %>
+          <%= link_to "Download All Info Session Sign Ups CSV", info_session_sign_ups_path(format: "csv"), :class => 'button btn-secondary csv-button'  %>
+        <% end %>
         <% if @current_info_session %>
           <h3>Chicago</h3>
           <table class="table table-striped">
