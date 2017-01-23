@@ -23,18 +23,15 @@ class InfoSessionSignUp < ActiveRecord::Base
     CSV.generate(options) do |csv|
       csv << csv_columns
       all.each do |sign_up|
-        x = sign_up.attributes.values_at(*csv_columns)
+        temp = sign_up.attributes.values_at(*csv_columns)
         if sign_up.info_session
-          x[-2] = sign_up.info_session.friendly_date
+          temp[-2] = sign_up.info_session.friendly_date
+          temp[-1] = sign_up.info_session.friendly_time
         else
-          x[-2] = "session canceled"
+          temp[-2] = "session canceled"
+          temp[-1] = "session canceled"
         end
-        if sign_up.info_session
-          x[-1] = sign_up.info_session.friendly_time
-        else
-          x[-1] = "session canceled"
-        end
-        csv << x
+        csv << temp
       end
     end
   end
