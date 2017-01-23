@@ -1,7 +1,11 @@
 class InfoSession < ActiveRecord::Base
+<<<<<<< HEAD
   before_destroy :send_cancelation_emails
   
   has_many :info_session_sign_ups, dependent: :delete_all
+=======
+  has_many :info_session_sign_ups
+>>>>>>> 838a2077a64fd1515b01c5c736f25de778bf7901
 
   def friendly_date
     date.strftime("%B %d, %Y")

@@ -10,7 +10,11 @@ class InfoSessionSignUp < ActiveRecord::Base
 
   def friendly_time
     if info_session
+<<<<<<< HEAD
       info_session.date.strftime("%l:%M %p")
+=======
+      info_session.date.strftime("%I:%M %p")
+>>>>>>> 838a2077a64fd1515b01c5c736f25de778bf7901
     end
   end
 
