@@ -343,8 +343,12 @@ ActiveRecord::Schema.define(version: 20170118230724) do
     t.datetime "updated_at",  null: false
     t.string   "first_name"
     t.string   "mousetrap"
+    t.string   "ip_address"
+    t.string   "city"
+    t.string   "country"
     t.string   "postal_code"
     t.string   "phone"
+    t.string   "state"
   end
 
   create_table "tours", force: :cascade do |t|
