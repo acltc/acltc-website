@@ -24,8 +24,16 @@ class InfoSessionSignUp < ActiveRecord::Base
       csv << csv_columns
       all.each do |sign_up|
         x = sign_up.attributes.values_at(*csv_columns)
-        x[-2] = sign_up.info_session.friendly_date
-        x[-1] = sign_up.info_session.friendly_time
+        if sign_up.info_session
+          x[-2] = sign_up.info_session.friendly_date
+        else
+          x[-2] = "session canceled"
+        end
+        if sign_up.info_session
+          x[-1] = sign_up.info_session.friendly_time
+        else
+          x[-1] = "session canceled"
+        end
         csv << x
       end
     end
