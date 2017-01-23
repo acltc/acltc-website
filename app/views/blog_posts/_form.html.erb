@@ -8,6 +8,10 @@
       <%= f.text_field :title, autofocus: true, class: "form-control" %>
     </div>
     <div class="form-group">
+      <%= f.label :admin_id, "Author" %>
+      <%= f.select :admin_id, options_for_select(Admin.all.collect {|admin| [admin.full_name, admin.id]}, current_admin.id), class: "form-control" %>
+    </div>
+    <div class="form-group">
       <%= f.label :blog_categories %>
       <%= f.select :blog_category_ids, BlogCategory.all.collect {|category| [category.name, category.id]}, {}, :multiple => true, class: "form-control" %>
       <p class="help-block">Select one or multiple categories.</p>
