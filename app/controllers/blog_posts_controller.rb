@@ -26,7 +26,6 @@ class BlogPostsController < ApplicationController
 
   def create
     blog_post = BlogPost.new(blog_post_params)
-    blog_post.admin_id = current_admin.id
     if blog_post.save
       blog_post.blog_pics.each_with_index do |file, index|
         image_placeholder = "IMAGE#{index+1}"
@@ -97,7 +96,7 @@ class BlogPostsController < ApplicationController
   private
 
   def blog_post_params
-    params.require(:blog_post).permit(:title, :posted_date, :content, blog_pics: [], blog_category_ids: [])
+    params.require(:blog_post).permit(:title, :admin_id, :posted_date, :content, blog_pics: [], blog_category_ids: [])
   end
 
   
