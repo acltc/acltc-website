@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161111183358) do
+ActiveRecord::Schema.define(version: 20170118230724) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -190,30 +190,28 @@ ActiveRecord::Schema.define(version: 20161111183358) do
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
+  create_table "info_session_sign_ups", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "city"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "info_session_id"
+  end
+
+  create_table "info_sessions", force: :cascade do |t|
+    t.datetime "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "interviews", force: :cascade do |t|
     t.datetime "starts_at"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
     t.boolean  "booked",     default: false
     t.string   "location"
-  end
-
-  create_table "job_openings", force: :cascade do |t|
-    t.string   "title"
-    t.string   "location"
-    t.string   "salary"
-    t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "k12_contacts", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
-    t.text     "message"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "lakewood_applications", force: :cascade do |t|
@@ -345,10 +343,6 @@ ActiveRecord::Schema.define(version: 20161111183358) do
     t.datetime "updated_at",  null: false
     t.string   "first_name"
     t.string   "mousetrap"
-    t.string   "ip_address"
-    t.string   "city"
-    t.string   "country"
-    t.string   "state"
     t.string   "postal_code"
     t.string   "phone"
   end

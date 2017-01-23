@@ -1,0 +1,25 @@
+<table style="max-width: 800px;">
+  <th><H2>Hello! We received an Actualize Info Session Sign Up</h2></th>
+  <tr>
+  <tr>
+    <td><strong>Name: </strong> <%= @info_session_sign_up.name %></td>
+  </tr>
+  <tr>
+    <td><strong>Email: </strong> <%= @info_session_sign_up.email %></td>
+  </tr>
+  <tr>
+    <td><strong>Phone: </strong> <%= @info_session_sign_up.phone %></td>
+  </tr>
+  <tr>
+    <td><strong>City: </strong> <%= @info_session_sign_up.city %></td>
+  </tr>
+  <tr>
+    <td><strong>Session Date: </strong> <%= @info_session_sign_up.info_session.friendly_date %></td>
+  </tr>
+  <tr>
+    <td><strong>Session Time: </strong> <%= @info_session_sign_up.info_session.friendly_time %></td>
+  </tr>
+  <tr>
+    <td><strong>Sign Up Created At: </strong> <%= @info_session_sign_up.created_at %></td>
+  </tr>
+</table>
