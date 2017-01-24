@@ -20,15 +20,19 @@ class ToursController < ApplicationController
 
   def new
     @tour = Tour.new
-    @tour_links = ab_test("Links In Tours Test", ["More Links", "Fewer Links"])
+    split_test
+    
+    if params[:long]
+      @long = true
+    end
+    @tour_page = "loaded"
   end
 
   def create
     @tour = Tour.new(tour_params)
 
     if @tour.save
-      converted!("Links In Tours Test")
-      @tour.interview.update(booked: true)
+      # @tour.interview.update(booked: true)
       AcltcMailer.tour_email(@tour).deliver_now
       AcltcMailer.tour_email_reply(@tour).deliver_now
       redirect_to tours_thank_you_path
@@ -87,7 +91,13 @@ class ToursController < ApplicationController
         :email,
         :phone,
         :interview_id,
-        :notes
+        :notes,
+        :long
       )
     end
+
+    def split_test
+      @tour_split_test = ab_test("Book A Tour New Form Test", ["long form", "short form"])
+    end
+
 end

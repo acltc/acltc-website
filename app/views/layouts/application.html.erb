@@ -35,7 +35,7 @@
 
 
     <header id="header" class="transparent-header no-sticky">
-    <% unless @tour_links == "Fewer Links" %>
+    <% if @tour_page != "loaded" %>
       <div id="header-wrap">
 
                    <!-- Primary Navigation
@@ -50,7 +50,7 @@
                      <span class="icon-bar"></span>
                      <span class="icon-bar"></span>
                    </button>
-                    <% unless @tour_links == "Fewer Links" %>
+                    <% if @tour_page != "loaded" %>
                        <a class="navbar-brand" href="/">
                          <img class="logo" src="<%= asset_path 'acltc-logo-180.png'%>">
                        </a>
@@ -81,7 +81,7 @@
 
     <%= render 'shared/inspectlet' %>
     <%= render 'shared/ga' %>
-    <% unless @tour_links == "Fewer Links" %>
+    <% if @tour_page != "loaded" %>
       <%= render 'shared/footer' %>
     <% end %>
 
