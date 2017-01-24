@@ -20,14 +20,14 @@ class ToursController < ApplicationController
 
   def new
     @tour = Tour.new
-    @tour_links = ab_test("Links In Tours Test", ["More Links", "Fewer Links"])
+    @tour_page = "loaded"
+    
   end
 
   def create
     @tour = Tour.new(tour_params)
 
     if @tour.save
-      converted!("Links In Tours Test")
       @tour.interview.update(booked: true)
       AcltcMailer.tour_email(@tour).deliver_now
       AcltcMailer.tour_email_reply(@tour).deliver_now
