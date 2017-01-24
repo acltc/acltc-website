@@ -1,8 +1,9 @@
 class Tour < ActiveRecord::Base
   belongs_to :interview
   
-  validates :interview_id, presence: true, uniqueness: true, on: :create
-  validates :city, :first_name, :last_name, :email, :phone, presence: true
+  # validates :interview_id, presence: true, uniqueness: true, on: :create
+  # validates :city, :first_name, :last_name, :email, :phone, presence: true
+  validates :first_name, :email, :phone, presence: true
 
   def full_name
     "#{first_name} #{last_name}"
