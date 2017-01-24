@@ -97,7 +97,7 @@ class ToursController < ApplicationController
     end
 
     def split_test
-      @tour_split_test = ab_test("Book A Tour New Form Test", ["long form", "short form"])
+      @tour_split_test = ab_test("Book A Tour New Form Test", ["Book A Tour Long Form", "Book A Tour Short Form"])
     end
 
 end
