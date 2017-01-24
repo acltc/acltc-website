@@ -1,6 +1,105 @@
+<style type="text/css">
+    .hidden {display:none;}
+</style>
+<script
+  src="https://code.jquery.com/jquery-3.1.1.js"
+  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+  crossorigin="anonymous"></script>
+<script type="text/javascript">
+    $('html').addClass('hidden');
+    $(document).ready(function() {
+      $('html').removeClass('hidden');  // EDIT: Can also use $('html').removeClass('hidden'); 
+    });  
+</script>
+
+<!-- template for the modal component -->
+<script type="text/x-template" id="modal-template">
+
+ <transition name="modal">
+   <div class="modal-mask">
+     <div class="modal-wrapper">
+       <div class="modal-container">
+
+         <div class="modal-header">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                   <slot name="header">
+                     
+                   </slot>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+             <div class="modal-body">
+               <slot name="body">
+                 
+               </slot>
+             </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="modal-footer">
+              <slot name="footer">
+        
+              </slot>
+            </div>
+          </div>
+        </div>
+       </div>
+     </div>
+   </div>
+ </transition>
+</script>
+
+
+
+<!-- app -->
+
+<div id="app">
+
+   <!-- use the modal component, pass in the prop -->
+   <modal v-if="showModal" @close="showModal = false">
+
+   <!--
+     you can use custom content here to overwrite
+     default content
+ -->
+    <div slot="header">
+        <button slot="header" type="button" class="btn btn-default" @click="closePopup" id="popup-close-button">X</button>
+
+        <h1 id="ModalHead">Are Coding Bootcamps A Good Fit For You?</h1>
+        <br>
+        <strong><p>Join the thousands of people who signed up for our free email mini-course that breaks down the facts and myths about coding bootcamps.</p></strong>
+        
+        <div id="errors">
+            <ul>
+                <li v-for="error in errors">{{ error }}</li>
+            </ul>
+        </div>
+    </div>
+    <div slot="body">
+        <div class="form-group">
+            <label>First Name</label>
+            <input class="form-control" type="text" placeholder="First Name" v-model="subscriber.first_name">
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input class="form-control" type="text" placeholder="Email" v-model="subscriber.email">
+        </div>
+        <div id="popup-submit-button-container">
+            <button class="btn btn-lg" id="popup-submit-button" @click="newSubscriber">Sign Up</button>
+        </div>
+    </div>
+     <div slot="footer">
+        
+    </div> 
+    </modal>
        <!-- Content
-        ============================================= -->
-       
+        ============================================= -->    
         <div class="marquee">
             <div id = "marquee" class="container">
                 <div class="row">
@@ -310,7 +409,7 @@
 
 
             </div>
-        </div>
+        
         <div class="apprenticeship-wrapper page-wrapper">
             <div class="home-section">
                 <div class="row section-header">
@@ -541,6 +640,8 @@
 
               </div>
           </div>
+</div>
+
 <script>
     $(document).ready(function(){
         $('#infoSessionSignUp > input[required]').keyup(function() {

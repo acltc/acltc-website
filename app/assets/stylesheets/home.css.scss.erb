@@ -1,3 +1,4 @@
+/* home.css.scss.erb */
 
 @keyframes pulse {
   0% {
@@ -302,6 +303,126 @@ input {
 
 /* ---------------END SPLIT TESTS---------------- */
 
+/* ------------------ POPUP MODAL -------------------*/
+
+#modalHead {
+  color: blue;
+} 
+
+.modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  display: table;
+  transition: opacity .3s ease;
+}
+
+.modal-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.modal-container {
+  margin: 0px auto;
+  padding: 20px 30px;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
+  transition: all .3s ease;
+  font-family: Helvetica, Arial, sans-serif;
+  z-index: 100000;
+  border: 5px solid #f48b1b;
+  width: 35%;
+}
+
+@media (max-width: 768px) {
+  .modal-container {
+    width: 100%;
+  }
+}
+
+.modal-header {
+  border-bottom: 0px;
+  padding: 15px 15px 0px 15px;
+}
+
+.modal-footer {
+  border-top: 0px;
+}
+
+.modal-header h1 {
+  margin-top: 0;
+  color: #f48b1b;
+  text-align: center;
+  white-space: pre-line;
+}
+
+.modal-header p {
+  text-align: center;
+}
+
+.modal-body {
+  margin: 20px 0;
+}
+.modal-body:label {
+  text-align: left !important;
+}
+
+.modal-default-button {
+  text-align: right;
+}
+
+/*
+ * The following styles are auto-applied to elements with
+ * transition="modal" when their visibility is toggled
+ * by Vue.js.
+ *
+ * You can easily play with the modal transition by editing
+ * these styles.
+ */
+
+.modal-enter {
+  opacity: 0;
+}
+
+.modal-leave-active {
+  opacity: 0;
+}
+
+.modal-enter .modal-container,
+.modal-leave-active .modal-container {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+#popup-close-button {
+  border: 0px solid transparent;
+  float: right;
+  position: relative;
+  top: -35px;
+  right: -45px;
+}
+
+#popup-close-button:hover {
+  background-color: transparent;
+}
+
+#popup-submit-button {
+  background-color: #f48b1b;
+  color: #fff; 
+}
+
+#popup-submit-button-container {
+  text-align: center;
+  padding-top: 30px;
+}
+
+/* ----------------- END POPUP MODAL-----------------*/
+
 li.outcome-text {
   font-size: 16px;
 }
@@ -589,7 +710,7 @@ li.outcome-text {
     margin-top: 2px;
     padding: 5em 3.5em;
     text-align: center;
-    z-index: 9999;
+    z-index: 200;
     position: relative;
   background-color: rgba(0, 0, 0, .8);
 }
@@ -675,7 +796,7 @@ li.outcome-text {
     content: url("<%= asset_path('blue-check-mark-icon.png') %>");
     margin-left: -3em;
   }
-  }
+
   @media (max-width: 768px) {
     .marquee {
       margin-top: -143px; }
@@ -695,7 +816,7 @@ li.outcome-text {
     color: #555555; }
 .our-program-wrapper{
   background-color: #fff;
-  text-align: center; }
+  text-align: center; 
 }
 .our-program .phase {
   background: #fff;
@@ -1535,8 +1656,4 @@ input.curriculum-download-btn:hover{
 #session-city-select {
   background: #31363a;
   color: #ccc;
-}
-
-.info-session-description {
-  font-size: 1.7em;
 }
