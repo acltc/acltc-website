@@ -20,8 +20,12 @@ class ToursController < ApplicationController
 
   def new
     @tour = Tour.new
-    @tour_page = "loaded"
+    split_test
     
+    if params[:long]
+      @long = true
+    end
+    @tour_page = "loaded"
   end
 
   def create
@@ -87,7 +91,13 @@ class ToursController < ApplicationController
         :email,
         :phone,
         :interview_id,
-        :notes
+        :notes,
+        :long
       )
     end
+
+    def split_test
+      @tour_split_test = ab_test("Book A Tour New Form Test", ["long form", "short form"])
+    end
+
 end
