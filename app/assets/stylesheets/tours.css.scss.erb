@@ -1,4 +1,4 @@
-// .tour-hero-image{
+// .tour-hero-image {
 //   background-image: image-url("<%= asset_path'book_a_tour_hero.jpg' %>");
 // }
 
@@ -18,7 +18,7 @@
   background-color: #111111;
 }
 
-.child{
+.child {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -27,7 +27,7 @@
   width: 100%;
 }
 
-.tour-row{
+.tour-row {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -36,13 +36,8 @@
   width: 100%;
 }
 
-// .form-group span{
-//   display: inline;
-// }
-
-#tour-form-box{
-  background-color: white;
-  opacity: 0.75;
+#tour-form-box {
+  background-color: rgba(255, 255, 255, 0.85);
   width: 75%;
   height: 280px;
   border-radius: 5px;
@@ -52,29 +47,51 @@
   margin-right: auto;
 }
 
-#tour-form-submit-box{
-  background-color: white;
-  opacity: 0.75;
+#tour-form-submit-box {
+  background-color: rgba(255, 255, 255, 0.85);
   width: 75%;
+  border-radius: 5px;
+  padding-top: 40px;
+  padding-bottom: 40px;
   margin-left: auto;
   margin-right: auto;
-  display: block;
 }
 
-#tour-form-submit-button-container{
+#tour-form-submit-button-container {
   text-align: center;
+  margin-top: 25px;
 } 
 
 .tour-label-container {
   text-align: center;
 }
 
-.tour-fields{
+.tour-fields {
   width: 90%;
 }
 
-#tour-form-submit-button{
-  width: 50%;
+#tour-interview-field select {
+  margin-left: auto;
+  margin-right: auto;
 }
 
+div#city.radio {
+  text-align: center;
+}
+
+
+#tour-form-submit-button {
+  width: 40%;
+}
+
+@media(max-width: 968px) {
+
+  #tour-form-box {
+    width: 100%;
+  }
+
+  #tour-form-submit-box {
+    width: 100%;
+  }
+}
 

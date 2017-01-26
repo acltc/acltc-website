@@ -57,14 +57,18 @@
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
           <div id="tour-form-submit-box"> 
             <div class="form-group">
-              <label class="required label-radio form-label">Which location would you like to tour?</label>
+              <div class="tour-label-container">
+                <label class="required label-radio form-label">Which location would you like to tour?</label>
+              </div>
               <div id="city" class="radio">
-                <%= f.radio_button :city, "Chicago" %>
-                <%= f.label :city, "Chicago", :value => "Chicago" %><a href="https://www.google.com/maps/place/222+W+Merchandise+Mart+Plaza,+Chicago,+IL+60654/@41.8885185,-87.6354802,17z/data=!3m1!4b1!4m2!3m1!1s0x880e2cb6fa650467:0xd94994faa9dd5715" target="_blank">- 222 W Merchandise Mart Plaza Chicago, IL 60654</a><br />
-                <%= f.radio_button :city, "New York City" %>
-                <%= f.label :city, "New York City", :value => "New York City" %><a href="https://www.google.com/maps/place/150+Broadway,+New+York,+NY+10038/@40.7093102,-74.010236,17z" target="_blank">- 150 Broadway New York, NY 10038<br />
-                <%= f.radio_button :city, "San Francisco" %>
-                <%= f.label :city, "San Francisco", :value => "San Francisco" %><a href="https://www.google.com/maps/place/77+Geary+St,+San+Francisco,+CA+94108/@37.7876653,-122.4047894,17z/data=!3m1!4b1!4m2!3m1!1s0x80858088f19da4a5:0x55997ff84c10b76f" target="_blank">- 77 Geary St. San Francisco, CA 94108</a>
+                <div id="tour-city">
+                  <%= f.radio_button :city, "Chicago", class:"tour-city-radio" %>
+                  <%= f.label :city, "Chicago", :value => "Chicago", class:"tour-city-label" %><a href="https://www.google.com/maps/place/222+W+Merchandise+Mart+Plaza,+Chicago,+IL+60654/@41.8885185,-87.6354802,17z/data=!3m1!4b1!4m2!3m1!1s0x880e2cb6fa650467:0xd94994faa9dd5715" target="_blank">- 222 W Merchandise Mart Plaza Chicago, IL 60654</a><br />
+                  <%= f.radio_button :city, "New York City", class:"tour-city-radio" %>
+                  <%= f.label :city, "New York City", :value => "New York City", class:"tour-city-label" %><a href="https://www.google.com/maps/place/150+Broadway,+New+York,+NY+10038/@40.7093102,-74.010236,17z" target="_blank">- 150 Broadway New York, NY 10038</a><br />
+                  <%= f.radio_button :city, "San Francisco", class:"tour-city-radio" %>
+                  <%= f.label :city, "San Francisco", :value => "San Francisco", class:"tour-city-label" %><a href="https://www.google.com/maps/place/77+Geary+St,+San+Francisco,+CA+94108/@37.7876653,-122.4047894,17z/data=!3m1!4b1!4m2!3m1!1s0x80858088f19da4a5:0x55997ff84c10b76f" target="_blank">- 77 Geary St. San Francisco, CA 94108</a>
+                </div>
               </div>
             </div>
 
@@ -75,8 +79,12 @@
               </div>
             <% else %>
               <div class="form-group">
-                <%= f.label :interview_id, "Choose a tour date and time", class: "required form-label", id: "additional-tour-text"  %><br />
-                <%= f.collection_select :interview_id, Interview.where('starts_at > ? AND starts_at < ?', DateTime.now, DateTime.now + 200.hours).where(booked: false).order(starts_at: :asc), :id, :interview_date_human, {:include_blank => 'Select Date and Time'}, { id: 'tours', class: 'form-control shorten-select' } %>
+                <div class="tour-label-container" id="tour-interview-container">
+                  <%= f.label :interview_id, "Choose a tour date and time", class: "required form-label", id: "additional-tour-text"  %><br />
+                  <div id="tour-interview-field">
+                    <%= f.collection_select :interview_id, Interview.where('starts_at > ? AND starts_at < ?', DateTime.now, DateTime.now + 200.hours).where(booked: false).order(starts_at: :asc), :id, :interview_date_human, {:include_blank => 'Select Date and Time'}, { id: 'tours', class: 'form-control shorten-select tour-fields' } %>
+                  </div>
+                </div>
               </div>
             <% end %>
             <%= f.invisible_captcha :subtitle %> <!-- This is an invisible field that only spambots see. If it is filled in, the tour won't save. -->
