@@ -18,26 +18,40 @@
             </div>
           <% end %>
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-          <div id="tour-form-box"> 
-            <form class="form-horizontal">          
-              <div class="form-group">
-                <%= f.label :first_name, "First Name", class: "required form-label tour-labels" %><br />
+          <div id="tour-form-box">       
+            <div class="form-group">
+              <div class="col-sm-4 tour-label-container">
+                <%= f.label :first_name, "First Name", class: "required form-label tour-labels" %>
+              </div>
+              <div class="col-sm-8">
                 <%= f.text_field :first_name, autofocus: true, class: "form-control tour-fields" %>
               </div>
-              <div class="form-group">
-                <%= f.label :last_name, "Last Name", class: "required form-label tour-labels" %><br />
+            </div>
+            <div class="form-group">
+              <div class="col-sm-4 tour-label-container">
+                <%= f.label :last_name, "Last Name", class: "required form-label tour-labels" %>
+              </div>
+              <div class="col-sm-8">
                 <%= f.text_field :last_name, autofocus: true, class: "form-control tour-fields" %>
               </div>
-              <div class="form-group">
-                <%= f.label :email, "Email Address", class: "required form-label tour-labels" %><br />
+            </div>
+            <div class="form-group">
+              <div class="col-sm-4 tour-label-container">
+                <%= f.label :email, "Email Address", class: "required form-label tour-labels" %>
+              </div>
+              <div class="col-sm-8">
                 <%= f.text_field :email, class: "form-control tour-fields" %>
               </div>
-              <div class="form-group">
-                <%= f.label :phone, "Cell Phone Number", class: "required form-label tour-labels" %><br />
+            </div>
+            <div class="form-group">
+              <div class="col-sm-4 tour-label-container">
+                <%= f.label :phone, "Cell Number", class: "required form-label tour-labels" %>
+              </div>
+              <div class="col-sm-8">
                 <%= f.text_field :phone, class: "form-control tour-fields", placeholder: "xxx-xxx-xxxx" %>
               </div>
             </div>
-          <
+          </div>
         </div>
 
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
