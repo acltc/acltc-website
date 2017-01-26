@@ -28,7 +28,7 @@ class AcltcMailer < ApplicationMailer
 
   def subscriber_mousetrap_email(subscriber)
     @subscriber = subscriber
-    mail(from: @subscriber.email, to: ["ben@actualize.co", "jay@actualize.co"], subject: 'Mousetrap Activated')
+    mail(from: @subscriber.email, to: ["ben@actualize.co", "jay@actualize.co", "rena@actualize.co"], subject: 'Mousetrap Activated')
     # if @subscriber.state == "Illinois"
     #   mail(from: @subscriber.email, to: "nick@anyonecanlearntocode.com", subject: 'Illinois Mousetrap Activated')
     # elsif @subscriber.state == "California"
@@ -62,7 +62,7 @@ class AcltcMailer < ApplicationMailer
 
   def info_session_sign_up_email(info_session_sign_up)
     @info_session_sign_up = info_session_sign_up
-    mail(from: "mg.anyonecanlearntocode.com", to: "ben@actualize.co", subject: "New Info Session Sign Up")
+    mail(from: "mg.anyonecanlearntocode.com", to: ["ben@actualize.co", "jay@actualize.co"], subject: "New Info Session Sign Up")
   end
 
   def info_session_sign_up_confirmation_email(info_session_sign_up)
