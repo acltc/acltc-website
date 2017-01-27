@@ -5,7 +5,7 @@
 .tour-hero-image {
   background-image: url("<%= asset_path('book_a_tour_hero.png') %>");
   // background-image: url("<%= asset_path('book_a_tour_peter_hero.png') %>");
-  height: 60em;
+  height: 940px;
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -25,6 +25,7 @@
   margin-left: auto;
   margin-right: auto;
   width: 100%;
+  height: 920px;
 }
 
 .tour-row {
@@ -39,10 +40,18 @@
 #tour-form-box {
   background-color: rgba(255, 255, 255, 0.85);
   width: 75%;
-  height: 280px;
+  height: 350px;
   border-radius: 5px;
   padding-top: 50px;
   padding-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#tour-form-left-container {
+  top: 50%;
+  transform: translateY(-50%);
   margin-left: auto;
   margin-right: auto;
 }
@@ -50,6 +59,7 @@
 #tour-form-submit-box {
   background-color: rgba(255, 255, 255, 0.85);
   width: 75%;
+  height: 450px;
   border-radius: 5px;
   padding-top: 40px;
   padding-bottom: 40px;
@@ -84,14 +94,46 @@ div#city.radio {
   width: 40%;
 }
 
-@media(max-width: 768px) {
+@media screen and (max-width: 768px) {
 
   #tour-form-box {
     width: 100%;
   }
 
-  #tour-form-submit-box {
+  #tour-form-submit-box{
     width: 100%;
   }
+
+}
+
+@media screen and (max-width: 992px) {
+
+   .tour-row {
+     height: 900px;
+   }
+
+   #tour-form-submit-box {
+     margin-top: 5px;
+   }
+
+   #tour-form-box {
+     margin-bottom: 5px;
+   }
+
+}
+
+@media screen and (max-width: 1268px) {
+
+  .tour-label-container {
+    width: 60%;
+  }
+
+  #tour-form-box {
+    height: 420px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
 }
 
