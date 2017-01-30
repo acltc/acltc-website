@@ -25,7 +25,6 @@ class ToursController < ApplicationController
     if params[:long]
       @long = true
     end
-    @tour_page = "loaded"
   end
 
   def create

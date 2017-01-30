@@ -423,6 +423,45 @@ input {
 
 /* ----------------- END POPUP MODAL-----------------*/
 
+/* -------------------BOOK A TOUR ----------------*/
+
+/*.content-wrap{
+  background-color: red;
+}*/
+
+.tour-hero-image {
+  /*background-color: blue;*/
+  background-image: url("<%= asset_path('book_a_tour_hero.png') %>");
+ /* background-image: url("<%= asset_path('book_a_tour_peter_hero.png') %>");*/
+  height: 1200px;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  position: relative;
+  top: 0;
+  border: 0;
+}
+
+.tour-background-layer{
+  z-index: 1;
+  height: 76%;
+  width: 85%;
+  background-color: rgba(255, 255, 255, 0.75);
+  position: relative;
+  border-radius: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#header-wrap{
+  background-color: #111111;
+}
+
+
+/* ----------------- END BOOK A TOUR --------------- */
+
 li.outcome-text {
   font-size: 16px;
 }
