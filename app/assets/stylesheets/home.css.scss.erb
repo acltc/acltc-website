@@ -423,6 +423,102 @@ input {
 
 /* ----------------- END POPUP MODAL-----------------*/
 
+/* -------------------BOOK A TOUR ----------------*/
+
+/*.content-wrap{
+  background-color: red;
+}*/
+
+.tour-hero-image {
+  /*background-color: blue;*/
+  background-image: url("<%= asset_path('book_a_tour_hero.png') %>");
+ /* background-image: url("<%= asset_path('book_a_tour_peter_hero.png') %>");*/
+  height: 1200px;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  position: relative;
+  top: 0;
+  border: 0;
+}
+
+.tour-background-layer{
+  z-index: 1;
+  height: 56%;
+  width: 80%;
+  background-color: rgba(255, 255, 255, 0.75);
+  position: relative;
+  border-radius: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: black;
+}
+
+#tour-content-wrap{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#tour-row-container label{
+  color: black;
+  font-weight: bolder;
+}
+
+#tour-row-container a {
+  color: #0669FC;
+  font-weight: bolder;
+}
+
+#tour-header-container{
+  margin-bottom: 20px;
+  /*background-image: url("<%= asset_path('actualize-logo-275.png') %>");*/
+}
+
+#header-wrap{
+  background-color: #111111;
+}
+
+.tour-interview-field select {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tour-form-field {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div#city.radio {
+  text-align: center;
+}
+
+
+#tour-form-submit-button {
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+
+@media screen and (max-width: 992px) {
+   .tour-background-layer {
+     height: 93%;
+   }
+
+   .tour-form-field{
+    width: 90%;
+   }
+}
+
+
+/* ----------------- END BOOK A TOUR --------------- */
+
 li.outcome-text {
   font-size: 16px;
 }
