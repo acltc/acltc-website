@@ -444,7 +444,7 @@ input {
 
 .tour-background-layer{
   z-index: 1;
-  height: 76%;
+  height: 56%;
   width: 85%;
   background-color: rgba(255, 255, 255, 0.75);
   position: relative;
@@ -453,10 +453,63 @@ input {
   transform: translateY(-50%);
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
+  color: black;
+}
+
+#tour-content-wrap{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#tour-row-container label{
+  color: black;
+  font-weight: bolder;
+}
+
+#tour-row-container a {
+  color: #0669FC;
+  font-weight: bolder;
+}
+
+#tour-header-container{
+  margin-bottom: 20px;
+  /*color: #616160;*/
 }
 
 #header-wrap{
   background-color: #111111;
+}
+
+.tour-interview-field select {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tour-form-field {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div#city.radio {
+  text-align: center;
+}
+
+
+#tour-form-submit-button {
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+
+@media screen and (max-width: 992px) {
+   .tour-background-layer {
+     height: 85%;
+   }
 }
 
 
