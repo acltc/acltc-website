@@ -94,22 +94,32 @@
                   </ul>
                 </div>
               <% end %>
-              <div class="form-group">
-                <%= f.label :first_name, "First Name", class: "required form-label" %><br />
-                <%= f.text_field :first_name, autofocus: true, class: "form-control" %>
-              </div>
-              <div class="form-group">
-                <%= f.label :email, "Email Address", class: "required form-label" %><br />
-                <%= f.text_field :email, class: "form-control" %>
-              </div>
-              <div class="form-group">
-                <%= f.label :phone, "Cell Phone Number", class: "required form-label" %><br />
-                <%= f.text_field :phone, class: "form-control", placeholder: "xxx-xxx-xxxx" %>
-              </div>
-              <p>After completing this form, we will call you shortly with more details about your tour.</p>
-              <%= f.invisible_captcha :subtitle %> <!-- This is an invisible field that only spambots see. If it is filled in, the tour won't save. -->
-              <div class="form-group">
-                <%= f.submit "Submit", class: "button button-3d nomargin nopadding" %>
+
+              <div class="row" id="tour-row-container">
+                <div class="col-xs-12" id="tour-header-container">
+                  <img class="logo" src="<%= image_path 'actualize-logo-triangle-sm.png'%>">
+                  <h1>Book A Tour</h1>
+                  <p><strong>Come check out Actualize for yourself! Get a look at the space and learn directly from an Admissions Advisor how you can launch a brand new career.</strong></p>
+                </div>
+                <div class="col-xs-12" id="tour-form-right">
+                  <div class="form-group">
+                    <%= f.label :first_name, "First Name", class: "required form-label" %><br />
+                    <%= f.text_field :first_name, autofocus: true, class: "form-control tour-form-field" %>
+                  </div>
+                  <div class="form-group">
+                    <%= f.label :email, "Email Address", class: "required form-label" %><br />
+                    <%= f.text_field :email, class: "form-control tour-form-field" %>
+                  </div>
+                  <div class="form-group">
+                    <%= f.label :phone, "Cell Phone Number", class: "required form-label" %><br />
+                    <%= f.text_field :phone, class: "form-control tour-form-field", placeholder: "xxx-xxx-xxxx" %>
+                  </div>
+                </div>
+                <p><strong>After completing this form, we will call you shortly with more details about your tour.</strong></p>
+                <%= f.invisible_captcha :subtitle %> <!-- This is an invisible field that only spambots see. If it is filled in, the tour won't save. -->
+                <div class="form-group" id="tour-form-submit-button">
+                  <%= f.submit "Submit", class: "button button-3d nomargin nopadding" %>
+                </div>
               </div>
             <% end %>
           <% end %>  
