@@ -1,3 +1,4 @@
+
 <style type="text/css">
     .hidden {display:none;}
 </style>
@@ -98,10 +99,11 @@
         
     </div> 
     </modal>
+    
        <!-- Content
         ============================================= -->    
         <div class="marquee">
-            <div id = "marquee" class="container">
+            <div id = "marquee" class="container" onscroll="scrollPopup">
                 <div class="row">
 
                         <div class="marquee-content clearfix">
@@ -229,11 +231,16 @@
                     <div class="row">
                         <div class="col-md-12 skills">
                             <br />
+
                             <p class ="info-session-description">Come join us in person for a live info session!</p><br>
                             <p class="info-session-content"> You’ll learn everything there is to know about Actualize from one of our Admissions Advisors, and get to see us in action.</p><br /> 
+
+                                
                                 
                             <div class="well curriculum-well">
+
                                  <p class="info-session-subheader">Chose your city and sign up! The next info session is on <%= @current_info_session.friendly_date %> at <%= @current_info_session.friendly_time %></p><br />
+
                                 <%= form_tag("/info_session_sign_ups", id: "infoSessionSignUp", method: :post) do %>
                                 <div class="row" style="padding-bottom: 20px;">
                                     <div class="col-md-3">
@@ -381,9 +388,7 @@
                             </div>
                             <br />
                             <p class ="after-word">We'll also delve into important concepts such as Git, Test Driven Development, and the soft skills you need to land a web developer position. At Actualize, we focus on the skills that employers are looking for now.</p><br /><br />
-
-                            
-                            
+ 
                             <div class="well curriculum-well">
                                  <p class="subscribe-download">Download our full curriculum to see what we teach week-by-week!</p>
                                 <div class="row">
@@ -404,6 +409,7 @@
                                      <% end %>
                                  </div>
                              </div>  
+
                         </div>
                     </div>
                 </div>
