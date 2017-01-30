@@ -12,7 +12,7 @@ class InfoSession < ActiveRecord::Base
   end
 
   def self.current_sessions
-    InfoSession.where("date >= ?", Time.now).order(date: :asc)
+    InfoSession.where("date >= ?", (Time.now + 1.day)).order(date: :asc)
   end
 
   def self.current_info_session
