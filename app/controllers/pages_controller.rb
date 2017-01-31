@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   
   def home
     @info_session_sign_up = InfoSessionSignUp.new
-    @current_info_session = InfoSession.current_info_session
+    @next_info_session = InfoSession.next_info_session
     render :layout => 'home_application'
   end
 
