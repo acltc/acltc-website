@@ -433,7 +433,7 @@ input {
   /*background-color: blue;*/
   background-image: url("<%= asset_path('book_a_tour_hero.png') %>");
  /* background-image: url("<%= asset_path('book_a_tour_peter_hero.png') %>");*/
-  height: 1200px;
+  height: 800px;
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -444,8 +444,8 @@ input {
 
 .tour-background-layer{
   z-index: 1;
-  height: 58%;
-  width: 80%;
+  height: 87%;
+  width: 90%;
   background-color: rgba(255, 255, 255, 0.9);
   position: relative;
   border-radius: 5px;
@@ -513,7 +513,7 @@ div#city.radio {
   font-family: 'Maven Pro', sans-serif;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: .25em;
+  /*letter-spacing: .25em;*/
   border-color: none;
   font-size: 1.5em;
   -webkit-border-radius: 3px;
@@ -523,6 +523,7 @@ div#city.radio {
   background-color: #007afd !important;
   border: none;
   color: #fff !important;
+  word-wrap: normal;
 }
 
 .tour-submit-button:hover {
@@ -533,13 +534,32 @@ div#city.radio {
 
 @media screen and (max-width: 992px) {
    .tour-background-layer {
-     height: 93%;
+     height: 97%;
+     width: 90%;
    }
 
    .tour-form-field{
-    width: 90%;
+     width: 90%;
    }
+
+   .tour-hero-image {
+     height: 1200px;
+   }
+
+  #tour-form-submit-button {
+     width: 80% !important;
+   }
+
 }
+
+/*@media screen and (max-width: 450px) {
+  
+  .tour-form-submit-button {
+     width: 80% !important;
+   }
+
+
+}*/
 
 
 /* ----------------- END BOOK A TOUR --------------- */
