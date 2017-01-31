@@ -23,6 +23,23 @@ class InfoSession < ActiveRecord::Base
     InfoSession.where("date >= ?", (Time.now + 1.day)).order(date: :asc).first
   end
 
+  def self.current_sign_ups
+    current_session_ids = current_sessions.pluck(:id)
+    InfoSessionSignUp.where(info_session_id: current_session_ids)
+  end
+
+  def self.chicago_sign_ups
+    current_sign_ups.where(city: "Chicago")
+  end
+
+  def self.nyc_sign_ups
+    current_sign_ups.where(city: "New York City")
+  end
+
+  def self.sf_sign_ups
+    current_sign_ups.where(city: "San Francisco")
+  end
+
   private
     
   def send_cancelation_emails    
