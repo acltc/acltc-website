@@ -118,7 +118,7 @@
                 <p><strong>After completing this form, we will call you shortly with more details about your tour.</strong></p>
                 <%= f.invisible_captcha :subtitle %> <!-- This is an invisible field that only spambots see. If it is filled in, the tour won't save. -->
                 <div class="form-group" id="tour-form-submit-button">
-                  <%= f.submit "Submit", class: "button button-3d nomargin nopadding" %>
+                  <%= f.submit "Submit", class: "tour-submit-button" %>
                 </div>
               </div>
             <% end %>
