@@ -1,0 +1,23 @@
+<div id="referral">
+  <%= form_for @referral do |r| %>
+    <%= r.label :referrer_first_name %>
+    <%= r.text_field :referrer_first_name %>
+
+    <%= r.label :referrer_last_name %>
+    <%= r.text_field :referrer_last_name %>
+
+    <%= r.label :referrer_email %>
+    <%= r.text_field :referrer_email %>
+
+    <%= r.label :referrer_phone_number %>
+    <%= r.text_field :referrer_phone_number %>
+
+    <%= r.label :referred_first_name %>
+    <%= r.text_field :referred_first_name %>
+
+    <%= r.label :referred_email %>
+    <%= r.text_field :referred_email %>
+
+    <%= r.submit 'Submit'%>
+  <% end %>
+</div>
