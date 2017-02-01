@@ -2,11 +2,13 @@ class InfoSessionSignUpsController < ApplicationController
   before_action :authenticate_admin!, except: [:create, :new, :show]
 
   def index
+
     @current_info_session = InfoSession.current_info_session
     @all_info_sessions = InfoSession.all
     @chi_info_session_sign_ups = @current_info_session.info_session_sign_ups.where(city: "Chicago") if @current_info_session
     @nyc_info_session_sign_ups = @current_info_session.info_session_sign_ups.where(city: "New York City") if @current_info_session
     @sf_info_session_sign_ups = @current_info_session.info_session_sign_ups.where(city: "San Francisco") if @current_info_session
+
 
     @all_info_session_sign_ups = InfoSessionSignUp.all
     respond_to do |format|
