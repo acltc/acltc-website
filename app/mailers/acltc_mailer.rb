@@ -75,4 +75,10 @@ class AcltcMailer < ApplicationMailer
     mail(from: "admissions@actualize.co", to: user_email, subject: "Your Actualize Info Session Has Been Canceled")
   end
 
+  def referral_email(referral, email_body)
+    @referral = referral
+    @email_body = email_body
+    mail(from: "hello@actualize.co", to: @referral.referred_email, cc: "danchu123@gmail.com", bcc: @referral.referrer_email, subject: "Intro to Actualize")
+  end
+
 end

@@ -8,8 +8,11 @@ class ReferralsController < ApplicationController
 
   def create
     @referral = Referral.new(referral_params)
+    @email_body = params[:email_body]
 
     if @referral.save
+      AcltcMailer.referral_email(@referral, @email_body).deliver_now
+      
       redirect_to '/referrals/thank_you'
     else
       render :new
