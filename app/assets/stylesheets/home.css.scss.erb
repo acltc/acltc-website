@@ -433,7 +433,7 @@ input {
   /*background-color: blue;*/
   background-image: url("<%= asset_path('book_a_tour_hero.png') %>");
  /* background-image: url("<%= asset_path('book_a_tour_peter_hero.png') %>");*/
-  height: 1200px;
+  height: 900px;
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -444,9 +444,9 @@ input {
 
 .tour-background-layer{
   z-index: 1;
-  height: 56%;
-  width: 80%;
-  background-color: rgba(255, 255, 255, 0.75);
+  height: 90%;
+  width: 90%;
+  background-color: rgba(255, 255, 255, 0.9);
   position: relative;
   border-radius: 5px;
   top: 50%;
@@ -478,9 +478,9 @@ input {
   /*background-image: url("<%= asset_path('actualize-logo-275.png') %>");*/
 }
 
-#header-wrap{
+/*#header-wrap{
   background-color: #111111;
-}
+}*/
 
 .tour-interview-field select {
   margin-left: auto;
@@ -494,27 +494,72 @@ input {
 }
 
 div#city.radio {
-  text-align: center;
+  text-align: left;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
-
 
 #tour-form-submit-button {
   width: 40%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
+  color: #fff;
+}
+
+.tour-submit-button {
+  padding: .5em 3em;
+  font-family: 'Maven Pro', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  /*letter-spacing: .25em;*/
+  border-color: none;
+  font-size: 1.5em;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  margin: 2em 0;
+  background-color: #007afd !important;
+  border: none;
+  color: #fff !important;
+  word-wrap: normal;
+}
+
+.tour-submit-button:hover {
+  background-color: #fbc400 !important;
+  color: #fff;
 }
 
 
 @media screen and (max-width: 992px) {
    .tour-background-layer {
-     height: 93%;
+     height: 97%;
+     width: 90%;
    }
 
    .tour-form-field{
-    width: 90%;
+     width: 90%;
    }
+
+   .tour-hero-image {
+     height: 1200px;
+   }
+
+  #tour-form-submit-button {
+     width: 80% !important;
+   }
+
 }
+
+/*@media screen and (max-width: 450px) {
+  
+  .tour-form-submit-button {
+     width: 80% !important;
+   }
+
+
+}*/
 
 
 /* ----------------- END BOOK A TOUR --------------- */
