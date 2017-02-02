@@ -10,7 +10,7 @@ class ReferralsController < ApplicationController
     @referral = Referral.new(referral_params)
 
     if @referral.save
-      redirect_to '/referrals/new'
+      redirect_to '/referrals/thank_you'
     else
       render :new
     end

@@ -76,7 +76,6 @@ Rails.application.routes.draw do
   get "/referrals" => "referrals#index"
   get "/referrals/new" => "referrals#new"
   post "/referrals" => "referrals#create"
-  get "/referrals/:id" => "referrals#show"
   get "/referrals/thank_you" => "referrals#thank_you"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
