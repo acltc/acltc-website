@@ -1,4 +1,7 @@
 <footer>
+    <div class="pdf-sticky-footer">
+        <h1>Sticky Foot Face</h1>
+    </div>
     <div class="container footer">
     <div class="row">
         <div class="footer-nav">
@@ -44,4 +47,18 @@
 
         </div>
     </div>
+
+    <script>
+        $(window).scroll(function(e){ 
+          var $el = $('.pdf-sticky-footer'); 
+          var isPositionFixed = ($el.css('position') == 'fixed');
+          if ($(this).scrollTop() > 200 && !isPositionFixed){ 
+            $('.pdf-sticky-footer').css({'position': 'fixed', 'bottom': '0px'}); 
+          }
+          if ($(this).scrollTop() < 200 && isPositionFixed)
+          {
+            $('.pdf-sticky-footer').css({'position': 'static', 'bottom': '0px'}); 
+          } 
+        });
+    </script>
 </footer>
