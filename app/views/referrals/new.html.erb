@@ -1,23 +1,61 @@
 <div id="referral">
   <%= form_for @referral do |r| %>
-    <%= r.label :referrer_first_name %>
-    <%= r.text_field :referrer_first_name %>
+    <div class="form-group">
+      <%= r.label :referrer_first_name %>
+      <%= r.text_field :referrer_first_name, class: "form-control", "v-model": "referrer_first_name" %>
+    </div>
 
-    <%= r.label :referrer_last_name %>
-    <%= r.text_field :referrer_last_name %>
+    <div class="form-group">
+      <%= r.label :referrer_last_name %>
+      <%= r.text_field :referrer_last_name, class: "form-control" %>
+    </div>
 
-    <%= r.label :referrer_email %>
-    <%= r.text_field :referrer_email %>
+    <div class="form-group">
+      <%= r.label :referrer_email %>
+      <%= r.text_field :referrer_email, class: "form-control", "v-model": "referrer_email" %>
+    </div>
 
-    <%= r.label :referrer_phone_number %>
-    <%= r.text_field :referrer_phone_number %>
+    <div class="form-group">
+      <%= r.label :referrer_phone_number %>
+      <%= r.text_field :referrer_phone_number, class: "form-control" %>
+    </div>
 
-    <%= r.label :referred_first_name %>
-    <%= r.text_field :referred_first_name %>
+    <div class="form-group">
+      <%= r.label :referred_first_name %>
+      <%= r.text_field :referred_first_name, class: "form-control", "v-model": "referred_first_name" %>
+    </div>
 
-    <%= r.label :referred_email %>
-    <%= r.text_field :referred_email %>
+    <div class="form-group">
+      <%= r.label :referred_email %>
+      <%= r.text_field :referred_email, class: "form-control", "v-model": "referred_email" %>
+    </div>
 
-    <%= r.submit 'Submit'%>
+    <p>Here’s how your invite looks! (You can edit it to your taste.)</p>
+    <!-- EMAIL START -->
+    <div>
+      <p>
+        To: {{referred_email}}
+        <br>
+        Cc: ben@actualize.co
+        <br>
+        Bcc: {{referrer_email}}
+      </p>
+
+      <div contenteditable="true">
+        {{body}}
+      </div>
+      
+      <p>
+        Ben, meet <i>{{referred_first_name}}</i>. I'll let you both take it from here.
+      </p>
+
+      <p>
+        Best,
+        <br>
+        <i>{{referrer_first_name}}</i>
+      </p>
+    </div>
+    <!-- EMAIL END -->
+    <%= r.submit 'REFER A FRIEND!'%>
   <% end %>
 </div>
