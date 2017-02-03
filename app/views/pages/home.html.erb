@@ -1,5 +1,7 @@
 <style type="text/css">
     .hidden {display:none;}
+
+    #sidebar{float:left;}#catcher{width:200px;height:10px;margin:5px;}#sticky{width:200px;height:400px;border:1px solid #000;margin:5px;background-color: #ccc;}
 </style>
 <script
   src="https://code.jquery.com/jquery-3.1.1.js"
@@ -98,8 +100,19 @@
         
     </div> 
     </modal>
+
+        
        <!-- Content
         ============================================= -->    
+        <div id="sidebar">
+          <!-- <div id="catcher"></div> -->
+          <div id="catcher"></div>
+          <div id="sticky">
+            This is the "sticky" <code>div</code>
+            <div id="sticky-content"></div>
+          </div>
+        </div>
+
         <div class="marquee">
             <div id = "marquee" class="container">
                 <div class="row">
@@ -641,6 +654,7 @@
 
               </div>
           </div>
+
 </div>
 
 <script>
@@ -662,4 +676,61 @@
         }
         });
     });
+
+    // $(document).ready(function() {
+    //     function isScrolledTo(elem) {
+    //         var docViewTop = 500; //num of pixels hidden above current screen
+    //         var docViewBottom = docViewTop + $(window).height();
+    //         var elemTop = 100; //num of pixels above the elem
+    //         var elemBottom = elemTop + $(elem).height();
+    //         return ((elemTop <= docViewTop));
+    //     }
+    //     // var catcher = $('#catcher');
+    //     var sticky = $('#sticky');
+    //     $(window).scroll(function() {
+    //         if(isScrolledTo(sticky)) {
+    //             sticky.css('position','fixed');
+    //             sticky.css('z-index','99999999');
+
+    //             sticky.css('top','0px');
+    //         }
+    //         var stopHeight = 100;
+    //         if ( stopHeight > sticky.offset().top) {
+    //             sticky.css('position','absolute');
+    //             sticky.css('z-index','99999999');
+    //             sticky.css('top',stopHeight);
+    //         }
+    //     });
+    // });
+     $('#sticky').css('z-index','250');
+     $('#sticky').css('position','fixed');
+
+    $(document).ready(function() {
+        function isScrolledTo(elem) {
+            var docViewTop = $(window).scrollTop(); //num of pixels hidden above current screen
+            var docViewBottom = docViewTop + $(window).height();
+            var elemTop = $(elem).offset().top; //num of pixels above the elem
+            var elemBottom = elemTop + $(elem).height();
+            return ((elemTop <= docViewTop));
+
+        }
+        var catcher = $('#catcher');
+        var sticky = $('#sticky');
+
+        $(window).scroll(function() {
+            if(isScrolledTo(sticky)) {
+                sticky.css('position','fixed');
+                sticky.css('z-index','250');
+                sticky.css('top','0px');
+            }
+            var stopHeight = 100;
+            if ( stopHeight > sticky.offset().top) {
+                sticky.css('position','absolute');
+                sticky.css('z-index','250');
+                sticky.css('top',stopHeight);
+            }
+        });
+    });
+
+
 </script>

@@ -1,3 +1,11 @@
+<div id="floatdiv" style="  
+              position:absolute;  
+              width:200px;height:50px;top:10px;right:10px;  
+              padding:16px;background:#FFFFFF;  
+              border:2px solid #2266AA;  
+              z-index:100;">  
+          This is a floating javascript menu.  
+</div>  
 <div class="jumbotron jumbo-thanks">
   <h2>Thank you for submitting an application to </h2>
   <h1>Actualize.</h1>
@@ -16,6 +24,20 @@
 </script>
 <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
 </script>
+
+<script type="text/javascript">  
+    $(document).ready(function() { 
+     
+        $('#floatdiv').addFloating(  
+            {  
+                targetRight: 10,  
+                targetTop: 10,  
+                snap: true  
+            });  
+    });  
+</script>  
+
+
 <noscript>
   <div style="display:inline;">
     <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/926873760/?label=wIgsCPmw_WQQoPH7uQM&amp;guid=ON&amp;script=0"/>
