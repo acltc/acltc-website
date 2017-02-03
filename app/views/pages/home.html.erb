@@ -1,7 +1,7 @@
 <style type="text/css">
     .hidden {display:none;}
 
-    #sidebar{float:right;}#catcher{width:200px;height:10px;margin:5px;}#sticky{background-color: rgba(0, 0, 0, .8);width:200px;height:200px;border:1px solid #000;margin:5px;}
+    #sidebar{float:right;}#catcher{width:200px;height:10px;margin:5px;}#sticky{background-color: rgba(0, 0, 0, 0);width:200px;height:200px;margin:5px;}
 </style>
 <script
   src="https://code.jquery.com/jquery-3.1.1.js"
@@ -104,11 +104,14 @@
         
        <!-- Content
         ============================================= -->    
-        <div id="sidebar">
+        <div id="sidebar" style="margin-right: 20px;">
           <!-- <div id="catcher"></div> -->
           <div id="catcher"></div>
-          <div id="sticky">
-            This is the "sticky" <code>div</code>
+          <div id="sticky" class="text-left">
+            
+            <button class="btn btn-primary" style="width: 200px;">Apply</button><br><br>
+            <button class="btn btn-primary" style="width: 200px;">Book A Tour</button><br><br>
+            <button class="btn btn-primary" style="width: 200px;">Attend Info Session</button>
             <div id="sticky-content"></div>
           </div>
         </div>
@@ -116,6 +119,7 @@
 
         <div class="marquee">
             <div id = "marquee" class="container">
+
                 <div class="row">
 
                         <div class="marquee-content clearfix">
@@ -135,6 +139,7 @@
                 </div> <!-- /row -->
             </div>
         </div>
+   
         <div class="locations-wrapper page-wrapper">
             <div class="home-section" id="home-upper-locations">
                 <div class="row">
@@ -148,8 +153,8 @@
                                 <p>February 26th, 2017</p>
                             </p>
                             <div style="width:70%;margin:auto;color:#acaeaf;">
-                                <h5 style="line-height:0.7;">Class Schedule:<h5>
-                                <h5 style="line-height:0.7;">Sundays 9a to 5p<h5>
+                                <h5 style="line-height:0.7;">Class Schedule:</h5>
+                                <h5 style="line-height:0.7;">Sundays 9a to 5p</h5>
                                 <h5 style="line-height:0.7;">Mon-Thurs 6 to 9:30p</h5>
                             </div>
                             <div class="tour-buttons-group">
@@ -169,8 +174,8 @@
                                 <p>February 26th, 2017</p>
                             </p>
                             <div style="width:70%;margin:auto;color:#acaeaf;">
-                                <h5 style="line-height:0.7;">Class Schedule:<h5>
-                                <h5 style="line-height:0.7;">Sundays 9a to 5p<h5>
+                                <h5 style="line-height:0.7;">Class Schedule:</h5>
+                                <h5 style="line-height:0.7;">Sundays 9a to 5p</h5>
                                 <h5 style="line-height:0.7;">Mon-Thurs 6 to 9:30p</h5>
                             </div>
                             <div class="tour-buttons-group">
@@ -190,8 +195,8 @@
                                 <p>February 26th, 2017</p>
                             </p>
                             <div style="width:70%;margin:auto;color:#acaeaf;">
-                                <h5 style="line-height:0.7;">Class Schedule:<h5>
-                                <h5 style="line-height:0.7;">Sundays 9a to 5p<h5>
+                                <h5 style="line-height:0.7;">Class Schedule:</h5>
+                                <h5 style="line-height:0.7;">Sundays 9a to 5p</h5>
                                 <h5 style="line-height:0.7;">Mon-Thurs 6 to 9:30p</h5>
                             </div>
                             <div class="tour-buttons-group">
@@ -545,8 +550,8 @@
                             <p>February 26th, 2017</p>
                             </p>
                             <div style="width:70%;margin:auto;color:#acaeaf;">
-                                <h5 style="line-height:0.7;">Class Schedule:<h5>
-                                <h5 style="line-height:0.7;">Sundays 9a to 5p<h5>
+                                <h5 style="line-height:0.7;">Class Schedule:</h5>
+                                <h5 style="line-height:0.7;">Sundays 9a to 5p</h5>
                                 <h5 style="line-height:0.7;">Mon-Thurs 6 to 9:30p</h5>
                             </div>
                             <p>Tuition: $13,900</p>
@@ -569,8 +574,8 @@
                                 <p>February 26th, 2017</p>
                             </p>
                             <div style="width:70%;margin:auto;color:#acaeaf;">
-                                <h5 style="line-height:0.7;">Class Schedule:<h5>
-                                <h5 style="line-height:0.7;">Sundays 9a to 5p<h5>
+                                <h5 style="line-height:0.7;">Class Schedule:</h5>
+                                <h5 style="line-height:0.7;">Sundays 9a to 5p</h5>
                                 <h5 style="line-height:0.7;">Mon-Thurs 6 to 9:30p</h5>
                             </div>
                             <p>Tuition: $13,900</p>
@@ -594,8 +599,8 @@
                                 <p>February 26th, 2017</p>
                             </p>
                             <div style="width:70%;margin:auto;color:#acaeaf;">
-                                <h5 style="line-height:0.7;">Class Schedule:<h5>
-                                <h5 style="line-height:0.7;">Sundays 9a to 5p<h5>
+                                <h5 style="line-height:0.7;">Class Schedule:</h5>
+                                <h5 style="line-height:0.7;">Sundays 9a to 5p</h5>
                                 <h5 style="line-height:0.7;">Mon-Thurs 6 to 9:30p</h5>
                             </div>
                             <p>Tuition: $13,900</p>
@@ -655,7 +660,6 @@
 
               </div>
           </div>
-
 </div>
 
 <script>
