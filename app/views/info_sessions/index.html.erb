@@ -17,7 +17,7 @@
             <td style="vertical-align: middle;"><%= info_session.friendly_date %></td>
             <td style="vertical-align: middle;"><%= info_session.friendly_time %></td>
             <td><%= link_to "Edit", edit_info_session_path(info_session), class: "btn btn-warning" %></td>
-            <td><%= link_to "Delete", info_session_path(info_session), method: :delete, data: { confirm: "Are you sure you want to delete this Info Session and the associated Sign Ups? Prospective student that have previously signed up for this session will be notified of the cancelation." }, class: "btn btn-danger" %></td>
+            <td><%= link_to "Delete", info_session_path(info_session), method: :delete, data: { confirm: "Are you sure you want to delete this Info Session and the associated Sign Ups? Prospective students that have previously signed up for this session will be notified of the cancelation." }, class: "btn btn-danger" %></td>
           </tr>
           <% end %>
         </table>
