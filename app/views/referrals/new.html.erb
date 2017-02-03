@@ -77,17 +77,9 @@
         </p>
 
         <br>
-<<<<<<< HEAD
         <p>
           Hi <i v-show="!referred_first_name">[Your Friend's Name]</i><i>{{referred_first_name}}</i>,
         </p>
-=======
-        <i v-show="!referrer_first_name">[Your First Name]</i><i>{{referrer_first_name}}</i>
-      </p>
-    </div>
-    <br><br>
-    <!-- EMAIL END -->
->>>>>>> email template
 
         <%= text_area_tag 'email_body', '{{body}}', class: "referral-text-box", rows: "6" %>
         
@@ -101,7 +93,7 @@
           <i v-show="!referrer_first_name">[Your First Name]</i><i>{{referrer_first_name}}</i>
         </p>
       </div>
-      <br>
+      <br><br>
       <!-- EMAIL END -->
 
       <div class="referral-button">
