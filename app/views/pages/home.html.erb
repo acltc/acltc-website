@@ -1,7 +1,7 @@
 <style type="text/css">
     .hidden {display:none;}
 
-    #sidebar{float:left;}#catcher{width:200px;height:10px;margin:5px;}#sticky{width:200px;height:400px;border:1px solid #000;margin:5px;background-color: #ccc;}
+    #sidebar{float:right;}#catcher{width:200px;height:10px;margin:5px;}#sticky{background-color: rgba(0, 0, 0, .8);width:200px;height:200px;border:1px solid #000;margin:5px;}
 </style>
 <script
   src="https://code.jquery.com/jquery-3.1.1.js"
@@ -112,6 +112,7 @@
             <div id="sticky-content"></div>
           </div>
         </div>
+        <!-- <div id="sticky_item">Hello</div> -->
 
         <div class="marquee">
             <div id = "marquee" class="container">
@@ -702,8 +703,8 @@
     //         }
     //     });
     // });
-     $('#sticky').css('z-index','250');
-     $('#sticky').css('position','fixed');
+    //  $('#sticky').css('z-index','250');
+    //  $('#sticky').css('position','fixed');
 
     $(document).ready(function() {
         function isScrolledTo(elem) {
@@ -716,17 +717,19 @@
         }
         var catcher = $('#catcher');
         var sticky = $('#sticky');
+        sticky.css('position','fixed');
+        sticky.css('z-index','999999999');
 
         $(window).scroll(function() {
             if(isScrolledTo(sticky)) {
                 sticky.css('position','fixed');
-                sticky.css('z-index','250');
+                sticky.css('z-index','999999999');
                 sticky.css('top','0px');
             }
             var stopHeight = 100;
             if ( stopHeight > sticky.offset().top) {
                 sticky.css('position','absolute');
-                sticky.css('z-index','250');
+                sticky.css('z-index','999999999');
                 sticky.css('top',stopHeight);
             }
         });
