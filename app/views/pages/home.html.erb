@@ -223,7 +223,7 @@
                 </div>
             </div>
         </div>
-        <% if @current_info_session %>
+        <% if @next_info_session %>
             <div class="curriculum-wrapper page-wrapper">
                 <div class="home-section info-session">
                     <div class="row">
@@ -233,7 +233,7 @@
                             <p class="info-session-content"> You’ll learn everything there is to know about Actualize from one of our Admissions Advisors, and get to see us in action.</p><br /> 
                                 
                             <div class="well curriculum-well">
-                                 <p class="info-session-subheader">Chose your city and sign up! The next info session is on <%= @current_info_session.friendly_date %> at <%= @current_info_session.friendly_time %></p><br />
+                                 <p class="info-session-subheader">Chose your city and sign up! The next info session is on <%= @next_info_session.friendly_date %> at <%= @next_info_session.friendly_time %></p><br />
                                 <%= form_tag("/info_session_sign_ups", id: "infoSessionSignUp", method: :post) do %>
                                 <div class="row" style="padding-bottom: 20px;">
                                     <div class="col-md-3">
@@ -251,7 +251,7 @@
                                 </div>
                                 <div class="row">
                                     
-                                    <%= hidden_field_tag :info_session_id, @current_info_session.id %>
+                                    <%= hidden_field_tag :info_session_id, @next_info_session.id %>
                                     <div class="col-md-4"></div>
                                     <div class="col-md-4">
                                         <%= submit_tag "Sign Up", class: "curriculum-download-btn", id: "submit-session", style: "padding:0;margin:0;background-color:#F25252;color:white;" %>

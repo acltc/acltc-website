@@ -3,7 +3,7 @@ class PagesController < ApplicationController
   
   def home
     @info_session_sign_up = InfoSessionSignUp.new
-    @current_info_session = InfoSession.current_info_session
+    @next_info_session = InfoSession.next_info_session
 
     cohort_dates = cohort_start_dates
 
@@ -15,7 +15,7 @@ class PagesController < ApplicationController
         @cohort_date = cohort_dates.first[:date].strftime("%B %e, %Y")
       end
     end
-
+    
     render :layout => 'home_application'
   end
 
