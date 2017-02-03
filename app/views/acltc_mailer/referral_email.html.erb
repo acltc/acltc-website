@@ -1,3 +1,29 @@
-<table style="max-width: 800px;">
-  <%= @email_body %>
+<table style="max-width: 800px">
+  <tr>
+    <td>Hi <%= @referral.referred_first_name %>,</td>
+  </tr>
+
+  <tr><td> </td></tr>
+  <tr><td> </td></tr>
+
+  <tr>
+    <td><%= @email_body %></td>
+  </tr>
+
+   <tr><td> </td></tr>
+
+  <tr>
+    <td>Ben, meet <%= @referral.referred_first_name %>. I'll let you both take it from here.</td>
+  </tr>
+
+   <tr><td> </td></tr>
+   <tr><td> </td></tr>
+    
+  <tr>
+    <td>Best,</td>
+  </tr>
+
+  <tr>
+    <td><%= @referral.referrer_first_name %></td>
+  </tr>
 </table>
