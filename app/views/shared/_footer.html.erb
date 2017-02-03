@@ -1,6 +1,29 @@
 <footer>
-    <div class="pdf-sticky-footer">
+    <div id="pdf-sticky-footer">
         <h1>Sticky Foot Face</h1>
+        {{message}}
+        <button class="btn btn-default" @click="toggleCareerDownload" id="sticky-footer-button">Learn More</button>
+      <div class="well curriculum-well" v-if="showCareerDownload">
+           <p class="subscribe-download">Download our full curriculum to see what we teach week-by-week!</p>
+          <div class="row">
+              <%= form_tag("/subscribers_curriculum", method: "post", remote: true) do %>
+                <div class="col-md-3">
+                    <%= text_field_tag :first_name, nil, placeholder: "First Name" %>
+                </div>
+                <div class="col-md-3">
+                    <%= text_field_tag :email, nil, placeholder: "Email" %>
+                </div>
+                <div class="col-md-3">
+                   <%= text_field_tag :phone, nil, placeholder: "Phone" %>
+                </div>
+                <div class="col-md-3">
+                     <%= hidden_field_tag :mousetrap, nil, value: "Curriculum Download Phone Test" %>
+                     <%= submit_tag "Download Curriculum", class: "curriculum-download-btn", style: "padding:0;margin:0;background-color:#F25252;color:white;" %>
+                </div>
+              <% end %>
+          </div>
+      </div> 
+
     </div>
     <div class="container footer">
     <div class="row">
@@ -50,14 +73,14 @@
 
     <script>
         $(window).scroll(function(e){ 
-          var $el = $('.pdf-sticky-footer'); 
+          var $el = $('#pdf-sticky-footer'); 
           var isPositionFixed = ($el.css('position') == 'fixed');
           if ($(this).scrollTop() > 200 && !isPositionFixed){ 
-            $('.pdf-sticky-footer').css({'position': 'fixed', 'bottom': '0px'}); 
+            $('#pdf-sticky-footer').css({'position': 'fixed', 'bottom': '0px'}); 
           }
           if ($(this).scrollTop() < 200 && isPositionFixed)
           {
-            $('.pdf-sticky-footer').css({'position': 'static', 'bottom': '0px'}); 
+            $('#pdf-sticky-footer').css({'position': 'static', 'bottom': '0px'}); 
           } 
         });
     </script>
