@@ -1,0 +1,108 @@
+<div id="referral" class="row referral-margin">
+  <div class="col-sm-12 col-md-12 col-lg-12">
+    <div class="col-sm-12 col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3">
+      <header>
+        <h2>Refer a friend and receive $500!</h2>
+        <p>Know someone else who has the coding bug? Make an intro and we’ll send you a token of our appreciation when they enroll. (We’ll send you 500 tokens, actually!) </p>
+      </header>
+      <br>
+    </div>
+      <%= form_for @referral do |r| %>
+    <div class="col-sm-12 col-md-6 col-lg-6">
+    
+        <!-- YOUR FIRST NAME -->
+        <% if @referral.errors[:referrer_first_name].any? %>
+          <span class="referral-error"><%= @referral.errors[:referrer_first_name][0].capitalize %></span>
+        <% end %>
+        <div class="form-group">
+          <%= r.label :referrer_first_name, 'First Name', class: "required"%>
+          <%= r.text_field :referrer_first_name, class: "sm-form-control", "v-model": "referrer_first_name", placeholder: "Your First Name" %>
+        </div>
+
+        <!-- YOUR LAST NAME -->
+        <% if @referral.errors[:referrer_last_name].any? %>
+          <span class="referral-error"><%= @referral.errors[:referrer_last_name][0].capitalize %></span>
+        <% end %>
+        <div class="form-group">
+          <%= r.label :referrer_last_name, 'Last Name', class: "required" %>
+          <%= r.text_field :referrer_last_name, class: "sm-form-control", placeholder: "Your Last Name" %>
+        </div>
+
+        <!-- YOUR EMAIL -->
+        <% if @referral.errors[:referrer_email].any? %>
+          <span class="referral-error"><%= @referral.errors[:referrer_email][0].capitalize %></span>
+        <% end %>
+        <div class="form-group">
+          <%= r.label :referrer_email, 'Email', class: "required" %>
+          <%= r.email_field :referrer_email, class: "sm-form-control", "v-model": "referrer_email", placeholder: "Your Email" %>
+        </div>
+
+        <!-- YOUR PHONE NUMBER -->
+        <% if @referral.errors[:referrer_phone_number].any? %>
+          <span class="referral-error"><%= @referral.errors[:referrer_phone_number][0].capitalize %></span>
+        <% end %>
+        <div class="form-group">
+          <%= r.label :referrer_phone_number, 'Phone Number', class: "required" %>
+          <%= r.text_field :referrer_phone_number, class: "sm-form-control", placeholder: "Your Phone Number" %>
+        </div>
+
+        <!-- FRIEND'S FIRST NAME -->
+        <% if @referral.errors[:referred_first_name].any? %>
+          <span class="referral-error"><%= @referral.errors[:referred_first_name][0].capitalize %></span>
+        <% end %>
+        <div class="form-group">
+          <%= r.label :referred_first_name, 'Friend\'s Name', class: "required" %>
+          <%= r.text_field :referred_first_name, class: "sm-form-control", "v-model": "referred_first_name", placeholder: "Friend's First Name" %>
+        </div>
+        
+        <!-- FRIEND'S EMAIL -->
+        <% if @referral.errors[:referred_email].any? %>
+          <span class="referral-error"><%= @referral.errors[:referred_email][0].capitalize %></span>
+        <% end %>
+        <div class="form-group">
+          <%= r.label :referred_email, 'Friend\'s Email', class: "required" %>
+          <%= r.email_field :referred_email, class: "sm-form-control", "v-model": "referred_email", placeholder: "Friend's Email" %>
+        </div>
+        <br>
+    </div>
+
+    <div class="col-sm-12 col-md-6 col-lg-6">
+        <p><h4>Here’s how your invite looks! (You can edit it to your taste.)</h4></p>
+        <!-- EMAIL START -->
+        <div>
+          <p>
+            <span class="referral-email-heading">To:</span> <span v-show="!referred_email">yourfriendsemail@email.com</span>{{referred_email}}
+            <br>
+            <span class="referral-email-heading">Cc:</span> ben@actualize.co
+            <br>
+            <span class="referral-email-heading">Bcc:</span> <span v-show="!referrer_email">youremail@email.com</span>{{referrer_email}}
+            <br>
+            <span class="referral-email-heading">Subject:</span> Intro to Actualize
+          </p>
+
+          <br>
+          <p>
+            Hi <i v-show="!referred_first_name">[Your Friend's Name]</i><i>{{referred_first_name}}</i>,
+          </p>
+
+          <%= text_area_tag 'email_body', '{{body}}', class: "referral-text-box", rows: "6" %>
+          
+          <p>
+            Ben, meet <i v-show="!referred_first_name">[Your Friend's Name]</i><i>{{referred_first_name}}</i>. I'll let you both take it from here.
+          </p>
+
+          <p>
+            Best,
+            <br>
+            <i v-show="!referrer_first_name">[Your First Name]</i><i>{{referrer_first_name}}</i>
+          </p>
+        </div>
+        <br><br>
+        <!-- EMAIL END -->
+      </div>
+      <div class="referral-button">
+        <%= r.submit 'REFER A FRIEND!', class: "button button-3d nomargin nopadding" %>
+      </div>
+    <% end %>
+  </div>
+</div>
