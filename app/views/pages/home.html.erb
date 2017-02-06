@@ -103,7 +103,6 @@
           <!-- <div id="catcher"></div> -->
           <div id="catcher"></div>
           <div id="sticky" class="text-left">
-            
             <a href="/apply" class="btn btn-primary sticky-apply sticky-sidebar" style="width: 200px;">Apply</a><br><br>
             <a href="/tours/new" class="btn btn-primary sticky-tour sticky-sidebar" style="width: 200px;">Book A Tour</a><br><br>
             <a href="#info-session" class="btn btn-primary sticky-session sticky-sidebar" style="width: 200px;">Info Session</a>
@@ -129,12 +128,13 @@
                                         <%#= link_to "Apply Now", new_application_path, class: "btn single-apply-button aqua-orange-apply-button" %>                    
                                 <!-- </div> -->
                             <% if @next_info_session %>
-                                <div>
-                                    <h3>Info Session</h3>
+                                <div id="info-session">
+                                    <p class="info-session-description">Come join us in person for a live info session!</p>
+                                    <p class="info-session-content">You’ll learn everything there is to know about Actualize from one of our Admissions Advisors, and get to see us in action.</p><br>
                                     <%= form_tag("/info_session_sign_ups", id: "infoSessionSignUp", method: :post) do %>
                                     <div class="row info-fields" style="padding-bottom: 20px;">
                                         <div class="col-md-3">
-                                            <%= select_tag :city, options_for_select(["Chicago", "New York City", "San Francisco"], @info_session_sign_up.city), prompt: "Select a city", class: "form-control", id: "session-city-select" %>
+                                            <%= select_tag :city, options_for_select(["Chicago", "New York City", "San Francisco"], @info_session_sign_up.city), prompt: "Select a city", class: "form-control", id: "session-city-select" %><br>
                                         </div>
                                         <div class="col-md-3">
                                             <%= text_field_tag :name, nil, placeholder: "Name", required: true %>
@@ -148,7 +148,7 @@
                                     </div>
                                     <div class="row">
                                         
-                                        <%= hidden_field_tag :info_session_id, @current_info_session.id %>
+                                        <%= hidden_field_tag :info_session_id, @next_info_session.id %>
                                         <div class="col-md-4"></div>
                                         <div class="col-md-4">
                                             <%= submit_tag "Sign Up", class: "curriculum-download-btn", id: "submit-session", style: "padding:0;margin:0;background-color:#F25252;color:white;" %>
@@ -165,7 +165,7 @@
         <div class="locations-wrapper page-wrapper container">
             <div class="home-section" id="home-upper-locations">
                 <div class="row">
-                    <div class="col-sm-4">
+                    <div class="col-md-4">
                         <div class="location">
 
                             <img class="logo" src="<%= asset_path 'chicago.png'%>"><br />
@@ -186,7 +186,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-md-4">
                         <div class="location">
 
                             <img class="logo" src="<%= asset_path 'nyc.png'%>"><br />
@@ -207,7 +207,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-md-4">
                         <div class="location">
 
                             <img class="logo" src="<%= asset_path 'san-francisco.png'%>"><br />
@@ -235,7 +235,7 @@
             <div class="home-section">
                 <div class="row">
                 <h2 class = "actualize-logo">Philosophy</h2>
-                    <div class="col-sm-4 centered">
+                    <div class="col-md-4 centered">
                     <img class="philosophy-icon" src="<%= asset_path 'philosophy-brain-icon.png'%>">
 
                       <h3>Educators First, Developers Second</h3>
@@ -243,14 +243,14 @@
                           Education is about more than conveying information - it's about understanding how people think, learn, and truly grasp the material at hand. We understand that every new concept requires a unique approach, and that even the most advanced subject-matter experts must also be well-trained educators to produce great results. That's why all of our Lead Instructors are experienced educators as well as professional developers.
                       </p>
                     </div>
-                    <div class="col-sm-4 centered">
+                    <div class="col-md-4 centered">
                     <img class="philosophy-icon" src="<%= asset_path 'phliosophy-methodology-icon.png'%>">
                         <h3>Custom Curriculum Created by Expert Educators</h3>
                         <p class="philosophy">
                             The Actualize program is designed and taught by our educator/developer Lead Instructors. Together, we created our curriculum using educational best practices and careful consideration of how people learn and retain information. We've debated every facet of our methodology, from the order in which to teach concepts and the analogies used to clarify them to how exercises should be structured to deliver the maximum educational punch.
                         </p>
                     </div>
-                    <div class="col-sm-4 centered">
+                    <div class="col-md-4 centered">
                     <img class="philosophy-icon" src="<%= asset_path 'philosphy-suitcase-icon.png'%>">
                         <h3>Keep Your Day Job While You Switch Careers</h3>
                         <p class="philosophy">
@@ -265,47 +265,6 @@
             </div>
         </div>
 
-        <% if @next_info_session %>
-            <div class="curriculum-wrapper page-wrapper">
-                <div class="home-section info-session">
-                    <div class="row">
-                        <div class="col-md-12 skills">
-                            <br />
-                            <p class ="info-session-description">Come join us in person for a live info session!</p><br>
-                            <p class="info-session-content"> You’ll learn everything there is to know about Actualize from one of our Admissions Advisors, and get to see us in action.</p><br /> 
-                                
-                            <div class="well curriculum-well">
-                                 <p class="info-session-subheader">Chose your city and sign up! The next info session is on <%= @next_info_session.friendly_date %> at <%= @next_info_session.friendly_time %></p><br />
-                                <%= form_tag("/info_session_sign_ups", id: "infoSessionSignUp", method: :post) do %>
-                                <div class="row" style="padding-bottom: 20px;">
-                                    <div class="col-md-3">
-                                        <%= select_tag :city, options_for_select(["Chicago", "New York City", "San Francisco"], @info_session_sign_up.city), prompt: "Select a city", class: "form-control", id: "session-city-select" %>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <%= text_field_tag :name, nil, placeholder: "Name", required: true %>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <%= text_field_tag :email, nil, placeholder: "Email", required: true %>
-                                    </div>
-                                    <div class="col-md-3">
-                                       <%= text_field_tag :phone, nil, placeholder: "Phone", required: true %>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    
-                                    <%= hidden_field_tag :info_session_id, @next_info_session.id %>
-                                    <div class="col-md-4"></div>
-                                    <div class="col-md-4">
-                                        <%= submit_tag "Sign Up", class: "curriculum-download-btn", id: "submit-session", style: "padding:0;margin:0;background-color:#F25252;color:white;" %>
-                                    </div>
-                                </div>
-                                <% end %>
-                            </div>  
-                        </div>
-                    </div>
-                </div>
-            </div>
-        <% end %>
         <div class="our-program-wrapper page-wrapper container">
             <div class="home-section">
                 <div class="row">
@@ -526,7 +485,7 @@
             <div class="home-section" id="home-lower-locations">
                 <div class="row">
                     <h2 class = "actualize-logo">Locations</h2>
-                    <div class="col-sm-4">
+                    <div class="col-md-4">
                         <div class="location-lower">
 
                             <img class="logo" src="<%= asset_path 'chicago.png'%>"><br />
@@ -538,7 +497,7 @@
 
                         </div>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-md-4">
                         <div class="location-lower">
 
                             <img class="logo" src="<%= asset_path 'nyc.png'%>"><br />
@@ -549,7 +508,7 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-4">
+                    <div class="col-md-4">
                         <div class="location-lower">
 
                             <img class="logo" src="<%= asset_path 'san-francisco.png'%>"><br />
@@ -561,7 +520,7 @@
                     </div>
                 </div>
                 <div class="row address-row">
-                    <div class="col-sm-4">
+                    <div class="col-lg-4">
                         <div class="address">
                             <a class="pushpin" href="https://www.google.com/maps/place/222+W+Merchandise+Mart+Plaza,+Chicago,+IL+60654/@41.8885185,-87.6354802,17z/data=!3m1!4b1!4m2!3m1!1s0x880e2cb6fa650467:0xd94994faa9dd5715" target="_blank"><i class="fa fa-map-marker aqua   "></i></a>
                             <p class="bootcamp-address">
@@ -585,7 +544,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-lg-4">
                         <div class="address">
                             <a class="pushpin" href="https://www.google.com/maps/place/150+Broadway,+New+York,+NY+10038/@40.7093102,-74.010236,17z" target="_blank"><i class="fa fa-map-marker blue"></i></a>
                             <p class="bootcamp-address">
@@ -610,7 +569,7 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-4">
+                    <div class="col-lg-4">
                         <div class="address">
                             <a class="pushpin" href="https://www.google.com/maps/place/77+Geary+St,+San+Francisco,+CA+94108/@37.7876653,-122.4047894,17z/data=!3m1!4b1!4m2!3m1!1s0x80858088f19da4a5:0x55997ff84c10b76f" target="_blank"><i class="fa fa-map-marker orange"></i></a>
                             <p class="bootcamp-address">
@@ -734,11 +693,26 @@
     //  $('#sticky').css('position','fixed');
 
     $(document).ready(function() {
+        $('#sidebar').hide();
+
+
         function isScrolledTo(elem) {
             var docViewTop = $(window).scrollTop(); //num of pixels hidden above current screen
+            
             var docViewBottom = docViewTop + $(window).height();
+        
             var elemTop = $(elem).offset().top; //num of pixels above the elem
+        
             var elemBottom = elemTop + $(elem).height();
+
+            if(docViewTop >= 766) {
+                
+                $("#sidebar").fadeIn("slow");
+            } else if (docViewTop < 766) {
+
+                $('#sidebar').fadeOut("fast")
+            }
+
             return ((elemTop <= docViewTop));
 
         }
@@ -753,7 +727,7 @@
                 sticky.css('z-index','999999999');
                 sticky.css('top','0px');
             }
-            var stopHeight = 100;
+            var stopHeight = catcher.offset().top + catcher.height();
             if ( stopHeight > sticky.offset().top) {
                 sticky.css('position','absolute');
                 sticky.css('z-index','999999999');
