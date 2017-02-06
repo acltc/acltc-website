@@ -34,10 +34,6 @@
 	<div id="container" class="clearfix">
 
 
-    <header id="header" class="transparent-header no-sticky">
-    
-      <div id="header-wrap">
-
                    <!-- Primary Navigation
              ============================================= -->
              <nav class="navbar navbar-default navigation">
@@ -59,15 +55,15 @@
                  </div>
 
                  <!-- Collect the nav links, forms, and other content for toggling -->
-       <%= render 'shared/navbar' %>
+                <%= render 'shared/navbar' %>
                  
                </div><!-- /.container-fluid -->
              </nav>
 
-      </div>
+      
    
 
-    </header><!-- #header end -->
+    <!-- #header end -->
 
     <% flash.each do |name, message| %>
       <div class="alert alert-<%= name %> alert-dismissible fade in" role="alert">

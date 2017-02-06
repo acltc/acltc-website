@@ -37,6 +37,7 @@ class ToursController < ApplicationController
       redirect_to tours_thank_you_path
       converted!("Book A Tour New Form Test")
     else
+      split_test
       render :new
     end
   end

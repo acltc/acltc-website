@@ -1,4 +1,3 @@
-/* home.css.scss.erb */
 
 @keyframes pulse {
   0% {
@@ -327,6 +326,7 @@ input {
 }
 
 .modal-container {
+  width: 300px;
   margin: 0px auto;
   padding: 20px 30px;
   background-color: #fff;
@@ -425,28 +425,26 @@ input {
 
 /* -------------------BOOK A TOUR ----------------*/
 
-/*.content-wrap{
-  background-color: red;
+/*.tours-container{
+  margin-top: -50px;
 }*/
 
 .tour-hero-image {
-  /*background-color: blue;*/
   background-image: url("<%= asset_path('book_a_tour_hero.png') %>");
- /* background-image: url("<%= asset_path('book_a_tour_peter_hero.png') %>");*/
-  height: 1200px;
+  height: 900px;
   background-size: cover;
   background-position: center;
   width: 100%;
   position: relative;
-  top: 0;
+  top: -10;
   border: 0;
 }
 
 .tour-background-layer{
   z-index: 1;
-  height: 56%;
-  width: 80%;
-  background-color: rgba(255, 255, 255, 0.75);
+  height: 90%;
+  width: 90%;
+  background-color: rgba(255, 255, 255, 0.9);
   position: relative;
   border-radius: 5px;
   top: 50%;
@@ -475,11 +473,6 @@ input {
 
 #tour-header-container{
   margin-bottom: 20px;
-  /*background-image: url("<%= asset_path('actualize-logo-275.png') %>");*/
-}
-
-#header-wrap{
-  background-color: #111111;
 }
 
 .tour-interview-field select {
@@ -494,26 +487,62 @@ input {
 }
 
 div#city.radio {
-  text-align: center;
+  text-align: left;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
-
 
 #tour-form-submit-button {
   width: 40%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
+  color: #fff;
+}
+
+.tour-submit-button {
+  padding: .5em 3em;
+  font-family: 'Maven Pro', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  /*letter-spacing: .25em;*/
+  border-color: none;
+  font-size: 1.5em;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  margin: 2em 0;
+  background-color: #007afd !important;
+  border: none;
+  color: #fff !important;
+  word-wrap: normal;
+}
+
+.tour-submit-button:hover {
+  background-color: #fbc400 !important;
+  color: #fff;
 }
 
 
 @media screen and (max-width: 992px) {
    .tour-background-layer {
-     height: 93%;
+     height: 97%;
+     width: 90%;
    }
 
    .tour-form-field{
-    width: 90%;
+     width: 90%;
    }
+
+   .tour-hero-image {
+     height: 1200px;
+   }
+
+  #tour-form-submit-button {
+     width: 80% !important;
+   }
+
 }
 
 
@@ -684,7 +713,6 @@ li.outcome-text {
     width: 100%;
     height: 10px;
     z-index: 100;
-    background-image: url("<%= asset_path('border.png') %>");
     background-repeat: repeat-x; }
   .navigation .navbar-brand {
     padding: 1em 2em 0 0; }
@@ -807,7 +835,7 @@ li.outcome-text {
     padding: 5em 3.5em;
     text-align: center;
     z-index: 200;
-    position: relative;
+    // position: relative; THIS BREAKS MOBILE NAVBAR
   background-color: rgba(0, 0, 0, .8);
 }
 
