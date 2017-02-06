@@ -1,5 +1,6 @@
 class ApplicationsController < ApplicationController
   before_action :authenticate_admin!, except: [:new, :create]
+  include CohortDatesHelper
   invisible_captcha only: [:create], honeypot: :subtitle
 
   def index
@@ -21,6 +22,19 @@ class ApplicationsController < ApplicationController
 
   def show
     @application = Application.find(params[:id])
+
+    cohort_dates = cohort_start_dates
+    @dates_by_city = []
+
+    cohort_dates.each do |cohort_date|
+      if cohort_date[:prework] && Time.zone.now <= cohort_date[:date] + 1.month
+        @dates_by_city << ["CHI #{cohort_date[:date].strftime('%m/%d/%y')}"]
+        @dates_by_city << ["NYC #{cohort_date[:date].strftime('%m/%d/%y')}"]
+        @dates_by_city << ["SF #{cohort_date[:date].strftime('%m/%d/%y')}"]
+      end
+    end
+
+    @dates_by_city.sort!
   end
 
   def edit
