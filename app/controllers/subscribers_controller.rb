@@ -52,6 +52,25 @@ class SubscribersController < ApplicationController
     end
   end
 
+  def create_from_career_pdf
+    if cookies[:is_subscriber]
+      respond_to do |format|
+        @pdf_url = "/subscribers/career_pdf_download"
+        format.js {render :partial => "downloadCareerPdf"}
+      end
+    else
+      setup_subscriber
+
+      if Subscriber.find_by(email: params[:email]) || @subscriber.save
+        subscriber_drip_setup
+        respond_to do |format|
+          @pdf_url = "/subscribers/career_pdf_download"
+          format.js {render :partial => "downloadCareerPdf"}
+        end
+      end
+    end
+  end
+
   def create_from_tutorial
     if cookies[:is_subscriber]
       @tutorials_visible = true
@@ -85,6 +104,12 @@ class SubscribersController < ApplicationController
   end
 
   def download
+    url = 'https://s3.amazonaws.com/acltc/Actualize_Curriculum_2016.pdf'
+    data = open(url).read
+    send_data data, :disposition => 'attachment', :filename=>"Actualize_Curriculum_2016.pdf"
+  end
+
+  def career_pdf_download
     url = 'https://s3.amazonaws.com/acltc/Actualize_Curriculum_2016.pdf'
     data = open(url).read
     send_data data, :disposition => 'attachment', :filename=>"Actualize_Curriculum_2016.pdf"

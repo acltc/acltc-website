@@ -28,11 +28,13 @@ Rails.application.routes.draw do
   get "/applications/new/:id" => "applications#new"
 
   get "/subscribers/download"
+  get "/subscribers/career_pdf_download"
   
   post 'subscribers_application' => 'subscribers#create_from_application'
   post 'subscribers_curriculum' => 'subscribers#create_from_curriculum'
   post 'subscribers_tutorial' => 'subscribers#create_from_tutorial'
   post 'subscribers_footer' => 'subscribers#create_from_footer'
+  post 'subscribers_career_pdf' => 'subscribers#create_from_career_pdf'
   
   resources :blog_posts
   resources :blog_categories
