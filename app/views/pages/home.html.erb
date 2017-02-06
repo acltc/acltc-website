@@ -1,3 +1,4 @@
+
 <style type="text/css">
     .hidden {display:none;}
 </style>
@@ -20,7 +21,7 @@
      <div class="modal-wrapper">
        <div class="modal-container">
 
-         <div class="modal-header">
+        <div class="modal-header">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                    <slot name="header">
@@ -98,10 +99,11 @@
         
     </div> 
     </modal>
+    
        <!-- Content
         ============================================= -->    
         <div class="marquee">
-            <div id = "marquee" class="container">
+            <div id = "marquee" class="container" onscroll="scrollPopup">
                 <div class="row">
 
                         <div class="marquee-content clearfix">
@@ -131,7 +133,7 @@
                             <h3>Chicago</h3>
                             <p class="prework-details" style="min-height:2em;">
                                 <p>New Cohorts begin:</p>
-                                <p>February 26th, 2017</p>
+                                <p><%= @cohort_date %></p>
                             </p>
                             <div style="width:70%;margin:auto;color:#acaeaf;">
                                 <h5 style="line-height:0.7;">Class Schedule:<h5>
@@ -152,7 +154,7 @@
                             <h3>New York City</h3>
                             <p class="prework-details" style="min-height:2em;">
                                 <p>New Cohorts begin:</p>
-                                <p>February 26th, 2017</p>
+                                <p><%= @cohort_date %></p>
                             </p>
                             <div style="width:70%;margin:auto;color:#acaeaf;">
                                 <h5 style="line-height:0.7;">Class Schedule:<h5>
@@ -173,7 +175,7 @@
                             <h3>San Francisco</h3>
                             <p class="prework-details" style="min-height:2em;">
                                 <p>New Cohorts begin:</p>
-                                <p>February 26th, 2017</p>
+                                <p><%= @cohort_date %></p>
                             </p>
                             <div style="width:70%;margin:auto;color:#acaeaf;">
                                 <h5 style="line-height:0.7;">Class Schedule:<h5>
@@ -223,17 +225,21 @@
                 </div>
             </div>
         </div>
-        <% if @current_info_session %>
+        <% if @next_info_session %>
             <div class="curriculum-wrapper page-wrapper">
                 <div class="home-section info-session">
                     <div class="row">
                         <div class="col-md-12 skills">
                             <br />
+
                             <p class ="info-session-description">Come join us in person for a live info session!</p><br>
                             <p class="info-session-content"> You’ll learn everything there is to know about Actualize from one of our Admissions Advisors, and get to see us in action.</p><br /> 
+
+                                
                                 
                             <div class="well curriculum-well">
-                                 <p class="info-session-subheader">Chose your city and sign up! The next info session is on <%= @current_info_session.friendly_date %> at <%= @current_info_session.friendly_time %></p><br />
+
+                                 <p class="info-session-subheader">Chose your city and sign up! The next info session is on <%= @next_info_session.friendly_date %> at <%= @next_info_session.friendly_time %></p><br />
                                 <%= form_tag("/info_session_sign_ups", id: "infoSessionSignUp", method: :post) do %>
                                 <div class="row" style="padding-bottom: 20px;">
                                     <div class="col-md-3">
@@ -251,7 +257,7 @@
                                 </div>
                                 <div class="row">
                                     
-                                    <%= hidden_field_tag :info_session_id, @current_info_session.id %>
+                                    <%= hidden_field_tag :info_session_id, @next_info_session.id %>
                                     <div class="col-md-4"></div>
                                     <div class="col-md-4">
                                         <%= submit_tag "Sign Up", class: "curriculum-download-btn", id: "submit-session", style: "padding:0;margin:0;background-color:#F25252;color:white;" %>
@@ -381,9 +387,7 @@
                             </div>
                             <br />
                             <p class ="after-word">We'll also delve into important concepts such as Git, Test Driven Development, and the soft skills you need to land a web developer position. At Actualize, we focus on the skills that employers are looking for now.</p><br /><br />
-
-                            
-                            
+ 
                             <div class="well curriculum-well">
                                  <p class="subscribe-download">Download our full curriculum to see what we teach week-by-week!</p>
                                 <div class="row">
@@ -404,6 +408,7 @@
                                      <% end %>
                                  </div>
                              </div>  
+
                         </div>
                     </div>
                 </div>
@@ -528,7 +533,7 @@
                             <p class="prework-details" style="min-height:2em;">
                             <p>New Cohorts begin:</p> 
                              
-                            <p>February 26th, 2017</p>
+                            <p><%= @cohort_date %></p>
                             </p>
                             <div style="width:70%;margin:auto;color:#acaeaf;">
                                 <h5 style="line-height:0.7;">Class Schedule:<h5>
@@ -552,7 +557,7 @@
                             </p>
                             <p class="prework-details" style="min-height:2em;">
                                 <p>New Cohorts begin:</p>
-                                <p>February 26th, 2017</p>
+                                <p><%= @cohort_date %></p>
                             </p>
                             <div style="width:70%;margin:auto;color:#acaeaf;">
                                 <h5 style="line-height:0.7;">Class Schedule:<h5>
@@ -577,7 +582,7 @@
                             </p>
                             <p class="prework-details" style="min-height:2em;">
                                 <p>New Cohorts begin:</p>
-                                <p>February 26th, 2017</p>
+                                <p><%= @cohort_date %></p>
                             </p>
                             <div style="width:70%;margin:auto;color:#acaeaf;">
                                 <h5 style="line-height:0.7;">Class Schedule:<h5>
