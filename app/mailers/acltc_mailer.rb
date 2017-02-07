@@ -65,9 +65,6 @@ class AcltcMailer < ApplicationMailer
 
   def info_session_sign_up_email(info_session_sign_up)
     @info_session_sign_up = info_session_sign_up
-<<<<<<< HEAD
-    mail(from: "mg.anyonecanlearntocode.com", to: ["chris.g.connell@gmail.com"], subject: "New Info Session Sign Up")
-=======
     
     if @info_session_sign_up.city == "Chicago"
       @city_advisor = "nick@anyonecanlearntocode.com"
@@ -77,7 +74,6 @@ class AcltcMailer < ApplicationMailer
       @city_advisor = "zev@anyonecanlearntocode.com"
     end
     mail(from: "mg.anyonecanlearntocode.com", to: ["ben@actualize.co", "jay@actualize.co", @city_advisor], subject: "New Info Session Sign Up")
->>>>>>> 8dd0777033552880f472af11564c4d301412c61d
   end
 
   def info_session_sign_up_confirmation_email(info_session_sign_up)
