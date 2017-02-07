@@ -10,6 +10,7 @@ class InfoSessionSignUpsController < ApplicationController
     @sf_info_session_sign_ups = InfoSession.sf_sign_ups if @current_info_session
 
     @all_info_session_sign_ups = InfoSessionSignUp.all
+    
     respond_to do |format|
       format.html
       format.csv { send_data @all_info_session_sign_ups.to_csv }
