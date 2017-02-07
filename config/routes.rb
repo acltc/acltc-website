@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   get "/subscribers/download"
   
   post 'subscribers_application' => 'subscribers#create_from_application'
+  post 'subscribers_popup' => 'subscribers#create_from_popup'
   post 'subscribers_curriculum' => 'subscribers#create_from_curriculum'
   post 'subscribers_tutorial' => 'subscribers#create_from_tutorial'
   post 'subscribers_footer' => 'subscribers#create_from_footer'
@@ -73,6 +74,10 @@ Rails.application.routes.draw do
   post "/lakewood_profiles" => "lakewood_profiles#create"
   get "/lakewood_profiles/:id" => "lakewood_profiles#modal"
 
+  get "/referrals" => "referrals#index"
+  get "/referrals/new" => "referrals#new", :as => :new_referral
+  post "/referrals" => "referrals#create"
+  get "/referrals/thank_you" => "referrals#thank_you"
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

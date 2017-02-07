@@ -1,4 +1,5 @@
 class Api::V1::SubscribersController < ApplicationController
+
   def create_from_popup
     setup_subscriber
 
