@@ -1,0 +1,31 @@
+// Place all the styles related to the referrals controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.referral-padding{
+  padding:2%;
+}
+
+.referral-button{
+  width:35%;
+  margin:auto;
+}
+
+.referral-margin{
+  margin:2%;
+}
+
+.referral-text-box{
+  width:100%;
+  height:50;
+  resize:none;
+  outline:#DDD solid 2px;
+  border:none;
+}
+
+.referral-error{
+  color: red;
+}
+
+.referral-email-heading{
+  color:grey;
+}
