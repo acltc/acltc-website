@@ -143,11 +143,10 @@
                                             <%= text_field_tag :email, nil, placeholder: "Email", required: true %>
                                         </div>
                                         <div class="col-md-3">
-                                           <%= text_field_tag :phone, nil, placeholder: "Phone", required: true %>
+                                            <%= text_field_tag :phone, nil, placeholder: "Phone", required: true %>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        
                                         <%= hidden_field_tag :info_session_id, @next_info_session.id %>
                                         <div class="col-md-4"></div>
                                         <div class="col-md-4">
@@ -658,43 +657,14 @@
         if (empty1) {
             $('#submit-session').attr('disabled', 'disabled');
         } else {
-        //$('#submit-session').removeAttr('disabled');
             $('#submit-session').prop("disabled", false);
         }
         });
     });
 
-    // $(document).ready(function() {
-    //     function isScrolledTo(elem) {
-    //         var docViewTop = 500; //num of pixels hidden above current screen
-    //         var docViewBottom = docViewTop + $(window).height();
-    //         var elemTop = 100; //num of pixels above the elem
-    //         var elemBottom = elemTop + $(elem).height();
-    //         return ((elemTop <= docViewTop));
-    //     }
-    //     // var catcher = $('#catcher');
-    //     var sticky = $('#sticky');
-    //     $(window).scroll(function() {
-    //         if(isScrolledTo(sticky)) {
-    //             sticky.css('position','fixed');
-    //             sticky.css('z-index','99999999');
-
-    //             sticky.css('top','0px');
-    //         }
-    //         var stopHeight = 100;
-    //         if ( stopHeight > sticky.offset().top) {
-    //             sticky.css('position','absolute');
-    //             sticky.css('z-index','99999999');
-    //             sticky.css('top',stopHeight);
-    //         }
-    //     });
-    // });
-    //  $('#sticky').css('z-index','250');
-    //  $('#sticky').css('position','fixed');
-
+  
     $(document).ready(function() {
         $('#sidebar').hide();
-
 
         function isScrolledTo(elem) {
             var docViewTop = $(window).scrollTop(); //num of pixels hidden above current screen
@@ -706,11 +676,10 @@
             var elemBottom = elemTop + $(elem).height();
 
             if(docViewTop >= 766) {
-                
-                $("#sidebar").fadeIn("slow");
+                $("#sidebar").fadeIn( "slow" );
             } else if (docViewTop < 766) {
 
-                $('#sidebar').fadeOut("fast")
+                $('#sidebar').fadeOut("slow")
             }
 
             return ((elemTop <= docViewTop));
@@ -735,6 +704,4 @@
             }
         });
     });
-
-
 </script>
