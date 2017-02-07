@@ -73,6 +73,10 @@ Rails.application.routes.draw do
   post "/lakewood_profiles" => "lakewood_profiles#create"
   get "/lakewood_profiles/:id" => "lakewood_profiles#modal"
 
+  get "/referrals" => "referrals#index"
+  get "/referrals/new" => "referrals#new", :as => :new_referral
+  post "/referrals" => "referrals#create"
+  get "/referrals/thank_you" => "referrals#thank_you"
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
