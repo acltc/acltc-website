@@ -1,0 +1,72 @@
+<section id="content">
+  <div class="content-wrap">
+    <div class="container clearfix">
+      <div class="postcontent nobottommargin clearfix">
+        <div class="single-post nobottommargin">
+          <div class="entry clearfix">
+            <div class="col_full portfolio-single-image">
+              <!-- VIDEO CONTENT -->
+              <!-- <iframe width="500" height="315" src="https://www.youtube.com/embed/8c3i5yJ89go" frameborder="0" allowfullscreen></iframe> -->
+            </div>
+            <div class="tutorial-content" class="entry-content notopmargin">
+              <div class="fancy-title title-dotted-border title-center">
+                <h2><%= @lesson_title %></h2>
+              </div>
+              <!-- BODY START -->
+<h4>We want you to attempt and submit a solution for the challenge exercise. It's okay if the solution isn't correct (the problem is quite difficult), but it's important to try such difficult problems to stretch your brain!</h4>
+
+<ol>
+    <li>
+        <div class="rating" style="color:#fed130" >
+           <i class="glyphicon glyphicon-star" ></i>
+           <i class="glyphicon glyphicon-star" ></i>
+           <i class="glyphicon glyphicon-star" ></i>
+           <i class="glyphicon glyphicon-star" ></i>
+           <i class="glyphicon glyphicon-star-empty" ></i>
+       </div>
+       <p>Here is an each loop to sum all the numbers in an array using an each loop:</p>
+<pre class="language-ruby"><code>numbers = [2, 54, 12, 97, 45, 31, 7]
+sum = 0
+
+numbers.each do |number|
+  sum = sum + number
+end
+
+p sum
+</code></pre>
+<p> This code prints out the following:</p>
+<pre>248</pre>
+
+<p>Let's try writing the same challenge using a different types of loops in ruby. You will have to do some research in order to use them. Look at the list below and find one or two ruby loops to solve our sum challenge instead of using the each loop.
+
+<h3 style="color: red;">Warning: Watch out for infinite loops!</h3>
+<p>The each loop is very safe. These other loops do not automatically end and require you to tell the loop when you want it to stop. ever loop has a different way to exit the loop, make that part of your research. When a loop does not end it could go on forever or crash your computer, which ever comes first. This is called an infinite loop. If you are running the program in the browser, you may need to quit your browser and reopen it. If you are running the program in your terminal, press control + c to quit the ruby process. Even though you should not try to cause an infinite loop, if it happens don't panic. Experimenting with code means sometimes you venture off the map and every programmer has those stories where they got stuck in an infinite loop.</p> 
+
+       <p>To accomplish this, investigate the following loops by clicking on their name below:</p>
+       <ul>
+           <li><a target=_blank href="https://ruby-doc.org/core-2.2.2/Integer.html#method-i-times">times</a> loop</li>
+           <li><a target=_blank href="https://ruby-doc.org/core-2.1.2/doc/syntax/control_expressions_rdoc.html#label-while+Loop">while</a> loop</li>
+           <li><a target=_blank href="https://ruby-doc.org/core-2.1.2/doc/syntax/control_expressions_rdoc.html#label-until+Loop">until</a> loop</li>
+           <li><a target=_blank href="http://ruby.bastardsbook.com/chapters/loops/#h-2-1">for</a> loop</li>
+           <li>and finally just plain old <a target=_blank href="https://ruby-doc.org/core-2.2.2/Kernel.html#method-i-loop">loop</a> (use break keyword to stop)</li>
+       </ul>
+    </li>
+</ol>
+              <!-- BODY END -->
+              <div class="clear"></div>
+              <br>
+              <%= render 'share_buttons.html.erb' %>
+            </div>
+          </div>
+          <%= render 'post_navigation.html.erb' %>
+          <div class="line"></div>
+        </div>
+      </div>
+      <div class="sidebar nobottommargin col_last clearfix">
+        <div class="sidebar-widgets-wrap">
+          <%= render 'next_lessons.html.erb' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

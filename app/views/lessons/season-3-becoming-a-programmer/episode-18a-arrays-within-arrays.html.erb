@@ -1,0 +1,94 @@
+<section id="content">
+  <div class="content-wrap">
+    <div class="container clearfix">
+      <div class="postcontent nobottommargin clearfix">
+        <div class="single-post nobottommargin">
+          <div class="entry clearfix">
+            <div class="col_full portfolio-single-image">
+              <!-- VIDEO CONTENT -->
+              <!-- <iframe width="500" height="315" src="https://www.youtube.com/embed/8c3i5yJ89go" frameborder="0" allowfullscreen></iframe> -->
+            </div>
+            <div class="tutorial-content" class="entry-content notopmargin">
+              <div class="fancy-title title-dotted-border title-center">
+                <h2><%= @lesson_title %></h2>
+              </div>
+              <!-- BODY START -->
+              <p>The values in an array can be more than just numbers or strings. Let's define an array called coordinates, where each item isn't a string or a number, but instead is another array:</p>
+              <pre><code class="language-ruby">coordinates = [[3, 2], [2, 10], [4, 0]]</code></pre>
+              You can retrieve items in the outer coordinates array as normal using brackets. For example, to retrieve the second item from the coordinates array:
+              <pre><code class="language-ruby">p coordinates[1] # the output is [2, 10]</code></pre>
+              In order to retrieve items from the sub-array, you would use brackets again. For example, to retrieve the first sub-array item from the second coordinates array item:
+              <pre><code class="language-ruby">p coordinates[1][0] # the output is 2</code></pre>
+
+              <h3>Exercises:</h3>
+<ol>
+
+<li>
+<div class="rating" style="color:#fed130" >
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+</div>
+Start with the array
+<pre><code class="language-ruby">coordinates = [[3, 2], [2, 10], [4, 0]]</code></pre>
+Print out the third sub-array, then print out the second item of that sub-array. The result should be:
+<pre>
+  [4, 0]
+   0
+</pre>
+</li>
+
+
+<li>
+<div class="rating" style="color:#fed130" >
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+</div>
+Start with the array
+<pre><code class="language-ruby">people = [["Bruce", "Wayne", "Batman"], ["Selina", "Kyle", "Catwoman"], ["Barbara", "Gordon", "Oracle"], ["Terry", "McGinnis", "Batman Beyond"]]</code></pre>
+Use an each loop to print out each person on separate lines with their alter egos. The result should be:
+<pre>Bruce Wayne, a.k.a. Batman
+Selina Kyle, a.k.a. Catwoman
+Barbara Gordon, a.k.a. Oracle
+Terry McGinnis, a.k.a. Batman Beyond</pre>
+</li>
+
+<li>
+<div class="rating" style="color:#fed130" >
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+</div>
+Start with the array:
+<pre class="language-ruby"><code>array = [["a", "b", "z"], ["c", "d"], ["e", "f"], ["g", "h", "i", "j"]]</code></pre>
+Use an each loop <strong>within</strong> an each loop to take each of those letters and put them into a brand new one dimensional array. The result should be:
+<pre>["a", "b", "z", "c", "d", "e", "f", "g", "h", "i", "j"]</pre>
+Note - don't use the flatten method in this case, since it does all the work for you!
+</li>
+
+</ol>
+              <!-- BODY END -->
+              <div class="clear"></div>
+              <br>
+              <%= render 'share_buttons.html.erb' %>
+            </div>
+          </div>
+          <%= render 'post_navigation.html.erb' %>
+          <div class="line"></div>
+        </div>
+      </div>
+      <div class="sidebar nobottommargin col_last clearfix">
+        <div class="sidebar-widgets-wrap">
+          <%= render 'next_lessons.html.erb' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

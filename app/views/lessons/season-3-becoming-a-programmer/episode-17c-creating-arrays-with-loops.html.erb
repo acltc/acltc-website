@@ -1,0 +1,97 @@
+<section id="content">
+  <div class="content-wrap">
+    <div class="container clearfix">
+      <div class="postcontent nobottommargin clearfix">
+        <div class="single-post nobottommargin">
+          <div class="entry clearfix">
+            <div class="col_full portfolio-single-image">
+              <!-- VIDEO CONTENT -->
+              <!-- <iframe width="500" height="315" src="https://www.youtube.com/embed/8c3i5yJ89go" frameborder="0" allowfullscreen></iframe> -->
+            </div>
+            <div class="tutorial-content" class="entry-content notopmargin">
+              <div class="fancy-title title-dotted-border title-center">
+                <h2><%= @lesson_title %></h2>
+              </div>
+              <!-- BODY START -->
+
+              <p>In the previous examples, we have been using the "each" method to puts information about each item to the screen. Sometimes we want to collect the information in a variable instead of just puts the information to the screen. You can use the "each" method with an array to build a brand new array. For example, if you had an array of numbers and wanted to create a new array of numbers where each number is doubled, you can use this code:</p>
+              <pre><code class="language-ruby">numbers = [3, 4, 2, 1]
+              doubled_numbers = []
+              numbers.each do |number|
+                doubled_numbers << number * 2
+              end
+              p doubled_numbers
+              </code></pre>
+              The result should be:
+              <pre>[6, 8, 4, 2]</pre>
+              Note that we're using <code>p doubled_numbers</code> instead of <code>puts doubled_numbers</code>. This is because the puts statement tries to make the output look pretty, but it makes it hard to see the actual array. The p statement is better when you want to see the raw data like an array.
+
+              <h3>Exercises:</h3>
+<ol>
+
+<li>
+<div class="rating" style="color:#fed130" >
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+</div>
+Start with the array
+<pre><code class="language-ruby">words = ["soccer", "basketball", "tennis"]</code></pre>
+Use the "each" method to create a new array with every word in capital letters. The result should be:
+<pre>["SOCCER", "BASKETBALL", "TENNIS"]</pre>
+Note: be sure to use a p statement instead of a puts statement to see the actual array!
+</li>
+
+<li>
+<div class="rating" style="color:#fed130" >
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+</div>
+Start with the array
+<pre><code class="language-ruby">numbers = [23, 1, 34, 100, 9, 10, 23]</code></pre>
+Use the "each" method to create a new array with numbers less than 10. The result should be:
+<pre>[1, 9]</pre>
+Note: be sure to use a p statement instead of a puts statement to see the actual array!
+</li>
+
+<li>
+<div class="rating" style="color:#fed130" >
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+</div>
+Start with the arrays
+<pre><code class="language-ruby">girls = ["yumiko", "jessica", "carla"]
+boys = ["miguel", "aaron", "nico"]</code></pre>
+Use the "each" method to create a new array with all the names in a single array. The result should be:
+<pre>["yumiko", "jessica", "carla", "miguel", "aaron", "nico"]</pre>
+Note: be sure to use a p statement instead of a puts statement to see the actual array! Also note that the order of the names doesn't matter for this exercise.
+</li>
+
+</ol>
+              
+              <!-- BODY END -->
+              <div class="clear"></div>
+              <br>
+              <%= render 'share_buttons.html.erb' %>
+            </div>
+          </div>
+          <%= render 'post_navigation.html.erb' %>
+          <div class="line"></div>
+        </div>
+      </div>
+      <div class="sidebar nobottommargin col_last clearfix">
+        <div class="sidebar-widgets-wrap">
+          <%= render 'next_lessons.html.erb' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

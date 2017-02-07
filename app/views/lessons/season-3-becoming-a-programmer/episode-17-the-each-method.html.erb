@@ -15,11 +15,71 @@
 							<!-- BODY START -->
 							<h3>Exercises</h3>
 							<ol>
-								<li>
-									Start a program with the following line of code:
-<pre class="language-ruby"><code>numbers = [5, 17, 2, 899, 101, 4, 66, 123, 98]</code></pre>
-									The rest of your program should calculate the sum of all those numbers. Be sure to use the each method.
-								</li>
+							<li>
+							<div class="rating" style="color:#fed130" >
+							  <i class="glyphicon glyphicon-star" ></i>
+							  <i class="glyphicon glyphicon-star-empty" ></i>
+							  <i class="glyphicon glyphicon-star-empty" ></i>
+							  <i class="glyphicon glyphicon-star-empty" ></i>
+							  <i class="glyphicon glyphicon-star-empty" ></i>
+							</div>
+							Start with the array <pre><code class="language-ruby">cities = ["San Francisco", "New York", "Chicago", "Kigali"] </code></pre> and using the “each” method, puts each element 1 line at a time.
+
+							</li>
+
+							<li>
+							<div class="rating" style="color:#fed130" >
+							  <i class="glyphicon glyphicon-star" ></i>
+							  <i class="glyphicon glyphicon-star-empty" ></i>
+							  <i class="glyphicon glyphicon-star-empty" ></i>
+							  <i class="glyphicon glyphicon-star-empty" ></i>
+							  <i class="glyphicon glyphicon-star-empty" ></i>
+							</div>
+							Start with the array <pre><code class="language-ruby" >foods = ["Pizza", "Spaghetti", "Creme brulee", "Ramen"] </code></pre> and using the “each” method, puts each element, but add “is tasty.” to each line. The result should be:
+							<pre class="lessonPreFix">
+								Pizza is tasty.
+								Spaghetti is tasty.
+								Creme brulee is tasty.
+								Ramen is tasty.
+							</pre> 
+
+							</li>
+
+							<li>
+							<div class="rating" style="color:#fed130" >
+							  <i class="glyphicon glyphicon-star" ></i>
+							  <i class="glyphicon glyphicon-star-empty" ></i>
+							  <i class="glyphicon glyphicon-star-empty" ></i>
+							  <i class="glyphicon glyphicon-star-empty" ></i>
+							  <i class="glyphicon glyphicon-star-empty" ></i>
+							</div>
+							Start with the array <pre><code class="language-ruby">numbers = [1, 3, 7, 4]</code></pre> and using the “each” method, puts each number doubled. The result should be:
+							<pre class="lessonPreFix2">
+								2
+								6
+								14
+								8
+							</pre>
+							</li>
+
+							<li>
+							<div class="rating" style="color:#fed130" >
+							  <i class="glyphicon glyphicon-star" ></i>
+							  <i class="glyphicon glyphicon-star-empty" ></i>
+							  <i class="glyphicon glyphicon-star-empty" ></i>
+							  <i class="glyphicon glyphicon-star-empty" ></i>
+							  <i class="glyphicon glyphicon-star-empty" ></i>
+							</div>
+							Start with the same array <pre><code class="language-ruby">cities = ["San Francisco", "New York", "Chicago", "Kigali"] </code></pre> and using the “each” method, puts each element 1 line at a time, but each city name spelled backwards. The result should be:
+							<pre class="lessonPreFix3">
+								ocsicnarF naS
+								kroY weN
+								ogacihC
+								ilagiK
+							</pre> 
+
+							</li>
+
 							</ol>
 							<%= render 'form_solutions.html.erb' %>
 							<!-- BODY END -->
@@ -40,3 +100,20 @@
 		</div>
 	</div>
 </section>
+
+<script>
+	var preSelect = document.querySelector(".lessonPreFix");
+	preSelect.textContent = preSelect.textContent.replace(/^\s+/mg, "");
+
+	var preSelect = document.querySelector(".lessonPreFix2");
+	preSelect.textContent = preSelect.textContent.replace(/^\s+/mg, "");
+
+	var preSelect = document.querySelector(".lessonPreFix3");
+	preSelect.textContent = preSelect.textContent.replace(/^\s+/mg, "");
+</script>
+
+<style>
+	.lessonPreFix{
+		text-align: left;
+	}
+</style>

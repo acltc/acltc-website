@@ -1,0 +1,85 @@
+<section id="content">
+  <div class="content-wrap">
+    <div class="container clearfix">
+      <div class="postcontent nobottommargin clearfix">
+        <div class="single-post nobottommargin">
+          <div class="entry clearfix">
+            <div class="col_full portfolio-single-image">
+              <!-- VIDEO CONTENT -->
+              <!-- <iframe width="500" height="315" src="https://www.youtube.com/embed/8c3i5yJ89go" frameborder="0" allowfullscreen></iframe> -->
+            </div>
+            <div class="tutorial-content" class="entry-content notopmargin">
+              <div class="fancy-title title-dotted-border title-center">
+                <h2><%= @lesson_title %></h2>
+              </div>
+              <!-- BODY START -->
+If you have a hash, it's easy to both retrieve and change any value. Let's define a hash to represent the amount of items in a store:</p>
+<pre><code class="language-ruby">item_amounts = {"chair" => 5, "table" => 2}</code></pre>
+<p>To retrieve the value of how many tables there are in the store, you would use square brackets with the key name:</p>
+<pre><code class="language-ruby">p item_amounts["table"]</code></pre>
+<p>The output of this code is:</p>
+<pre>2</pre>
+If someone buys a table, now there's one less in the store. To redefine the value of the amount of tables, you would use square brackets with the key name and set it equal to the new value:</p>
+<pre><code class="language-ruby">item_amounts["table"] = 1
+p item_amounts</code></pre>
+The output of this code is:
+<pre>{"chair" => 5, "table" => 1}</pre>
+Defining a brand new key and value to the hash looks very similar. Again, use square brackets with the key name (even though it doesn't exist yet!) and set it equal to the value you want. 
+<pre><code class="language-ruby">item_amounts["desk"] = 7
+p item_amounts</code></pre>
+This will add a new key called "desk" to the hash with a value of 7. So the output of this code will be:
+<pre>{"chair" => 5, "table" => 1, "desk" => 7}</pre>
+
+<h3>Exercises:</h3>
+
+<ol>
+
+<li>
+<div class="rating" style="color:#fed130" >
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+</div>
+Start with the hash
+<pre><code class="language-ruby">city_populations = {"Chicago" => 2700000}</code></pre> 
+Add populations to the city_populations hash for New York City (8.4 million) and San Francisco (800,000). The result should be:
+<pre>{"Chicago" => 2700000, "New York City" => 8400000, "San Francisco" => 800000}</pre>
+</li>
+
+
+<li>
+<div class="rating" style="color:#fed130" >
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+</div>
+Start with the array of arrays
+<pre><code class="language-ruby">meals = [["breakfast", "pancakes with maple syrup"], ["lunch", "BLT"], ["dinner", "salmon with lemon rice"]]</code></pre> 
+Each inner array’s first element describes the meal of the day (e.g. "breakfast"), and the second element in each inner array describes the particular meal (e.g. “pancakes with maple syrup”). Use the "each" method to create a hash called “meals_hash”. The keys should be the type of meal, and the values the specific type.  The result should be:
+<pre>{"breakfast" => "pancakes with maple syrup", "lunch" => "BLT", "dinner" => "salmon with lemon rice"}</pre>
+Remember to use the each method, and don’t use the “to_h” method (that’s cheating!).
+</li>
+
+</ol>
+              <!-- BODY END -->
+              <div class="clear"></div>
+              <br>
+              <%= render 'share_buttons.html.erb' %>
+            </div>
+          </div>
+          <%= render 'post_navigation.html.erb' %>
+          <div class="line"></div>
+        </div>
+      </div>
+      <div class="sidebar nobottommargin col_last clearfix">
+        <div class="sidebar-widgets-wrap">
+          <%= render 'next_lessons.html.erb' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

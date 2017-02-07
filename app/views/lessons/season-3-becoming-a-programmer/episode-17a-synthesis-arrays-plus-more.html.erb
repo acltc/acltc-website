@@ -14,14 +14,71 @@
 							</div>
 							<!-- BODY START -->
 							<h3>Exercises</h3>
-							<ol>
-								<li>
-									Write a program that asks the user to type in 10 words, one at a time. The program will then print out every other word.
-								</li>
-								<li>
-									Write a program that asks the user to type in 10 words, one at a time. The program will only print out words that start with the letter a. (Check out the "start_with?" method available to strings.)
-								</li>
-							</ol>
+<p>You can use the "each" method combined with conditionals to filter items from an array. For example, if you had an array of words and only wanted to print out words less than 5 characters, you can use this code:</p>
+<pre><code class="language-ruby">words = ["dog", "canary", "basketball", "sun", "moon"]
+words.each do |word|
+  if word.length < 5
+    puts word
+  end
+end
+</code></pre>
+The output of this code is:
+<pre>dog
+sun
+moon</pre>
+
+<h3>Exercises:</h3>
+<ol>
+
+<li>
+<div class="rating" style="color:#fed130" >
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+</div>
+Start with the array
+<pre><code class="language-ruby">numbers = [4, 9, 2, 1, 12, 3, 8]</code></pre>
+Use the "each" method to only print out the numbers greater than 5. The result should be:
+<pre>9
+12
+8</pre>
+</li>
+
+<li>
+<div class="rating" style="color:#fed130" >
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+</div>
+Start with the array
+<pre><code class="language-ruby">names = ["Ada", "Charles", "Adam", "Aaron", "Michelle"]</code></pre>
+Use the "each" method to only print out the names that start with "A". (Hint: use the string "start_with?" method.). The result should be:
+<pre>Ada
+Adam
+Aaron</pre>
+</li>
+
+<li>
+<div class="rating" style="color:#fed130" >
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+</div>
+Start with the array
+<pre><code class="language-ruby">words = ["cat", "plane", "mission", "letter", "chair"]</code></pre>
+Use the "each" method to only print out words that don't have the letter "e". (Hint: use the string "include?" method.) The result should be:
+<pre>cat
+mission
+chair</pre>
+</li>
+
+</ol>
 							<%= render 'form_solutions.html.erb' %>
 							<!-- BODY END -->
 							<div class="clear"></div>
