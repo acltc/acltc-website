@@ -42,7 +42,7 @@ class AcltcMailer < ApplicationMailer
 
   def tour_email(tour)
     @tour = tour
-    mail(from: "mg.anyonecanlearntocode.com", to: 'admissions@anyonecanlearntocode.com', subject: 'Tour Scheduled', reply_to: @tour.email )
+    mail(from: "mg.anyonecanlearntocode.com", to: 'chris.g.connell@gmail.com', subject: 'Tour Scheduled', reply_to: @tour.email )
   end
 
   def tour_email_reply(tour)
@@ -70,7 +70,7 @@ class AcltcMailer < ApplicationMailer
     else
       @city_advisor = "zev@anyonecanlearntocode.com"
     end
-    mail(from: "mg.anyonecanlearntocode.com", to: ["ben@actualize.co", "jay@actualize.co", @city_advisor], subject: "New Info Session Sign Up")
+    mail(from: "mg.anyonecanlearntocode.com", to: "chris.g.connell@gmail.com", subject: "New Info Session Sign Up")
   end
 
   def info_session_sign_up_confirmation_email(info_session_sign_up)

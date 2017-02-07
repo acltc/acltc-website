@@ -31,6 +31,7 @@ class ToursController < ApplicationController
     @tour = Tour.new(tour_params)
 
     if @tour.save
+      create_hubspot_contact
       # @tour.interview.update(booked: true)
       AcltcMailer.tour_email(@tour).deliver_now
       AcltcMailer.tour_email_reply(@tour).deliver_now
@@ -100,5 +101,17 @@ class ToursController < ApplicationController
     def split_test
       @tour_split_test = ab_test("Book A Tour New Form Test", ["Book A Tour Long Form", "Book A Tour Short Form"])
     end
+
+    def create_hubspot_contact
+    lower_levels = ["Mousetrap", "Info Session"]
+    contact = Hubspot::Contact.find_by_email(tour_params[:email])
+    if contact
+      if lower_levels.include?(contact["lead_type"])
+        contact.update!({lead_type: "Tour"})
+      end
+    else
+      Hubspot::Contact.create!(tour_params[:email], {firstname: tour_params[:first_name], lastname: tour_params[:last_name], phone: tour_params[:phone], lead_type: "Tour"})
+    end   
+  end
 
 end
