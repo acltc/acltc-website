@@ -110,7 +110,7 @@ class ToursController < ApplicationController
           contact.update!({lead_type: "Tour"})
         end
       else
-        Hubspot::Contact.create!(tour_params[:email], {firstname: tour_params[:first_name], lastname: tour_params[:last_name], phone: tour_params[:phone], lead_type: "Tour"})
+        Hubspot::Contact.create!(tour_params[:email], {firstname: tour_params[:first_name], lastname: tour_params[:last_name], phone: tour_params[:phone], lead_type: "Tour", created_at: @tour.created_at })
       end   
     end
 

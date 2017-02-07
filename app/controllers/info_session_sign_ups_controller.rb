@@ -49,7 +49,7 @@ class InfoSessionSignUpsController < ApplicationController
         contact.update!({lead_type: "Info Session"})
       end
     else
-      Hubspot::Contact.create!(params[:email], {firstname: params[:name], phone: params[:phone], lead_type: "Info Session"})
+      Hubspot::Contact.create!(params[:email], {firstname: params[:name], phone: params[:phone], lead_type: "Info Session", created_at: @info_session_sign_up.created_at })
     end   
   end
 

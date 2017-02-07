@@ -123,7 +123,7 @@ class ApplicationsController < ApplicationController
         contact.update!({lead_type: "Complete Application"})
       end
     else
-      Hubspot::Contact.create!(application_params[:email], {firstname: application_params[:first_name], lastname: application_params[:last_name], phone: application_params[:phone], lead_type: "Complete Application"})
+      Hubspot::Contact.create!(application_params[:email], {firstname: application_params[:first_name], lastname: application_params[:last_name], phone: application_params[:phone], lead_type: "Complete Application", created_at: @application.created_at })
     end   
   end
 
