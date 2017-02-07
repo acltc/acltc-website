@@ -18,7 +18,7 @@ class AcltcMailer < ApplicationMailer
 
   def application_email(application)
     @application = application
-    mail(from: "mg.anyonecanlearntocode.com", to: 'admissions@anyonecanlearntocode.com', subject: 'Application Submitted', reply_to: @application.email )
+    mail(from: "mg.anyonecanlearntocode.com", to: 'chris.g.connell@gmail.com', subject: 'Application Submitted', reply_to: @application.email )
   end
 
   def application_email_reply(application)

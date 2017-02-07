@@ -62,6 +62,7 @@ class ApplicationsController < ApplicationController
   def create
     @application = Application.new(application_params)
     if @application.save
+      create_hubspot_contact
       converted!("Long Form Vs. Short Form") unless params[:long]
       @application.interview.update(booked: true)
       AcltcMailer.application_email(@application).deliver_now
@@ -112,6 +113,18 @@ class ApplicationsController < ApplicationController
   def split_test
     @long_form_short_form = ab_test("Long Form Vs. Short Form", ["Long Form", "Short Form"])
     # @progress_bar = ab_test("Application Progress Bar Test", ["Progress Bar", "No Progress Bar"])
+  end
+
+  def create_hubspot_contact
+    lower_levels = ["Mousetrap", "Info Session", "Tour"]
+    contact = Hubspot::Contact.find_by_email(application_params[:email])
+    if contact
+      if lower_levels.include?(contact["lead_type"])
+        contact.update!({lead_type: "Complete Application"})
+      end
+    else
+      Hubspot::Contact.create!(application_params[:email], {firstname: application_params[:first_name], lastname: application_params[:last_name], phone: application_params[:phone], lead_type: "Complete Application"})
+    end   
   end
 
 end

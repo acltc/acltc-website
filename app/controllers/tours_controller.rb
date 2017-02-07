@@ -103,15 +103,15 @@ class ToursController < ApplicationController
     end
 
     def create_hubspot_contact
-    lower_levels = ["Mousetrap", "Info Session"]
-    contact = Hubspot::Contact.find_by_email(tour_params[:email])
-    if contact
-      if lower_levels.include?(contact["lead_type"])
-        contact.update!({lead_type: "Tour"})
-      end
-    else
-      Hubspot::Contact.create!(tour_params[:email], {firstname: tour_params[:first_name], lastname: tour_params[:last_name], phone: tour_params[:phone], lead_type: "Tour"})
-    end   
-  end
+      lower_levels = ["Mousetrap", "Info Session"]
+      contact = Hubspot::Contact.find_by_email(tour_params[:email])
+      if contact
+        if lower_levels.include?(contact["lead_type"])
+          contact.update!({lead_type: "Tour"})
+        end
+      else
+        Hubspot::Contact.create!(tour_params[:email], {firstname: tour_params[:first_name], lastname: tour_params[:last_name], phone: tour_params[:phone], lead_type: "Tour"})
+      end   
+    end
 
 end

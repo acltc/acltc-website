@@ -214,24 +214,6 @@ ActiveRecord::Schema.define(version: 20170118230724) do
     t.string   "location"
   end
 
-  create_table "job_openings", force: :cascade do |t|
-    t.string   "title"
-    t.string   "location"
-    t.string   "salary"
-    t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "k12_contacts", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
-    t.text     "message"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "lakewood_applications", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -361,10 +343,6 @@ ActiveRecord::Schema.define(version: 20170118230724) do
     t.datetime "updated_at",  null: false
     t.string   "first_name"
     t.string   "mousetrap"
-    t.string   "ip_address"
-    t.string   "city"
-    t.string   "country"
-    t.string   "state"
     t.string   "postal_code"
     t.string   "phone"
   end
