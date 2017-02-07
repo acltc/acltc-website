@@ -16,7 +16,7 @@
         <% end %>
         <div class="form-group">
           <%= r.label :referrer_first_name, 'First Name', class: "required"%>
-          <%= r.text_field :referrer_first_name, class: "sm-form-control", "v-model": "referrer_first_name", placeholder: "Your First Name" %>
+          <%= r.text_field :referrer_first_name, class: "sm-form-control", "v-model" => "referrer_first_name", placeholder: "Your First Name" %>
         </div>
 
         <!-- YOUR LAST NAME -->
@@ -34,7 +34,7 @@
         <% end %>
         <div class="form-group">
           <%= r.label :referrer_email, 'Email', class: "required" %>
-          <%= r.email_field :referrer_email, class: "sm-form-control", "v-model": "referrer_email", placeholder: "Your Email" %>
+          <%= r.email_field :referrer_email, class: "sm-form-control", "v-model" => "referrer_email", placeholder: "Your Email" %>
         </div>
 
         <!-- YOUR PHONE NUMBER -->
@@ -52,7 +52,7 @@
         <% end %>
         <div class="form-group">
           <%= r.label :referred_first_name, 'Friend\'s Name', class: "required" %>
-          <%= r.text_field :referred_first_name, class: "sm-form-control", "v-model": "referred_first_name", placeholder: "Friend's First Name" %>
+          <%= r.text_field :referred_first_name, class: "sm-form-control", "v-model" => "referred_first_name", placeholder: "Friend's First Name" %>
         </div>
         
         <!-- FRIEND'S EMAIL -->
@@ -61,7 +61,7 @@
         <% end %>
         <div class="form-group">
           <%= r.label :referred_email, 'Friend\'s Email', class: "required" %>
-          <%= r.email_field :referred_email, class: "sm-form-control", "v-model": "referred_email", placeholder: "Friend's Email" %>
+          <%= r.email_field :referred_email, class: "sm-form-control", "v-model" => "referred_email", placeholder: "Friend's Email" %>
         </div>
         <br>
     </div>
