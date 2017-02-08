@@ -1,0 +1,34 @@
+<%= render "/layouts/page_title", page_title: "Referrals", page_subtitle: "" %>
+<div id="referrals">
+<section id="content">
+  <div class="content-wrap dash-wrap">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <%= link_to "Download Referrals CSV", referrals_path(format: "csv"), :class => 'button btn-secondary csv-button'  %>
+
+        <table class="table table-striped index-dash-table">
+          <th>Date</th>
+          <th>Referrer Full Name</th>
+          <th>Referrer Email</th>
+          <th>Referrer Phone Number</th>
+          <th>Referred First Name</th>
+          <th>Referred Email</th>
+
+          <% @referrals.each do |referral| %>
+            <tr>
+              <td><%= referral.formatted_date %></td>
+              <td><%= referral.full_name %></td>
+              <td><%= referral.referrer_email %></td>
+              <td><%= referral.referrer_phone_number %></td>
+              <td><%= referral.referred_first_name %></td>
+              <td><%= referral.referred_email %></td>
+            </tr>
+          <% end %>
+          
+        </table>
+
+      </div>
+    </div>
+  </div>
+</section>
+</div>
