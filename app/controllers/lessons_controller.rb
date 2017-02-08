@@ -57,28 +57,42 @@ class LessonsController < ApplicationController
     { title: "Challenge Exercise 1 - Algorithm Bubble Sort", time: "0:00", category_id: 2 },
     { title: "Challenge Exercise 2 - Research Different Loops", time: "0:00", category_id: 2 },
     
-    { title: "Episode 19 - Hashes", time: "9:24", category_id: 3 },
-    { title: "Episode 19a - Adding Values To A Hash", time: "0:00", category_id: 3 },
+    { title: "Episode 19 - Hashes", time: "9:24", category_id: 2 },
+    { title: "Episode 19a - Adding Values To A Hash", time: "0:00", category_id: 2 },
+    { title: "Episode 19b - Things That Can Go Wrong With Hashes", time: "11:02", category_id: 2 },
+    { title: "Episode 20 - Hashes As Objects", time: "8:38", category_id: 2 },
+    { title: "Episode 20a - Arrays of Hashes", time: "10:19", category_id: 2 },
+    { title: "Episode 21 - Symbols", time: "0:00", category_id: 2 },
+    { title: "Episode 21a - Idiomatic Ruby: Hashes With Symbols", time: "0:00", category_id: 2 },
+    { title: "Challenge Exercise 1 - Algorithm Insertion Sort", time: "0:00", category_id: 2 },
     
-    { title: "Episode 19b - Things That Can Go Wrong With Hashes", time: "11:02", category_id: 2},
-    { title: "Episode 19 - How To Break Down A Problem", time: "29:30", category_id: 2},
-    { title: "Episode 20 - Hashes As Objects", time: "8:38", category_id: 2},
-    { title: "Episode 20a - Arrays of Hashes", time: "10:19", category_id: 2},
-    { title: "Episode 21 - RubyGems", time: "5:19", category_id: 2},
-    { title: "Episode 22 - API Gems", time: "12:18", category_id: 2},
+    # { title: "Episode 19 - How To Break Down A Problem", time: "29:30", category_id: 2},
+    # { title: "Episode 21 - RubyGems", time: "5:19", category_id: 2},
+    # { title: "Episode 22 - API Gems", time: "12:18", category_id: 2},
 
-    { title: "Episode 1 - Intro to OOP", time: "10:04", category_id: 3},
-    { title: "Episode 2 - Arguments", time: "8:11", category_id: 3},
-    { title: "Episode 2a - Multiple Arguments", time: "3:56", category_id: 3},
-    { title: "Episode 2b - Methods: Things That Can Go Wrong", time: "5:44", category_id: 3},
-    { title: "Episode 3 - Side Effects", time: "4:46", category_id: 3},
-    { title: "Episode 4 - Instance Variables", time: "8:06", category_id: 3},
-    { title: "Episode 4a - More About Return Values", time: "3:54", category_id: 3},
-    { title: "Episode 4b - Idiomatic Ruby", time: "5:12", category_id: 3},
-    { title: "Episode 5 - Constructors", time: "5:53", category_id: 3},
-    { title: "Episode 6 - Methods Calling Methods", time: "3:28", category_id: 3},
-    { title: "Episode 7 - Synthesis: Putting It All Together", time: "11:35", category_id: 3},
-    { title: "Episode 8 - Converting Hashes To Objects", time: "7:41", category_id: 3}
+    { title: "Episode 1 - Intro to OOP", time: "10:04", category_id: 3 },
+    { title: "Episode 2 - Arguments", time: "8:11", category_id: 3 },
+    { title: "Episode 2a - Multiple Arguments", time: "3:56", category_id: 3 },
+    { title: "Episode 2b - Methods: Things That Can Go Wrong", time: "5:44", category_id: 3 },
+    { title: "Episode 3 - Side Effects", time: "4:46", category_id: 3 },
+    { title: "Episode 4 - Instance Variables", time: "8:06", category_id: 3 },
+    { title: "Episode 4a - More About Return Values", time: "3:54", category_id: 3 },
+    { title: "Episode 4b - Idiomatic Ruby", time: "5:12", category_id: 3} ,
+    { title: "Episode 5 - Constructors", time: "5:53", category_id: 3 },
+    { title: "Episode 5a - Hashes Versus Classes", time: "0:00", category_id: 3 },
+    { title: "Episode 6 - Methods Calling Methods", time: "3:28", category_id: 3 },
+    { title: "Episode 7 - Converting Hashes To Objects", time: "7:41", category_id: 3 },
+
+    { title: "HTML Intro Part 1", time: "12:45", category_id: 3 },
+    { title: "HTML Intro Part 2", time: "5:40", category_id: 3 },
+    { title: "HTML Intro Part 3", time: "5:56", category_id: 3 },
+    { title: "HTML Intro Part 4", time: "9:55", category_id: 3 },
+
+    { title: "Challenge Exercise 1 OOP Synthesis", time: "0:00", category_id: 3 },
+    { title: "Challenge Exercise 2 CSS Layout", time: "0:00", category_id: 3 }
+
+
+    # { title: "Episode 7 - Synthesis: Putting It All Together", time: "11:35", category_id: 3 },
 
   ].freeze
 

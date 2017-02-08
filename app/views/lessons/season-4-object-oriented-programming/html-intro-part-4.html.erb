@@ -1,0 +1,49 @@
+<section id="content">
+  <div class="content-wrap">
+    <div class="container clearfix">
+      <div class="postcontent nobottommargin clearfix">
+        <div class="single-post nobottommargin">
+          <div class="entry clearfix">
+            <div class="col_full portfolio-single-image">
+              <!-- VIDEO CONTENT -->
+              <iframe width="500" height="315" src="https://www.youtube.com/embed/l62BW9ji3pE?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="tutorial-content" class="entry-content notopmargin">
+              <div class="fancy-title title-dotted-border title-center">
+                <h2><%= @lesson_title %></h2>
+              </div>
+              <!-- BODY START -->
+              <h3>Exercises</h3>
+              <div class="rating" style="color:#fed130" >
+                <i class="glyphicon glyphicon-star" ></i>
+                <i class="glyphicon glyphicon-star-empty" ></i>
+                <i class="glyphicon glyphicon-star-empty" ></i>
+                <i class="glyphicon glyphicon-star-empty" ></i>
+                <i class="glyphicon glyphicon-star-empty" ></i>
+              </div>
+              <p>CSS Exercise:</p>
+
+              <p>Using JSFiddle, create a brand new webpage to create an About Me page. An About Me page should be about you, and is commonly found on blogs. Use as many HTML elements as you can get your hands on, including three new elements that I have not mentioned in any of the screencasts. Then, go crazy with CSS and dazzle up your page as if it were 1996. You'll probably have to do a decent amount of Googling, but one really useful site for learning HTML and CSS is W3 schools: http://www.w3schools.com.</p>
+
+              <p>Exercise:</p>
+              <p>Save your JSFiddle exercise and post the link below.</p>
+
+              <p>After completing this, you may be wondering how to include CSS into your local HTML files. There are several different ways to do this, and Rails takes a different approach than all those ways, so I haven't bothered dealing with this in these screencasts. But if you'd like to do this anyway, see this page to get started: (http://www.w3schools.com/css/css_howto.asp)</p>
+              <!-- BODY END -->
+              <div class="clear"></div>
+              <br>
+              <%= render 'share_buttons.html.erb' %>
+            </div>
+          </div>
+          <%= render 'post_navigation.html.erb' %>
+          <div class="line"></div>
+        </div>
+      </div>
+      <div class="sidebar nobottommargin col_last clearfix">
+        <div class="sidebar-widgets-wrap">
+          <%= render 'next_lessons.html.erb' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

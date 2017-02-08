@@ -6,24 +6,24 @@
           <div class="entry clearfix">
             <div class="col_full portfolio-single-image">
               <!-- VIDEO CONTENT -->
-              <iframe width="500" height="315" src="https://www.youtube.com/embed/7oUygFgamSc" frameborder="0" allowfullscreen></iframe>
+              <!-- <iframe width="500" height="315" src="https://www.youtube.com/embed/8c3i5yJ89go" frameborder="0" allowfullscreen></iframe> -->
             </div>
             <div class="tutorial-content" class="entry-content notopmargin">
               <div class="fancy-title title-dotted-border title-center">
                 <h2><%= @lesson_title %></h2>
               </div>
               <!-- BODY START -->
-              <h3>Exercises</h3>
+<p>Because symbols are often used with hashes, there's a shortcut syntax in Ruby for defining such a hash. Instead of writing this:</p>
+<pre><code class="language-ruby">person = {:name => "Dana", :email => "dana@email.com"}
+puts person[:name] # the output is Dana</code></pre>
+<p>You can write this:</p>
+<pre><code class="language-ruby">person = {name: "Dana", email: "dana@email.com"}
+puts person[:name] # the output is Dana</code></pre>
+Here the <code>=></code> is gone and the colon for the symbol moves to the end of the word. Note that this shortcut is nice since it takes fewer characters to write, but it can be misleading. The shortcut can only be used when the keys are symbols. Also, when accessing values from the hash, the colon for the symbol is still at the start of the word, it doesn't change.
+
+<h3>Exercises:</h3>
 <ol>
-<li>
-<div class="rating" style="color:#fed130" >
-  <i class="glyphicon glyphicon-star" ></i>
-  <i class="glyphicon glyphicon-star-empty" ></i>
-  <i class="glyphicon glyphicon-star-empty" ></i>
-  <i class="glyphicon glyphicon-star-empty" ></i>
-  <i class="glyphicon glyphicon-star-empty" ></i>
-</div>Create a Song class that can produce a song instance that represents your favorite song. Include the song’s title, artist, and lyrics. NOTE: Hold onto this class! You’ll be needing it for many future exercises.
-</li>
+
 <li>
 <div class="rating" style="color:#fed130" >
   <i class="glyphicon glyphicon-star" ></i>
@@ -32,10 +32,32 @@
   <i class="glyphicon glyphicon-star-empty" ></i>
   <i class="glyphicon glyphicon-star-empty" ></i>
 </div>
-Create a Cat class that can produce a particular type of cat. Include the cat’s name, breed, and age.
+Identify and fix the error in the following code.
+<pre><code class="language-ruby">food = {name: "Lettuce", color: "green"}
+puts food[name:]</code></pre>
 </li>
+
+<li>
+<div class="rating" style="color:#fed130" >
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+</div>
+Convert the following hashes to use symbols as the keys with the shortcut syntax.
+<pre><code class="language-ruby">grades = { "Jane Doe" => 10, "Jim Doe" => 6 }
+puts grades["Jim Doe"] # the output is 6
+
+options = { :font_size => 10, :font_family => "Arial" }
+puts options[:font_size] # the output is 10
+
+h = {"colors"  => ["red", "blue", "green"], "letters" => ["a", "b", "c" ]}
+p h["letters"] # the output is ["a", "b", "c"]</code></pre>
+</li>
+
 </ol>
-              <%= render 'form_solutions.html.erb' %>
+              
               <!-- BODY END -->
               <div class="clear"></div>
               <br>

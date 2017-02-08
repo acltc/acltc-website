@@ -14,42 +14,18 @@
               </div>
               <!-- BODY START -->
               <h3>Exercises</h3>
-              <ol>
-                <li>
-                Assuming we have the following code:
+<ol>
 
-                <pre class="language-ruby"><code>
-people = [
-  {
-    "first_name" => "Bob",
-    "last_name" => "Jones", 
-    "hobbies" => ["basketball", "chess", "phone tag"]
-   },
-   {
-    "first_name" => "Molly",
-    "last_name" => "Barker",
-    "hobbies" => ["programming", "reading", "jogging"]
-   },
-   {
-    "first_name" => "Kelly",
-    "last_name" => "Miller",
-    "hobbies" => ["cricket", "baking", "stamp collecting"]
-   }
-]
-
-people.each do |person|
-  person["hobbies"].each do |hobby|
-    puts hobby.upcase
-  end
-end
-
-                </code></pre>
-                Perform an exercise similar to <a href="/tutorial/lessons/episode-13a-code-flow-with-loops" target="_blank">Episode 13a</a>, in which you mark down the order in which each line of code runs.
-                </li>
-                <li>
-                  Start with this code:
-                  <pre class="language-ruby"><code>
-people = [
+<li>
+<div class="rating" style="color:#fed130" >
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+</div>
+Start with the array of hashes
+<pre class="language-ruby"><code>people = [
   {
     "first_name" => "Bob",
     "last_name" => "Jones", 
@@ -67,23 +43,106 @@ people = [
    }
 ]
 </code></pre>
+Write an "each" loop to print out every person's first and last name on separate lines. The result should be:
+<pre>Bob Jones
+Molly Barker
+Kelly Miller</pre>
+</li>
 
-It's an array of hashes that is used to represent data about different people. Using an each loop, the rest of your program should add additional keys and values to each person (in addition to the existing first_name, last_name, and hobbies), as follows:
 
-Each person should be given a random age.
+<li>
+<div class="rating" style="color:#fed130" >
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+</div>
+Start with the same array of hashes
+<pre class="language-ruby"><code>people = [
+  {
+    "first_name" => "Bob",
+    "last_name" => "Jones", 
+    "hobbies" => ["basketball", "chess", "phone tag"]
+   },
+   {
+    "first_name" => "Molly",
+    "last_name" => "Barker",
+    "hobbies" => ["programming", "reading", "jogging"]
+   },
+   {
+    "first_name" => "Kelly",
+    "last_name" => "Miller",
+    "hobbies" => ["cricket", "baking", "stamp collecting"]
+   }
+]
+</code></pre>
+This time, write an "each" loop to print out each person's hobby, each on separate lines. The result should be:
+<pre>basketball
+chess
+phone tag
+programming
+reading
+jogging
+cricket
+baking
+stamp collecting</pre>
+</li>
 
-<em>Hint:</em> Using <code>rand(100)</code> will help you generate a random number from 0 to 99.
-
-Each person should given an email address that consists of their first name + last name @ gmail.com. For example, Bob Jones will have an email of bobjones@gmail.com.
-
+<li>
+<div class="rating" style="color:#fed130" >
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+</div>
+Start with the same array of hashes
+<pre class="language-ruby"><code>people = [
+  {
+    "first_name" => "Bob",
+    "last_name" => "Jones", 
+    "hobbies" => ["basketball", "chess", "phone tag"]
+   },
+   {
+    "first_name" => "Molly",
+    "last_name" => "Barker",
+    "hobbies" => ["programming", "reading", "jogging"]
+   },
+   {
+    "first_name" => "Kelly",
+    "last_name" => "Miller",
+    "hobbies" => ["cricket", "baking", "stamp collecting"]
+   }
+]
+</code></pre>
+Use an "each" loop to give each person an email address that consists of their first name + last name @ gmail.com. For example, Bob Jones will have an email of bobjones@gmail.com.
 The program should end with:
-
 <pre class="language-ruby"><code>p people</code></pre>
-
-so that you can see if the correct modifications were made to each hash.                     
-                  
-                </li>
-              </ol>
+so that you can see if the correct modifications were made to each hash. The result should be:
+<pre>[
+  {
+    "first_name" => "Bob",
+    "last_name" => "Jones", 
+    "hobbies" => ["basketball", "chess", "phone tag"],
+    "email" => "bobjones@gmail.com"
+   },
+   {
+    "first_name" => "Molly",
+    "last_name" => "Barker",
+    "hobbies" => ["programming", "reading", "jogging"],
+    "email" => "mollybarker@gmail.com"
+   },
+   {
+    "first_name" => "Kelly",
+    "last_name" => "Miller",
+    "hobbies" => ["cricket", "baking", "stamp collecting"],
+    "email" => "kellymiller@gmail.com"
+   }
+]</pre>
+(Note that your output won't be indented nicely).
+</li>
+</ol>
               <%= render 'form_solutions.html.erb' %>
               <!-- BODY END -->
               <div class="clear"></div>

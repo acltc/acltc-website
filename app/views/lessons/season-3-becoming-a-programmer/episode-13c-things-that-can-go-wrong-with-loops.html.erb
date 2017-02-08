@@ -13,7 +13,63 @@
 								<h2><%= @lesson_title %></h2>
 							</div>
 							<!-- BODY START -->
-							
+<ol>
+<li>
+<div class="rating" style="color:#fed130" >
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+</div>
+Fix the code to avoid an infinite loop.
+<pre class="language-ruby"><code># Return an array that doubles each number
+numbers = [1, 2, 3, 4]
+
+numbers.each do |number|
+  numbers << number * 2
+end
+
+puts numbers</code></pre>
+</li>
+<li>
+<div class="rating" style="color:#fed130" >
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+</div>
+The following code uses a while loop. A while loop is like an each loop, but it doesn't use an array. Instead it continues to run as long as the condition next to the while evaluates to true. Fix the code to avoid an infinite loop.
+<pre class="language-ruby"><code># To escape the while loop, the user must input your favorite team as theirs
+puts "Who is your favorite team?"
+favorite_team = gets.chomp
+while favorite_team != "Arsenal"
+  puts "Are you sure they're your favorite? I think you meant Arsenal. Try again."
+end
+
+puts "That's what I thought. Now you're on the right side."</code></pre>
+</li>
+<li>
+<div class="rating" style="color:#fed130" >
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+</div>
+Fix the code to avoid an infinite loop.
+<pre class="language-ruby"><code># Blast off! Count down from 10 and then blast off your rocket
+count = 10
+puts "Let's send this thing to space!"
+while count <= 10
+  puts count
+  count -= 1
+end
+
+puts "BLAST OFF!"</code></pre>
+</li>
+</ol>
 							<!-- BODY END -->
 							<div class="clear"></div>
 							<br>

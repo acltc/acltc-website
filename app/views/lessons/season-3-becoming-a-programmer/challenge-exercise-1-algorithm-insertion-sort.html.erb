@@ -1,0 +1,52 @@
+<section id="content">
+  <div class="content-wrap">
+    <div class="container clearfix">
+      <div class="postcontent nobottommargin clearfix">
+        <div class="single-post nobottommargin">
+          <div class="entry clearfix">
+            <div class="col_full portfolio-single-image">
+              <!-- VIDEO CONTENT -->
+              <!-- <iframe width="500" height="315" src="https://www.youtube.com/embed/8c3i5yJ89go" frameborder="0" allowfullscreen></iframe> -->
+            </div>
+            <div class="tutorial-content" class="entry-content notopmargin">
+              <div class="fancy-title title-dotted-border title-center">
+                <h2><%= @lesson_title %></h2>
+              </div>
+              <!-- BODY START -->
+<h4>We want you to attempt and submit a solution for the challenge exercise. It's okay if the solution isn't correct (the problem is quite difficult), but it's important to try such difficult problems to stretch your brain!</h4>
+<div class="rating" style="color:#fed130" >
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star" ></i>
+</div>
+<p>Last week you implemented your own sort using a bubble sort algorithm. The goal of this exercise is to implement your own sort again, this time using a different algorithm!</p>
+<p>
+The approach you will implement is called insertion sort. This algorithm is similar to how you would sort a hand of playing cards being dealt to you. You insert every new card in the proper location to always keep your cards sorted. You can see a visual of it in action below.
+<div>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Insertion-sort-example-300px.gif">
+</div>
+The black squares represent the items that are properly sorted. Each new item is inserted into the proper index one at a time.
+</p>
+<p>
+Your job is to implement an insertion sort that takes an array and returns a sorted array. To be clear, you're not allowed to use the built in #sort method - instead you'll write code to go through the array two items at a time to accomplish the same thing.
+</p>
+              <!-- BODY END -->
+              <div class="clear"></div>
+              <br>
+              <%= render 'share_buttons.html.erb' %>
+            </div>
+          </div>
+          <%= render 'post_navigation.html.erb' %>
+          <div class="line"></div>
+        </div>
+      </div>
+      <div class="sidebar nobottommargin col_last clearfix">
+        <div class="sidebar-widgets-wrap">
+          <%= render 'next_lessons.html.erb' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
