@@ -1,8 +1,9 @@
 class Api::V1::SubscribersController < ApplicationController
+
   def create_from_popup
     setup_subscriber
-
     if @subscriber.save
+      create_hubspot_contact("Popup")
       subscriber_drip_setup
       render :nothing => true
     else
@@ -39,4 +40,11 @@ class Api::V1::SubscribersController < ApplicationController
       client.subscribe(@subscriber.email, 34197704)
       AcltcMailer.subscriber_mousetrap_email(@subscriber).deliver_now
     end
+
+    def create_hubspot_contact(mousetrap_type)
+      contact = Hubspot::Contact.find_by_email(@subscriber.email)
+      if !contact
+        Hubspot::Contact.create!(@subscriber.email, {firstname: @subscriber.first_name, phone: @subscriber.phone, lead_type: "Mousetrap", mousetrap: mousetrap_type, created_at: @subscriber.created_at})
+      end  
+    end  
 end
