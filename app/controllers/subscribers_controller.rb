@@ -128,7 +128,7 @@ class SubscribersController < ApplicationController
   def create_hubspot_contact(mousetrap_type)
     contact = Hubspot::Contact.find_by_email(@subscriber.email)
     if !contact
-      Hubspot::Contact.create!(@subscriber.email, {firstname: @subscriber.first_name, phone: @subscriber.phone, lead_type: "Mousetrap", mousetrap: mousetrap_type})
+      Hubspot::Contact.create!(@subscriber.email, {firstname: @subscriber.first_name, phone: @subscriber.phone, lead_type: "Mousetrap", mousetrap: mousetrap_type, created_at: @subscriber.created_at})
     end    
   end
 
