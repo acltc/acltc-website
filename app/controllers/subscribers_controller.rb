@@ -25,6 +25,27 @@ class SubscribersController < ApplicationController
     end
   end
 
+  def create_from_popup
+    setup_subscriber
+
+    if request.location
+      if city = request.location.city
+        @subscriber.city = city
+      end
+      if state = request.location.state
+        @subscriber.state = state
+      end
+      if postal_code = request.location.postal_code
+        @subscriber.postal_code = postal_code
+      end
+    end
+    
+    if @subscriber.save
+      subscriber_drip_setup
+      render :nothing => true
+    end
+  end
+
   def create_from_curriculum
     if cookies[:is_subscriber]
       respond_to do |format|
@@ -44,6 +65,7 @@ class SubscribersController < ApplicationController
           @subscriber.postal_code = postal_code
         end
       end
+
       if Subscriber.find_by(email: params[:email]) || @subscriber.save
         create_hubspot_contact("Curriculum Download Phone Test")
         subscriber_drip_setup
@@ -56,6 +78,7 @@ class SubscribersController < ApplicationController
   end
 
   def create_from_tutorial
+
     if cookies[:is_subscriber]
       @tutorials_visible = true
     else

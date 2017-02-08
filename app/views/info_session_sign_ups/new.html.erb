@@ -17,7 +17,9 @@
                 </ul>
               </div>
             <% end %>
+            
             <% if @next_info_session %>
+
               <%= form_tag info_session_sign_ups_path, method: :post do %>
                 <div class="form-group" >
                   <label class="required label-radio form-label">Select a city to attend an info session on <%= @next_info_session.friendly_date %> at <%= @next_info_session.friendly_time %></label><br />
@@ -57,3 +59,4 @@
       </div>
     </div>
   </section>
+
