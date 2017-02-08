@@ -1,5 +1,13 @@
 class ReferralsController < ApplicationController
+  before_action :authenticate_admin!, only: :index
+
   def index
+    @referrals = Referral.all.order("created_at desc")
+
+    respond_to do |format|
+      format.html
+      format.csv {send_data @referrals.to_csv}
+    end
   end
 
   def new
