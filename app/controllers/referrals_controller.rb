@@ -1,5 +1,5 @@
 class ReferralsController < ApplicationController
-  # before_action :authenticate_admin!, only: :index
+  before_action :authenticate_admin!, only: :index
 
   def index
     @referrals = Referral.all.order("created_at desc")
