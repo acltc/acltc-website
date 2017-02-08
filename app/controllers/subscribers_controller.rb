@@ -14,8 +14,10 @@ class SubscribersController < ApplicationController
 
     if Subscriber.find_by(email: params[:email]) 
       @subscriber = Subscriber.find_by(email: params[:email]) 
+      create_hubspot_contact("Application")
       redirect_to "/applications/new/#{@subscriber.id}"
     elsif @subscriber.save
+      create_hubspot_contact("Application")
       subscriber_drip_setup
       redirect_to "/applications/new/#{@subscriber.id}"
     else
@@ -43,6 +45,7 @@ class SubscribersController < ApplicationController
         end
       end
       if Subscriber.find_by(email: params[:email]) || @subscriber.save
+        create_hubspot_contact("Curriculum Download Phone Test")
         subscriber_drip_setup
         respond_to do |format|
           @java_url = "/subscribers/download"
@@ -59,6 +62,7 @@ class SubscribersController < ApplicationController
       setup_subscriber
 
       if Subscriber.find_by(email: params[:email]) || @subscriber.save
+        create_hubspot_contact("View Tutorials")
         subscriber_drip_setup
         @tutorials_visible = true
       else
@@ -74,6 +78,7 @@ class SubscribersController < ApplicationController
     setup_subscriber
 
     if Subscriber.find_by(email: params[:email]) || @subscriber.save
+      create_hubspot_contact("Homepage Footer")
       subscriber_drip_setup
     else
       render :apply
@@ -120,16 +125,11 @@ class SubscribersController < ApplicationController
     AcltcMailer.subscriber_mousetrap_email(@subscriber).deliver_now
   end
 
-  def create_hubspot_contact
-    lower_levels = ["Mousetrap", "Info Session", "Tour"]
-    contact = Hubspot::Contact.find_by_email(application_params[:email])
-    if contact
-      if lower_levels.include?(contact["lead_type"])
-        contact.update!({lead_type: "Complete Application"})
-      end
-    else
-      Hubspot::Contact.create!(application_params[:email], {firstname: application_params[:first_name], lastname: application_params[:last_name], phone: application_params[:phone], lead_type: "Complete Application"})
-    end   
+  def create_hubspot_contact(mousetrap_type)
+    contact = Hubspot::Contact.find_by_email(@subscriber.email)
+    if !contact
+      Hubspot::Contact.create!(@subscriber.email, {firstname: @subscriber.first_name, phone: @subscriber.phone, lead_type: "Mousetrap", mousetrap: mousetrap_type})
+    end    
   end
 
 end
