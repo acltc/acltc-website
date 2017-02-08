@@ -1,4 +1,11 @@
 <%= render "/layouts/page_title", page_title: "Referrals", page_subtitle: "" %>
+<%= javascript_include_tag "https://www.google.com/jsapi", "chartkick" %>
+
+<div class="chart">
+  <h4>Total Referrals Per Month</h4>
+  <%= line_chart Referral.group_by_month(:created_at, format: "%b %Y", last: 11).count, colors: ["#18A497"], discrete: true, xtitle: "Month", ytitle: "Number of Referrals" %>
+</div>
+
 <div id="referrals">
 <section id="content">
   <div class="content-wrap dash-wrap">
