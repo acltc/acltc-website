@@ -57,6 +57,10 @@ gem 'tinymce-rails'
 gem 'drip-ruby', '~> 0.0.7', require: 'drip'
 gem 'vuejs-rails'
 
+gem "hubspot-ruby"
+gem 'faker', '~> 1.6', '>= 1.6.6'
+
+
 group :development, :test do
   gem 'dotenv-rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
