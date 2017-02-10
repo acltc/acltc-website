@@ -11,6 +11,29 @@ class Api::V1::SubscribersController < ApplicationController
     end
   end
 
+  def create_from_drip
+      
+    if request.headers['Content-Type'] == 'application/json'
+      data = JSON.parse(request.body.read)
+      # p "--------------------------"
+      # p "Drip URL Received ... IF"
+      # p "--------------------------"
+    else
+      # p "--------------------------"
+      # p "Drip URL Received ... ELSE"
+      # p "--------------------------"
+      data = params.as_json
+    end
+    Webhook::Received.save(data: data, integration: params[:integration_name])
+
+    p "--------------------------"
+    p "Drip URL Received ... THE END"
+    p "--------------------------"
+
+    render nothing: true
+
+  end
+
   private
 
   def setup_subscriber

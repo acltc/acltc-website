@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       post 'subscribers_popup' => 'subscribers#create_from_popup'
+      post '/subscribers_drip_webhook' => 'subscribers#create_from_drip'
     end
   end
   
