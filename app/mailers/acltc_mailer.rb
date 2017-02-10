@@ -68,7 +68,7 @@ class AcltcMailer < ApplicationMailer
     elsif @info_session_sign_up.city == "New York City"
       @city_advisor = "sal@anyonecanlearntocode.com"
     else
-      @city_advisor = "zev@anyonecanlearntocode.com"
+      @city_advisor = "ray@actualize.co"
     end
     mail(from: "mg.anyonecanlearntocode.com", to: ["ben@actualize.co", "jay@actualize.co", @city_advisor], subject: "New Info Session Sign Up")
   end
