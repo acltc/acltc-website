@@ -18,11 +18,7 @@ class AcltcMailer < ApplicationMailer
 
   def application_email(application)
     @application = application
-<<<<<<< HEAD
-    mail(from: "mg.anyonecanlearntocode.com", to: 'admissions@anyonecanlearntocode.com', subject: 'Application Submitted', reply_to: @application.email )
-=======
     mail(from: "mg.anyonecanlearntocode.com", to: 'theonetrueemailtest@gmail.com', subject: 'Application Submitted', reply_to: @application.email )
->>>>>>> a083f0a1bf9476cf79241bececb38cffdeab172b
   end
 
   def application_email_reply(application)
@@ -49,11 +45,7 @@ class AcltcMailer < ApplicationMailer
 
   def tour_email(tour)
     @tour = tour
-<<<<<<< HEAD
-    mail(from: "mg.anyonecanlearntocode.com", to: 'admissions@anyonecanlearntocode.com', subject: 'Tour Scheduled', reply_to: @tour.email )
-=======
     mail(from: "mg.anyonecanlearntocode.com", to: 'theonetrueemailtest@gmail.com', subject: 'Tour Scheduled', reply_to: @tour.email )
->>>>>>> a083f0a1bf9476cf79241bececb38cffdeab172b
   end
 
   def tour_email_reply(tour)
