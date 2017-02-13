@@ -84,7 +84,8 @@ class LessonsController < ApplicationController
     # Uses ip_address to see if the user has previously signed up?
     # If so, they can have access to the tutorials.
     if Subscriber.find_by(ip_address: request.remote_ip)
-        @returning_subscriber = true
+        # @returning_subscriber = true
+        @returning_subscriber = false
     else
         @returning_subscriber = false
     end

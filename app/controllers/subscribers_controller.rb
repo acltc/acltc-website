@@ -14,12 +14,35 @@ class SubscribersController < ApplicationController
 
     if Subscriber.find_by(email: params[:email]) 
       @subscriber = Subscriber.find_by(email: params[:email]) 
+      create_hubspot_contact("Application")
       redirect_to "/applications/new/#{@subscriber.id}"
     elsif @subscriber.save
+      create_hubspot_contact("Application")
       subscriber_drip_setup
       redirect_to "/applications/new/#{@subscriber.id}"
     else
       render :apply
+    end
+  end
+
+  def create_from_popup
+    setup_subscriber
+
+    if request.location
+      if city = request.location.city
+        @subscriber.city = city
+      end
+      if state = request.location.state
+        @subscriber.state = state
+      end
+      if postal_code = request.location.postal_code
+        @subscriber.postal_code = postal_code
+      end
+    end
+    
+    if @subscriber.save
+      subscriber_drip_setup
+      render :nothing => true
     end
   end
 
@@ -42,7 +65,9 @@ class SubscribersController < ApplicationController
           @subscriber.postal_code = postal_code
         end
       end
+
       if Subscriber.find_by(email: params[:email]) || @subscriber.save
+        create_hubspot_contact("Curriculum Download Phone Test")
         subscriber_drip_setup
         respond_to do |format|
           @java_url = "/subscribers/download"
@@ -72,12 +97,14 @@ class SubscribersController < ApplicationController
   end
 
   def create_from_tutorial
+
     if cookies[:is_subscriber]
       @tutorials_visible = true
     else
       setup_subscriber
 
       if Subscriber.find_by(email: params[:email]) || @subscriber.save
+        create_hubspot_contact("View Tutorials")
         subscriber_drip_setup
         @tutorials_visible = true
       else
@@ -93,6 +120,7 @@ class SubscribersController < ApplicationController
     setup_subscriber
 
     if Subscriber.find_by(email: params[:email]) || @subscriber.save
+      create_hubspot_contact("Homepage Footer")
       subscriber_drip_setup
     else
       render :apply
@@ -143,6 +171,17 @@ class SubscribersController < ApplicationController
     client.create_or_update_subscriber(@subscriber.email)
     client.subscribe(@subscriber.email, 34197704)
     AcltcMailer.subscriber_mousetrap_email(@subscriber).deliver_now
+  end
+
+  def create_hubspot_contact(mousetrap_type)
+    begin
+      contact = Hubspot::Contact.find_by_email(@subscriber.email)
+      if !contact
+        Hubspot::Contact.create!(@subscriber.email, {firstname: @subscriber.first_name, phone: @subscriber.phone, lead_type: "Mousetrap", mousetrap: mousetrap_type})
+      end
+    rescue Exception => e
+      p "rescue #{e.message}"
+    end
   end
 
 end

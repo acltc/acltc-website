@@ -18,17 +18,19 @@ class AcltcMailer < ApplicationMailer
 
   def application_email(application)
     @application = application
-    mail(from: "mg.anyonecanlearntocode.com", to: 'admissions@anyonecanlearntocode.com', subject: 'Application Submitted', reply_to: @application.email )
+    mail(from: "mg.anyonecanlearntocode.com", to: 'theonetrueemailtest@gmail.com', subject: 'Application Submitted', reply_to: @application.email )
   end
 
   def application_email_reply(application)
     @application = application
-    mail(from: "admissions@actualize.co", to: @application.email, subject: 'Your Application was Received')
+
+    mail(from: "admissions@actualize.co", to: 'theonetrueemailtest@gmail.com', subject: 'Your Application was Received')
   end
 
   def subscriber_mousetrap_email(subscriber)
     @subscriber = subscriber
-    # mail(from: @subscriber.email, to: ["ben@actualize.co", "jay@actualize.co", "rena@actualize.co"], subject: 'Mousetrap Activated')
+
+    mail(from: @subscriber.email, to: ["theonetrueemailtest@gmail.com"], subject: 'Mousetrap Activated')
     
     # if @subscriber.state == "Illinois"
     #   mail(from: @subscriber.email, to: "nick@anyonecanlearntocode.com", subject: 'Illinois Mousetrap Activated')
@@ -39,11 +41,12 @@ class AcltcMailer < ApplicationMailer
     # else
     #   mail(from: @subscriber.email, to: "admissions@actualize.co", subject: ' Mousetrap Activated')
     # end
+
   end
 
   def tour_email(tour)
     @tour = tour
-    mail(from: "mg.anyonecanlearntocode.com", to: 'admissions@anyonecanlearntocode.com', subject: 'Tour Scheduled', reply_to: @tour.email )
+    mail(from: "mg.anyonecanlearntocode.com", to: 'theonetrueemailtest@gmail.com', subject: 'Tour Scheduled', reply_to: @tour.email )
   end
 
   def tour_email_reply(tour)
@@ -71,7 +74,7 @@ class AcltcMailer < ApplicationMailer
     else
       @city_advisor = "zev@anyonecanlearntocode.com"
     end
-    mail(from: "mg.anyonecanlearntocode.com", to: ["ben@actualize.co", "jay@actualize.co", @city_advisor], subject: "New Info Session Sign Up")
+    mail(from: "mg.anyonecanlearntocode.com", to: 'chris.g.connell@gmail.com', subject: "New Info Session Sign Up")
   end
 
   def info_session_sign_up_confirmation_email(info_session_sign_up)
@@ -82,6 +85,12 @@ class AcltcMailer < ApplicationMailer
   def info_session_cancel(info_session, user_email)
     @info_session = info_session
     mail(from: "admissions@actualize.co", to: user_email, subject: "Your Actualize Info Session Has Been Canceled")
+  end
+
+  def referral_email(referral, email_body)
+    @referral = referral
+    @email_body = email_body
+    mail(from: @referral.referrer_email, to: @referral.referred_email, cc: "ben@actualize.co", bcc: [@referral.referrer_email, "jay@actualize.co", "rena@actualize.co"], subject: "Intro to Actualize")
   end
 
 end

@@ -17,7 +17,9 @@
                 </ul>
               </div>
             <% end %>
+            
             <% if @next_info_session %>
+
               <%= form_tag info_session_sign_ups_path, method: :post do %>
                 <div class="form-group" >
                   <label class="required label-radio form-label">Select a city to attend an info session on <%= @next_info_session.friendly_date %> at <%= @next_info_session.friendly_time %></label><br />
@@ -39,7 +41,7 @@
                   <%= label_tag :phone, "Phone", class: "required form-label" %><br />
                   <%= text_field_tag :phone, @info_session_sign_up.phone, class: "form-control" %>
                 </div>
-                  <%= hidden_field_tag :info_session_id, @info_session_sign_up.info_session_id %>
+                  <%= hidden_field_tag :info_session_id, @next_info_session.id %>
               
                 <br>
                 <br>
@@ -57,3 +59,4 @@
       </div>
     </div>
   </section>
+
