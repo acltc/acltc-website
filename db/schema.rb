@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170118230724) do
+ActiveRecord::Schema.define(version: 20170201224133) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -214,24 +214,6 @@ ActiveRecord::Schema.define(version: 20170118230724) do
     t.string   "location"
   end
 
-  create_table "job_openings", force: :cascade do |t|
-    t.string   "title"
-    t.string   "location"
-    t.string   "salary"
-    t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "k12_contacts", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
-    t.text     "message"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "lakewood_applications", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -336,6 +318,17 @@ ActiveRecord::Schema.define(version: 20170118230724) do
     t.integer  "application_id"
   end
 
+  create_table "referrals", force: :cascade do |t|
+    t.string   "referrer_first_name"
+    t.string   "referrer_last_name"
+    t.string   "referrer_email"
+    t.string   "referrer_phone_number"
+    t.string   "referred_first_name"
+    t.string   "referred_email"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
   create_table "screencasts", force: :cascade do |t|
     t.string   "cover_image"
     t.string   "youtube_id"
@@ -364,9 +357,9 @@ ActiveRecord::Schema.define(version: 20170118230724) do
     t.string   "ip_address"
     t.string   "city"
     t.string   "country"
-    t.string   "state"
     t.string   "postal_code"
     t.string   "phone"
+    t.string   "state"
   end
 
   create_table "tours", force: :cascade do |t|

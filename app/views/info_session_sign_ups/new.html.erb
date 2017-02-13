@@ -39,7 +39,7 @@
                   <%= label_tag :phone, "Phone", class: "required form-label" %><br />
                   <%= text_field_tag :phone, @info_session_sign_up.phone, class: "form-control" %>
                 </div>
-                  <%= hidden_field_tag :info_session_id, @info_session_sign_up.info_session_id %>
+                  <%= hidden_field_tag :info_session_id, @next_info_session.id %>
               
                 <br>
                 <br>
@@ -57,3 +57,4 @@
       </div>
     </div>
   </section>
+

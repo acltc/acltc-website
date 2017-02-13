@@ -69,7 +69,7 @@ class AcltcMailer < ApplicationMailer
     elsif @info_session_sign_up.city == "New York City"
       @city_advisor = "sal@anyonecanlearntocode.com"
     else
-      @city_advisor = "zev@anyonecanlearntocode.com"
+      @city_advisor = "ray@actualize.co"
     end
     mail(from: "mg.anyonecanlearntocode.com", to: ["ben@actualize.co", "jay@actualize.co", @city_advisor], subject: "New Info Session Sign Up")
   end
@@ -82,6 +82,12 @@ class AcltcMailer < ApplicationMailer
   def info_session_cancel(info_session, user_email)
     @info_session = info_session
     mail(from: "admissions@actualize.co", to: user_email, subject: "Your Actualize Info Session Has Been Canceled")
+  end
+
+  def referral_email(referral, email_body)
+    @referral = referral
+    @email_body = email_body
+    mail(from: @referral.referrer_email, to: @referral.referred_email, cc: "ben@actualize.co", bcc: [@referral.referrer_email, "jay@actualize.co", "rena@actualize.co"], subject: "Intro to Actualize")
   end
 
 end

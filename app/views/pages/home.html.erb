@@ -1,5 +1,5 @@
-<style type="text/css">
-    .hidden {display:none;}
+<style>
+    .hidden{display: none;}
 </style>
 <script
   src="https://code.jquery.com/jquery-3.1.1.js"
@@ -98,10 +98,24 @@
         
     </div> 
     </modal>
+
+        
        <!-- Content
         ============================================= -->    
+        <div id="sidebar" style="margin-right: 20px;">
+          <!-- <div id="catcher"></div> -->
+          <div id="catcher"></div>
+          <div id="sticky" class="text-left">
+            <a href="/apply" class="btn btn-primary sticky-apply sticky-sidebar" style="width: 200px;">Apply</a><br><br>
+            <a href="/tours/new" class="btn btn-primary sticky-tour sticky-sidebar" style="width: 200px;">Book A Tour</a><br><br>
+            <a href="#info-session" class="btn btn-primary sticky-session sticky-sidebar" style="width: 200px;">Info Session</a>
+          </div>
+        </div>
+        <!-- <div id="sticky_item">Hello</div> -->
+
         <div class="marquee">
             <div id = "marquee" class="container">
+
                 <div class="row">
 
                         <div class="marquee-content clearfix">
@@ -112,19 +126,49 @@
                                 <h3 style="margin-top:52px">Your mentor in becoming a software engineer.</h3>
                             </div>
                             <p>Learn to code in 12 weeks without quitting your day job through expert instruction and hands-on practice. Afterwards, we work directly with you on landing a job while you join our apprenticeship and build a portfolio showcasing work that you've built for real clients.</p><br />
-                            <div class="row">
-                                <div class="col-md-12">
-                                        <%= link_to "Apply Now", new_application_path, class: "btn single-apply-button aqua-orange-apply-button" %>                    
-                                </div>
-                            </div>
+                            
+                                <!-- <div class="col-md-12"> -->
+                                        <%#= link_to "Apply Now", new_application_path, class: "btn single-apply-button aqua-orange-apply-button" %>                    
+                                <!-- </div> -->
+                            <% if @next_info_session %>
+                                <div id="info-session">
+                                    <p class="info-session-description">Come join us in person for a live info session!</p>
+                                    <p class="info-session-content">Learn everything there is to know about Actualize from one of our Admissions Advisors and see us in action.</p>
+                                    <p class="info-session-content">Our next session is on <%= @next_info_session.friendly_date %> at <%= @next_info_session.friendly_time %>.</p><br>
+                                    <%= form_tag("/info_session_sign_ups", id: "infoSessionSignUp", method: :post) do %>
+                                    <div class="row info-fields" style="padding-bottom: 20px;">
+                                        <div class="col-md-3">
+                                            <%= select_tag :city, options_for_select(["Chicago", "New York City", "San Francisco"], @info_session_sign_up.city), prompt: "Select a city", class: "form-control", id: "session-city-select" %><br>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <%= text_field_tag :name, nil, placeholder: "Name", required: true %>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <%= text_field_tag :email, nil, placeholder: "Email", required: true %>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <%= text_field_tag :phone, nil, placeholder: "Phone", required: true %>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <%= hidden_field_tag :info_session_id, @next_info_session.id %>
+                                        <div class="col-md-4"></div>
+                                        <div class="col-md-4">
+                                            <%= submit_tag "Sign Up", class: "curriculum-download-btn", id: "submit-session", style: "padding:0;margin:0;background-color:#F25252;color:white;" %>
+                                        </div>
+                                    </div>
+                                    <% end %>
+                                </div>  
+                            <% end %>
                         </div>
                 </div> <!-- /row -->
             </div>
         </div>
-        <div class="locations-wrapper page-wrapper">
+   
+        <div class="locations-wrapper page-wrapper container">
             <div class="home-section" id="home-upper-locations">
                 <div class="row">
-                    <div class="col-sm-4">
+                    <div class="col-md-4">
                         <div class="location">
 
                             <img class="logo" src="<%= asset_path 'chicago.png'%>"><br />
@@ -134,18 +178,14 @@
                                 <p><%= @cohort_date %></p>
                             </p>
                             <div style="width:70%;margin:auto;color:#acaeaf;">
-                                <h5 style="line-height:0.7;">Class Schedule:<h5>
-                                <h5 style="line-height:0.7;">Sundays 9a to 5p<h5>
-                                <h5 style="line-height:0.7;">Mon-Thurs 6 to 9:30p</h5>
+                                <h5>Class Schedule:</h5>
+                                <h5>Sundays 9a to 5p</h5>
+                                <h5>Mon-Thurs 6 to 9:30p</h5>
                             </div>
-                            <div class="tour-buttons-group">
-                                <p class="apply-aqua">
-                                    <%= link_to "Book A Tour", new_tour_path, class: "btn btn-default", id: "top-application-button" %>
-                                </p>
-                            </div>
+                            
                         </div>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-md-4">
                         <div class="location">
 
                             <img class="logo" src="<%= asset_path 'nyc.png'%>"><br />
@@ -155,18 +195,14 @@
                                 <p><%= @cohort_date %></p>
                             </p>
                             <div style="width:70%;margin:auto;color:#acaeaf;">
-                                <h5 style="line-height:0.7;">Class Schedule:<h5>
-                                <h5 style="line-height:0.7;">Sundays 9a to 5p<h5>
-                                <h5 style="line-height:0.7;">Mon-Thurs 6 to 9:30p</h5>
+                                <h5>Class Schedule:</h5>
+                                <h5>Sundays 9a to 5p</h5>
+                                <h5>Mon-Thurs 6 to 9:30p</h5>
                             </div>
-                            <div class="tour-buttons-group">
-                                <p class="apply-blue">
-                                    <%= link_to "Book A Tour", new_tour_path, class: "btn", id: "top-application-button" %>
-                                </p>
-                            </div>
+                            
                         </div>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-md-4">
                         <div class="location">
 
                             <img class="logo" src="<%= asset_path 'san-francisco.png'%>"><br />
@@ -176,25 +212,24 @@
                                 <p><%= @cohort_date %></p>
                             </p>
                             <div style="width:70%;margin:auto;color:#acaeaf;">
-                                <h5 style="line-height:0.7;">Class Schedule:<h5>
-                                <h5 style="line-height:0.7;">Sundays 9a to 5p<h5>
-                                <h5 style="line-height:0.7;">Mon-Thurs 6 to 9:30p</h5>
+                                <h5>Class Schedule:</h5>
+                                <h5>Sundays 9a to 5p</h5>
+                                <h5>Mon-Thurs 6 to 9:30p</h5>
                             </div>
-                            <div class="tour-buttons-group">
-                                <p class="apply-orange">
-                                    <%= link_to "Book A Tour", new_tour_path, class: "btn", id: "top-application-button" %>
-                                </p>
-                            </div>
+                           
                         </div>
                     </div>
+                  <div class="col-md-12 centered">
+                      <%= link_to "Book A Tour", new_tour_path, class: "btn", id: "book-a-tour-individual-button" %>
+                  </div>
                 </div>
             </div>
         </div>
-        <div class="our-philosophy-wrapper page-wrapper clearfix">
+        <div class="our-philosophy-wrapper page-wrapper clearfix container">
             <div class="home-section">
                 <div class="row">
                 <h2 class = "actualize-logo">Philosophy</h2>
-                    <div class="col-sm-4 centered">
+                    <div class="col-md-4 centered">
                     <img class="philosophy-icon" src="<%= asset_path 'philosophy-brain-icon.png'%>">
 
                       <h3>Educators First, Developers Second</h3>
@@ -202,14 +237,14 @@
                           Education is about more than conveying information - it's about understanding how people think, learn, and truly grasp the material at hand. We understand that every new concept requires a unique approach, and that even the most advanced subject-matter experts must also be well-trained educators to produce great results. That's why all of our Lead Instructors are experienced educators as well as professional developers.
                       </p>
                     </div>
-                    <div class="col-sm-4 centered">
+                    <div class="col-md-4 centered">
                     <img class="philosophy-icon" src="<%= asset_path 'phliosophy-methodology-icon.png'%>">
                         <h3>Custom Curriculum Created by Expert Educators</h3>
                         <p class="philosophy">
                             The Actualize program is designed and taught by our educator/developer Lead Instructors. Together, we created our curriculum using educational best practices and careful consideration of how people learn and retain information. We've debated every facet of our methodology, from the order in which to teach concepts and the analogies used to clarify them to how exercises should be structured to deliver the maximum educational punch.
                         </p>
                     </div>
-                    <div class="col-sm-4 centered">
+                    <div class="col-md-4 centered">
                     <img class="philosophy-icon" src="<%= asset_path 'philosphy-suitcase-icon.png'%>">
                         <h3>Keep Your Day Job While You Switch Careers</h3>
                         <p class="philosophy">
@@ -223,48 +258,8 @@
                 </div>
             </div>
         </div>
-        <% if @next_info_session %>
-            <div class="curriculum-wrapper page-wrapper">
-                <div class="home-section info-session">
-                    <div class="row">
-                        <div class="col-md-12 skills">
-                            <br />
-                            <p class ="info-session-description">Come join us in person for a live info session!</p><br>
-                            <p class="info-session-content"> You’ll learn everything there is to know about Actualize from one of our Admissions Advisors, and get to see us in action.</p><br /> 
-                                
-                            <div class="well curriculum-well">
-                                 <p class="info-session-subheader">Chose your city and sign up! The next info session is on <%= @next_info_session.friendly_date %> at <%= @next_info_session.friendly_time %></p><br />
-                                <%= form_tag("/info_session_sign_ups", id: "infoSessionSignUp", method: :post) do %>
-                                <div class="row" style="padding-bottom: 20px;">
-                                    <div class="col-md-3">
-                                        <%= select_tag :city, options_for_select(["Chicago", "New York City", "San Francisco"], @info_session_sign_up.city), prompt: "Select a city", class: "form-control", id: "session-city-select" %>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <%= text_field_tag :name, nil, placeholder: "Name", required: true %>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <%= text_field_tag :email, nil, placeholder: "Email", required: true %>
-                                    </div>
-                                    <div class="col-md-3">
-                                       <%= text_field_tag :phone, nil, placeholder: "Phone", required: true %>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    
-                                    <%= hidden_field_tag :info_session_id, @next_info_session.id %>
-                                    <div class="col-md-4"></div>
-                                    <div class="col-md-4">
-                                        <%= submit_tag "Sign Up", class: "curriculum-download-btn", id: "submit-session", style: "padding:0;margin:0;background-color:#F25252;color:white;" %>
-                                    </div>
-                                </div>
-                                <% end %>
-                            </div>  
-                        </div>
-                    </div>
-                </div>
-            </div>
-        <% end %>
-        <div class="our-program-wrapper page-wrapper">
+
+        <div class="our-program-wrapper page-wrapper container">
             <div class="home-section">
                 <div class="row">
                     <div class="col-md-12 our-program">
@@ -321,7 +316,7 @@
             </div>
         </div> <!-- /home-section -->
 
-            <div class="curriculum-wrapper page-wrapper">
+            <div class="curriculum-wrapper page-wrapper container">
                 <div class="home-section">
                     <div class="row">
                         <div class="col-md-12 skills">
@@ -409,7 +404,7 @@
 
             </div>
         
-        <div class="apprenticeship-wrapper page-wrapper">
+        <div class="apprenticeship-wrapper page-wrapper container">
             <div class="home-section">
                 <div class="row section-header">
                     <h2 class = "actualize-logo">Apprenticeship</h2>
@@ -526,7 +521,7 @@
             <div class="home-section" id="home-lower-locations">
                 <div class="row">
                     <h2 class = "actualize-logo">Locations</h2>
-                    <div class="col-sm-4">
+                    <div class="col-md-4">
                         <div class="location-lower">
 
                             <img class="logo" src="<%= asset_path 'chicago.png'%>"><br />
@@ -538,7 +533,7 @@
 
                         </div>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-md-4">
                         <div class="location-lower">
 
                             <img class="logo" src="<%= asset_path 'nyc.png'%>"><br />
@@ -549,7 +544,7 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-4">
+                    <div class="col-md-4">
                         <div class="location-lower">
 
                             <img class="logo" src="<%= asset_path 'san-francisco.png'%>"><br />
@@ -561,7 +556,7 @@
                     </div>
                 </div>
                 <div class="row address-row">
-                    <div class="col-sm-4">
+                    <div class="col-lg-4">
                         <div class="address">
                             <a class="pushpin" href="https://www.google.com/maps/place/222+W+Merchandise+Mart+Plaza,+Chicago,+IL+60654/@41.8885185,-87.6354802,17z/data=!3m1!4b1!4m2!3m1!1s0x880e2cb6fa650467:0xd94994faa9dd5715" target="_blank"><i class="fa fa-map-marker aqua   "></i></a>
                             <p class="bootcamp-address">
@@ -573,19 +568,14 @@
                             <p><%= @cohort_date %></p>
                             </p>
                             <div style="width:70%;margin:auto;color:#acaeaf;">
-                                <h5 style="line-height:0.7;">Class Schedule:<h5>
-                                <h5 style="line-height:0.7;">Sundays 9a to 5p<h5>
-                                <h5 style="line-height:0.7;">Mon-Thurs 6 to 9:30p</h5>
+                                <h5>Class Schedule:</h5>
+                                <h5>Sundays 9a to 5p</h5>
+                                <h5>Mon-Thurs 6 to 9:30p</h5>
                             </div>
                             <p>Tuition: $13,900</p>
-                            <div class="tour-buttons-group">
-                                <p class="apply-aqua">
-                                    <%= link_to "Book A Tour", new_tour_path, class: "btn", id: "top-application-button" %>
-                                </p>
-                            </div>
                         </div>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-lg-4">
                         <div class="address">
                             <a class="pushpin" href="https://www.google.com/maps/place/150+Broadway,+New+York,+NY+10038/@40.7093102,-74.010236,17z" target="_blank"><i class="fa fa-map-marker blue"></i></a>
                             <p class="bootcamp-address">
@@ -597,20 +587,15 @@
                                 <p><%= @cohort_date %></p>
                             </p>
                             <div style="width:70%;margin:auto;color:#acaeaf;">
-                                <h5 style="line-height:0.7;">Class Schedule:<h5>
-                                <h5 style="line-height:0.7;">Sundays 9a to 5p<h5>
-                                <h5 style="line-height:0.7;">Mon-Thurs 6 to 9:30p</h5>
+                                <h5>Class Schedule:</h5>
+                                <h5>Sundays 9a to 5p</h5>
+                                <h5>Mon-Thurs 6 to 9:30p</h5>
                             </div>
                             <p>Tuition: $13,900</p>
-                            <div class="tour-buttons-group">
-                                <p class="apply-blue">
-                                    <%= link_to "Book A Tour", new_tour_path, class: "btn", id: "top-application-button" %>
-                                </p>
-                            </div>
                         </div>
                     </div>
 
-                    <div class="col-sm-4">
+                    <div class="col-lg-4">
                         <div class="address">
                             <a class="pushpin" href="https://www.google.com/maps/place/77+Geary+St,+San+Francisco,+CA+94108/@37.7876653,-122.4047894,17z/data=!3m1!4b1!4m2!3m1!1s0x80858088f19da4a5:0x55997ff84c10b76f" target="_blank"><i class="fa fa-map-marker orange"></i></a>
                             <p class="bootcamp-address">
@@ -622,24 +607,22 @@
                                 <p><%= @cohort_date %></p>
                             </p>
                             <div style="width:70%;margin:auto;color:#acaeaf;">
-                                <h5 style="line-height:0.7;">Class Schedule:<h5>
-                                <h5 style="line-height:0.7;">Sundays 9a to 5p<h5>
-                                <h5 style="line-height:0.7;">Mon-Thurs 6 to 9:30p</h5>
+                                <h5>Class Schedule:</h5>
+                                <h5>Sundays 9a to 5p</h5>
+                                <h5>Mon-Thurs 6 to 9:30p</h5>
                             </div>
                             <p>Tuition: $13,900</p>
-                            <div class="tour-buttons-group">
-                                <p class="apply-orange">
-                                    <%= link_to "Book A Tour", new_tour_path, class: "btn", id: "top-application-button" %>
-                                </p>     
-                            </div>
                         </div>
                     </div>
+                  <div class="col-md-12 centered">
+                      <%= link_to "Book A Tour", new_tour_path, class: "btn", id: "book-a-tour-individual-button" %>
+                  </div>
                 </div>
             </div>
         </div>
 
 
-          <div class="testimonial-wrapper page-wrapper">
+          <div class="testimonial-wrapper page-wrapper container">
                 <div class="home-section centered">
                       <div class="row">
                           <h2 class = "actualize-logo">What our grads have to say</h2>
@@ -699,9 +682,51 @@
         if (empty1) {
             $('#submit-session').attr('disabled', 'disabled');
         } else {
-        //$('#submit-session').removeAttr('disabled');
             $('#submit-session').prop("disabled", false);
         }
+        });
+    });
+
+  
+    $(document).ready(function() {
+        $('#sidebar').hide();
+
+        function isScrolledTo(elem) {
+            var docViewTop = $(window).scrollTop(); //num of pixels hidden above current screen
+            
+            var docViewBottom = docViewTop + $(window).height();
+        
+            var elemTop = $(elem).offset().top; //num of pixels above the elem
+        
+            var elemBottom = elemTop + $(elem).height();
+
+            if(docViewTop >= 766) {
+                $("#sidebar").fadeIn( "slow" );
+            } else if (docViewTop < 766) {
+
+                $('#sidebar').fadeOut("fast")
+            }
+
+            return ((elemTop <= docViewTop));
+
+        }
+        var catcher = $('#catcher');
+        var sticky = $('#sticky');
+        sticky.css('position','fixed');
+        sticky.css('z-index','999999999');
+
+        $(window).scroll(function() {
+            if(isScrolledTo(sticky)) {
+                sticky.css('position','fixed');
+                sticky.css('z-index','999999999');
+                sticky.css('top','0px');
+            }
+            var stopHeight = catcher.offset().top + catcher.height();
+            if ( stopHeight > sticky.offset().top) {
+                sticky.css('position','absolute');
+                sticky.css('z-index','999999999');
+                sticky.css('top',stopHeight);
+            }
         });
     });
 </script>
