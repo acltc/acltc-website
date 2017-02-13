@@ -482,65 +482,22 @@
             <div class="home-section">
                 <div class="row">
                     <div class="col-md-12 skills">
-                        <div class="section-header">
+                        <div class="section-header" id="pdf-download-header">
                             <h2 class = "actualize-logo-circular"> What Does A Career In Coding Look Like?</h2>
-                            <p> ... It looks GLORIUS</p>
+                            <p> Want to learn what it's like to have a career in coding? Download our free eBook</p>
                         </div>
-
+                        
                         <div class="row">
-                            <div class="col-xs-12 col-sm-6 col-md-3">
-                                <div class="skill gray-skill-wrapper border-bottom-aqua">
-                                    <img class="curriculum-icon" src="<%= asset_path 'curriculum-programming-icon.png'%>">
-                                    <h3>Core Programming Skills</h3>
-                                </div>
-                                <div class="skill-list">
-                                Ruby<br />
-                                OOP<br />
-                                Data Structures and Algorithms
-                                </div>
+                            <div class="career-pdf-cover">
+                                <img src="<%= image_path 'career_in_coding_cover_300.png'%>">
                             </div>
-
-                            <div class="col-xs-12 col-sm-6 col-md-3">
-                                <div class="skill gray-skill-wrapper border-bottom-blue">
-                                    <img class="curriculum-icon" src="<%= asset_path 'curriculum-backend-icon.png'%>">
-                                    <h3>Back End Development</h3>
-                                </div>
-                            <div class="skill-list">
-                            Rails<br />
-                            APIs<br />
-                            Microservices
-                            </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-6 col-md-3">
-                                <div class="skill gray-skill-wrapper border-bottom-orange">
-                                    <img class="curriculum-icon" src="<%= asset_path 'curriculum-databases-icon.png'%>">
-                                    <h3>Databases <br />&nbsp; </h3>
-                                </div>
-                            <div class="skill-list">
-                            SQL<br />
-                            Postgres<br />
-                            Database Design
-                            </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-6 col-md-3">
-                                <div class="skill gray-skill-wrapper border-bottom-yellow">
-                                    <img class="curriculum-icon" src="<%= asset_path 'curriculum-frontend-icon.png'%>">
-                                    <h3>Front End Development</h3>
-                                </div>
-                            <div class="skill-list">
-                            HTML<br />
-                            CSS<br />
-                            JavaScript<br />
-                            AngularJS
-                            </div>
-                            </div>
-
                         </div>
-                        <br />
-                        <p class ="after-word">We'll also delve into important concepts such as Git, Test Driven Development, and the soft skills you need to land a web developer position. At Actualize, we focus on the skills that employers are looking for now.</p><br /><br />
-                          
+                        
+                            <div class="pdf-career-message-container">
+                                <p class="pdf-career-download"></p>
+                            </div>
+
                         <div class="well curriculum-well">
-                             <p class="pdf-career-download">Want to learn what it's like to have a career in coding. Download our short career guidebook.</p>
                             <div class="row">
                                 <%= form_tag("/subscribers_career_pdf", method: "post", remote: true) do %>
                                    <div class="col-md-3">
@@ -552,16 +509,17 @@
                                     <div class="col-md-3">
                                        <%= text_field_tag :phone, nil, placeholder: "Phone" %>
                                     </div>
-                                     <div class="col-md-3">
-                                         <%= hidden_field_tag :mousetrap, nil, value: "Career PDF Download" %>
-                                         <%= submit_tag "Download Guidebook", class: "curriculum-download-btn", style: "padding:0;margin:0;background-color:#F25252;color:white;" %>
-                                     </div>
-                                 <% end %>
-                             </div>
-                         </div>  
+                                    <div class="col-md-3">
+                                        <%= hidden_field_tag :mousetrap, nil, value: "Career PDF Download" %>
+                                        <%= submit_tag "Download The Book", class: "curriculum-download-btn", style: "padding:0;margin:0;background-color:#F25252;color:white;" %>
+                                    </div>
+                                <% end %>
+                            </div>
+                        </div>  
                     </div>
                 </div>
             </div>
+        </div>
         </div> 
 
         <div class="locations-wrapper page-wrapper">
