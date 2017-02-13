@@ -13,7 +13,7 @@ class SubscribersController < ApplicationController
     setup_subscriber
 
     if Subscriber.find_by(email: params[:email]) 
-      @subscriber = Subscriber.find_by(email: params[:email]) 
+      @subscriber = Subscriber.find_by(email: params[:email])
       create_hubspot_contact("Application")
       redirect_to "/applications/new/#{@subscriber.id}"
     elsif @subscriber.save
@@ -26,50 +26,27 @@ class SubscribersController < ApplicationController
   end
 
   def create_from_curriculum
-    if cookies[:is_subscriber]
+    setup_subscriber
+
+    if Subscriber.find_by(email: params[:email]) || @subscriber.save
+      subscriber_drip_setup
+      create_hubspot_contact("Curriculum Download Phone Test")
       respond_to do |format|
         @java_url = "/subscribers/download"
         format.js {render :partial => "downloadFile"}
-      end
-    else
-      @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], mousetrap: params[:mousetrap], ip_address: request.remote_ip, phone: params[:phone])
-      if request.location
-        if city = request.location.city
-          @subscriber.city = city
-        end
-        if state = request.location.state
-          @subscriber.state = state
-        end
-        if postal_code = request.location.postal_code
-          @subscriber.postal_code = postal_code
-        end
-      end
-      if Subscriber.find_by(email: params[:email]) || @subscriber.save
-        create_hubspot_contact("Curriculum Download Phone Test")
-        subscriber_drip_setup
-        respond_to do |format|
-          @java_url = "/subscribers/download"
-          format.js {render :partial => "downloadFile"}
-        end
       end
     end
   end
 
   def create_from_career_pdf
-    if cookies[:is_subscriber]
+    setup_subscriber
+
+    if Subscriber.find_by(email: params[:email]) || @subscriber.save
+      subscriber_drip_setup
+      create_hubspot_contact("Career PDF Download")
       respond_to do |format|
         @pdf_url = "/subscribers/career_pdf_download"
         format.js {render :partial => "downloadCareerPdf"}
-      end
-    else
-      setup_subscriber
-
-      if Subscriber.find_by(email: params[:email]) || @subscriber.save
-        subscriber_drip_setup
-        respond_to do |format|
-          @pdf_url = "/subscribers/career_pdf_download"
-          format.js {render :partial => "downloadCareerPdf"}
-        end
       end
     end
   end
