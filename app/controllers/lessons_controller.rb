@@ -54,8 +54,8 @@ class LessonsController < ApplicationController
     { title: "Episode 17c - Creating Arrays With Loops", time: "0:00", category_id: 2 },
     { title: "Episode 18 - Multiple Loops", time: "0:00", category_id: 2 },
     { title: "Episode 18a - Arrays Within Arrays", time: "0:00", category_id: 2 },
-    { title: "Challenge Exercise 1 - Algorithm Bubble Sort", time: "0:00", category_id: 2 },
-    { title: "Challenge Exercise 2 - Research Different Loops", time: "0:00", category_id: 2 },
+    # { title: "Challenge Exercise 1 - Algorithm Bubble Sort", time: "0:00", category_id: 2 },
+    # { title: "Challenge Exercise 2 - Research Different Loops", time: "0:00", category_id: 2 },
     
     { title: "Episode 19 - Hashes", time: "9:24", category_id: 2 },
     { title: "Episode 19a - Adding Values To A Hash", time: "0:00", category_id: 2 },
@@ -64,7 +64,7 @@ class LessonsController < ApplicationController
     { title: "Episode 20a - Arrays of Hashes", time: "10:19", category_id: 2 },
     { title: "Episode 21 - Symbols", time: "0:00", category_id: 2 },
     { title: "Episode 21a - Idiomatic Ruby: Hashes With Symbols", time: "0:00", category_id: 2 },
-    { title: "Challenge Exercise 1 - Algorithm Insertion Sort", time: "0:00", category_id: 2 },
+    # { title: "Challenge Exercise 1 - Algorithm Insertion Sort", time: "0:00", category_id: 2 },
     
     # { title: "Episode 19 - How To Break Down A Problem", time: "29:30", category_id: 2},
     # { title: "Episode 21 - RubyGems", time: "5:19", category_id: 2},
@@ -83,13 +83,13 @@ class LessonsController < ApplicationController
     { title: "Episode 6 - Methods Calling Methods", time: "3:28", category_id: 3 },
     { title: "Episode 7 - Converting Hashes To Objects", time: "7:41", category_id: 3 },
 
-    { title: "HTML Intro Part 1", time: "12:45", category_id: 3 },
-    { title: "HTML Intro Part 2", time: "5:40", category_id: 3 },
-    { title: "HTML Intro Part 3", time: "5:56", category_id: 3 },
-    { title: "HTML Intro Part 4", time: "9:55", category_id: 3 },
+    # { title: "HTML Intro Part 1", time: "12:45", category_id: 3 },
+    # { title: "HTML Intro Part 2", time: "5:40", category_id: 3 },
+    # { title: "HTML Intro Part 3", time: "5:56", category_id: 3 },
+    # { title: "HTML Intro Part 4", time: "9:55", category_id: 3 },
 
-    { title: "Challenge Exercise 1 OOP Synthesis", time: "0:00", category_id: 3 },
-    { title: "Challenge Exercise 2 CSS Layout", time: "0:00", category_id: 3 }
+    # { title: "Challenge Exercise 1 OOP Synthesis", time: "0:00", category_id: 3 },
+    # { title: "Challenge Exercise 2 CSS Layout", time: "0:00", category_id: 3 }
 
 
     # { title: "Episode 7 - Synthesis: Putting It All Together", time: "11:35", category_id: 3 },
