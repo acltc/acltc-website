@@ -13,21 +13,21 @@
                 <h2><%= @lesson_title %></h2>
               </div>
               <!-- BODY START -->
-If you have a hash, it's easy to both retrieve and change any value. Let's define a hash to represent the amount of items in a store:</p>
+<p>If you have a hash, it's easy to both retrieve and change any value. Let's define a hash to represent the amount of items in a store:</p>
 <pre><code class="language-ruby">item_amounts = {"chair" => 5, "table" => 2}</code></pre>
 <p>To retrieve the value of how many tables there are in the store, you would use square brackets with the key name:</p>
 <pre><code class="language-ruby">p item_amounts["table"]</code></pre>
 <p>The output of this code is:</p>
 <pre>2</pre>
-If someone buys a table, now there's one less in the store. To redefine the value of the amount of tables, you would use square brackets with the key name and set it equal to the new value:</p>
+<p>If someone buys a table, now there's one less in the store. To redefine the value of the amount of tables, you would use square brackets with the key name and set it equal to the new value:</p>
 <pre><code class="language-ruby">item_amounts["table"] = 1
 p item_amounts</code></pre>
-The output of this code is:
+<p>The output of this code is:</p>
 <pre>{"chair" => 5, "table" => 1}</pre>
-Defining a brand new key and value to the hash looks very similar. Again, use square brackets with the key name (even though it doesn't exist yet!) and set it equal to the value you want. 
+<p>Defining a brand new key and value to the hash looks very similar. Again, use square brackets with the key name (even though it doesn't exist yet!) and set it equal to the value you want.</p>
 <pre><code class="language-ruby">item_amounts["desk"] = 7
 p item_amounts</code></pre>
-This will add a new key called "desk" to the hash with a value of 7. So the output of this code will be:
+<p>This will add a new key called "desk" to the hash with a value of 7. So the output of this code will be:</p>
 <pre>{"chair" => 5, "table" => 1, "desk" => 7}</pre>
 
 <h3>Exercises:</h3>

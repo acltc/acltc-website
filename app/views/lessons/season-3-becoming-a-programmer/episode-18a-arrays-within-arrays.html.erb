@@ -15,9 +15,9 @@
               <!-- BODY START -->
               <p>The values in an array can be more than just numbers or strings. Let's define an array called coordinates, where each item isn't a string or a number, but instead is another array:</p>
               <pre><code class="language-ruby">coordinates = [[3, 2], [2, 10], [4, 0]]</code></pre>
-              You can retrieve items in the outer coordinates array as normal using brackets. For example, to retrieve the second item from the coordinates array:
+              <p>You can retrieve items in the outer coordinates array as normal using brackets. For example, to retrieve the second item from the coordinates array:</p>
               <pre><code class="language-ruby">p coordinates[1] # the output is [2, 10]</code></pre>
-              In order to retrieve items from the sub-array, you would use brackets again. For example, to retrieve the first sub-array item from the second coordinates array item:
+              <p>In order to retrieve items from the sub-array, you would use brackets again. For example, to retrieve the first sub-array item from the second coordinates array item:</p>
               <pre><code class="language-ruby">p coordinates[1][0] # the output is 2</code></pre>
 
               <h3>Exercises:</h3>
@@ -74,6 +74,7 @@ Note - don't use the flatten method in this case, since it does all the work for
 </li>
 
 </ol>
+              <%= render 'form_solutions.html.erb' %>
               <!-- BODY END -->
               <div class="clear"></div>
               <br>

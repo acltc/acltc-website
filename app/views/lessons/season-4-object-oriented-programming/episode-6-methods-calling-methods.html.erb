@@ -33,13 +33,13 @@ Add an ‘info’ instance method to your Song class that returns a string that 
   <i class="glyphicon glyphicon-star-empty" ></i>
 </div>
 Create a new class called Product, that will produce products that are available for sale. 
-<ol>
+<ul>
 <li>Write a constructor such that each product will have a name, a description, and a price. </li>
 <li>Write methods that retrieve each of these attributes.</li>
 <li>Write methods that allow us to redefine those attributes.</li>
-</ol>
+</ul>
 <br>
-<p>Once you write the class, you should be able to run this code:</p>
+Once you write the class, you should be able to run this code:
 <pre><code class="language-ruby">product = Product.new("Printer", "It prints pages!", 94)
 p product
 p product.name
@@ -59,10 +59,10 @@ The code should output:
   <i class="glyphicon glyphicon-star-empty" ></i>
 </div>
 Now on the Product class, add the following features.
-<ol>
+<ul>
 <li>Add a method called <code>tax</code> that returns the price multiplied by 0.09 (which will represent sales tax.) This tax method should call the <code>price</code> method.</li>
 <li>Add a method called <code>total</code> which returns the sum of the price plus the tax. This method should reference both the <code>price</code> method as well as the <code>tax</code> method.</li>
-</ol>
+</ul>
 </li>
               </ol>
               <%= render 'form_solutions.html.erb' %>
