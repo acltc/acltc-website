@@ -1,0 +1,190 @@
+<section id="content">
+  <div class="content-wrap">
+    <div class="container clearfix">
+      <div class="postcontent nobottommargin clearfix">
+        <div class="single-post nobottommargin">
+          <div class="entry clearfix">
+            <div class="col_full portfolio-single-image">
+              <!-- VIDEO CONTENT -->
+              <!-- <iframe width="500" height="315" src="https://www.youtube.com/embed/8c3i5yJ89go?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe> -->
+            </div>
+            <div class="tutorial-content" class="entry-content notopmargin">
+              <div class="fancy-title title-dotted-border title-center">
+                <h2><%= @lesson_title %></h2>
+              </div>
+              <!-- BODY START -->
+<p>Let's use hashes to represent information about laptops.</p>
+<pre><code class="language-ruby">laptop1 = { "brand" => "apple", "color" => "silver", "screen_size" => 13 }
+laptop2 = { "brand" => "microsoft", "color" => "black", "screen_size" => 15 }
+
+p laptop1
+p laptop2
+</code></pre>
+<p>The code will output:</p>
+<pre>{"brand"=>"apple", "color"=>"silver", "screen_size"=>13}
+{"brand"=>"microsoft", "color"=>"black", "screen_size"=>15}</pre>
+<p>To retrieve the brand of a laptop, you can use square brackets with the key name:</p>
+<pre><code class="language-ruby">p laptop1["brand"]
+</code></pre>
+<p>The code will output:</p>
+<pre>"apple"</pre>
+<p>What would this code look like if we chose to use classes instead of hashes?</p>
+<pre><code class="language-ruby">class Laptop
+  def initialize(brand, color, screen_size)
+    @brand = brand
+    @color = color
+    @screen_size = screen_size
+  end
+end
+
+laptop3 = Laptop.new("apple", "silver", 13)
+laptop4 = Laptop.new("microsoft", "black", 15)
+
+p laptop3
+p laptop4
+</code></pre>
+<p>The code will output:</p>
+<pre>#&lt;Laptop:0x007ff312092a38 @brand="apple", @color="silver", @screen_size=13>
+#&lt;Laptop:0x007ff3120924e8 @brand="microsoft", @color="black", @screen_size=15></pre>
+<p>If we want to retrieve the brand of a laptop, it's currently not going to work!</p>
+<pre><code class="language-ruby">p laptop3["brand"]  # this won't work, since laptop3 is not a hash
+p laptop3.brand # this won't work, because we haven't defined a method in our class called brand
+</code></pre>
+<p>To make this code work, we need to define the method in the class to allow someone to retrieve the brand:</p>
+<pre><code class="language-ruby">class Laptop
+  def initialize(brand, color, screen_size)
+    @brand = brand
+    @color = color
+    @screen_size = screen_size
+  end
+
+  def brand
+    @brand
+  end
+end
+
+laptop3 = Laptop.new("apple", "silver", 13)
+laptop4 = Laptop.new("microsoft", "black", 15)
+
+p laptop3
+p laptop4
+</code></pre>
+<p>Now you can write this code that works!</p>
+<pre><code class="language-ruby">p laptop3.brand # this will work now!</code></pre>
+<p>The code will output:</p>
+<pre>"apple"</pre>
+<p>Even though this makes it seem like using hashes is much better than using classes, this is actually one of the benefits of using classes! You as a programmer have more control over what things can be done with an instance. You will see much more of this as you work with Ruby and more complex data.</p>
+<h3>Exercises:</h3>
+<ol>
+
+<li>
+<div class="rating" style="color:#fed130" >
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+</div>
+Rewrite the two hashes to use a class instead (similar to the example above):
+<pre><code class="language-ruby">shirt1 = { "type" => "short-sleeve", "price" => 12 }
+shirt1 = { "type" => "long-sleeve", "price" => 18 }
+
+class Shirt
+  # your code goes here!
+end
+
+shirt3 = Shirt.new("short-sleeve", 12)
+shirt4 = Shirt.new("long-sleeve", 18)
+
+p shirt3
+p shirt4</code></pre>
+The code should output:
+<pre>#&lt;Shirt:0x007fe7f3894738 @type="short-sleeve", @price=12>
+#&lt;Shirt:0x007fe7f3894490 @type="long-sleeve", @price=18></pre>
+</li>
+
+<li>
+<div class="rating" style="color:#fed130" >
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+</div>
+Rewrite the three hashes to use a class instead. Also write the method in the class to allow someone to retrieve the birthplace:
+<pre><code class="language-ruby">actor1 = { "name" => "Keanu Reeves", "birthplace" => "Beirut, Lebanon"  }
+actor2 = { "name" => "Meryl Streep", "birthplace" => "Summit, NJ"  }
+actor3 = { "name" => "Jack Nicholson", "birthplace" => "Neptune City, NJ"  }
+
+class Actor
+  # your code goes here!
+end
+
+actor4 = Actor.new("Keanu Reeves", "Beirut, Lebanon")
+actor5 = Actor.new("Meryl Streep", "Summit, NJ")
+actor6 = Actor.new("Jack Nicholson", "Neptune City, NJ")
+
+p actor4
+p actor5
+p actor6
+
+p actor4.birthplace</code></pre>
+The code should output:
+<pre>#&lt;Actor:0x007ffdca871cc8 @name="Keanu Reeves", @birthplace="Beirut, Lebanon">
+#&lt;Actor:0x007ffdca8712a0 @name="Meryl Streep", @birthplace="Summit, NJ">
+#&lt;Actor:0x007ffdca870d00 @name="Jack Nicholson", @birthplace="Neptune City, NJ">
+"Beirut, Lebanon"</pre>
+</li>
+
+<li>
+<div class="rating" style="color:#fed130" >
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+</div>
+Rewrite the two hashes to use a class instead. Also write the methods to retrieve the name and the color, and another method to redefine the color.:
+<pre><code class="language-ruby">boat1 = { "name" => "S. S. Minnow", "color" => "white", "price" => 20000 }
+boat2 = { "name" => "Titanic", "color" => "black", "price" => 700000000 }
+
+class Boat
+  # your code goes here!
+end
+
+boat1 = Boat.new("S. S. Minnow", "white", 20000 )
+boat2 = Boat.new("Titanic", "black", 700000000)
+
+p boat1
+p boat2
+
+p boat1.name
+boat2.color = "red"
+p boat2.color</code></pre>
+The code should output:
+<pre>#&lt;Boat:0x007fbe9b069b98 @name="S. S. Minnow", @color="white", @price=20000>
+#&lt;Boat:0x007fbe9b069878 @name="Titanic", @color="black", @price=700000000>
+"S. S. Minnow"
+"red"</pre>
+</li>
+
+</ol>
+              <%= render 'form_solutions.html.erb' %>
+              <!-- BODY END -->
+              <div class="clear"></div>
+              <br>
+              <%= render 'share_buttons.html.erb' %>
+            </div>
+          </div>
+          <%= render 'post_navigation.html.erb' %>
+          <div class="line"></div>
+        </div>
+      </div>
+      <div class="sidebar nobottommargin col_last clearfix">
+        <div class="sidebar-widgets-wrap">
+          <%= render 'next_lessons.html.erb' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

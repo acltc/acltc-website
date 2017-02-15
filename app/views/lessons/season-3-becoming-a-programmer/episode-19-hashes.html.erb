@@ -1,0 +1,65 @@
+<section id="content">
+	<div class="content-wrap">
+		<div class="container clearfix">
+			<div class="postcontent nobottommargin clearfix">
+				<div class="single-post nobottommargin">
+					<div class="entry clearfix">
+						<div class="col_full portfolio-single-image">
+							<!-- VIDEO CONTENT -->
+							<iframe width="500" height="315" src="https://www.youtube.com/embed/D96GBgWCE3Y?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
+						</div>
+						<div class="tutorial-content" class="entry-content notopmargin">
+							<div class="fancy-title title-dotted-border title-center">
+								<h2><%= @lesson_title %></h2>
+							</div>
+							<!-- BODY START -->
+							<h3>Exercises</h3>
+<ol>
+
+<li>
+<div class="rating" style="color:#fed130" >
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+</div>
+Start with the hash
+<pre><code class="language-ruby">pet_ages = {"Spot" => 3, "Snowy" => 2, "Salem" => 4}</code></pre> 
+Use the "each" method to print out each pet name and age in a sentence. The output should be:
+<pre>Spot is 3 years old.
+Snowy is 2 years old.
+Salem is 4 years old. </pre>
+</li>
+
+<li>
+<div class="rating" style="color:#fed130" >
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+</div>
+Write a program that serves as a dictionary. To keep it simple, the dictionary will only contain five words and their definitions. When the user starts the program, the program lists all five words that the user can look up. The user can then enter a word, and the program will return its definition.
+</li>
+
+</ol>
+							<%= render 'form_solutions.html.erb' %>
+							<!-- BODY END -->
+							<div class="clear"></div>
+							<br>
+							<%= render 'share_buttons.html.erb' %>
+						</div>
+					</div>
+					<%= render 'post_navigation.html.erb' %>
+					<div class="line"></div>
+				</div>
+			</div>
+			<div class="sidebar nobottommargin col_last clearfix">
+				<div class="sidebar-widgets-wrap">
+					<%= render 'next_lessons.html.erb' %>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

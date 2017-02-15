@@ -6,14 +6,27 @@
 					<div class="entry clearfix">
 						<div class="col_full portfolio-single-image">
 							<!-- VIDEO CONTENT -->
-							<iframe width="500" height="315" src="https://www.youtube.com/embed/TRYYDLeFlfg" frameborder="0" allowfullscreen></iframe>
+							<iframe width="500" height="315" src="https://www.youtube.com/embed/TRYYDLeFlfg?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
 						</div>
 						<div class="tutorial-content" class="entry-content notopmargin">
 							<div class="fancy-title title-dotted-border title-center">
 								<h2><%= @lesson_title %></h2>
 							</div>
 							<!-- BODY START -->
-							
+							<h3>Exercises</h3>
+							<ol>
+							<li>
+							<div class="rating" style="color:#fed130" >
+							  <i class="glyphicon glyphicon-star" ></i>
+							  <i class="glyphicon glyphicon-star" ></i>
+							  <i class="glyphicon glyphicon-star-empty" ></i>
+							  <i class="glyphicon glyphicon-star-empty" ></i>
+							  <i class="glyphicon glyphicon-star-empty" ></i>
+							</div>
+							Write a program that asks the user for their name and age, then outputs a greeting message and how old they'll be in 10 years. For example, if Alejandra enters her name and age of 28, the program will output "Welcome Alejandra! In 10 years, you will be 38!"
+							</li>
+							</ol>
+							<%= render 'form_solutions.html.erb' %>
 							<!-- BODY END -->
 							<div class="clear"></div>
 							<br>

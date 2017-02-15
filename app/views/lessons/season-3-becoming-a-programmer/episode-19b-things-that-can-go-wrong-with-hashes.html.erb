@@ -1,0 +1,74 @@
+<section id="content">
+  <div class="content-wrap">
+    <div class="container clearfix">
+      <div class="postcontent nobottommargin clearfix">
+        <div class="single-post nobottommargin">
+          <div class="entry clearfix">
+            <div class="col_full portfolio-single-image">
+              <!-- VIDEO CONTENT -->
+              <iframe width="500" height="315" src="https://www.youtube.com/embed/qskztfqTfps?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="tutorial-content" class="entry-content notopmargin">
+              <div class="fancy-title title-dotted-border title-center">
+                <h2><%= @lesson_title %></h2>
+              </div>
+              <!-- BODY START -->
+<h3>Exercises</h3>
+<ol>
+                <li>
+<div class="rating" style="color:#fed130" >
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+</div>
+                  Assume that we see this inside irb:
+<pre class=""><code>hash["a"].capitalize + hash["b"] + hash["c"].upcase
+TypeError: no implicit conversion of nil into String
+  from (irb):4:in `+'
+</code></pre>
+                  Create hash that would cause us to get this error.
+                </li>
+                <li>
+<div class="rating" style="color:#fed130" >
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+</div>
+                  Let's say we have an empty hash assigned to a variable called 'hash'. If we were to say:
+                  <pre><code>p hash["wat"]</code></pre>
+                  what would it return?
+                </li>
+                <li>
+<div class="rating" style="color:#fed130" >
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+</div>
+                  Next, define the above hash in a way so that it would return the number 0 instead.
+                </li>
+              </ol>
+              <%= render 'form_solutions.html.erb' %>
+              <!-- BODY END -->
+              <div class="clear"></div>
+              <br>
+              <%= render 'share_buttons.html.erb' %>
+            </div>
+          </div>
+          <%= render 'post_navigation.html.erb' %>
+          <div class="line"></div>
+        </div>
+      </div>
+      <div class="sidebar nobottommargin col_last clearfix">
+        <div class="sidebar-widgets-wrap">
+          <%= render 'next_lessons.html.erb' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

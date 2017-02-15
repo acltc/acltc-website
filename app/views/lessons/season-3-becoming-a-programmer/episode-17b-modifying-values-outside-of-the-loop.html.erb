@@ -1,0 +1,93 @@
+<section id="content">
+  <div class="content-wrap">
+    <div class="container clearfix">
+      <div class="postcontent nobottommargin clearfix">
+        <div class="single-post nobottommargin">
+          <div class="entry clearfix">
+            <div class="col_full portfolio-single-image">
+              <!-- VIDEO CONTENT -->
+              <!-- <iframe width="500" height="315" src="https://www.youtube.com/embed/8c3i5yJ89go?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe> -->
+            </div>
+            <div class="tutorial-content" class="entry-content notopmargin">
+              <div class="fancy-title title-dotted-border title-center">
+                <h2><%= @lesson_title %></h2>
+              </div>
+              <!-- BODY START -->
+              <p>You can use the "each" method to modify values outside of the each loop. For example, if you had an array of words and wanted to combine them into a single sentence separated by spaces, you can use this code:</p>
+<pre><code class="language-ruby">words = ["This", "is", "a", "sentence."]
+sentence = ""
+words.each do |word|
+  sentence += word + " "
+end
+puts sentence
+</code></pre>
+              <p>The result should be:</p>
+              <pre>This is a sentence. </pre>
+
+<h3>Exercises:</h3>
+<ol>
+
+<li>
+<div class="rating" style="color:#fed130" >
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+</div>
+Start with the array
+<pre><code class="language-ruby">words = ["a", "man", "a", "plan", "a", "canal", "panama"]</code></pre>
+Use the "each" method to combine all the words into a single word in all capital letters. The result should be:
+<pre>AMANAPLANACANALPANAMA</pre>
+</li>
+
+<li>
+<div class="rating" style="color:#fed130" >
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+</div>
+Start with the array
+<pre><code class="language-ruby">numbers = [3, 7, 2, 10]</code></pre>
+Use the "each" method to compute the product of all the numbers. The result should be:
+<pre>420</pre>
+</li>
+
+<li>
+<div class="rating" style="color:#fed130" >
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+</div>
+Start with the array
+<pre><code class="language-ruby">titles = ["The Boy Who Lived", "The Vanishing Glass", "The Letters from No One"]</code></pre>
+Use the "each" method to print out each chapter along with its chapter number. The result should be:
+<pre>Chapter 1. The Boy Who Lived
+Chapter 2. The Vanishing Glass
+Chapter 3. The Letters from No One</pre>
+</li>
+</ol>
+              
+              <%= render 'form_solutions.html.erb' %>
+              <!-- BODY END -->
+              <div class="clear"></div>
+              <br>
+              <%= render 'share_buttons.html.erb' %>
+            </div>
+          </div>
+          <%= render 'post_navigation.html.erb' %>
+          <div class="line"></div>
+        </div>
+      </div>
+      <div class="sidebar nobottommargin col_last clearfix">
+        <div class="sidebar-widgets-wrap">
+          <%= render 'next_lessons.html.erb' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

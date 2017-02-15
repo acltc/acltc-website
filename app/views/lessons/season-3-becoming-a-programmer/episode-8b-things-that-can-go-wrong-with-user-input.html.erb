@@ -6,14 +6,42 @@
 					<div class="entry clearfix">
 						<div class="col_full portfolio-single-image">
 							<!-- VIDEO CONTENT -->
-							<iframe width="500" height="315" src="https://www.youtube.com/embed/9IjeWli-U2I" frameborder="0" allowfullscreen></iframe>
+							<iframe width="500" height="315" src="https://www.youtube.com/embed/9IjeWli-U2I?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
 						</div>
 						<div class="tutorial-content" class="entry-content notopmargin">
 							<div class="fancy-title title-dotted-border title-center">
 								<h2><%= @lesson_title %></h2>
 							</div>
 							<!-- BODY START -->
-							
+							<h3>Exercises</h3>
+<ol>
+<li>
+<div class="rating" style="color:#fed130" >
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+</div>
+This program has a mistake and will display an error message if you run it:
+<pre class="language-ruby"><code>puts "Enter a number:"
+first_number = gets.chomp
+puts "Enter another number:"
+second_number = gets.chomp
+product = first_number * second_number
+puts "The product of the numbers is " + product</code></pre>
+This program has a mistake but does NOT display an error message if you run it:
+<pre class="language-ruby"><code>puts "Enter a number:"
+first_number = gets.chomp
+puts "Enter another number:"
+second_number = gets.chomp
+sum = first_number + second_number
+puts "The sum of the numbers is " + sum
+</code></pre>
+Describe in your own words why one program shows and error and the other doesn't even though there's a mistake in both.
+</li>
+</ol>
+							<%= render 'form_solutions.html.erb' %>
 							<!-- BODY END -->
 							<div class="clear"></div>
 							<br>

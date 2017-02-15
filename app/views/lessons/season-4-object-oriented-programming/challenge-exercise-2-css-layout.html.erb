@@ -1,0 +1,61 @@
+<section id="content">
+  <div class="content-wrap">
+    <div class="container clearfix">
+      <div class="postcontent nobottommargin clearfix">
+        <div class="single-post nobottommargin">
+          <div class="entry clearfix">
+            <div class="col_full portfolio-single-image">
+              <!-- VIDEO CONTENT -->
+              <!-- <iframe width="500" height="315" src="https://www.youtube.com/embed/8c3i5yJ89go?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe> -->
+            </div>
+            <div class="tutorial-content" class="entry-content notopmargin">
+              <div class="fancy-title title-dotted-border title-center">
+                <h2><%= @lesson_title %></h2>
+              </div>
+              <!-- BODY START -->
+              <h3>Exercises</h3>
+              <h4>We want you to attempt and submit a solution for the challenge exercise. It's okay if the solution isn't correct (the problem is quite difficult), but it's important to try such difficult problems to stretch your brain!</h4>
+              <p>
+              The Holy Grail Layout refers to a website that has a header, three equal height columns, and a footer. HTML and CSS were never originally designed to lay things out on a page in this way, so it's been surprisingly difficult to achieve this layout without a great deal of workarounds and hacks.
+              </p>
+              <ol>
+              <li>
+              <div class="rating" style="color:#fed130" >
+                <i class="glyphicon glyphicon-star" ></i>
+                <i class="glyphicon glyphicon-star" ></i>
+                <i class="glyphicon glyphicon-star" ></i>
+                <i class="glyphicon glyphicon-star-empty" ></i>
+                <i class="glyphicon glyphicon-star-empty" ></i>
+              </div>
+              Read this article to understand more about the problem and one specific solution: <a href="http://alistapart.com/article/holygrail">http://alistapart.com/article/holygrail</a>. Then create a JSFiddle to implement their solution and post the link.
+              </li>
+              <li>
+              <div class="rating" style="color:#fed130" >
+                <i class="glyphicon glyphicon-star" ></i>
+                <i class="glyphicon glyphicon-star" ></i>
+                <i class="glyphicon glyphicon-star" ></i>
+                <i class="glyphicon glyphicon-star-empty" ></i>
+                <i class="glyphicon glyphicon-star-empty" ></i>
+              </div>
+              More recently there are additions to CSS that allows for people to create this layout in a simpler way. Read this page to see a solution using flexbox, a new CSS property: https://philipwalton.github.io/solved-by-flexbox/demos/holy-grail/. Then create a JSFiddle to implement a flexbox-based solution and post the link.
+              </li>
+              </ol>
+              <%= render 'form_solutions.html.erb' %>
+              <!-- BODY END -->
+              <div class="clear"></div>
+              <br>
+              <%= render 'share_buttons.html.erb' %>
+            </div>
+          </div>
+          <%= render 'post_navigation.html.erb' %>
+          <div class="line"></div>
+        </div>
+      </div>
+      <div class="sidebar nobottommargin col_last clearfix">
+        <div class="sidebar-widgets-wrap">
+          <%= render 'next_lessons.html.erb' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

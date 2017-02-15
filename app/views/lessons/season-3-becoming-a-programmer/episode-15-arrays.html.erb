@@ -6,7 +6,7 @@
 					<div class="entry clearfix">
 						<div class="col_full portfolio-single-image">
 							<!-- VIDEO CONTENT -->
-							<iframe width="500" height="315" src="https://www.youtube.com/embed/42lbzdQEhAY" frameborder="0" allowfullscreen></iframe>
+							<iframe width="500" height="315" src="https://www.youtube.com/embed/42lbzdQEhAY?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe>
 						</div>
 						<div class="tutorial-content" class="entry-content notopmargin">
 							<div class="fancy-title title-dotted-border title-center">
@@ -14,27 +14,49 @@
 							</div>
 							<!-- BODY START -->
 							<h3>Exercises</h3>
-							<ol>
-								<li>
-									Start a program with the following line of code:
-<pre class="language-ruby"><code>words = ["zebra", "monkey", "aardvark"]</code></pre>
-									and write additional code so that the program outputs those three words in alphabetical order.
-								</li>
-								<li>
-									Create a program that asks a user to enter four different words, one at a time. Then, the computer will ask the user to choose a number between 0 and 3. The computer will then display the word corresponding to the correct number. For example, assume the user typed in the words: "ghost", "umbrella", "candy", and "pepperoni" - in that order. The user is then prompted to choose a number. If the user chooses the number 2, the computer displays the third word, which in this example is "candy".
-								</li>
-								<li>
-									Create a program that calculates the median of numbers.
+<ol>
+  <li>
+    <div class="rating" style="color:#fed130" >
+      <i class="glyphicon glyphicon-star" ></i>
+      <i class="glyphicon glyphicon-star-empty" ></i>
+      <i class="glyphicon glyphicon-star-empty" ></i>
+      <i class="glyphicon glyphicon-star-empty" ></i>
+      <i class="glyphicon glyphicon-star-empty" ></i>
+    </div>
+    Create an array of 5 pet names.<br>
+    Print out only the second pet name.
+  </li>
+  <li>
+    <div class="rating" style="color:#fed130" >
+      <i class="glyphicon glyphicon-star" ></i>
+      <i class="glyphicon glyphicon-star-empty" ></i>
+      <i class="glyphicon glyphicon-star-empty" ></i>
+      <i class="glyphicon glyphicon-star-empty" ></i>
+      <i class="glyphicon glyphicon-star-empty" ></i>
+    </div>
+    Run the code below.
+<pre class="language-ruby"><code>numbers = [3, 2, 7]
+puts numbers[7]
+</code></pre>
+What's the output? Explain why you got what you did.
+  </li>
 
-									The program will first ask the user how many numbers they'd like to enter.
+  <li>
+    <div class="rating" style="color:#fed130" >
+      <i class="glyphicon glyphicon-star" ></i>
+      <i class="glyphicon glyphicon-star-empty" ></i>
+      <i class="glyphicon glyphicon-star-empty" ></i>
+      <i class="glyphicon glyphicon-star-empty" ></i>
+      <i class="glyphicon glyphicon-star-empty" ></i>
+    </div>
+    Run the code below.
+<pre class="language-ruby"><code>names = ["Carmen","Bob", "Jenny"]
+puts names.join(", ")
+</code></pre> 
+What does it output? Use the join method again to create a string from the same array, but this time separated by dashes.</p>
+  </li>
 
-									Then, the program will prompt the user to enter each number.
-
-									Finally, the program will tell the user the median of all of the numbers. The definition of a median number is found <a href="http://www.mathsisfun.com/median.html" target="_blank">here.</a> 
-
-									Note from that article that the method for determining the median can change depending on whether there are an even or odd amount of numbers. Your program should handle both cases.
-								</li>
-							</ol>
+</ol>
 							<%= render 'form_solutions.html.erb' %>
 							<!-- BODY END -->
 							<div class="clear"></div>

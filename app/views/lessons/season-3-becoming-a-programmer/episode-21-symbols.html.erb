@@ -1,0 +1,79 @@
+<section id="content">
+  <div class="content-wrap">
+    <div class="container clearfix">
+      <div class="postcontent nobottommargin clearfix">
+        <div class="single-post nobottommargin">
+          <div class="entry clearfix">
+            <div class="col_full portfolio-single-image">
+              <!-- VIDEO CONTENT -->
+              <!-- <iframe width="500" height="315" src="https://www.youtube.com/embed/8c3i5yJ89go?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe> -->
+            </div>
+            <div class="tutorial-content" class="entry-content notopmargin">
+              <div class="fancy-title title-dotted-border title-center">
+                <h2><%= @lesson_title %></h2>
+              </div>
+              <!-- BODY START -->
+<p>So far we've learned about Ruby data types such as numbers, strings, arrays, and hashes. One other data type that is used often in ruby is a <strong>symbol</strong>, which are very similar to strings. To define a symbol, you use a colon as follows:</p>
+<pre><code class="language-ruby">x = "hello" # this is a string
+x = :hello # this is a symbol</code></pre>
+<p>Symbols are <strong>immutable</strong>, which means they can't be modified after they're created. In other words, you can't do things like add symbols together the way you could with strings. This means symbols have fewer methods compared to strings, which means they take up less computer memory.</p>
+<p>Symbols are most commonly used as the keys for hashes. Instead of defining a hash like this:</p>
+<pre><code class="language-ruby">person = {"name" => "Dana", "email" => "dana@email.com"}
+puts person["name"] # the output is Dana</code></pre>
+<p> We can define a hash using symbols instead:</p>
+<pre><code class="language-ruby">person = {:name => "Dana", :email => "dana@email.com"}
+puts person[:name] # the output is Dana</code></pre>
+<p>In practice, it's not much different, but again the advantage in using symbols is the efficient use of memory.</p>
+
+<h3>Exercises:</h3>
+<ol>
+
+<li>
+<div class="rating" style="color:#fed130" >
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+</div>
+Convert all three lines of the following code to use symbols instead of strings for the hash keys.
+<pre><code class="language-ruby">product = {"name" => "Jacket", "price" => 49.99, "color" => "red"}
+puts product["name"] # the output is Jacket
+puts product["price"] # the output is 49.99</code></pre>
+</li>
+
+<li>
+<div class="rating" style="color:#fed130" >
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+  <i class="glyphicon glyphicon-star-empty" ></i>
+</div>
+Symbols have fewer methods compared to strings. For example:
+<pre><code class="language-ruby">puts "star" + "fish" # this works!
+puts :star + :fish # this crashes!</code></pre>
+Create another example where you can do something with strings that would crash with symbols. 
+</li>
+
+</ol>
+              
+              <%= render 'form_solutions.html.erb' %>
+              <!-- BODY END -->
+              <div class="clear"></div>
+              <br>
+              <%= render 'share_buttons.html.erb' %>
+            </div>
+          </div>
+          <%= render 'post_navigation.html.erb' %>
+          <div class="line"></div>
+        </div>
+      </div>
+      <div class="sidebar nobottommargin col_last clearfix">
+        <div class="sidebar-widgets-wrap">
+          <%= render 'next_lessons.html.erb' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
