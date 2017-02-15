@@ -13,9 +13,11 @@ class SubscribersController < ApplicationController
     setup_subscriber
 
     if Subscriber.find_by(email: params[:email]) 
-      @subscriber = Subscriber.find_by(email: params[:email]) 
+      @subscriber = Subscriber.find_by(email: params[:email])
+      create_hubspot_contact("Application")
       redirect_to "/applications/new/#{@subscriber.id}"
     elsif @subscriber.save
+      create_hubspot_contact("Application")
       subscriber_drip_setup
       redirect_to "/applications/new/#{@subscriber.id}"
     else
@@ -23,42 +25,62 @@ class SubscribersController < ApplicationController
     end
   end
 
+  def create_from_popup
+    setup_subscriber
+
+    if request.location
+      if city = request.location.city
+        @subscriber.city = city
+      end
+      if state = request.location.state
+        @subscriber.state = state
+      end
+      if postal_code = request.location.postal_code
+        @subscriber.postal_code = postal_code
+      end
+    end
+    
+    if @subscriber.save
+      subscriber_drip_setup
+      render :nothing => true
+    end
+  end
+
   def create_from_curriculum
-    if cookies[:is_subscriber]
+    setup_subscriber
+
+    if Subscriber.find_by(email: params[:email]) || @subscriber.save
+      subscriber_drip_setup
+      create_hubspot_contact("Curriculum Download Phone Test")
       respond_to do |format|
         @java_url = "/subscribers/download"
         format.js {render :partial => "downloadFile"}
       end
-    else
-      @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], mousetrap: params[:mousetrap], ip_address: request.remote_ip, phone: params[:phone])
-      if request.location
-        if city = request.location.city
-          @subscriber.city = city
-        end
-        if state = request.location.state
-          @subscriber.state = state
-        end
-        if postal_code = request.location.postal_code
-          @subscriber.postal_code = postal_code
-        end
-      end
-      if Subscriber.find_by(email: params[:email]) || @subscriber.save
-        subscriber_drip_setup
-        respond_to do |format|
-          @java_url = "/subscribers/download"
-          format.js {render :partial => "downloadFile"}
-        end
+    end
+  end
+
+  def create_from_career_pdf
+    setup_subscriber
+
+    if Subscriber.find_by(email: params[:email]) || @subscriber.save
+      subscriber_drip_setup
+      create_hubspot_contact("Career PDF Download")
+      respond_to do |format|
+        @pdf_url = "/subscribers/career_pdf_download"
+        format.js {render :partial => "downloadCareerPdf"}
       end
     end
   end
 
   def create_from_tutorial
+
     if cookies[:is_subscriber]
       @tutorials_visible = true
     else
       setup_subscriber
 
       if Subscriber.find_by(email: params[:email]) || @subscriber.save
+        create_hubspot_contact("View Tutorials")
         subscriber_drip_setup
         @tutorials_visible = true
       else
@@ -74,6 +96,7 @@ class SubscribersController < ApplicationController
     setup_subscriber
 
     if Subscriber.find_by(email: params[:email]) || @subscriber.save
+      create_hubspot_contact("Homepage Footer")
       subscriber_drip_setup
     else
       render :apply
@@ -88,6 +111,12 @@ class SubscribersController < ApplicationController
     url = 'https://s3.amazonaws.com/acltc/Actualize_Curriculum_2016.pdf'
     data = open(url).read
     send_data data, :disposition => 'attachment', :filename=>"Actualize_Curriculum_2016.pdf"
+  end
+
+  def career_pdf_download
+    url = 'https://s3.us-east-2.amazonaws.com/acltc-website-assets/career_in_coding.pdf'
+    data = open(url).read
+    send_data data, :disposition => 'attachment', :filename=>"Actualize_Career_In_Coding.pdf"
   end
 
   private
@@ -118,6 +147,17 @@ class SubscribersController < ApplicationController
     client.create_or_update_subscriber(@subscriber.email)
     client.subscribe(@subscriber.email, 34197704)
     AcltcMailer.subscriber_mousetrap_email(@subscriber).deliver_now
+  end
+
+  def create_hubspot_contact(mousetrap_type)
+    begin
+      contact = Hubspot::Contact.find_by_email(@subscriber.email)
+      if !contact
+        Hubspot::Contact.create!(@subscriber.email, {firstname: @subscriber.first_name, phone: @subscriber.phone, lead_type: "Mousetrap", mousetrap: mousetrap_type, created_at: @subscriber.created_at})
+      end
+    rescue Exception => e
+      p "rescue #{e.message}"
+    end
   end
 
 end
