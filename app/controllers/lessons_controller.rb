@@ -93,7 +93,6 @@ class LessonsController < ApplicationController
 
 
     # { title: "Episode 7 - Synthesis: Putting It All Together", time: "11:35", category_id: 3 },
-
   ].freeze
 
   def index
