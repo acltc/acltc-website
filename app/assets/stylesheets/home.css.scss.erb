@@ -79,6 +79,35 @@
   }
 }
 
+/* sticky-phone */
+
+
+@media screen and (max-width: 768px) {
+  #sticky-phone {
+    text-align: center;
+    position: absolute;
+    z-index: 1000000;
+    display: block;
+  }
+  
+  #sticky-phone a {
+    background-color: #0F6BFF;
+  }
+
+  #marquee .sticky-phone-container {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #sticky-phone {
+    display: none;
+  }
+}
+
+/* sticky-phone-end */
+
 #rebranding{
   z-index: 999999999999999;
   margin-top: 6%;
