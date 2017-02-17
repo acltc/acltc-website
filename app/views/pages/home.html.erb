@@ -714,6 +714,13 @@
                 $('#sidebar').fadeOut("fast")
             }
 
+            //displays sticky phone button
+            if(docViewTop >= 766) {
+                $("#sticky-phone").fadeIn( "slow" );
+            } else if (docViewTop < 766) {
+                $('#sticky-phone').fadeOut("fast")
+            }
+
             return ((elemTop <= docViewTop));
 
         }
@@ -735,6 +742,7 @@
                 sticky.css('top',stopHeight);
             }
         });
+      
       $(window).scroll(function(e){ 
         var $el = $('#sticky-phone'); 
         var isPositionFixed = ($el.css('position') == 'fixed');
