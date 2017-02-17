@@ -717,7 +717,7 @@
             }
 
             //displays sticky phone button
-            if(docViewTop >= 766 && $(".sticky-phone").css("display" != "none")) {
+            if(docViewTop >= 766) {
                 $("#sticky-phone").fadeIn( "slow" );
             } else if (docViewTop < 766) {
                 $('#sticky-phone').fadeOut("fast")
