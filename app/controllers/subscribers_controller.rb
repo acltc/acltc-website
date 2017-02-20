@@ -76,8 +76,9 @@ class SubscribersController < ApplicationController
     if Subscriber.find_by(email: params[:email]) || @subscriber.save
       create_hubspot_contact("Homepage Footer")
       subscriber_drip_setup
-    else
-      render :apply
+      respond_to do |format|
+        format.js {render :partial => "createFromFooter"}
+      end
     end
   end
 
