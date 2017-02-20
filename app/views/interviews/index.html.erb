@@ -16,7 +16,7 @@
               <% if interview.application %>
                 <td><h5><%= link_to "#{interview.application.first_name} #{interview.application.last_name}", application_path(interview.application.id) %></h5></td>
                 <td><%= link_to 'Release', "/interviews/#{interview.id}?release=true&application_id=#{interview.application.id}", method: :patch, data: { confirm: 'Are you sure you want to release this interview slot?' }, class: "btn btn-warning btn-xs interview-button" %></td>
-              <% else %>
+              <% elsif interview.tour %>
                 <td><h5><%= link_to "#{interview.tour.first_name} #{interview.tour.last_name}", tour_path(interview.tour.id) %></h5></td>
                 <td><%= link_to 'Release', "/interviews/#{interview.id}?release=true&tour_id=#{interview.tour.id}", method: :patch, data: { confirm: 'Are you sure you want to release this tour slot?' }, class: "btn btn-warning btn-xs interview-button" %></td>
               <% end %>
