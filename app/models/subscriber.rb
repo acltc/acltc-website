@@ -1,7 +1,7 @@
 class Subscriber < ActiveRecord::Base
 
-  validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
   validates :first_name, :email, :phone, presence: true
+  validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
 
   def self.to_csv(options = {})    
     CSV.generate(options) do |csv|
