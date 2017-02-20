@@ -19,6 +19,7 @@ $(document).on('ready', function() {
       subscriber: {
         first_name: '',
         email: '',
+        phone: '',
         mousetrap: 'Popup'
       },
       subscribers: [],
