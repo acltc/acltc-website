@@ -11,5 +11,4 @@ class Subscriber < ActiveRecord::Base
       end
     end
   end
-
 end
