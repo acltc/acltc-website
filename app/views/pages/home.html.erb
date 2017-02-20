@@ -101,7 +101,9 @@
 
         
        <!-- Content
-        ============================================= -->    
+        ============================================= -->  
+       
+
         <div id="sidebar" style="margin-right: 20px;">
           <!-- <div id="catcher"></div> -->
           <div id="catcher"></div>
@@ -109,15 +111,19 @@
             <a href="/apply" class="btn btn-primary sticky-apply sticky-sidebar" style="width: 200px;">Apply</a><br><br>
             <a href="/tours/new" class="btn btn-primary sticky-tour sticky-sidebar" style="width: 200px;">Book A Tour</a><br><br>
             <a href="#info-session" class="btn btn-primary sticky-session sticky-sidebar" style="width: 200px;">Info Session</a>
+
           </div>
         </div>
         <!-- <div id="sticky_item">Hello</div> -->
 
         <div class="marquee">
-            <div id = "marquee" class="container">
-
+            <div class="sticky-phone-container">
+              <div id="sticky-phone">
+                <a href="tel:773-724-1128" rel="nofollow" class="btn btn-primary" style="width: 200px;"><span class="glyphicon glyphicon-phone" aria-hidden="true"></span>  Call Us</a>
+              </div>
+            </div>  
+            <div id="marquee" class="container">
                 <div class="row">
-
                         <div class="marquee-content clearfix">
                             <div class="col-md-4">
                                 <img class="logo" src="<%= image_path 'actualize-logo-275.png'%>">
@@ -707,6 +713,13 @@
                 $('#sidebar').fadeOut("fast")
             }
 
+            //displays sticky phone button
+            if(docViewTop >= 766) {
+                $("#sticky-phone").fadeIn( "slow" );
+            } else if (docViewTop < 766) {
+                $('#sticky-phone').fadeOut("fast")
+            }
+
             return ((elemTop <= docViewTop));
 
         }
@@ -728,5 +741,18 @@
                 sticky.css('top',stopHeight);
             }
         });
+      
+      $(window).scroll(function(e){ 
+        var $el = $('#sticky-phone'); 
+        var isPositionFixed = ($el.css('position') == 'fixed');
+        if ($(this).scrollTop() > 200 && !isPositionFixed){ 
+          $('#sticky-phone').css({'position': 'fixed', 'top': '0px'}); 
+        }
+        // if ($(this).scrollTop() < 200 && isPositionFixed)
+        // {
+        //   $('#sticky-phone').css({'position': 'static', 'top': '0px'}); 
+        // } 
+      });
     });
+
 </script>
