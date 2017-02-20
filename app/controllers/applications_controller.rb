@@ -42,11 +42,6 @@ class ApplicationsController < ApplicationController
   end
 
   def new
-    if params[:long]
-      @long = true
-    else
-      split_test
-    end
     if params[:application_type] == "scholarship"
       redirect_to '/pages/scholarship_thank_you'
     else
@@ -63,7 +58,6 @@ class ApplicationsController < ApplicationController
     @application = Application.new(application_params)
     if @application.save
       create_hubspot_contact
-      converted!("Long Form Vs. Short Form") unless params[:long]
       @application.interview.update(booked: true)
       AcltcMailer.application_email(@application).deliver_now
       AcltcMailer.application_email_reply(@application).deliver_now
@@ -108,11 +102,6 @@ class ApplicationsController < ApplicationController
     :primary_goals, :programming_experience, :preferred_work_location,
     :work_concurrently, :tinker_example, :why_better, :status, :location, :cohort,
     :notes, :interview_id, :long)
-  end
-
-  def split_test
-    @long_form_short_form = ab_test("Long Form Vs. Short Form", ["Long Form", "Short Form"])
-    # @progress_bar = ab_test("Application Progress Bar Test", ["Progress Bar", "No Progress Bar"])
   end
 
   def create_hubspot_contact
