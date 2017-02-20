@@ -12,7 +12,7 @@ class SubscribersController < ApplicationController
   def create_from_application
     setup_subscriber
 
-    if Subscriber.find_by(email: params[:email]) 
+    if !params[:email].strip.empty? && Subscriber.find_by(email: params[:email]) 
       @subscriber = Subscriber.find_by(email: params[:email])
       create_hubspot_contact("Application")
       redirect_to "/applications/new/#{@subscriber.id}"
@@ -28,7 +28,7 @@ class SubscribersController < ApplicationController
   def create_from_curriculum
     setup_subscriber
 
-    if Subscriber.find_by(email: params[:email]) || @subscriber.save
+    if !params[:email].strip.empty? && Subscriber.find_by(email: params[:email])  || @subscriber.save
       subscriber_drip_setup
       create_hubspot_contact("Curriculum Download Phone Test")
       respond_to do |format|
@@ -41,7 +41,7 @@ class SubscribersController < ApplicationController
   def create_from_career_pdf
     setup_subscriber
 
-    if Subscriber.find_by(email: params[:email]) || @subscriber.save
+    if !params[:email].strip.empty? && Subscriber.find_by(email: params[:email])  || @subscriber.save
       subscriber_drip_setup
       create_hubspot_contact("Career PDF Download")
       respond_to do |format|
@@ -57,7 +57,7 @@ class SubscribersController < ApplicationController
     else
       setup_subscriber
 
-      if Subscriber.find_by(email: params[:email]) || @subscriber.save
+      if !params[:email].strip.empty? && Subscriber.find_by(email: params[:email])  || @subscriber.save
         create_hubspot_contact("View Tutorials")
         subscriber_drip_setup
         @tutorials_visible = true
@@ -73,7 +73,7 @@ class SubscribersController < ApplicationController
   def create_from_footer
     setup_subscriber
 
-    if Subscriber.find_by(email: params[:email]) || @subscriber.save
+    if !params[:email].strip.empty? && Subscriber.find_by(email: params[:email])  || @subscriber.save
       create_hubspot_contact("Homepage Footer")
       subscriber_drip_setup
       respond_to do |format|
