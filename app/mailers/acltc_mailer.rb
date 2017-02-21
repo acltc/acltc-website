@@ -67,7 +67,7 @@ class AcltcMailer < ApplicationMailer
     if @info_session_sign_up.city == "Chicago"
       @city_advisor = "nick@anyonecanlearntocode.com"
     elsif @info_session_sign_up.city == "New York City"
-      @city_advisor = "sal@anyonecanlearntocode.com"
+      @city_advisor = "zev@anyonecanlearntocode.com"
     else
       @city_advisor = "ray@actualize.co"
     end
