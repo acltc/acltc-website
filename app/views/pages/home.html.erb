@@ -148,16 +148,16 @@
                                     <%= form_for @tour, remote: true, url: { action: "tour_home_create" }, html: { id: "infoSessionSignUp" } do |f| %>
                                     <div class="row info-fields" style="padding-bottom: 20px;">
                                         <div class="col-md-3">
-                                            <%= f.select :city, options_for_select(["Chicago", "New York City", "San Francisco"], @tour.city), { prompt: "Select a city"}, { class: "form-control", id: "session-city-select" } %><br>
+                                            <%= f.select :city, options_for_select(["Chicago", "New York City", "San Francisco"], @tour.city), { prompt: "Select a city"}, { class: "form-control tour-home-fields", id: "session-city-select" } %><br>
                                         </div>
                                         <div class="col-md-3">
-                                            <%= f.text_field :first_name, placeholder: "Name" %>
+                                            <%= f.text_field :first_name, placeholder: "Name", class: "tour-home-fields" %>
                                         </div>
                                         <div class="col-md-3">
-                                            <%= f.text_field :email, placeholder: "Email" %>
+                                            <%= f.text_field :email, placeholder: "Email", class: "tour-home-fields" %>
                                         </div>
                                         <div class="col-md-3">
-                                            <%= f.text_field :phone, placeholder: "Phone" %>
+                                            <%= f.text_field :phone, placeholder: "Phone", class: "tour-home-fields" %>
                                         </div>
                                     </div>
                                     <div class="row">
