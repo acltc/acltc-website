@@ -4,6 +4,7 @@ class PagesController < ApplicationController
   def home
     @info_session_sign_up = InfoSessionSignUp.new
     @next_info_session = InfoSession.next_info_session
+    @tour = Tour.new
 
     cohort_dates = cohort_start_dates
 
@@ -19,6 +20,20 @@ class PagesController < ApplicationController
     render :layout => 'home_application'
   end
 
+  def tour_home_create
+    @tour = Tour.new(tour_params)
+
+    if @tour.save
+      create_hubspot_contact
+      # @tour.interview.update(booked: true)
+      AcltcMailer.tour_email(@tour).deliver_now
+      AcltcMailer.tour_email_reply(@tour).deliver_now
+      respond_to do |format|
+        format.js {render :partial => "tourHomeCreate"}
+      end
+    end
+  end
+
   def thank_you
 
   end
@@ -26,5 +41,35 @@ class PagesController < ApplicationController
   def contacts_thank_you
 
   end
+
+  private
+    def tour_params
+      params.require(:tour).permit(
+        :city,
+        :first_name,
+        :last_name,
+        :email,
+        :phone,
+        :interview_id,
+        :notes,
+        :long
+      )
+    end
+
+    def create_hubspot_contact
+      begin
+        lower_levels = ["Mousetrap", "Info Session"]
+        contact = Hubspot::Contact.find_by_email(tour_params[:email])
+        if contact
+          if lower_levels.include?(contact["lead_type"])
+            contact.update!({lead_type: "Tour"})
+          end
+        else
+          Hubspot::Contact.create!(tour_params[:email], {firstname: tour_params[:first_name], lastname: tour_params[:last_name], phone: tour_params[:phone], lead_type: "Tour", created_at: @tour.created_at })
+        end
+      rescue Exception => e
+        p "rescue #{e.message}"
+      end
+    end
   
 end
