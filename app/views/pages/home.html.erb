@@ -114,7 +114,7 @@
           <div id="sticky" class="text-left">
             <a href="/apply" class="btn btn-primary sticky-apply sticky-sidebar" style="width: 200px;">Apply</a><br><br>
             <a href="/tours/new" class="btn btn-primary sticky-tour sticky-sidebar" style="width: 200px;">Book A Tour</a><br><br>
-            <a href="#info-session" class="btn btn-primary sticky-session sticky-sidebar" style="width: 200px;">Info Session</a>
+            
 
           </div>
         </div>
@@ -140,36 +140,67 @@
                                 <!-- <div class="col-md-12"> -->
                                         <%#= link_to "Apply Now", new_application_path, class: "btn single-apply-button aqua-orange-apply-button" %>                    
                                 <!-- </div> -->
-                            <% if @next_info_session %>
+
                                 <div id="info-session">
-                                    <p class="info-session-description">Come join us in person for a live info session!</p>
-                                    <p class="info-session-content">Learn everything there is to know about Actualize from one of our Admissions Advisors and see us in action.</p>
-                                    <p class="info-session-content">Our next session is on <%= @next_info_session.friendly_date %> at <%= @next_info_session.friendly_time %>.</p><br>
-                                    <%= form_tag("/info_session_sign_ups", id: "infoSessionSignUp", method: :post) do %>
+                                    <p class="info-session-description">Come join us in person for a tour or info session!</p>
+                                    <p class="info-session-content" id="tour-happy-sad-messages">Learn everything there is to know about Actualize from one of our Admissions Advisors and see us in action. We'll get in touch with you shortly to schedule your visit.</p>
+                                    <br>
+                                    <%= form_for @tour, remote: true, url: { action: "tour_home_create" }, html: { id: "infoSessionSignUp" } do |f| %>
                                     <div class="row info-fields" style="padding-bottom: 20px;">
                                         <div class="col-md-3">
-                                            <%= select_tag :city, options_for_select(["Chicago", "New York City", "San Francisco"], @info_session_sign_up.city), prompt: "Select a city", class: "form-control", id: "session-city-select" %><br>
+                                            <%= f.select :city, options_for_select(["Chicago", "New York City", "San Francisco"], @tour.city), { prompt: "Select a city"}, { class: "form-control tour-home-fields", id: "session-city-select" } %><br>
                                         </div>
                                         <div class="col-md-3">
-                                            <%= text_field_tag :name, nil, placeholder: "Name", required: true %>
+                                            <%= f.text_field :first_name, placeholder: "Name", class: "tour-home-fields" %>
                                         </div>
                                         <div class="col-md-3">
-                                            <%= text_field_tag :email, nil, placeholder: "Email", required: true %>
+                                            <%= f.text_field :email, placeholder: "Email", class: "tour-home-fields" %>
                                         </div>
                                         <div class="col-md-3">
-                                            <%= text_field_tag :phone, nil, placeholder: "Phone", required: true %>
+                                            <%= f.text_field :phone, placeholder: "Phone", class: "tour-home-fields" %>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <%= hidden_field_tag :info_session_id, @next_info_session.id %>
+                                    
                                         <div class="col-md-4"></div>
                                         <div class="col-md-4">
-                                            <%= submit_tag "Sign Up", class: "curriculum-download-btn", id: "submit-session", style: "padding:0;margin:0;background-color:#F25252;color:white;" %>
+                                            <%= f.submit "Book A Tour", class: "curriculum-download-btn", id: "submit-session", style: "padding:0;margin:0;background-color:#F25252;color:white;" %>
                                         </div>
                                     </div>
                                     <% end %>
-                                </div>  
-                            <% end %>
+                                </div> 
+
+<!--                          ------ INFO SESSION ------
+ -->                            <%# if @next_info_session %>
+                                <!-- <div id="info-session">
+                                    <p class="info-session-description">Come join us in person for a live info session!</p>
+                                    <p class="info-session-content">Learn everything there is to know about Actualize from one of our Admissions Advisors and see us in action.</p>
+                                    <p class="info-session-content">Our next session is on <%#= @next_info_session.friendly_date %> at <%#= @next_info_session.friendly_time %>.</p><br>
+                                    <%#= form_tag("/info_session_sign_ups", id: "infoSessionSignUp", method: :post) do %>
+                                    <div class="row info-fields" style="padding-bottom: 20px;">
+                                        <div class="col-md-3">
+                                            <%#= select_tag :city, options_for_select(["Chicago", "New York City", "San Francisco"], @info_session_sign_up.city), prompt: "Select a city", class: "form-control", id: "session-city-select" %><br>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <%#= text_field_tag :name, nil, placeholder: "Name", required: true %>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <%#= text_field_tag :email, nil, placeholder: "Email", required: true %>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <%#= text_field_tag :phone, nil, placeholder: "Phone", required: true %>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <%#= hidden_field_tag :info_session_id, @next_info_session.id %>
+                                        <div class="col-md-4"></div>
+                                        <div class="col-md-4">
+                                            <%#= submit_tag "Sign Up", class: "curriculum-download-btn", id: "submit-session", style: "padding:0;margin:0;background-color:#F25252;color:white;" %>
+                                        </div>
+                                    </div>
+                                    <%# end %>
+                                </div> -->  
+                            <%# end %>
                         </div>
                 </div> <!-- /row -->
             </div>
