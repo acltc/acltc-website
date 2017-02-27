@@ -101,7 +101,12 @@ class SubscribersController < ApplicationController
   private
 
   def setup_subscriber
-    @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], phone: params[:phone], mousetrap: params[:mousetrap], ip_address: request.remote_ip)
+    twilio_format = params[:phone]
+    while twilio_format.length > 10
+      twilio_format.slice!(0)
+    end
+
+    @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], phone: twilio_format.prepend("+1"), mousetrap: params[:mousetrap], ip_address: request.remote_ip)
     if request.location
       if city = request.location.city
         @subscriber.city = city
