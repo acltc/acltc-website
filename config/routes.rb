@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get '/pages/thank_you'
   get '/pages/contacts_thank_you', :as => :contacts_thank_you
   get "/tours/thank_you" => "tours#thank_you", :as => :tours_thank_you
+  get "/pages/tours/thank_you" => "pages#tour_thank_you", :as => :pages_tours_thank_you
   get '/pages/scholarship_thank_you'
   get '/corporate_training' => 'corporate_training_messages#corporate_training', :as => :corporate_training
   get '/corporate_training_thank_you' => 'corporate_training_messages#thank_you', :as => :corporate_training_thank_you

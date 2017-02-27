@@ -28,13 +28,15 @@ class PagesController < ApplicationController
       # @tour.interview.update(booked: true)
       AcltcMailer.tour_email(@tour).deliver_now
       AcltcMailer.tour_email_reply(@tour).deliver_now
-      respond_to do |format|
-        format.js {render :partial => "tourHomeCreate"}
-      end
+      redirect_to pages_tours_thank_you_path
     end
   end
 
   def thank_you
+
+  end
+
+  def tour_thank_you
 
   end
 
