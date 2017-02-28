@@ -1,9 +1,0 @@
-json.id @subscriber.id
-json.first_name @subscriber.first_name
-json.email @subscriber.email
-json.phone @subscriber.phone
-json.city @subscriber.city
-json.state @subscriber.state
-json.postal_code @subscriber.postal_code
-json.mousetrap @subscriber.mousetrap
-json.ip_address @subscriber.ip_address

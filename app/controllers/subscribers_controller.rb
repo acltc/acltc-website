@@ -14,11 +14,11 @@ class SubscribersController < ApplicationController
 
     if !params[:email].strip.empty? && Subscriber.find_by(email: params[:email]) 
       @subscriber = Subscriber.find_by(email: params[:email])
-      create_hubspot_contact("Application")
+      # create_hubspot_contact("Application")
       redirect_to "/applications/new/#{@subscriber.id}"
     elsif @subscriber.save
-      create_hubspot_contact("Application")
-      subscriber_drip_setup
+      # create_hubspot_contact("Application")
+      # subscriber_drip_setup
       redirect_to "/applications/new/#{@subscriber.id}"
       create_for_api
     else
@@ -105,9 +105,9 @@ class SubscribersController < ApplicationController
     @twilio_format = params[:phone]
     while @twilio_format.length > 10
       @twilio_format.slice!(0)
-    end
+    end 
 
-    @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], phone: @twilio_format.prepend("+1"), mousetrap: params[:mousetrap], ip_address: request.remote_ip)
+    @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], phone: @twilio_format, mousetrap: params[:mousetrap], ip_address: request.remote_ip)
     if request.location
       if city = request.location.city
         @subscriber.city = city
@@ -119,13 +119,19 @@ class SubscribersController < ApplicationController
         @subscriber.postal_code = postal_code
       end
     end
+
     return @subscriber
+
   end
 
   def create_for_api
-    setup_subscriber
 
-    @subscriber = Unirest.post("https://actualize-lead-contact.herokuapp.com/api/v1/leads", headers: {"Accept" => "application/json", "Content-Type" => "application/json"}, parameters: {lead: {first_name: params[:first_name], email: params[:email], phone: @twilio_format.prepend("+1"), city: @subscriber.city, state: @subscriber.state, zip: @subscriber.postal_code, mousetrap: params[:mousetrap], ip_address: request.remote_ip }}).body
+    # @subscriber = Unirest.post("https://actualize-lead-contact.herokuapp.com/api/v1/leads.json", headers: {"Accept" => "application/json", "Content-Type" => "application/json"}, parameters: {:lead =>{:first_name => params[:first_name], :email => params[:email], :phone => @twilio_format.prepend("+1"), :city => @subscriber.city, :state => @subscriber.state, :zip => @subscriber.postal_code, :mousetrap => params[:mousetrap], :ip_address => request.remote_ip }}).body
+
+    @subscriber = Unirest.post("https://9b8d2723.ngrok.io/api/v1/leads.json", headers: {"Accept" => "application/json", "Content-Type" => "application/json"}, parameters: {:lead =>{:first_name => params[:first_name], :email => params[:email], :phone => @twilio_format.prepend("+1"), :city => @subscriber.city, :state => @subscriber.state, :zip => @subscriber.postal_code, :mousetrap => params[:mousetrap], :ip_address => request.remote_ip }}).body
+
+     # @subscriber = Unirest.post("https://9b8d2723.ngrok.io/api/v1/leads.json", headers:{ "Accept" => "application/json", "Content-Type" => "application/json" }, parameters:{ :lead => {:first_name => params[:first_name], :phone => params[:phone], :email => params[:email]}})
+
 
     p "-----------------------"
     p @subscriber
