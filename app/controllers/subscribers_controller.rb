@@ -14,11 +14,11 @@ class SubscribersController < ApplicationController
 
     if !params[:email].strip.empty? && Subscriber.find_by(email: params[:email]) 
       @subscriber = Subscriber.find_by(email: params[:email])
-      # create_hubspot_contact("Application")
+      create_hubspot_contact("Application")
       redirect_to "/applications/new/#{@subscriber.id}"
     elsif @subscriber.save
-      # create_hubspot_contact("Application")
-      # subscriber_drip_setup
+      create_hubspot_contact("Application")
+      subscriber_drip_setup
       redirect_to "/applications/new/#{@subscriber.id}"
       create_for_api
     else
@@ -125,17 +125,7 @@ class SubscribersController < ApplicationController
   end
 
   def create_for_api
-
-    # @subscriber = Unirest.post("https://actualize-lead-contact.herokuapp.com/api/v1/leads.json", headers: {"Accept" => "application/json", "Content-Type" => "application/json"}, parameters: {:lead =>{:first_name => params[:first_name], :email => params[:email], :phone => @twilio_format.prepend("+1"), :city => @subscriber.city, :state => @subscriber.state, :zip => @subscriber.postal_code, :mousetrap => params[:mousetrap], :ip_address => request.remote_ip }}).body
-
-    @subscriber = Unirest.post("https://9b8d2723.ngrok.io/api/v1/leads.json", headers: {"Accept" => "application/json", "Content-Type" => "application/json"}, parameters: {:lead =>{:first_name => params[:first_name], :email => params[:email], :phone => @twilio_format.prepend("+1"), :city => @subscriber.city, :state => @subscriber.state, :zip => @subscriber.postal_code, :mousetrap => params[:mousetrap], :ip_address => request.remote_ip }}).body
-
-     # @subscriber = Unirest.post("https://9b8d2723.ngrok.io/api/v1/leads.json", headers:{ "Accept" => "application/json", "Content-Type" => "application/json" }, parameters:{ :lead => {:first_name => params[:first_name], :phone => params[:phone], :email => params[:email]}})
-
-
-    p "-----------------------"
-    p @subscriber
-    p "-----------------------"
+    @subscriber = Unirest.post("https://actualize-lead-contact.herokuapp.com/api/v1/leads.json", headers: {"Accept" => "application/json", "Content-Type" => "application/json"}, parameters: {:lead =>{:first_name => params[:first_name], :email => params[:email], :phone => @twilio_format.prepend("+1"), :city => @subscriber.city, :state => @subscriber.state, :zip => @subscriber.postal_code, :mousetrap => params[:mousetrap], :ip_address => request.remote_ip }}).body
   end
 
   def subscriber_drip_setup
