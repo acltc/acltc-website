@@ -25,6 +25,27 @@ class SubscribersController < ApplicationController
     end
   end
 
+  def create_from_popup
+    setup_subscriber
+
+    if request.location
+      if city = request.location.city
+        @subscriber.city = city
+      end
+      if state = request.location.state
+        @subscriber.state = state
+      end
+      if postal_code = request.location.postal_code
+        @subscriber.postal_code = postal_code
+      end
+    end
+    
+    if @subscriber.save
+      subscriber_drip_setup
+      render :nothing => true
+    end
+  end
+
   def create_from_curriculum
     setup_subscriber
 
@@ -52,6 +73,7 @@ class SubscribersController < ApplicationController
   end
 
   def create_from_tutorial
+
     if cookies[:is_subscriber]
       @tutorials_visible = true
     else
