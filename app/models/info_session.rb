@@ -1,6 +1,7 @@
 class InfoSession < ActiveRecord::Base
+
   before_destroy :send_cancelation_emails
-  
+
   has_many :info_session_sign_ups
 
   def friendly_date
