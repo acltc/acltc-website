@@ -40,6 +40,7 @@
              <nav class="navbar navbar-default navigation">
                <div class="container">
                  <!-- Brand and toggle get grouped for better mobile display -->
+                <% if @tour_page != "loaded" %>
                  <div class="navbar-header">
                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                      <span class="sr-only">Toggle navigation</span>
@@ -54,7 +55,7 @@
                     
                        <!-- <a href="/" class="retina-logo" data-dark-logo="assets/theme/logo-dark@2x.png"><img src="assets/theme/logo@2x.png" alt="Canvas Logo"></a> -->
                  </div>
-
+                <% end %>
                  <!-- Collect the nav links, forms, and other content for toggling -->
        <%= render 'shared/navbar' %>
                  
@@ -78,8 +79,9 @@
 
     <%= render 'shared/inspectlet' %>
     <%= render 'shared/ga' %>
-    
-    <%= render 'shared/footer' %>
+    <% if @tour_page != "loaded" %>
+      <%= render 'shared/footer' %>
+    <% end %>
 
   </div><!-- #wrapper end -->
 

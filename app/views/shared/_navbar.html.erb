@@ -1,4 +1,5 @@
 <div class="collapse navbar-collapse navbar-default" id="bs-example-navbar-collapse-1">
+<% if @tour_page != "loaded" %>
   <ul class="nav navbar-nav">
     <li><%= link_to "Book a Tour", new_tour_path %></li>
     <li><%= link_to "Apply", new_application_path %></li>
@@ -9,4 +10,5 @@
     <li><%= link_to('Logout', destroy_admin_session_path, method: :delete) %></li>
     <% end %>
   </ul>
+<% end %>
 </div><!-- /.navbar-collapse -->
