@@ -20,11 +20,6 @@ class ToursController < ApplicationController
 
   def new
     @tour = Tour.new
-    split_test
-    
-    if params[:long]
-      @long = true
-    end
     @tour_page = "loaded"
   end
 
@@ -37,7 +32,6 @@ class ToursController < ApplicationController
       AcltcMailer.tour_email(@tour).deliver_now
       AcltcMailer.tour_email_reply(@tour).deliver_now
       redirect_to tours_thank_you_path
-      converted!("Book A Tour New Form Test")
     else
       split_test
       render :new
@@ -97,10 +91,6 @@ class ToursController < ApplicationController
         :notes,
         :long
       )
-    end
-
-    def split_test
-      @tour_split_test = ab_test("Book A Tour New Form Test", ["Book A Tour Long Form", "Book A Tour Short Form"])
     end
 
     def create_hubspot_contact
