@@ -33,7 +33,6 @@ class ToursController < ApplicationController
       AcltcMailer.tour_email_reply(@tour).deliver_now
       redirect_to tours_thank_you_path
     else
-      split_test
       render :new
     end
   end
