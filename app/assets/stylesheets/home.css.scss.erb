@@ -539,7 +539,7 @@ input {
 
 .tour-background-layer{
   z-index: 1;
-  height: 90%;
+  height: 75%;
   width: 90%;
   background-color: rgba(255, 255, 255, 0.9);
   position: relative;
@@ -623,22 +623,35 @@ div#city.radio {
 
 
 @media screen and (max-width: 992px) {
-   .tour-background-layer {
-     height: 97%;
-     width: 90%;
-   }
+  .tour-background-layer {
+    height: 65%;
+    width: 90%;
+    top: 35%;
+    // position: relative;
+  }
 
-   .tour-form-field{
-     width: 90%;
-   }
+  #tour-content-wrap {
+    position: relative;
+    top: 62%;
+    transform: translateY(-60%);
+    margin-top: 20px;
+  } 
 
-   .tour-hero-image {
-     height: 1200px;
-   }
+  .tour-form-field{
+    width: 90%;
+  }
+
+  .content-wrap {
+    padding-top: 0px !important; 
+  }
+
+  .tour-hero-image {
+    height: 1200px;
+  }
 
   #tour-form-submit-button {
-     width: 80% !important;
-   }
+    width: 80% !important;
+  }
 
 }
 
