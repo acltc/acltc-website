@@ -27,15 +27,15 @@
       <%= form_tag '/subscribers_application', method: :post do %>
         <div class="form-group">
           <%= label :first_name, "First Name", class: "required form-label" %><br />
-          <%= text_field_tag :first_name, @subscriber.first_name, class: "form-control" %>
+          <%= text_field_tag :first_name, @subscriber.first_name, class: "form-control", placeholder: "First Name" %>
         </div>
         <div class="form-group">
           <%= label :email, "Email Address", class: "required form-label" %><br />
-          <%= text_field_tag :email, @subscriber.email, class: "form-control" %>
+          <%= text_field_tag :email, @subscriber.email, class: "form-control", placeholder: "Email" %>
         </div>
         <div class="form-group">
           <%= label :phone, "Phone Number", class: "required form-label" %><br />
-          <%= text_field_tag :phone, @subscriber.phone, class: "form-control" %>
+          <%= text_field_tag :phone, @subscriber.phone, class: "form-control", placeholder: "Phone xxxxxxxxxx" %>
         </div>
           <%= hidden_field_tag :mousetrap, nil, :value => "Application" %>
         <div class="form-group">
