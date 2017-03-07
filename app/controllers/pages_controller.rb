@@ -44,6 +44,10 @@ class PagesController < ApplicationController
 
   end
 
+  def privacy_policy
+
+  end
+
   private
     def tour_params
       params.require(:tour).permit(
