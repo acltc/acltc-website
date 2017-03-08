@@ -34,6 +34,7 @@ Rails.application.routes.draw do
   get "/subscribers/career_pdf_download"
   
   post 'subscribers_application' => 'subscribers#create_from_application'
+  post 'subscribers_popup' => 'subscribers#create_from_popup'
   post 'subscribers_curriculum' => 'subscribers#create_from_curriculum'
   post 'subscribers_tutorial' => 'subscribers#create_from_tutorial'
   post 'subscribers_footer' => 'subscribers#create_from_footer'
