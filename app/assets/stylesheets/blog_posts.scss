@@ -27,8 +27,14 @@ textarea.write-html{
 .entry-meta li {
   float: none !important;
   font-size: 16px !important;
+  color: #333333;
+  font-style: normal;
 }
 .entry-meta li:before{
   content: none !important;
+}
+
+.entry-meta ul {
+  list-style-position: inside;
 }
 // ------------- END OVERWRITE THEME -----------------??
