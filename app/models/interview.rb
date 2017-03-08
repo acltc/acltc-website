@@ -1,5 +1,4 @@
 class Interview < ActiveRecord::Base
-  has_one :application, foreign_key: :interview_id
   has_one :tour, foreign_key: :interview_id
   validates :starts_at, presence: true
   validates :starts_at, uniqueness: {scope: :location}

@@ -58,7 +58,6 @@ class ApplicationsController < ApplicationController
     @application = Application.new(application_params)
     if @application.save
       create_hubspot_contact
-      @application.interview.update(booked: true)
       AcltcMailer.application_email(@application).deliver_now
       AcltcMailer.application_email_reply(@application).deliver_now
       redirect_to "/pages/thank_you"
@@ -85,9 +84,6 @@ class ApplicationsController < ApplicationController
 
   def destroy
     @application = Application.find(params[:id])
-    if @application.interview
-      @application.interview.update(booked: false)
-    end
     @application.destroy
 
     flash[:danger] = "Application successfully deleted!"
@@ -101,7 +97,7 @@ class ApplicationsController < ApplicationController
     :emergency_contact, :learn_about_acltc, :learn_about_acltc_specify, :current_occupation,
     :primary_goals, :programming_experience, :preferred_work_location,
     :work_concurrently, :tinker_example, :why_better, :status, :location, :cohort,
-    :notes, :interview_id, :long)
+    :notes, :long)
   end
 
   def create_hubspot_contact
