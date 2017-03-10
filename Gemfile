@@ -58,6 +58,10 @@ gem 'drip-ruby', '~> 0.0.7', require: 'drip'
 gem 'vuejs-rails'
 
 gem "hubspot-ruby"
+gem 'faker', '~> 1.6', '>= 1.6.6'
+
+
+gem 'unirest', '1.1.2'
 
 group :development, :test do
   gem 'dotenv-rails'
