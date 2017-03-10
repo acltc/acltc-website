@@ -6,6 +6,18 @@ First Name: <%= @tour.first_name %>
 <% end %>
 Email: <%= @tour.email %>
 Phone: <%= @tour.phone %>
+<% if @tour_city %>
+  City: <%= @tour_city %>
+<% end %>
+<% if @tour_state %>
+  State: <%= @tour_state %>
+<% end %>
+<% if @tour_postal_code %>
+  Postal Code: <%= @tour_postal_code %>
+<% end %>
+<% if @tour_ip_address %>
+  IP Address: <%= @tour_ip_address %>
+<% end %>
 <% if @tour.interview %>
   Tour Scheduled For: <%= @tour.interview.interview_date_human %>
 <% end %>
