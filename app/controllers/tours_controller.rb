@@ -25,8 +25,22 @@ class ToursController < ApplicationController
 
   def create
     @tour = Tour.new(tour_params)
+    if request.location
+      if city = request.location.city
+        @tour_city = city
+      end
+      if state = request.location.state
+        @tour_state = state
+      end
+      if postal_code = request.location.postal_code
+        @tour_postal_code = postal_code
+      end
+    end
+    @tour_ip_address = request.remote_ip
+    # return @tour
 
     if @tour.save
+
       create_hubspot_contact
       # @tour.interview.update(booked: true)
       AcltcMailer.tour_email(@tour).deliver_now
@@ -35,6 +49,7 @@ class ToursController < ApplicationController
     else
       render :new
     end
+
   end
 
   def show
@@ -95,20 +110,8 @@ class ToursController < ApplicationController
         # :subtitle
       )
       # @tour = Tour.new(city: params[:city], state: params[:state], postal_code: params[:postal_code], ip_address: request.remote_ip)
+
       
-      # if request.location
-      #   if city = request.location.city
-      #     @tour_city = city
-      #   end
-      #   if state = request.location.state
-      #     @tour_state = state
-      #   end
-      #   if postal_code = request.location.postal_code
-      #     @tour_postal_code = postal_code
-      #   end
-      # end
-      # @tour_ip_address = request.remote_ip
-      # return @tour
     end
 
     def create_hubspot_contact
