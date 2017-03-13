@@ -42,7 +42,7 @@ class AcltcMailer < ApplicationMailer
 
   end
 
-  def tour_email(tour, city, state, zip, ip)
+  def tour_email(tour, *city, *state, *zip, *ip)
     @tour = tour
     @tour_city = city
     @tour_state = state
