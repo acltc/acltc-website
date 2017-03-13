@@ -38,12 +38,18 @@ class ToursController < ApplicationController
     end
     @tour_ip_address = request.remote_ip
     # return @tour
+    p "-----------------------"
+    p @tour_city
+    p @tour_state
+    p @tour_postal_code
+    p @tour_ip_address
+    p "-----------------------"
 
     if @tour.save
 
       create_hubspot_contact
       # @tour.interview.update(booked: true)
-      AcltcMailer.tour_email(@tour).deliver_now
+      AcltcMailer.tour_email(@tour, @tour_city, @tour_state, @tour_postal_code, @tour_ip_address).deliver_now
       AcltcMailer.tour_email_reply(@tour).deliver_now
       redirect_to tours_thank_you_path
     else
@@ -110,7 +116,6 @@ class ToursController < ApplicationController
         # :subtitle
       )
       # @tour = Tour.new(city: params[:city], state: params[:state], postal_code: params[:postal_code], ip_address: request.remote_ip)
-
       
     end
 
