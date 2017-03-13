@@ -28,23 +28,23 @@ class ToursController < ApplicationController
     if request.location
       if city = request.location.city
         @tour_city = city
-      else 
+      elsif @tour_city == nil 
         @tour_city = "Not Found"
       end
       if state = request.location.state
         @tour_state = state
-      else
+      elsif @tour_state == nil
        @tour_state = "Not Found"
       end
       if postal_code = request.location.postal_code
         @tour_postal_code = postal_code
-      else
+      elsif @tour_postal_code == nil
         @tour_postal_code = "Not Found"
       end
     end
     if request.remote_ip 
       @tour_ip_address = request.remote_ip
-    else
+    elsif @tour_ip_address == nil
       @tour_ip_address = "Not Found"
     end
 
