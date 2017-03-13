@@ -36,6 +36,15 @@ class ToursController < ApplicationController
         @tour_postal_code = postal_code
       end
     end
+    if @tour_city
+      @tour_city = "Not Found"
+    end
+    if @tour_state
+      @tour_state = "Not Found"
+    end
+    if @tour_postal_code 
+      @tour_postal_code = "Not Found"
+    end
     if request.remote_ip 
       @tour_ip_address = request.remote_ip
     end
@@ -50,7 +59,7 @@ class ToursController < ApplicationController
 
       create_hubspot_contact
       # @tour.interview.update(booked: true)
-      AcltcMailer.tour_email(@tour, *@tour_city, *@tour_state, *@tour_postal_code, *@tour_ip_address).deliver_now
+      AcltcMailer.tour_email(@tour, @tour_city, @tour_state, @tour_postal_code, @tour_ip_address).deliver_now
       AcltcMailer.tour_email_reply(@tour).deliver_now
       redirect_to tours_thank_you_path
     else
