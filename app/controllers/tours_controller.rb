@@ -37,13 +37,6 @@ class ToursController < ApplicationController
       end
     end
     @tour_ip_address = request.remote_ip
-    # return @tour
-    p "-----------------------"
-    p @tour_city
-    p @tour_state
-    p @tour_postal_code
-    p @tour_ip_address
-    p "-----------------------"
 
     if @tour.save
 
@@ -110,13 +103,7 @@ class ToursController < ApplicationController
         :interview_id,
         :notes,
         :long,
-        # :state,
-        # :postal_code,
-        # :ip_address,
-        # :subtitle
       )
-      # @tour = Tour.new(city: params[:city], state: params[:state], postal_code: params[:postal_code], ip_address: request.remote_ip)
-      
     end
 
     def create_hubspot_contact
