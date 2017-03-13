@@ -14,6 +14,26 @@
   <tr>
     <td><strong>Phone:</strong> <%= @tour.phone %></td>
   </tr>
+  <% if @tour_city %>
+    <tr>
+      <td><strong>City:</strong> <%= @tour_city %></td>
+    </tr>
+  <% end %>
+  <% if @tour_state %>
+    <tr>
+      <td><strong>State:</strong> <%= @tour_state %></td>
+    </tr>
+  <% end %>
+  <% if @tour_postal_code %>
+    <tr>
+      <td><strong>Zip:</strong> <%= @tour_postal_code %></td>
+    </tr>
+  <% end %>
+  <% if @tour_ip_address %>
+    <tr>
+      <td><strong>IP Address:</strong> <%= @tour_ip_address %></td>
+    </tr>
+  <% end %>
   <% if @tour.interview %>
     <tr>
       <td><strong>Tour Scheduled For:</strong> <%= @tour.interview.interview_date_human %></td>

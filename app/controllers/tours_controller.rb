@@ -25,16 +25,30 @@ class ToursController < ApplicationController
 
   def create
     @tour = Tour.new(tour_params)
+    if request.location
+      if city = request.location.city
+        @tour_city = city
+      end
+      if state = request.location.state
+        @tour_state = state
+      end
+      if postal_code = request.location.postal_code
+        @tour_postal_code = postal_code
+      end
+    end
+    @tour_ip_address = request.remote_ip
 
     if @tour.save
+
       create_hubspot_contact
       # @tour.interview.update(booked: true)
-      AcltcMailer.tour_email(@tour).deliver_now
+      AcltcMailer.tour_email(@tour, @tour_city, @tour_state, @tour_postal_code, @tour_ip_address).deliver_now
       AcltcMailer.tour_email_reply(@tour).deliver_now
       redirect_to tours_thank_you_path
     else
       render :new
     end
+
   end
 
   def show
@@ -88,7 +102,7 @@ class ToursController < ApplicationController
         :phone,
         :interview_id,
         :notes,
-        :long
+        :long,
       )
     end
 

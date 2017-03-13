@@ -41,8 +41,12 @@ class AcltcMailer < ApplicationMailer
     # end
   end
 
-  def tour_email(tour)
+  def tour_email(tour, city, state, zip, ip)
     @tour = tour
+    @tour_city = city
+    @tour_state = state
+    @tour_postal_code = zip
+    @tour_ip_address = ip
     mail(from: "mg.anyonecanlearntocode.com", to: ["ben@actualize.co", "jay@actualize.co", "rena@actualize.co"], subject: 'Tour Scheduled', reply_to: @tour.email )
   end
 
