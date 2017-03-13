@@ -36,8 +36,22 @@ class ToursController < ApplicationController
         @tour_postal_code = postal_code
       end
     end
-    @tour_ip_address = request.remote_ip
+    if request.remote_ip 
+      @tour_ip_address = request.remote_ip
+    else
+      @tour_ip_address = "Not Found"
+    end
 
+    if @tour_city
+      @tour_city = "Not Found"
+    end
+    if @tour_state
+      @tour_state = "Not Found"
+    end
+    if @tour_postal_code 
+      @tour_postal_code = "Not Found"
+    end
+    
     if @tour.save
 
       create_hubspot_contact
