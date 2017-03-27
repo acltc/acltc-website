@@ -56,15 +56,14 @@ class ToursController < ApplicationController
 
       create_hubspot_contact
 
-      client = Drip::Client.new do |c|
-        c.api_key = ENV["DRIP_CLIENT_API_TOKEN"]
-        c.account_id = ENV["DRIP_ACCOUNT_ID"]
-      end
+      # client = Drip::Client.new do |c|
+      #   c.api_key = ENV["DRIP_CLIENT_API_TOKEN"]
+      #   c.account_id = ENV["DRIP_ACCOUNT_ID"]
+      # end
 
-      client.create_or_update_subscriber(@tour.email, {first_name: @tour.first_name, phone: @tour.phone})
-      client.apply_tag(@tour.email, "Booked tour")
-      client.subscribe(@tour.email, 34197704)
-      # @tour.interview.update(booked: true)
+      # client.create_or_update_subscriber(@tour.email, {first_name: @tour.first_name, phone: @tour.phone})
+      # client.apply_tag(@tour.email, "Booked tour")
+      # client.subscribe(@tour.email, 34197704)
       AcltcMailer.tour_email(@tour, @tour_city, @tour_state, @tour_postal_code, @tour_ip_address).deliver_now
       AcltcMailer.tour_email_reply(@tour).deliver_now
       redirect_to tours_thank_you_path
