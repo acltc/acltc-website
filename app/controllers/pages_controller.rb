@@ -20,18 +20,6 @@ class PagesController < ApplicationController
     render :layout => 'home_application'
   end
 
-  def tour_home_create
-    @tour = Tour.new(tour_params)
-
-    if @tour.save
-      create_hubspot_contact
-
-      AcltcMailer.tour_email(@tour).deliver_now
-      AcltcMailer.tour_email_reply(@tour).deliver_now
-      redirect_to pages_tours_thank_you_path
-    end
-  end
-
   def thank_you
 
   end

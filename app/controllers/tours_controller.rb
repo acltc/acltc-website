@@ -7,7 +7,6 @@ class ToursController < ApplicationController
 
     if params[:location_filter]
       @tours = Tour.where(city: params[:location_filter])
-      pp @tours
     end
 
     @tours = Tour.order(params[:sort]) if params[:sort]
