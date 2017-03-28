@@ -61,7 +61,7 @@ class ToursController < ApplicationController
         c.account_id = ENV["DRIP_ACCOUNT_ID"]
       end
 
-      client.create_or_update_subscriber(@tour.email, {custom_fields: {first_name: @tour.first_name, cell_phone: @tour.phone, mousetrap: @tour.mousetrap}})
+      client.create_or_update_subscriber(@tour.email, {custom_fields: {first_name: @tour.first_name, cell_phone: @tour.phone, mousetrap: "Tour"}})
       client.apply_tag(@tour.email, "Booked tour")
       client.subscribe(@tour.email, 34197704)
 
