@@ -145,7 +145,7 @@
                                     <p class="info-session-description">Come join us in person for a tour or info session!</p>
                                     <p class="info-session-content" id="tour-happy-sad-messages">Learn everything there is to know about Actualize from one of our Admissions Advisors and see us in action. We'll get in touch with you shortly to schedule your visit.</p>
                                     <br>
-                                    <%= form_for @tour, url: { action: "tour_home_create" }, html: { id: "infoSessionSignUp" } do |f| %>
+                                    <%= form_for @tour, html: { id: "infoSessionSignUp" } do |f| %>
                                     <div class="row info-fields" style="padding-bottom: 20px;">
                                         <div class="col-md-3">
                                             <%= f.select :city, options_for_select(["Chicago", "New York City", "San Francisco"], @tour.city), { prompt: "Select a city"}, { class: "form-control tour-home-fields", id: "session-city-select", required: true } %><br>

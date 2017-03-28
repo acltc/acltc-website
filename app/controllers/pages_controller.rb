@@ -25,7 +25,7 @@ class PagesController < ApplicationController
 
     if @tour.save
       create_hubspot_contact
-      # @tour.interview.update(booked: true)
+
       AcltcMailer.tour_email(@tour).deliver_now
       AcltcMailer.tour_email_reply(@tour).deliver_now
       redirect_to pages_tours_thank_you_path
