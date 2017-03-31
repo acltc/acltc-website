@@ -23,9 +23,9 @@
         <div class="col-md-6">
             <p id="subscribe-instructions">Sign up for news about upcoming courses and updates about ACLTC, events in your area, and other resources.</p>
 
-            <%= form_tag("/subscribers_footer", method: "post", remote: true) do %>
+            <%= form_tag({controller: "subscribers", action: "create_from_footer"}, method: "post", remote: true) do %>
                 <%= text_field_tag :first_name, nil, placeholder: "First Name" %>
-              
+
                 <%= text_field_tag :email, nil, placeholder: "Email" %>
 
                 <%= text_field_tag :phone, nil, placeholder: "Phone" %>

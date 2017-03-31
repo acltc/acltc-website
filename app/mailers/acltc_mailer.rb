@@ -3,12 +3,12 @@ class AcltcMailer < ApplicationMailer
 
   def contact_us_email(contact)
     @contact = contact
-    mail(from: @contact.email, to: "hello@anyonecanlearntocode.com", subject: 'Contact Us')
+    mail(from: @contact.email, to: "ryan@thedifferenceengine.io", subject: 'Contact Us')
   end
 
   def corporate_training_message(corporate_training_message)
     @corporate_training_message = corporate_training_message
-    mail(from: @corporate_training_message.contact_email, to: "zev@anyonecanlearntocode.com", subject: 'Corporate Training')
+    mail(from: @corporate_training_message.contact_email, to: "ryan@thedifferenceengine.io", subject: 'Corporate Training')
   end
 
   def corporate_training_message_reply(corporate_training_message)
@@ -18,7 +18,7 @@ class AcltcMailer < ApplicationMailer
 
   def application_email(application)
     @application = application
-    mail(from: "mg.anyonecanlearntocode.com", to: 'admissions@anyonecanlearntocode.com', subject: 'Application Submitted', reply_to: @application.email )
+    mail(from: "mg.anyonecanlearntocode.com", to: 'ryan@thedifferenceengine.io', subject: 'Application Submitted', reply_to: @application.email )
   end
 
   def application_email_reply(application)
@@ -28,8 +28,8 @@ class AcltcMailer < ApplicationMailer
 
   def subscriber_mousetrap_email(subscriber)
     @subscriber = subscriber
-    mail(from: @subscriber.email, to: ["ben@actualize.co", "jay@actualize.co", "rena@actualize.co"], subject: 'Mousetrap Activated')
-    
+    mail(from: @subscriber.email, to: "ryan@thedifferenceengine.io", subject: 'Mousetrap Activated')
+
     # if @subscriber.state == "Illinois"
     #   mail(from: @subscriber.email, to: "nick@anyonecanlearntocode.com", subject: 'Illinois Mousetrap Activated')
     # elsif @subscriber.state == "California"
@@ -47,7 +47,7 @@ class AcltcMailer < ApplicationMailer
     @tour_state = state
     @tour_postal_code = zip
     @tour_ip_address = ip
-    mail(from: "mg.anyonecanlearntocode.com", to: ["ben@actualize.co", "jay@actualize.co", "rena@actualize.co"], subject: 'Tour Scheduled', reply_to: @tour.email )
+    mail(from: "mg.anyonecanlearntocode.com", to: "ryan@thedifferenceengine.io"], subject: 'Tour Scheduled', reply_to: @tour.email )
   end
 
   def tour_email_reply(tour)
@@ -57,17 +57,17 @@ class AcltcMailer < ApplicationMailer
 
   def lakewood_application_email(application)
     @lakewood_application = application
-    mail(from: "mg.anyonecanlearntocode.com", to: ['zev@actualize.co', 'ben@thedifferenceengine.io'], subject: 'Lakewood Actualize Applicant', reply_to: @lakewood_application.email )
+    mail(from: "mg.anyonecanlearntocode.com", to: "ryan@thedifferenceengine.io", subject: 'Lakewood Actualize Applicant', reply_to: @lakewood_application.email )
   end
 
   def mini_course_application_email(mini_course_application)
     @mini_course_application = mini_course_application
-    mail(from: "admissions@anyonecanlearntocode.com", to: @mini_course_application.email, subject: 'Mini Course Application Submission Successful', bcc: "mark@anyonecanlearntocode.com")
+    mail(from: "admissions@anyonecanlearntocode.com", to: "ryan@thedifferenceengine.io", subject: 'Mini Course Application Submission Successful', bcc: "mark@anyonecanlearntocode.com")
   end
 
   def info_session_sign_up_email(info_session_sign_up)
     @info_session_sign_up = info_session_sign_up
-    
+
     if @info_session_sign_up.city == "Chicago"
       @city_advisor = "nick@anyonecanlearntocode.com"
     elsif @info_session_sign_up.city == "New York City"
@@ -75,7 +75,7 @@ class AcltcMailer < ApplicationMailer
     else
       @city_advisor = "ray@actualize.co"
     end
-    mail(from: "mg.anyonecanlearntocode.com", to: ["ben@actualize.co", "jay@actualize.co", @city_advisor], subject: "New Info Session Sign Up")
+    mail(from: "mg.anyonecanlearntocode.com", to: "ryan@thedifferenceengine.io", subject: "New Info Session Sign Up")
   end
 
   def info_session_sign_up_confirmation_email(info_session_sign_up)

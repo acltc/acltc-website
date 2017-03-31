@@ -12,13 +12,13 @@ class SubscribersController < ApplicationController
   def create_from_application
     setup_subscriber
 
-    if !params[:email].strip.empty? && Subscriber.find_by(email: params[:email]) 
+    if !params[:email].strip.empty? && Subscriber.find_by(email: params[:email])
       @subscriber = Subscriber.find_by(email: params[:email])
-      create_hubspot_contact("Application")
+      # create_hubspot_contact("Application")
       redirect_to "/applications/new/#{@subscriber.id}"
     elsif @subscriber.save
-      create_hubspot_contact("Application")
-      subscriber_drip_setup
+      # create_hubspot_contact("Application")
+      # subscriber_drip_setup
       redirect_to "/applications/new/#{@subscriber.id}"
     else
       render :apply
@@ -73,13 +73,17 @@ class SubscribersController < ApplicationController
   def create_from_footer
     setup_subscriber
 
-    if !params[:email].strip.empty? && Subscriber.find_by(email: params[:email])  || @subscriber.save
-      create_hubspot_contact("Homepage Footer")
-      subscriber_drip_setup
-      respond_to do |format|
-        format.js {render :partial => "createFromFooter"}
-      end
-    end
+    @subscriber = Unirest.post("http://localhost:3000/api/v1/leads.json", headers: {"Accept" => "application/json", "Content-Type" => "application/json"}, parameters: {:first_name => params[:first_name], :email => params[:email], :phone => params[:phone], :city => @subscriber.city, :state => @subscriber.state, :zip => @subscriber.postal_code, :name => params[:mousetrap], :ip => request.remote_ip }).body
+
+
+    # if !params[:email].strip.empty? && Subscriber.find_by(email: params[:email])  || @subscriber.save
+    #   create_hubspot_contact("Homepage Footer")
+    #   subscriber_drip_setup
+    #   respond_to do |format|
+    #     format.js {render :partial => "createFromFooter"}
+    #   end
+    # end
+
   end
 
   def apply
@@ -101,7 +105,7 @@ class SubscribersController < ApplicationController
   private
 
   def setup_subscriber
-    @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], phone: params[:phone], mousetrap: params[:mousetrap], ip_address: request.remote_ip)
+    @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], phone: params[:phone], name: params[:mousetrap], ip: request.remote_ip)
     if request.location
       if city = request.location.city
         @subscriber.city = city
