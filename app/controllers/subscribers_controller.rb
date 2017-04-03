@@ -71,9 +71,9 @@ class SubscribersController < ApplicationController
   end
 
   def create_from_footer
-    setup_subscriber
 
-    @subscriber = Unirest.post("http://localhost:3000/api/v1/leads.json", headers: {"Accept" => "application/json", "Content-Type" => "application/json"}, parameters: {:first_name => params[:first_name], :email => params[:email], :phone => params[:phone], :city => @subscriber.city, :state => @subscriber.state, :zip => @subscriber.postal_code, :name => params[:mousetrap], :ip => request.remote_ip }).body
+
+    Unirest.post("http://localhost:3000/api/v1/leads.json", headers: {"Accept" => "application/json", "Content-Type" => "application/json"}, parameters: {:lead => {:first_name => params[:first_name], :email => params[:email], :phone => params[:phone]}, :name => params[:mousetrap]}).body
 
 
     # if !params[:email].strip.empty? && Subscriber.find_by(email: params[:email])  || @subscriber.save
@@ -105,18 +105,18 @@ class SubscribersController < ApplicationController
   private
 
   def setup_subscriber
-    @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], phone: params[:phone], name: params[:mousetrap], ip: request.remote_ip)
-    if request.location
-      if city = request.location.city
-        @subscriber.city = city
-      end
-      if state = request.location.state
-        @subscriber.state = state
-      end
-      if postal_code = request.location.postal_code
-        @subscriber.postal_code = postal_code
-      end
-    end
+    @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], phone: params[:phone], mousetrap: params[:mousetrap], ip_address: request.remote_ip)
+    # if request.location
+    #   if city = request.location.city
+    #     @subscriber.city = city
+    #   end
+    #   if state = request.location.state
+    #     @subscriber.state = state
+    #   end
+    #   if postal_code = request.location.postal_code
+    #     @subscriber.postal_code = postal_code
+    #   end
+    # end
     return @subscriber
   end
 
