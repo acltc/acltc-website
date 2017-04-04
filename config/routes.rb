@@ -57,6 +57,8 @@ Rails.application.routes.draw do
   resources :info_session_sign_ups
   resources :info_sessions
 
+  resources :leads
+
   get "/careers" => "job_openings#index", as: :careers
 
   get "/options/" => "interviews#interview_options"

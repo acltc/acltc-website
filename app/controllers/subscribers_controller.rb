@@ -74,13 +74,13 @@ class SubscribersController < ApplicationController
     setup_subscriber
     create_new_lead
 
-    if !params[:email].strip.empty? && Subscriber.find_by(email: params[:email])  || @subscriber.save
-      create_hubspot_contact("Homepage Footer")
-      subscriber_drip_setup
-      respond_to do |format|
-        format.js {render :partial => "createFromFooter"}
-      end
-    end
+    # if !params[:email].strip.empty? && Subscriber.find_by(email: params[:email])  || @subscriber.save
+    #   create_hubspot_contact("Homepage Footer")
+    #   subscriber_drip_setup
+    #   respond_to do |format|
+    #     format.js {render :partial => "createFromFooter"}
+    #   end
+    # end
   end
 
   def apply
@@ -118,11 +118,12 @@ class SubscribersController < ApplicationController
   end
 
   def create_new_lead
-    subscriber = Unirest.post("http://localhost:3000/api/v1/leads.json", headers: {
-    "Accept" => "application/json", "Content-Type" => "application/json"},
-     parameters: {:first_name => params[:first_name], :email => params[:email], :phone => params[:phone], :name => params[:mousetrap], :ip => request.remote_ip }).body
 
-     p subscriber
+    @subscriber = Unirest.post("http://localhost:3000/api/v1/leads.json", headers: {
+    "Accept" => "application/json", "Content-Type" => "application/json"},
+     parameters: {:first_name => params[:first_name], :email => params[:email], :phone => params[:phone], "events" => {:name => params[:mousetrap]}}).body
+     p '***************************************'
+     p @subscriber
   end
 
   def subscriber_drip_setup
