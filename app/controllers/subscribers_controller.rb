@@ -10,15 +10,16 @@ class SubscribersController < ApplicationController
   end
 
   def create_from_application
-    setup_subscriber
+    # setup_subscriber
+    create_new_lead
 
     if !params[:email].strip.empty? && Subscriber.find_by(email: params[:email])
       @subscriber = Subscriber.find_by(email: params[:email])
-      create_hubspot_contact("Application")
+      # create_hubspot_contact("Application")
       redirect_to "/applications/new/#{@subscriber.id}"
     elsif @subscriber.save
-      create_hubspot_contact("Application")
-      subscriber_drip_setup
+      # create_hubspot_contact("Application")
+      # subscriber_drip_setup
       redirect_to "/applications/new/#{@subscriber.id}"
     else
       render :apply
