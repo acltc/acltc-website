@@ -59,7 +59,7 @@ gem 'vuejs-rails'
 
 gem "hubspot-ruby"
 
-gem 'unirest'
+gem 'unirest', '1.1.2'
 
 group :development, :test do
   gem 'dotenv-rails'

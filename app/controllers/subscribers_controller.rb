@@ -118,12 +118,13 @@ class SubscribersController < ApplicationController
   end
 
   def create_new_lead
-
-    @subscriber = Unirest.post("http://localhost:3000/api/v1/leads.json", headers: {
+    p '??????'
+    p params
+    subscriber = Unirest.post("http://localhost:3000/api/v1/leads.json", headers: {
     "Accept" => "application/json", "Content-Type" => "application/json"},
-     parameters: {:first_name => params[:first_name], :email => params[:email], :phone => params[:phone], "events" => {:name => params[:mousetrap]}}).body
+     parameters: {:first_name => params[:first_name], :email => params[:email], :phone => params[:phone], :name => params[:mousetrap]}).body
      p '***************************************'
-     p @subscriber
+     p subscriber
   end
 
   def subscriber_drip_setup
