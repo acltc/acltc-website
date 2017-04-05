@@ -58,6 +58,7 @@ gem 'drip-ruby', '~> 0.0.7', require: 'drip'
 gem 'vuejs-rails'
 
 gem "hubspot-ruby"
+gem 'unirest'
 
 group :development, :test do
   gem 'dotenv-rails'

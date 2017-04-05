@@ -4,7 +4,7 @@ Rails.application.routes.draw do
       post 'subscribers_popup' => 'subscribers#create_from_popup'
     end
   end
-  
+
   get 'statuses/show'
 
   get 'statuses/edit'
@@ -32,13 +32,13 @@ Rails.application.routes.draw do
 
   get "/subscribers/download"
   get "/subscribers/career_pdf_download"
-  
+
   post 'subscribers_application' => 'subscribers#create_from_application'
   post 'subscribers_curriculum' => 'subscribers#create_from_curriculum'
   post 'subscribers_tutorial' => 'subscribers#create_from_tutorial'
   post 'subscribers_footer' => 'subscribers#create_from_footer'
   post 'subscribers_career_pdf' => 'subscribers#create_from_career_pdf'
-  
+
   resources :blog_posts
   resources :blog_categories
   resources :applications
@@ -60,7 +60,7 @@ Rails.application.routes.draw do
   get "/careers" => "job_openings#index", as: :careers
 
   get "/options/" => "interviews#interview_options"
-  
+
   get "/tutorial/lessons" => "lessons#index"
   get "/tutorial/lessons/:title" => "lessons#show"
 
@@ -82,7 +82,7 @@ Rails.application.routes.draw do
   get "/referrals/new" => "referrals#new", :as => :new_referral
   post "/referrals" => "referrals#create"
   get "/referrals/thank_you" => "referrals#thank_you"
-  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

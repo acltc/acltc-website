@@ -12,7 +12,7 @@ class SubscribersController < ApplicationController
   def create_from_application
     setup_subscriber
 
-    if !params[:email].strip.empty? && Subscriber.find_by(email: params[:email]) 
+    if !params[:email].strip.empty? && Subscriber.find_by(email: params[:email])
       @subscriber = Subscriber.find_by(email: params[:email])
       create_hubspot_contact("Application")
       redirect_to "/applications/new/#{@subscriber.id}"
@@ -26,29 +26,29 @@ class SubscribersController < ApplicationController
   end
 
   def create_from_curriculum
-    setup_subscriber
-
-    if !params[:email].strip.empty? && Subscriber.find_by(email: params[:email])  || @subscriber.save
-      subscriber_drip_setup
-      create_hubspot_contact("Curriculum Download Phone Test")
+    # setup_subscriber
+    create_new_lead
+    # if !params[:email].strip.empty? && Subscriber.find_by(email: params[:email])  || @subscriber.save
+    #   subscriber_drip_setup
+    #   create_hubspot_contact("Curriculum Download Phone Test")
       respond_to do |format|
         @java_url = "/subscribers/download"
         format.js {render :partial => "downloadFile"}
       end
-    end
+    # end
   end
 
   def create_from_career_pdf
-    setup_subscriber
-
-    if !params[:email].strip.empty? && Subscriber.find_by(email: params[:email])  || @subscriber.save
-      subscriber_drip_setup
-      create_hubspot_contact("Career PDF Download")
+    # setup_subscriber
+    create_new_lead
+    # if !params[:email].strip.empty? && Subscriber.find_by(email: params[:email])  || @subscriber.save
+    #   subscriber_drip_setup
+    #   create_hubspot_contact("Career PDF Download")
       respond_to do |format|
         @pdf_url = "/subscribers/career_pdf_download"
         format.js {render :partial => "downloadCareerPdf"}
       end
-    end
+    # end
   end
 
   def create_from_tutorial
@@ -71,15 +71,16 @@ class SubscribersController < ApplicationController
   end
 
   def create_from_footer
-    setup_subscriber
+    # setup_subscriber
+    create_new_lead
 
-    if !params[:email].strip.empty? && Subscriber.find_by(email: params[:email])  || @subscriber.save
-      create_hubspot_contact("Homepage Footer")
-      subscriber_drip_setup
-      respond_to do |format|
-        format.js {render :partial => "createFromFooter"}
-      end
-    end
+    # if !params[:email].strip.empty? && Subscriber.find_by(email: params[:email])  || @subscriber.save
+    #   create_hubspot_contact("Homepage Footer")
+    #   subscriber_drip_setup
+    #   respond_to do |format|
+    #     format.js {render :partial => "createFromFooter"}
+    #   end
+    # end
   end
 
   def apply
@@ -101,19 +102,36 @@ class SubscribersController < ApplicationController
   private
 
   def setup_subscriber
+    # @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], phone: params[:phone], mousetrap: params[:mousetrap], ip_address: request.remote_ip)
+    # if request.location
+    #   if city = request.location.city
+    #     @subscriber.city = city
+    #   end
+    #   if state = request.location.state
+    #     @subscriber.state = state
+    #   end
+    #   if postal_code = request.location.postal_code
+    #     @subscriber.postal_code = postal_code
+    #   end
+    # end
+    # return @subscriber
+  end
+
+  def create_new_lead
     @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], phone: params[:phone], mousetrap: params[:mousetrap], ip_address: request.remote_ip)
-    if request.location
-      if city = request.location.city
-        @subscriber.city = city
-      end
-      if state = request.location.state
-        @subscriber.state = state
-      end
-      if postal_code = request.location.postal_code
-        @subscriber.postal_code = postal_code
-      end
-    end
-    return @subscriber
+
+    geocode_data = Geocoder.search(request.remote_ip)
+    city = geocode_data[0].city
+    state = geocode_data[0].state
+    postal_code = geocode_data[0].postal_code
+
+    lead = Unirest.post("http://localhost:3000/api/v1/leads.json", headers: {
+    "Accept" => "application/json", "Content-Type" => "application/json"},
+     parameters: {:first_name => params[:first_name], :email => params[:email], :phone => params[:phone], :name => params[:mousetrap], :ip => @subscriber.ip_address, :city => city, :state => state, :zip => postal_code}).body
+
+     p '**************************************'
+     p lead
+
   end
 
   def subscriber_drip_setup
