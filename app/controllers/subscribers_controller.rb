@@ -13,17 +13,19 @@ class SubscribersController < ApplicationController
     # setup_subscriber
     create_new_lead
 
-    if !params[:email].strip.empty? && Subscriber.find_by(email: params[:email])
-      @subscriber = Subscriber.find_by(email: params[:email])
+    # if !params[:email].strip.empty? && Subscriber.find_by(email: params[:email])
+    #   @subscriber = Subscriber.find_by(email: params[:email])
       # create_hubspot_contact("Application")
-      redirect_to "/applications/new/#{@subscriber.id}"
-    elsif @subscriber.save
+      # redirect_to "/applications/new/#{@subscriber.id}"
+    # elsif @subscriber.save
       # create_hubspot_contact("Application")
       # subscriber_drip_setup
-      redirect_to "/applications/new/#{@subscriber.id}"
-    else
-      render :apply
-    end
+      # redirect_to "/applications/new/#{@subscriber.id}"
+      redirect_to "/applications/new?first_name=#{params[:first_name]}&email=#{params[:email]}&phone=#{params[:phone]}"
+
+    # else
+    #   render :apply
+    # end
   end
 
   def create_from_curriculum
@@ -72,16 +74,10 @@ class SubscribersController < ApplicationController
   end
 
   def create_from_footer
-    # setup_subscriber
     create_new_lead
-
-    # if !params[:email].strip.empty? && Subscriber.find_by(email: params[:email])  || @subscriber.save
-    #   create_hubspot_contact("Homepage Footer")
-    #   subscriber_drip_setup
-    #   respond_to do |format|
-    #     format.js {render :partial => "createFromFooter"}
-    #   end
-    # end
+      respond_to do |format|
+        format.js {render :partial => "createFromFooter"}
+      end
   end
 
   def apply
