@@ -431,15 +431,15 @@
                             <div class="well curriculum-well">
                                  <p class="subscribe-download">Download our full curriculum to see what we teach week-by-week!</p>
                                 <div class="row">
-                                    <%= form_tag("/subscribers_curriculum", method: "post", remote: true) do %>
+                                    <%= form_tag("/subscribers_curriculum", method: "post", id: "curriculumForm", remote: true) do %>
                                        <div class="col-md-3">
-                                            <%= text_field_tag :first_name, nil, placeholder: "First Name" %>
+                                            <%= text_field_tag :first_name, nil, placeholder: "First Name", class: "required" %>
                                         </div>
                                         <div class="col-md-3">
-                                            <%= text_field_tag :email, nil, placeholder: "Email" %>
+                                            <%= email_field_tag :email, nil, placeholder: "Email", class: "required" %>
                                         </div>
                                         <div class="col-md-3">
-                                           <%= text_field_tag :phone, nil, placeholder: "Phone" %>
+                                           <%= text_field_tag :phone, nil, placeholder: "Phone", class: "required" %>
                                         </div>
                                          <div class="col-md-3">
                                              <%= hidden_field_tag :mousetrap, nil, value: "Curriculum Download Phone Test" %>
@@ -545,15 +545,15 @@
 
                         <div class="well curriculum-well">
                             <div class="row">
-                                <%= form_tag("/subscribers_career_pdf", method: "post", remote: true) do %>
+                                <%= form_tag("/subscribers_career_pdf", method: "post", id: "ebookForm", remote: true) do %>
                                    <div class="col-md-3">
-                                        <%= text_field_tag :first_name, nil, placeholder: "First Name" %>
+                                        <%= text_field_tag :first_name, nil, placeholder: "First Name", class: "required" %>
                                     </div>
                                     <div class="col-md-3">
-                                        <%= text_field_tag :email, nil, placeholder: "Email" %>
+                                        <%= email_field_tag :email, nil, placeholder: "Email", class: "required" %>
                                     </div>
                                     <div class="col-md-3">
-                                       <%= text_field_tag :phone, nil, placeholder: "Phone" %>
+                                       <%= text_field_tag :phone, nil, placeholder: "Phone", class: "required" %>
                                     </div>
                                     <div class="col-md-3">
                                         <%= hidden_field_tag :mousetrap, nil, value: "Career PDF Download" %>
@@ -803,6 +803,8 @@
 </script>
 <script>
   $(document).ready(function () {
-    $("#leadForm").validate();
+    $("#footerForm").validate();
+    $("#ebookForm").validate();
+    $("#curriculumForm").validate();
   });
 </script>

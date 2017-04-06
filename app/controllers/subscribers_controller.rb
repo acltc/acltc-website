@@ -29,29 +29,19 @@ class SubscribersController < ApplicationController
   end
 
   def create_from_curriculum
-    # setup_subscriber
     create_new_lead
-    # if !params[:email].strip.empty? && Subscriber.find_by(email: params[:email])  || @subscriber.save
-    #   subscriber_drip_setup
-    #   create_hubspot_contact("Curriculum Download Phone Test")
-      respond_to do |format|
-        @java_url = "/subscribers/download"
-        format.js {render :partial => "downloadFile"}
-      end
-    # end
+    respond_to do |format|
+      @java_url = "/subscribers/download"
+      format.js {render :partial => "downloadFile"}
+    end
   end
 
   def create_from_career_pdf
-    # setup_subscriber
     create_new_lead
-    # if !params[:email].strip.empty? && Subscriber.find_by(email: params[:email])  || @subscriber.save
-    #   subscriber_drip_setup
-    #   create_hubspot_contact("Career PDF Download")
-      respond_to do |format|
-        @pdf_url = "/subscribers/career_pdf_download"
-        format.js {render :partial => "downloadCareerPdf"}
-      end
-    # end
+    respond_to do |format|
+      @pdf_url = "/subscribers/career_pdf_download"
+      format.js {render :partial => "downloadCareerPdf"}
+    end
   end
 
   def create_from_tutorial
@@ -97,22 +87,6 @@ class SubscribersController < ApplicationController
   end
 
   private
-
-  def setup_subscriber
-    # @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], phone: params[:phone], mousetrap: params[:mousetrap], ip_address: request.remote_ip)
-    # if request.location
-    #   if city = request.location.city
-    #     @subscriber.city = city
-    #   end
-    #   if state = request.location.state
-    #     @subscriber.state = state
-    #   end
-    #   if postal_code = request.location.postal_code
-    #     @subscriber.postal_code = postal_code
-    #   end
-    # end
-    # return @subscriber
-  end
 
   def create_new_lead
     @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], phone: params[:phone], mousetrap: params[:mousetrap], ip_address: request.remote_ip)

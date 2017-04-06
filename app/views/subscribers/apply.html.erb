@@ -24,20 +24,20 @@
         </div>
       <% end %>
 
-      <%= form_tag '/subscribers_application', method: :post do %>
+      <%= form_tag '/subscribers_application', method: :post, id: "startedApplicationForm" do %>
         <div class="form-group">
           <%= label :first_name, "First Name", class: "required form-label" %><br />
-          <%= text_field_tag :first_name, @subscriber.first_name, class: "form-control" %>
+          <%= text_field_tag :first_name, @subscriber.first_name, class: "form-control required" %>
         </div>
         <div class="form-group">
           <%= label :email, "Email Address", class: "required form-label" %><br />
-          <%= text_field_tag :email, @subscriber.email, class: "form-control" %>
+          <%= email_field_tag :email, @subscriber.email, class: "form-control required" %>
         </div>
         <div class="form-group">
           <%= label :phone, "Phone Number", class: "required form-label" %><br />
-          <%= text_field_tag :phone, @subscriber.phone, class: "form-control" %>
+          <%= text_field_tag :phone, @subscriber.phone, class: "form-control required" %>
         </div>
-          <%= hidden_field_tag :mousetrap, nil, :value => "Application" %>
+          <%= hidden_field_tag :mousetrap, nil, :value => "Started Application" %>
         <div class="form-group">
           <%= submit_tag "Get Started!", class: "button button-3d nomargin nopadding" %>
         </div>
@@ -66,3 +66,8 @@ var google_remarketing_only = false;
 <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/926873760/?label=WZmVCI3owmgQoPH7uQM&amp;guid=ON&amp;script=0"/>
 </div>
 </noscript>
+<script>
+  $(document).ready(function () {
+    $("#startedApplicationForm").validate();
+  });
+</script>
