@@ -36,21 +36,10 @@ class SubscribersController < ApplicationController
   end
 
   def create_from_tutorial
-    if cookies[:is_subscriber]
-      @tutorials_visible = true
-    else
-      setup_subscriber
-
-      if !params[:email].strip.empty? && Subscriber.find_by(email: params[:email])  || @subscriber.save
-        create_hubspot_contact("View Tutorials")
-        subscriber_drip_setup
-        @tutorials_visible = true
-      else
-        @tutorials_visible = false
-      end
-      respond_to do |format|
-        format.js {render :partial => "viewTutorials"}
-      end
+    create_new_lead
+    cookies[:is_subscriber] = "true"
+    respond_to do |format|
+      format.js {render :partial => "viewTutorials"}
     end
   end
 
