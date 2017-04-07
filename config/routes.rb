@@ -38,6 +38,7 @@ Rails.application.routes.draw do
   post 'subscribers_tutorial' => 'subscribers#create_from_tutorial'
   post 'subscribers_footer' => 'subscribers#create_from_footer'
   post 'subscribers_career_pdf' => 'subscribers#create_from_career_pdf'
+  post 'subscribers_tour' => 'subscribers#create_from_tour'
 
   resources :blog_posts
   resources :blog_categories

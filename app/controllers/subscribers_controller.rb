@@ -9,9 +9,14 @@ class SubscribersController < ApplicationController
     end
   end
 
+  def create_from_tour
+    create_new_lead
+    redirect_to "/tours/thank_you"
+  end
+
   def create_from_started_application
     create_new_lead
-      redirect_to "/applications/new?first_name=#{params[:first_name]}&email=#{params[:email]}&phone=#{params[:phone]}"
+    redirect_to "/applications/new?first_name=#{params[:first_name]}&email=#{params[:email]}&phone=#{params[:phone]}"
   end
 
   def create_from_curriculum
@@ -51,9 +56,9 @@ class SubscribersController < ApplicationController
 
   def create_from_footer
     create_new_lead
-      respond_to do |format|
-        format.js {render :partial => "createFromFooter"}
-      end
+    respond_to do |format|
+      format.js {render :partial => "createFromFooter"}
+    end
   end
 
   def apply
@@ -73,23 +78,6 @@ class SubscribersController < ApplicationController
   end
 
   private
-
-  def create_new_lead
-    @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], phone: params[:phone], mousetrap: params[:mousetrap], ip_address: request.remote_ip)
-
-    geocode_data = Geocoder.search(request.remote_ip)
-    city = geocode_data[0].city
-    state = geocode_data[0].state
-    postal_code = geocode_data[0].postal_code
-
-    lead = Unirest.post("http://localhost:3000/api/v1/leads.json", headers: {
-    "Accept" => "application/json", "Content-Type" => "application/json"},
-     parameters: {:first_name => params[:first_name], :email => params[:email], :phone => params[:phone], :name => params[:mousetrap], :ip => @subscriber.ip_address, :city => city, :state => state, :zip => postal_code}).body
-
-     p '**************************************'
-     p lead
-
-  end
 
   def subscriber_drip_setup
     client = Drip::Client.new do |c|

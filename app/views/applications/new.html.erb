@@ -39,6 +39,8 @@
                 <%= f.label :address, "Address", class: "required form-label" %><br />
                 <%= f.text_field :address, class: "form-control", placeholder:"Street, City, State, Zip" %>
               </div>
+              <%= hidden_field_tag :mousetrap, nil, :value => "Finished Application" %>
+              <%= hidden_field_tag :email, nil, :value => params[:email] %>
 
               <div class="form-group" >
                 <label class="required label-radio form-label">Which location are you applying for?</label>

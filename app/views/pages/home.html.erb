@@ -145,28 +145,29 @@
                                     <p class="info-session-description">Come join us in person for a tour or info session!</p>
                                     <p class="info-session-content" id="tour-happy-sad-messages">Learn everything there is to know about Actualize from one of our Admissions Advisors and see us in action. We'll get in touch with you shortly to schedule your visit.</p>
                                     <br>
-                                    <%= form_for @tour, html: { id: "infoSessionSignUp" } do |f| %>
-                                    <div class="row info-fields" style="padding-bottom: 20px;">
-                                        <div class="col-md-3">
-                                            <%= f.select :city, options_for_select(["Chicago", "New York City", "San Francisco"], @tour.city), { prompt: "Select a city"}, { class: "form-control tour-home-fields", id: "session-city-select", required: true } %><br>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <%= f.text_field :first_name, placeholder: "Name", class: "tour-home-fields", required: true %>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <%= f.text_field :email, placeholder: "Email", class: "tour-home-fields" , required: true%>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <%= f.text_field :phone, placeholder: "Phone", class: "tour-home-fields", required: true %>
-                                        </div>
-                                    </div>
-                                    <div class="row">
 
+                                    <%= form_tag("/subscribers_tour", method: "post", id: "tourHomeForm") do |f| %>
+                                      <div class="row info-fields" style="padding-bottom: 20px;">
+                                          <div class="col-md-3">
+                                            <%= select_tag :city, options_for_select(["Chicago", "New York City", "San Francisco"]), { class: "form-control tour-home-fields", id: "session-city-select"} %><br>
+                                          </div>
+                                          <div class="col-md-3">
+                                            <%= text_field_tag :first_name, nil, placeholder: "First Name", class: "required tour-home-fields" %>
+                                          </div>
+                                          <div class="col-md-3">
+                                            <%= email_field_tag :email, nil, placeholder: "Email", class: "required tour-home-fields" %>
+                                          </div>
+                                          <div class="col-md-3">
+                                            <%= text_field_tag :phone, nil, placeholder: "Phone", class: "required tour-form-fields" %>
+                                          </div>
+                                          <%= hidden_field_tag :mousetrap, nil, value: "Tour" %>
+                                      </div>
+                                      <div class="row">
                                         <div class="col-md-4"></div>
                                         <div class="col-md-4">
-                                            <%= f.submit "Book A Tour", class: "curriculum-download-btn", id: "submit-session", style: "padding:0;margin:0;background-color:#F25252;color:white;" %>
+                                          <%= submit_tag "Book A Tour", class: "curriculum-download-btn", id: "submit-session", style: "padding:0;margin:0;background-color:#F25252;color:white;" %>
                                         </div>
-                                    </div>
+                                      </div>
                                     <% end %>
                                 </div>
 
@@ -806,5 +807,6 @@
     $("#footerForm").validate();
     $("#ebookForm").validate();
     $("#curriculumForm").validate();
+    $("#tourHomeForm").validate();
   });
 </script>

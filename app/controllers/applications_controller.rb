@@ -57,7 +57,7 @@ class ApplicationsController < ApplicationController
   def create
     @application = Application.new(application_params)
     if @application.save
-      create_hubspot_contact
+      create_new_lead
       AcltcMailer.application_email(@application).deliver_now
       AcltcMailer.application_email_reply(@application).deliver_now
       redirect_to "/pages/thank_you"
@@ -110,7 +110,7 @@ class ApplicationsController < ApplicationController
         end
       else
         Hubspot::Contact.create!(application_params[:email], {firstname: application_params[:first_name], lastname: application_params[:last_name], phone: application_params[:phone], lead_type: "Complete Application", created_at: @application.created_at })
-      end 
+      end
     rescue Exception => e
       p "rescue #{e.message}"
     end

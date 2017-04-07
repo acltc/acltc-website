@@ -2,21 +2,7 @@
   <div class="tour-hero-image">
     <div class="tour-background-layer">
       <div class="content-wrap" id="tour-content-wrap">
-        <%= form_for @tour do |f| %>
-          <% if @tour.errors.any? %>
-            <div class="alert alert-dismissible alert-warning center-warning">
-              <button type="button" class="close" data-dismiss="alert">×</button>
-              <h2>Oops! You forgot to fill out
-                <%= pluralize(@tour.errors.count, "field") %>:
-              </h2>
-              <ul>
-                <% @tour.errors.full_messages.each do |msg| %>
-                  <h4><%= msg %></h4>
-                <% end %>
-              </ul>
-            </div>
-          <% end %>
-
+        <%= form_tag("/subscribers_tour", method: "post", id: "tourForm")do |f| %>
           <div class="row" id="tour-row-container">
             <div class="col-xs-12" id="tour-header-container">
               <img class="logo" src="<%= image_path 'actualize-logo-triangle-sm.png'%>">
@@ -25,29 +11,28 @@
             </div>
             <div class="col-xs-12" id="tour-form-right">
               <div class="form-group">
-                <%= f.label :first_name, "First Name", class: "required form-label" %><br />
-                <%= f.text_field :first_name, autofocus: true, class: "form-control tour-form-field" %>
+                <%= label_tag :first_name, "First Name", class: "required form-label" %><br />
+                <%= text_field_tag :first_name, nil, placeholder: "First Name", class: "required form-control tour-form-field" %>
               </div>
               <div class="form-group">
-                <%= f.label :email, "Email Address", class: "required form-label" %><br />
-                <%= f.text_field :email, class: "form-control tour-form-field" %>
+                <%= label_tag :email, "Email Address", class: "required form-label" %><br />
+                <%= email_field_tag :email, nil, placeholder: "Email", class: "required form-control tour-form-field" %>
               </div>
               <div class="form-group">
-                <%= f.label :phone, "Cell Phone Number", class: "required form-label" %><br />
-                <%= f.text_field :phone, class: "form-control tour-form-field", placeholder: "xxx-xxx-xxxx" %>
+                <%= label_tag :phone, "Cell Phone Number", class: "required form-label" %><br />
+                <%= text_field_tag :phone, nil, placeholder: "Phone", class: "required form-control tour-form-field" %>
               </div>
             </div>
-
+            <%= hidden_field_tag :mousetrap, nil, value: "Tour" %>
             <div class="col-xs-12">
               <p><strong>After completing this form, we will call you shortly with more details about your tour.</strong></p>
-              <%= f.invisible_captcha :subtitle %> <!-- This is an invisible field that only spambots see. If it is filled in, the tour won't save. -->
+              <%= invisible_captcha :subtitle %> <!-- This is an invisible field that only spambots see. If it is filled in, the tour won't save. -->
               <div class="form-group" id="tour-form-submit-button">
-                <%= f.submit "Submit", class: " tour-submit-button" %>
+                <%= submit_tag "Submit", class: " tour-submit-button" %>
               </div>
             </div>
           </div>
-        <% end %> 
-        
+        <% end %>
       </div>
     </div>
   </div>
@@ -72,3 +57,8 @@
     <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/926873760/?label=8ZohCMXw8mQQoPH7uQM&amp;guid=ON&amp;script=0"/>
   </div>
 </noscript>
+<script>
+  $(document).ready(function () {
+    $("#tourForm").validate();
+  });
+</script>
