@@ -21,7 +21,7 @@
 
               <div class="form-group" @keyup="applicationFields">
                 <%= f.label :first_name, "First Name", class: "required form-label" %><br />
-                <%= f.text_field :first_name, autofocus: true, class: "form-control" %>
+                <%= f.text_field :first_name, autofocus: true, value: params[:first_name], class: "form-control" %>
               </div>
               <div class="form-group" @keyup="applicationFields">
                 <%= f.label :last_name, "Last Name", class: "required form-label" %><br />
@@ -29,11 +29,11 @@
               </div>
               <div class="form-group" @keyup="applicationFields">
                 <%= f.label :email, "Email Address", class: "required form-label" %><br />
-                <%= f.text_field :email, class: "form-control" %>
+                <%= f.text_field :email, value: params[:email], class: "form-control" %>
               </div>
               <div class="form-group" @keyup="applicationFields">
                 <%= f.label :phone, "Cell Phone Number", class: "required form-label" %><br />
-                <%= f.text_field :phone, class: "form-control", placeholder: "xxx-xxx-xxxx" %>
+                <%= f.text_field :phone, class: "form-control", value: params[:phone], placeholder: "xxx-xxx-xxxx" %>
               </div>
               <div class="form-group" @keyup="applicationFields">
                 <%= f.label :address, "Address", class: "required form-label" %><br />
