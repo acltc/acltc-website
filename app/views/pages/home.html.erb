@@ -60,77 +60,51 @@
 <!-- app -->
 
 <div id="app">
-  <div class="modal fade" id="popupModal" tabindex="-1" role="dialog" aria-labelledby="popupModalLabel">
+  <div class="modal fade" id="popupModal" tabindex="-1" role="dialog" aria-labelledby="popupModalLabel" data-backdrop="static">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="popupModalLabel">Modal title</h4>
+          <h1 class="modal-title" id="popupModalLabel">Are Coding Bootcamps A Good Fit For You?</h1>
+          <strong><p>Join the thousands of people who signed up for our free email mini-course that breaks down the facts and myths about coding bootcamps.</p></strong>
         </div>
         <div class="modal-body">
-        Modal Body
-        <div class="form-group">
-            <label>First Name</label>
-            <input class="form-control" type="text" placeholder="First Name" v-model="subscriber.first_name">
-        </div>
-        <div class="form-group">
-            <label>Email</label>
-            <input class="form-control" type="text" placeholder="Email" v-model="subscriber.email">
-        </div>
-        <div class="form-group">
-            <label>Phone</label>
-            <input class="form-control" type="text" placeholder="Phone" v-model="subscriber.phone">
-        </div>
-        <div id="popup-submit-button-container">
-            <button class="btn btn-lg" id="popup-submit-button" @click="newSubscriber">Sign Up</button>
-        </div>
+        <%= form_tag("/subscribers_popup", method: "post", id: "popupForm", remote: true) do %>
+          <div class="form-group">
+              <%= label_tag :first_name %>
+              <%= text_field_tag :first_name, nil, class: "required form-control" %>
+          </div>
+          <div class="form-group">
+              <%= label_tag :email %>
+              <%= email_field_tag :email, nil, class: "required form-control" %>
+          </div>
+          <div class="form-group">
+              <%= label_tag :phone %>
+              <%= text_field_tag :phone, nil, class: "required form-control" %>
+          </div>
+          <%= hidden_field_tag :mousetrap, nil, value: "Email Course Popup" %>
+          <div id="popup-submit-button-container">
+            <%= submit_tag "Sign Up", class: "btn btn-lg", id:"popup-submit-button"%>
+          </div>
+        <% end %>
         </div>
       </div>
     </div>
   </div>
 
-   <!-- use the modal component, pass in the prop -->
-   <!-- <modal v-if="showModal" @close="showModal = false"> -->
-
-   <!--
-     you can use custom content here to overwrite
-     default content
- -->
-    <!-- <div slot="header">
-        <button slot="header" type="button" class="btn btn-default" @click="closePopup" id="popup-close-button">X</button>
-
-        <h1 id="ModalHead">Are Coding Bootcamps A Good Fit For You?</h1>
-        <br>
-        <strong><p>Join the thousands of people who signed up for our free email mini-course that breaks down the facts and myths about coding bootcamps.</p></strong>
-
-        <div id="errors">
-            <ul>
-                <li v-for="error in errors">{{ error }}</li>
-            </ul>
+  <div class="modal fade" id="thankYouModal" tabindex="-1" role="dialog" aria-labelledby="thankYouModalLabel">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         </div>
-    </div> -->
-    <!-- <div slot="body">
-        <div class="form-group">
-            <label>First Name</label>
-            <input class="form-control" type="text" placeholder="First Name" v-model="subscriber.first_name">
+        <div class="modal-body">
+          <h3 id="thank-you-modal-header">Thank you for subscribing!</h3>
+          <p id="thank-you-modal-text">You will receive the first email shortly.</p>
         </div>
-        <div class="form-group">
-            <label>Email</label>
-            <input class="form-control" type="text" placeholder="Email" v-model="subscriber.email">
-        </div>
-        <div class="form-group">
-            <label>Phone</label>
-            <input class="form-control" type="text" placeholder="Phone" v-model="subscriber.phone">
-        </div>
-        <div id="popup-submit-button-container">
-            <button class="btn btn-lg" id="popup-submit-button" @click="newSubscriber">Sign Up</button>
-        </div>
+      </div>
     </div>
-     <div slot="footer">
-
-    </div>
-    </modal> -->
-
+  </div>
 
        <!-- Content
         ============================================= -->
@@ -833,15 +807,15 @@
     $("#ebookForm").validate();
     $("#curriculumForm").validate();
     $("#tourHomeForm").validate();
+    $("#popupForm").validate();
   });
 </script>
 <script type="text/javascript">
-	<% unless cookies[:is_subscriber] %>
-    $(window).load(function(){
-      $('#popupModal').appendTo("body").modal({
-        'show': true,
-        'backdrop': 'static'
-      });
+  <% unless cookies[:is_subscriber] %>
+    $(document).ready(function(){
+      setTimeout(function(){
+        $('#popupModal').modal('show');
+      }, 5000);
     });
   <% end %>
 </script>

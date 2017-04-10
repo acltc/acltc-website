@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  namespace :api do
-    namespace :v1 do
-      post 'subscribers_popup' => 'subscribers#create_from_popup'
-    end
-  end
+  # namespace :api do
+  #   namespace :v1 do
+  #     post 'subscribers_popup' => 'subscribers#create_from_popup'
+  #   end
+  # end
 
   get 'statuses/show'
 
@@ -39,6 +39,8 @@ Rails.application.routes.draw do
   post 'subscribers_footer' => 'subscribers#create_from_footer'
   post 'subscribers_career_pdf' => 'subscribers#create_from_career_pdf'
   post 'subscribers_tour' => 'subscribers#create_from_tour'
+  post 'subscribers' => 'subscribers#create_from_tour'
+  post 'subscribers_popup' => 'subscribers#create_from_popup'
 
   resources :blog_posts
   resources :blog_categories
