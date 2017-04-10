@@ -9,6 +9,11 @@ class SubscribersController < ApplicationController
     end
   end
 
+  def create_from_popup
+    create_new_lead
+    cookies[:is_subscriber] = "true"
+  end
+
   def create_from_tour
     create_new_lead
     redirect_to "/tours/thank_you"
