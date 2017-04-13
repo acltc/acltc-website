@@ -679,8 +679,8 @@ div#city.radio {
   padding-top: 5px;
 }
 
-#ebookForm label.error {
-  color: #fff;
+#ebookForm label#first_name-error.error, label#email-error.error, label#phone-error.error {
+  color: red;
 }
 
 /* -------------- END CAREER PDF DOWNLOAD ------------------ */
@@ -1474,8 +1474,8 @@ footer {
   color: #555555 !important;
 }
 
-#curriculumForm label.error {
-  color: #fff;
+#curriculumForm label#first_name-error.error, label#email-error.error, label#phone-error.error {
+  color: red;
 }
 
 input.curriculum-download-btn {
@@ -1944,8 +1944,8 @@ input.curriculum-download-btn:hover{
   padding-top: 0 !important;
 }
 
-#tourHomeForm label {
-  color: #fff;
+#tourHomeForm label#first_name-error.error, label#email-error.error, label#phone-error.error {
+  color: red;
 }
 
 #infoSessionSignUp {
@@ -2017,4 +2017,9 @@ input.curriculum-download-btn:hover{
 
 #thank-you-modal-text {
   text-align: center;
+}
+
+// Footer Form
+#footerForm label#first_name-error.error, label#email-error.error, label#phone-error.error {
+  color: red;
 }

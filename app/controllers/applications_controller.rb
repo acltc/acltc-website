@@ -46,11 +46,6 @@ class ApplicationsController < ApplicationController
       redirect_to '/pages/scholarship_thank_you'
     else
       @application = Application.new
-      if params[:id] # auto populate subsrciber fields from first step
-        subscriber = Subscriber.find(params[:id])
-        @application.first_name = subscriber.first_name
-        @application.email = subscriber.email
-      end
     end
   end
 
@@ -62,7 +57,7 @@ class ApplicationsController < ApplicationController
       AcltcMailer.application_email_reply(@application).deliver_now
       redirect_to "/pages/thank_you"
     else
-      render :new
+      render 'new'
     end
   end
 
