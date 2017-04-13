@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
   end
 
   def create_new_lead
+    cookies[:subscriber] = params[:email]
     @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], phone: params[:phone], mousetrap: params[:mousetrap], ip_address: request.remote_ip)
 
     geocode_data = Geocoder.search(request.remote_ip)

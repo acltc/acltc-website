@@ -86,7 +86,7 @@
 </section><!-- #content end -->
 <!-- modal js -->
 <script type="text/javascript">
-	<% unless cookies[:is_subscriber] %>
+	<% unless cookies[:subscriber] %>
     $(window).load(function(){
         $('#myModal').appendTo("body").modal({
           'show': true,

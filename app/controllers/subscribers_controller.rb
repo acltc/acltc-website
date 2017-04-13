@@ -11,7 +11,6 @@ class SubscribersController < ApplicationController
 
   def create_from_popup
     create_new_lead
-    cookies[:is_subscriber] = "true"
     respond_to do |format|
       format.js {render :partial => "popupSubscriber"}
     end
@@ -45,7 +44,6 @@ class SubscribersController < ApplicationController
 
   def create_from_tutorial
     create_new_lead
-    cookies[:is_subscriber] = "true"
     respond_to do |format|
       format.js {render :partial => "viewTutorials"}
     end

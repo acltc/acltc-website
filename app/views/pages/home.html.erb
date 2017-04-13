@@ -811,7 +811,7 @@
   });
 </script>
 <script type="text/javascript">
-  <% unless cookies[:is_subscriber] %>
+  <% unless cookies[:subscriber] %>
     $(document).ready(function(){
       setTimeout(function(){
         $('#popupModal').modal('show');
