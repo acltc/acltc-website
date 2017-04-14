@@ -18,7 +18,7 @@ class AcltcMailer < ApplicationMailer
 
   def application_email(application)
     @application = application
-    mail(from: "mg.anyonecanlearntocode.com", to: 'admissions@anyonecanlearntocode.com', subject: 'Application Submitted', reply_to: @application.email )
+    mail(from: "admissions@actualize.co", to: 'admissions@anyonecanlearntocode.com', subject: 'Application Submitted', reply_to: @application.email )
   end
 
   def application_email_reply(application)
@@ -47,7 +47,7 @@ class AcltcMailer < ApplicationMailer
     @tour_state = state
     @tour_postal_code = zip
     @tour_ip_address = ip
-    mail(from: "mg.anyonecanlearntocode.com", to: ["ben@actualize.co", "jay@actualize.co", "rena@actualize.co"], subject: 'Tour Scheduled', reply_to: @tour.email )
+    mail(from: "admissions@actualize.co", to: ["ben@actualize.co", "jay@actualize.co", "rena@actualize.co"], subject: 'Tour Scheduled', reply_to: @tour.email )
   end
 
   def tour_email_reply(tour)
@@ -57,7 +57,7 @@ class AcltcMailer < ApplicationMailer
 
   def lakewood_application_email(application)
     @lakewood_application = application
-    mail(from: "mg.anyonecanlearntocode.com", to: ['zev@actualize.co', 'ben@thedifferenceengine.io'], subject: 'Lakewood Actualize Applicant', reply_to: @lakewood_application.email )
+    mail(from: "admissions@actualize.co", to: ['zev@actualize.co', 'ben@thedifferenceengine.io'], subject: 'Lakewood Actualize Applicant', reply_to: @lakewood_application.email )
   end
 
   def mini_course_application_email(mini_course_application)
@@ -75,7 +75,7 @@ class AcltcMailer < ApplicationMailer
     else
       @city_advisor = "ray@actualize.co"
     end
-    mail(from: "mg.anyonecanlearntocode.com", to: ["ben@actualize.co", "jay@actualize.co", @city_advisor], subject: "New Info Session Sign Up")
+    mail(from: "admissions@actualize.co", to: ["ben@actualize.co", "jay@actualize.co", @city_advisor], subject: "New Info Session Sign Up")
   end
 
   def info_session_sign_up_confirmation_email(info_session_sign_up)
