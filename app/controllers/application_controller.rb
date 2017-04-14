@@ -7,12 +7,21 @@ class ApplicationController < ActionController::Base
     admins_dashboard_path(current_admin)
   end
 
+  def create_new_lead
+    cookies[:subscriber] = params[:email]
+    @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], phone: params[:phone], mousetrap: params[:mousetrap], ip_address: request.remote_ip)
+
+    lead = Unirest.post("https://actualize-crm.herokuapp.com/api/v1/leads.json", headers: {
+    "Accept" => "application/json", "Content-Type" => "application/json"},
+     parameters: {:first_name => params[:first_name], :email => params[:email], :phone => params[:phone], :name => params[:mousetrap], :ip => @subscriber.ip_address}).body
+  end
+
   private
 
   def verify_subscriber
-    unless Subscriber.find_by(ip_address: request.remote_ip) || cookies[:is_subscriber]
+    unless cookies[:is_subscriber]
       redirect_to tutorial_lessons_path
-    end  
+    end
   end
 
   def authenticate_corporate_training_access

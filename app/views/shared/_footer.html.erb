@@ -23,12 +23,12 @@
         <div class="col-md-6">
             <p id="subscribe-instructions">Sign up for news about upcoming courses and updates about ACLTC, events in your area, and other resources.</p>
 
-            <%= form_tag("/subscribers_footer", method: "post", remote: true) do %>
-                <%= text_field_tag :first_name, nil, placeholder: "First Name" %>
-              
-                <%= text_field_tag :email, nil, placeholder: "Email" %>
+            <%= form_tag("/subscribers_footer", method: "post", remote: true, id: "footerForm") do %>
+                <%= text_field_tag :first_name, nil, placeholder: "First Name", class: "required" %>
 
-                <%= text_field_tag :phone, nil, placeholder: "Phone" %>
+                <%= email_field_tag :email, nil, placeholder: "Email", class: "required" %>
+
+                <%= text_field_tag :phone, nil, placeholder: "Phone", class: "required" %>
 
                 <%= hidden_field_tag :mousetrap, nil, value: "Homepage Footer" %>
 

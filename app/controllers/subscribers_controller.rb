@@ -9,76 +9,50 @@ class SubscribersController < ApplicationController
     end
   end
 
-  def create_from_application
-    setup_subscriber
-
-    if !params[:email].strip.empty? && Subscriber.find_by(email: params[:email]) 
-      @subscriber = Subscriber.find_by(email: params[:email])
-      create_hubspot_contact("Application")
-      redirect_to "/applications/new/#{@subscriber.id}"
-    elsif @subscriber.save
-      create_hubspot_contact("Application")
-      subscriber_drip_setup
-      redirect_to "/applications/new/#{@subscriber.id}"
-    else
-      render :apply
+  def create_from_popup
+    create_new_lead
+    respond_to do |format|
+      format.js {render :partial => "popupSubscriber"}
     end
   end
 
-  def create_from_curriculum
-    setup_subscriber
+  def create_from_tour
+    create_new_lead
+    redirect_to "/tours/thank_you"
+  end
 
-    if !params[:email].strip.empty? && Subscriber.find_by(email: params[:email])  || @subscriber.save
-      subscriber_drip_setup
-      create_hubspot_contact("Curriculum Download Phone Test")
-      respond_to do |format|
-        @java_url = "/subscribers/download"
-        format.js {render :partial => "downloadFile"}
-      end
+  def create_from_started_application
+    create_new_lead
+    redirect_to "/applications/new?first_name=#{params[:first_name]}&email=#{params[:email]}&phone=#{params[:phone]}"
+  end
+
+  def create_from_curriculum
+    create_new_lead
+    respond_to do |format|
+      @java_url = "/subscribers/download"
+      format.js {render :partial => "downloadFile"}
     end
   end
 
   def create_from_career_pdf
-    setup_subscriber
-
-    if !params[:email].strip.empty? && Subscriber.find_by(email: params[:email])  || @subscriber.save
-      subscriber_drip_setup
-      create_hubspot_contact("Career PDF Download")
-      respond_to do |format|
-        @pdf_url = "/subscribers/career_pdf_download"
-        format.js {render :partial => "downloadCareerPdf"}
-      end
+    create_new_lead
+    respond_to do |format|
+      @pdf_url = "/subscribers/career_pdf_download"
+      format.js {render :partial => "downloadCareerPdf"}
     end
   end
 
   def create_from_tutorial
-    if cookies[:is_subscriber]
-      @tutorials_visible = true
-    else
-      setup_subscriber
-
-      if !params[:email].strip.empty? && Subscriber.find_by(email: params[:email])  || @subscriber.save
-        create_hubspot_contact("View Tutorials")
-        subscriber_drip_setup
-        @tutorials_visible = true
-      else
-        @tutorials_visible = false
-      end
-      respond_to do |format|
-        format.js {render :partial => "viewTutorials"}
-      end
+    create_new_lead
+    respond_to do |format|
+      format.js {render :partial => "viewTutorials"}
     end
   end
 
   def create_from_footer
-    setup_subscriber
-
-    if !params[:email].strip.empty? && Subscriber.find_by(email: params[:email])  || @subscriber.save
-      create_hubspot_contact("Homepage Footer")
-      subscriber_drip_setup
-      respond_to do |format|
-        format.js {render :partial => "createFromFooter"}
-      end
+    create_new_lead
+    respond_to do |format|
+      format.js {render :partial => "createFromFooter"}
     end
   end
 
@@ -99,22 +73,6 @@ class SubscribersController < ApplicationController
   end
 
   private
-
-  def setup_subscriber
-    @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], phone: params[:phone], mousetrap: params[:mousetrap], ip_address: request.remote_ip)
-    if request.location
-      if city = request.location.city
-        @subscriber.city = city
-      end
-      if state = request.location.state
-        @subscriber.state = state
-      end
-      if postal_code = request.location.postal_code
-        @subscriber.postal_code = postal_code
-      end
-    end
-    return @subscriber
-  end
 
   def subscriber_drip_setup
     client = Drip::Client.new do |c|

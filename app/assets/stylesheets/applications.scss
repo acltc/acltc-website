@@ -129,6 +129,10 @@ label.required:after {
   margin-right: 10px;
 }
 
+#startedApplicationForm label#email-error, label#first_name-error, label#phone-error {
+  color: red;
+}
+
 #application_location_chicago, #application_location_san_francisco, #application_location_new_york_city, #application_woman_true, #application_scholarship_applicant_true, #application_scholarship_applicant_false, #application_woman_false, #application_minority_true, #application_minority_false {
   margin-left: 0;
 }
