@@ -46,23 +46,18 @@ class ApplicationsController < ApplicationController
       redirect_to '/pages/scholarship_thank_you'
     else
       @application = Application.new
-      if params[:id] # auto populate subsrciber fields from first step
-        subscriber = Subscriber.find(params[:id])
-        @application.first_name = subscriber.first_name
-        @application.email = subscriber.email
-      end
     end
   end
 
   def create
     @application = Application.new(application_params)
     if @application.save
-      create_hubspot_contact
+      create_new_lead
       AcltcMailer.application_email(@application).deliver_now
       AcltcMailer.application_email_reply(@application).deliver_now
       redirect_to "/pages/thank_you"
     else
-      render :new
+      render 'new'
     end
   end
 
@@ -110,7 +105,7 @@ class ApplicationsController < ApplicationController
         end
       else
         Hubspot::Contact.create!(application_params[:email], {firstname: application_params[:first_name], lastname: application_params[:last_name], phone: application_params[:phone], lead_type: "Complete Application", created_at: @application.created_at })
-      end 
+      end
     rescue Exception => e
       p "rescue #{e.message}"
     end

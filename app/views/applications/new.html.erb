@@ -21,24 +21,28 @@
 
               <div class="form-group" @keyup="applicationFields">
                 <%= f.label :first_name, "First Name", class: "required form-label" %><br />
-                <%= f.text_field :first_name, autofocus: true, class: "form-control" %>
+                <%= f.text_field :first_name, value: params[:first_name], class: "form-control" %>
               </div>
               <div class="form-group" @keyup="applicationFields">
                 <%= f.label :last_name, "Last Name", class: "required form-label" %><br />
-                <%= f.text_field :last_name, autofocus: true, class: "form-control" %>
+                <%= f.text_field :last_name, class: "form-control" %>
               </div>
               <div class="form-group" @keyup="applicationFields">
                 <%= f.label :email, "Email Address", class: "required form-label" %><br />
-                <%= f.text_field :email, class: "form-control" %>
+                <%= f.text_field :email, value: params[:email], class: "form-control" %>
               </div>
               <div class="form-group" @keyup="applicationFields">
                 <%= f.label :phone, "Cell Phone Number", class: "required form-label" %><br />
-                <%= f.text_field :phone, class: "form-control", placeholder: "xxx-xxx-xxxx" %>
+                <%= f.text_field :phone, value: params[:phone], class: "form-control" %>
               </div>
               <div class="form-group" @keyup="applicationFields">
                 <%= f.label :address, "Address", class: "required form-label" %><br />
                 <%= f.text_field :address, class: "form-control", placeholder:"Street, City, State, Zip" %>
               </div>
+              <%= hidden_field_tag :mousetrap, nil, :value => "Finished Application" %>
+              <%= hidden_field_tag :first_name, nil, :value => params[:first_name] %>
+              <%= hidden_field_tag :email, nil, :value => params[:email] %>
+              <%= hidden_field_tag :phone, nil, :value => params[:phone] %>
 
               <div class="form-group" >
                 <label class="required label-radio form-label">Which location are you applying for?</label>
@@ -140,9 +144,7 @@
                 <%= f.label :tinker_example, "Programming requires complex problem solving, logical analysis, and the ability to tinker with something until it works. Give examples of when you've had these experiences.", class: "required label-leading form-label" %><br />
                 <%= f.text_area :tinker_example, class: "form-control" %>
               </div>
-              
-              <p>Thanks for filling out the application!</p>
-              
+
               <% if @long %>
                 <div class="form-group">
                   <%= hidden_field_tag :long, true %>

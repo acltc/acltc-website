@@ -56,7 +56,7 @@ class LessonsController < ApplicationController
     { title: "Episode 18a - Arrays Within Arrays", category_id: 2 },
     # { title: "Challenge Exercise 1 - Algorithm Bubble Sort", category_id: 2 },
     # { title: "Challenge Exercise 2 - Research Different Loops", category_id: 2 },
-    
+
     { title: "Episode 19 - Hashes", time: "9:24", category_id: 2 },
     { title: "Episode 19a - Adding Values To A Hash", category_id: 2 },
     { title: "Episode 19b - Things That Can Go Wrong With Hashes", time: "11:02", category_id: 2 },
@@ -65,7 +65,7 @@ class LessonsController < ApplicationController
     { title: "Episode 21 - Symbols", category_id: 2 },
     { title: "Episode 21a - Idiomatic Ruby: Hashes With Symbols", category_id: 2 },
     # { title: "Challenge Exercise 1 - Algorithm Insertion Sort", category_id: 2 },
-    
+
     # { title: "Episode 19 - How To Break Down A Problem", time: "29:30", category_id: 2},
     # { title: "Episode 21 - RubyGems", time: "5:19", category_id: 2},
     # { title: "Episode 22 - API Gems", time: "12:18", category_id: 2},
@@ -105,11 +105,11 @@ class LessonsController < ApplicationController
     end
     # Uses ip_address to see if the user has previously signed up?
     # If so, they can have access to the tutorials.
-    if Subscriber.find_by(ip_address: request.remote_ip)
-        @returning_subscriber = true
-    else
-        @returning_subscriber = false
-    end
+    # if Subscriber.find_by(ip_address: request.remote_ip)
+    #     @returning_subscriber = true
+    # else
+    #     @returning_subscriber = false
+    # end
   end
 
   def show
