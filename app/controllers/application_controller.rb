@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
   private
 
   def verify_subscriber
-    unless cookies[:is_subscriber]
+    unless cookies[:is_subscriber] || cookies[:subscriber]
       redirect_to tutorial_lessons_path
     end
   end
