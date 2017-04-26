@@ -1,9 +1,9 @@
 <h3>Hello, <%= @info_session_sign_up.name %>!</h3>
 <p>Thanks for signing up for an Actualize info session.</p>
 <p>Your info session is scheduled for <%= @info_session_sign_up.friendly_time %> on <%= @info_session_sign_up.friendly_date %></p>
-<p>at 
+<p>at
   <% if @info_session_sign_up.city == "Chicago" %>
-    <a href="https://www.google.com/maps/place/222+W+Merchandise+Mart+Plaza,+Chicago,+IL+60654/@41.8885185,-87.6354802,17z/data=!3m1!4b1!4m2!3m1!1s0x880e2cb6fa650467:0xd94994faa9dd5715" target="_blank">222 W Merchandise Mart Plaza Chicago, IL 60654</a>
+    <a href="https://www.google.com/maps/place/215+W+Ohio+St,+Chicago,+IL+60654/@41.8921404,-87.6370182,17z/data=!3m1!4b1!4m5!3m4!1s0x880e2cb444f646c9:0x7945275dd8d4297d!8m2!3d41.8921364!4d-87.6348295" target="_blank">215 W Ohio St. Chicago, IL 60654</a>
   <% elsif @info_session_sign_up.city == "New York City" %>
     <a href="https://www.google.com/maps/place/150+Broadway,+New+York,+NY+10038/@40.7093102,-74.010236,17z" target="_blank">150 Broadway New York, NY 10038</a>
   <% else %>
