@@ -16,7 +16,20 @@ class ApplicationController < ActionController::Base
      parameters: {:first_name => params[:first_name], :email => params[:email], :phone => params[:phone], :name => params[:mousetrap], :ip => @subscriber.ip_address}).body
   end
 
+  def record_return_to_website_event
+    if cookies[:subscriber] && hasnt_visited_within_24_hours
+      lead = Unirest.post("https://actualize-crm.herokuapp.com/api/v1/leads.json", headers: {
+      "Accept" => "application/json", "Content-Type" => "application/json"},
+       parameters: {:email => cookies[:subscriber], :name => "Visited Website"}).body
+      cookies[:last_visited] = Time.now
+    end
+  end
+
   private
+
+  def hasnt_visited_within_24_hours
+    !cookies[:last_visited] || (Time.now - DateTime.parse(cookies[:last_visited])) > 86400
+  end
 
   def verify_subscriber
     unless cookies[:is_subscriber] || cookies[:subscriber]

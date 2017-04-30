@@ -2,6 +2,7 @@ class PagesController < ApplicationController
   include CohortDatesHelper
   
   def home
+    record_return_to_website_event
     @info_session_sign_up = InfoSessionSignUp.new
     @next_info_session = InfoSession.next_info_session
     @tour = Tour.new

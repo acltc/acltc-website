@@ -57,6 +57,7 @@ class SubscribersController < ApplicationController
   end
 
   def apply
+    record_return_to_website_event
     @subscriber = Subscriber.new
   end
 

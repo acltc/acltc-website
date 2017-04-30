@@ -18,6 +18,7 @@ class ToursController < ApplicationController
   end
 
   def new
+    record_return_to_website_event
     @tour = Tour.new
     @tour_page = "loaded"
   end

@@ -2,6 +2,7 @@ class BlogPostsController < ApplicationController
   before_action :authenticate_admin!, only: [:new, :create, :update, :delete]
 
   def index
+    record_return_to_website_event
     if current_admin
       @blog_posts_all = BlogPost.friendly.includes(:admin).order(id: :desc).all
       if params[:category]
@@ -43,6 +44,7 @@ class BlogPostsController < ApplicationController
   end
 
   def show
+    record_return_to_website_event
     @blog_posts_all = BlogPost.where(published?: true).friendly.includes(:admin).order(id: :desc).all
     published = BlogPost.friendly.find(params[:id]).published? if params[:id]
     published = BlogPost.friendly.find(params[:title]).published? if params[:title]
