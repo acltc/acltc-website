@@ -115,7 +115,7 @@
           <div id="catcher"></div>
           <div id="sticky" class="text-left">
             <a href="/apply" class="btn btn-primary sticky-apply sticky-sidebar" style="width: 200px;">Apply</a><br><br>
-            <a href="/tours/new" class="btn btn-primary sticky-tour sticky-sidebar" style="width: 200px;">Book A Tour</a><br><br>
+            <!-- <a href="/tours/new" class="btn btn-primary sticky-tour sticky-sidebar" style="width: 200px;">Book A Tour</a><br><br> -->
 
 
           </div>
@@ -144,11 +144,11 @@
                                 <!-- </div> -->
 
                                 <div id="info-session">
-                                    <p class="info-session-description">Come join us in person for a tour or info session!</p>
-                                    <p class="info-session-content" id="tour-happy-sad-messages">Learn everything there is to know about Actualize from one of our Admissions Advisors and see us in action. We'll get in touch with you shortly to schedule your visit.</p>
+                                    <p class="info-session-description">Start your Application!</p>
+                                    <p class="info-session-content" id="tour-happy-sad-messages">Apply today and an Admissions Representative will contact you about next steps including scheduling a tour.</p>
                                     <br>
 
-                                    <%= form_tag("/subscribers_tour", method: "post", id: "tourHomeForm") do |f| %>
+                                    <%= form_tag("/subscribers_application", method: "post", id: "applyHomeForm") do |f| %>
                                       <div class="row info-fields" style="padding-bottom: 20px;">
                                           <div class="col-md-4">
                                             <%= text_field_tag :first_name, nil, placeholder: "Full Name", class: "required tour-home-fields" %>
@@ -159,12 +159,12 @@
                                           <div class="col-md-4">
                                             <%= text_field_tag :phone, nil, placeholder: "Phone", class: "required tour-form-fields" %>
                                           </div>
-                                          <%= hidden_field_tag :mousetrap, nil, value: "Tour" %>
+                                          <%= hidden_field_tag :mousetrap, nil, value: "Started Application" %>
                                       </div>
                                       <div class="row">
                                         <div class="col-md-4"></div>
                                         <div class="col-md-4">
-                                          <%= submit_tag "Book A Tour", class: "curriculum-download-btn", id: "submit-session", style: "padding:0;margin:0;background-color:#F25252;color:white;" %>
+                                          <%= submit_tag "Start Application", class: "curriculum-download-btn", id: "submit-session", style: "padding:0;margin:0;background-color:#F25252;color:white;" %>
                                         </div>
                                       </div>
                                     <% end %>
@@ -271,7 +271,7 @@
                         </div>
                     </div>
                   <div class="col-md-12 centered">
-                      <%= link_to "Book A Tour", new_tour_path, class: "btn", id: "book-a-tour-individual-button" %>
+                      <%= link_to "Apply Now", new_application_path, class: "btn", id: "apply-now-individual-button" %>
                   </div>
                 </div>
             </div>
@@ -305,7 +305,7 @@
                     </div>
                 </div>
                 <div class="col-md-12 centered">
-                    <%= link_to "Book A Tour", new_tour_path, class: "btn", id: "book-a-tour-individual-button" %>
+                    <%= link_to "Apply Now", new_application_path, class: "btn", id: "apply-now-individual-button" %>
                 </div>
             </div>
         </div>
@@ -666,7 +666,7 @@
                         </div>
                     </div>
                   <div class="col-md-12 centered">
-                      <%= link_to "Book A Tour", new_tour_path, class: "btn", id: "book-a-tour-individual-button" %>
+                      <%= link_to "Apply Now", new_application_path, class: "btn", id: "apply-now-individual-button" %>
                   </div>
                 </div>
             </div>
@@ -806,7 +806,7 @@
     $("#footerForm").validate();
     $("#ebookForm").validate();
     $("#curriculumForm").validate();
-    $("#tourHomeForm").validate();
+    $("#applyHomeForm").validate();
     $("#popupForm").validate();
   });
 </script>
