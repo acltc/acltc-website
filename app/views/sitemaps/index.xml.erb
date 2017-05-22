@@ -1,7 +1,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <% @posts.each do |post| %>
     <url>
-      <loc><%= "#{post_url(post)}" %> </loc>
+      <loc><%= "#{blog_post_url(post)}" %> </loc>
       <lastmod>
         <%= post.updated_at.strftime('%Y-%m-%d') %>
       </lastmod>
