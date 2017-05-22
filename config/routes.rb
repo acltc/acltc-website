@@ -17,6 +17,8 @@ Rails.application.routes.draw do
     get '/*date/*title', to: 'blog_posts#show', date: %r[\d{4}/\d{2}/\d{2}], as: 'post'
   end
 
+  get '/sitemap.xml', :to => 'sitemaps#index', :defaults => {:format => 'xml'}
+
   get '/pages/thank_you'
   get '/pages/contacts_thank_you', :as => :contacts_thank_you
   get "/tours/thank_you" => "tours#thank_you", :as => :tours_thank_you
