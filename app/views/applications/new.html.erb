@@ -47,6 +47,8 @@
               <div class="form-group" >
                 <label class="required label-radio form-label">Which location are you applying for?</label>
                 <div id="location" class="radio" style="{background-color: red;}">
+                  <%= f.radio_button :location, "Online" %>
+                  <%= f.label :location, "Online", :value => "Online" %><br />
                   <%= f.radio_button :location, "Chicago" %>
                   <%= f.label :location, "Chicago", :value => "Chicago" %><br />
                   <%= f.radio_button :location, "San Francisco" %>

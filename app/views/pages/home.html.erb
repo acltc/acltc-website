@@ -135,7 +135,7 @@
                                 <img class="logo" src="<%= image_path 'actualize-logo-275.png'%>">
                             </div>
                             <div class="col-md-8">
-                                <h3 style="margin-top:52px">Your mentor in becoming a software engineer.</h3>
+                                <h3 style="margin-top:52px">Your mentor in becoming a software engineer.</h3><h3>In person or online.</h3>
                             </div>
                             <p>Learn to code in 12 weeks without quitting your day job through expert instruction and hands-on practice. Afterwards, we work directly with you on landing a job while you join our apprenticeship and build a portfolio showcasing work that you've built for real clients.</p><br />
 
@@ -219,15 +219,15 @@
         <div class="locations-wrapper page-wrapper container">
             <div class="home-section" id="home-upper-locations">
                 <div class="row">
-                    <div class="col-md-4" style="min-height: 530px;">
-                        <div class="location">
+                    <div class="col-md-3" >
+                        <div class="location" style="min-height: 630px;">
 
                             <img class="logo" src="<%= asset_path 'chicago.png'%>"><br />
                             <h3>Chicago</h3>
-                            <p class="prework-details" style="min-height:2em;">
+                            <div class="prework-details" style="min-height:2em;">
                                 <p>New Cohorts begin:</p>
                                 <p><%= @cohort_date %></p>
-                            </p>
+                            </div>
                             <div style="width:70%;margin:auto;color:#acaeaf;">
                                 <h5>Two Choices:</h5>
                                 <h5>Signature Part-Time</h5>
@@ -236,15 +236,15 @@
 
                         </div>
                     </div>
-                    <div class="col-md-4" style="min-height: 530px;">
-                        <div class="location">
+                    <div class="col-md-3" >
+                        <div class="location" style="min-height: 630px;">
 
                             <img class="logo" src="<%= asset_path 'nyc.png'%>"><br />
                             <h3>New York City</h3>
-                            <p class="prework-details" style="min-height:2em;">
+                            <div class="prework-details" style="min-height:2em;">
                                 <p>New Cohorts begin:</p>
                                 <p>July 23rd, 2017</p>
-                            </p>
+                            </div>
                             <div style="width:70%;margin:auto;color:#acaeaf;">
                                 <h5>Part-Time Schedule:</h5>
                                 <h5>Sundays 9a to 5p</h5>
@@ -253,17 +253,34 @@
 
                         </div>
                     </div>
-                    <div class="col-md-4" style="min-height: 530px;">
-                        <div class="location">
+                    <div class="col-md-3">
+                        <div class="location" style="min-height: 630px;">
 
                             <img class="logo" src="<%= asset_path 'san-francisco.png'%>"><br />
                             <h3>San Francisco</h3>
-                            <p class="prework-details" style="min-height:2em;">
+                            <div class="prework-details" style="min-height:2em;">
                                 <p>New Cohorts begin:</p>
                                 <p><%= @cohort_date %></p>
-                            </p>
+                            </div>
                             <div style="width:70%;margin:auto;color:#acaeaf;">
                                 <h5>Part-Time Schedule:</h5>
+                                <h5>Sundays 9a to 5p</h5>
+                                <h5>Mon-Thurs 6p to 9:30p</h5>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-3" >
+                        <div class="location" style="min-height: 630px;">
+
+                            <img class="logo" src="<%= asset_path 'phliosophy-methodology-icon.png'%>" width="80"><br />
+                            <h3>Online</h3>
+                            <div class="prework-details" style="min-height:2em;">
+                                <p>New Cohorts begin:</p>
+                                <p><%= @cohort_date %></p>
+                            </div>
+                            <div style="width:70%;margin:auto;color:#acaeaf;">
+                                <h5>Part-Time Schedule</h5>
                                 <h5>Sundays 9a to 5p</h5>
                                 <h5>Mon-Thurs 6p to 9:30p</h5>
                             </div>
