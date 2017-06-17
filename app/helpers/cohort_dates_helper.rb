@@ -9,10 +9,10 @@ module CohortDatesHelper
       { prework: false, date: Date.new(2017, 6, 25) },
       { prework: true, date: Date.new(2017, 7, 23) },
       { prework: false, date: Date.new(2017, 8, 20) },
-      { prework: true, date: Date.new(2017, 9, 17) },
-      { prework: false, date: Date.new(2017, 10, 15) },
-      { prework: true, date: Date.new(2017, 11, 19) },
-      { prework: false, date: Date.new(2017, 12, 17) }
+      { prework: true, date: Date.new(2017, 10, 1) },
+      { prework: false, date: Date.new(2017, 11, 5) },
+      { prework: true, date: Date.new(2017, 12, 3) },
+      { prework: false, date: Date.new(2017, 1, 7) }
     ].sort_by { |cohort_date| cohort_date[:date] }
   end
 end
