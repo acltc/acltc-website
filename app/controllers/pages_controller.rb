@@ -10,7 +10,7 @@ class PagesController < ApplicationController
     cohort_dates = cohort_start_dates
 
     cohort_dates.each do |cohort_date|
-      if Time.zone.now <= cohort_date[:date] - 1.week
+      if Time.zone.now <= cohort_date[:date] - 1.day
         @cohort_date = cohort_date[:date].strftime("%B %e, %Y")
         break
       else 
