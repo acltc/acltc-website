@@ -204,79 +204,6 @@
             </div>
         </div>
 
-        <div class="locations-wrapper page-wrapper container">
-            <div class="home-section" id="home-upper-locations">
-                <div class="row">
-                    <div class="col-md-3" >
-                        <div class="location" style="min-height: 630px;">
-
-                            <img class="logo" src="<%= asset_path 'chicago.png'%>"><br />
-                            <h3 style="min-height: 5em">Chicago</h3>
-                            <div class="prework-details" style="min-height:2em;">
-                                <p>New Cohorts begin:</p>
-                                <p><%= @cohort_date %></p>
-                            </div>
-                            <div style="margin:auto;white-space:nowrap;color:#acaeaf;">
-                                <h5>Sundays <br>9am to 5pm</h5>
-                                <h5>Mon-Thu <br>6pm to 9:30pm</h5>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-md-3" >
-                        <div class="location" style="min-height: 630px;">
-
-                            <img class="logo" src="<%= asset_path 'nyc.png'%>"><br />
-                            <h3 style="min-height: 5em">New York City</h3>
-                            <div class="prework-details" style="min-height:2em;">
-                                <p>New Cohorts begin:</p>
-                                <p><%= @cohort_date %></p>
-                            </div>
-                            <div style="margin:auto;white-space:nowrap;color:#acaeaf;">
-                                <h5>Sundays <br>9am to 5pm</h5>
-                                <h5>Mon-Thu <br>6pm to 9:30pm</h5>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="location" style="min-height: 630px;">
-
-                            <img class="logo" src="<%= asset_path 'san-francisco.png'%>"><br />
-                            <h3 style="min-height: 5em">San Francisco</h3>
-                            <div class="prework-details" style="min-height:2em;">
-                                <p>New Cohorts begin:</p>
-                                <p><%= @cohort_date %></p>
-                            </div>
-                            <div style="margin:auto;white-space:nowrap;color:#acaeaf;">
-                                <h5>Sundays <br>9am to 5pm</h5>
-                                <h5>Mon-Thu <br>6pm to 9:30pm</h5>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-md-3" >
-                        <div class="location" style="min-height: 630px;">
-
-                            <img class="logo" src="<%= asset_path 'phliosophy-methodology-icon.png'%>" width="75"><br />
-                            <h3 style="min-height: 5em">Online</h3>
-                            <div class="prework-details" style="min-height:2em;">
-                                <p>New Cohorts begin:</p>
-                                <p><%= @cohort_date %></p>
-                            </div>
-                            <div style="margin:auto;white-space:nowrap;color:#acaeaf;">
-                                <h5>Sundays <br>9am to 5pm</h5>
-                                <h5>Mon-Thu <br>6pm to 9:30pm</h5>
-                            </div>
-
-                        </div>
-                    </div>
-                  <div class="col-md-12 centered">
-                      <%= link_to "Apply Now", new_application_path, class: "btn", id: "apply-now-individual-button" %>
-                  </div>
-                </div>
-            </div>
-        </div>
         <div class="our-philosophy-wrapper page-wrapper clearfix container">
             <div class="home-section">
                 <div class="row">
@@ -573,7 +500,7 @@
             <div class="home-section" id="home-lower-locations">
                 <div class="row">
                     <h2 class = "actualize-logo">Locations</h2>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="location-lower">
 
                             <img class="logo" src="<%= asset_path 'chicago.png'%>"><br />
@@ -585,7 +512,7 @@
 
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="location-lower">
 
                             <img class="logo" src="<%= asset_path 'nyc.png'%>"><br />
@@ -596,73 +523,104 @@
                         </div>
                     </div>
 
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="location-lower">
-
                             <img class="logo" src="<%= asset_path 'san-francisco.png'%>"><br />
                             <h3>SAN FRANCISCO</h3>
                             <p>
                                 SF classes are held at <strong>TECHSPACE</strong> in Union Square, a world-class provider of collaborative workspaces and technology services for startups.
                             </p>
                         </div>
+   
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="location-lower">
+                            <img class="logo" src="<%= asset_path 'phliosophy-methodology-icon.png'%>" height=74><br />
+                            <h3>ONLINE</h3>
+                            <p>
+                              Actualize Online offers the same classroom experience as an in-person coding bootcamp. This means live interactive lectures and live exercises led by our Lead Instructor and Teaching Assistants, from the comfort of your living room. <a href="http://book.actualize.co/online-coding-bootcamp/">Learn more</a>
+                            </p>
+                        </div>
+   
                     </div>
                 </div>
                 <div class="row address-row">
-                    <div class="col-lg-4" style="min-height: 500px;">
-                        <div class="address">
-                            <a class="pushpin" href="https://www.google.com/maps/place/215+W+Ohio+St,+Chicago,+IL+60654/@41.8921404,-87.6370182,17z/data=!3m1!4b1!4m5!3m4!1s0x880e2cb444f646c9:0x7945275dd8d4297d!8m2!3d41.8921364!4d-87.6348295" target="_blank"><i class="fa fa-map-marker aqua   "></i></a>
-                            <p class="bootcamp-address">
-                                <strong>215 W Ohio St.<br /> Chicago, IL 60654</strong>
-                            </p>
-                            <p class="prework-details" style="min-height:2em;">
-                            <p>New Cohorts begin:</p>
+                  <div class="col-md-3">
+                      <div class="address">
+                          <a class="pushpin" href="https://www.google.com/maps/place/215+W+Ohio+St,+Chicago,+IL+60654/@41.8921404,-87.6370182,17z/data=!3m1!4b1!4m5!3m4!1s0x880e2cb444f646c9:0x7945275dd8d4297d!8m2!3d41.8921364!4d-87.6348295" target="_blank"><i class="fa fa-map-marker aqua   "></i></a>
+                          <p class="bootcamp-address">
+                              <strong>215 W Ohio St.<br /> Chicago, IL 60654</strong>
+                          </p>
+                          <p class="prework-details" style="min-height:2em;">
+                          <p>New Cohorts begin:</p>
 
-                            <p><%= @cohort_date %></p>
-                            </p>
-                            <div style="width:70%;margin:auto;color:#acaeaf;">
-                                <h5>Sundays 9am to 5pm</h5>
-                                <h5>Mon-Thu 6pm to 9:30pm</h5>
-                            </div>
-                            <p>Tuition: $13,900</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4" style="min-height: 500px;">
-                        <div class="address">
-                            <a class="pushpin" href="https://www.google.com/maps/place/150+Broadway,+New+York,+NY+10038/@40.7093102,-74.010236,17z" target="_blank"><i class="fa fa-map-marker blue"></i></a>
-                            <p class="bootcamp-address">
-                                <strong>150 Broadway<br />
-                                New York, NY 10038</strong>
-                            </p>
-                            <p class="prework-details" style="min-height:2em;">
-                                <p>New Cohorts begin:</p>
-                                <p><%= @cohort_date %></p>
-                            </p>
-                            <div style="width:70%;margin:auto;color:#acaeaf;">
-                                <h5>Sundays 9am to 5pm</h5>
-                                <h5>Mon-Thu 6pm to 9:30pm</h5>
-                            </div>
-                            <p>Tuition: $13,900</p>
-                        </div>
-                    </div>
+                          <p><%= @cohort_date %></p>
+                          </p>
+                          <div style="width:70%;margin:auto;color:#acaeaf;">
+                              <h5>Sundays 9am to 5pm</h5>
+                              <h5>Mon-Thu 6pm to 9:30pm</h5>
+                          </div>
+                          <p>Tuition: $13,900</p>
+                      </div>
+                  </div>
 
-                    <div class="col-lg-4" style="min-height: 500px;">
-                        <div class="address">
-                            <a class="pushpin" href="https://www.google.com/maps/place/77+Geary+St,+San+Francisco,+CA+94108/@37.7876653,-122.4047894,17z/data=!3m1!4b1!4m2!3m1!1s0x80858088f19da4a5:0x55997ff84c10b76f" target="_blank"><i class="fa fa-map-marker orange"></i></a>
-                            <p class="bootcamp-address">
-                                <strong>77 Geary St<br />
-                                San Francisco, CA 94108</strong>
-                            </p>
-                            <p class="prework-details" style="min-height:2em;">
-                                <p>New Cohorts begin:</p>
-                                <p><%= @cohort_date %></p>
-                            </p>
-                            <div style="width:70%;margin:auto;color:#acaeaf;">
-                                <h5>Sundays 9am to 5pm</h5>
-                                <h5>Mon-Thu 6pm to 9:30pm</h5>
-                            </div>
-                            <p>Tuition: $13,900</p>
-                        </div>
-                    </div>
+                  <div class="col-md-3">
+                      <div class="address">
+                          <a class="pushpin" href="https://www.google.com/maps/place/150+Broadway,+New+York,+NY+10038/@40.7093102,-74.010236,17z" target="_blank"><i class="fa fa-map-marker blue"></i></a>
+                          <p class="bootcamp-address">
+                              <strong>150 Broadway<br />
+                              New York, NY 10038</strong>
+                          </p>
+                          <p class="prework-details" style="min-height:2em;">
+                              <p>New Cohorts begin:</p>
+                              <p><%= @cohort_date %></p>
+                          </p>
+                          <div style="width:70%;margin:auto;color:#acaeaf;">
+                              <h5>Sundays 9am to 5pm</h5>
+                              <h5>Mon-Thu 6pm to 9:30pm</h5>
+                          </div>
+                          <p>Tuition: $13,900</p>
+                      </div>
+                  </div>
+
+                  <div class="col-md-3">
+                      <div class="address">
+                          <a class="pushpin" href="https://www.google.com/maps/place/77+Geary+St,+San+Francisco,+CA+94108/@37.7876653,-122.4047894,17z/data=!3m1!4b1!4m2!3m1!1s0x80858088f19da4a5:0x55997ff84c10b76f" target="_blank"><i class="fa fa-map-marker orange"></i></a>
+                          <p class="bootcamp-address">
+                              <strong>77 Geary St<br />
+                              San Francisco, CA 94108</strong>
+                          </p>
+                          <p class="prework-details" style="min-height:2em;">
+                              <p>New Cohorts begin:</p>
+                              <p><%= @cohort_date %></p>
+                          </p>
+                          <div style="width:70%;margin:auto;color:#acaeaf;">
+                              <h5>Sundays 9am to 5pm</h5>
+                              <h5>Mon-Thu 6pm to 9:30pm</h5>
+                          </div>
+                          <p>Tuition: $13,900</p>
+                      </div>
+                  </div>  
+
+                  <div class="col-md-3">
+                      <div class="address">
+                          <a class="pushpin" href="javascript:void(0);"><i class="fa fa-map-marker blue"></i></a>
+                          <p class="bootcamp-address">
+                              <strong>Online<br />
+                              </strong>
+                          </p>
+                          <p class="prework-details" style="min-height:2em;">
+                              <p>New Cohorts begin:</p>
+                              <p><%= @online_cohort_date %></p>
+                          </p>
+                          <div style="width:70%;margin:auto;color:#acaeaf;">
+                              <h5>Sundays 9am to 5pm</h5>
+                              <h5>Mon-Thu 6pm to 9:30pm</h5>
+                          </div>
+                          <p>Tuition: $9,500</p>
+                      </div>
+                  </div>                
                   <div class="col-md-12 centered">
                       <%= link_to "Apply Now", new_application_path, class: "btn", id: "apply-now-individual-button" %>
                   </div>
