@@ -34,6 +34,12 @@ class ApplicationsController < ApplicationController
       end
     end
 
+    online_cohort_start_dates.each do |cohort_date|
+      if cohort_date[:prework] && Time.zone.now <= cohort_date[:date] + 1.month
+        @dates_by_city << ["ONL #{cohort_date[:date].strftime('%m/%d/%y')}"]
+      end
+    end
+
     @dates_by_city.sort!
   end
 

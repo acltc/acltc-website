@@ -6,18 +6,8 @@ class PagesController < ApplicationController
     @info_session_sign_up = InfoSessionSignUp.new
     @next_info_session = InfoSession.next_info_session
     @tour = Tour.new
-
-    cohort_dates = cohort_start_dates
-
-    cohort_dates.each do |cohort_date|
-      if Time.zone.now <= cohort_date[:date] - 1.day
-        @cohort_date = cohort_date[:date].strftime("%B %e, %Y")
-        break
-      else 
-        @cohort_date = cohort_dates.first[:date].strftime("%B %e, %Y")
-      end
-    end
-    
+    @cohort_date = enrolling_cohort_date(cohort_start_dates)
+    @online_cohort_date = enrolling_cohort_date(online_cohort_start_dates)
     render :layout => 'home_application'
   end
 
@@ -67,4 +57,19 @@ class PagesController < ApplicationController
       end
     end
   
+    def enrolling_cohort_date(cohort_dates)
+      final_cohort_date = nil
+      cohort_dates.each do |cohort_date|
+        if cohort_date[:prework] && Time.zone.now <= cohort_date[:date] - 1.day
+          final_cohort_date = cohort_date[:date].strftime("%B %e, %Y")
+          break
+        elsif !cohort_date[:prework] && Time.zone.now <= cohort_date[:date] - 2.weeks
+          final_cohort_date = cohort_date[:date].strftime("%B %e, %Y")
+          break
+        else
+          final_cohort_date = cohort_dates.first[:date].strftime("%B %e, %Y")
+        end
+      end
+      final_cohort_date 
+    end
 end

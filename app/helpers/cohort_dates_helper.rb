@@ -15,4 +15,17 @@ module CohortDatesHelper
       { prework: false, date: Date.new(2017, 1, 7) }
     ].sort_by { |cohort_date| cohort_date[:date] }
   end
+
+  def online_cohort_start_dates
+    cohort_dates = [
+      { prework: true, date: Date.new(2017, 6, 25) },
+      { prework: false, date: Date.new(2017, 7, 23) },
+      { prework: true, date: Date.new(2017, 7, 23) },
+      { prework: false, date: Date.new(2017, 8, 20) },
+      { prework: true, date: Date.new(2017, 10, 22) },
+      { prework: false, date: Date.new(2017, 11, 19) },
+      { prework: true, date: Date.new(2017, 12, 3) },
+      { prework: false, date: Date.new(2017, 1, 7) }
+    ].sort_by { |cohort_date| cohort_date[:date] }
+  end
 end
