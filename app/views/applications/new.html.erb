@@ -146,6 +146,10 @@
                 <%= f.label :tinker_example, "Programming requires complex problem solving, logical analysis, and the ability to tinker with something until it works. Give examples of when you've had these experiences.", class: "required label-leading form-label" %><br />
                 <%= f.text_area :tinker_example, class: "form-control" %>
               </div>
+              <div class="form-group" @keyup="applicationFields">
+                <%= f.label :time_to_reach, "What are the best days and times that we can give you a call?", class: "required label-leading form-label" %><br />
+                <%= f.text_field :time_to_reach, class: "form-control" %>
+              </div>
 
               <% if @long %>
                 <div class="form-group">

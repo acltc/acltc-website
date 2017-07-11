@@ -98,7 +98,7 @@ class ApplicationsController < ApplicationController
     :emergency_contact, :learn_about_acltc, :learn_about_acltc_specify, :current_occupation,
     :primary_goals, :programming_experience, :preferred_work_location,
     :work_concurrently, :tinker_example, :why_better, :status, :location, :cohort,
-    :notes, :long)
+    :notes, :long, :time_to_reach)
   end
 
   def create_hubspot_contact

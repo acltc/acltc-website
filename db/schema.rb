@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170201224133) do
+ActiveRecord::Schema.define(version: 20170711165608) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,7 +75,6 @@ ActiveRecord::Schema.define(version: 20170201224133) do
     t.text     "why_scholarship"
     t.string   "location"
     t.text     "learn_about_acltc_specify"
-    t.string   "status"
     t.string   "cohort"
     t.text     "notes"
     t.integer  "interview_id"
@@ -84,6 +83,8 @@ ActiveRecord::Schema.define(version: 20170201224133) do
     t.text     "how_will_you_achieve_goals"
     t.string   "target_date"
     t.text     "why_are_you_the_perfect_candidate"
+    t.string   "status"
+    t.string   "time_to_reach"
   end
 
   add_index "applications", ["interview_id"], name: "index_applications_on_interview_id", unique: true, using: :btree
@@ -212,24 +213,6 @@ ActiveRecord::Schema.define(version: 20170201224133) do
     t.datetime "updated_at",                 null: false
     t.boolean  "booked",     default: false
     t.string   "location"
-  end
-
-  create_table "job_openings", force: :cascade do |t|
-    t.string   "title"
-    t.string   "location"
-    t.string   "salary"
-    t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "k12_contacts", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
-    t.text     "message"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "lakewood_applications", force: :cascade do |t|
@@ -374,8 +357,6 @@ ActiveRecord::Schema.define(version: 20170201224133) do
     t.string   "mousetrap"
     t.string   "ip_address"
     t.string   "city"
-    t.string   "country"
-    t.string   "state"
     t.string   "postal_code"
     t.string   "phone"
   end
