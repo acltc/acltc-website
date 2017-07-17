@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   get 'statuses/edit'
 
   root 'pages#home'
+  get '/in-person' => 'pages#in_person'
+  get '/online' => 'pages#online'
+  
   devise_for :admins, :controllers => { registrations: 'registrations' }
   get 'admins/dashboard' => 'admins#dashboard'
 

@@ -2,13 +2,24 @@ class PagesController < ApplicationController
   include CohortDatesHelper
   
   def home
-    record_return_to_website_event
-    @info_session_sign_up = InfoSessionSignUp.new
-    @next_info_session = InfoSession.next_info_session
-    @tour = Tour.new
+    # record_return_to_website_event
+    # @info_session_sign_up = InfoSessionSignUp.new
+    # @next_info_session = InfoSession.next_info_session
+    # @tour = Tour.new
+    # @cohort_date = enrolling_cohort_date(cohort_start_dates)
+    # @online_cohort_date = enrolling_cohort_date(online_cohort_start_dates)
+    # render :layout => 'home_application'
+    render layout: 'main'
+  end
+
+  def in_person
     @cohort_date = enrolling_cohort_date(cohort_start_dates)
+    render layout: 'main'
+  end
+
+  def online
     @online_cohort_date = enrolling_cohort_date(online_cohort_start_dates)
-    render :layout => 'home_application'
+    render layout: 'main'
   end
 
   def thank_you
