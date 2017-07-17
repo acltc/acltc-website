@@ -51,6 +51,10 @@ class ApplicationsController < ApplicationController
     if params[:application_type] == "scholarship"
       redirect_to '/pages/scholarship_thank_you'
     else
+      if params[:scholarship] == "wwcode"
+        @scholarship_message = "Actualize has partnered with Women Who Code to offer three 50%-off scholarships for our upcoming online cohort!"
+        @scholarship = "wwcode"
+      end
       @application = Application.new
     end
   end

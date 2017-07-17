@@ -1,4 +1,4 @@
-<%= render "/layouts/page_title", page_title: @page_title || "Apply", page_subtitle: "Please answer the following questions to help us determine if you're a good fit for Actualize. Fields with asterisks are required." %>
+<%= render "/layouts/page_title", page_title: @page_title || "Apply", page_subtitle: "#{@scholarship_message} Please answer the following questions to help us determine if you're a good fit for Actualize. Fields with asterisks are required." %>
   <div id="">
     <section id="content">
       <div class="content-wrap">
@@ -57,67 +57,73 @@
                   <%= f.label :location, "New York City", :value => "New York City" %>
                 </div>
               </div>
-              <div class="form-group" >
-                <label class="required label-radio">How did you hear about Actualize?</label><br />
-                <div class="radio row">
-                  <div class="col-md-4">
-                    <%= f.radio_button :learn_about_acltc, "Course Report", { :class => "learn-about-acltc" } %>
-                    <%= f.label :learn_about_acltc, "Course Report", :value => "Course Report" %>
+              <% if @scholarship %>
+                <div class="form-group">
+                  <%= f.hidden_field :learn_about_acltc, {value: @scholarship} %>
+                </div>
+              <% else %>
+                <div class="form-group" >
+                  <label class="required label-radio">How did you hear about Actualize?</label><br />
+                  <div class="radio row">
+                    <div class="col-md-4">
+                      <%= f.radio_button :learn_about_acltc, "Course Report", { :class => "learn-about-acltc" } %>
+                      <%= f.label :learn_about_acltc, "Course Report", :value => "Course Report" %>
+                    </div>
+                    <div class="col-md-4">
+                      <%= f.radio_button :learn_about_acltc, "Google Search", { :class => "learn-about-acltc" } %>
+                      <%= f.label :learn_about_acltc, "Google Search", :value => "Google Search" %>
+                    </div>
+                    <div class="col-md-4">
+                      <%= f.radio_button :learn_about_acltc, "Meetup", { :class => "learn-about-acltc" } %>
+                      <%= f.label :learn_about_acltc, "Meetup", :value => "Meetup" %>
+                    </div>
                   </div>
-                  <div class="col-md-4">
-                    <%= f.radio_button :learn_about_acltc, "Google Search", { :class => "learn-about-acltc" } %>
-                    <%= f.label :learn_about_acltc, "Google Search", :value => "Google Search" %>
+                  <div class="radio row">
+                    <div class="col-md-4">
+                      <%= f.radio_button :learn_about_acltc, "Quora", { :class => "learn-about-acltc" } %>
+                      <%= f.label :learn_about_acltc, "Quora", :value => "Quora" %>
+                    </div>
+                    <div class="col-md-4">
+                      <%= f.radio_button :learn_about_acltc, "Referral", { :class => "learn-about-acltc" } %>
+                      <%= f.label :learn_about_acltc, "Referral", :value => "Referral" %>
+                    </div>
+                    <div class="col-md-4">
+                      <%= f.radio_button :learn_about_acltc, "SkilledUp", { :class => "learn-about-acltc" } %>
+                      <%= f.label :learn_about_acltc, "SkilledUp", :value => "SkilledUp" %>
+                    </div>
                   </div>
-                  <div class="col-md-4">
-                    <%= f.radio_button :learn_about_acltc, "Meetup", { :class => "learn-about-acltc" } %>
-                    <%= f.label :learn_about_acltc, "Meetup", :value => "Meetup" %>
+                  <div class="radio row">
+                    <div class="col-md-4">
+                      <%= f.radio_button :learn_about_acltc, "SwitchUp", { :class => "learn-about-acltc" } %>
+                      <%= f.label :learn_about_acltc, "SwitchUp", :value => "SwitchUp" %>
+                    </div>
+                    <div class="col-md-4">
+                      <%= f.radio_button :learn_about_acltc, "Thinkful", { :class => "learn-about-acltc" } %>
+                      <%= f.label :learn_about_acltc, "Thinkful", :value => "Thinkful" %>
+                    </div>
+                    <div class="col-md-4">
+                      <%= f.radio_button :learn_about_acltc, "Word of Mouth", { :class => "learn-about-acltc" } %>
+                      <%= f.label :learn_about_acltc, "Word of Mouth", :value => "Word of Mouth" %>
+                    </div>
+                  </div>
+                  <div class="radio row">
+                    <div class="col-md-4">
+                      <%= f.radio_button :learn_about_acltc, "Facebook", { :class => "learn-about-acltc" } %>
+                      <%= f.label :learn_about_acltc, "Facebook", :value => "Facebook" %>
+                    </div>
+                    <div class="col-md-4">
+                      <%= f.radio_button :learn_about_acltc, "Other", { :class => "learn-about-acltc learn-about-acltc-other" } %>
+                      <%= f.label :learn_about_acltc, "Other", :value => "Other" %>
+                    </div>
                   </div>
                 </div>
-                <div class="radio row">
-                  <div class="col-md-4">
-                    <%= f.radio_button :learn_about_acltc, "Quora", { :class => "learn-about-acltc" } %>
-                    <%= f.label :learn_about_acltc, "Quora", :value => "Quora" %>
-                  </div>
-                  <div class="col-md-4">
-                    <%= f.radio_button :learn_about_acltc, "Referral", { :class => "learn-about-acltc" } %>
-                    <%= f.label :learn_about_acltc, "Referral", :value => "Referral" %>
-                  </div>
-                  <div class="col-md-4">
-                    <%= f.radio_button :learn_about_acltc, "SkilledUp", { :class => "learn-about-acltc" } %>
-                    <%= f.label :learn_about_acltc, "SkilledUp", :value => "SkilledUp" %>
+                <div id="learn-acltc-hidden" style="display:none;">
+                  <div class="form-group" @keyup="applicationFields">
+                    <%= f.label :learn_about_acltc_specify, "Please specify how you learned about Actualize:", class: "form-label" %><br />
+                    <%= f.text_field :learn_about_acltc_specify, class: "form-control" %>
                   </div>
                 </div>
-                <div class="radio row">
-                  <div class="col-md-4">
-                    <%= f.radio_button :learn_about_acltc, "SwitchUp", { :class => "learn-about-acltc" } %>
-                    <%= f.label :learn_about_acltc, "SwitchUp", :value => "SwitchUp" %>
-                  </div>
-                  <div class="col-md-4">
-                    <%= f.radio_button :learn_about_acltc, "Thinkful", { :class => "learn-about-acltc" } %>
-                    <%= f.label :learn_about_acltc, "Thinkful", :value => "Thinkful" %>
-                  </div>
-                  <div class="col-md-4">
-                    <%= f.radio_button :learn_about_acltc, "Word of Mouth", { :class => "learn-about-acltc" } %>
-                    <%= f.label :learn_about_acltc, "Word of Mouth", :value => "Word of Mouth" %>
-                  </div>
-                </div>
-                <div class="radio row">
-                  <div class="col-md-4">
-                    <%= f.radio_button :learn_about_acltc, "Facebook", { :class => "learn-about-acltc" } %>
-                    <%= f.label :learn_about_acltc, "Facebook", :value => "Facebook" %>
-                  </div>
-                  <div class="col-md-4">
-                    <%= f.radio_button :learn_about_acltc, "Other", { :class => "learn-about-acltc learn-about-acltc-other" } %>
-                    <%= f.label :learn_about_acltc, "Other", :value => "Other" %>
-                  </div>
-                </div>
-              </div>
-              <div id="learn-acltc-hidden" style="display:none;">
-                <div class="form-group" @keyup="applicationFields">
-                  <%= f.label :learn_about_acltc_specify, "Please specify how you learned about Actualize:", class: "form-label" %><br />
-                  <%= f.text_field :learn_about_acltc_specify, class: "form-control" %>
-                </div>
-              </div>
+              <% end %>
               <div class="form-group" @keyup="applicationFields">
                 <%= f.label :primary_goals, "What are your primary goals in learning how to code?", class: "required form-label" %><br />
                 <%= f.text_area :primary_goals, class: "form-control" %>
