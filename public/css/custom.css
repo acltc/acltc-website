@@ -1,4 +1,14 @@
 /****** PLACE YOUR CUSTOM STYLES HERE ******/
+p {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #292929;
+}
+
+.accordion .content p {
+  font-size: 13px !important;
+}
 
 .big-bold {
   letter-spacing: 0px;
@@ -72,6 +82,3 @@ nav.transparent.fixed .logo {
 .circle-image {
   border-radius: 50%;
 }
-
-
-
