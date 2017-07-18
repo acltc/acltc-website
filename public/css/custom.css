@@ -1,16 +1,16 @@
 /****** PLACE YOUR CUSTOM STYLES HERE ******/
 
-h1, h2, h3, h4, h5, h6 {
+/*h1, h2, h3, h4, h5, h6 {
   font-family: 'Lato', sans-serif;
-  /*letter-spacing: 0px !important;*/
+  letter-spacing: 0px !important;
 }
 
 p {
   font-family: 'Lato', sans-serif !important;
   font-size: 20px !important;
-}
+}*/
 
-.big-bold {
+/*.big-bold {
   font-family: 'Lato', sans-serif;
   font-size: 94px;
   line-height: 94px;
@@ -18,13 +18,17 @@ p {
   font-weight: 700;
   letter-spacing: 0px;
   text-transform: uppercase
+}*/
+.big-bold {
+  letter-spacing: 0px;
+  text-transform: uppercase;
+  font-weight: 700;
 }
-
 .dark-bold {
   color: black !important;
 }
 
-h2 {
+/*h2 {
   font-weight: 700;
   font-size: 56px;
   line-height: 1em;
@@ -32,16 +36,16 @@ h2 {
 
 p {
   font-size: 18px;
-}
+}*/
 
-.tagline {
+/*.tagline {
   font-size: 40px;
   line-height: 48px;
   font-weight: 400;
   font-family: 'Lato', sans-serif;
   margin-bottom: 24px;
   display: block;
-}
+}*/
 
 .third-screen {
   height: 40vh;
@@ -101,31 +105,31 @@ nav.transparent.fixed .logo {
   background: #1CC0C2 !important;
 }
 
-.right-text {
+/*.right-text {
   text-align: right;
 }
-
-.accordion .content p {
+*/
+/*.accordion .content p {
   font-family: 'Lato', sans-serif;
   font-size: 13px !important;
 }
 
 .accordion li.active .content {
   max-height: 500px;
-}
+}*/
 
 .circle-image {
   border-radius: 50%;
 }
 
 @media all and (max-width: 767px) {
-  .cover.fullscreen {
+/*  .cover.fullscreen {
     height: auto;
     padding: 0px 0;
-  }
+  }*/
 
   .shrink {
-    font-size: 70px;
+    /*font-size: 70px;*/
   }
 }
 
