@@ -18,7 +18,7 @@ class PagesController < ApplicationController
   end
 
   def online
-    @online_cohort_date = enrolling_cohort_date(online_cohort_start_dates)
+    @cohort_date = enrolling_cohort_date(online_cohort_start_dates)
     render layout: 'main'
   end
 
