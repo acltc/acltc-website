@@ -1,24 +1,24 @@
 class PagesController < ApplicationController
+  NUMBER_OF_DAYS_BEFORE_IN_CLASS_START_DATE_TO_ACCEPT_STUDENTS = 17
+  NUMBER_OF_DAYS_BEFORE_PREWORK_START_DATE_OFFER_EARLY_BIRD_DISCOUNT = 30
+
   include CohortDatesHelper
   
   def home
-    # record_return_to_website_event
-    # @info_session_sign_up = InfoSessionSignUp.new
-    # @next_info_session = InfoSession.next_info_session
-    # @tour = Tour.new
-    # @cohort_date = enrolling_cohort_date(cohort_start_dates)
-    # @online_cohort_date = enrolling_cohort_date(online_cohort_start_dates)
-    # render :layout => 'home_application'
     render layout: 'main'
   end
 
   def in_person
-    @cohort_date = enrolling_cohort_date(cohort_start_dates)
+    next_cohort_info = enrolling_cohort_info(cohort_start_dates)
+    @cohort_date = next_cohort_info[:formatted_date]
+    @early_bird_deadline = next_cohort_info[:early_bird_deadline]
     render layout: 'main'
   end
 
   def online
-    @cohort_date = enrolling_cohort_date(online_cohort_start_dates)
+    next_cohort_info = enrolling_cohort_info(online_cohort_start_dates)
+    @cohort_date = next_cohort_info[:formatted_date]
+    @early_bird_deadline = next_cohort_info[:early_bird_deadline]
     render layout: 'main'
   end
 
@@ -68,19 +68,36 @@ class PagesController < ApplicationController
       end
     end
   
-    def enrolling_cohort_date(cohort_dates)
-      final_cohort_date = nil
-      cohort_dates.each do |cohort_date|
-        if cohort_date[:prework] && Time.zone.now <= cohort_date[:date] - 1.day
-          final_cohort_date = cohort_date[:date].strftime("%B %e, %Y")
+    def enrolling_cohort_info(cohort_infos)
+      final_cohort_info = find_next_cohort(cohort_infos)
+      {
+        formatted_date: final_cohort_info[:date].strftime("%B %e, %Y"),
+        early_bird_deadline: compute_early_bird_deadline(final_cohort_info)
+      } 
+    end
+
+    def find_next_cohort(cohort_infos)
+      final_cohort_info = nil
+      cohort_infos.each do |cohort_info|
+        if cohort_info[:prework] && Time.zone.now <= cohort_info[:date] - 1.days
+          final_cohort_info = cohort_info
           break
-        elsif !cohort_date[:prework] && Time.zone.now <= cohort_date[:date] - 2.weeks
-          final_cohort_date = cohort_date[:date].strftime("%B %e, %Y")
+        elsif !cohort_info[:prework] && Time.zone.now <= cohort_info[:date] - NUMBER_OF_DAYS_BEFORE_IN_CLASS_START_DATE_TO_ACCEPT_STUDENTS.days
+          final_cohort_info = cohort_info
           break
         else
-          final_cohort_date = cohort_dates.first[:date].strftime("%B %e, %Y")
+          final_cohort_info = cohort_infos.first
         end
       end
-      final_cohort_date 
+      final_cohort_info
+    end
+
+    def compute_early_bird_deadline(cohort_info)
+      early_bird_deadline = cohort_info[:date] - NUMBER_OF_DAYS_BEFORE_PREWORK_START_DATE_OFFER_EARLY_BIRD_DISCOUNT.days
+      if cohort_info[:prework] && Time.zone.now <= early_bird_deadline
+        early_bird_deadline = early_bird_deadline.strftime("%B %e")
+      else
+        early_bird_deadline = nil
+      end
     end
 end

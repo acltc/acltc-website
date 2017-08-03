@@ -12,7 +12,7 @@ module CohortDatesHelper
       { prework: true, date: Date.new(2017, 10, 1) },
       { prework: false, date: Date.new(2017, 11, 5) },
       { prework: true, date: Date.new(2017, 12, 3) },
-      { prework: false, date: Date.new(2017, 1, 7) }
+      { prework: false, date: Date.new(2018, 1, 7) }
     ].sort_by { |cohort_date| cohort_date[:date] }
   end
 
@@ -25,7 +25,7 @@ module CohortDatesHelper
       { prework: true, date: Date.new(2017, 10, 22) },
       { prework: false, date: Date.new(2017, 11, 19) },
       { prework: true, date: Date.new(2017, 12, 3) },
-      { prework: false, date: Date.new(2017, 1, 7) }
+      { prework: false, date: Date.new(2018, 1, 7) }
     ].sort_by { |cohort_date| cohort_date[:date] }
   end
 end
