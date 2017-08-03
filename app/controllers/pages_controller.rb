@@ -1,4 +1,7 @@
 class PagesController < ApplicationController
+  NUMBER_OF_DAYS_BEFORE_IN_CLASS_START_DATE_TO_ACCEPT_STUDENTS = 17
+  NUMBER_OF_DAYS_BEFORE_PREWORK_START_DATE_OFFER_EARLY_BIRD_DISCOUNT = 30
+
   include CohortDatesHelper
   
   def home
@@ -79,7 +82,7 @@ class PagesController < ApplicationController
         if cohort_info[:prework] && Time.zone.now <= cohort_info[:date] - 1.days
           final_cohort_info = cohort_info
           break
-        elsif !cohort_info[:prework] && Time.zone.now <= cohort_info[:date] - 17.days
+        elsif !cohort_info[:prework] && Time.zone.now <= cohort_info[:date] - NUMBER_OF_DAYS_BEFORE_IN_CLASS_START_DATE_TO_ACCEPT_STUDENTS.days
           final_cohort_info = cohort_info
           break
         else
@@ -90,7 +93,7 @@ class PagesController < ApplicationController
     end
 
     def compute_early_bird_deadline(cohort_info)
-      early_bird_deadline = cohort_info[:date] - 30.days
+      early_bird_deadline = cohort_info[:date] - NUMBER_OF_DAYS_BEFORE_PREWORK_START_DATE_OFFER_EARLY_BIRD_DISCOUNT.days
       if cohort_info[:prework] && Time.zone.now <= early_bird_deadline
         early_bird_deadline = early_bird_deadline.strftime("%B %e")
       else
