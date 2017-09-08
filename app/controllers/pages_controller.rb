@@ -9,16 +9,32 @@ class PagesController < ApplicationController
   end
 
   def in_person
+    @cohorts = []
     next_cohort_info = enrolling_cohort_info(cohort_start_dates)
-    @cohort_date = next_cohort_info[:formatted_date]
-    @early_bird_deadline = next_cohort_info[:early_bird_deadline]
+    @cohorts << {
+      start_date: next_cohort_info[:start_date],
+      early_bird_deadline: next_cohort_info[:early_bird_deadline]
+    }
     render layout: 'main'
   end
 
   def online
-    next_cohort_info = enrolling_cohort_info(online_cohort_start_dates)
-    @cohort_date = next_cohort_info[:formatted_date]
-    @early_bird_deadline = next_cohort_info[:early_bird_deadline]
+    @cohorts = []
+    online_cohort_start_dates_east = online_cohort_start_dates.select { |val| val[:location] == "east" }
+    next_cohort_info_east = enrolling_cohort_info(online_cohort_start_dates_east)
+    @cohorts << {
+      name: "Central time zone",
+      start_date: next_cohort_info_east[:start_date],
+      early_bird_deadline: next_cohort_info_east[:early_bird_deadline]
+    }
+    online_cohort_start_dates_west = online_cohort_start_dates.select { |val| val[:location] == "west" }
+    next_cohort_info_west = enrolling_cohort_info(online_cohort_start_dates_west)
+    @cohorts << {
+      name: "Pacific time zone",
+      start_date: next_cohort_info_west[:start_date],
+      early_bird_deadline: next_cohort_info_west[:early_bird_deadline]
+    }
+    @cohorts = @cohorts.sort_by { |cohort| cohort[:start_date] }
     render layout: 'main'
   end
 
@@ -71,7 +87,7 @@ class PagesController < ApplicationController
     def enrolling_cohort_info(cohort_infos)
       final_cohort_info = find_next_cohort(cohort_infos)
       {
-        formatted_date: final_cohort_info[:date].strftime("%B %e, %Y"),
+        start_date: final_cohort_info[:date],
         early_bird_deadline: compute_early_bird_deadline(final_cohort_info)
       } 
     end
@@ -93,9 +109,13 @@ class PagesController < ApplicationController
     end
 
     def compute_early_bird_deadline(cohort_info)
-      early_bird_deadline = cohort_info[:date] - NUMBER_OF_DAYS_BEFORE_PREWORK_START_DATE_OFFER_EARLY_BIRD_DISCOUNT.days
+      if cohort_info[:early_bird_date]
+        early_bird_deadline = cohort_info[:early_bird_date]
+      else
+        early_bird_deadline = cohort_info[:date] - NUMBER_OF_DAYS_BEFORE_PREWORK_START_DATE_OFFER_EARLY_BIRD_DISCOUNT.days
+      end
       if cohort_info[:prework] && Time.zone.now <= early_bird_deadline
-        early_bird_deadline = early_bird_deadline.strftime("%B %e")
+        early_bird_deadline = early_bird_deadline
       else
         early_bird_deadline = nil
       end
