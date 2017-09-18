@@ -24,7 +24,7 @@ module CohortDatesHelper
       { prework: false, date: Date.new(2017, 8, 20), location: "west", early_bird_date: nil },
       { prework: true, date: Date.new(2017, 10, 22), location: "east", early_bird_date: nil },
       { prework: false, date: Date.new(2017, 11, 19), location: "east", early_bird_date: nil },
-      { prework: true, date: Date.new(2017, 12, 3), location: "west", early_bird_date: nil },
+      { prework: true, date: Date.new(2017, 12, 3), location: "west", early_bird_date: Date.new(2017, 10, 31) },
       { prework: false, date: Date.new(2018, 1, 7), location: "west", early_bird_date: nil },
       { prework: true, date: Date.new(2018, 3, 11), location: "east", early_bird_date: nil },
       { prework: false, date: Date.new(2018, 4, 8), location: "east", early_bird_date: nil }
