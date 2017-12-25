@@ -23,6 +23,7 @@ class SubscribersController < ApplicationController
 
   def create_from_started_application
     create_new_lead
+    # AcltcMailer.complete_your_application_reminder(params[:first_name], params[:email], params[:phone]).deliver_now
     redirect_to "/applications/new?first_name=#{params[:first_name]}&email=#{params[:email]}&phone=#{params[:phone]}"
   end
 

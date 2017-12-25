@@ -6,6 +6,13 @@ class AcltcMailer < ApplicationMailer
     mail(from: @contact.email, to: "hello@anyonecanlearntocode.com", subject: 'Contact Us')
   end
 
+  def complete_your_application_reminder(first_name, email, phone)
+    @first_name = first_name
+    @email = email
+    @phone = phone
+    mail(from: "admissions@actualize.co", to: @email, subject: 'You\'re almost done applying to Actualize', reply_to: "admissions@actualize.co")
+  end
+
   def corporate_training_message(corporate_training_message)
     @corporate_training_message = corporate_training_message
     mail(from: @corporate_training_message.contact_email, to: "zev@anyonecanlearntocode.com", subject: 'Corporate Training')
@@ -18,7 +25,7 @@ class AcltcMailer < ApplicationMailer
 
   def application_email(application)
     @application = application
-    mail(from: "admissions@actualize.co", to: 'admissions@anyonecanlearntocode.com', subject: 'Application Submitted', reply_to: @application.email )
+    mail(from: "admissions@actualize.co", to: 'admissions@anyonecanlearntocode.com', subject: 'Application Submitted', reply_to: @application.email)
   end
 
   def application_email_reply(application)
