@@ -22,4 +22,8 @@ class Application < ActiveRecord::Base
     end
   end
 
+  def self.remind(first_name, email, phone)
+    AcltcMailer.complete_your_application_reminder(first_name, email, phone).deliver unless Application.find_by(email: email)
+  end
+
 end

@@ -23,7 +23,7 @@ class SubscribersController < ApplicationController
 
   def create_from_started_application
     create_new_lead
-    # AcltcMailer.complete_your_application_reminder(params[:first_name], params[:email], params[:phone]).deliver_now
+    Application.delay(run_at: 24.hours.from_now).remind(params[:first_name], params[:email], params[:phone])
     redirect_to "/applications/new?first_name=#{params[:first_name]}&email=#{params[:email]}&phone=#{params[:phone]}"
   end
 
