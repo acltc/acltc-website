@@ -28,18 +28,12 @@ class SubscribersController < ApplicationController
 
   def create_from_curriculum
     create_new_lead
-    respond_to do |format|
-      @java_url = "/subscribers/download"
-      format.js {render :partial => "downloadFile"}
-    end
+    send_file "#{Rails.root}/public/pdfs/Actualize-2018-Curriculum.pdf"
   end
 
   def create_from_career_pdf
     create_new_lead
-    respond_to do |format|
-      @pdf_url = "/subscribers/career_pdf_download"
-      format.js {render :partial => "downloadCareerPdf"}
-    end
+    send_file "#{Rails.root}/public/pdfs/Actualize-Career-In-Coding.pdf"
   end
 
   def create_from_tutorial
