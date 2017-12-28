@@ -10,7 +10,7 @@ class AcltcMailer < ApplicationMailer
     @first_name = first_name
     @email = email
     @phone = phone
-    mail(from: "admissions@actualize.co", to: [@email, "operations@actualize.co"], subject: 'You\'re almost done applying to Actualize', reply_to: "admissions@actualize.co")
+    mail(from: "admissions@actualize.co", to: @email, subject: 'You\'re almost done applying to Actualize', reply_to: "admissions@actualize.co", bcc: ["operations@actualize.co", "jay@actualize.co"])
   end
 
   def corporate_training_message(corporate_training_message)
