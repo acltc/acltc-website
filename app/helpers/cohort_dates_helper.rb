@@ -23,12 +23,15 @@ module CohortDatesHelper
       { prework: true, date: Date.new(2017, 7, 23), location: "west", early_bird_date: nil },
       { prework: false, date: Date.new(2017, 8, 20), location: "west", early_bird_date: nil },
       { prework: true, date: Date.new(2017, 10, 22), location: "east", early_bird_date: nil },
-      # { prework: false, date: Date.new(2017, 11, 19), location: "east", early_bird_date: nil },
-      # { prework: true, date: Date.new(2017, 12, 3), location: "west", early_bird_date: Date.new(2017, 10, 31) },
-      { prework: true, date: Date.new(2018, 1, 7), location: "west", early_bird_date: Date.new(2017, 10, 31) },
+      { prework: false, date: Date.new(2017, 11, 19), location: "east", early_bird_date: nil },
+      { prework: true, date: Date.new(2017, 12, 3), location: "west", early_bird_date: Date.new(2017, 10, 31) },
+      { prework: false, date: Date.new(2018, 1, 7), location: "west", early_bird_date: Date.new(2017, 10, 31) },
       { prework: true, date: Date.new(2018, 1, 28), location: "east", early_bird_date: Date.new(2017, 12, 31) },
-      { prework: false, date: Date.new(2018, 4, 8), location: "west", early_bird_date: Date.new(2018, 2, 28) },
-      { prework: false, date: Date.new(2018, 4, 8), location: "east", early_bird_date: nil }
+      { prework: false, date: Date.new(2018, 2, 25), location: "east", early_bird_date: Date.new(2017, 12, 31) },
+      { prework: true, date: Date.new(2018, 4, 8), location: "west", early_bird_date: Date.new(2018, 2, 28) },
+      { prework: false, date: Date.new(2018, 5, 13), location: "west", early_bird_date: nil },
+      { prework: true, date: Date.new(2018, 4, 1), location: "east", early_bird_date: Date.new(2018, 2, 28) },
+      { prework: false, date: Date.new(2018, 4, 29), location: "east", early_bird_date: nil }
     ].sort_by { |cohort_date| cohort_date[:date] }
   end
 end
