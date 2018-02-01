@@ -92,6 +92,7 @@ Rails.application.routes.draw do
   get "/referrals/thank_you" => "referrals#thank_you"
 
   get '/becoming-tech-savvy' => 'tech_savvy_articles#index'
+  get '/becoming-tech-savvy/:title' => 'tech_savvy_articles#show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

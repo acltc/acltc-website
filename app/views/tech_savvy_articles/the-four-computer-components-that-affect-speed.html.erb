@@ -1,0 +1,103 @@
+<section class="page-title page-title-3 image-bg overlay">
+    <div class="background-image-holder">
+        <img alt="Background Image" class="background-image" src="/img/cover15.jpg" />
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 text-center">
+                <h3 class="uppercase mb0">Becoming Tech Savvy</h3>
+            </div>
+        </div>
+
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+    <ol class="breadcrumb breadcrumb-2">
+        <li class="active"><a href="/becoming-tech-savvy">Back to index</a></li>
+    </ol>
+</section>
+
+<section class="pt32">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+                <div class="post-snippet mb64">
+                    <%= render 'preamble.html.erb' %>
+                    <div class="post-title">
+                        <h2 class="uppercase inline-block">The Four Computer Components That Affect Speed</h2>
+                        <!-- <hr class="mb32"> -->
+                    </div>
+
+                            <!-- <h2 class="uppercase mb32">
+                                The Four Computer Components That Affect Speed 
+                            </h2>
+                            <hr class="mb32"> -->
+                    <div class="image-tile">
+                        <img alt="Computer parts" src="<%= asset_path 'computer_parts.jpg' %>" />
+                    </div>
+                    <p>Most people get by while using computers the same way they use their cars - they can get from point A to point B every day, without ever having to peek under the hood. However, to become tech savvy, you’ll need to have a working understanding of what’s going on inside a computer to be able to troubleshoot problems.</p>
+                    <p>When your computer feels slow, it could be for any number of different reasons. There are many different components in a computer, but only four of them are important to understand when it comes to speed. Understanding what these four components are and what they do are critical in your journey to becoming tech savvy. Let’s take a look at them in detail.</p>
+                    
+                    <h4>Processor</h4>
+                    <div class="row">
+                        <div class="col-lg-6 col-lg-push-6 image-tile">
+                            <img alt="Computer processor" src="<%= asset_path 'computer_processor.jpg' %>">
+                        </div>
+                        <div class="col-lg-6 col-lg-pull-6">
+                            <p>This is also referred to as the CPU (central processing unit). You can think of the processor as the brains of your computer. Every computer has a single processor, with sizes ranging from the size of a penny to the size of a business card. Despite the small size, there are millions of transistors on a processor. Roughly speaking, the more transistors, the faster the processor.</p>
+                            <p><strong>A faster processor enables your computer to process calculations faster.</strong> Processor speeds are generally measured with clock speed in Gigahertz (GHz), which these days generally range between 1 GHz (slower) and 4 GHz (faster). Note that a processor’s GHz isn’t the only thing that affects its overall speed - for example, an Intel Core i5 running at 3.46 GHz isn’t faster than an Intel Core i7 running at 3.06 GHz. Still, it’s a good rough measure of a processor’s speed.</p>
+                        </div>
+                    </div>
+                    
+                    <h4>Disk drive</h4>
+                    <div class="row">
+                        <div class="col-lg-6 col-lg-push-6 image-tile">
+                            <img alt="Computer disk drive" src="<%= asset_path 'computer_disk_drive.jpg' %>">
+                        </div>
+                        <div class="col-lg-6 col-lg-pull-6">
+                            <p>This is also referred to as the hard drive. A disk drive is the computer component that stores your data - pictures, movies, documents, etc. Every computer generally has one disk drive (although you can add a couple more if you need more storage space). Larger disk drives enables your computer to store more data. Disk drive space can be measured in megabytes (MB), gigabytes (GB, where 1 GB is equal to 1024 MB), or terabytes (TB, where 1 TB is equal to 1024 GB). These days hard drives range between 64 GB (smaller) to 4 TB (larger).</p>
+                            <p><strong>Faster disk drives enables your computer to read and write data faster.</strong> Disk drive speeds are generally measured in megabytes per second (MB/s). So a <em>large</em> disk drive can store lots of data, and a <em>fast</em> disk drive can read or write that data in less time. Different types of disk drives have different speeds. Older hard disk drives (as pictured here) use a spinning platter mechanism to access data, and are generally slower than newer types of disk drives. Newer solid-state disk drives store data in microchips, without any moving parts, and are generally faster (but more expensive).</p>
+                        </div>
+                    </div>
+                    
+                    <h4>RAM (Random Access Memory)</h4>
+                    <div class="row">
+                        <div class="col-lg-6 col-lg-push-6 image-tile">
+                            <img alt="Computer RAM" src="<%= asset_path 'computer_ram.jpg' %>">
+                        </div>
+                        <div class="col-lg-6 col-lg-pull-6">
+                            <p>Also referred to simply as  memory. Computers generally have 2 or more sticks of RAM. RAM provides temporary storage for your computer’s calculations. This isn’t that much different than a disk drive, but RAM uses electrical voltage to store information (as opposed to magnetic storage or other physical mechanisms). This results in read/write speeds that are orders of magnitude faster than disk drives, but it also results in the fact that all information stored in RAM will be lost when there is no electricity once the computer is powered off.</p>
+                            <p><strong>More RAM enables your computer to do more things at the same time.</strong> RAM is generally measured in gigabytes (GB). Note that this is a measurement of storage space, not speed - when a computer has more RAM storage space, it has access to more high speed temporary storage, which results in a faster computer. If a computer runs out of RAM, it uses the disk drive space as its temporary space. This is much, much slower, and results in a very sluggish computer experience.</p>
+                        </div>
+                    </div>
+
+                    <h4>Video card</h4>
+                    <div class="row">
+                        <div class="col-lg-6 col-lg-push-6 image-tile">
+                            <img alt="Computer video card" src="<%= asset_path 'computer_video_card.jpg' %>">
+                        </div>
+                        <div class="col-lg-6 col-lg-pull-6">
+                            <p>Also referred to as a graphics card or display adapter. The video card is the part of the computer that processes graphics, which is sent to a separate display. A video card can be a separate discrete component (as pictured here), or it can be integrated into the processor or motherboard itself (which leads to a big savings in terms of space and power, at the expense of processing power). Video cards are complex and can have their own dedicated processor and RAM built in, making them potentially one of the most expensive components in a computer.</p>
+                            <p><strong>A faster video card enables your computer to process more video frames per second with a higher resolution.</strong> This is generally important for only a specific set of tasks, like playing video games. Most of the time you use a computer, your video card won’t be the bottleneck in terms of speed.</p>
+                        </div>
+                    </div>
+
+                    <h2>Scenarios</h2>
+                    <p>Now that you have some familiarity with the four computer components that affect speed, let’s take a look at some common scenarios to see how this knowledge gets applied:</p>
+                    <p><strong>My computer slows down after a couple of days.</strong> This could mean your computer has run out of RAM. Some programs eat up a lot of RAM, like your web browser, or a video or image editor. Restarting those programs can help. Rebooting your computer to free up all your RAM can also help as well.</p>
+                    <p><strong>My computer takes a long time to compress video.</strong> Any kind of image, video, or audio related work generally can benefit from a faster processor. There’s no easy fix for this once you’ve already bought your computer, other than upgrading the processor itself, which can be challenging depending on the computer. If you do this type of work, you would definitely benefit from buying a computer with the fastest processor you can afford.</p>
+                    <p><strong>My computer takes a long time to download a file.</strong> This is generally not related to your computer at all, but has more to do with either your internet speed (based on the plan you purchased from your internet provider) or the speed of the website you’re downloading the file from. If it’s the website itself, you don’t have a lot of options other than trying a different website or waiting for a later time when it’s potentially less busy.</p>
+                    <p><strong>My computer takes a long time to start when I turn it on.</strong> If you have an older-style hard disk drive, you can improve your startup speed dramatically by upgrading to a newer solid-state disk drive. Before doing that, you should check out if there are programs you installed that are starting up with your computer. Having too many programs startup at the same time will inevitably make your computer feel much slower as well.</p>
+                    <p><strong>My computer plays video games slowly.</strong> This is most directly related to your video card. You can purchase a more powerful video card, or do some research to tweak settings. For example, many video games let you choose different video output resolutions - smaller resolutions are easier for a video card to manage, which will speed up the game. Some games are bottlenecked by the processor instead of the video card, so that is something to consider as well.</p>
+                    <p><strong>My computer takes a long time to copy files.</strong> This is a disk drive issue, and can be potentially improved by upgrading your type of disk drive. It also can be a RAM issue - if you’re copying large files, it’s possible to end up using up all your RAM, which will slow down your computer dramatically. If that’s the case, restarting your computer can help.</p>
+
+                    <%= render 'postamble.html.erb' %>
+
+                </div>
+            </div>
+            <!--end of nine col-->
+        </div>
+        <!--end of container row-->
+    </div>
+    <!--end of container-->
+</section>
