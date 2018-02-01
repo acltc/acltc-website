@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   root 'pages#home'
   get '/in-person' => 'pages#in_person'
   get '/online' => 'pages#online'
-  
+
   devise_for :admins, :controllers => { registrations: 'registrations' }
   get 'admins/dashboard' => 'admins#dashboard'
 
@@ -90,6 +90,8 @@ Rails.application.routes.draw do
   get "/referrals/new" => "referrals#new", :as => :new_referral
   post "/referrals" => "referrals#create"
   get "/referrals/thank_you" => "referrals#thank_you"
+
+  get '/becoming-tech-savvy' => 'tech_savvy_articles#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
