@@ -30,15 +30,15 @@
             <div class="col-md-6 col-md-offset-3">
                 <%= form_tag '/subscribers_application', method: :post, class: "form-validate", data: {success: "Thanks for your submission.", error: "Please fill all fields correctly."} do %>
                   <div class="input-with-label text-left">
-                    <%= label_tag :first_name, "First Name" %><br />
+                    <%= label_tag :first_name, "First Name" %>
                     <%= text_field_tag :first_name, @subscriber.first_name, class: "validate-required" %>
                   </div>
                   <div class="input-with-label text-left">
-                    <%= label_tag :email, "Email Address" %><br />
+                    <%= label_tag :email, "Email Address" %>
                     <%= text_field_tag :email, @subscriber.email, class: "validate-required validate-email" %>
                   </div>
                   <div class="input-with-label text-left">
-                    <%= label_tag :phone, "Phone Number" %><br />
+                    <%= label_tag :phone, "Phone Number" %>
                     <%= text_field_tag :phone, @subscriber.phone, class: "validate-required" %>
                   </div>
                     <%= hidden_field_tag :mousetrap, nil, :value => "Started Application" %>

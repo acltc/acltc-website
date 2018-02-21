@@ -1,156 +1,186 @@
-<%= render "/layouts/page_title", page_title: @page_title || "Apply", page_subtitle: "#{@scholarship_message} Please answer the following questions to help us determine if you're a good fit for Actualize. Fields with asterisks are required." %>
-  <div id="">
-    <section id="content">
-      <div class="content-wrap">
+<% content_for :head do %>
+  <title>Apply for Actualize part-time coding bootcamp</title>
+  <meta name="description" content='Application for Actualize coding school and apprenticeship program.'>
+<% end %>
+
+<section class="page-title page-title-3 bg-dark">
+    <div class="container">
         <div class="row">
-          <div class="">
-            <%= form_for @application do |f| %>
+            <div class="col-sm-12 text-center">
+                <h3 class="uppercase mb0">Apply to Actualize</h3>
+            </div>
+        </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+    <ol class="breadcrumb breadcrumb-2">
+        <li>
+            <span>
+              Please answer the following questions to help us determine <br>
+              if you're a good fit for Actualize. All fields are required.
+            </span>
+        </li>
+    </ol>
+</section>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+
+            <%= form_for @application, html: {class: "form-validate", data: {success: "Thanks for your submission.", error: "Please fill all fields correctly."}} do |f| %>
               <% if @application.errors.any? %>
                 <div class="alert alert-dismissible alert-warning center-warning">
                   <button type="button" class="close" data-dismiss="alert">×</button>
-                  <h2>Oops! You forgot to fill out
-                    <%= pluralize(@application.errors.count, "field") %>:
-                  </h2>
-                  <ul>
+                  <h4>
+                    Oops! You forgot to fill out <%= pluralize(@application.errors.count, "field") %>:
+                  </h4>
+                  <ul class="lead" data-bullet="ti-arrow-right">
                     <% @application.errors.full_messages.each do |msg| %>
-                      <h4><%= msg %></h4>
+                      <li><%= msg %></li>
                     <% end %>
                   </ul>
                 </div>
               <% end %>
-
-              <div class="form-group" @keyup="applicationFields">
-                <%= f.label :first_name, "First Name", class: "required form-label" %><br />
-                <%= f.text_field :first_name, value: params[:first_name], class: "form-control" %>
+              <div class="input-with-label text-left">
+                <%= f.label :first_name, "First Name" %>
+                <%= f.text_field :first_name, value: params[:first_name], class: "validate-required" %>
               </div>
-              <div class="form-group" @keyup="applicationFields">
-                <%= f.label :last_name, "Last Name", class: "required form-label" %><br />
-                <%= f.text_field :last_name, class: "form-control" %>
+              <div class="input-with-label text-left">
+                <%= f.label :last_name, "Last Name" %>
+                <%= f.text_field :last_name, class: "validate-required" %>
               </div>
-              <div class="form-group" @keyup="applicationFields">
-                <%= f.label :email, "Email Address", class: "required form-label" %><br />
-                <%= f.text_field :email, value: params[:email], class: "form-control" %>
+              <div class="input-with-label text-left">
+                <%= f.label :email, "Email Address" %>
+                <%= f.text_field :email, value: params[:email], class: "validate-required" %>
               </div>
-              <div class="form-group" @keyup="applicationFields">
-                <%= f.label :phone, "Cell Phone Number", class: "required form-label" %><br />
-                <%= f.text_field :phone, value: params[:phone], class: "form-control" %>
+              <div class="input-with-label text-left">
+                <%= f.label :phone, "Cell Phone Number" %>
+                <%= f.text_field :phone, value: params[:phone], class: "validate-required" %>
               </div>
-              <div class="form-group" @keyup="applicationFields">
-                <%= f.label :address, "Address", class: "required form-label" %><br />
-                <%= f.text_field :address, class: "form-control", placeholder:"Street, City, State, Zip" %>
+              <div class="input-with-label text-left">
+                <%= f.label :address, "Address" %>
+                <%= f.text_field :address, class: "validate-required", placeholder:"Street, City, State, Zip" %>
               </div>
               <%= hidden_field_tag :mousetrap, nil, :value => "Finished Application" %>
               <%= hidden_field_tag :first_name, nil, :value => params[:first_name] %>
               <%= hidden_field_tag :email, nil, :value => params[:email] %>
               <%= hidden_field_tag :phone, nil, :value => params[:phone] %>
 
-              <div class="form-group" >
+              <div class="input-with-label text-left" >
                 <label class="required label-radio form-label">Which location are you applying for?</label>
-                <div id="location" class="radio" style="{background-color: red;}">
-                  <%= f.radio_button :location, "Online" %>
-                  <%= f.label :location, "Online Live", :value => "Online" %><br />
-                  <%= f.radio_button :location, "Chicago" %>
-                  <%= f.label :location, "Chicago", :value => "Chicago" %><br />
+                <div id="location" class="radio" style="margin-left: 2em">
+                  <div>
+                    <%= f.radio_button :location, "Online" %>
+                    <%= f.label :location, "Online Live", :value => "Online" %>
+                  </div>
+                  <div>
+                    <%= f.radio_button :location, "Chicago" %>
+                    <%= f.label :location, "Chicago", :value => "Chicago" %>
+                  </div>
                 </div>
               </div>
               <% if @scholarship %>
-                <div class="form-group">
+                <div class="input-with-label text-left">
                   <%= f.hidden_field :learn_about_acltc, {value: @scholarship} %>
                 </div>
               <% else %>
-                <div class="form-group" >
+
+                <div class="input-with-label text-left" >
                   <label class="required label-radio">How did you hear about Actualize?</label><br />
-                  <div class="radio row">
-                    <div class="col-md-4">
-                      <%= f.radio_button :learn_about_acltc, "Course Report", { :class => "learn-about-acltc" } %>
-                      <%= f.label :learn_about_acltc, "Course Report", :value => "Course Report" %>
+                  <div style="margin-left: 2em">
+                    <div class="radio row">
+                      <div class="col-md-4">
+                        <%= f.radio_button :learn_about_acltc, "Course Report", { :class => "learn-about-acltc" } %>
+                        <%= f.label :learn_about_acltc, "Course Report", :value => "Course Report" %>
+                      </div>
+                      <div class="col-md-4">
+                        <%= f.radio_button :learn_about_acltc, "Google Search", { :class => "learn-about-acltc" } %>
+                        <%= f.label :learn_about_acltc, "Google Search", :value => "Google Search" %>
+                      </div>
+                      <div class="col-md-4">
+                        <%= f.radio_button :learn_about_acltc, "Meetup", { :class => "learn-about-acltc" } %>
+                        <%= f.label :learn_about_acltc, "Meetup", :value => "Meetup" %>
+                      </div>
                     </div>
-                    <div class="col-md-4">
-                      <%= f.radio_button :learn_about_acltc, "Google Search", { :class => "learn-about-acltc" } %>
-                      <%= f.label :learn_about_acltc, "Google Search", :value => "Google Search" %>
+                    <div class="radio row">
+                      <div class="col-md-4">
+                        <%= f.radio_button :learn_about_acltc, "Quora", { :class => "learn-about-acltc" } %>
+                        <%= f.label :learn_about_acltc, "Quora", :value => "Quora" %>
+                      </div>
+                      <div class="col-md-4">
+                        <%= f.radio_button :learn_about_acltc, "Referral", { :class => "learn-about-acltc" } %>
+                        <%= f.label :learn_about_acltc, "Referral", :value => "Referral" %>
+                      </div>
+                      <div class="col-md-4">
+                        <%= f.radio_button :learn_about_acltc, "SkilledUp", { :class => "learn-about-acltc" } %>
+                        <%= f.label :learn_about_acltc, "SkilledUp", :value => "SkilledUp" %>
+                      </div>
                     </div>
-                    <div class="col-md-4">
-                      <%= f.radio_button :learn_about_acltc, "Meetup", { :class => "learn-about-acltc" } %>
-                      <%= f.label :learn_about_acltc, "Meetup", :value => "Meetup" %>
+                    <div class="radio row">
+                      <div class="col-md-4">
+                        <%= f.radio_button :learn_about_acltc, "SwitchUp", { :class => "learn-about-acltc" } %>
+                        <%= f.label :learn_about_acltc, "SwitchUp", :value => "SwitchUp" %>
+                      </div>
+                      <div class="col-md-4">
+                        <%= f.radio_button :learn_about_acltc, "Thinkful", { :class => "learn-about-acltc" } %>
+                        <%= f.label :learn_about_acltc, "Thinkful", :value => "Thinkful" %>
+                      </div>
+                      <div class="col-md-4">
+                        <%= f.radio_button :learn_about_acltc, "Word of Mouth", { :class => "learn-about-acltc" } %>
+                        <%= f.label :learn_about_acltc, "Word of Mouth", :value => "Word of Mouth" %>
+                      </div>
                     </div>
-                  </div>
-                  <div class="radio row">
-                    <div class="col-md-4">
-                      <%= f.radio_button :learn_about_acltc, "Quora", { :class => "learn-about-acltc" } %>
-                      <%= f.label :learn_about_acltc, "Quora", :value => "Quora" %>
-                    </div>
-                    <div class="col-md-4">
-                      <%= f.radio_button :learn_about_acltc, "Referral", { :class => "learn-about-acltc" } %>
-                      <%= f.label :learn_about_acltc, "Referral", :value => "Referral" %>
-                    </div>
-                    <div class="col-md-4">
-                      <%= f.radio_button :learn_about_acltc, "SkilledUp", { :class => "learn-about-acltc" } %>
-                      <%= f.label :learn_about_acltc, "SkilledUp", :value => "SkilledUp" %>
-                    </div>
-                  </div>
-                  <div class="radio row">
-                    <div class="col-md-4">
-                      <%= f.radio_button :learn_about_acltc, "SwitchUp", { :class => "learn-about-acltc" } %>
-                      <%= f.label :learn_about_acltc, "SwitchUp", :value => "SwitchUp" %>
-                    </div>
-                    <div class="col-md-4">
-                      <%= f.radio_button :learn_about_acltc, "Thinkful", { :class => "learn-about-acltc" } %>
-                      <%= f.label :learn_about_acltc, "Thinkful", :value => "Thinkful" %>
-                    </div>
-                    <div class="col-md-4">
-                      <%= f.radio_button :learn_about_acltc, "Word of Mouth", { :class => "learn-about-acltc" } %>
-                      <%= f.label :learn_about_acltc, "Word of Mouth", :value => "Word of Mouth" %>
-                    </div>
-                  </div>
-                  <div class="radio row">
-                    <div class="col-md-4">
-                      <%= f.radio_button :learn_about_acltc, "Facebook", { :class => "learn-about-acltc" } %>
-                      <%= f.label :learn_about_acltc, "Facebook", :value => "Facebook" %>
-                    </div>
-                    <div class="col-md-4">
-                      <%= f.radio_button :learn_about_acltc, "Other", { :class => "learn-about-acltc learn-about-acltc-other" } %>
-                      <%= f.label :learn_about_acltc, "Other", :value => "Other" %>
+                    <div class="radio row">
+                      <div class="col-md-4">
+                        <%= f.radio_button :learn_about_acltc, "Facebook", { :class => "learn-about-acltc" } %>
+                        <%= f.label :learn_about_acltc, "Facebook", :value => "Facebook" %>
+                      </div>
+                      <div class="col-md-4">
+                        <%= f.radio_button :learn_about_acltc, "Other", { :class => "learn-about-acltc learn-about-acltc-other" } %>
+                        <%= f.label :learn_about_acltc, "Other", :value => "Other" %>
+                      </div>
                     </div>
                   </div>
                 </div>
                 <div id="learn-acltc-hidden" style="display:none;">
-                  <div class="form-group" @keyup="applicationFields">
-                    <%= f.label :learn_about_acltc_specify, "Please specify how you learned about Actualize:", class: "form-label" %><br />
-                    <%= f.text_field :learn_about_acltc_specify, class: "form-control" %>
+                  <div class="input-with-label text-left">
+                    <%= f.label :learn_about_acltc_specify, "Please specify how you learned about Actualize:", class: "form-label" %>
+                    <%= f.text_field :learn_about_acltc_specify %>
                   </div>
                 </div>
               <% end %>
-              <div class="form-group" @keyup="applicationFields">
-                <%= f.label :primary_goals, "What are your primary goals in learning how to code?", class: "required form-label" %><br />
-                <%= f.text_area :primary_goals, class: "form-control" %>
+              <div class="input-with-label text-left">
+                <%= f.label :primary_goals, "What are your primary goals in learning how to code?" %>
+                <%= f.text_area :primary_goals, class: "validate-required" %>
               </div>
-              <div class="form-group" @keyup="applicationFields">
-                <%= f.label :programming_experience, "Describe any previous coding experience you have. Online tutorials count! (Note: Having prior experience is not a prerequisite for taking our course.)", class: "required form-label" %><br />
-                <%= f.text_area :programming_experience, class: "form-control" %>
+              <div class="input-with-label text-left">
+                <%= f.label :programming_experience, "Describe any previous coding experience you have. Online tutorials count! (Note: Having prior experience is not a prerequisite for taking our course.)" %>
+                <%= f.text_area :programming_experience, class: "validate-required" %>
               </div>
-              <div class="form-group" @keyup="applicationFields">
-                <%= f.label :current_occupation, "Tell us more about what you're currently doing (job or school, etc.)", class: "required form-label" %><br />
-                <%= f.text_area :current_occupation, class: "form-control" %>
+              <div class="input-with-label text-left">
+                <%= f.label :current_occupation, "Tell us more about what you're currently doing (job or school, etc.)" %>
+                <%= f.text_area :current_occupation, class: "validate-required" %>
               </div>
-              <div class="form-group" @keyup="applicationFields">
-                <%= f.label :preferred_work_location, "If you want a job in web development, in which city will you seek employment?", class: "required label-leading form-label" %><br />
-                <%= f.text_field :preferred_work_location, class: "form-control" %>
+              <div class="input-with-label text-left">
+                <%= f.label :preferred_work_location, "If you want a job in web development, in which city will you seek employment?", class: "required label-leading form-label" %>
+                <%= f.text_field :preferred_work_location, class: "validate-required" %>
               </div>
-              <div class="form-group" @keyup="applicationFields">
-                <%= f.label :work_concurrently, "Will you keep your job during the program? If so, how will you do both?", class: "required form-label" %><br />
-                <%= f.text_area :work_concurrently, class: "form-control" %>
+              <div class="input-with-label text-left">
+                <%= f.label :work_concurrently, "Will you keep your job during the program? If so, how will you do both?" %>
+                <%= f.text_area :work_concurrently, class: "validate-required" %>
               </div>
-              <div class="form-group" @keyup="applicationFields">
-                <%= f.label :why_better, "Why should you be accepted into the program over other applicants?", class: "required form-label" %><br />
-                <%= f.text_area :why_better, class: "form-control" %>
+              <div class="input-with-label text-left">
+                <%= f.label :why_better, "Why should you be accepted into the program over other applicants?" %>
+                <%= f.text_area :why_better, class: "validate-required" %>
               </div>
-              <div class="form-group" @keyup="applicationFields">
-                <%= f.label :tinker_example, "Programming requires complex problem solving, logical analysis, and the ability to tinker with something until it works. Give examples of when you've had these experiences.", class: "required label-leading form-label" %><br />
-                <%= f.text_area :tinker_example, class: "form-control" %>
+              <div class="input-with-label text-left">
+                <%= f.label :tinker_example, "Programming requires complex problem solving, logical analysis, and the ability to tinker with something until it works. Give examples of when you've had these experiences.", class: "required label-leading form-label" %>
+                <%= f.text_area :tinker_example, class: "validate-required" %>
               </div>
-              <div class="form-group" @keyup="applicationFields">
-                <%= f.label :time_to_reach, "What are the best days and times that we can give you a call?", class: "required label-leading form-label" %><br />
-                <%= f.text_field :time_to_reach, class: "form-control" %>
+              <div class="input-with-label text-left">
+                <%= f.label :time_to_reach, "What are the best days and times that we can give you a call?", class: "required label-leading form-label" %>
+                <%= f.text_field :time_to_reach, class: "validate-required" %>
               </div>
 
               <% if @long %>
@@ -168,26 +198,21 @@
                 <%= f.submit "Submit Application", class: "button button-3d nomargin nopadding" %>
               </div>
             <% end %>
-          </div>
-          <!-- <div class="col-md-4">
-            <div id="progress-bar-container">
-              <h3>Application Progress</h3>
-              <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" :style="{ width: progressBar + '%' }" >
-                  {{ progressBar }}%
-                </div>
-              </div>
+
             </div>
-          </div> -->
         </div>
-      </div>
-    </section>
-  </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>
+
 
   <script type="text/javascript">
-    $(".learn-about-acltc").on("change", function(){
-    $("#learn-acltc-hidden").toggle($(this).hasClass("learn-about-acltc-other"));
-  });
+    $(function () {
+      $(".learn-about-acltc").on("change", function(){
+        $("#learn-acltc-hidden").toggle($(this).hasClass("learn-about-acltc-other"));
+      });
+    })
   </script>
   <!-- Google Code for Apply Now Button Conversion Page -->
   <script type="text/javascript">
@@ -207,3 +232,10 @@
       <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/926873760/?label=8ZohCMXw8mQQoPH7uQM&amp;guid=ON&amp;script=0"/>
     </div>
   </noscript>
+
+<!-- <style>
+  .field_with_errors {
+    display: inline;
+    color: red;
+  }
+</style> -->
