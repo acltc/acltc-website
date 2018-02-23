@@ -1,16 +1,29 @@
-<!-- <div id="floatdiv" style="  
-              position:absolute;  
-              width:200px;height:50px;top:10px;right:10px;  
-              padding:16px;background:#FFFFFF;  
-              border:2px solid #2266AA;  
-              z-index:100;">  
-          This is a floating javascript menu.  
-</div>  --> 
-<div class="jumbotron jumbo-thanks">
-  <h2>Thank you for submitting an application to </h2>
-  <h1>Actualize.</h1>
-  <h2>We will contact you about next steps. Until then—improve your coding skills by using our <%= link_to 'Online Tutorial', tutorial_lessons_path, {class:"tutorial-link"} %></h2>
-</div>
+<% content_for :head do %>
+  <title>Apply for Actualize part-time coding bootcamp</title>
+  <meta name="description" content='Application for Actualize coding school and apprenticeship program.'>
+<% end %>
+
+<section class="cover fullscreen image-bg overlay">
+    <div class="background-image-holder">
+        <img alt="image" class="background-image" src="/img/home-2-8.jpg" />
+    </div>
+    <div class="container v-align-transform">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+                <div class="feature text-center">
+                    <i class="ti-check-box icon icon-lg mb24 mb-xs-0"></i>
+                    <h1 class="large">Thanks for your application!</h1>
+                    <p class="mb40 mb-xs-24">
+                        We will contact you about next steps. Until then—improve your coding skills by using our <%= link_to 'Online Tutorial', tutorial_lessons_path, {class:"tutorial-link"} %>!
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>
+
 <!-- Google Code for Completed Application Conversion Page -->
 <script type="text/javascript">
 /* <![CDATA[ */
@@ -25,28 +38,14 @@
 <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
 </script>
 
-<script type="text/javascript">  
-    $(document).ready(function() { 
-     
-        $('#floatdiv').addFloating(  
-            {  
-                targetRight: 10,  
-                targetTop: 10,  
-                snap: true  
-            });  
-    });  
-</script>  
-
-
 <noscript>
   <div style="display:inline;">
     <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/926873760/?label=wIgsCPmw_WQQoPH7uQM&amp;guid=ON&amp;script=0"/>
   </div>
 </noscript>
 <!-- End Google Code -->
-
   
-  <!-- Facebook Pixel Code -->
+<!-- Facebook Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;

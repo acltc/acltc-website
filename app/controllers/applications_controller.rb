@@ -57,6 +57,7 @@ class ApplicationsController < ApplicationController
       end
       @application = Application.new
     end
+    render layout: 'main'
   end
 
   def create
@@ -67,7 +68,7 @@ class ApplicationsController < ApplicationController
       AcltcMailer.application_email_reply(@application).deliver_now
       redirect_to "/pages/thank_you"
     else
-      render 'new'
+      render 'new', layout: 'main'
     end
   end
 
