@@ -54,6 +54,7 @@ class SubscribersController < ApplicationController
   def apply
     record_return_to_website_event
     @subscriber = Subscriber.new
+    render layout: 'main'
   end
 
   def download

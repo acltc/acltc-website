@@ -39,7 +39,7 @@ class PagesController < ApplicationController
   end
 
   def thank_you
-
+    render layout: 'main'
   end
 
   def tour_thank_you

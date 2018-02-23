@@ -3,7 +3,12 @@
     <head>
         <meta charset="utf-8">
         <%= favicon_link_tag 'favicon.png' %>
-        <title>Actualize</title>
+        <% if content_for?(:head) %>
+            <%= yield(:head) %>
+        <% else %>
+            <title> Actualize </title>
+            <meta name="description" content='Actualize is a code school and apprenticeship that mentors you from start to finish in transforming yourself into a software developer. With our guidance and your drive, you will gain the skills and real world experience to launch a career that will change your life.'>
+        <% end %>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
         <link href="/css/themify-icons.css" rel="stylesheet" type="text/css" media="all" />
@@ -17,6 +22,7 @@
         <!-- <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet"> -->
         <!-- <link href='https://fonts.googleapis.com/css?family=Lato:300,400%7CRaleway:100,400,300,500,600,700%7COpen+Sans:400,500,600' rel='stylesheet' type='text/css'> -->
         <link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+        <script src="/js/jquery.min.js"></script>
     </head>
     <body class="scroll-assist">
         <div class="nav-container">
@@ -75,7 +81,7 @@
                     <div class="row">
                         <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 text-center">
                             <a href="/">
-                                <img alt="Logo" class="image-xs mb32 fade-on-hover" src="img/actualize-logo.png" />
+                                <img alt="Logo" class="image-xs mb32 fade-on-hover" src="/img/actualize-logo.png" />
                             </a>
                             <h5 class="footer-logo fade-1-4">Actualize &copy; 2017</h5>
                             <ul class="list-inline social-list mb0">
@@ -118,7 +124,6 @@
             </footer>
             <!-- End of footer -->
         </div>
-        <script src="/js/jquery.min.js"></script>
         <script src="/js/bootstrap.min.js"></script>
         <!-- <script src="/js/flickr.js"></script> -->
         <script src="/js/flexslider.min.js"></script>
