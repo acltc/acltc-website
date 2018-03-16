@@ -75,6 +75,7 @@ ActiveRecord::Schema.define(version: 20171225204524) do
     t.text     "why_scholarship"
     t.string   "location"
     t.text     "learn_about_acltc_specify"
+    t.string   "status"
     t.string   "cohort"
     t.text     "notes"
     t.integer  "interview_id"
@@ -83,7 +84,6 @@ ActiveRecord::Schema.define(version: 20171225204524) do
     t.text     "how_will_you_achieve_goals"
     t.string   "target_date"
     t.text     "why_are_you_the_perfect_candidate"
-    t.string   "status"
     t.string   "time_to_reach"
   end
 
