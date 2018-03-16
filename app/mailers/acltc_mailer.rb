@@ -98,7 +98,7 @@ class AcltcMailer < ApplicationMailer
   def referral_email(referral, email_body)
     @referral = referral
     @email_body = email_body
-    mail(from: @referral.referrer_email, to: @referral.referred_email, cc: "ben@actualize.co", bcc: [@referral.referrer_email, "jay@actualize.co", "rena@actualize.co"], subject: "Intro to Actualize")
+    mail(from: @referral.referrer_email, to: @referral.referred_email, cc: "operations@actualize.co", bcc: [@referral.referrer_email, "jay@actualize.co"], subject: "Intro to Actualize")
   end
 
 end
