@@ -15,10 +15,16 @@
     <!--end of container-->
     <ol class="breadcrumb breadcrumb-2">
         <li>
+          <% if @referral == "wwcode" %>
+            <span>
+              Actualize has partnered with Women Who Code to offer three 50%-off <br>scholarships for our upcoming Online Live Cohort!
+            </span>
+          <% else %>
             <span>
               Thank you for your interest in applying to Actualize.<br>
               Please enter the following information so we can get started!
             </span>
+          <% end %>
         </li>
     </ol>
 </section>
@@ -42,6 +48,9 @@
                     <%= text_field_tag :phone, @subscriber.phone, class: "validate-required" %>
                   </div>
                     <%= hidden_field_tag :mousetrap, nil, :value => "Started Application" %>
+                    <% if @referral %>
+                      <%= hidden_field_tag :referral, nil, :value => @referral %>
+                    <% end %>
                   <div class="form-group">
                     <%= submit_tag "Get Started!", class: "button button-3d nomargin nopadding" %>
                   </div>
