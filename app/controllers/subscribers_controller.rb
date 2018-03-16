@@ -46,6 +46,11 @@ class SubscribersController < ApplicationController
     end
   end
 
+  def create_from_webinar
+    create_new_lead
+    redirect_to "/pages/webinar_thank_you"
+  end
+
   def create_from_footer
     create_new_lead
     respond_to do |format|
