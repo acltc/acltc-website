@@ -38,10 +38,6 @@ class PagesController < ApplicationController
     render layout: 'main'
   end
 
-  def tutorials
-    render layout: 'main'
-  end
-
   def thank_you
     render layout: 'main'
   end
