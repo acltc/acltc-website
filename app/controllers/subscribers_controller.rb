@@ -24,7 +24,9 @@ class SubscribersController < ApplicationController
   def create_from_started_application
     create_new_lead
     Application.delay(run_at: 24.hours.from_now).remind(params[:first_name], params[:email], params[:phone])
-    redirect_to "/applications/new?first_name=#{params[:first_name]}&email=#{params[:email]}&phone=#{params[:phone]}"
+    url = "/applications/new?first_name=#{params[:first_name]}&email=#{params[:email]}&phone=#{params[:phone]}"
+    url += "&referral=#{params[:referral]}" if params[:referral]
+    redirect_to url
   end
 
   def create_from_curriculum
@@ -44,6 +46,11 @@ class SubscribersController < ApplicationController
     end
   end
 
+  def create_from_webinar
+    create_new_lead
+    redirect_to "/pages/webinar_thank_you"
+  end
+
   def create_from_footer
     create_new_lead
     respond_to do |format|
@@ -54,6 +61,8 @@ class SubscribersController < ApplicationController
   def apply
     record_return_to_website_event
     @subscriber = Subscriber.new
+    @referral = params[:referral] if params[:referral]
+    @referral = params[:scholarship] if params[:scholarship]
     render layout: 'main'
   end
 

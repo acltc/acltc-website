@@ -18,3 +18,5 @@
 #environmental variables
 .env
 .DS_Store
+
+npm-debug.log

@@ -46,6 +46,10 @@ class PagesController < ApplicationController
     render layout: 'main'
   end
 
+  def webinar_thank_you
+    render layout: 'main'
+  end
+
   def tour_thank_you
 
   end
