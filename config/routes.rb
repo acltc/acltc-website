@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   root 'pages#home'
   get '/in-person' => 'pages#in_person'
   get '/online' => 'pages#online'
+  get '/chicago-coding-bootcamp' => 'pages#in_person'
+  get '/online-coding-bootcamp' => 'pages#online'
   
   devise_for :admins, :controllers => { registrations: 'registrations' }
   get 'admins/dashboard' => 'admins#dashboard'
