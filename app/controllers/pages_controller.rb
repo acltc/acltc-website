@@ -15,6 +15,7 @@ class PagesController < ApplicationController
       start_date: next_cohort_info[:start_date],
       early_bird_deadline: next_cohort_info[:early_bird_deadline]
     }
+    @future_cohorts = future_cohorts(cohort_start_dates, 6)
     render layout: 'main'
   end
 
@@ -35,6 +36,7 @@ class PagesController < ApplicationController
       early_bird_deadline: next_cohort_info_west[:early_bird_deadline]
     }
     @cohorts = @cohorts.sort_by { |cohort| cohort[:start_date] }
+    @future_cohorts = future_cohorts(online_cohort_start_dates, 6)
     render layout: 'main'
   end
 
@@ -97,19 +99,29 @@ class PagesController < ApplicationController
     end
 
     def find_next_cohort(cohort_infos)
-      final_cohort_info = nil
-      cohort_infos.each do |cohort_info|
+      index = find_next_cohort_index(cohort_infos)
+      index.nil? ? nil : cohort_infos[index]
+    end
+
+    def find_next_cohort_index(cohort_infos)
+      result = nil
+      cohort_infos.each_with_index do |cohort_info, index|
         if cohort_info[:prework] && Time.zone.now <= cohort_info[:date] - 1.days
-          final_cohort_info = cohort_info
+          result = index
           break
         elsif !cohort_info[:prework] && Time.zone.now <= cohort_info[:date] - NUMBER_OF_DAYS_BEFORE_IN_CLASS_START_DATE_TO_ACCEPT_STUDENTS.days
-          final_cohort_info = cohort_info
+          result = index
           break
         else
-          final_cohort_info = cohort_infos.first
+          result = 0
         end
       end
-      final_cohort_info
+      result
+    end
+
+    def future_cohorts(cohort_infos, length=3)
+      index = find_next_cohort_index(cohort_infos)
+      index.nil? ? [] : cohort_infos[index..index + length - 1]
     end
 
     def compute_early_bird_deadline(cohort_info)

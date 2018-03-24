@@ -388,6 +388,27 @@
                         <h5 class="uppercase pull-right"><strong>Tuition:</strong> $13,900</h5>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4>Upcoming cohorts</h4>
+                        <table style="width: 100%">
+                            <tr>
+                                <th><h6>Date</h6></th>
+                                <th><h6>Time Zone</h6></th>
+                            </tr>
+                            <% @future_cohorts.each do |cohort| %>
+                                <tr>
+                                    <td><p><%= cohort[:date].strftime("%B %e, %Y") %></p></td>
+                                    <% if cohort[:location] == "west" %>
+                                        <td><p><%= "Pacific" %></p></td>
+                                    <% else %>
+                                        <td><p><%= "Central" %></p></td>
+                                    <% end %>
+                                </tr>
+                            <% end %>
+                        </table>
+                    </div>
+                </div>
                 <hr>
                 <p class="lead mb40">
                     The tuition covers the complete program - 4 weeks of prework, 12 weeks of live training, and 4 months of apprenticeship. Scholarships and financing options may be available upon request.
