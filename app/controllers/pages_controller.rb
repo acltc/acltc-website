@@ -15,7 +15,8 @@ class PagesController < ApplicationController
       start_date: next_cohort_info[:start_date],
       early_bird_deadline: next_cohort_info[:early_bird_deadline]
     }
-    @future_cohorts = future_cohorts(cohort_start_dates, 6)
+    prework_cohorts = cohort_start_dates.select { |cohort_info| cohort_info[:prework] }
+    @future_cohorts = future_cohorts(prework_cohorts, 4)
     render layout: 'main'
   end
 
@@ -36,7 +37,8 @@ class PagesController < ApplicationController
       early_bird_deadline: next_cohort_info_west[:early_bird_deadline]
     }
     @cohorts = @cohorts.sort_by { |cohort| cohort[:start_date] }
-    @future_cohorts = future_cohorts(online_cohort_start_dates, 6)
+    prework_cohorts = online_cohort_start_dates.select { |cohort_info| cohort_info[:prework] }
+    @future_cohorts = future_cohorts(prework_cohorts, 4)
     render layout: 'main'
   end
 
