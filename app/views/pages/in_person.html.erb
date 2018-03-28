@@ -389,21 +389,19 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-8">
                         <h4>Upcoming cohorts</h4>
                         <table style="width: 100%">
-                            <tr>
-                                <th><h6>Date</h6></th>
-                                <th><h6>Time Zone</h6></th>
-                            </tr>
                             <% @future_cohorts.each do |cohort| %>
                                 <tr>
                                     <td><p><%= cohort[:date].strftime("%B %e, %Y") %></p></td>
                                     <% if cohort[:location] == "west" %>
                                         <td><p><%= "Pacific" %></p></td>
-                                    <% else %>
+                                    <% end %>
+                                    <% if cohort[:location] == "east" %>
                                         <td><p><%= "Central" %></p></td>
                                     <% end %>
+                                    <td><p><%= cohort[:message] %></p></td>
                                 </tr>
                             <% end %>
                         </table>

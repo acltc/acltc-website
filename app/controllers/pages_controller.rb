@@ -123,7 +123,13 @@ class PagesController < ApplicationController
 
     def future_cohorts(cohort_infos, length=3)
       index = find_next_cohort_index(cohort_infos)
-      index.nil? ? [] : cohort_infos[index..index + length - 1]
+      result = index.nil? ? [] : cohort_infos[index..index + length - 1]
+      result.map do |cohort_info|
+        if compute_early_bird_deadline(cohort_info)
+          cohort_info[:message] = "Sign up for this cohort to receive a discount!"
+        end
+        cohort_info
+      end
     end
 
     def compute_early_bird_deadline(cohort_info)
