@@ -7,13 +7,17 @@ class ApplicationController < ActionController::Base
     admins_dashboard_path(current_admin)
   end
 
+  def track_web_traffic_source
+    cookies[:source] = "#{params[:utm_source]} #{params[:utm_medium]}"
+  end
+
   def create_new_lead
     cookies[:subscriber] = params[:email]
-    @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], phone: params[:phone], mousetrap: params[:mousetrap], ip_address: request.remote_ip)
+    @subscriber = Subscriber.new(email: params[:email], first_name: params[:first_name], phone: params[:phone], mousetrap: params[:mousetrap], ip_address: request.remote_ip, source: cookies[:source])
 
     lead = Unirest.post("https://actualize-crm.herokuapp.com/api/v1/leads.json", headers: {
     "Accept" => "application/json", "Content-Type" => "application/json"},
-     parameters: {:first_name => params[:first_name], :email => params[:email], :phone => params[:phone], :name => params[:mousetrap], :ip => @subscriber.ip_address}).body
+     parameters: {:first_name => params[:first_name], :email => params[:email], :phone => params[:phone], :name => params[:mousetrap], :ip => @subscriber.ip_address, :source => cookies[:source]}).body
   end
 
   def record_return_to_website_event

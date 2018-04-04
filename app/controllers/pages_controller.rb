@@ -5,10 +5,12 @@ class PagesController < ApplicationController
   include CohortDatesHelper
   
   def home
+    track_web_traffic_source
     render layout: 'main'
   end
 
   def in_person
+    track_web_traffic_source
     @cohorts = []
     next_cohort_info = enrolling_cohort_info(cohort_start_dates)
     @cohorts << {
@@ -19,6 +21,7 @@ class PagesController < ApplicationController
   end
 
   def online
+    track_web_traffic_source
     @cohorts = []
     online_cohort_start_dates_east = online_cohort_start_dates.select { |val| val[:location] == "east" }
     next_cohort_info_east = enrolling_cohort_info(online_cohort_start_dates_east)
