@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   end
 
   def track_web_traffic_source
-    cookies[:source] = "#{params[:utm_source]} #{params[:utm_medium]}"
+    cookies[:source] = "#{params[:utm_source]} #{params[:utm_medium]}" if params[:utm_medium]
   end
 
   def create_new_lead
