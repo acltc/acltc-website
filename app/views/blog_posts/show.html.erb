@@ -1,4 +1,8 @@
 <%= render "/layouts/page_title", page_title: "Blog", page_subtitle: "All Things Learning to Code" %>
+<% content_for :head do %>
+  <title><%= @blog_post.title %></title>
+    <meta name="description" content='The Actualize Blog | Actualize is a code school and apprenticeship that mentors you from start to finish in transforming yourself into a software developer. With our guidance and your drive, you will gain the skills and real world experience to launch a career that will change your life.'>
+  <% end %>
 
         <!-- Content
         ============================================= -->
