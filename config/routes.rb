@@ -10,10 +10,11 @@ Rails.application.routes.draw do
   get 'statuses/edit'
 
   root 'pages#home'
-  get '/in-person' => 'pages#in_person'
-  get '/online' => 'pages#online'
   get '/chicago-coding-bootcamp' => 'pages#in_person'
   get '/online-coding-bootcamp' => 'pages#online'
+  get '/in-person', to: redirect('/chicago-coding-bootcamp')
+  get '/online', to: redirect('/online-coding-bootcamp')
+  
   
   devise_for :admins, :controllers => { registrations: 'registrations' }
   get 'admins/dashboard' => 'admins#dashboard'
