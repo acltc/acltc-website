@@ -1,0 +1,85 @@
+<section class="page-title page-title-3 image-bg overlay">
+    <div class="background-image-holder">
+        <img alt="Background Image" class="background-image" src="/img/cover15.jpg" />
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h3 class="uppercase mb0">Bootcamp Cost Comparison</h3>
+            </div>
+        </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>
+
+<div class="container">
+  <h1><%= @city_info[:city] %> <%= @city_info[:state] %></h1>
+  
+  <div class="row">
+    <div class="col-sm-6">
+      <h2>Actualize Online</h2>
+      <p class="lead">Actualize Online is the only online bootcamp that is completely live. Because it is online and part time, you don't have to quit your job. This makes it the most economical option by far in <%= @city_info[:city] %> <%= @city_info[:state] %>!</p>
+    </div>
+    <div class="col-sm-6">
+      <h2>In Person Bootcamps</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="progress-bars">
+          <div class="progress progress-1">
+              <div class="progress-bar" data-progress="90">
+                  <span class="title" style="color: black !important">Tuition $9,500</span>
+              </div>
+          </div>
+          <!--end of progress bar-->
+          <div class="progress progress-1">
+              <div class="progress-bar" data-progress="0">
+                  <span class="title" style="color: black !important">Lost earning potential $0</span>
+              </div>
+          </div>
+          <!--end of progress bar-->
+          <div class="progress progress-1">
+              <div class="progress-bar" data-progress="0">
+                  <span class="title" style="color: black !important">Relocation costs</span>
+              </div>
+          </div>
+          <!--end of progress bar-->
+          <div class="progress progress-1">
+              <div class="progress-bar" data-progress="50">
+                  <span class="title" style="color: black !important">iOS Apps</span>
+              </div>
+          </div>
+          <!--end of progress bar-->
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="progress-bars">
+          <div class="progress progress-1">
+              <div class="progress-bar" data-progress="90">
+                  <span class="title" style="color: black !important">Tuition <%= number_to_currency(@city_info[:cost_of_tuition], :precision => 0) %></span>
+              </div>
+          </div>
+          <!--end of progress bar-->
+          <div class="progress progress-1">
+              <div class="progress-bar" data-progress="70">
+                  <span class="title" style="color: black !important">Lost earning potential <%= number_to_currency(@city_info[:average_salary] / 4, :precision => 0) %></span>
+              </div>
+          </div>
+          <!--end of progress bar-->
+          <div class="progress progress-1">
+              <div class="progress-bar" data-progress="60">
+                  <span class="title" style="color: black !important">Relocation costs</span>
+              </div>
+          </div>
+          <!--end of progress bar-->
+          <div class="progress progress-1">
+              <div class="progress-bar" data-progress="50">
+                  <span class="title" style="color: black !important">iOS Apps</span>
+              </div>
+          </div>
+          <!--end of progress bar-->
+      </div>    </div>
+  </div>
+</div>

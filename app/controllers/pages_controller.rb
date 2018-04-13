@@ -41,6 +41,57 @@ class PagesController < ApplicationController
     render layout: 'main'
   end
 
+  def comparisons
+    cities = {
+      'boise-idaho' => {
+        city: 'Boise',
+        state: 'Idaho',
+        cost_of_living: 2000,
+        cost_of_relocation: 200,
+        average_salary: 40000,
+        cost_of_tuition: 15000,
+        bootcamps: [
+          {
+            name: 'Bloc',
+            price: 15000
+          },
+          {
+            name: 'Fullstack',
+            price: 17000
+          },
+          {
+            name: 'Boise Coders',
+            price: 12000
+          }
+        ]
+      },
+      'sacramento-california' => {
+        city: 'Sacramento',
+        state: 'California',
+        cost_of_living: 2000,
+        cost_of_relocation: 200,
+        average_salary: 40000,
+        cost_of_tuition: 15000,
+        bootcamps: [
+          {
+            name: 'Bloc',
+            price: 15000
+          },
+          {
+            name: 'Fullstack',
+            price: 17000
+          },
+          {
+            name: 'Boise Coders',
+            price: 12000
+          }
+        ]
+      }
+    }
+    @city_info = cities["#{params[:location]}"]
+    render layout: 'main'
+  end
+
   def thank_you
     render layout: 'main'
   end
