@@ -38,7 +38,7 @@
         <p>Once you've graduated from a coding bootcamp in <%= @city %>, you'll want to take advantage of your local tech meetups! Here are some really interesting ones:</p>
         <ul>
           <% @meetups.each do |meetup| %>
-            <li><a href="<%= meetup['link'] %>" target="_blank"><%= meetup['name'] %></a></li>
+            <li><a href="<%= meetup['link'] %>" target="_blank" class="primary-color"><%= meetup['name'] %></a></li>
           <% end %>
         </ul>
       </div>
@@ -47,9 +47,9 @@
         <p>Click on the links below to discover local <%= @city %> companies that hire software developers:</p>
 
         <ul>
-          <li><a href="https://www.indeed.com/jobs?q=software+developer&l=<%= @city %>%2C+<%= @state_abbr %>" target="_blank">Indeed</a></li>
-          <li><a href="https://www.dice.com/jobs?q=software+developer&l=<%= @city %>%2C+<%= @state_abbr %>" target="_blank">Dice</a></li>
-          <li><a href="https://www.linkedin.com/jobs/search/?keywords=software%20developer&location=<%= @city %>%2C%20<%= @state %>" target="_blank">LinkedIn</a></li>
+          <li><a href="https://www.indeed.com/jobs?q=software+developer&l=<%= @city %>%2C+<%= @state_abbr %>" target="_blank" class="primary-color">Indeed</a></li>
+          <li><a href="https://www.dice.com/jobs?q=software+developer&l=<%= @city %>%2C+<%= @state_abbr %>" target="_blank" class="primary-color">Dice</a></li>
+          <li><a href="https://www.linkedin.com/jobs/search/?keywords=software%20developer&location=<%= @city %>%2C%20<%= @state %>" target="_blank" class="primary-color">LinkedIn</a></li>
         </ul>
       </div>
     </div>
@@ -57,13 +57,21 @@
       <div class="col-sm-6">
         <h2>Salary Information</h2>
         <p>Click on the link below to discover salary information for software developers in <%= @city %>:</p>
-        <p><a href="https://www.indeed.com/salaries/Software-Engineer-Salaries,-<%= @city %>-<%= @state_abbr %>" target="_blank">Indeed Salary Checker</a>
+        <p><a href="https://www.indeed.com/salaries/Software-Engineer-Salaries,-<%= @city %>-<%= @state_abbr %>" target="_blank" class="primary-color">Indeed Salary Checker</a>
       </div>
       <div class="col-sm-6">
         <h2>Local Tech Events</h2>
         <p>Click on the link below to discover local tech events in <%= @city %>:</p>
-        <p><a href="https://www.eventbrite.com/d/<%= @state_abbr %>--<%= @city %>/tech-events/" target="_blank">Eventbrite Tech Events</a>
+        <p><a href="https://www.eventbrite.com/d/<%= @state_abbr %>--<%= @city %>/tech-events/" target="_blank" class="primary-color">Eventbrite Tech Events</a>
       </div>
     </div>
   </div>
+  <div class="row">
+      <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
+          <h3>Did you know that you can attend our Actualize Online Live <a href="/online-coding-bootcamp" class="primary-color">coding bootcamp in <%= @city %></a> and feel as if you're with us in person?</h3>
+          <a href="/online-coding-bootcamp" class="btn btn-lg btn-filled bg-primary-color">Discover Actualize Online Live</a>
+      </div>
+  </div>
 </section>
+
+

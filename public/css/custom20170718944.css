@@ -42,6 +42,15 @@ nav.transparent.fixed .logo {
   color: #292929;
 }
 
+a.primary-color {
+  color: #1C81CF !important;
+}
+
+a.bg-primary-color {
+  background-color: #1C81CF !important;
+  border-color: #1C81CF !important;
+}
+
 .btn-filled {
   border-color: #DFAA1F !important;
   background: #DFAA1F !important;
