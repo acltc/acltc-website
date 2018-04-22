@@ -41,70 +41,47 @@ class PagesController < ApplicationController
     render layout: 'main'
   end
 
-  def comparisons
+  def communities
     cities = {
       'boise-idaho' => {
         city: 'Boise',
         state: 'Idaho',
-        average_monthly_living_cost: 2000,
-        average_yearly_salary: 40000,
-        bootcamps: [
-          {
-            name: 'General Assembly',
-            tuition: 13500,
-            weeks: 12
-          },
-          {
-            name: 'Fullstack',
-            tuition: 15700,
-            weeks: 21
-          },
-          {
-            name: 'Hack Reactor Remote Beta',
-            tuition: 17800,
-            weeks: 12
-          }
-        ]
+        state_abbr: "ID",
+        meetups: [{name: "Boise Web Technologies Group", url: "https://www.meetup.com/boisewebtechs/"}, {name: "Boise Software Developer's Group", url: "https://www.meetup.com/bsdg-meetup/"}, {name: "Girl Develop It Boise", url: "https://www.meetup.com/Girl-Develop-It-Boise/"}]
+        # average_monthly_living_cost: 2000,
+        # average_yearly_salary: 40000,
+        # bootcamps: [
+        #   {
+        #     name: 'General Assembly',
+        #     tuition: 13500,
+        #     weeks: 12
+        #   },
+        #   {
+        #     name: 'Fullstack',
+        #     tuition: 15700,
+        #     weeks: 21
+        #   },
+        #   {
+        #     name: 'Hack Reactor Remote Beta',
+        #     tuition: 17800,
+        #     weeks: 12
+        #   }
+        # ]
       },
       'new-york-city' => {
         city: 'New York City',
         state: 'New York',
-        average_monthly_living_cost: 2000,
-        average_yearly_salary: 40000,
-        bootcamps: [
-          {
-            name: 'General Assembly',
-            tuition: 13500,
-            weeks: 12
-          },
-          {
-            name: 'Flatiron School',
-            tuition: 15000,
-            weeks: 18
-          },
-          {
-            name: 'App Academy',
-            tuition: 16200,
-            weeks: 12
-          }
-        ]
+        state_abbr: "NY",
+        meetups: []
       }
     }
     city_info = cities["#{params[:location]}"]
     @city = city_info[:city]
     @state = city_info[:state]
-    @competitors = city_info[:bootcamps]
-    @primary_competitor = @competitors[0]
+    @state_abbr = city_info[:state_abbr]
+    @meetups = city_info[:meetups]
     @tuition_actualize = 9500
-    @tuition_competitor = @primary_competitor[:tuition]
-    @lost_salary_competitor = city_info[:average_yearly_salary] * @primary_competitor[:weeks] / 52.0
-    @relocation_cost_competitor = city_info[:average_monthly_living_cost] * 0.25 * @primary_competitor[:weeks]
-    percent_base = [@tuition_competitor, @lost_salary_competitor].max.to_f
-    @tuition_percent_actualize = (@tuition_actualize / percent_base) * 100
-    @tuition_percent_competitor = (@tuition_competitor / percent_base) * 100
-    @lost_salary_percent_competitor = (@lost_salary_competitor / percent_base) * 100
-    @relocation_cost_percent_competitor = (@relocation_cost_competitor / percent_base) * 100
-    @total_cost_competitor = @tuition_competitor + @lost_salary_competitor + @relocation_cost_competitor
+
     render layout: 'main'
   end
 
