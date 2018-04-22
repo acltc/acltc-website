@@ -53,6 +53,17 @@
         </ul>
       </div>
     </div>
-
+    <div class="row">
+      <div class="col-sm-6">
+        <h2>Salary Information</h2>
+        <p>Click on the link below to discover salary information for software developers in <%= @city %>:</p>
+        <p><a href="https://www.indeed.com/salaries/Software-Engineer-Salaries,-<%= @city %>-<%= @state_abbr %>" target="_blank">Indeed Salary Checker</a>
+      </div>
+      <div class="col-sm-6">
+        <h2>Local Tech Events</h2>
+        <p>Click on the link below to discover local tech events in <%= @city %>:</p>
+        <p><a href="https://www.eventbrite.com/d/<%= @state_abbr %>--<%= @city %>/tech-events/" target="_blank">Eventbrite Tech Events</a>
+      </div>
+    </div>
   </div>
 </section>
