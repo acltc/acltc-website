@@ -37,7 +37,7 @@
         <p>Click on your desired city below, and discover tech events, meetups, jobs, and other resources near you.</p>
         <ul class="list-group row">
           <% @cities.each do |city_data| %>
-            <li class="list-group-item col-xs-3"><a href="/coding-bootcamps/<%= city_data[2] %>/community-info" target="'_blank'"><%= city_data[0] %>, <%= city_data[1] %></a></li>
+            <li class="list-group-item col-xs-3"><a href="/coding-bootcamps/<%= city_data[2] %>/community-info"><%= city_data[0] %>, <%= city_data[1] %></a></li>
           <% end %>
         </ul>
       </div>
