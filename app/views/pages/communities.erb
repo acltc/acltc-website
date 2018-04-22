@@ -1,0 +1,69 @@
+<% content_for :head do %>
+  <title>Coding Bootcamp in <%= @city %>, <%= @state %> | Local Tech Community</title>
+  <meta name="description" content="Discover the local tech ecosytem in <%= @city %>, <%= @state %>. Find tech meetups, events, jobs, and other resources near you.">
+<% end %>
+
+<section class="page-title page-title-3 image-bg overlay">
+    <div class="background-image-holder">
+        <img alt="Background Image" class="background-image" src="/img/map.jpeg" />
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h3 class="uppercase mb0">Local Tech Community</h3>
+            </div>
+        </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>
+
+  <section class="pb0">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
+                  <h3 style="text-transform: uppercase">Local tech community for those taking a</h3>
+                  <h1 style="text-transform: uppercase">coding bootcamp in <%= @city %>, <%= @state %></h1>
+              </div>
+          </div>
+          <!--end of row-->
+      </div>
+      <!--end of container-->
+  </section>
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <h2>Local Tech Meetups</h2>
+        <p>Once you've graduated from a coding bootcamp in <%= @city %>, you'll want to take advantage of your local tech meetups! Here are some really interesting ones:</p>
+        <ul>
+          <% @meetups.each do |meetup| %>
+            <li><a href="<%= meetup['link'] %>" target="_blank"><%= meetup['name'] %></a></li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="col-sm-6">
+        <h2>Local Jobs</h2>
+        <p>Click on the links below to discover local <%= @city %> companies that hire software developers:</p>
+
+        <ul>
+          <li><a href="https://www.indeed.com/jobs?q=software+developer&l=<%= @city %>%2C+<%= @state_abbr %>" target="_blank">Indeed</a></li>
+          <li><a href="https://www.dice.com/jobs?q=software+developer&l=<%= @city %>%2C+<%= @state_abbr %>" target="_blank">Dice</a></li>
+          <li><a href="https://www.linkedin.com/jobs/search/?keywords=software%20developer&location=<%= @city %>%2C%20<%= @state %>" target="_blank">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <h2>Salary Information</h2>
+        <p>Click on the link below to discover salary information for software developers in <%= @city %>:</p>
+        <p><a href="https://www.indeed.com/salaries/Software-Engineer-Salaries,-<%= @city %>-<%= @state_abbr %>" target="_blank">Indeed Salary Checker</a>
+      </div>
+      <div class="col-sm-6">
+        <h2>Local Tech Events</h2>
+        <p>Click on the link below to discover local tech events in <%= @city %>:</p>
+        <p><a href="https://www.eventbrite.com/d/<%= @state_abbr %>--<%= @city %>/tech-events/" target="_blank">Eventbrite Tech Events</a>
+      </div>
+    </div>
+  </div>
+</section>

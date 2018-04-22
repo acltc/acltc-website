@@ -1,0 +1,97 @@
+<section class="page-title page-title-3 image-bg overlay">
+    <div class="background-image-holder">
+        <img alt="Background Image" class="background-image" src="/img/map.jpeg" />
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h3 class="uppercase mb0">Bootcamp Cost Comparison</h3>
+            </div>
+        </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>
+
+  <section class="pb0">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
+                  <h1><%= @city %>, <%= @state %></h1>
+              </div>
+          </div>
+          <!--end of row-->
+      </div>
+      <!--end of container-->
+  </section>
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <h2>Actualize Online</h2>
+        <p>Actualize Online is the only online bootcamp that is completely live. Because it is online and part time, you don't have to quit your job. This makes it the most economical option by far in <%= @city %> <%= @state %>!</p>
+        <p>For the Actualize Online program, the only cost you need to pay is the <strong>tuition</strong>. There is no <strong>lost salary</strong> cost, since you can still work a full time job while taking the program. There is no <strong>relocation cost</strong>, since the program is online, meaning you can take the course in the comfort of your own home while still having a live classroom environment.</p>
+      </div>
+      <div class="col-sm-6">
+        <h2>In Person Bootcamps</h2>
+        <p><%= @city %> has several bootcamp options nearby:</p>
+        <ul>
+          <% @competitors.each do |competitor| %>
+            <li><%= competitor[:name] %> - <%= number_to_currency(competitor[:tuition], precision: 0) %> - <%= competitor[:weeks] %> weeks</li>
+          <% end %>
+        </ul>
+        <p>However, when calculating the total cost of a bootcamp, you must take into consideration costs other than <strong>tuition</strong>. For full-time bootcamps, you have to consider <strong>lost salary</strong> costs, since you are required to quit your full-time job. This means you won't be able to earn money for the duration of the bootcamp. If you don't live close enough to a bootcamp's physical address, you will have to pay for <strong>relocation costs</strong>, as you would have to find a place to rent for the duration of the bootcamp as well.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <h5>Actualize Online Cost Breakdown</h5>
+        <div class="progress-bars">
+            <span class="title">Tuition: <%= number_to_currency(@tuition_actualize, precision: 0) %></span>
+            <div class="progress progress-1">
+                <div class="progress-bar" style="background: #1C81CF !important;" data-progress="<%= @tuition_percent_actualize %>">
+                </div>
+            </div>
+            <!--end of progress bar-->
+            <span class="title">Lost Salary: $0</span>
+            <div class="progress progress-1">
+                <div class="progress-bar" style="background: #1C81CF !important;" data-progress="0">
+                </div>
+            </div>
+            <!--end of progress bar-->
+            <span class="title">Relocation Costs: $0</span>
+            <div class="progress progress-1">
+                <div class="progress-bar" style="background: #1C81CF !important;" data-progress="0">
+                </div>
+            </div>
+            <!--end of progress bar-->
+        </div>
+        <h4>Total cost: <%= number_to_currency(@tuition_actualize, precision: 0) %></h4>
+      </div>
+      <div class="col-sm-6">
+        <h5><%= @primary_competitor[:name] %> Cost Breakdown</h5>
+        <div class="progress-bars">
+            <span class="title">Tuition: <%= number_to_currency(@tuition_competitor, precision: 0) %></span>
+            <div class="progress progress-1">
+                <div class="progress-bar" style="background: #1C81CF !important;" data-progress="<%= @tuition_percent_competitor %>">
+                </div>
+            </div>
+            <!--end of progress bar-->
+              <span class="title">Lost Salary: <%= number_to_currency(@lost_salary_competitor, :precision => 0) %></span>
+            <div class="progress progress-1">
+                <div class="progress-bar" style="background: #1C81CF !important;" data-progress="<%= @lost_salary_percent_competitor %>">
+                </div>
+            </div>
+            <!--end of progress bar-->
+            <span class="title">Relocation Costs: <%= number_to_currency(@relocation_cost_competitor, precision: 0) %></span>
+            <div class="progress progress-1">
+                <div class="progress-bar" style="background: #1C81CF !important;" data-progress="<%= @relocation_cost_percent_competitor %>">
+                </div>
+            </div>
+            <!--end of progress bar-->
+        </div> 
+        <h4>Total cost: Up to <%= number_to_currency(@total_cost_competitor, precision: 0) %></h4>
+      </div>
+    </div>
+  </div>
+</section>
