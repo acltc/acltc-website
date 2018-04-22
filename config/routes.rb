@@ -96,6 +96,7 @@ Rails.application.routes.draw do
   post "/referrals" => "referrals#create"
   get "/referrals/thank_you" => "referrals#thank_you"
 
+  get "/coding-bootcamps/community-info" => "pages#communities_index"
   get "/coding-bootcamps/:location/community-info" => "pages#communities"
 
   # The priority is based upon order of creation: first created -> highest priority.

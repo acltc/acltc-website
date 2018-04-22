@@ -1,0 +1,46 @@
+<% content_for :head do %>
+  <title>Local Tech Community Finder</title>
+  <meta name="description" content="Discover the local tech ecosytem in your city. Find tech meetups, events, jobs, and other resources near you.">
+<% end %>
+
+<section class="page-title page-title-3 image-bg overlay">
+    <div class="background-image-holder">
+        <img alt="Background Image" class="background-image" src="/img/map.jpeg" />
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h3 class="uppercase mb0">Local Tech Community Finder</h3>
+            </div>
+        </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>
+
+  <section class="pb0">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
+                  <h1 style="text-transform: uppercase">Find local tech jobs, events, and resources in your city</h1>
+              </div>
+          </div>
+          <!--end of row-->
+      </div>
+      <!--end of container-->
+  </section>
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Find Your City</h2>
+        <p>Click on your desired city below, and discover tech events, meetups, jobs, and other resources near you.</p>
+        <ul class="list-group row">
+          <% @cities.each do |city_data| %>
+            <li class="list-group-item col-xs-3"><a href="/coding-bootcamps/<%= city_data[2] %>/community-info" target="'_blank'"><%= city_data[0] %>, <%= city_data[1] %></a></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
