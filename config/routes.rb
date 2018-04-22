@@ -96,7 +96,7 @@ Rails.application.routes.draw do
   post "/referrals" => "referrals#create"
   get "/referrals/thank_you" => "referrals#thank_you"
 
-  get "/community-info/coding-bootcamps/:location" => "pages#communities"
+  get "/coding-bootcamps/:location/community-info" => "pages#communities"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

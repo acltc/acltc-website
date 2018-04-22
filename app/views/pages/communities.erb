@@ -38,7 +38,7 @@
         <p>Once you've graduated from a coding bootcamp in <%= @city %>, you'll want to take advantage of your local tech meetups! Here are some really interesting ones:</p>
         <ul>
           <% @meetups.each do |meetup| %>
-            <li><a href="<%= meetup[:url] %>" target="'_blank'"><%= meetup[:name] %></a></li>
+            <li><a href="<%= meetup['link'] %>" target="'_blank'"><%= meetup['name'] %></a></li>
           <% end %>
         </ul>
       </div>

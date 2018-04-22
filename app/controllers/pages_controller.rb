@@ -46,8 +46,7 @@ class PagesController < ApplicationController
       'boise-idaho' => {
         city: 'Boise',
         state: 'Idaho',
-        state_abbr: "ID",
-        meetups: [{name: "Boise Web Technologies Group", url: "https://www.meetup.com/boisewebtechs/"}, {name: "Boise Software Developer's Group", url: "https://www.meetup.com/bsdg-meetup/"}, {name: "Girl Develop It Boise", url: "https://www.meetup.com/Girl-Develop-It-Boise/"}]
+        state_abbr: "ID"
         # average_monthly_living_cost: 2000,
         # average_yearly_salary: 40000,
         # bootcamps: [
@@ -71,17 +70,15 @@ class PagesController < ApplicationController
       'new-york-city' => {
         city: 'New York City',
         state: 'New York',
-        state_abbr: "NY",
-        meetups: []
+        state_abbr: "NY"
       }
     }
     city_info = cities["#{params[:location]}"]
     @city = city_info[:city]
     @state = city_info[:state]
     @state_abbr = city_info[:state_abbr]
-    @meetups = city_info[:meetups]
     @tuition_actualize = 9500
-
+    @meetups = Unirest.get("https://api.meetup.com/find/groups?key=#{ENV['MEETUP_API_KEY']}&topic_id=15582&location=#{@city}&order=members").body[0..4]
     render layout: 'main'
   end
 
