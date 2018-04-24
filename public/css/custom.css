@@ -9,9 +9,11 @@
   line-height: 48px;
 }
 
-.sp-hide-am {
+input[type="text"].sp-hide-am {
   /* spam honeypot! */
-  display: none;
+  background: transparent;
+  border: none;
+  height: 2px;
 }
 
 @media all and (max-width: 990px) {
