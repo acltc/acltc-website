@@ -132,6 +132,10 @@ class PagesController < ApplicationController
     render layout: 'main'
   end
 
+  def codecademy
+    render layout: 'main'
+  end
+
   def tour_thank_you
 
   end
