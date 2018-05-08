@@ -7,6 +7,7 @@ class ContactsController < ApplicationController
 
   def new
     @contact = Contact.new
+    render layout: 'main'
   end
 
   def create
@@ -17,6 +18,7 @@ class ContactsController < ApplicationController
     else
       render :new
     end
+    # render layout: 'main'
   end
 
   def show

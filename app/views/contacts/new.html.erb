@@ -1,114 +1,94 @@
-<%= render "/layouts/page_title", page_title: "Contact Us", page_subtitle: "Questions? Comments?" %>
 <% content_for :head do %>
-  <title>Contact Actualize</title>
-    <meta name="description" content='Reach the Actualize team with additional questions.'>
-  <% end %>
-  <section id="content">
+  <title>Contact Us | Actualize</title>
+  <meta name="description" content="Have a question about Actualize? Send us a message and we'll get back to you as quickly as we can!">
+<% end %>
 
-    <div class="content-wrap">
-
-      <div class="container clearfix">
-
-            <!-- Contact Form
-            ============================================= -->
-            <div class="col_three_fourth">
-
-              <div class="fancy-title">
-                <h3>Send us a Message</h3>
-              </div>
-
-              <div id="contact-form-result" data-notify-type="success" data-notify-msg="<i class=icon-ok-sign></i> Message Sent Successfully!"></div>
-
-              <%= form_for @contact do |f|  %>
-
-              <div class="form-process"></div>
-
-              <div class="col_half">
-                <%= f.label :first_name, class: "template-contactform-name" %>
-                <%= f.text_field :first_name, class: "sm-form-control required" %>
-              </div>
-
-              <div class="col_half col_last">
-                <%= f.label :last_name, class: "template-contactform-name" %>
-                <%= f.text_field :last_name, class: "sm-form-control required" %>
-              </div>
-
-              <div class="col_half">
-                <%= f.label :phone, class: "template-contactform-name" %>
-                <%= f.text_field :phone, class: "sm-form-control required" %>
-              </div>
-
-              <div class="col_half col_last">
-                <%= f.label :email, class: "template-contactform-name" %>
-                <%= f.text_field :email, class: "sm-form-control required" %>
-              </div>
-
-              <div class="clear"></div>
-
-              <div class="col_full">
-                <%= f.label :message, class: "template-contactform-message" %>
-                <%= f.text_area :message, class: "required sm-form-control" %>
-              </div>
-
-              <div class="col_full hidden">
-                <input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="sm-form-control" />
-              </div>
-
-              <div class="col_full">
-                <%= f.submit "Submit Message", class: "button button-3d nomargin nopadding" %>
-              </div>
-
-              <% end %>
-
-
-
-
-            <div class="clear"></div>
-
-            <!-- Contact Info
-            ============================================= -->
-            <div class="row clear-bottommargin">
-
-             <!--  <div class="col-md-3 col-sm-6 bottommargin clearfix">
-                <div class="feature-box fbox-center fbox-bg fbox-plain">
-                  <div class="fbox-icon">
-                    <a href="#"><i class="icon-map-marker2"></i></a>
-                  </div>
-                  <h3>Our Headquarters<span class="subtitle">Melbourne, Australia</span></h3>
-                </div>
-              </div>
-
-              <div class="col-md-3 col-sm-6 bottommargin clearfix">
-                <div class="feature-box fbox-center fbox-bg fbox-plain">
-                  <div class="fbox-icon">
-                    <a href="#"><i class="icon-phone3"></i></a>
-                  </div>
-                  <h3>Speak to Us<span class="subtitle">(123) 456 7890</span></h3>
-                </div>
-              </div>
-
-              <div class="col-md-3 col-sm-6 bottommargin clearfix">
-                <div class="feature-box fbox-center fbox-bg fbox-plain">
-                  <div class="fbox-icon">
-                    <a href="#"><i class="icon-skype2"></i></a>
-                  </div>
-                  <h3>Make a Video Call<span class="subtitle">CanvasOnSkype</span></h3>
-                </div>
-              </div>
-
-              <div class="col-md-3 col-sm-6 bottommargin clearfix">
-                <div class="feature-box fbox-center fbox-bg fbox-plain">
-                  <div class="fbox-icon">
-                    <a href="#"><i class="icon-twitter2"></i></a>
-                  </div>
-                  <h3>Follow on Twitter<span class="subtitle">2.3M Followers</span></h3>
-                </div>
-              </div> -->
-
-            </div><!-- Contact Info End -->
-
-          </div>
-
+<section class="page-title page-title-3 image-bg overlay">
+    <div class="background-image-holder">
+        <img alt="Background Image" class="background-image" src="/img/project-single-5.jpg" />
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h3 class="uppercase mb0">Contact Us</h3>
+            </div>
         </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>
 
-</section><!-- #content end
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h4 class="mb16">Have a question for us?</h4>
+                <p class="lead mb64">
+                    Ask away! We'll get back to you as quickly as we can.
+                </p>
+            </div>
+            <div class="col-sm-6">
+                <%= form_for @contact do |f|  %>
+                    <input class="required" type="text" name="contact[first_name]" id="contact_first_name" placeholder="First Name" />
+                    <input class="required" type="text" name="contact[last_name]" id="contact_last_name" placeholder="Last Name" />
+                    <input class="required" type="text" name="contact[email]" id="contact_email" placeholder="Email Address" />
+                    <input class="required" type="text" name="contact[phone]" id="contact_phone" placeholder="Phone Number" />
+                    <textarea rows="3" name="contact[message]" id="contact_message" placeholder="Ask your question here!"></textarea>
+                    <input type="submit" name="commit" value="Ask Away!" >
+                <% end %>
+            </div>
+
+            <!-- <div class="col-sm-6">
+                <h4 class="uppercase mb16">Option Inputs</h4>
+                <p class="lead mb64">
+                    An array of tastefully styled options to make forms more inviting.
+                </p>
+                <div class="select-option">
+                    <i class="ti-angle-down"></i>
+                    <select>
+                        <option selected value="Default">Select An Option</option>
+                        <option value="Small">Small</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Larger">Large</option>
+                    </select>
+                </div>
+
+                <form class="mb24">
+                    <span>Would you like to hear about checkboxes?</span>
+                    <div class="checkbox-option pull-right">
+                        <div class="inner"></div>
+                        <input type="checkbox" name="checkbox" value="Checkbox" />
+                    </div>
+                </form>
+                <hr>
+                <form>
+                    <h5 class="uppercase">Sign-up to mailing list?</h5>
+                    <div>
+                        <div class="radio-option checked">
+                            <div class="inner"></div>
+                            <input type="radio" name="radio" value="radio1" />
+                        </div>
+                        <span>Yes</span>
+                    </div>
+                    <div>
+                        <div class="radio-option">
+                            <div class="inner"></div>
+                            <input type="radio" name="radio" value="radio1" />
+                        </div>
+                        <span>No</span>
+                    </div>
+                    <div>
+                        <div class="radio-option">
+                            <div class="inner"></div>
+                            <input type="radio" name="radio" value="radio1" />
+                        </div>
+                        <span>Maybe</span>
+                    </div>
+                </form>
+                <input type="submit" value="Submit Button" />
+            </div> -->
+        </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>

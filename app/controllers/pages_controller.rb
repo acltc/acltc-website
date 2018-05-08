@@ -141,7 +141,7 @@ class PagesController < ApplicationController
   end
 
   def contacts_thank_you
-
+    render layout: 'main'
   end
 
   def privacy_policy
