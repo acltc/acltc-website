@@ -1,154 +1,51 @@
-<%= render "/layouts/page_title", page_title: @blog_post.title, page_subtitle: "Actualize Blog" %>
 <% content_for :head do %>
-  <title><%= @blog_post.title %></title>
-    <meta name="description" content='The Actualize Blog | Actualize is a code school and apprenticeship that mentors you from start to finish in transforming yourself into a software developer. With our guidance and your drive, you will gain the skills and real world experience to launch a career that will change your life.'>
-  <% end %>
+  <title><%= @blog_post.title %> | Actualize</title>
+  <meta name="description" content="<%= @blog_post.truncate_blog_post %>">
+<% end %>
 
-        <!-- Content
-        ============================================= -->
-        <section id="content">
+<section class="page-title page-title-3 image-bg overlay">
+    <div class="background-image-holder">
+        <img alt="Background Image" class="background-image" src="/img/capital3.jpg" />
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h3 class="uppercase mb0 dark-bold">Actualize Blog</h3>
+            </div>
+        </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>
 
-          <div class="content-wrap">
-
-            <div class="container clearfix">
-
-              <div class="single-post nobottommargin">
-
-                        <!-- Post Content
-                        ============================================= -->
-                        <div class="postcontent nobottommargin clearfix">
-
-                            <!-- Single Post
-                            ============================================= -->
-                            <div class="entry clearfix">
-                                <%= button_to "Publish", blog_post_path,  class: "btn btn-success btn-lg", method: :patch, params: {publish: true} unless @blog_post.published? %>
-
-                                <!-- Entry Title
-                                ============================================= -->
-                                <div class="entry-title">
-                                  <h2><%= @blog_post.title %></h2>
-                                </div><!-- .entry-title end -->
-
-                                <!-- Entry Meta
-                                ============================================= -->
-                                <ul class="entry-meta clearfix">
-                                  <ul class="entry-meta clearfix">
-                                    <li><i class="icon-calendar3"></i><%= @blog_post.posted_date_human %></li>
-                                    <li><a href="#"><i class="icon-user"></i><%= "#{@blog_post.admin.full_name} - #{@blog_post.admin.title}" %></a></li>
-                                    <li><i class="icon-tags"></i><%= @blog_post.blog_categories.map { |category| link_to category.name, "/blog_posts?category=#{category.name}" }.join(', ').html_safe %></li>
-                                  </ul><!-- .entry-meta end -->
-
-                                <!-- Entry Content
-                                ============================================= -->
-                                <div class="entry-content notopmargin">
-                                  <div>
-                                    <%= @blog_post.content.html_safe %>
-                                  </div> 
-
-
-                                  <!-- Post Single - Content End -->
-
-                                    <!-- Tag Cloud
-                                    ============================================= -->
-                                    <div class="tagcloud clearfix bottommargin main-text">
-                                      <% @blog_post.blog_categories.each do |blog_category| %>
-                                        <a href="#"><%= blog_category.name %></a>
-                                      <% end %>
-                                    </div><!-- .tagcloud end -->
-
-                                    <div class="clear"></div>
-                                      <%= link_to "Edit", edit_blog_post_path(@blog_post) if current_admin %> |
-                                      <%= link_to "Delete", blog_post_path(@blog_post), method: :delete, data: {:confirm => 'Are you sure?'} if current_admin %>
-
-                                    <!-- Post Single - Share
-                                    ============================================= -->
-<!--                                     <div class="si-share noborder clearfix">
-                                      <span>Share this Post:</span>
-                                      <div>
-                                        <a href="#" class="social-icon si-borderless si-facebook">
-                                          <i class="icon-facebook"></i>
-                                          <i class="icon-facebook"></i>
-                                        </a>
-                                        <a href="#" class="social-icon si-borderless si-twitter">
-                                          <i class="icon-twitter"></i>
-                                          <i class="icon-twitter"></i>
-                                        </a>
-                                        <a href="#" class="social-icon si-borderless si-pinterest">
-                                          <i class="icon-pinterest"></i>
-                                          <i class="icon-pinterest"></i>
-                                        </a>
-                                        <a href="#" class="social-icon si-borderless si-gplus">
-                                          <i class="icon-gplus"></i>
-                                          <i class="icon-gplus"></i>
-                                        </a>
-                                        <a href="#" class="social-icon si-borderless si-rss">
-                                          <i class="icon-rss"></i>
-                                          <i class="icon-rss"></i>
-                                        </a>
-                                        <a href="#" class="social-icon si-borderless si-email3">
-                                          <i class="icon-email3"></i>
-                                          <i class="icon-email3"></i>
-                                        </a>
-                                      </div>
-                                    </div> -->
-
-                                    <!-- Post Single - Share End -->
-
-                                  </div>
-                                </div><!-- .entry end -->
-
-                            <!-- Post Navigation
-                            ============================================= -->
-                            <div class="post-navigation clearfix">
-
-                              <% if @blog_post_previous %>
-                              <div class="col_half nobottommargin">
-                                <% if @blog_post_previous %>
-                                <a href="<%= blog_post_path(@blog_post_previous) %>"> &lArr; <%= @blog_post_previous.title %></a>
-                                <% end %>
-                              </div>
-                              <% end %>
-
-                              <% if @blog_post_next %>
-                              <div class="col_half col_last tright nobottommargin">
-                                <% if @blog_post_next %>
-                                  <a href="<%= blog_post_path(@blog_post_next) %>"> <%= @blog_post_next.title %> &rArr;</a>
-                                <% end %>
-                              </div>
-                              <% end %>
-
-                            </div><!-- .post-navigation end -->
-
-                            <div class="line"></div>
-
-                            <!-- Post Author Info
-                            ============================================= -->
-                            <div class="panel panel-default">
-                              <div class="panel-heading">
-                                <h3 class="panel-title">Posted by <span><a href="#"><%= @blog_post.admin.full_name %></a></span></h3>
-                              </div>
-                              <div class="panel-body">
-                                <div class="author-image">
-                                  <%= image_tag @blog_post.admin.avatar.url, class: "img-circle" %>
-                                </div>
-                                <div>
-                                  <%= @blog_post.admin.bio %>
-                                </div>
-                              </div>
-                            </div><!-- Post Single - Author End -->
-
-                            <div class="line"></div>
-
-
-
-                          </div><!-- .postcontent end -->
-
-                          <%= render "side_bar" %>
-
-                        </div>
-
-                      </div>
-
-                    </div>
-
-        </section><!-- #content end -->
+<section>
+    <div class="container">
+    
+        <div class="feed-item mb96 mb-xs-48">
+            <div class="row mb16 mb-xs-0">
+                <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
+                    <h6 class="uppercase mb16 mb-xs-8"><%= @blog_post.created_at.strftime("%B %e, %Y") %></h6>
+                    <h1><%= @blog_post.title %></h1>
+                </div>
+            </div>
+            <!--end of row-->
+            <div class="row mb32 mb-xs-16">
+                <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+                    <!-- <img alt="Article Image" class="mb32 mb-xs-16" src="img/blog-single.jpg" /> -->
+                    <p class="lead">
+                        <%= @blog_post.truncate_blog_post %>
+                    </p>
+                </div>
+            </div>
+            <!--end of row-->
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
+                    <a href="/apply" class="btn btn-lg btn-filled bg-primary-color">Begin Your Coding Journey</a>
+                    <hr>
+                </div>
+            </div>
+        </div>
+        <!--end of feed item-->
+    </div>
+    <!--end of container-->
+</section>

@@ -18,6 +18,7 @@ class BlogPostsController < ApplicationController
         @blog_posts = @blog_posts_all
       end
     end
+    render layout: 'main'
   end
 
   def new
@@ -56,6 +57,8 @@ class BlogPostsController < ApplicationController
     end
     @blog_post_next = @blog_post.next
     @blog_post_previous = @blog_post.previous
+
+    render layout: 'main'
   end
 
   def edit

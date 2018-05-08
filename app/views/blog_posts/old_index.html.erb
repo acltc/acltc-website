@@ -1,0 +1,57 @@
+<%= render "/layouts/page_title", page_title: "Blog", page_subtitle: "All Things Learning to Code" %>
+<% content_for :head do %>
+  <title>Coding Bootcamp Blog | Actualize</title>
+    <meta name="description" content='The Actualize Blog | Actualize is a code school and apprenticeship that mentors you from start to finish in transforming yourself into a software developer. With our guidance and your drive, you will gain the skills and real world experience to launch a career that will change your life.'>
+  <% end %>
+<!-- Content
+============================================= -->
+<section id="content">
+
+    <div class="content-wrap">
+
+        <div class="container clearfix">
+
+            <!-- Post Content
+            ============================================= -->
+            <div class="postcontent nobottommargin clearfix">
+
+                <!-- Posts
+                ============================================= -->
+                    <ul id="blog_admin_list">
+                      <li><%= link_to('Create Blog Post', new_blog_post_path) if current_admin%></li>
+                    </ul>
+                    <% @blog_posts.each do |blog_post| %>
+                      <div id="posts">
+                          <div class="entry clearfix">
+                              <div class="entry-title">
+                                  <h2><%= link_to blog_post.title, blog_post_path(blog_post) %><span class="publish-warning"><%= " **Unpublished**" if current_admin && !blog_post.published? %></span></h2>
+                              </div>
+                              <ul class="entry-meta clearfix">
+                                  <li><i class="icon-calendar3"></i><%= blog_post.posted_date_human %></li>
+                                  <li><a href="#"><i class="icon-user"></i><%= "#{blog_post.admin.full_name} - #{blog_post.admin.title}" %></a></li>
+                                  <li><i class="icon-tags"></i><%= blog_post.blog_categories.map { |category| link_to category.name, "/blog_posts?category=#{category.name}" }.join(', ').html_safe %></li>
+                              </ul>
+                              <div class="entry-content">
+                                  <p><%= blog_post.truncate_blog_post %></p>
+                                  <%= link_to "Read More", blog_post_path(blog_post), class: "more-link" %>
+                              </div>
+                          </div>
+                      </div><!-- #posts end -->
+                    <% end %>
+
+                <!-- Pagination
+                ============================================= -->
+<!--                 <ul class="pager nomargin">
+                    <li class="previous"><a href="#">&larr; Older</a></li>
+                    <li class="next"><a href="#">Newer &rarr;</a></li>
+                </ul> --><!-- .pager end -->
+
+            </div><!-- .postcontent end -->
+
+            <%= render "side_bar" %>
+
+        </div>
+
+    </div>
+
+</section><!-- #content end -->
