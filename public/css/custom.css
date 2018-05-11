@@ -9,8 +9,27 @@
   line-height: 48px;
 }
 
-.shaded p{
+#pre-video {
+  font-size: 72px;
+  line-height: 80px;
+  font-weight: 100;
+}
+
+.shaded p {
   font-weight: bold !important;
+}
+
+/*#switchup {
+  padding-top: 64px;
+  padding-bottom: 0px;
+}*/
+
+#switchup p {
+  font-weight: bold !important;
+}
+
+#switchup img {
+  margin-bottom: 30px;
 }
 
 input[type="text"].sp-hide-am {
