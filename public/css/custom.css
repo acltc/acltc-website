@@ -9,6 +9,10 @@
   line-height: 48px;
 }
 
+.shaded p{
+  font-weight: bold !important;
+}
+
 input[type="text"].sp-hide-am {
   /* spam honeypot! */
   background: transparent;
