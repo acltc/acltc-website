@@ -9,6 +9,11 @@
   line-height: 48px;
 }
 
+input[type="submit"].primary-color {
+  border: 2px solid #1C81CF !important;
+  background: #1C81CF !important;
+}
+
 #pre-video {
   font-size: 72px;
   line-height: 80px;
@@ -18,11 +23,6 @@
 .shaded p {
   font-weight: bold !important;
 }
-
-/*#switchup {
-  padding-top: 64px;
-  padding-bottom: 0px;
-}*/
 
 #switchup p {
   font-weight: bold !important;

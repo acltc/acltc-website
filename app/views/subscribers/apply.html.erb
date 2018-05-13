@@ -4,10 +4,13 @@
 <% end %>
 
 <section class="page-title page-title-3 bg-dark">
+    <div class="background-image-holder  darken-image">
+        <img alt="Background Image" class="background-image" src="/img/rooftop.jpg" />
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-sm-12 text-center">
-                <h3 class="uppercase mb0">Apply to Actualize</h3>
+                <h3 class="uppercase mb0">Apply To Actualize</h3>
             </div>
         </div>
         <!--end of row-->
@@ -20,9 +23,9 @@
               Actualize has partnered with Women Who Code to offer three 50%-off <br>scholarships for our upcoming Online Live Cohort!
             </span>
           <% else %>
-            <span>
-              Thank you for your interest in applying to Actualize.<br>
-              Please enter the following information so we can get started!
+            <span style="font-size: 18px">
+              <strong>Thank you for your interest in Actualize.</strong><br>
+              <strong>Start your application here!</strong>
             </span>
           <% end %>
         </li>
@@ -52,7 +55,7 @@
                       <%= hidden_field_tag :referral, nil, :value => @referral %>
                     <% end %>
                   <div class="form-group">
-                    <%= submit_tag "Get Started!", class: "button button-3d nomargin nopadding" %>
+                    <%= submit_tag "Get Started!", class: "button button-3d nomargin nopadding primary-color" %>
                   </div>
                 <% end %>
             </div>
