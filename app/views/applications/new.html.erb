@@ -4,10 +4,13 @@
 <% end %>
 
 <section class="page-title page-title-3 bg-dark">
+    <div class="background-image-holder  darken-image">
+        <img alt="Background Image" class="background-image" src="/img/graduates.png" />
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-sm-12 text-center">
-                <h3 class="uppercase mb0">Apply to Actualize</h3>
+                <h3 class="uppercase mb0">Apply To Actualize</h3>
             </div>
         </div>
         <!--end of row-->
@@ -16,8 +19,7 @@
     <ol class="breadcrumb breadcrumb-2">
         <li>
             <span>
-              Please answer the following questions to help us determine <br>
-              if you're a good fit for Actualize. All fields are required.
+              Please complete your application to Actualize by <br>completing the fields below. All fields are required.
             </span>
         </li>
     </ol>
@@ -113,8 +115,8 @@
                         <%= f.label :learn_about_acltc, "Referral", :value => "Referral" %>
                       </div>
                       <div class="col-md-4">
-                        <%= f.radio_button :learn_about_acltc, "SkilledUp", { :class => "learn-about-acltc" } %>
-                        <%= f.label :learn_about_acltc, "SkilledUp", :value => "SkilledUp" %>
+                        <%= f.radio_button :learn_about_acltc, "Tech Beacon", { :class => "learn-about-acltc" } %>
+                        <%= f.label :learn_about_acltc, "Tech Beacon", :value => "Tech Beacon" %>
                       </div>
                     </div>
                     <div class="radio row">
@@ -171,7 +173,7 @@
                 <%= f.text_area :work_concurrently, class: "validate-required" %>
               </div>
               <div class="input-with-label text-left">
-                <%= f.label :why_better, "Why should you be accepted into the program over other applicants?" %>
+                <%= f.label :why_better, "Why do you think you'd be a great fit for Actualize?" %>
                 <%= f.text_area :why_better, class: "validate-required" %>
               </div>
               <div class="input-with-label text-left">
@@ -195,7 +197,7 @@
               <br>
               <br>
               <div class="form-group">
-                <%= f.submit "Submit Application", class: "button button-3d nomargin nopadding" %>
+                <%= f.submit "Submit Application", class: "button button-3d nomargin nopadding primary-color" %>
               </div>
             <% end %>
 
