@@ -28,6 +28,7 @@ class BlogPostsController < ApplicationController
 
   def create
     blog_post = BlogPost.new(blog_post_params)
+    blog_post.published? = true
     if blog_post.save
       blog_post.blog_pics.each_with_index do |file, index|
         image_placeholder = "IMAGE#{index+1}"
