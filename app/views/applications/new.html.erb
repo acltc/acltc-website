@@ -70,15 +70,19 @@
               <%= hidden_field_tag :phone, nil, :value => params[:phone] %>
 
               <div class="input-with-label text-left" >
-                <label class="required label-radio form-label">Which location are you applying for?</label>
+                <label class="required label-radio form-label">Which program are you applying for?</label>
                 <div id="location" class="radio" style="margin-left: 2em">
                   <div>
-                    <%= f.radio_button :location, "Online" %>
-                    <%= f.label :location, "Online Live", :value => "Online" %>
+                    <%= f.radio_button :location, "Online Day" %>
+                    <%= f.label :location, "Online Live Daytime", :value => "Online Day" %>
+                  </div>
+                  <div>
+                    <%= f.radio_button :location, "Online Night" %>
+                    <%= f.label :location, "Online Live Nights-and-Weekends", :value => "Online Night" %>
                   </div>
                   <div>
                     <%= f.radio_button :location, "Chicago" %>
-                    <%= f.label :location, "Chicago", :value => "Chicago" %>
+                    <%= f.label :location, "Chicago Nights-and-Weekends", :value => "Chicago" %>
                   </div>
                 </div>
               </div>
@@ -93,31 +97,20 @@
                   <div style="margin-left: 2em">
                     <div class="radio row">
                       <div class="col-md-4">
-                        <%= f.radio_button :learn_about_acltc, "Course Report", { :class => "learn-about-acltc" } %>
-                        <%= f.label :learn_about_acltc, "Course Report", :value => "Course Report" %>
+                        <%= f.radio_button :learn_about_acltc, "Word of Mouth", { :class => "learn-about-acltc" } %>
+                        <%= f.label :learn_about_acltc, "Word of Mouth", :value => "Word of Mouth" %>
                       </div>
                       <div class="col-md-4">
                         <%= f.radio_button :learn_about_acltc, "Google Search", { :class => "learn-about-acltc" } %>
                         <%= f.label :learn_about_acltc, "Google Search", :value => "Google Search" %>
                       </div>
                       <div class="col-md-4">
-                        <%= f.radio_button :learn_about_acltc, "Meetup", { :class => "learn-about-acltc" } %>
-                        <%= f.label :learn_about_acltc, "Meetup", :value => "Meetup" %>
+                        <%= f.radio_button :learn_about_acltc, "Course Report", { :class => "learn-about-acltc" } %>
+                        <%= f.label :learn_about_acltc, "Course Report", :value => "Course Report" %>
                       </div>
-                    </div>
-                    <div class="radio row">
-                      <div class="col-md-4">
-                        <%= f.radio_button :learn_about_acltc, "Quora", { :class => "learn-about-acltc" } %>
-                        <%= f.label :learn_about_acltc, "Quora", :value => "Quora" %>
-                      </div>
-                      <div class="col-md-4">
-                        <%= f.radio_button :learn_about_acltc, "Referral", { :class => "learn-about-acltc" } %>
-                        <%= f.label :learn_about_acltc, "Referral", :value => "Referral" %>
-                      </div>
-                      <div class="col-md-4">
-                        <%= f.radio_button :learn_about_acltc, "Tech Beacon", { :class => "learn-about-acltc" } %>
-                        <%= f.label :learn_about_acltc, "Tech Beacon", :value => "Tech Beacon" %>
-                      </div>
+                      
+                      
+                      
                     </div>
                     <div class="radio row">
                       <div class="col-md-4">
@@ -125,19 +118,33 @@
                         <%= f.label :learn_about_acltc, "SwitchUp", :value => "SwitchUp" %>
                       </div>
                       <div class="col-md-4">
+                        <%= f.radio_button :learn_about_acltc, "Meetup", { :class => "learn-about-acltc" } %>
+                        <%= f.label :learn_about_acltc, "Meetup", :value => "Meetup" %>
+                      </div>
+                      <div class="col-md-4">
+                        <%= f.radio_button :learn_about_acltc, "Quora", { :class => "learn-about-acltc" } %>
+                        <%= f.label :learn_about_acltc, "Quora", :value => "Quora" %>
+                      </div>
+                      
+                      
+                    </div>
+                    <div class="radio row">
+                      <div class="col-md-4">
+                        <%= f.radio_button :learn_about_acltc, "Tech Beacon", { :class => "learn-about-acltc" } %>
+                        <%= f.label :learn_about_acltc, "Tech Beacon", :value => "Tech Beacon" %>
+                      </div>
+                      <div class="col-md-4">
                         <%= f.radio_button :learn_about_acltc, "Thinkful", { :class => "learn-about-acltc" } %>
                         <%= f.label :learn_about_acltc, "Thinkful", :value => "Thinkful" %>
                       </div>
                       <div class="col-md-4">
-                        <%= f.radio_button :learn_about_acltc, "Word of Mouth", { :class => "learn-about-acltc" } %>
-                        <%= f.label :learn_about_acltc, "Word of Mouth", :value => "Word of Mouth" %>
-                      </div>
-                    </div>
-                    <div class="radio row">
-                      <div class="col-md-4">
                         <%= f.radio_button :learn_about_acltc, "Facebook", { :class => "learn-about-acltc" } %>
                         <%= f.label :learn_about_acltc, "Facebook", :value => "Facebook" %>
                       </div>
+                      
+                    </div>
+                    <div class="radio row">
+                      
                       <div class="col-md-4">
                         <%= f.radio_button :learn_about_acltc, "Other", { :class => "learn-about-acltc learn-about-acltc-other" } %>
                         <%= f.label :learn_about_acltc, "Other", :value => "Other" %>

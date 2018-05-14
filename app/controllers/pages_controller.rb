@@ -90,14 +90,14 @@ class PagesController < ApplicationController
     online_cohort_start_dates_east = online_cohort_start_dates.select { |val| val[:location] == "east" }
     next_cohort_info_east = enrolling_cohort_info(online_cohort_start_dates_east)
     @cohorts << {
-      name: "Central time zone",
+      name: "Nights-and-Weekends",
       start_date: next_cohort_info_east[:start_date],
       early_bird_deadline: next_cohort_info_east[:early_bird_deadline]
     }
     online_cohort_start_dates_west = online_cohort_start_dates.select { |val| val[:location] == "west" }
     next_cohort_info_west = enrolling_cohort_info(online_cohort_start_dates_west)
     @cohorts << {
-      name: "Pacific time zone",
+      name: "Daytime",
       start_date: next_cohort_info_west[:start_date],
       early_bird_deadline: next_cohort_info_west[:early_bird_deadline]
     }
