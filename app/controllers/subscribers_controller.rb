@@ -59,6 +59,7 @@ class SubscribersController < ApplicationController
   end
 
   def apply
+    track_web_traffic_source
     record_return_to_website_event
     @subscriber = Subscriber.new
     @referral = params[:referral] if params[:referral]
