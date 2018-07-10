@@ -22,7 +22,23 @@ module CohortDatesHelper
       { prework: true, date: Date.new(2018, 7, 22), early_bird_date: Date.new(2018, 5, 31) },
       { prework: false, date: Date.new(2018, 8, 19), early_bird_date: nil },
       { prework: true, date: Date.new(2018, 9, 2), early_bird_date: Date.new(2018, 7, 31) },
-      { prework: false, date: Date.new(2018, 9, 30), early_bird_date: nil }
+      { prework: false, date: Date.new(2018, 9, 30), early_bird_date: nil },
+      { prework: true, date: Date.new(2018, 12, 2), early_bird_date: Date.new(2018, 10, 31) },
+      { prework: false, date: Date.new(2019, 1, 6), early_bird_date: nil },
+      { prework: true, date: Date.new(2019, 1, 20), early_bird_date: Date.new(2018, 11, 30) },
+      { prework: false, date: Date.new(2019, 2, 17), early_bird_date: nil },
+      { prework: true, date: Date.new(2019, 3, 24), early_bird_date: Date.new(2019, 1, 31) },
+      { prework: false, date: Date.new(2019, 4, 28), early_bird_date: nil },
+      { prework: true, date: Date.new(2019, 5, 12), early_bird_date: Date.new(2019, 3, 31) },
+      { prework: false, date: Date.new(2019, 6, 16), early_bird_date: nil },
+      { prework: true, date: Date.new(2019, 7, 21), early_bird_date: Date.new(2019, 5, 31) },
+      { prework: false, date: Date.new(2019, 8, 18), early_bird_date: nil },
+      { prework: true, date: Date.new(2019, 9, 22), early_bird_date: Date.new(2019, 7, 31) },
+      { prework: false, date: Date.new(2019, 10, 27), early_bird_date: nil },
+      { prework: true, date: Date.new(2019, 12, 1), early_bird_date: Date.new(2019, 10, 31) },
+      { prework: false, date: Date.new(2020, 1, 5), early_bird_date: nil },
+      { prework: true, date: Date.new(2020, 1, 26), early_bird_date: Date.new(2019, 11, 30) },
+      { prework: false, date: Date.new(2020, 2, 23), early_bird_date: nil },
     ].sort_by { |cohort_date| cohort_date[:date] }
   end
 
@@ -45,7 +61,23 @@ module CohortDatesHelper
       { prework: true, date: Date.new(2018, 7, 22), location: "west", early_bird_date: Date.new(2018, 5, 31) },
       { prework: false, date: Date.new(2018, 8, 19), location: "west", early_bird_date: nil },
       { prework: true, date: Date.new(2018, 9, 2), location: "east", early_bird_date: Date.new(2018, 7, 31) },
-      { prework: false, date: Date.new(2018, 9, 30), location: "east", early_bird_date: nil }
+      { prework: false, date: Date.new(2018, 9, 30), location: "east", early_bird_date: nil },
+      { prework: true, date: Date.new(2018, 12, 2), location: "west", early_bird_date: Date.new(2018, 10, 31) },
+      { prework: false, date: Date.new(2019, 1, 6), location: "west", early_bird_date: nil },
+      { prework: true, date: Date.new(2019, 1, 20), location: "east", early_bird_date: Date.new(2018, 11, 30) },
+      { prework: false, date: Date.new(2019, 2, 17), location: "east", early_bird_date: nil },
+      { prework: true, date: Date.new(2019, 3, 24), location: "west", early_bird_date: Date.new(2019, 1, 31) },
+      { prework: false, date: Date.new(2019, 4, 28), location: "west", early_bird_date: nil },
+      { prework: true, date: Date.new(2019, 5, 12), location: "east", early_bird_date: Date.new(2019, 3, 31) },
+      { prework: false, date: Date.new(2019, 6, 16), location: "east", early_bird_date: nil },
+      { prework: true, date: Date.new(2019, 7, 21), location: "west", early_bird_date: Date.new(2019, 5, 31) },
+      { prework: false, date: Date.new(2019, 8, 18), location: "west", early_bird_date: nil },
+      { prework: true, date: Date.new(2019, 9, 22), location: "east", early_bird_date: Date.new(2019, 7, 31) },
+      { prework: false, date: Date.new(2019, 10, 27), location: "east", early_bird_date: nil },
+      { prework: true, date: Date.new(2019, 12, 1), location: "west", early_bird_date: Date.new(2019, 10, 31) },
+      { prework: false, date: Date.new(2020, 1, 5), location: "west", early_bird_date: nil },
+      { prework: true, date: Date.new(2020, 1, 26), location: "east", early_bird_date: Date.new(2019, 11, 30) },
+      { prework: false, date: Date.new(2020, 2, 23), location: "east", early_bird_date: nil },      
     ].sort_by { |cohort_date| cohort_date[:date] }
   end
 end
