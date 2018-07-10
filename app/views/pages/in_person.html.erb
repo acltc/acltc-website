@@ -371,13 +371,27 @@
                 <h3 class="uppercase mb40">Tuition and financing</h3>
                 <div class="row">
                     <div class="col-md-8">
-                        <% @cohorts.each do |cohort| %>
-                            <h5 class="uppercase pull-left"><strong>Next <%= cohort[:name] %> start date:</strong> <%= cohort[:start_date].strftime("%B %e, %Y") %></h5>
-                            <div class="clearfix"></div>
-                            <% if cohort[:early_bird_deadline] %>
-                                <h5 class="text-success"><strong>Early Bird Special!</strong> Enroll by <%= cohort[:early_bird_deadline].strftime("%B %e") %> and recieve $500 off tuition.</h5>
+                        <table class="table table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Prework Start Date</th>
+                                    <th>Live Start Date</th>
+                                    <th>Location</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <% @cohorts.each do |cohort| %>
+                                <tr>
+                                    <th><%= cohort[:prework].strftime("%B %e, %Y") %></th>
+                                    <th><%= cohort[:live].strftime("%B %e, %Y") %></th>
+                                    <th><%= cohort[:location] %></th>
+                                </tr>
                             <% end %>
-                            <br>
+                            </tbody>
+                        </table>
+
+                        <% if @early_bird_deadline %>
+                            <h5 class="text-success"><strong>Early Bird Special!</strong> Enroll for the next cohort by <%= @early_bird_deadline.strftime("%B %e") %> and recieve $500 off tuition.</h5>
                         <% end %>
                     </div>
                     <div class="col-md-4">
