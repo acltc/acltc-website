@@ -2,9 +2,7 @@ class FaqsController < ApplicationController
   before_filter :authenticate_admin!, only: [:new, :create, :update, :delete]
 
   def index
-    record_return_to_website_event
-    @faq_categories = ["General", "Tuition & Payment", "Application & Acceptance", "Actualize Program", "Etc."]
-    @faqs = Faq.all.order(:priority)
+    redirect_to "/"
   end
 
   def new
