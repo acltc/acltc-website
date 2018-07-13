@@ -99,6 +99,7 @@ Rails.application.routes.draw do
   get "/coding-bootcamps/community-info" => "pages#communities_index"
   get "/coding-bootcamps/:location/community-info" => "pages#communities"
   get "/codecademy" => "pages#codecademy"
+  get "/resources" => "pages#resources"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
