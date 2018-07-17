@@ -1,3 +1,5 @@
+/* global $ */
+
 $(document).ready(function() { 
     
     $('form.form-validate').submit(function(e) {
@@ -43,5 +45,18 @@ $(document).ready(function() {
           }, 3000);
       }
     });
+
+    if ($('.time-zone').length > 0) {
+      var zone = new Date().toLocaleTimeString('en-us',{timeZoneName:'long'}).split(' ')[2];
+      if (zone === "Pacific") {
+        $('.time-zone-pacific').trigger("click");
+      } else if (zone === "Mountain") {
+        $('.time-zone-mountain').trigger("click");
+      } else if (zone === "Central") {
+        $('.time-zone-central').trigger("click");
+      } else if (zone === "Eastern") {
+        $('.time-zone-eastern').trigger("click");
+      }
+    }
 
 });
