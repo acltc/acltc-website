@@ -26,21 +26,11 @@ class ApplicationsController < ApplicationController
     cohort_dates = cohort_start_dates
     @dates_by_city = []
 
-    cohort_dates.each do |cohort_date|
-      if cohort_date[:prework] && Time.zone.now <= cohort_date[:date] + 1.month
-        @dates_by_city << ["CHI #{cohort_date[:date].strftime('%m/%d/%y')}"]
-        @dates_by_city << ["NYC #{cohort_date[:date].strftime('%m/%d/%y')}"]
-        @dates_by_city << ["SF #{cohort_date[:date].strftime('%m/%d/%y')}"]
+    cohort_start_dates.each do |cohort_date|
+      if cohort_date[:prework] && Time.zone.now <= cohort_date[:live] + 1.month
+        @dates_by_city << ["#{cohort_date[:location]} #{cohort_date[:live].strftime('%m/%d/%y')}"]
       end
     end
-
-    online_cohort_start_dates.each do |cohort_date|
-      if cohort_date[:prework] && Time.zone.now <= cohort_date[:date] + 1.month
-        @dates_by_city << ["ONL #{cohort_date[:date].strftime('%m/%d/%y')}"]
-      end
-    end
-
-    @dates_by_city.sort!
   end
 
   def edit
