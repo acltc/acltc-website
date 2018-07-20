@@ -131,8 +131,10 @@ class PagesController < ApplicationController
 
   def repl
     @repl_slug = params[:exercise] || 'GullibleFormalLoops'
-    puts "ASDFFDAF"
-    p @repl_slug
+    render layout: 'main'
+  end
+
+  def resources
     render layout: 'main'
   end
 
