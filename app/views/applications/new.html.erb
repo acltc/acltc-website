@@ -73,16 +73,20 @@
                 <label class="required label-radio form-label">Which program are you applying for?</label>
                 <div id="location" class="radio" style="margin-left: 2em">
                   <div>
-                    <%= f.radio_button :location, "Online Day" %>
-                    <%= f.label :location, "Online Live Daytime", :value => "Online Day" %>
-                  </div>
-                  <div>
                     <%= f.radio_button :location, "Online Night" %>
                     <%= f.label :location, "Online Live Nights-and-Weekends", :value => "Online Night" %>
                   </div>
                   <div>
-                    <%= f.radio_button :location, "Chicago" %>
+                    <%= f.radio_button :location, "Online Day" %>
+                    <%= f.label :location, "Online Live Daytime", :value => "Online Day" %>
+                  </div>
+                  <div>
+                    <%= f.radio_button :location, "Chicago Night" %>
                     <%= f.label :location, "Chicago Nights-and-Weekends", :value => "Chicago" %>
+                  </div>
+                  <div>
+                    <%= f.radio_button :location, "Chicago Dat" %>
+                    <%= f.label :location, "Chicago Daytime", :value => "Chicago" %>
                   </div>
                 </div>
               </div>
