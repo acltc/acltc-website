@@ -170,7 +170,7 @@ class PagesController < ApplicationController
 
     def upcoming_chicago_cohorts(cohorts, num_cohorts)
       valid_cohorts(cohorts)
-        .select { |cohort| cohort[:location] == "Chicago" }
+        .select { |cohort| cohort[:location].starts_with?("Chicago") }
         .first(num_cohorts)
     end
 
