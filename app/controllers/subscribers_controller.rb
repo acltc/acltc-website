@@ -91,7 +91,7 @@ class SubscribersController < ApplicationController
     client.create_or_update_subscriber(@subscriber.email, {custom_fields: {first_name: @subscriber.first_name, cell_phone: @subscriber.phone, mousetrap: @subscriber.mousetrap, city: @subscriber.city}})
     client.apply_tag(@subscriber.email, @subscriber.mousetrap)
     client.subscribe(@subscriber.email, 34197704)
-    # AcltcMailer.subscriber_mousetrap_email(@subscriber).deliver_now
+    AcltcMailer.subscriber_mousetrap_email(@subscriber).deliver_now
   end
 
   def create_hubspot_contact(mousetrap_type)
