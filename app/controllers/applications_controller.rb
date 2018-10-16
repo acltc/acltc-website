@@ -53,8 +53,8 @@ class ApplicationsController < ApplicationController
     @application = Application.new(application_params)
     if @application.save
       create_new_lead
-      AcltcMailer.application_email(@application).deliver_now
-      AcltcMailer.application_email_reply(@application).deliver_now
+      # AcltcMailer.application_email(@application).deliver_now
+      # AcltcMailer.application_email_reply(@application).deliver_now
       redirect_to "/pages/thank_you"
     else
       render 'new', layout: 'main'
