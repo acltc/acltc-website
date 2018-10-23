@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get '/online-coding-bootcamp' => 'pages#online'
   get '/in-person', to: redirect('/chicago-coding-bootcamp')
   get '/online', to: redirect('/online-coding-bootcamp')
+  get '/financing' => 'pages#financing'
   get '/ruby' => 'pages#repl'
   
   devise_for :admins, :controllers => { registrations: 'registrations' }

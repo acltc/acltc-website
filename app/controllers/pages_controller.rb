@@ -138,6 +138,10 @@ class PagesController < ApplicationController
     render layout: 'main'
   end
 
+  def financing
+    render layout: 'main'
+  end
+
   private
     def tour_params
       params.require(:tour).permit(
