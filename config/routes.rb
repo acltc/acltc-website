@@ -56,6 +56,7 @@ Rails.application.routes.draw do
   resources :blog_posts
   resources :blog_categories
   resources :applications
+  resources :scholarships, only: [:new, :create]
   resources :lakewood_applications
   resources :statuses, only: [:edit, :update]
   resources :faqs

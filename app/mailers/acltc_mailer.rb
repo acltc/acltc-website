@@ -33,6 +33,11 @@ class AcltcMailer < ApplicationMailer
     mail(from: "admissions@actualize.co", to: @application.email, subject: 'Your Application was Received')
   end
 
+  def scholarship_email(scholarship)
+    @scholarship = scholarship
+    mail(from: "admissions@actualize.co", to: 'admissions@anyonecanlearntocode.com', subject: 'Scholarship Application Submitted', reply_to: @scholarship.email)
+  end
+
   def subscriber_mousetrap_email(subscriber)
     @subscriber = subscriber
     mail(from: @subscriber.email, to: ["ben@actualize.co", "jay@actualize.co", "rena@actualize.co"], subject: 'Mousetrap Activated')

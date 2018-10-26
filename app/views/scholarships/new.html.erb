@@ -1,0 +1,81 @@
+<% content_for :head do %>
+  <title>Apply for a scholarship at Actualize</title>
+  <meta name="description" content='Scholarship Application to Actualize.'>
+<% end %>
+
+<section class="page-title page-title-3 bg-dark">
+    <div class="background-image-holder  darken-image">
+        <img alt="Background Image" class="background-image" src="/img/graduates.jpg" />
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h3 class="uppercase mb0">Actualize Scholarship Application</h3>
+            </div>
+        </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+    <ol class="breadcrumb breadcrumb-2">
+        <li>
+            <span>
+              Please complete your scholarship application to Actualize by <br>completing the fields below. All fields are required.
+            </span>
+        </li>
+    </ol>
+</section>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+
+            <%= form_for @scholarship, html: {class: "form-validate", data: {success: "Thanks for your submission.", error: "Please fill all fields correctly."}} do |f| %>
+              <% if @scholarship.errors.any? %>
+                <div class="alert alert-dismissible alert-warning center-warning">
+                  <button type="button" class="close" data-dismiss="alert">×</button>
+                  <h4>
+                    Oops! You forgot to fill out <%= pluralize(@scholarship.errors.count, "field") %>:
+                  </h4>
+                  <ul class="lead" data-bullet="ti-arrow-right">
+                    <% @scholarship.errors.full_messages.each do |msg| %>
+                      <li><%= msg %></li>
+                    <% end %>
+                  </ul>
+                </div>
+              <% end %>
+              <div class="input-with-label text-left">
+                <%= f.label :full_name, "Full Name:" %>
+                <%= f.text_area :full_name, class: "validate-required" %>
+              </div>
+              <div class="input-with-label text-left">
+                <%= f.label :email, "Email Address:" %>
+                <%= f.text_area :email, class: "validate-required" %>
+              </div>
+              <div class="input-with-label text-left">
+                <%= f.label :dreams_and_goals, "What are your dreams and goals?" %>
+                <%= f.text_area :dreams_and_goals, class: "validate-required tall-text-area" %>
+              </div>
+              <div class="input-with-label text-left">
+                <%= f.label :change_your_life, "How will achieving these goals change your life for you and the people around you?" %>
+                <%= f.text_area :change_your_life, class: "validate-required tall-text-area" %>
+              </div>
+              <div class="input-with-label text-left">
+                <%= f.label :perfect_candidate, "Why are you the perfect candidate for Actualize?", class: "required label-leading form-label" %>
+                <%= f.text_area :perfect_candidate, class: "validate-required tall-text-area" %>
+              </div>
+
+              <br>
+              <br>
+              <div class="form-group">
+                <%= f.submit "Submit Application", class: "button button-3d nomargin nopadding primary-color" %>
+              </div>
+            <% end %>
+
+            </div>
+        </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>
+

@@ -32,6 +32,10 @@ input[type="submit"].primary-color {
   margin-bottom: 30px;
 }
 
+.tall-text-area {
+  height: 300px;
+}
+
 input[type="text"].sp-hide-am {
   /* spam honeypot! */
   background: transparent;
