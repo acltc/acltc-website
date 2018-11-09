@@ -4,13 +4,17 @@
 <% end %>
 
 <section class="page-title page-title-3 bg-dark">
-    <div class="background-image-holder  darken-image">
+    <div class="background-image-holder very-darken-image">
         <img alt="Background Image" class="background-image" src="/img/rooftop.jpg" />
     </div>
     <div class="container">
         <div class="row">
             <div class="col-sm-12 text-center">
+              <% if @referral == "wwcode" %>
+                <h3 class="uppercase mb0">Actualize <> Women Who Code</h3>
+              <% else %>
                 <h3 class="uppercase mb0">Apply To Actualize</h3>
+              <% end %>
             </div>
         </div>
         <!--end of row-->
@@ -20,7 +24,7 @@
         <li>
           <% if @referral == "wwcode" %>
             <span>
-              Actualize has partnered with Women Who Code to offer three 50%-off <br>scholarships for our upcoming Online Live Cohort!
+              Actualize has partnered with Women Who Code to offer<br>scholarships for its members! Begin your application here.
             </span>
           <% else %>
             <span style="font-size: 18px">

@@ -18,9 +18,16 @@
     <!--end of container-->
     <ol class="breadcrumb breadcrumb-2">
         <li>
+          <% if params[:referral] == "wwcode" %>
+            <span>
+              Welcome, Women Who Code members!
+               <br> Apply to Actualize by completing the fields below.
+            </span>
+          <% else %>
             <span>
               Please complete your application to Actualize by <br>completing the fields below. All fields are required.
             </span>
+          <% end %>
         </li>
     </ol>
 </section>
