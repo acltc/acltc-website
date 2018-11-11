@@ -51,6 +51,7 @@ input[type="text"].sp-hide-am {
   background: transparent;
   border: none;
   height: 2px;
+  width: 100%;
 }
 
 @media all and (max-width: 990px) {
