@@ -30,12 +30,12 @@ class SubscribersController < ApplicationController
   end
 
   def create_from_curriculum 
-    create_new_lead if params[:phone].blank? # phone is a spam honeypot
+    create_new_lead unless params[:contact_me_by_fax_only]# contact_me_by_fax_only is a spam honeypot
     send_file "#{Rails.root}/public/pdfs/Actualize-2018-Curriculum.pdf"
   end
 
   def create_from_career_pdf
-    create_new_lead if params[:phone].blank? # phone is a spam honeypot
+    create_new_lead unless params[:contact_me_by_fax_only]# contact_me_by_fax_only is a spam honeypot
     send_file "#{Rails.root}/public/pdfs/Actualize-Career-In-Coding.pdf"
   end
 
@@ -47,7 +47,7 @@ class SubscribersController < ApplicationController
   end
 
   def create_from_webinar
-    create_new_lead
+    create_new_lead unless params[:contact_me_by_fax_only]# contact_me_by_fax_only is a spam honeypot
     redirect_to "/pages/webinar_thank_you"
   end
 
