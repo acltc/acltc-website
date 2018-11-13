@@ -29,6 +29,7 @@
             </div>
             <div class="col-sm-6">
                 <%= form_for @contact do |f|  %>
+                    <input type="checkbox" name="contact_me_by_fax_only" value="1" style="display:none !important" tabindex="-1" autocomplete="off">
                     <input class="required" type="text" name="contact[first_name]" id="contact_first_name" placeholder="First Name" />
                     <input class="required" type="text" name="contact[last_name]" id="contact_last_name" placeholder="Last Name" />
                     <input class="required" type="text" name="contact[email]" id="contact_email" placeholder="Email Address" />

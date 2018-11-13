@@ -12,7 +12,7 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(contact_params)
-    if @contact.save
+    if !params[:contact_me_by_fax_only] && @contact.save # checking off the fax checkbox indicates spam
       AcltcMailer.contact_us_email(@contact).deliver_now
       redirect_to "/pages/contacts_thank_you"
     else
