@@ -10,18 +10,18 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require theme/bootstrap
- *= require theme/style
- *= require theme/dark
- *= require theme/font-icons
- *= require theme/animate
- *= require theme/magnific-popup
- *= require theme/responsive
- *= require chosen
- *= require prism
+ *= require legacy/theme/bootstrap
+ *= require legacy/theme/style
+ *= require legacy/theme/dark
+ *= require legacy/theme/font-icons
+ *= require legacy/theme/animate
+ *= require legacy/theme/magnific-popup
+ *= require legacy/theme/responsive
+ *= require legacy/chosen
+ *= require legacy/prism
  *= require_self
  *= require bootstrap-datepicker
- *= require_tree .
+ *= require_tree ./legacy
  */
 
  @import 'bootstrap-sprockets';

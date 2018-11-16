@@ -10,21 +10,21 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require theme/jquery
-//= require theme/plugins
-//= require theme/jquery.gmap
+//= require legacy/theme/jquery
+//= require legacy/theme/plugins
+//= require legacy/theme/jquery.gmap
 //= require jquery_ujs
 //= require vue
 //= require vue-resource
-//= require bootstrap
+//= require legacy/bootstrap
 //= require bootstrap-datepicker
-//= require parallax
-//= require prism
+//= require legacy/parallax
+//= require legacy/prism
 //= require moment
-//= require js.cookie
+//= require legacy/js.cookie
 //= require bootstrap-datetimepicker
-//= require chosen.jquery.min
-//= require chosen.proto.min
-//= require jquery.mask.min
+//= require legacy/chosen.jquery.min
+//= require legacy/chosen.proto.min
+//= require legacy/jquery.mask.min
 //= require tinymce
-//= require_tree .
+//= require_tree ./legacy
