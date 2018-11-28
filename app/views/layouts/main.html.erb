@@ -25,16 +25,20 @@
         <link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
         <script src="/js/jquery.min.js"></script>
 
-        <!-- For JSON-LD Schema -->
-        <script type='application/ld+json'>
-        {
-            "@context": "https://www.schema.org",
-            "@type": "School",
-            "name": "Actualize",
-            "url": "anyonecanlearntocode.com",
-            "description": "A top coding bootcamp in the US that mentors you from start to finish in transforming yourself into a software developer."
-        }
-        </script>
+        <% if content_for?(:ld_json) %>
+            <%= yield(:ld_json) %>
+        <% else %>
+            <!-- For JSON-LD Schema -->
+            <script type='application/ld+json'>
+            {
+                "@context": "https://www.schema.org",
+                "@type": "School",
+                "name": "Actualize Coding Bootcamp",
+                "url": "http://anyonecanlearntocode.com",
+                "description": "A top coding bootcamp in the US that mentors you from start to finish in transforming yourself into a software developer."
+            }
+            </script>
+        <% end %>
     </head>
     <body class="scroll-assist">
         <div class="nav-container">

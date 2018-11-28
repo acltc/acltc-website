@@ -3,6 +3,19 @@
   <meta name="description" content="Acutalize Online Live is the world's only real-time, online coding bootcamp. Our part-time course is conducted over seamless video conferencing, offering the feel of an in-person bootcamp, while taken from your own home. We are featured in both Course Report and Switchup as one of the world's best online coding bootcamps.">
 <% end %>
 
+<% content_for :ld_json do %>
+    <!-- For JSON-LD Schema -->
+    <script type='application/ld+json'>
+    {
+        "@context": "https://www.schema.org",
+        "@type": "School",
+        "name": "Actualize Online Coding Bootcamp",
+        "url": "http://anyonecanlearntocode.com",
+        "description": "A top online coding bootcamp that mentors you from start to finish in transforming yourself into a software developer."
+    }
+    </script>
+<% end %>
+
 
 <!-- Page #1 -->
 <section class="image-bg overlay fullscreen cover parallax">
@@ -19,7 +32,7 @@
     <div class="container v-align-transform">
         <div class="row">
             <div class="col-sm-4 col-sm-offset-4 col-xs-6 col-xs-offset-3">
-                <img alt="Actualize Coding Bootcamp" class="mb48 mb-xs-16 fade-1-4" src="img/actualize-logo.png" />
+                <img alt="Actualize Online Coding Bootcamp" class="mb48 mb-xs-16 fade-1-4" src="img/actualize-logo.png" />
             </div>
         </div>
         <div class="row">
@@ -73,12 +86,12 @@
             <div class="col-sm-4">
                 <a href="#section-live-training"><h4 class="uppercase mb0 mb-xs-24">Live Training</h4></a>
                 <h6 class="uppercase mb32">12 weeks of in-class instruction</h6>
-                <p>The Live Training is the main course, led by your Lead Instructor. Every concept is taught and immediately followed by exercises that allow you to truly grasp what you’ve just learned. You'll also work on an individual Capstone Project, which is demonstrated at your cohort's graduate Showcase. Check out some examples of our graduates' Capstone projects!</p>
+                <p>The Live Training is the main part of the online coding bootcamp, led by your Lead Instructor. Each concept is taught live and then immediately followed by exercises that allow you to truly grasp what you’ve just learned. You'll also work on an individual Capstone Project, which is demonstrated at your cohort's Graduate Showcase.</p>
             </div>
             <div class="col-sm-4">
                 <a href="#section-apprenticeship"><h4 class="uppercase mb0 mb-xs-24">Career Support</h4></a>
                 <h6 class="uppercase mb32">Post-bootcamp structured job support</h6>
-                <p>After graduation Actualize provides you the opportunity to work on your job hunt in a structured environment with expert career guidance and accountability. You'll engage in our proven Job Hacking system, which includes professional networking and personal branding, and working on real coding interview challenges.</p>
+                <p>After graduation, Actualize provides you the opportunity to work on your job hunt in a structured environment with expert career guidance and accountability. You'll engage in our proven Job Hacking system, which includes professional networking and personal branding, and working on real coding interview challenges.</p>
             </div>
         </div>
         <!--end of row-->
@@ -161,10 +174,10 @@
                     Live Training
                 </h2>
                 <p>
-                The Live Training is the main act, and in just 12 weeks your Lead Instructor will help you transform from a coding newbie to an entry-level software developer capable of teaching yourself any new technology.
+                The Live Training is the main act of the online coding bootcamp, and in just 12 weeks your Lead Instructor will help you transform from a coding newbie to an entry-level software developer capable of teaching yourself any new technology.
                 </p>
                 <p>
-                The online Live Training is completely different than other online offerings – this isn’t a set of exercises that students log into and complete on their own time. Our program is an “in-person online” experience and there are set class times (Monday through Thursday evenings and all day Sunday) where the Lead Instructor is teaching and providing exercises throughout. Nothing is pre-recorded – students are able to communicate with other students and ask questions during each live class session. Everyone can see the Lead Instructor and all their classmates at all times - even during the exercises.
+                The Online Live Training is completely different than other online coding bootcamps – this isn’t a set of exercises that students log into and complete on their own time. Our program is an “in-person online” experience and there are set class times (Monday through Thursday evenings and all day Sunday) where the Lead Instructor is teaching and providing exercises throughout. Nothing is pre-recorded – students are able to communicate with other students and ask questions during each live class session. Everyone can see the Lead Instructor and all their classmates at all times - even during the exercises.
                 </p>
                 <p>The student learning experience centers around video conferencing into each class session. Each student uses both their laptop as well as an external monitor attached to it. The student does their actual work on their laptop, and the video conferencing platform remains on the external monitor, where the students can see both their lead instructor and classmates.
                 </p>
@@ -184,7 +197,7 @@
 
 <section class="image-edge pt120 pb120 pt-xs-40 pb-xs-40">
     <div class="col-md-6 col-sm-4 p0">
-        <img alt="Online code school" class="mb-xs-24" src="<%= asset_path('online.png') %>" />
+        <img alt="Online coding bootcamp" class="mb-xs-24" src="<%= asset_path('online.png') %>" />
     </div>
     <div class="container">
         <div class="col-md-5 col-md-offset-1 col-sm-7 col-sm-offset-1 v-align-transform right">
@@ -207,7 +220,7 @@
 
 <section class="image-edge pt120 pb120 pt-xs-40 pb-xs-40">
     <div class="col-md-6 col-sm-4 p0 col-md-push-6 col-sm-push-8">
-        <img alt="Online coding instructor" class="cast-shadow mb-xs-24" src="img/brian_smile.png" />
+        <img alt="Online coding bootcamp instructor" class="cast-shadow mb-xs-24" src="img/brian_smile.png" />
     </div>
     <div class="container">
         <div class="col-md-5 col-md-pull-0 col-sm-7 col-sm-pull-4 v-align-transform">
@@ -222,7 +235,7 @@
 
 <section class="image-edge pt120 pb120 pt-xs-40 pb-xs-40">
     <div class="col-md-6 col-sm-4 p0">
-        <img alt="Online coding student" class="mb-xs-24" src="<%= asset_path('karol.jpg') %>" />
+        <img alt="Online coding bootcamp student" class="mb-xs-24" src="<%= asset_path('karol.jpg') %>" />
     </div>
     <div class="container">
         <div class="col-md-5 col-md-offset-1 col-sm-7 col-sm-offset-1 v-align-transform right">
@@ -246,7 +259,7 @@
     <div class="container">
         <div class="row mb40 mb-xs-0">
             <div class="col-sm-12 text-center">
-                <h4 class="uppercase">Daytime Course</h4>
+                <h4 class="uppercase">Daytime Online Coding Bootcamp</h4>
                 <p>The 12 weeks of live training for Online Live Daytime takes place on <strong>Monday through Friday</strong> for 5 hours each day. The course consists of students throughout North America, so the hours of the course depend on your time zone.</p>
             </div>
         </div>
@@ -338,7 +351,7 @@
     <div class="container">
         <div class="row mb40 mb-xs-0">
             <div class="col-sm-12 text-center">
-                <h4 class="uppercase">Nights-and-Weekends Course</h4>
+                <h4 class="uppercase">Nights-and-Weekends Online Coding Bootcamp</h4>
                 <p>The 12 weeks of live training for Online Live Nights-and-Weekends takes place <strong>all-day Sunday</strong> and <strong>Monday through Thursday evenings</strong>. The course consists of students throughout North America, so the hours of the course depend on your time zone.</p>
             </div>
         </div>
@@ -433,7 +446,7 @@
 <!-- Page #6 -->
 <section id="section-apprenticeship" class="cover image-bg parallax overlay fullscreen shaded">
     <div class="background-image-holder">
-        <img alt="Coding apprenticeship" class="background-image" src="img/dani_coaching.png" />
+        <img alt="Online coding bootcmap" class="background-image" src="img/dani_coaching.png" />
     </div>
     <div class="container v-align-transform">
         <div class="container">
