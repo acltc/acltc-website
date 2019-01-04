@@ -51,6 +51,11 @@ class SubscribersController < ApplicationController
     redirect_to "/pages/webinar_thank_you"
   end
 
+  def create_from_tlase
+    create_new_lead unless params[:contact_me_by_fax_only]# contact_me_by_fax_only is a spam honeypot
+    redirect_to "/pages/tlase_thank_you"
+  end
+
   def create_from_footer
     create_new_lead
     respond_to do |format|

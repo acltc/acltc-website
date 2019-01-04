@@ -30,6 +30,7 @@ Rails.application.routes.draw do
 
   get '/pages/thank_you'
   get '/pages/webinar_thank_you'
+  get '/pages/tlase_thank_you'
   get '/pages/contacts_thank_you', :as => :contacts_thank_you
   get "/tours/thank_you" => "tours#thank_you", :as => :tours_thank_you
   get "/pages/tours/thank_you" => "pages#tour_thank_you", :as => :pages_tours_thank_you
@@ -50,6 +51,7 @@ Rails.application.routes.draw do
   post 'subscribers_tutorial' => 'subscribers#create_from_tutorial'
   post 'subscribers_footer' => 'subscribers#create_from_footer'
   post 'subscribers_webinar' => 'subscribers#create_from_webinar'
+  post 'subscribers_tlase' => 'subscribers#create_from_tlase'
   post 'subscribers_career_pdf' => 'subscribers#create_from_career_pdf'
   post 'subscribers_tour' => 'subscribers#create_from_tour'
   post 'subscribers' => 'subscribers#create_from_tour'
