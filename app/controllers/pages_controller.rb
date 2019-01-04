@@ -113,6 +113,10 @@ class PagesController < ApplicationController
     render layout: 'main'
   end
 
+  def tlase_thank_you
+    render layout: 'main'
+  end
+
   def codecademy
     render layout: 'main'
   end
