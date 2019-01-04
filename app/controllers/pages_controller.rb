@@ -142,6 +142,11 @@ class PagesController < ApplicationController
     render layout: 'main'
   end
 
+  def tlase
+    track_web_traffic_source
+    render layout: 'main'
+  end
+
   private
     def tour_params
       params.require(:tour).permit(

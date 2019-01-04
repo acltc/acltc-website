@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   get '/online', to: redirect('/online-coding-bootcamp')
   get '/financing' => 'pages#financing'
   get '/ruby' => 'pages#repl'
+
+  get '/newsletter/think-like-a-software-engineer' => 'pages#tlase'
   
   devise_for :admins, :controllers => { registrations: 'registrations' }
   get 'admins/dashboard' => 'admins#dashboard'
