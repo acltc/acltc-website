@@ -672,20 +672,22 @@
 
 <section class="cover fullscreen image-bg overlay">
     <div class="background-image-holder darken-image">
-        <img alt="Learn to code webinars" class="background-image" src="img/cowardly_lion.png" />
+        <img alt="Learn to code webinars" class="background-image" src="img/tlase.jpg" />
     </div>
     <div class="container v-align-transform">
         <div class="row">
             <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
                 <div class="feature bordered text-center">
-                    <h3 class="uppercase">Live coding webinars</h3>
+                    <h3 class="uppercase">Think Like a Software Engineer</h3>
                     <p>
-                        Interested in free live online coding classes? Join the thousands who are signed up for our free live webinar series!
+                        Learning to code is much more than learning new concepts and syntax. It's a whole new <em>mindset</em>. Get a weekly video straight to your inbox with practical advice and strategies on how to think like a software engineer.
                     </p>
-                    <form action="/subscribers_webinar" method="post" class="halves form-validate" data-remote="true" data-success="Thanks! We'll notify you about our upcoming webinars." data-error="Please submit a correct email address.">
+                    
+                    <form action="/subscribers_tlase" method="post" class="halves form-validate" data-error="Please submit a correct email address.">
+                    <input type="checkbox" name="contact_me_by_fax_only" value="1" style="display:none !important" tabindex="-1" autocomplete="off">
                     <input type="text" name="email" class="mb16 validate-required validate-email signup-email-field" placeholder="Email Address" />
-                    <input type="hidden" name="mousetrap" value="Webinar"/>
-                    <button class="btn btn-lg btn-blue mb16" type="submit" class="mb0">Notify Me</button>  
+                    <input type="hidden" name="mousetrap" value="TLASE"/>
+                    <button class="btn btn-lg btn-blue mb16" type="submit" class="mb0">Send me free videos</button>  
                     <span>*We won't share your email with third parties.</span>
 
                     </form>
