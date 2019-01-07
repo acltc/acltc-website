@@ -52,6 +52,7 @@ Rails.application.routes.draw do
   post 'subscribers_footer' => 'subscribers#create_from_footer'
   post 'subscribers_webinar' => 'subscribers#create_from_webinar'
   post 'subscribers_tlase' => 'subscribers#create_from_tlase'
+  post 'subscribers_blog' => 'subscribers#create_from_blog'
   post 'subscribers_career_pdf' => 'subscribers#create_from_career_pdf'
   post 'subscribers_tour' => 'subscribers#create_from_tour'
   post 'subscribers' => 'subscribers#create_from_tour'
