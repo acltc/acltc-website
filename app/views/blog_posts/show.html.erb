@@ -24,8 +24,11 @@
         <div class="feed-item mb96 mb-xs-48">
             <div class="row mb16 mb-xs-0">
                 <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
-                    <h6 class="uppercase mb16 mb-xs-8"><%= @blog_post.created_at.strftime("%B %e, %Y") %></h6>
+                    <% unless @blog_post.classic %>
+                        <h6 class="uppercase mb16 mb-xs-8"><%= @blog_post.created_at.strftime("%B %e, %Y") %></h6>
+                    <% end %>
                     <h1><%= @blog_post.title %></h1>
+                    <h6 class="uppercase mb16 mb-xs-8">By Jay Wengrow, CEO of Actualize</h6>
                 </div>
             </div>
             <!--end of row-->
