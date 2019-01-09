@@ -138,6 +138,11 @@ class PagesController < ApplicationController
     render layout: 'main'
   end
 
+  def javascript_repl
+    @repl_slug = params[:exercise] || 'JavaScript'
+    render layout: 'main'
+  end
+
   def resources
     render layout: 'main'
   end

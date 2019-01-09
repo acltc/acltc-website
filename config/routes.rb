@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get '/online', to: redirect('/online-coding-bootcamp')
   get '/financing' => 'pages#financing'
   get '/ruby' => 'pages#repl'
+  get '/javascript' => 'pages#javascript_repl'
 
   get '/newsletter/think-like-a-software-engineer' => 'pages#tlase'
   
