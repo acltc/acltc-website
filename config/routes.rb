@@ -82,6 +82,8 @@ Rails.application.routes.draw do
 
   get "/options/" => "interviews#interview_options"
 
+  get "/videos/think-like-a-software-engineer" => 'videos#tlase_show'
+
   get "/tutorial/lessons" => "lessons#index"
   get "/tutorial/lessons/:title" => "lessons#show"
 
