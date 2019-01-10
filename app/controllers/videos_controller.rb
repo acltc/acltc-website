@@ -16,8 +16,9 @@ class VideosController < ApplicationController
 	end
 
 	def sixty_day_show
-		@day_number = SIXTY_DAYS[params[:url]] || 1
-		render "/videos/sixty_days/#{@day_number}", layout: 'main'
+		@video_url = params[:url] || 'goGY40UBKg0'
+		@day_number = SIXTY_DAYS[@video_url] || 1
+		render "/videos/sixty_days/show", layout: 'main'
 	end
 
 end
