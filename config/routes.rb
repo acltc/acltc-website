@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get '/javascript' => 'pages#javascript_repl'
 
   get '/newsletter/think-like-a-software-engineer' => 'pages#tlase'
+  get '/newsletter/learn-to-code-in-60-days' => 'pages#sixty_day'
   
   devise_for :admins, :controllers => { registrations: 'registrations' }
   get 'admins/dashboard' => 'admins#dashboard'
@@ -53,6 +54,7 @@ Rails.application.routes.draw do
   post 'subscribers_footer' => 'subscribers#create_from_footer'
   post 'subscribers_webinar' => 'subscribers#create_from_webinar'
   post 'subscribers_tlase' => 'subscribers#create_from_tlase'
+  post 'subscribers_sixty_day' => 'subscribers#create_from_sixty_day'
   post 'subscribers_blog' => 'subscribers#create_from_blog'
   post 'subscribers_career_pdf' => 'subscribers#create_from_career_pdf'
   post 'subscribers_tour' => 'subscribers#create_from_tour'

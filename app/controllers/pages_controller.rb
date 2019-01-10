@@ -156,6 +156,11 @@ class PagesController < ApplicationController
     render layout: 'main'
   end
 
+  def sixty_day
+    track_web_traffic_source
+    render layout: 'main'
+  end
+
   private
     def tour_params
       params.require(:tour).permit(
