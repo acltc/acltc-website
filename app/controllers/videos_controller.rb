@@ -1,7 +1,7 @@
 class VideosController < ApplicationController
 
 	SIXTY_DAYS = {
-		'goGY40UBKg0' => 1
+		'qc8ibzuGI6M' => 1
 	}
 
 	def tlase_show
@@ -16,7 +16,7 @@ class VideosController < ApplicationController
 	end
 
 	def sixty_day_show
-		@video_url = params[:url] || 'goGY40UBKg0'
+		@video_url = params[:url] || 'qc8ibzuGI6M'
 		@day_number = SIXTY_DAYS[@video_url] || 1
 		render "/videos/sixty_days/show", layout: 'main'
 	end
