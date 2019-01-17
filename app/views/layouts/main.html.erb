@@ -40,6 +40,13 @@
             }
             </script>
         <% end %>
+
+        <% if content_for?(:social_media) %>
+            <%= yield(:social_media) %>
+        <% else %>
+            
+        <% end %>
+
     </head>
     <body class="scroll-assist">
         <div class="nav-container">

@@ -3,6 +3,27 @@
   <meta name="description" content="<%= @blog_post.truncate_blog_post %>">
 <% end %>
 
+<% content_for :social_media do %>
+    <!-- Facebook -->
+    <meta property="og:title" content="<%= @blog_post.title %>" />
+    <meta property="og:image" content="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F47413079%2F138611603469%2F1%2Foriginal.jpg?w=1000&amp;auto=compress&amp;rect=0%2C170%2C2048%2C1024&amp;s=41f5fc3cbe87a6b2a082cf4a3443017c"/>
+    <!-- <meta property="og:description" content="The Actualize Capstone Presentation is a live streaming event where the graduates from our Online Live program present their individual Capstone projects - web apps created from scratch using our full stack of frameworks and languages.
+    We welcome everyone to attend, whether you are friends, family, alumni, or curious to learn more about Actualize! Register for free today and we’ll see you there!
+    To attend the event, simply visit this url when the event begins! https://gaming.youtube.com/channel/UCkBAE8A9omAv7NzE04u6dTQ/live
+    Email us at hello@actualize.co if you have questions." /> -->
+    <!-- End Facebook -->
+
+    <!-- Twitter -->
+    <meta name="twitter:title" content="<%= @blog_post.title %>" />
+    <meta name="twitter:image" content="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F47413079%2F138611603469%2F1%2Foriginal.jpg?w=1000&amp;auto=compress&amp;rect=0%2C170%2C2048%2C1024&amp;s=41f5fc3cbe87a6b2a082cf4a3443017c" /> 
+    <!-- <meta name="twitter:description" content="The Actualize Capstone Presentation is a live streaming event where the graduates from our Online Live program present their individual Capstone projects - web apps created from scratch using our full stack of frameworks and languages.
+    We welcome everyone to attend, whether you are friends, family, alumni, or curious to learn more about Actualize! Register for free today and we’ll see you there!
+    To attend the event, simply visit this url when the event begins! https://gaming.youtube.com/channel/UCkBAE8A9omAv7NzE04u6dTQ/live
+    Email us at hello@actualize.co if you have questions." />-->
+    
+    <!-- End Twitter -->
+<% end %>
+
 <section class="page-title page-title-3 image-bg overlay">
     <div class="background-image-holder">
         <img alt="Background Image" class="background-image" src="/img/rooftop.jpg" />
