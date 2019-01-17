@@ -3,6 +3,22 @@
   <meta name="description" content="Get our weekly video newsletter and learn how to think like a software engineer.">
 <% end %>
 
+<% content_for :social_media do %>
+    <!-- Facebook -->
+    <meta property="og:title" content="Think Like a Software Engineer Episode #<%= @episode_number %>" />
+    <meta property="og:image" content="http://i3.ytimg.com/vi/<%= @video_url %>/maxresdefault.jpg"/>
+   
+    <!-- End Facebook -->
+
+    <!-- Twitter -->
+    <meta name="twitter:title" content="Think Like a Software Engineer Episode #<%= @episode_number %>" />
+    <meta name="twitter:image" content="http://i3.ytimg.com/vi/<%= @video_url %>/maxresdefault.jpg" /> 
+    
+    <!-- End Twitter -->
+<% end %>
+
+
+
 <section class="page-title page-title-2 image-bg overlay">
     <div class="background-image-holder">
         <img alt="Background Image" class="background-image" src="/img/tlase.jpg"/>
