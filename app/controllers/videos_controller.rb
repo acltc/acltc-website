@@ -3,7 +3,8 @@ class VideosController < ApplicationController
 	SIXTY_DAYS = {
 		'qc8ibzuGI6M' => 1,
 		'TPfN0FAfUwo' => 2,
-		'FfQ8P7fVClI' => 3
+		'FfQ8P7fVClI' => 3,
+		'I-dhIfJ86Yc' => 4
 	}
 
 	def tlase_show
