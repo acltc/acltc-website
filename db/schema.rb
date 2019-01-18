@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190107210247) do
+ActiveRecord::Schema.define(version: 20190117230450) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -117,6 +117,7 @@ ActiveRecord::Schema.define(version: 20190107210247) do
     t.boolean  "published?"
     t.date     "posted_date"
     t.boolean  "classic",     default: false
+    t.text     "description"
   end
 
   create_table "capstones", force: :cascade do |t|
