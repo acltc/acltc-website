@@ -22,11 +22,15 @@ class SubscribersController < ApplicationController
   end
 
   def create_from_started_application
-    create_new_lead
-    Application.delay(run_at: 24.hours.from_now).remind(params[:first_name], params[:email], params[:phone])
-    url = "/applications/new?first_name=#{params[:first_name]}&email=#{params[:email]}&phone=#{params[:phone]}"
-    url += "&referral=#{params[:referral]}" if params[:referral]
-    redirect_to url
+    if params[:contact_me_by_fax_only] # spam honeypot
+      redirect_to "/"
+    else
+      create_new_lead
+      Application.delay(run_at: 24.hours.from_now).remind(params[:first_name], params[:email], params[:phone])
+      url = "/applications/new?first_name=#{params[:first_name]}&email=#{params[:email]}&phone=#{params[:phone]}"
+      url += "&referral=#{params[:referral]}" if params[:referral]
+      redirect_to url
+    end
   end
 
   def create_from_curriculum 
