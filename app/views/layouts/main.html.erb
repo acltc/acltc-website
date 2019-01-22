@@ -15,16 +15,28 @@
         <link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
         <%= javascript_include_tag 'application-main', defer: true %>
 
-        <!-- For JSON-LD Schema -->
-        <script type='application/ld+json'>
-        {
-            "@context": "https://www.schema.org",
-            "@type": "School",
-            "name": "Actualize",
-            "url": "anyonecanlearntocode.com",
-            "description": "A top coding bootcamp in the US that mentors you from start to finish in transforming yourself into a software developer."
-        }
-        </script>
+        <% if content_for?(:ld_json) %>
+            <%= yield(:ld_json) %>
+        <% else %>
+            <!-- For JSON-LD Schema -->
+            <script type='application/ld+json'>
+            {
+                "@context": "https://www.schema.org",
+                "@type": "School",
+                "name": "Actualize Coding Bootcamp",
+                "brand": "Actualize",
+                "url": "http://anyonecanlearntocode.com",
+                "description": "A top coding bootcamp in the US that mentors you from start to finish in transforming yourself into a software developer."
+            }
+            </script>
+        <% end %>
+
+        <% if content_for?(:social_media) %>
+            <%= yield(:social_media) %>
+        <% else %>
+            
+        <% end %>
+
     </head>
     <body class="scroll-assist">
         <div class="nav-container">
@@ -93,28 +105,13 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="/referrals/new">
-                                        Refer A Friend
-                                    </a>
-                                </li>
-                                <li>
                                     <a href="/tutorial/lessons">
                                         Learn To Code Tutorials
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="/corporate_training">
-                                        Corporate Training
-                                    </a>
-                                </li>
-                                <li>
                                     <a href="/coding-bootcamps/community-info">
                                         Local Tech Community Finder
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/codecademy">
-                                        Life After Codecademy
                                     </a>
                                 </li>
                                 <li>

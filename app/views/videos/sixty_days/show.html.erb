@@ -1,0 +1,60 @@
+<% content_for :head do %>
+  <title>Learn to Code: 60 Day Challenge | Actualize</title>
+  <meta name="description" content="Learn to code in 60 days with our free daily coding tutorial videos.">
+<% end %>
+
+<section class="page-title page-title-2 image-bg overlay">
+    <div class="background-image-holder">
+        <img alt="Background Image" class="background-image" src="/img/code.png"/>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h3 class="uppercase mb0">Learn to Code: 60 Day Challenge</h3>
+            </div>
+        </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>
+
+<section>
+    <div class="container">
+        <h4 class="mb16">Day #<%= @day_number %></h4>
+        <div class="row">
+            <div class="col-sm-8">
+                <p>Watch the video and then complete the exercises below. You can use the coding environment <a href="/ruby" target="_blank" class="primary-color">here</a>.</p>
+                
+                <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.youtube.com/embed/<%= @video_url %>' frameborder='0' allowfullscreen></iframe></div>
+                <p></p>
+            </div>
+            <div class="col-sm-4">
+                <div class="feature bordered text-center">
+                    <h3 class="uppercase">Get Expert Advice</h3>
+                    <p>
+                        Learning to code or looking into becoming a software developer? Get the latest articles written by Jay Wengrow containing tips, strategies, and insights emailed straight to your inbox.
+                    </p>
+                    
+                    <form action="/subscribers_blog" method="post" class=" form-validate" data-error="Please submit a correct email address.">
+                    <input type="checkbox" name="contact_me_by_fax_only" value="1" style="display:none !important" tabindex="-1" autocomplete="off">
+                    <input type="text" name="email" class="mb16 validate-required validate-email signup-email-field" placeholder="Email Address" />
+                    <input type="hidden" name="mousetrap" value="blog"/>
+                    <button class="btn btn-lg btn-blue mb16" type="submit" class="mb0">Send me expert advice</button>  
+
+                    </form>
+                    
+                </div>
+            </div>
+
+        </div>
+        <!--end of row-->
+
+        <div class="row">
+          <h3 class="uppercase">Exercises</h3>
+            <%= render partial: "/videos/sixty_days/exercises_#{@day_number}" %>
+        </div>
+    </div>
+    <!--end of container-->
+</section>
+
+

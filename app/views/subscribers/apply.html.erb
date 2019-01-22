@@ -58,6 +58,7 @@
                     <% if @referral %>
                       <%= hidden_field_tag :referral, nil, :value => @referral %>
                     <% end %>
+                    <input type="checkbox" name="contact_me_by_fax_only" value="1" style="display:none !important" tabindex="-1" autocomplete="off">
                   <div class="form-group">
                     <%= submit_tag "Get Started!", class: "button button-3d nomargin nopadding primary-color" %>
                   </div>

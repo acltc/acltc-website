@@ -113,6 +113,10 @@ class PagesController < ApplicationController
     render layout: 'main'
   end
 
+  def tlase_thank_you
+    render layout: 'main'
+  end
+
   def codecademy
     render layout: 'main'
   end
@@ -134,11 +138,26 @@ class PagesController < ApplicationController
     render layout: 'main'
   end
 
+  def javascript_repl
+    @repl_slug = params[:exercise] || 'JavaScript'
+    render layout: 'main'
+  end
+
   def resources
     render layout: 'main'
   end
 
   def financing
+    render layout: 'main'
+  end
+
+  def tlase
+    track_web_traffic_source
+    render layout: 'main'
+  end
+
+  def sixty_day
+    track_web_traffic_source
     render layout: 'main'
   end
 

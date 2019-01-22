@@ -1,0 +1,56 @@
+<% content_for :head do %>
+  <title>Take the challenge: Learn to code in 60 days | Actualize</title>
+  <meta name="description" content="Get our weekly video newsletter and learn how to think like a software engineer.">
+<% end %>
+
+<section class="page-title page-title-2 image-bg overlay">
+    <div class="background-image-holder">
+        <img alt="Background Image" class="background-image" src="<%= asset_path('tlase.jpg') %>"/>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h3 class="uppercase mb0">Learn to Code: Take the 60 Day Challenge</h3>
+            </div>
+        </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h4 class="mb16">Think Like A Software Engineer</h4>
+                <p class="lead mb24">
+                    Get a weekly video straight to your inbox with practical advice and strategies on how to think like a software engineer. Learn more in the video below:
+                </p>
+                <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/309748757' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+                <p></p>
+            </div>
+            <div class="col-sm-6">
+                <form action="/subscribers_tlase" method="post" data-error="Please submit a correct email address.">
+                  <h3>Sign up for our free video newsletter</h3>
+
+                    <div>
+                        <label for="first_name">First Name</label><br />
+                        <input type="text" id="first_name" name="first_name" value="" />
+                    </div>
+                    <div>
+                        <label for="email">Email Address</label><br />
+                        <input type="text" id="email" name="email" value="" />
+                    </div>
+                    <input type="hidden" name="mousetrap" value="60-day"/>
+                    <input type="checkbox" name="contact_me_by_fax_only" value="1" style="display:none !important" tabindex="-1" autocomplete="off">
+                  <div>
+                    <input type="submit" value="Sign Up" data-drip-attribute="sign-up-button" class="primary-color"/>
+                  </div>
+                </form>
+            </div>
+
+        </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>

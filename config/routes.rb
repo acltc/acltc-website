@@ -16,6 +16,10 @@ Rails.application.routes.draw do
   get '/online', to: redirect('/online-coding-bootcamp')
   get '/financing' => 'pages#financing'
   get '/ruby' => 'pages#repl'
+  get '/javascript' => 'pages#javascript_repl'
+
+  get '/newsletter/think-like-a-software-engineer' => 'pages#tlase'
+  get '/newsletter/learn-to-code-in-60-days' => 'pages#sixty_day'
   
   devise_for :admins, :controllers => { registrations: 'registrations' }
   get 'admins/dashboard' => 'admins#dashboard'
@@ -28,6 +32,7 @@ Rails.application.routes.draw do
 
   get '/pages/thank_you'
   get '/pages/webinar_thank_you'
+  get '/pages/tlase_thank_you'
   get '/pages/contacts_thank_you', :as => :contacts_thank_you
   get "/tours/thank_you" => "tours#thank_you", :as => :tours_thank_you
   get "/pages/tours/thank_you" => "pages#tour_thank_you", :as => :pages_tours_thank_you
@@ -48,6 +53,9 @@ Rails.application.routes.draw do
   post 'subscribers_tutorial' => 'subscribers#create_from_tutorial'
   post 'subscribers_footer' => 'subscribers#create_from_footer'
   post 'subscribers_webinar' => 'subscribers#create_from_webinar'
+  post 'subscribers_tlase' => 'subscribers#create_from_tlase'
+  post 'subscribers_sixty_day' => 'subscribers#create_from_sixty_day'
+  post 'subscribers_blog' => 'subscribers#create_from_blog'
   post 'subscribers_career_pdf' => 'subscribers#create_from_career_pdf'
   post 'subscribers_tour' => 'subscribers#create_from_tour'
   post 'subscribers' => 'subscribers#create_from_tour'
@@ -75,6 +83,9 @@ Rails.application.routes.draw do
   get "/careers" => "job_openings#index", as: :careers
 
   get "/options/" => "interviews#interview_options"
+
+  get "/videos/think-like-a-software-engineer" => 'videos#tlase_show'
+  get "/videos/learn-to-code-in-60-days" => 'videos#sixty_day_show'
 
   get "/tutorial/lessons" => "lessons#index"
   get "/tutorial/lessons/:title" => "lessons#show"

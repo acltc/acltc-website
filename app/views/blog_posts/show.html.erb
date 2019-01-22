@@ -1,6 +1,23 @@
 <% content_for :head do %>
   <title><%= @blog_post.title %> | Actualize</title>
-  <meta name="description" content="<%= @blog_post.truncate_blog_post %>">
+  <meta name="description" content="<%= @blog_post.description || @blog_post.truncate_blog_post %>">
+<% end %>
+
+<% content_for :social_media do %>
+    <!-- Facebook -->
+    <meta property="og:title" content="<%= @blog_post.title %>" />
+    <meta property="og:image" content="<%= @blog_post.image %>"/>
+    <meta property="og:description" content="<%= @blog_post.description %>" />
+    <!-- End Facebook -->
+
+    <!-- Twitter -->
+    <meta name="twitter:title" content="<%= @blog_post.title %>" />
+    <meta name="twitter:image" content="<%= @blog_post.image %>" /> 
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@Actualize">
+    <meta name="twitter:description" content="<%= @blog_post.description %>" />
+    
+    <!-- End Twitter -->
 <% end %>
 
 <section class="page-title page-title-3 image-bg overlay">
@@ -24,8 +41,11 @@
         <div class="feed-item mb96 mb-xs-48">
             <div class="row mb16 mb-xs-0">
                 <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
-                    <h6 class="uppercase mb16 mb-xs-8"><%= @blog_post.created_at.strftime("%B %e, %Y") %></h6>
+                    <% unless @blog_post.classic %>
+                        <h6 class="uppercase mb16 mb-xs-8"><%= @blog_post.created_at.strftime("%B %e, %Y") %></h6>
+                    <% end %>
                     <h1><%= @blog_post.title %></h1>
+                    <h6 class="uppercase mb16 mb-xs-8">By Jay Wengrow, CEO of Actualize</h6>
                 </div>
             </div>
             <!--end of row-->
@@ -38,12 +58,28 @@
                 </div>
             </div>
             <!--end of row-->
+
             <div class="row">
-                <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
-                    <a href="/apply" class="btn btn-lg btn-filled bg-primary-color">Begin Your Coding Journey</a>
-                    <hr>
+                <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
+                    <div class="feature bordered text-center">
+                        <h3 class="uppercase">Get Expert Advice</h3>
+                        <p>
+                            The Actualize Blog is where you can get expert advice and insights for learning to code from our CEO, Jay Wengrow.  Subscribe to the Actualize Blog and get notified each time we publish a new article.
+                        </p>
+                        
+                        <form action="/subscribers_blog" method="post" class="halves form-validate" data-error="Please submit a correct email address.">
+                        <input type="checkbox" name="contact_me_by_fax_only" value="1" style="display:none !important" tabindex="-1" autocomplete="off">
+                        <input type="text" name="email" class="mb16 validate-required validate-email signup-email-field" placeholder="Email Address" />
+                        <input type="hidden" name="mousetrap" value="blog"/>
+                        <button class="btn btn-lg btn-blue mb16" type="submit" class="mb0">Send me expert advice</button>  
+                        <span>*We won't share your email with third parties.</span>
+
+                        </form>
+                        
+                    </div>
                 </div>
             </div>
+                <!--end of row-->
         </div>
         <!--end of feed item-->
     </div>

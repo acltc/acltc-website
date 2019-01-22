@@ -37,5 +37,13 @@ class BlogPost < ActiveRecord::Base
   def truncate_blog_post
     content.gsub(/<img[^>]+\>/i, "").truncate(400).html_safe
   end
+
+  def image
+    if self.blog_pics.first
+      return self.blog_pics.first.blog_pic.url
+    else
+      return nil
+    end
+  end
   
 end
