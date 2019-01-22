@@ -186,8 +186,8 @@
     <div class="container">
         <div class="row mb64 mb-xs-32">
             <div class="col-md-12 text-center">
-                <img src="<%= asset_path('course_report.png') %>" height="200">
-                <img src="<%= asset_path('switchup.png') %>" height="200">
+                <img alt="course report logo" src="<%= asset_path('course_report.png') %>" height="200">
+                <img alt="switchup logo" src="<%= asset_path('switchup.png') %>" height="200">
                 <p class="lead">
                     We're proud to be a recipient of the Best Bootcamp Award by both Switchup.org and Course Report, leaders in coding bootcamp reviews and research.
                 </p>
@@ -210,7 +210,7 @@
                 See the Actualize difference for yourself.
             </p> -->
             <div class="embed-video-container embed-responsive embed-responsive-16by9 mb64">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/RfVOT9xAXH8?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <iframe title="Actualize overview" class="embed-responsive-item" src="https://www.youtube.com/embed/RfVOT9xAXH8?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
             <!--end of embed video container-->
         </div>
@@ -243,7 +243,7 @@
                 <p>By submitting your email, you will receive additional communication from us on learning to code as well as the coding bootcamp industry.</p>
                 <form action="/subscribers_curriculum" method="post" class="halves form-validate" data-success="Thanks for your registration, we will be in touch shortly." data-error="Please fill all fields correctly.">
                     <input type="checkbox" name="contact_me_by_fax_only" value="1" style="display:none !important" tabindex="-1" autocomplete="off">
-                    <input type="text" name="email" class="mb0 transparent validate-email validate-required signup-email-field" placeholder="Email Address" />
+                    <input type="text" name="email" class="mb0 transparent validate-email validate-required signup-email-field" placeholder="Email Address" aria-label="email" />
                     <input type="hidden" name="mousetrap" value="Curriculum"/>
                     <button class="btn btn-lg btn-filled" type="submit" class="mb0">Download Curriculum</button>
                 </form>
@@ -294,7 +294,7 @@
                 <p>By submitting your email, you will receive additional communication from us on learning to code as well as the coding bootcamp industry.</p>
                 <form action="/subscribers_career_pdf" method="post" class="halves form-validate" data-success="Thanks for your registration, we will be in touch shortly." data-error="Please fill all fields correctly.">
                     <input type="checkbox" name="contact_me_by_fax_only" value="1" style="display:none !important" tabindex="-1" autocomplete="off">
-                    <input type="text" name="email" class="mb0 transparent validate-email validate-required signup-email-field" placeholder="Email Address" />
+                    <input type="text" name="email" class="mb0 transparent validate-email validate-required signup-email-field" placeholder="Email Address" aria-label="email" />
                     <input type="hidden" name="mousetrap" value="Career Ebook"/>
                     <button class="btn btn-lg btn-filled" type="submit" class="mb0">Download Ebook</button>
                 </form>
@@ -321,47 +321,47 @@
             <div class="logo-carousel">
                 <ul class="slides">
                     <li>
-                        <a href="https://about.twitter.com/" target="_blank">
+                        <a href="https://about.twitter.com/" target="_blank" rel="noopener noreferrer">
                             <img alt="Twitter" src="<%= asset_path('logo9.png') %>" />
                         </a>
                     </li>
                     <li>
-                        <a href="https://aws.amazon.com/" target="_blank">
+                        <a href="https://aws.amazon.com/" target="_blank" rel="noopener noreferrer">
                             <img alt="Amazon" src="<%= asset_path('logo8.png') %>" />
                         </a>
                     </li>
                     <li>
-                        <a href="https://pivotal.io/labs" target="_blank">
+                        <a href="https://pivotal.io/labs" target="_blank" rel="noopener noreferrer">
                             <img alt="Pivotal Labs" src="<%= asset_path('logo2.png') %>" />
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.salesforce.com/" target="_blank">
+                        <a href="https://www.salesforce.com/" target="_blank" rel="noopener noreferrer">
                             <img alt="Salesforce" src="<%= asset_path('logo7.png') %>" />
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.bcbsil.com/" target="_blank">
+                        <a href="https://www.bcbsil.com/" target="_blank" rel="noopener noreferrer">
                             <img alt="Blue Cross Blue Shield" src="<%= asset_path('logo4.png') %>" />
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.braintreepayments.com/" target="_blank">
+                        <a href="https://www.braintreepayments.com/" target="_blank" rel="noopener noreferrer">
                             <img alt="Braintree" src="<%= asset_path('logo5.png') %>" />
                         </a>
                     </li>
                     <li>
-                        <a href="http://www.bosch-home.com/us/" target="_blank">
+                        <a href="http://www.bosch-home.com/us/" target="_blank" rel="noopener noreferrer">
                             <img alt="Bosch" src="<%= asset_path('logo6.png') %>" />
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.allstate.com/" target="_blank">
+                        <a href="https://www.allstate.com/" target="_blank" rel="noopener noreferrer">
                             <img alt="Allstate Insurance" src="<%= asset_path('logo3.png') %>" />
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.bankofamerica.com/" target="_blank">
+                        <a href="https://www.bankofamerica.com/" target="_blank" rel="noopener noreferrer">
                             <img alt="Bank of America" src="<%= asset_path('logo1.svg') %>" />
                         </a>
                     </li>
@@ -446,7 +446,7 @@
                     </p>
                     <form action="/subscribers_webinar" method="post" class="halves form-validate" data-remote="true" data-success="Thanks! We'll notify you about our upcoming webinars." data-error="Please submit a correct email address.">
                     <input type="checkbox" name="contact_me_by_fax_only" value="1" style="display:none !important" tabindex="-1" autocomplete="off">
-                    <input type="text" name="email" class="mb16 validate-required validate-email signup-email-field" placeholder="Email Address" />
+                    <input type="text" name="email" class="mb16 validate-required validate-email signup-email-field" placeholder="Email Address" aria-label="email" />
                     <input type="hidden" name="mousetrap" value="Webinar"/>
                     <button class="btn btn-lg btn-blue mb16" type="submit" class="mb0">Notify Me</button>
                     <span>*We won't share your email with third parties.</span>
