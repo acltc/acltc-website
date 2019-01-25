@@ -12,17 +12,17 @@
 
     <!-- Twitter -->
     <meta name="twitter:title" content="<%= @blog_post.title %>" />
-    <meta name="twitter:image" content="<%= @blog_post.image %>" /> 
+    <meta name="twitter:image" content="<%= @blog_post.image %>" />
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@Actualize">
     <meta name="twitter:description" content="<%= @blog_post.description %>" />
-    
+
     <!-- End Twitter -->
 <% end %>
 
 <section class="page-title page-title-3 image-bg overlay">
     <div class="background-image-holder">
-        <img alt="Background Image" class="background-image" src="/img/rooftop.jpg" />
+      <img alt="Background Image" class="background-image" src="<%= asset_path('rooftop.jpg') %>" />
     </div>
     <div class="container">
         <div class="row">
@@ -37,7 +37,7 @@
 
 <section>
     <div class="container">
-    
+
         <div class="feed-item mb96 mb-xs-48">
             <div class="row mb16 mb-xs-0">
                 <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
@@ -51,7 +51,6 @@
             <!--end of row-->
             <div class="row mb32 mb-xs-16">
                 <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
-                    <!-- <img alt="Article Image" class="mb32 mb-xs-16" src="img/blog-single.jpg" /> -->
                     <p class="lead">
                         <%= @blog_post.content.html_safe %>
                     </p>
@@ -66,16 +65,16 @@
                         <p>
                             The Actualize Blog is where you can get expert advice and insights for learning to code from our CEO, Jay Wengrow.  Subscribe to the Actualize Blog and get notified each time we publish a new article.
                         </p>
-                        
+
                         <form action="/subscribers_blog" method="post" class="halves form-validate" data-error="Please submit a correct email address.">
                         <input type="checkbox" name="contact_me_by_fax_only" value="1" style="display:none !important" tabindex="-1" autocomplete="off">
                         <input type="text" name="email" class="mb16 validate-required validate-email signup-email-field" placeholder="Email Address" />
                         <input type="hidden" name="mousetrap" value="blog"/>
-                        <button class="btn btn-lg btn-blue mb16" type="submit" class="mb0">Send me expert advice</button>  
+                        <button class="btn btn-lg btn-blue mb16" type="submit" class="mb0">Send me expert advice</button>
                         <span>*We won't share your email with third parties.</span>
 
                         </form>
-                        
+
                     </div>
                 </div>
             </div>

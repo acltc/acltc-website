@@ -5,7 +5,7 @@
 
 <section class="page-title page-title-3 image-bg overlay">
     <div class="background-image-holder">
-        <img alt="Background Image" class="background-image" src="/img/rooftop.jpg" />
+      <img alt="Background Image" class="background-image" src="<%= asset_path('rooftop.jpg') %>" />
     </div>
     <div class="container">
         <div class="row">
@@ -31,7 +31,6 @@
             <!--end of row-->
             <div class="row mb32 mb-xs-16">
                 <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
-                    <!-- <img alt="Article Image" class="mb32 mb-xs-16" src="img/blog-single.jpg" /> -->
                     <p class="lead">
                         <%= blog_post.truncate_blog_post %>
                     </p>
@@ -46,7 +45,7 @@
             </div>
         </div>
         <!--end of feed item-->
-    <% end %>    
+    <% end %>
     </div>
     <!--end of container-->
 </section>
