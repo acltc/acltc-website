@@ -11,5 +11,5 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.precompile += %w( search.js )
 Rails.application.config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
 Rails.application.config.assets.precompile += %w( application-main.css application-legacy.css home.css )
-Rails.application.config.assets.precompile += %w( application-main.js application-legacy.js theme/functions.js )
+Rails.application.config.assets.precompile += %w( application-main.js application-legacy.js legacy/theme/functions.js )
 Rails.application.config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
