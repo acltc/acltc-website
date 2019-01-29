@@ -214,6 +214,8 @@ GEM
       activesupport (>= 4.1.0)
     groupdate (2.5.2)
       activesupport (>= 3)
+    heroku-deflater (0.6.3)
+      rack (>= 1.4.5)
     httparty (0.14.0)
       multi_xml (>= 0.5.2)
     hubspot-ruby (0.2.1)
@@ -362,6 +364,7 @@ DEPENDENCIES
   friendly_id (~> 5.1.0)
   geocoder
   groupdate
+  heroku-deflater
   hubspot-ruby
   invisible_captcha
   jbuilder (~> 2.0)
