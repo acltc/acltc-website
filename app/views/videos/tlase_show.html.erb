@@ -8,16 +8,16 @@
     <meta property="og:title" content="Think Like a Software Engineer Episode #<%= @episode_number %>" />
     <meta property="og:image" content="http://i3.ytimg.com/vi/<%= @video_url %>/maxresdefault.jpg"/>
     <meta property="og:description" content="The 'Think Like a Software Engineer' video series is designed to help you develop the mindset needed to become a successful software developer." />
-   
+
     <!-- End Facebook -->
 
     <!-- Twitter -->
     <meta name="twitter:title" content="Think Like a Software Engineer Episode #<%= @episode_number %>" />
-    <meta name="twitter:image" content="http://i3.ytimg.com/vi/<%= @video_url %>/maxresdefault.jpg" /> 
+    <meta name="twitter:image" content="http://i3.ytimg.com/vi/<%= @video_url %>/maxresdefault.jpg" />
     <meta name="twitter:description" content="The 'Think Like a Software Engineer' video series is designed to help you develop the mindset needed to become a successful software developer." />
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@Actualize">
-    
+
     <!-- End Twitter -->
 <% end %>
 
@@ -25,7 +25,7 @@
 
 <section class="page-title page-title-2 image-bg overlay">
     <div class="background-image-holder">
-        <img alt="Background Image" class="background-image" src="/img/tlase.jpg"/>
+        <img alt="Background Image" class="background-image" src="<%= asset_path('tlase.jpg') %>"/>
     </div>
     <div class="container">
         <div class="row">
@@ -43,8 +43,8 @@
         <h4 class="mb16">Episode #<%= @episode_number %></h4>
         <div class="row">
             <div class="col-sm-8">
-                
-                
+
+
                 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.youtube.com/embed/<%= @video_url %>' frameborder='0' allowfullscreen></iframe></div>
                 <p></p>
             </div>
@@ -54,15 +54,15 @@
                     <p>
                         Learning to code or looking into becoming a software developer? Get the latest articles written by Jay Wengrow containing tips, strategies, and insights emailed straight to your inbox.
                     </p>
-                    
+
                     <form action="/subscribers_blog" method="post" class=" form-validate" data-error="Please submit a correct email address.">
                     <input type="checkbox" name="contact_me_by_fax_only" value="1" style="display:none !important" tabindex="-1" autocomplete="off">
                     <input type="text" name="email" class="mb16 validate-required validate-email signup-email-field" placeholder="Email Address" />
                     <input type="hidden" name="mousetrap" value="blog"/>
-                    <button class="btn btn-lg btn-blue mb16" type="submit" class="mb0">Send me expert advice</button>  
+                    <button class="btn btn-lg btn-blue mb16" type="submit" class="mb0">Send me expert advice</button>
 
                     </form>
-                    
+
                 </div>
             </div>
 
@@ -71,5 +71,3 @@
     </div>
     <!--end of container-->
 </section>
-
-

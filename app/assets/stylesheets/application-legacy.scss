@@ -1,0 +1,55 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require legacy/theme/bootstrap
+ *= require legacy/theme/style
+ *= require legacy/theme/dark
+ *= require legacy/theme/font-icons
+ *= require legacy/theme/animate
+ *= require legacy/theme/magnific-popup
+ *= require legacy/theme/responsive
+ *= require legacy/chosen
+ *= require legacy/prism
+ *= require_self
+ *= require bootstrap-datepicker
+ *= require_tree ./legacy
+ */
+
+ @import 'bootstrap-sprockets';
+ @import 'bootstrap';
+ @import 'bootstrap-datetimepicker';
+$color-neutral: #eaeaea;
+ .admin-dashboard a {
+   text-decoration: none;
+   color: #fa9f00;
+   line-height: 21px;
+ }
+
+ .index-dash-table a {
+   color: #fa9f00;
+ }
+
+ ul {
+   margin-bottom: 30px;
+ }
+
+ .h4-margin {
+   font-weight: 600;
+ }
+
+ .diversity-scholarship {
+    color: #315952;
+ }
+
+ .new-scholarship {
+    color: #7a3333;
+ }

@@ -10,20 +10,10 @@
             <meta name="description" content="Actualize is a coding bootcamp in the US that mentors you from start to finish in transforming yourself into a software developer. With our guidance and your drive, you will gain the skills and real world experience to launch a career that will change your life.">
         <% end %>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-        <link href="/css/themify-icons.css" rel="stylesheet" type="text/css" media="all" />
-        <link href="/css/flexslider.css" rel="stylesheet" type="text/css" media="all" />
-        <!-- <link href="/css/lightbox.min.css" rel="stylesheet" type="text/css" media="all" /> -->
-        <!-- <link href="/css/ytplayer.css" rel="stylesheet" type="text/css" media="all" /> -->
-        <link href="/css/theme-nature20170718944.css" rel="stylesheet" type="text/css" media="all" />
-        <link href="/css/custom.css" rel="stylesheet" type="text/css" media="all" />
-        <!-- <link href="/css/font-georgia.css" rel="stylesheet" type="text/css" media="all" /> -->
-        <link href="/css/custom20170718944.css" rel="stylesheet" type="text/css" media="all" />
+        <%= stylesheet_link_tag 'application-main', media: 'all'  %>
         <link href="https://fonts.googleapis.com/css?family=Maven+Pro" rel="stylesheet">
-        <!-- <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet"> -->
-        <!-- <link href='https://fonts.googleapis.com/css?family=Lato:300,400%7CRaleway:100,400,300,500,600,700%7COpen+Sans:400,500,600' rel='stylesheet' type='text/css'> -->
         <link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
-        <script src="/js/jquery.min.js"></script>
+        <%= javascript_include_tag 'application-main', defer: true %>
 
         <% if content_for?(:ld_json) %>
             <%= yield(:ld_json) %>
@@ -44,7 +34,7 @@
         <% if content_for?(:social_media) %>
             <%= yield(:social_media) %>
         <% else %>
-            
+
         <% end %>
 
     </head>
@@ -78,7 +68,7 @@
                                     <a href="/chicago-coding-bootcamp">
                                         Chicago Coding Bootcamp
                                     </a>
-                                </li>                                
+                                </li>
                                 <li>
                                     <a href="/contacts/new">
                                         Contact Us
@@ -87,7 +77,7 @@
                             </ul>
                         </div>
                         <!--end of menu module-->
-                        
+
                     </div>
                     <!--end of module group-->
                 </div>
@@ -95,7 +85,7 @@
         </div>
 
         <div class="main-container">
-            
+
             <%= yield %>
             <%= render 'shared/ga' %>
 
@@ -105,7 +95,7 @@
                     <div class="row">
                         <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 text-center">
                             <a href="/">
-                                <img alt="Actualize Coding Bootcamp" class="image-xs mb32 fade-on-hover" src="/img/actualize-logo.png" />
+                                <img alt="Actualize Coding Bootcamp" class="image-xs mb32 fade-on-hover" src="<%= asset_path('actualize-logo.png') %>" />
                             </a>
                             <h5 class="footer-logo fade-1-4">Actualize &copy; <%= Time.now.year %></h5>
                             <ul class="list-inline social-list mb0">
@@ -174,19 +164,5 @@
           src="https://www.facebook.com/tr?id=259824624775137&ev=PageView&noscript=1"
         /></noscript>
         <!-- End Facebook Pixel Code -->
-        
-        <script src="/js/bootstrap.min.js"></script>
-        <!-- <script src="/js/flickr.js"></script> -->
-        <script src="/js/flexslider.min.js"></script>
-        <!-- <script src="/js/lightbox.min.js"></script> -->
-        <!-- <script src="/js/masonry.min.js"></script> -->
-        <!-- <script src="/js/twitterfetcher.min.js"></script> -->
-        <!-- <script src="/js/spectragram.min.js"></script> -->
-        <!-- <script src="/js/ytplayer.min.js"></script> -->
-        <!-- <script src="/js/countdown.min.js"></script> -->
-        <script src="/js/smooth-scroll.min.js"></script>
-        <script src="/js/parallax.js"></script>
-        <script src="/js/scripts.js"></script>
-        <script src="/js/custom-scripts201807170532.js"></script>
     </body>
 </html>

@@ -5,7 +5,7 @@
 
 <section class="page-title page-title-2 image-bg overlay">
     <div class="background-image-holder">
-        <img alt="Background Image" class="background-image" src="/img/tlase.jpg"/>
+        <img alt="Background Image" class="background-image" src="<%= asset_path('tlase.jpg') %>"/>
     </div>
     <div class="container">
         <div class="row">
@@ -32,7 +32,7 @@
             <div class="col-sm-6">
                 <form action="/subscribers_tlase" method="post" data-error="Please submit a correct email address.">
                   <h3>Sign up for our free video newsletter</h3>
-  
+
                     <div>
                         <label for="first_name">First Name</label><br />
                         <input type="text" id="first_name" name="first_name" value="" />
@@ -54,5 +54,3 @@
     </div>
     <!--end of container-->
 </section>
-
-
