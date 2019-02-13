@@ -20,9 +20,11 @@ input[type="submit"].primary-color {
   font-weight: 100;
 }
 
+/*
 .shaded p {
   font-weight: bold !important;
 }
+*/
 
 #switchup p {
   font-weight: bold !important;
@@ -72,4 +74,3 @@ input[type="text"].sp-hide-am {
   	display: none;
   }
 }
-
