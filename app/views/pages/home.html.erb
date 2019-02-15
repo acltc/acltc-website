@@ -5,7 +5,6 @@
 <% end %>
 
 <!-- Jumbotron -->
-
 <section class="image-bg overlay fullscreen cover parallax">
   <div class="background-image-holder darken-image">
     <img alt="Learn to code" class="background-image" src="<%= asset_path('homepage_hero.jpg') %>" />
@@ -116,6 +115,19 @@
   <!--end of container-->
 </section>
 
+<!-- Overview: Flexible schedule -->
+<section class="image-edge pt120 pb120 pt-xs-40 pb-xs-40">
+  <div class="col-md-6 col-sm-4 p0">
+    <img alt="Online teaching" class="mb-xs-24" src="<%= asset_path('brian_teaching.jpg') %>" />
+  </div>
+  <div class="container">
+    <div class="col-md-5 col-md-offset-1 col-sm-7 col-sm-offset-1 v-align-transform right">
+      <h3 class="mb40 mb-xs-16">Coding bootcamp by day or night, anywhere in North America</h3>
+      <p>We offer our signature 12 week course in two flavors. Our <strong>Nights-And-Weekends Course</strong>, ideal for those who will keep their day job, takes place all-day Sunday and weeknights Monday through Thursday. Our <strong>Daytime Course</strong> takes place on Monday through Friday during the day. We have separate cohorts for each version of the program.</p>
+    </div>
+  </div>
+</section>
+
 <!-- Awards -->
 <section id="switchup" class="bg-dark pb0">
   <div class="container">
@@ -178,82 +190,40 @@
 </section>
 
 <!-- Where are grads work -->
-<section>
+<section class="bg-dark">
   <div class="container">
     <div class="row">
-      <div class="col-sm-12 text-center">
-        <h4 class="uppercase mb16">Where Our Grads Work</h4>
+      <div class="col-sm-12">
+        <h3 class="mb40 mb-xs-16">Where Our Grads Work</h3>
         <p class="lead mb64">Our grads have landed software positions at companies of all sizes and industries. Most of these grads have made complete career transitions, switching from a wide variety of other occupations. From lawyers to bartenders and taxi drivers to nurses, we’ve been privileged to help them launch completely new careers.</p>
       </div>
     </div>
     <!--end of row-->
-    <div class="row">
-      <div class="logo-carousel">
-        <ul class="slides">
-          <li>
-            <a href="https://about.twitter.com/" target="_blank" rel="noopener noreferrer">
-              <img alt="Twitter" src="<%= asset_path('logo9.png') %>" />
-            </a>
-          </li>
-          <li>
-            <a href="https://aws.amazon.com/" target="_blank" rel="noopener noreferrer">
-              <img alt="Amazon" src="<%= asset_path('logo8.png') %>" />
-            </a>
-          </li>
-          <li>
-            <a href="https://pivotal.io/labs" target="_blank" rel="noopener noreferrer">
-              <img alt="Pivotal Labs" src="<%= asset_path('logo2.png') %>" />
-            </a>
-          </li>
-          <li>
-            <a href="https://www.salesforce.com/" target="_blank" rel="noopener noreferrer">
-              <img alt="Salesforce" src="<%= asset_path('logo7.png') %>" />
-            </a>
-          </li>
-          <li>
-            <a href="https://www.bcbsil.com/" target="_blank" rel="noopener noreferrer">
-              <img alt="Blue Cross Blue Shield" src="<%= asset_path('logo4.png') %>" />
-            </a>
-          </li>
-          <li>
-            <a href="https://www.braintreepayments.com/" target="_blank" rel="noopener noreferrer">
-              <img alt="Braintree" src="<%= asset_path('logo5.png') %>" />
-            </a>
-          </li>
-          <li>
-            <a href="http://www.bosch-home.com/us/" target="_blank" rel="noopener noreferrer">
-              <img alt="Bosch" src="<%= asset_path('logo6.png') %>" />
-            </a>
-          </li>
-          <li>
-            <a href="https://www.allstate.com/" target="_blank" rel="noopener noreferrer">
-              <img alt="Allstate Insurance" src="<%= asset_path('logo3.png') %>" />
-            </a>
-          </li>
-          <li>
-            <a href="https://www.bankofamerica.com/" target="_blank" rel="noopener noreferrer">
-              <img alt="Bank of America" src="<%= asset_path('logo1.svg') %>" />
-            </a>
-          </li>
-        </ul>
-      </div>
-      <!--end of logo slider-->
+    <div class="row company-logos">
+      <div class="col-md-3 col-xs-6"><img src="<%= asset_path('logo9.png') %>" alt="Twitter"></div>
+      <div class="col-md-3 col-xs-6"><img src="<%= asset_path('logo8.png') %>" alt="Amazon"></div>
+      <div class="col-md-3 col-xs-6"><img src="<%= asset_path('logo2.png') %>" alt="Pivotal Labs"></div>
+      <div class="col-md-3 col-xs-6"><img src="<%= asset_path('logo7.png') %>" alt="Salesforce"></div>
+      <div class="col-md-3 col-xs-6"><img src="<%= asset_path('logo4.png') %>" alt="Blue Cross Blue Shield"></div>
+      <div class="col-md-3 col-xs-6"><img src="<%= asset_path('logo5.png') %>" alt="Braintree"></div>
+      <div class="col-md-3 col-xs-6"><img src="<%= asset_path('logo6.png') %>" alt="Bosch"></div>
+      <div class="col-md-3 col-xs-6"><img src="<%= asset_path('logo3.png') %>" alt="Allstate"></div>
     </div>
     <!--end of row-->
-  </div>
-  <!--end of container-->
-</section>
-
-<!-- Program options: Overview -->
-<section class="mb0 pb0">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12 text-center">
-        <h2>Coding bootcamp by day or night, anywhere in North America</h2>
-        <p class="mb0">We offer our signature 12 week course in two flavors. Our <strong>Nights-And-Weekends Course</strong>, ideal for those who will keep their day job, takes place all-day Sunday and weeknights Monday through Thursday. Our <strong>Daytime Course</strong> takes place on Monday through Friday during the day. We have separate cohorts for each version of the program.</p>
+    <div class="row mt24">
+      <div class="col-md-6">
+        <h4>Ever wonder what it's actually like to be a software developer? Download our ebook below.</h4>
+        <form action="/subscribers_career_pdf" method="post" class="halves form-validate" data-success="Thanks for your registration, we will be in touch shortly." data-error="Please fill all fields correctly.">
+          <input type="checkbox" name="contact_me_by_fax_only" value="1" style="display:none !important" tabindex="-1" autocomplete="off">
+          <input type="text" name="email" style="margin-left: 0" class="mb0 validate-email validate-required signup-email-field" placeholder="Email Address" aria-label="email" />
+          <input type="hidden" name="mousetrap" value="Career Ebook"/>
+          <button class="btn btn-lg btn-blue" type="submit" class="mb0">Download Ebook</button>
+        </form>
+        <p class="sub" style="clear: both">By submitting your email, you will receive additional communication from us on learning to code as well as the coding bootcamp industry.</p>
       </div>
     </div>
   </div>
+  <!--end of container-->
 </section>
 
 <!-- Program options: Online -->
@@ -263,9 +233,9 @@
   </div>
   <div class="container">
     <div class="col-md-5 col-md-offset-1 col-sm-7 col-sm-offset-1 v-align-transform right">
-      <h3 class="mb40 mb-xs-16">Online</h3>
+      <h3 class="mb40 mb-xs-16">Our Online Program</h3>
       <p>Our Online Live course can be taken remotely anywhere in North America. Because we believe that education requires the personal touch, our Online Live course is 100% live, the only online coding bootcamp of its kind. That means that you, your Lead Instructor, and classmates all see each other over live video conferencing at all times - for both instruction and exercises. Our students say that they feel as if they’re in a physical classroom.</p>
-      <a class="btn btn-lg btn-blue mt32 mb0" href="/online-coding-bootcamp">Online Live Coding Bootcamp</a>
+      <a class="btn btn-lg btn-blue mt32 mb0" href="/online-coding-bootcamp">Learn more</a>
     </div>
   </div>
 </section>
@@ -277,12 +247,12 @@
   </div>
   <div class="container">
     <div class="col-md-5 col-md-pull-0 col-sm-7 col-sm-pull-4 v-align-transform">
-      <h3 class="mb40 mb-xs-16">In-Person</h3>
+      <h3 class="mb40 mb-xs-16">Our In-Person Program</h3>
       <p>
         Join us in person at our Chicago headquarters in River North. Founded in early 2014, we're the longest-running coding bootcamp founded in Chicago.
       </p>
 
-      <a class="btn btn-lg btn-blue mt32 mb0" href="/chicago-coding-bootcamp">Chicago Coding Bootcamp</a>
+      <a class="btn btn-lg btn-blue mt32 mb0" href="/chicago-coding-bootcamp">Learn more</a>
     </div>
   </div>
   <!--end of container-->

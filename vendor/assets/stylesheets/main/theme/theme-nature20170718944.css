@@ -3377,6 +3377,16 @@ img {
     display: block;
   }
 }
+.company-logos {
+  text-align: center;
+}
+.company-logos > div {
+  height: 100px;
+}
+.company-logos img {
+  max-height: 60px;
+  margin-bottom: 3em;
+}
 .logo-carousel li {
   text-align: center;
 }
