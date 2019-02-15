@@ -5,296 +5,243 @@
 <% end %>
 
 <!-- Jumbotron -->
-<section class="image-bg overlay fullscreen cover parallax">
-    <div class="background-image-holder darken-image">
-        <img alt="Learn to code" class="background-image" src="<%= asset_path('homepage_hero.jpg') %>" />
-    </div>
-    <div class="container v-align-transform">
-        <div class="row">
-            <div class="col-sm-4 col-sm-offset-4 col-xs-6 col-xs-offset-3">
-                <img alt="Actualize Coding Bootcamp" class="mb48 mb-xs-16 fade-1-4" src="<%= asset_path('actualize-logo.png') %>" />
-            </div>
-        </div>
-        <!--end of row-->
-        <div class="row">
-            <div class="col-sm-12 text-center">
-                <h2 id="h1" class="large bold big-bold">
-                     Be The New You
-                </h2>
-                <h1 id="h2">
-                  The coding bootcamp founded, designed, and taught by professional educators
-                </h1>
-            </div>
-        </div>
-        <!--end of row-->
-        <div class="row">
-            <div class="col-sm-12 text-center">
-                <a class="btn btn-lg" href="/apply">Apply Now</a>
-            </div>
-        </div>
-    </div>
-    <!--end of container-->
-</section>
 
-<!-- Overview: Video -->
-<section>
-  <div class="container">
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1 text-center">
-            <h4 class="uppercase mb16">What is the Actualize experience?</h4>
-            <p class="lead">Watch this short video to see what makes the Actualize coding bootcamp experience unique.</p>
-            <div class="embed-video-container embed-responsive embed-responsive-16by9">
-                <iframe title="Actualize overview" class="embed-responsive-item" src="https://www.youtube.com/embed/RfVOT9xAXH8?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </div>
-            <!--end of embed video container-->
-        </div>
-    </div>
+<section class="image-bg overlay fullscreen cover parallax">
+  <div class="background-image-holder darken-image">
+    <img alt="Learn to code" class="background-image" src="<%= asset_path('homepage_hero.jpg') %>" />
   </div>
+  <div class="container v-align-transform">
+    <div class="row v-align-children">
+      <div class="col-sm-8 mb-xs-80">
+        <div class="row">
+          <div class="col-sm-4 col-xs-6">
+            <img alt="Actualize Coding Bootcamp" class="mb-xs-16 fade-1-4" src="<%= asset_path('actualize-logo.png') %>" />
+          </div>
+        </div>
+        <!--end of row-->
+        <div class="row">
+          <div class="col-sm-12">
+            <h2 id="h1" class="large bold big-bold">
+              Be The New You
+            </h2>
+            <h1 id="h2">
+              The coding bootcamp founded, designed, and taught by expert educators
+            </h1>
+          </div>
+        </div>
+        <!--end of row-->
+        <div class="row">
+          <div class="col-sm-12">
+            <a class="btn btn-lg" href="/apply">Apply Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 text-center text-left-xs">
+        <div class="modal-container">
+          <div class="play-button btn-modal large inline"></div>
+          <div class="foundry_modal no-bg">
+            <iframe data-provider="youtube" data-video-id="RfVOT9xAXH8" data-autoplay="1" allowfullscreen="allowfullscreen"></iframe>
+          </div>
+        </div>
+        <!--end of modal video-->
+      </div>
+    </div>
+    <!--end of row-->
+  </div>
+  <!--end of container-->
 </section>
 
 <!-- Overview: The nation's greatest coding instructors -->
 <section class="image-edge pt120 pb120 pt-xs-40 pb-xs-40">
-    <div class="col-md-6 col-sm-4 p0">
-        <img alt="Online coding bootcamp" class="mb-xs-24" src="<%= asset_path('online.jpg') %>" />
+  <div class="col-md-6 col-sm-4 p0">
+    <img alt="Online coding bootcamp" class="mb-xs-24" src="<%= asset_path('online.jpg') %>" />
+  </div>
+  <div class="container">
+    <div class="col-md-5 col-md-offset-1 col-sm-7 col-sm-offset-1 v-align-transform right">
+      <h3 class="mb40 mb-xs-16">The nation's greatest coding instructors</h3>
+      <p>It’s not good enough to be taught by a programmer who isn’t also a skilled educator. Actualize only hires Lead Instructors who are experienced educators in addition to being experienced software developers. Each Lead Instructor is empathic, funny, engaging, and most importantly, loves to teach. That is why many of our graduates have told us that their Lead Instructor is hands-down the best part of their Actualize experience.</p>
     </div>
-    <div class="container">
-        <div class="col-md-5 col-md-offset-1 col-sm-7 col-sm-offset-1 v-align-transform right">
-            <h3 class="mb40 mb-xs-16">The nation's greatest coding instructors</h3>
-            <p>It’s not good enough to be taught by a programmer who isn’t also a skilled educator. Actualize only hires Lead Instructors who are experienced educators in addition to being experienced software developers. Each Lead Instructor is empathic, funny, and engaging, and most importantly, loves to teach. That is why many of our graduates have told us that their Lead Instructor is hands-down the best part of their Actualize experience.</p>
-        </div>
-    </div>
+  </div>
 </section>
 
-<!-- Overview: Personalized class experience -->
+<!-- Overview: Powerful student relationships -->
 <section class="image-edge pt120 pb120 pt-xs-40 pb-xs-40">
-    <div class="col-md-6 col-sm-4 p0 col-md-push-6 col-sm-push-8">
-        <img alt="Online coding bootcamp instructor" class="cast-shadow mb-xs-24" src="<%= asset_path('brian_smile.jpg') %>"/>
+  <div class="col-md-6 col-sm-4 p0 col-md-push-6 col-sm-push-8">
+    <img alt="Online coding bootcamp instructor" class="cast-shadow mb-xs-24" src="<%= asset_path('brian_smile.jpg') %>"/>
+  </div>
+  <div class="container">
+    <div class="col-md-5 col-md-pull-0 col-sm-7 col-sm-pull-4 v-align-transform">
+      <h3 class="mb40 mb-xs-16">Powerful student relationships</h3>
+      <p>Some bootcamps pre-record their lessons or have a remote instructor broadcast to multiple cohorts simultaneously. What makes the Actualize experience so powerful is that your expert Lead Instructor is dedicated exclusively to your small cohort. We’re passionate about education, so we don’t cut corners to achieve scale. The Lead Instructor’s full-time job is to be there for your cohort alone. Actualize is about the very real relationship between an expert Lead Instructor, and you, the student.</p>
     </div>
-    <div class="container">
-        <div class="col-md-5 col-md-pull-0 col-sm-7 col-sm-pull-4 v-align-transform">
-            <h3 class="mb40 mb-xs-16">Powerful student relationships</h3>
-            <p>Some bootcamps pre-record their lessons or have a remote instructor broadcast to multiple cohorts simultaneously. What makes the Actualize experience so powerful is that your expert Lead Instructor is dedicated exclusively to your small cohort. We’re passionate about education, so we don’t cut corners to achieve scale. The Lead Instructor’s full-time job is to be there for your cohort alone. Actualize is about the very real relationship between an expert Lead Instructor, and you, the student.</p>
-        </div>
-    </div>
-    <!--end of container-->
+  </div>
+  <!--end of container-->
 </section>
 
-<!-- Overview: Crafted curriculum -->
+<!-- Overview: Finely-tuned curriculum -->
 <section class="image-edge pt120 pb120 pt-xs-40 pb-xs-40">
-    <div class="col-md-6 col-sm-4 p0">
-        <img alt="Online coding bootcamp student" class="mb-xs-24" src="<%= asset_path('karol.jpg') %>" />
+  <div class="col-md-6 col-sm-4 p0">
+    <img alt="Online coding bootcamp student" class="mb-xs-24" src="<%= asset_path('karol.jpg') %>" />
+  </div>
+  <div class="container">
+    <div class="col-md-5 col-md-offset-1 col-sm-7 col-sm-offset-1 v-align-transform right">
+      <h3 class="mb40 mb-xs-16">Finely-tuned curriculum</h3>
+      <p>We obsess over the art and science of teaching people to code. We spend an inordinate amount of time and effort fine-tuning our curriculum to make it fit with the way that students learn and think. In the words of one student who transferred to Actualize from another program, "You teach the concepts so well that it takes 30 minutes to learn what it took me 5 hours to learn in my previous school."</p>
+      <p><strong>We care about the craft of teaching programming so much that we wrote the book on it!</strong> It covers the best practices on curriculum and instruction we've honed over many years in the field. You can download the book for free below.</p>
+
+      <form action="/subscribers_curriculum" method="post" class="halves form-validate" data-success="Thanks for your registration, we will be in touch shortly." data-error="Please fill all fields correctly.">
+        <input type="checkbox" name="contact_me_by_fax_only" value="1" style="display:none !important" tabindex="-1" autocomplete="off">
+        <input type="text" name="email" style="margin-left: 0" class="mb0 validate-email validate-required signup-email-field" placeholder="Email Address" aria-label="email" />
+        <input type="hidden" name="mousetrap" value="Curriculum"/>
+        <button class="btn btn-lg btn-blue" type="submit" class="mb0">Download the book</button>
+      </form>
+      <p class="sub" style="clear: both">By submitting your email, you will receive additional communication from us on learning to code as well as the coding bootcamp industry.</p>
     </div>
-    <div class="container">
-        <div class="col-md-5 col-md-offset-1 col-sm-7 col-sm-offset-1 v-align-transform right">
-            <h3 class="mb40 mb-xs-16">Finely tuned curriculum</h3>
-            <p>We obsess over the art and science of teaching people to code. We spend an inordinate amount of time and effort fine-tuning our curriculum to make it fit with the way that students learn and think. In the words of one student who transferred to Actualize from another program, "You teach the concepts so well that it takes 30 minutes to learn what it took me 5 hours to learn in my previous school."</p>
-        </div>
-    </div>
-    <!--end of container-->
+  </div>
+  <!--end of container-->
 </section>
 
-<!-- Teaching book mousetrap -->
-<section class="image-bg overlay pt120 pb120 pt-xs-80 pb-xs-80 shaded">
-    <div class="background-image-holder darken-image">
-        <img alt="Code Bootcamp" class="background-image" src="<%= asset_path('home-2-8.jpg') %>" />
+<!-- Overview: Job support-->
+<section class="image-edge pt120 pb120 pt-xs-40 pb-xs-40">
+  <div class="col-md-6 col-sm-4 p0 col-md-push-6 col-sm-push-8">
+    <img alt="Online coding bootcamp instructor" class="cast-shadow mb-xs-24" src="<%= asset_path('mentoring.jpg') %>"/>
+  </div>
+  <div class="container">
+    <div class="col-md-5 col-md-pull-0 col-sm-7 col-sm-pull-4 v-align-transform">
+      <h3 class="mb40 mb-xs-16">Structured job support, even after you graduate</h3>
+      <p>Our unique job-hunting curriculum, which we refer to as Job Hacking, begins from the very first day and is integrated throughout the bootcamp. We employ the same educational expertise to the Job Hacking curriculum as we do with our coding curriculum. Working with our Career Advisor, our students start with the basics - building a great resume and online presence, and progress to the point where they’re actually connecting with employers in the industry.</p>
+      <p></p>
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-md-push-6">
-                <h2>How To Teach Programming</h2>
-                <p>We wrote a book detailing our educational process. You can download the book to see some of the educational best practices that we use for both pedagogy and curriculum development.</p>
-                <h4>Download the book below.</h4>
-                <form action="/subscribers_curriculum" method="post" class="halves form-validate" data-success="Thanks for your registration, we will be in touch shortly." data-error="Please fill all fields correctly.">
-                    <input type="checkbox" name="contact_me_by_fax_only" value="1" style="display:none !important" tabindex="-1" autocomplete="off">
-                    <input type="text" name="email" style="margin-left: 0" class="mb0 transparent validate-email validate-required signup-email-field" placeholder="Email Address" aria-label="email" />
-                    <input type="hidden" name="mousetrap" value="Curriculum"/>
-                    <button class="btn btn-lg btn-filled" type="submit" class="mb0">Download the book</button>
-                </form>
-                <p class="sub" style="clear: both">By submitting your email, you will receive additional communication from us on learning to code as well as the coding bootcamp industry.</p>
-            </div>
-        </div>
-        <!--end of row-->
-    </div>
-    <!--end of container-->
+  </div>
+  <!--end of container-->
 </section>
 
 <!-- Awards -->
 <section id="switchup" class="bg-dark pb0">
-    <div class="container">
-        <div class="row mb64 mb-xs-32">
-            <div class="col-md-12 text-center">
-                <img alt="course report logo" src="<%= asset_path('course_report.png') %>" height="200">
-                <img alt="switchup logo" src="<%= asset_path('switchup.png') %>" height="200">
-                <p class="lead">
-                    We're proud to be a recipient of the Best Bootcamp Award by both Switchup.org and Course Report, leaders in coding bootcamp reviews and research.
-                </p>
-            </div>
-        </div>
+  <div class="container">
+    <div class="row mb64 mb-xs-32">
+      <div class="col-md-12 text-center">
+        <img alt="course report logo" src="<%= asset_path('course_report.png') %>" height="200">
+        <img alt="switchup logo" src="<%= asset_path('switchup.png') %>" height="200">
+        <p class="lead">
+          We're proud to be a recipient of the Best Bootcamp Award by both Switchup.org and Course Report, leaders in coding bootcamp reviews and research.
+        </p>
+      </div>
     </div>
+  </div>
 </section>
 
 <!-- Testimonials -->
 <section class="image-bg overlay parallax pt120 pb120 pt-xs-40 pb-xs-40 shaded">
-    <div class="background-image-holder darken-image">
-        <img alt="Laptop" class="background-image" src="<%= asset_path('grads.jpg') %>"/>
+  <div class="background-image-holder darken-image">
+    <img alt="Laptop" class="background-image" src="<%= asset_path('grads.jpg') %>"/>
+  </div>
+  <div class="container">
+    <div class="row mb16 mb-xs-0">
+      <div class="col-sm-12 text-center">
+        <h3>What Actualize grads have to say</h3>
+      </div>
     </div>
-    <div class="container">
-        <div class="row mb16 mb-xs-0">
-            <div class="col-sm-12 text-center">
-                <h3>What Actualize grads have to say</h3>
-            </div>
+    <!--end of row-->
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+        <div class="text-slider slider-arrow-controls text-center relative">
+          <ul class="slides">
+            <li>
+              <p class="lead">Attending Actualize literally changed my life. I had been stuck in a dead end job for years and was just going through the motions. Not only did I have a great experience learning, I also made some life long friends along the way. I now have a great job at a startup and the opportunities to continue learning and growing are endless.</p>
+              <div class="quote-author">
+                <h6 class="uppercase mb0">Jason</h6>
+                <span>Support Engineer</span>
+              </div>
+            </li>
+            <li>
+              <p class="lead">Not only was it perfect for me as I was not in a position to leave my job, but the support and teachers there were undeniably the best I could have asked for. All the teachers are former educators who also have a deep breadth of coding knowledge. I can't rave about this enough!</p>
+              <div class="quote-author">
+                <h6 class="uppercase mb0">Caroline</h6>
+                <span>API Specialist</span>
+              </div>
+            </li>
+            <li>
+              <p class="lead">I've gone from student to teachers assistant to software engineer to tech lead and I'm currently in control of my own destiny in a way that I've never been able to brag about before. This was completely life-changing.</p>
+              <div class="quote-author">
+                <h6 class="uppercase mb0">Jamie</h6>
+                <span>Associate Software Engineer</span>
+              </div>
+            </li>
+          </ul>
         </div>
-        <!--end of row-->
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
-                <div class="text-slider slider-arrow-controls text-center relative">
-                    <ul class="slides">
-                        <li>
-                            <p class="lead">Attending Actualize literally changed my life. I had been stuck in a dead end job for years and was just going through the motions. Not only did I have a great experience learning, I also made some life long friends along the way. I now have a great job at a startup and the opportunities to continue learning and growing are endless.</p>
-                            <div class="quote-author">
-                                <h6 class="uppercase mb0">Jason</h6>
-                                <span>Support Engineer</span>
-                            </div>
-                        </li>
-                        <li>
-                            <p class="lead">Not only was it perfect for me as I was not in a position to leave my job, but the support and teachers there were undeniably the best I could have asked for. All the teachers are former educators who also have a deep breadth of coding knowledge. I can't rave about this enough!</p>
-                            <div class="quote-author">
-                                <h6 class="uppercase mb0">Caroline</h6>
-                                <span>API Specialist</span>
-                            </div>
-                        </li>
-                        <li>
-                            <p class="lead">I've gone from student to teachers assistant to software engineer to tech lead and I'm currently in control of my own destiny in a way that I've never been able to brag about before. This was completely life-changing.</p>
-                            <div class="quote-author">
-                                <h6 class="uppercase mb0">Jamie</h6>
-                                <span>Associate Software Engineer</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!--end of row-->
+      </div>
     </div>
-    <!--end of container-->
+    <!--end of row-->
+  </div>
+  <!--end of container-->
 </section>
 
 <!-- Where are grads work -->
 <section>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12 text-center">
-                <h4 class="uppercase mb16">Where Our Grads Work</h4>
-                <p class="lead mb64">Our grads have landed software positions at companies of all sizes and industries. Most of these grads have made complete career transitions, switching from a wide variety of other occupations. From lawyers to bartenders and taxi drivers to nurses, we’ve been privileged to help them launch completely new careers.</p>
-            </div>
-        </div>
-        <!--end of row-->
-        <div class="row">
-            <div class="logo-carousel">
-                <ul class="slides">
-                    <li>
-                        <a href="https://about.twitter.com/" target="_blank" rel="noopener noreferrer">
-                            <img alt="Twitter" src="<%= asset_path('logo9.png') %>" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://aws.amazon.com/" target="_blank" rel="noopener noreferrer">
-                            <img alt="Amazon" src="<%= asset_path('logo8.png') %>" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://pivotal.io/labs" target="_blank" rel="noopener noreferrer">
-                            <img alt="Pivotal Labs" src="<%= asset_path('logo2.png') %>" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.salesforce.com/" target="_blank" rel="noopener noreferrer">
-                            <img alt="Salesforce" src="<%= asset_path('logo7.png') %>" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.bcbsil.com/" target="_blank" rel="noopener noreferrer">
-                            <img alt="Blue Cross Blue Shield" src="<%= asset_path('logo4.png') %>" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.braintreepayments.com/" target="_blank" rel="noopener noreferrer">
-                            <img alt="Braintree" src="<%= asset_path('logo5.png') %>" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://www.bosch-home.com/us/" target="_blank" rel="noopener noreferrer">
-                            <img alt="Bosch" src="<%= asset_path('logo6.png') %>" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.allstate.com/" target="_blank" rel="noopener noreferrer">
-                            <img alt="Allstate Insurance" src="<%= asset_path('logo3.png') %>" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.bankofamerica.com/" target="_blank" rel="noopener noreferrer">
-                            <img alt="Bank of America" src="<%= asset_path('logo1.svg') %>" />
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <!--end of logo slider-->
-        </div>
-        <!--end of row-->
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <h4 class="uppercase mb16">Where Our Grads Work</h4>
+        <p class="lead mb64">Our grads have landed software positions at companies of all sizes and industries. Most of these grads have made complete career transitions, switching from a wide variety of other occupations. From lawyers to bartenders and taxi drivers to nurses, we’ve been privileged to help them launch completely new careers.</p>
+      </div>
     </div>
-    <!--end of container-->
-</section>
-
-<!-- Technical curriculum with mousetrap -->
-<section class="image-bg overlay pt120 pb120 pt-xs-80 pb-xs-80 shaded">
-    <div class="background-image-holder darken-image">
-        <img alt="Code Bootcamp" class="background-image" src="<%= asset_path('code_on_screen.jpg') %>" />
+    <!--end of row-->
+    <div class="row">
+      <div class="logo-carousel">
+        <ul class="slides">
+          <li>
+            <a href="https://about.twitter.com/" target="_blank" rel="noopener noreferrer">
+              <img alt="Twitter" src="<%= asset_path('logo9.png') %>" />
+            </a>
+          </li>
+          <li>
+            <a href="https://aws.amazon.com/" target="_blank" rel="noopener noreferrer">
+              <img alt="Amazon" src="<%= asset_path('logo8.png') %>" />
+            </a>
+          </li>
+          <li>
+            <a href="https://pivotal.io/labs" target="_blank" rel="noopener noreferrer">
+              <img alt="Pivotal Labs" src="<%= asset_path('logo2.png') %>" />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.salesforce.com/" target="_blank" rel="noopener noreferrer">
+              <img alt="Salesforce" src="<%= asset_path('logo7.png') %>" />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.bcbsil.com/" target="_blank" rel="noopener noreferrer">
+              <img alt="Blue Cross Blue Shield" src="<%= asset_path('logo4.png') %>" />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.braintreepayments.com/" target="_blank" rel="noopener noreferrer">
+              <img alt="Braintree" src="<%= asset_path('logo5.png') %>" />
+            </a>
+          </li>
+          <li>
+            <a href="http://www.bosch-home.com/us/" target="_blank" rel="noopener noreferrer">
+              <img alt="Bosch" src="<%= asset_path('logo6.png') %>" />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.allstate.com/" target="_blank" rel="noopener noreferrer">
+              <img alt="Allstate Insurance" src="<%= asset_path('logo3.png') %>" />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.bankofamerica.com/" target="_blank" rel="noopener noreferrer">
+              <img alt="Bank of America" src="<%= asset_path('logo1.svg') %>" />
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!--end of logo slider-->
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-md-push-6">
-                <h2>The Actualize Technical Curriculum</h2>
-                <p>At Actualize, we believe the goal of a coding bootcamp curriculum should be to train the students to be self-sufficient software engineers who can teach themselves any new technology. Learning how to learn is the most important gift we can provide our students. Our curriculum draws upon years of collective experience and expertise, employing best educational practices and pedagogy. </p>
-                <p>The focal point of the curriculum is full-stack web development. We’ve selected languages and frameworks that we believe serve as the best foundation for our students to later teach themselves any other technical stack going forward. </p>
-                <p>We use Ruby on Rails as the primary technology to power the backend APIs, and HTML, CSS, JavaScript, and VueJS to serve as the front-end. [Our students get jobs with completely different languages and frameworks...] You’ll learn how to combine these technologies to build complete, full-stack web applications from scratch.</p>
-                <h4>Download our detailed curriclum below.</h4>
-                <form action="/subscribers_curriculum" method="post" class="halves form-validate" data-success="Thanks for your registration, we will be in touch shortly." data-error="Please fill all fields correctly.">
-                    <input type="checkbox" name="contact_me_by_fax_only" value="1" style="display:none !important" tabindex="-1" autocomplete="off">
-                    <input type="text" name="email" style="margin-left: 0" class="mb0 transparent validate-email validate-required signup-email-field" placeholder="Email Address" aria-label="email" />
-                    <input type="hidden" name="mousetrap" value="Curriculum"/>
-                    <button class="btn btn-lg btn-filled" type="submit" class="mb0">Download Curriculum</button>
-                </form>
-                <p class="sub" style="clear: both">By submitting your email, you will receive additional communication from us on learning to code as well as the coding bootcamp industry.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Job hacking curriculum -->
-<section class="image-bg overlay pt120 pb120 pt-xs-80 pb-xs-80 shaded">
-    <div class="background-image-holder darken-image">
-        <img alt="Code Bootcamp" class="background-image" src="<%= asset_path('home-2-8.jpg') %>" />
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-md-push-6">
-                <h2>The Actualize Job Hacking Curriculum</h2>
-                <p>Our unique job-hunting curriculum, which we refer to as Job Hacking, begins from the very first day and is integrated throughout the bootcamp. We employ the same educational expertise to the Job Hacking curriculum as we do with our coding curriculum.</p>
-                <p>Working with our Career Advisor, our students start with the basics - building a great resume and online presence, and progress to the point where they’re actually connecting with employers in the industry. </p>
-                <p>Most people assume that once you learn to code, it’s easy to quickly land a software development job. This is not the case. The speed at which someone lands a job after a coding bootcamp is correlated to how much they apply themselves to the job hunt using the right job hunting skills. As job hunting actually requires a completely different skill set than coding does, we believe that it’s just as important to teach our students how to hunt for a job as it is to teach them how to code.</p>
-                <p>We’ve also developed an optional post-graduation program called Career Support, in which our grads continue to work on additional coding projects for their portfolio and meet with our Career Advisor in a unique accountability group to help keep everyone moving forward consistently with their job hunt.</p>
-                <h4>Ever wonder what it's actually like to be a software developer? Download our ebook below.</h4>
-                <form action="/subscribers_career_pdf" method="post" class="halves form-validate" data-success="Thanks for your registration, we will be in touch shortly." data-error="Please fill all fields correctly.">
-                    <input type="checkbox" name="contact_me_by_fax_only" value="1" style="display:none !important" tabindex="-1" autocomplete="off">
-                    <input type="text" name="email" style="margin-left: 0" class="mb0 transparent validate-email validate-required signup-email-field" placeholder="Email Address" aria-label="email" />
-                    <input type="hidden" name="mousetrap" value="Career Ebook"/>
-                    <button class="btn btn-lg btn-filled" type="submit" class="mb0">Download Ebook</button>
-                </form>
-                <p class="sub" style="clear: both">By submitting your email, you will receive additional communication from us on learning to code as well as the coding bootcamp industry.</p>
-            </div>
-        </div>
-    </div>
+    <!--end of row-->
+  </div>
+  <!--end of container-->
 </section>
 
 <!-- Program options: Overview -->
