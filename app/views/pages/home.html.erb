@@ -53,7 +53,7 @@
 <!-- Overview: The nation's greatest coding instructors -->
 <section class="image-edge pt120 pb120 pt-xs-40 pb-xs-40">
   <div class="col-md-6 col-sm-4 p0">
-    <img alt="Online coding bootcamp" class="mb-xs-24" src="<%= asset_path('online.jpg') %>" />
+    <img alt="Online coding bootcamp" class="cast-shadow mb-xs-24" src="<%= asset_path('online.jpg') %>" />
   </div>
   <div class="container">
     <div class="col-md-5 col-md-offset-1 col-sm-7 col-sm-offset-1 v-align-transform right">
@@ -118,7 +118,7 @@
 <!-- Overview: Flexible schedule -->
 <section class="image-edge pt120 pb120 pt-xs-40 pb-xs-40">
   <div class="col-md-6 col-sm-4 p0">
-    <img alt="Online teaching" class="mb-xs-24" src="<%= asset_path('brian_teaching.jpg') %>" />
+    <img alt="Online teaching" class="cast-shadow mb-xs-24" src="<%= asset_path('brian_teaching.jpg') %>" />
   </div>
   <div class="container">
     <div class="col-md-5 col-md-offset-1 col-sm-7 col-sm-offset-1 v-align-transform right">
@@ -128,30 +128,22 @@
   </div>
 </section>
 
-<!-- Awards -->
-<section id="switchup" class="bg-dark pb0">
+<!-- Awards and Testimonials -->
+<section class="image-bg overlay parallax pt120 pb120 pt-xs-40 pb-xs-40">
+  <div class="background-image-holder darken-image-more">
+    <img alt="image" class="background-image" src="<%= asset_path('grads.jpg') %>" />
+  </div>
   <div class="container">
-    <div class="row mb64 mb-xs-32">
-      <div class="col-md-12 text-center">
-        <img alt="course report logo" src="<%= asset_path('course_report.png') %>" height="200">
-        <img alt="switchup logo" src="<%= asset_path('switchup.png') %>" height="200">
-        <p class="lead">
-          We're proud to be a recipient of the Best Bootcamp Award by both Switchup.org and Course Report, leaders in coding bootcamp reviews and research.
-        </p>
+    <div class="row mb40 mb-xs-24">
+      <div class="col-sm-12 text-center spread-children">
+        <img class="image-md" alt="Pic" src="<%= asset_path('course_report.png') %>" />
+        <img class="image-md" alt="Pic" src="<%= asset_path('switchup.png') %>" />
       </div>
     </div>
-  </div>
-</section>
-
-<!-- Testimonials -->
-<section class="image-bg overlay parallax pt120 pb120 pt-xs-40 pb-xs-40 shaded">
-  <div class="background-image-holder darken-image">
-    <img alt="Laptop" class="background-image" src="<%= asset_path('grads.jpg') %>"/>
-  </div>
-  <div class="container">
+    <!--end of row-->
     <div class="row mb16 mb-xs-0">
       <div class="col-sm-12 text-center">
-        <h3>What Actualize grads have to say</h3>
+        <h3>See what our grads have to say about our program:</h3>
       </div>
     </div>
     <!--end of row-->
@@ -160,24 +152,24 @@
         <div class="text-slider slider-arrow-controls text-center relative">
           <ul class="slides">
             <li>
-              <p class="lead">Attending Actualize literally changed my life. I had been stuck in a dead end job for years and was just going through the motions. Not only did I have a great experience learning, I also made some life long friends along the way. I now have a great job at a startup and the opportunities to continue learning and growing are endless.</p>
+              <p class="lead">The degree of support and care is actually incredible. I don't know what Lisa and Josh are getting paid, but it's not enough however much it is. There is a genuine sense of heart in this program. I wouldn't believe it if I'd read that kind of review online. But seriously. I can't offer enough praise.</p>
               <div class="quote-author">
-                <h6 class="uppercase mb0">Jason</h6>
-                <span>Support Engineer</span>
+                <h6 class="uppercase mb0">Anna Thompson</h6>
+                <span>Themeforest Customer</span>
               </div>
             </li>
             <li>
-              <p class="lead">Not only was it perfect for me as I was not in a position to leave my job, but the support and teachers there were undeniably the best I could have asked for. All the teachers are former educators who also have a deep breadth of coding knowledge. I can't rave about this enough!</p>
+              <p class="lead">Instructor, instructor, instructor..... he is passionate, goes above and beyond for his students and is also strict (punctuality on class time), which is a great attribute in a teacher.  Also, facilities and the planning of the course is thorough.</p>
               <div class="quote-author">
-                <h6 class="uppercase mb0">Caroline</h6>
-                <span>API Specialist</span>
+                <h6 class="uppercase mb0">Rick Dempsey</h6>
+                <span>Themeforest Customer</span>
               </div>
             </li>
             <li>
-              <p class="lead">I've gone from student to teachers assistant to software engineer to tech lead and I'm currently in control of my own destiny in a way that I've never been able to brag about before. This was completely life-changing.</p>
+              <p class="lead">The pace is fast, but very well taught, and I appreciate all the extra time and effort the the staff is willing to put towards helping me. I makes me feel like they are very invested in my future which is a welcome change from most other classroom experiences i've had.</p>
               <div class="quote-author">
-                <h6 class="uppercase mb0">Jamie</h6>
-                <span>Associate Software Engineer</span>
+                <h6 class="uppercase mb0">Gill Sans</h6>
+                <span>Themeforest Customer</span>
               </div>
             </li>
           </ul>
@@ -189,11 +181,80 @@
   <!--end of container-->
 </section>
 
+<section class="image-bg overlay parallax bg-dark">
+  <div class="background-image-holder darken-image-more">
+    <img alt="image" class="background-image" src="<%= asset_path('grads.jpg') %>" />
+  </div>
+  <div class="container">
+    <div class="row mb40 mb-xs-24">
+      <div class="col-sm-12 text-center spread-children">
+        <img class="image-md" alt="Pic" src="<%= asset_path('course_report.png') %>" />
+        <img class="image-md" alt="Pic" src="<%= asset_path('switchup.png') %>" />
+      </div>
+    </div>
+    <!--end of row-->
+    <div class="row mb16 mb-xs-0">
+      <!-- <div class="col-sm-12 text-center">
+        <h4>See what our grads have to say about our program:</h4>
+      </div> -->
+    </div>
+    <!--end of row-->
+    <div class="row">
+      <div class="text-slider slider-paging-controls controls-outside relative">
+        <ul class="slides">
+          <li>
+            <div class="col-md-8 col-md-offset-2">
+              <div class="feature bordered text-center">
+                <h3>The degree of support and care is actually incredible. I don't know what Lisa and Josh are getting paid, but it's not enough however much it is. There is a genuine sense of heart in this program. I wouldn't believe it if I'd read that kind of review online. But seriously. I can't offer enough praise.</h3>
+                <h6 class="uppercase">Anonymous</h6>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="col-md-8 col-md-offset-2">
+              <div class="feature bordered text-center">
+                <h3>Instructor, instructor, instructor..... he is passionate, goes above and beyond for his students and is also strict (punctuality on class time), which is a great attribute in a teacher.  Also, facilities and the planning of the course is thorough.</h3>
+                <h6 class="uppercase">Anonymous</h6>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="col-md-8 col-md-offset-2">
+              <div class="feature bordered text-center">
+                <h3>The pace is fast, but very well taught, and I appreciate all the extra time and effort the the staff is willing to put towards helping me. I makes me feel like they are very invested in my future which is a welcome change from most other classroom experiences i've had.</h3>
+                <h6 class="uppercase">Anonymous</h6>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="col-md-8 col-md-offset-2">
+              <div class="feature bordered text-center">
+                <h3>I would also like to take the time to review my instructor Peter Jang. MAJOR SHOUT OUT. Absolute animal behind the computer. I learned more in his lectures than any single lecture i suffered through at a university. He makes learning easy, interesting, and fun. He is the driving force behind my incredible experience at Actualize.</h3>
+                <h6 class="uppercase">Anonymous</h6>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="col-md-8 col-md-offset-2">
+              <div class="feature bordered text-center">
+                <h3>The instructors are excellent educators. Their teaching methods, support, and guidance are superior and allow students to be successful throughout the entire course.</h3>
+                <h6 class="uppercase">Anonymous</h6>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!--end of row-->
+  </div>
+  <!--end of container-->
+</section>
+
 <!-- Where are grads work -->
 <section class="bg-dark">
   <div class="container">
     <div class="row">
-      <div class="col-sm-12">
+      <div class="col-sm-12 text-center">
         <h3 class="mb40 mb-xs-16">Where Our Grads Work</h3>
         <p class="lead mb64">Our grads have landed software positions at companies of all sizes and industries. Most of these grads have made complete career transitions, switching from a wide variety of other occupations. From lawyers to bartenders and taxi drivers to nurses, we’ve been privileged to help them launch completely new careers.</p>
       </div>
@@ -211,7 +272,7 @@
     </div>
     <!--end of row-->
     <div class="row mt24">
-      <div class="col-md-6">
+      <div class="col-md-6 col-md-offset-3">
         <h4>Ever wonder what it's actually like to be a software developer? Download our ebook below.</h4>
         <form action="/subscribers_career_pdf" method="post" class="halves form-validate" data-success="Thanks for your registration, we will be in touch shortly." data-error="Please fill all fields correctly.">
           <input type="checkbox" name="contact_me_by_fax_only" value="1" style="display:none !important" tabindex="-1" autocomplete="off">
