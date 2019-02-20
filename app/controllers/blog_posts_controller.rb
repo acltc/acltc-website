@@ -62,7 +62,11 @@ class BlogPostsController < ApplicationController
   end
 
   def edit
-    @blog_post = BlogPost.friendly.find(params[:id])
+    if current_admin
+      @blog_post = BlogPost.friendly.find(params[:id])
+    else
+      redirect_to '/'
+    end
   end
 
   def update
