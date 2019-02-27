@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # namespace :api do
   #   namespace :v1 do
-  #     post 'subscribers_popup' => 'subscribers#create_from_popup'
+  #     post '__popup' => 'subscribers#create_from_popup'
   #   end
   # end
 
@@ -50,6 +50,7 @@ Rails.application.routes.draw do
 
   post 'subscribers_application' => 'subscribers#create_from_started_application'
   post 'subscribers_curriculum' => 'subscribers#create_from_curriculum'
+  post 'subscribers_teaching_book' => 'subscribers#create_from_teaching_book'
   post 'subscribers_tutorial' => 'subscribers#create_from_tutorial'
   post 'subscribers_footer' => 'subscribers#create_from_footer'
   post 'subscribers_webinar' => 'subscribers#create_from_webinar'

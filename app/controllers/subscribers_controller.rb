@@ -43,6 +43,11 @@ class SubscribersController < ApplicationController
     send_file "#{Rails.root}/public/pdfs/Actualize-Career-In-Coding.pdf"
   end
 
+  def create_from_teaching_book 
+    create_new_lead unless params[:contact_me_by_fax_only]# contact_me_by_fax_only is a spam honeypot
+    send_file "#{Rails.root}/public/pdfs/Actualize-How-To-Teach-Programming.pdf"
+  end
+
   def create_from_tutorial
     create_new_lead
     respond_to do |format|
