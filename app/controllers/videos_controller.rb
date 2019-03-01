@@ -8,6 +8,7 @@ class VideosController < ApplicationController
 	}
 
 	def tlase_show
+		@source = params[:utm_source]
 		if params[:url] && params[:episode]
 			@video_url = params[:url]
 			@episode_number = params[:episode]
