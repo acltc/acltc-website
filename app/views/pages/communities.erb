@@ -37,11 +37,13 @@
       <div class="col-sm-6">
         <h2>Local Tech Meetups</h2>
         <p>Once you've graduated from a coding bootcamp in <%= @city %>, you'll want to take advantage of your local tech meetups! Here are some really interesting ones:</p>
-        <ul>
-          <% @meetups.each do |meetup| %>
-            <li><a href="<%= meetup['link'] %>" target="_blank" rel="noopener noreferrer" class="primary-color"><%= meetup['name'] %></a></li>
-          <% end %>
-        </ul>
+        <% if @meetups.class == Array %>
+          <ul>
+            <% @meetups.each do |meetup| %>
+              <li><a href="<%= meetup['link'] %>" target="_blank" rel="noopener noreferrer" class="primary-color"><%= meetup['name'] %></a></li>
+            <% end %>
+          </ul>
+        <% end %>
       </div>
       <div class="col-sm-6">
         <h2>Local Jobs</h2>

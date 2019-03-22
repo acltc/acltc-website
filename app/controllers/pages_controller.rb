@@ -100,7 +100,6 @@ class PagesController < ApplicationController
     @city = city_info[:city]
     @state = city_info[:state]
     @state_abbr = STATE_ABBREVIATIONS[city_info[:state]]
-    @tuition_actualize = 9500
     @meetups = Unirest.get("https://api.meetup.com/find/groups?key=#{ENV['MEETUP_API_KEY']}&topic_id=15582&location=#{@city}&order=members").body[0..4]
     render layout: 'main'
   end
