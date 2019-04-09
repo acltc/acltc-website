@@ -48,6 +48,25 @@
     <!--end of row-->
   </div>
   <!--end of container-->
+  <% if @codenewbie %>
+    <div class="foundry_modal text-center image-bg overlay" data-time-delay="1000">
+        <div class="background-image-holder">
+            <img alt="Background" class="background-image" src="<%= asset_path('codenewbie-bg.jpg') %>" />
+        </div>
+        <h3 class="uppercase bold italic">Welcome, CodeNewbies!</h3>
+        <p class="lead mb48">
+            Sign up here for <strong>Think Like a Software Engineer,</strong>
+            <br /> our free weekly video that helps you learn
+            <br>   to smash through the toughest coding problems.
+        </p>
+        <form action="/subscribers_tlase" method="post" class=" halves mb160 mb-xs-80" data-success="Thanks for your registration, we will be in touch shortly." data-error="Please fill all fields correctly.">
+            <input type="text" name="email" class="mb0 validate-email validate-required  signup-email-field" placeholder="Email Address" />
+            <button type="submit" class="primary-color btn-blue mb0">Sign Me Up!</button>               
+        </form>
+    </div>
+                
+
+  <% end %>
 </section>
 
 <!-- Overview: The nation's greatest coding instructors -->

@@ -115,9 +115,9 @@ Rails.application.routes.draw do
   get "/codecademy" => "pages#codecademy"
   get "/resources" => "pages#resources"
 
-  get "/codenewbie" => 'pages#home'
-  get "/code-newbie" => 'pages#home'
-  get "/codenewbies" => 'pages#home'
+  get "/codenewbie" => 'pages#codenewbie'
+  get "/code-newbie" => 'pages#codenewbie'
+  get "/codenewbies" => 'pages#codenewbie'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

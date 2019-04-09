@@ -72,6 +72,12 @@ class PagesController < ApplicationController
     render layout: 'main'
   end
 
+  def codenewbie
+    @codenewbie = true
+    track_web_traffic_source
+    render 'home', layout: 'main'
+  end
+
   def in_person
     track_web_traffic_source
     @cohorts = upcoming_chicago_cohorts(cohort_start_dates, 4)
