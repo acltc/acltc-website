@@ -1,5 +1,5 @@
 class VideosController < ApplicationController
-
+	before_action :authenticate_admin!, only: [:tlase_new, :tlase_create, :tlase_edit, :tlase_update]
 	SIXTY_DAYS = {
 		'qc8ibzuGI6M' => 1,
 		'TPfN0FAfUwo' => 2,

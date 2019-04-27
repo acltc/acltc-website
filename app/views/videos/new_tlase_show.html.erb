@@ -12,9 +12,10 @@ One video
                     <div class="">
                       <h5 class=""><%= @video.title %></h5>
                       <!-- <span class="inline-block mb40 mb-xs-24">what goes here?</span> -->
-                      <p>
-                          <%= @video.description %>
-                      </p>
+                      <p><%= @video.description %></p>
+                      <% if current_admin %>
+                        <h5 class=""><%= link_to("Edit this video", "/think-like-a-software-engineer/videos/#{@video.episode}/edit") %></h5>
+                      <% end %>
                   </div>
                 </h5>
             </div>
