@@ -1,0 +1,32 @@
+<%= render 'tlase_signup_form' %>
+
+
+<section>
+    <div class="container">
+      <% @videos.each_slice(3) do |three_videos| %>
+        <div class="row">
+            <% three_videos.each do |video| %>
+              <div class="col-md-4 col-sm-6">
+                  <div class="image-tile outer-title text-center">
+                        <%= link_to image_tag(video.image_url), "/think-like-a-software-engineer/videos/#{video.episode}", class: '' %>
+                      <div class="title mb16">
+                          <h5 class="uppercase mb0">Episode <%= video.episode %></h5>
+                          <span><%= video.title %></span>
+                          <p><%= link_to("Watch Now", "/think-like-a-software-engineer/videos/#{video.episode}") %></p>
+                      </div>
+                      <p class="mb0">
+                          <%= video.description %>
+                      </p>
+                  </div>
+              </div>
+            <% end %>
+        </div>
+      <% end %>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>
+
+
+
+

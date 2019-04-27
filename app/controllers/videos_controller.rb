@@ -15,8 +15,38 @@ class VideosController < ApplicationController
 		else
 			@episode_number = 1
 			@video_url = 'G9DPZIRnoDI'
-		end 
+		end
 		render layout: 'main'
+	end
+
+	def tlase_index
+		@videos = TlaseVideo.order(:episode)
+	end
+
+	def new_tlase_show
+		@video = TlaseVideo.find_by(episode: params[:episode_id])
+	end
+
+	def tlase_new
+		@video = TlaseVideo.new
+	end
+
+	def tlase_create
+		video_id = params[:vimeo_url].split("/")[-1]
+		image_url = Unirest.get("http://vimeo.com/api/v2/video/#{video_id}.json").body[0]['thumbnail_medium']
+		@video = TlaseVideo.new(vimeo_url: params[:vimeo_url], episode: params[:episode_number], title: params[:title], description: params[:description], image_url: image_url)
+		@video.save
+		redirect_to "/think-like-a-software-engineer/videos/#{@video.episode}"
+	end
+
+	def tlase_edit
+		@video = TlaseVideo.find_by(episode: params[:episode_id])
+	end
+
+	def tlase_update
+		@video = TlaseVideo.find_by(episode: params[:episode_id])
+		@video.update(vimeo_url: params[:vimeo_url], episode: params[:episode_number], title: params[:title], description: params[:description], image_url: params[:image_url])
+		redirect_to "/think-like-a-software-engineer/videos/#{@video.episode}"
 	end
 
 	def sixty_day_show

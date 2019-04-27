@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   get '/newsletter/think-like-a-software-engineer' => 'pages#tlase'
   get '/newsletter/learn-to-code-in-60-days' => 'pages#sixty_day'
-  
+
   devise_for :admins, :controllers => { registrations: 'registrations' }
   get 'admins/dashboard' => 'admins#dashboard'
 
@@ -88,6 +88,13 @@ Rails.application.routes.draw do
   get "/videos/think-like-a-software-engineer" => 'videos#tlase_show'
   get "/videos/learn-to-code-in-60-days" => 'videos#sixty_day_show'
 
+  get "/think-like-a-software-engineer/videos" => 'videos#tlase_index'
+  post "/think-like-a-software-engineer/videos" => 'videos#tlase_create'
+  get "/think-like-a-software-engineer/videos/new" => 'videos#tlase_new'
+  get "/think-like-a-software-engineer/videos/:episode_id/edit" => 'videos#tlase_edit'
+  patch "/think-like-a-software-engineer/videos/:episode_id" => 'videos#tlase_update'
+  get "/think-like-a-software-engineer/videos/:episode_id" => 'videos#new_tlase_show'
+
   get "/tutorial/lessons" => "lessons#index"
   get "/tutorial/lessons/:title" => "lessons#show"
 
@@ -118,6 +125,8 @@ Rails.application.routes.draw do
   get "/codenewbie" => 'pages#codenewbie'
   get "/code-newbie" => 'pages#codenewbie'
   get "/codenewbies" => 'pages#codenewbie'
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
