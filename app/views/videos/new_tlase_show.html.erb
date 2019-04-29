@@ -1,35 +1,49 @@
-One video
-<%= link_to("See all Think Like a Software Engineer Videos", "/think-like-a-software-engineer/videos") %>
+<h4><%= link_to("See all Think Like a Software Engineer Videos", "/think-like-a-software-engineer/videos") %></h4>
 
-<%= render 'tlase_signup_form' %>
 
-<section>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3 col-sm-12">
-                <h5 class="">
-                    <strong>Episode <%= @video.episode %></strong>
-                    <div class="">
-                      <h5 class=""><%= @video.title %></h5>
-                      <!-- <span class="inline-block mb40 mb-xs-24">what goes here?</span> -->
-                      <p><%= @video.description %></p>
-                      <% if current_admin %>
-                        <h5 class=""><%= link_to("Edit this video", "/think-like-a-software-engineer/videos/#{@video.episode}/edit") %></h5>
-                      <% end %>
-                  </div>
-                </h5>
-            </div>
-            <div class="col-md-9 col-sm-12 mb40 mb-xs-24 p0">
-                <div class="col-sm-7 mb64 mb-xs-24">
-                    <iframe src="https://player.vimeo.com/video/<%= @video.vimeo_id %>" width="700" height="396" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+
+<div class="main-container">
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 mb-xs-24">
+                    <div class="post-snippet mb64">
+                        <div class="embed-video-container embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="http://player.vimeo.com/video/<%= @video.vimeo_id %>" allowfullscreen="allowfullscreen"></iframe>
+                        </div>
+                        <!--end of embed video container-->
+                        <div class="post-title">
+
+                                <h4 class="inline-block"><%= @video.title %></h4>
+                        </div>
+                        <ul class="post-meta">
+                            <li>
+                                <i class="ti-user"></i>
+                                <span><%= @video.description %></span>
+                            </li>
+                        </ul>
+                        <hr>
+                    </div>
+                    <!--end of post snippet-->
 
                 </div>
-
+                <!--end of nine col-->
+                <div class="col-md-3 hidden-sm">
+                    <div class="container v-align-transform">
+                      <div class="row">
+                        <div class="col-md-3">
+                            <%= render 'tlase_signup_form' %>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <!--end of sidebar-->
             </div>
-
+            <!--end of container row-->
         </div>
-        <!--end of row-->
-    </div>
-    <!--end of container-->
-</section>
+        <!--end of container-->
+    </section>
+</div>
 
