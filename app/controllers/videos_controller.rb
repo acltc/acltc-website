@@ -21,14 +21,17 @@ class VideosController < ApplicationController
 
 	def tlase_index
 		@videos = TlaseVideo.order(:episode)
+		render layout: 'main'
 	end
 
 	def new_tlase_show
 		@video = TlaseVideo.find_by(episode: params[:episode_id])
+		render layout: 'main'
 	end
 
 	def tlase_new
 		@video = TlaseVideo.new
+		render layout: 'main'
 	end
 
 	def tlase_create
@@ -41,6 +44,7 @@ class VideosController < ApplicationController
 
 	def tlase_edit
 		@video = TlaseVideo.find_by(episode: params[:episode_id])
+		render layout: 'main'
 	end
 
 	def tlase_update
