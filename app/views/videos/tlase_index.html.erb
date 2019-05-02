@@ -1,0 +1,74 @@
+
+<% if current_admin %>
+  <%= link_to("Make a new video", "/think-like-a-software-engineer/videos/new") %>
+<% end %>
+
+<div class="main-container">
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 col-md-offset-0 col-sm-10 col-sm-offset-1">
+                    <table class="table cart mb48">
+                        <thead>
+                            <tr>
+                                <th>&nbsp;</th>
+                                <th>Video</th>
+                                <th>Title</th>
+                                <th>Description</th>
+                                <th>&nbsp;</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                          <% @videos.each do |video| %>
+                            <tr>
+                                <th scope="row">
+                                        <%= video.episode %>
+                                </th>
+                                <td>
+                                    <a href="/think-like-a-software-engineer/videos/<%= video.episode %>">
+                                        <img alt="Product" class="product-thumb" src="<%= video.image_url %>" />
+                                    </a>
+                                </td>
+                                <td>
+                                    <span><%= link_to(video.title, "/think-like-a-software-engineer/videos/#{video.episode}") %></span>
+
+                                </td>
+                                <td>
+                                    <span><%= video.description %></span>
+                                </td>
+                                <td>
+                                    <span><%= link_to("Watch Now", "/think-like-a-software-engineer/videos/#{video.episode}") %></span>
+                                </td>
+                            </tr>
+                          <% end %>
+                        </tbody>
+                    </table>
+                </div>
+                <!--end of items-->
+                <div class="col-md-3 col-md-offset-0 col-sm-10 col-sm-offset-1">
+                    <div class="mb24">
+                        <h5 class="uppercase">Subscribe</h5>
+                        <p>
+                          Learning to code is much more than learning new concepts and syntax. It's a whole new <em>mindset</em>. Get a weekly video straight to your inbox with practical advice and strategies on how to think like a software engineer.
+                        </p>
+                        <form action="/subscribers_tlase" method="post" class="form-validate" data-error="Please submit a correct email address.">
+                          <input type="checkbox" name="contact_me_by_fax_only" value="1" style="display:none !important" tabindex="-1" autocomplete="off">
+                          <input type="text" name="email" style="" class="validate-required validate-email signup-email-field" placeholder="Email Address" aria-label="email"/>
+                          <input class="hollow nomargin nopadding" type="submit" value="Send me free videos" />
+                          <p class="sub" style="clear: both">
+                            *We won't share your email with third parties.
+                          </p>
+                        </form>
+                        <!--end select-->
+
+                    </div>
+
+                </div>
+                <!--end of totals-->
+            </div>
+            <!--end of row-->
+        </div>
+        <!--end of container-->
+    </section>
+</div>
+

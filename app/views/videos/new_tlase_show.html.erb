@@ -1,0 +1,60 @@
+<h4><%= link_to("See all Think Like a Software Engineer Videos", "/think-like-a-software-engineer/videos") %></h4>
+
+<% if current_admin %>
+  <h5 class=""><%= link_to("Edit this video", "/think-like-a-software-engineer/videos/#{@video.episode}/edit") %></h5>
+<% end %>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 mb-xs-24">
+                <div class="post-snippet mb64">
+                    <div class="post-snippet mb64">
+                        <div class="embed-video-container embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="http://player.vimeo.com/video/<%= @video.vimeo_id %>" allowfullscreen="allowfullscreen"></iframe>
+                        </div>
+                        <!--end of embed video container-->
+                        <div class="post-title">
+
+                                <h4>Episode <%= @video.episode %></h4>
+                                <h4 class="inline-block"><%= @video.title %></h4>
+                        </div>
+                        <hr>
+                        <div>
+                            <p><%= @video.description %></p>
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <!--end of post snippet-->
+
+                <!--end of comments-->
+            </div>
+            <!--end of nine col-->
+            <div class="col-md-3 col-md-offset-0 col-sm-10 col-sm-offset-1">
+        <div class="mb24">
+            <h5 class="uppercase">Subscribe</h5>
+            <p>
+              Learning to code is much more than learning new concepts and syntax. It's a whole new <em>mindset</em>. Get a weekly video straight to your inbox with practical advice and strategies on how to think like a software engineer.
+            </p>
+            <form action="/subscribers_tlase" method="post" class="form-validate" data-error="Please submit a correct email address.">
+              <input type="checkbox" name="contact_me_by_fax_only" value="1" style="display:none !important" tabindex="-1" autocomplete="off">
+              <input type="text" name="email" style="" class="validate-required validate-email signup-email-field" placeholder="Email Address" aria-label="email"/>
+              <input class="hollow nomargin nopadding" type="submit" value="Send me free videos" />
+              <p class="sub" style="clear: both">
+                *We won't share your email with third parties.
+              </p>
+            </form>
+            <!--end select-->
+
+        </div>
+
+    </div>
+            <!--end of sidebar-->
+        </div>
+        <!--end of container row-->
+    </div>
+    <!--end of container-->
+</section>

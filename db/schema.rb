@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190117230450) do
+ActiveRecord::Schema.define(version: 20190422185602) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -387,6 +387,16 @@ ActiveRecord::Schema.define(version: 20190117230450) do
     t.string   "city"
     t.string   "postal_code"
     t.string   "phone"
+  end
+
+  create_table "tlase_videos", force: :cascade do |t|
+    t.integer  "episode"
+    t.string   "vimeo_url"
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "image_url"
   end
 
   create_table "tours", force: :cascade do |t|
