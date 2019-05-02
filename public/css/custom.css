@@ -1,0 +1,133 @@
+/****** PLACE YOUR CUSTOM STYLES HERE ******/
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lato', sans-serif;
+  /*letter-spacing: 0px !important;*/
+}
+
+p {
+  font-family: 'Lato', sans-serif !important;
+  font-size: 20px !important;
+}
+
+.big-bold {
+  font-family: 'Lato', sans-serif;
+  font-size: 94px;
+  line-height: 94px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0px;
+  text-transform: uppercase
+}
+
+.dark-bold {
+  color: black !important;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 1em;
+}
+
+p {
+  font-size: 18px;
+}
+
+.tagline {
+  font-size: 40px;
+  line-height: 48px;
+  font-weight: 400;
+  font-family: 'Lato', sans-serif;
+  margin-bottom: 24px;
+  display: block;
+}
+
+.third-screen {
+  height: 40vh;
+}
+
+.logo, .logo:hover {
+  font-size: 2em;
+  font-family: "Maven Pro", sans-serif;
+  letter-spacing: 11px;
+  color: white;
+  font-weight: 100;
+}
+
+.footer-logo {
+  font-family: "Maven Pro", sans-serif;
+  letter-spacing: 11px;
+  text-transform: uppercase;
+}
+
+nav.transparent.fixed .logo {
+  color: #292929;
+}
+
+.btn-filled {
+  border-color: #DFAA1F !important;
+  background: #DFAA1F !important;
+}
+
+.btn-filled:hover {
+  background: #fff !important;
+  border-color: #000 !important;
+  color: #222 !important;
+}
+
+.btn-blue {
+  border-color: #1C81CF !important;
+  background: #1C81CF !important;
+  color: #fff !important;
+}
+
+.btn-blue:hover {
+  background: #fff !important;
+  border-color: #000 !important;
+  color: #222 !important;
+}
+
+.darken-image:after {
+    content:'\A';
+    position:absolute;
+    width:100%; height:100%;
+    top:0; left:0;
+    background:rgba(0,0,0,0.6);
+    opacity:0.5;
+}
+
+.accordion-1 .active .title {
+  background: #1CC0C2 !important;
+}
+
+.right-text {
+  text-align: right;
+}
+
+.accordion .content p {
+  font-family: 'Lato', sans-serif;
+  font-size: 13px !important;
+}
+
+.accordion li.active .content {
+  max-height: 500px;
+}
+
+.circle-image {
+  border-radius: 50%;
+}
+
+@media all and (max-width: 767px) {
+  .cover.fullscreen {
+    height: auto;
+    padding: 0px 0;
+  }
+
+  .shrink {
+    font-size: 70px;
+  }
+}
+
+
+

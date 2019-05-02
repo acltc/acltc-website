@@ -5,10 +5,10 @@
         <h3 class="uppercase">Think Like a Software Engineer</h3>
 
         <%= form_tag(url, method: method) do %>
-          <p>episode_number: <input type="text" name="episode_number" style="margin-left: 0; background-color: white" value="<%= video.episode %>" /></p>
-          <p>vimeo_url: <input type="text" name="vimeo_url" style="margin-left: 0; background-color: white" value="<%= video.vimeo_url %>" /></p>
-          <p>title: <input type="text" name="title" style="margin-left: 0; background-color: white" value="<%= video.title %>" /></p>
-          <p>description: <input type="text" name="description" style="margin-left: 0; background-color: white" value="<%= video.description %>" /></p>
+          <p>episode_number: <input type="text" name="episode_number" style="margin-left: 0; " value="<%= video.episode %>" /></p>
+          <p>vimeo_url: <input type="text" name="vimeo_url" style="margin-left: 0; " value="<%= video.vimeo_url %>" /></p>
+          <p>title: <input type="text" name="title" style="margin-left: 0; " value="<%= video.title %>" /></p>
+          <p>description: <input type="text" name="description" style="margin-left: 0; " value="<%= video.description %>" /></p>
 
           <% if edit %>
             <p>Image Url: <input type="text" name="image_url" style="margin-left: 0; background-color: white" value="<%= video.image_url %>" /></p>
