@@ -89,6 +89,7 @@
             <%= render 'shared/ga' %>
 
             <!-- Footer -->
+            <% unless @no_footer %>
             <footer class="footer-2 bg-dark">
                 <div class="container">
                     <div class="row">
@@ -130,6 +131,7 @@
                 </div>
                 <!--end of container-->
             </footer>
+            <% end %>
             <!-- End of footer -->
         </div>
 

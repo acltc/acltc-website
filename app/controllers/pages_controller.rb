@@ -140,6 +140,7 @@ class PagesController < ApplicationController
 
   def repl
     @repl_slug = params[:exercise] || 'GullibleFormalLoops'
+    @no_footer = true
     render layout: 'main'
   end
 
