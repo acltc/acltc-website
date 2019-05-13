@@ -1,3 +1,43 @@
+<% content_for :head do %>
+  <title>Think Like A Software Engineer | Actualize</title>
+  <meta name="description" content="Get our weekly video newsletter and learn how to think like a software engineer.">
+<% end %>
+
+<% content_for :social_media do %>
+    <!-- Facebook -->
+<!--     <meta property="og:title" content="Think Like a Software Engineer Episode #<%= @episode_number %>" />
+    <meta property="og:image" content="http://i3.ytimg.com/vi/<%= @video_url %>/maxresdefault.jpg"/>
+    <meta property="og:description" content="The 'Think Like a Software Engineer' video series is designed to help you develop the mindset needed to become a successful software developer." /> -->
+
+    <!-- End Facebook -->
+
+    <!-- Twitter -->
+<!--     <meta name="twitter:title" content="Think Like a Software Engineer Episode #<%= @episode_number %>" />
+    <meta name="twitter:image" content="http://i3.ytimg.com/vi/<%= @video_url %>/maxresdefault.jpg" />
+    <meta name="twitter:description" content="The 'Think Like a Software Engineer' video series is designed to help you develop the mindset needed to become a successful software developer." />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@Actualize"> -->
+
+    <!-- End Twitter -->
+<% end %>
+
+
+
+<section class="page-title page-title-2 image-bg overlay">
+    <div class="background-image-holder">
+        <img alt="Background Image" class="background-image" src="<%= asset_path('tlase.jpg') %>"/>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h3 class="uppercase mb0">Think Like A Software Engineer</h3>
+            </div>
+        </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>
+
 <h4><%= link_to("See all Think Like a Software Engineer Videos", "/think-like-a-software-engineer/videos") %></h4>
 
 <% if current_admin %>

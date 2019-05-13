@@ -1,3 +1,22 @@
+<% content_for :head do %>
+  <title>Think Like A Software Engineer | Actualize</title>
+  <meta name="description" content="Get our weekly video newsletter and learn how to think like a software engineer.">
+<% end %>
+
+<section class="page-title page-title-2 image-bg overlay">
+    <div class="background-image-holder">
+        <img alt="Background Image" class="background-image" src="<%= asset_path('tlase.jpg') %>"/>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h3 class="uppercase mb0">Think Like A Software Engineer</h3>
+            </div>
+        </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>
 
 <% if current_admin %>
   <%= link_to("Make a new video", "/think-like-a-software-engineer/videos/new") %>
