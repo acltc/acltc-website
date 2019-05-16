@@ -38,7 +38,9 @@
     <!--end of container-->
 </section>
 
-<h4><%= link_to("See all Think Like a Software Engineer Videos", "/think-like-a-software-engineer/videos") %></h4>
+
+
+<h4></h4>
 
 <% if current_admin %>
   <h5 class=""><%= link_to("Edit this video", "/think-like-a-software-engineer/videos/#{@video.episode}/edit") %></h5>
@@ -47,22 +49,36 @@
 <section>
     <div class="container">
         <div class="row">
+            <div class="col-md-12 mb-xs-24">
+                <div>
+                    <ol class="breadcrumb breadcrumb-2">
+                        <li>
+                            <%= link_to("Back to all episodes", "/think-like-a-software-engineer/videos", class: "primary-color") %>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-9 mb-xs-24">
+
                 <div class="post-snippet mb64">
                     <div class="post-snippet mb64">
-                        <div class="embed-video-container embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/<%= @video.vimeo_id %>" allowfullscreen="allowfullscreen"></iframe>
-                        </div>
-                        <!--end of embed video container-->
                         <div class="post-title">
 
-                                <h4>Episode <%= @video.episode %></h4>
-                                <h4 class="inline-block"><%= @video.title %></h4>
+                            <h4>Episode #<%= @video.episode %>: <%= @video.title %></h4>
+                                
                         </div>
                         <hr>
                         <div>
                             <p><%= @video.description %></p>
                         </div>
+
+                        <div class="embed-video-container embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/<%= @video.vimeo_id %>" allowfullscreen="allowfullscreen"></iframe>
+                        </div>
+                        <!--end of embed video container-->
+                        
                     </div>
 
 
@@ -79,13 +95,12 @@
             <p>
               Learning to code is much more than learning new concepts and syntax. It's a whole new <em>mindset</em>. Get a weekly video straight to your inbox with practical advice and strategies on how to think like a software engineer.
             </p>
-            <form action="/subscribers_tlase" method="post" class="form-validate" data-error="Please submit a correct email address.">
-              <input type="checkbox" name="contact_me_by_fax_only" value="1" style="display:none !important" tabindex="-1" autocomplete="off">
-              <input type="text" name="email" style="" class="validate-required validate-email signup-email-field" placeholder="Email Address" aria-label="email"/>
-              <input class="hollow nomargin nopadding" type="submit" value="Send me free videos" />
-              <p class="sub" style="clear: both">
-                *We won't share your email with third parties.
-              </p>
+            <form action="/subscribers_tlase" method="post" class=" form-validate" data-error="Please submit a correct email address.">
+                <input type="checkbox" name="contact_me_by_fax_only" value="1" style="display:none !important" tabindex="-1" autocomplete="off">
+                <input type="text" name="email" class="mb16 validate-required validate-email signup-email-field" placeholder="Email Address" />
+                <input type="hidden" name="mousetrap" value="TLASE"/>
+                <button class="btn btn-lg btn-blue mb16" type="submit" class="mb0">Send me the weekly video</button>
+
             </form>
             <!--end select-->
 

@@ -20,7 +20,7 @@ class VideosController < ApplicationController
 	end
 
 	def tlase_index
-		@videos = TlaseVideo.order(:episode)
+		@videos = TlaseVideo.order(episode: :desc)
 		render layout: 'main'
 	end
 
