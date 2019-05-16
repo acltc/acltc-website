@@ -3,6 +3,24 @@
   <meta name="description" content="Get our weekly video newsletter and learn how to think like a software engineer.">
 <% end %>
 
+<% content_for :social_media do %>
+    <!-- Facebook -->
+    <meta property="og:title" content="Think Like a Software Engineer" />
+    <meta property="og:image" content="<%= asset_path('tlase.jpg') %>"/>
+    <meta property="og:description" content="The 'Think Like a Software Engineer' video series is designed to help you develop the mindset needed to become a successful software developer." />
+
+    <!-- End Facebook -->
+
+    <!-- Twitter -->
+    <meta name="twitter:title" content="Think Like a Software Engineer Episode #<%= @episode_number %>" />
+    <meta name="twitter:image" content="<%= asset_path('tlase.jpg') %>" />
+    <meta name="twitter:description" content="The 'Think Like a Software Engineer' video series is designed to help you develop the mindset needed to become a successful software developer." />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@Actualize">
+
+    <!-- End Twitter -->
+<% end %>
+
 <section class="page-title page-title-2 image-bg overlay">
     <div class="background-image-holder">
         <img alt="Background Image" class="background-image" src="<%= asset_path('tlase.jpg') %>"/>
@@ -28,7 +46,7 @@
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
                     <h3>Become a true software engineer!</h3>
-                    <h5 style="">Learning to code is much more than learning new concepts and syntax. It's a whole new <em>mindset</em>. To help you learn that mindset, we create a weekly video called Think Like a Software Engineer. These videos aren't about specific technologies, but cover the meta aspects of software engineering. You can now be explictly taught a way of thinking that most developers only pick up after years of experience. Our founder and CEO, Jay Wengrow, creates and releases a new episode each Friday.</h5>
+                    <h5 style="">Learning to code is much more than learning new concepts and syntax. It's a whole new <em>mindset</em>. To help you learn that mindset, we create a weekly video called Think Like a Software Engineer. These videos aren't about specific technologies, but cover the meta aspects of software engineering. You can now be explictly taught a way of thinking that most developers only pick up after years of experience. Our founder and CEO, Jay Wengrow, creates and releases a new episode each week.</h5>
 
                 </div>
             </div>
