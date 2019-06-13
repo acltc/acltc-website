@@ -126,7 +126,7 @@ Rails.application.routes.draw do
   get "/code-newbie" => 'pages#codenewbie'
   get "/codenewbies" => 'pages#codenewbie'
 
-
+  post "/social-media" => 'social_media#new_post'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
