@@ -37,3 +37,4 @@ TlaseVideo.create(episode: 18, title: "Installing Stuff!", description: "I don't
 TlaseVideo.create(episode: 19, title: "Gremlins!", description: "Is it possible to have a bug in your code that has no logical reason? Maybe something's just wrong with your computer? Let’s have a conversation about gremlins.", vimeo_url: "335460987")
 
 
+SocialMedium.create!(previous_post_time: Time.new(2019, 6, 17, 9, 00, 0))
