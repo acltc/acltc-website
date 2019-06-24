@@ -32,7 +32,8 @@ class SocialMediaController < ApplicationController
 
     if time_of_day == "11:00"
       added_hours *= -1
-    elsif time_of_day == "8:00"
+    elsif time_of_day == "08:00"
+
       added_days = 0
     end
 
