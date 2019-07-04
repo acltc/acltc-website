@@ -3,8 +3,8 @@ module CohortDatesHelper
     cohort_dates = [
       { early_bird: Date.new(2017, 12, 31), prework: Date.new(2018, 1, 28), live: Date.new(2018, 2, 25), location: "Chicago Night" },
       { early_bird: Date.new(2017, 12, 31), prework: Date.new(2018, 1, 28), live: Date.new(2018, 2, 25), location: "Online Night" },
-      { early_bird: Date.new(2018, 2, 28), prework: Date.new(2018, 4, 1), live: Date.new(2018, 4, 29), location: "Chicago Night"  },
-      { early_bird: Date.new(2018, 2, 28), prework: Date.new(2018, 4, 8), live: Date.new(2018, 5, 13), location: "Online Night"  },
+      { early_bird: Date.new(2018, 2, 28), prework: Date.new(2018, 4, 1), live: Date.new(2018, 4, 29), location: "Chicago Night" },
+      { early_bird: Date.new(2018, 2, 28), prework: Date.new(2018, 4, 8), live: Date.new(2018, 5, 13), location: "Online Night" },
       { early_bird: Date.new(2018, 3, 31), prework: Date.new(2018, 5, 20), live: Date.new(2018, 6, 17), location: "Chicago Night" },
       { early_bird: Date.new(2018, 3, 31), prework: Date.new(2018, 5, 20), live: Date.new(2018, 6, 17), location: "Online Night" },
       { early_bird: Date.new(2018, 5, 31), prework: Date.new(2018, 7, 22), live: Date.new(2018, 8, 19), location: "Chicago Night" },
@@ -27,6 +27,19 @@ module CohortDatesHelper
       { early_bird: Date.new(2019, 10, 31), prework: Date.new(2019, 12, 1), live: Date.new(2020, 1, 6), location: "Online Day" },
       { early_bird: Date.new(2019, 11, 30), prework: Date.new(2020, 1, 19), live: Date.new(2020, 2, 23), location: "Chicago Night" },
       { early_bird: Date.new(2019, 11, 30), prework: Date.new(2020, 1, 19), live: Date.new(2020, 2, 23), location: "Online Night" },
+
+      { early_bird: Date.new(2020, 2, 29), prework: Date.new(2020, 4, 12), live: Date.new(2020, 5, 18), location: "Chicago Day" },
+      { early_bird: Date.new(2020, 2, 29), prework: Date.new(2020, 4, 12), live: Date.new(2020, 5, 18), location: "Online Day" },
+      { early_bird: Date.new(2020, 3, 31), prework: Date.new(2020, 5, 17), live: Date.new(2020, 6, 21), location: "Chicago Night" },
+      { early_bird: Date.new(2020, 3, 31), prework: Date.new(2020, 5, 17), live: Date.new(2020, 6, 21), location: "Online Night" },
+      { early_bird: Date.new(2020, 5, 31), prework: Date.new(2020, 7, 26), live: Date.new(2020, 8, 31), location: "Chicago Day" },
+      { early_bird: Date.new(2020, 5, 31), prework: Date.new(2020, 7, 26), live: Date.new(2020, 8, 31), location: "Online Day" },
+      { early_bird: Date.new(2020, 7, 31), prework: Date.new(2020, 9, 20), live: Date.new(2020, 10, 25), location: "Chicago Night" },
+      { early_bird: Date.new(2020, 7, 31), prework: Date.new(2020, 9, 20), live: Date.new(2020, 10, 25), location: "Online Night" },
+      { early_bird: Date.new(2020, 10, 31), prework: Date.new(2020, 11, 29), live: Date.new(2021, 1, 4), location: "Chicago Day" },
+      { early_bird: Date.new(2020, 10, 31), prework: Date.new(2020, 11, 29), live: Date.new(2021, 1, 4), location: "Online Day" },
+      { early_bird: Date.new(2020, 11, 30), prework: Date.new(2021, 1, 10), live: Date.new(2021, 2, 4), location: "Chicago Night" },
+      { early_bird: Date.new(2020, 11, 30), prework: Date.new(2021, 1, 10), live: Date.new(2021, 2, 4), location: "Online Night" },
     ].sort_by { |cohort_date| cohort_date[:prework] }
   end
 end
