@@ -38,8 +38,8 @@ module CohortDatesHelper
       { early_bird: Date.new(2020, 7, 31), prework: Date.new(2020, 9, 20), live: Date.new(2020, 10, 25), location: "Online Night" },
       { early_bird: Date.new(2020, 10, 31), prework: Date.new(2020, 11, 29), live: Date.new(2021, 1, 4), location: "Chicago Day" },
       { early_bird: Date.new(2020, 10, 31), prework: Date.new(2020, 11, 29), live: Date.new(2021, 1, 4), location: "Online Day" },
-      { early_bird: Date.new(2020, 11, 30), prework: Date.new(2021, 1, 10), live: Date.new(2021, 2, 4), location: "Chicago Night" },
-      { early_bird: Date.new(2020, 11, 30), prework: Date.new(2021, 1, 10), live: Date.new(2021, 2, 4), location: "Online Night" },
+      { early_bird: Date.new(2020, 11, 30), prework: Date.new(2021, 1, 10), live: Date.new(2021, 2, 14), location: "Chicago Night" },
+      { early_bird: Date.new(2020, 11, 30), prework: Date.new(2021, 1, 10), live: Date.new(2021, 2, 14), location: "Online Night" },
     ].sort_by { |cohort_date| cohort_date[:prework] }
   end
 end
