@@ -66,9 +66,14 @@ class PagesController < ApplicationController
       }
 
   include CohortDatesHelper
-  
+
   def home
     track_web_traffic_source
+    if params[:year] == "1883"
+      @suffix = "-old-site"
+    else
+      @suffix = ""
+    end
     render layout: 'main'
   end
 
