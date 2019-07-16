@@ -7,7 +7,7 @@
 <!-- Jumbotron -->
 <section class="image-bg overlay fullscreen cover parallax">
   <div class="background-image-holder darken-image">
-    <img alt="Learn to code" class="background-image" src="<%= asset_path('homepage_hero.jpg') %>" />
+    <img alt="Learn to code" class="background-image" src='<%= asset_path("homepage_hero#{@suffix}.jpg") %>' />
   </div>
   <div class="container v-align-transform">
     <div class="row v-align-children">
@@ -21,7 +21,11 @@
         <div class="row">
           <div class="col-sm-12">
             <h2 id="h1" class="large bold big-bold">
-              Be The New You
+              <% if @suffix == "-old-site" %>
+                Be The New You Since 1883
+              <% else %>
+                Be The New You
+              <% end %>
             </h2>
             <h1 id="h2">
               The coding bootcamp founded, designed, and taught by expert educators
@@ -51,7 +55,7 @@
   <% if @codenewbie %>
     <div class="foundry_modal text-center  overlay" data-time-delay="1000">
         <div class="background-image-holder">
-            <img alt="Background" class="background-image" src="<%= asset_path('codenewbie-bg.jpg') %>" />
+            <img alt="Background" class="background-image" src='<%= asset_path("codenewbie-bg#{@suffix}.jpg") %>' />
         </div>
         <h3 class="uppercase bold italic">Welcome, CodeNewbies!</h3>
         <p class="lead mb48">
@@ -74,7 +78,7 @@
 <!-- Overview: The nation's greatest coding instructors -->
 <section class="image-edge pt120 pb120 pt-xs-40 pb-xs-40">
   <div class="col-md-6 col-sm-4 p0">
-    <img alt="Online coding bootcamp" class="cast-shadow mb-xs-24" src="<%= asset_path('teachers.jpg') %>" />
+    <img alt="Online coding bootcamp" class="cast-shadow mb-xs-24" src='<%= asset_path("teachers#{@suffix}.jpg") %>' />
   </div>
   <div class="container">
     <div class="col-md-5 col-md-offset-1 col-sm-7 col-sm-offset-1 v-align-transform right">
@@ -87,7 +91,7 @@
 <!-- Overview: Powerful student relationships -->
 <section class="image-edge pt120 pb120 pt-xs-40 pb-xs-40">
   <div class="col-md-6 col-sm-4 p0 col-md-push-6 col-sm-push-8">
-    <img alt="Online coding bootcamp instructor" class="cast-shadow mb-xs-24" src="<%= asset_path('brian_smile.jpg') %>"/>
+    <img alt="Online coding bootcamp instructor" class="cast-shadow mb-xs-24" src='<%= asset_path("brian_smile#{@suffix}.jpg") %>'/>
   </div>
   <div class="container">
     <div class="col-md-5 col-md-pull-0 col-sm-7 col-sm-pull-4 v-align-transform">
@@ -101,7 +105,7 @@
 <!-- Overview: Finely-tuned curriculum -->
 <section class="image-edge pt120 pb120 pt-xs-40 pb-xs-40">
   <div class="col-md-6 col-sm-4 p0">
-    <img alt="Online coding bootcamp student" class="cast-shadow mb-xs-24" src="<%= asset_path('we_wrote_the_book.jpg') %>" />
+    <img alt="Online coding bootcamp student" class="cast-shadow mb-xs-24" src='<%= asset_path("we_wrote_the_book#{@suffix}.jpg") %>' />
   </div>
   <div class="container">
     <div class="col-md-5 col-md-offset-1 col-sm-7 col-sm-offset-1 v-align-transform right">
@@ -123,7 +127,7 @@
 <!-- Overview: Job support-->
 <section class="image-edge pt120 pb120 pt-xs-40 pb-xs-40">
   <div class="col-md-6 col-sm-4 p0 col-md-push-6 col-sm-push-8">
-    <img alt="Online coding bootcamp instructor" class="cast-shadow mb-xs-24" src="<%= asset_path('mentoring.jpg') %>"/>
+    <img alt="Online coding bootcamp instructor" class="cast-shadow mb-xs-24" src='<%= asset_path("mentoring#{@suffix}.jpg") %>'/>
   </div>
   <div class="container">
     <div class="col-md-5 col-md-pull-0 col-sm-7 col-sm-pull-4 v-align-transform">
@@ -138,7 +142,7 @@
 <!-- Overview: Flexible schedule -->
 <section class="image-edge pt120 pb120 pt-xs-40 pb-xs-40">
   <div class="col-md-6 col-sm-4 p0">
-    <img alt="Online teaching" class="cast-shadow mb-xs-24" src="<%= asset_path('online_live_shot.jpg') %>" />
+    <img alt="Online teaching" class="cast-shadow mb-xs-24" src='<%= asset_path("online_live_shot#{@suffix}.jpg") %>' />
   </div>
   <div class="container">
     <div class="col-md-5 col-md-offset-1 col-sm-7 col-sm-offset-1 v-align-transform right">
@@ -151,7 +155,7 @@
 <!-- Awards and Testimonials -->
 <section class="image-bg overlay parallax bg-dark">
   <div class="background-image-holder darken-image-more">
-    <img alt="image" class="background-image" src="<%= asset_path('grads.jpg') %>" />
+    <img alt="image" class="background-image" src='<%= asset_path("grads#{@suffix}.jpg") %>' />
   </div>
   <div class="container">
     <div class="row mb40 mb-xs-24">
@@ -269,7 +273,7 @@
 <!-- Program options: Online -->
 <section class="image-edge pt120 pb120 pt-xs-40 pb-xs-40">
   <div class="col-md-6 col-sm-4 p0">
-    <img alt="Online coding bootcamp" class="cast-shadow mb-xs-24" src="<%= asset_path('rob_online.jpg') %>" />
+    <img alt="Online coding bootcamp" class="cast-shadow mb-xs-24" src='<%= asset_path("rob_online#{@suffix}.jpg") %>' />
   </div>
   <div class="container">
     <div class="col-md-5 col-md-offset-1 col-sm-7 col-sm-offset-1 v-align-transform right">
@@ -283,7 +287,7 @@
 <!-- Program options: Chicago -->
 <section class="image-edge pt120 pb120 pt-xs-40 pb-xs-40">
   <div class="col-md-6 col-sm-4 p0 col-md-push-6 col-sm-push-8">
-    <img alt="Online coding bootcamp instructor" class="cast-shadow mb-xs-24" src="<%= asset_path('conference_room_small.jpg') %>"/>
+    <img alt="Online coding bootcamp instructor" class="cast-shadow mb-xs-24" src='<%= asset_path("conference_room_small#{@suffix}.jpg") %>'/>
   </div>
   <div class="container">
     <div class="col-md-5 col-md-pull-0 col-sm-7 col-sm-pull-4 v-align-transform">
@@ -301,7 +305,7 @@
 <!-- Think Like A Software Engineer -->
 <section class="cover fullscreen image-bg overlay">
   <div class="background-image-holder darken-image">
-    <img alt="Learn to code webinars" class="background-image" src="<%= asset_path('tlase.jpg') %>" />
+    <img alt="Learn to code webinars" class="background-image" src='<%= asset_path("tlase#{@suffix}.jpg") %>' />
   </div>
   <div class="container v-align-transform">
     <div class="row">
