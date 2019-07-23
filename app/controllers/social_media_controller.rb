@@ -16,7 +16,9 @@ class SocialMediaController < ApplicationController
           month = date[0]
           day = date[1]
           year = date[2]
-          next_post_time = Time.new(year, month, day, 14)
+          # 14 was 10 am so
+          # 18 should be 2 pm
+          next_post_time = Time.new(year, month, day, 18)
           break
         end
       end
