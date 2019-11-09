@@ -90,6 +90,13 @@ class PagesController < ApplicationController
     render layout: 'main'
   end
 
+  def corporate_training
+    @cohorts = upcoming_chicago_cohorts(cohort_start_dates, 4)
+    @early_bird_deadline = valid_early_bird_deadline(@cohorts)
+    @contact = Contact.new
+    render 'corporate_training', layout: 'main'
+  end
+
   def online
     track_web_traffic_source
     @cohorts = upcoming_online_cohorts(cohort_start_dates, 4)
