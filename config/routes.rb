@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'statuses/edit'
 
   root 'pages#home'
+  get '/actualize-corporate-training' => 'pages#corporate_training'
   get '/chicago-coding-bootcamp' => 'pages#in_person'
   get '/online-coding-bootcamp' => 'pages#online'
   get '/in-person', to: redirect('/chicago-coding-bootcamp')
