@@ -1,0 +1,226 @@
+<% content_for :head do %>
+  <title>Hiring | Actualize</title>
+<% end %>
+
+<% content_for :ld_json do %>
+    <!-- For JSON-LD Schema -->
+    <script type='application/ld+json'>
+    {
+        "@context": "https://www.schema.org",
+        "@type": "School",
+        "name": "Actualize Online Coding Bootcamp",
+        "url": "http://anyonecanlearntocode.com",
+        "description": "A top online coding bootcamp that mentors you from start to finish in transforming yourself into a software developer."
+    }
+    </script>
+<% end %>
+
+
+<!-- Page #1 -->
+<section class="image-bg overlay fullscreen cover parallax">
+    <div class="background-image-holder darken-image">
+        <img alt="Become a software developer" class="background-image" src="<%= asset_path('online_live_shot.jpg') %>">
+    </div>
+    <div class="fs-vid-background">
+        <video autoplay muted loop>
+            <!-- <source src="video/video.webm" type="video/webm"> -->
+            <!-- <source src="video/online_live_hero.mp4" type="video/mp4"> -->
+            <!-- <source src="video/video.ogv" type="video/ogg"> -->
+        </video>
+    </div>
+    <div class="container v-align-transform">
+        <div class="row">
+            <div class="col-sm-4 col-sm-offset-4 col-xs-6 col-xs-offset-3">
+                <img alt="Actualize Online Coding Bootcamp" class="mb48 mb-xs-16 fade-1-4" src="<%= asset_path('actualize-logo.png') %>"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h2 id="h1" class="large bold big-bold">
+                    Actualize graduates make great developers
+                </h2>
+                <h1 id="h2" class="">
+
+                </h1>
+            </div>
+        </div>
+        <!--end of row-->
+    </div>
+</section>
+
+<!-- End Page #1 -->
+
+<!-- Page #2 -->
+<section id="overview">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1 text-center">
+                <h4 class="uppercase mb16">What does Online Live mean?</h4>
+                <p class="lead">
+                    <strong>Skilled and Persistent Learners = Quality Candidates.</strong>
+                    Instead of teaching the hottest new framework or technology, we teach our students the fundamentals of web development so that they can learn any technology. We train our students to have a growth mindset, and instill the habits and the discipline necessary to continually practice and grow their developer skills. This gives them the unique ability to be able to take something completely unknown, relate it to something they do know, and convert that knowledge into learning power, allowing them to quickly contribute in a new environment.
+
+                    With cohorts in-person in Chicago and fully live online, we have the same high-quality candidates across the U.S., including those who are willing to relocate for the right position. Our unique Job Hacking approach also includes group development with students in different classes and locations, making them ready to work remotely or collaborate with remote or partially-remote teams.
+
+                    <strong>Personalized matchmaking with the right candidates - for free.</strong>
+                    At Actualize, our focus is the success of our students and the employers who hire them. Contact us at hiring@actualize.co; we’ll review your priorities and connect you with students who’ll be strong candidates for your roles.
+                </p>
+                <!--end of embed video container-->
+            </div>
+        </div>
+
+
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>
+
+<!-- End Page #2 -->
+
+<!-- Page #3 -->
+
+
+
+
+<!-- End Page #3 -->
+
+<section class="bg-secondary">
+    <div class="container">
+        <div class="row mb40 mb-xs-0">
+            <div class="col-sm-12 text-center">
+                <h4 class="uppercase">4 Week Prework Schedule</h4>
+                <p>The 4 weeks of prework are done remotely on your own schedule. Exercises are due at the end of each week.</p>
+            </div>
+        </div>
+        <!--end of row-->
+        <div class="row">
+            <div class="col-sm-6 col-md-5 text-right text-center-xs">
+                <!-- <h1 class=" mb8">Open Schedule</h1> -->
+                <h4 class="">
+                    “Ashley has been a great addition to the Customer Experience engineering team, and was able to jump in and contribute from day one. She joined the team with the skills needed to help solve problems using the technologies she was comfortable with, and the skills to quickly get up to speed with specific technologies she wasn't yet familiar with. She's a pivotal member of the team, implementing features across the stack in our Rails and mobile application code.”
+                    <br>
+                    <br>
+                    ~Ben Haley, Director of Engineering at HomeChef
+                </h4>
+                <%= image_tag "logos/groupon.png" %>
+                <%= image_tag "logos/inner_workings.png" %>
+                <%= image_tag "logos/oracle.png" %>
+            </div>
+            <div class="col-md-2 text-center hidden-sm hidden-xs">
+                <i class="ti-time icon icon-lg mt8 mt-xs-0"></i>
+            </div>
+            <div class="col-sm-6 col-md-5 text-center-xs">
+
+
+
+                <%= image_tag "logos/cars_com.png" %>
+                <%= image_tag "logos/betterment.png" %>
+                <%= image_tag "logos/home_chef.png" %>
+                <%= image_tag "logos/avant.png" %>
+
+
+            </div>
+        </div>
+        <!--end of row-->
+
+    </div>
+    <!--end of container-->
+</section>
+
+<!-- Page #4 -->
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h4 class="mb16">Have a question for us?</h4>
+                <p class="lead mb64">
+                    Ask away! We'll get back to you as quickly as we can. You can also call us directly at <a class="primary-color" href="tel:7737665965">(773) 766-5965</a>.
+                </p>
+            </div>
+            <div class="col-sm-6">
+                <%= form_tag '/hiring', method: :post do %>
+                    <input type="checkbox" name="contact_me_by_fax_only" value="1" style="display:none !important" tabindex="-1" autocomplete="off">
+                    <!-- don't need to save employer info -->
+
+                    First Name
+                    Last Name
+                    Title
+                    Company Name
+                    Email Address
+                    Phone Number
+                    Please describe your current hiring needs
+                    What are the skills and experience that make a candidate stand out to you?
+
+
+                    <input class="required" type="text" name="employer[first_name]" id="employer_first_name" placeholder="First Name" />
+                    <input class="required" type="text" name="employer[last_name]" id="employer_last_name" placeholder="Last Name" />
+                    <input class="required" type="text" name="employer[title]" id="employer_title" placeholder="Title" />
+                    <input class="required" type="text" name="employer[company_name]" id="employer_company_name" placeholder="Company Name" />
+                    <input class="required" type="text" name="employer[email]" id="employer_email" placeholder="Email Address" />
+                    <input class="required" type="text" name="employer[phone]" id="employer_phone" placeholder="Phone Number" />
+                    <textarea rows="3" name="employer[current_needs]" id="employer_current_needs" placeholder="Please describe your current hiring needs"></textarea>
+                    <textarea rows="3" name="employer[skills]" id="employer_skills" placeholder="What are the skills and experience that make a candidate stand out to you?"></textarea>
+                    <input type="submit" name="commit" value="Ask Away!" class="primary-color" >
+                <% end %>
+            </div>
+
+            <!-- <div class="col-sm-6">
+                <h4 class="uppercase mb16">Option Inputs</h4>
+                <p class="lead mb64">
+                    An array of tastefully styled options to make forms more inviting.
+                </p>
+                <div class="select-option">
+                    <i class="ti-angle-down"></i>
+                    <select>
+                        <option selected value="Default">Select An Option</option>
+                        <option value="Small">Small</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Larger">Large</option>
+                    </select>
+                </div>
+
+                <form class="mb24">
+                    <span>Would you like to hear about checkboxes?</span>
+                    <div class="checkbox-option pull-right">
+                        <div class="inner"></div>
+                        <input type="checkbox" name="checkbox" value="Checkbox" />
+                    </div>
+                </form>
+                <hr>
+                <form>
+                    <h5 class="uppercase">Sign-up to mailing list?</h5>
+                    <div>
+                        <div class="radio-option checked">
+                            <div class="inner"></div>
+                            <input type="radio" name="radio" value="radio1" />
+                        </div>
+                        <span>Yes</span>
+                    </div>
+                    <div>
+                        <div class="radio-option">
+                            <div class="inner"></div>
+                            <input type="radio" name="radio" value="radio1" />
+                        </div>
+                        <span>No</span>
+                    </div>
+                    <div>
+                        <div class="radio-option">
+                            <div class="inner"></div>
+                            <input type="radio" name="radio" value="radio1" />
+                        </div>
+                        <span>Maybe</span>
+                    </div>
+                </form>
+                <input type="submit" value="Submit Button" />
+            </div> -->
+        </div>
+        <!--end of row-->
+    </div>
+    <!--end of container-->
+</section>
+<!-- End Page #4 -->
+
+<!-- Page #5 -->
+
+

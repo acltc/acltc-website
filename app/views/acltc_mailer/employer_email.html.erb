@@ -1,0 +1,34 @@
+<h1>You've received a message from the Contact Us form:</h1>
+<table>
+  <tr>
+    <td>Name:</td>
+    <td><%= @employer['first_name'] %> <%= @employer['last_name'] %></td>
+  </tr>
+  <tr>
+    <td>Phone:</td>
+    <td><%= @employer['phone'] %></td>
+  </tr>
+  <tr>
+    <td>Title:</td>
+    <td><%= @employer['title'] %></td>
+  </tr>
+  <tr>
+    <td>Company Name:</td>
+    <td><%= @employer['company_name'] %></td>
+  </tr>
+  <tr>
+    <td>Email:</td>
+    <td><%= @employer['email'] %></td>
+  </tr>
+  <tr>
+    <td>Current Needs:</td>
+    <td><%= @employer['current_needs'] %></td>
+  </tr>
+  <tr>
+    <td>Skills:</td>
+    <td><%= @employer['skills'] %></td>
+  </tr>
+</table>
+
+<p>Sincerely,</p>
+<p>ACLTC Team</p>

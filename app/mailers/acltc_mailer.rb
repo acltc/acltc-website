@@ -6,6 +6,11 @@ class AcltcMailer < ApplicationMailer
     mail(from: @contact.email, to: "hello@anyonecanlearntocode.com", subject: 'Contact Us')
   end
 
+  def employer_email(employer)
+    @employer = employer
+    mail(to: 'hiring@actualize.co', subject: "Contact Us (employer)")
+  end
+
   def complete_your_application_reminder(first_name, email, phone)
     @first_name = first_name
     @email = email
@@ -105,5 +110,6 @@ class AcltcMailer < ApplicationMailer
     @email_body = email_body
     mail(from: @referral.referrer_email, to: @referral.referred_email, cc: "operations@actualize.co", bcc: [@referral.referrer_email, "jay@actualize.co"], subject: "Intro to Actualize")
   end
+
 
 end

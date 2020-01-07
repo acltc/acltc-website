@@ -66,7 +66,7 @@ class PagesController < ApplicationController
       }
 
   include CohortDatesHelper
-  
+
   def home
     track_web_traffic_source
     render layout: 'main'
@@ -167,6 +167,18 @@ class PagesController < ApplicationController
     render layout: 'main'
   end
 
+  def hiring
+
+    render layout: 'main'
+  end
+
+  def send_to_hiring
+    @employer = params['employer']
+
+    AcltcMailer.employer_email(@employer).deliver_now
+    redirect_to "/pages/contacts_thank_you"
+  end
+
   private
     def tour_params
       params.require(:tour).permit(
@@ -227,3 +239,10 @@ class PagesController < ApplicationController
       end
     end
 end
+
+
+
+# new prework
+# new wireframe
+
+# hiring page
