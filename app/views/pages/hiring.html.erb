@@ -55,16 +55,18 @@
     <div class="container">
         <div class="row">
             <div class="col-md-10 col-md-offset-1 text-center">
-                <h4 class="uppercase mb16">What does Online Live mean?</h4>
+                <h4 class="uppercase mb16">Skilled and Persistent Learners = Quality Candidates.</h4>
                 <p class="lead">
-                    <strong>Skilled and Persistent Learners = Quality Candidates.</strong>
-                    Instead of teaching the hottest new framework or technology, we teach our students the fundamentals of web development so that they can learn any technology. We train our students to have a growth mindset, and instill the habits and the discipline necessary to continually practice and grow their developer skills. This gives them the unique ability to be able to take something completely unknown, relate it to something they do know, and convert that knowledge into learning power, allowing them to quickly contribute in a new environment.
+                    <strong>Instead of teaching the hottest new framework or technology, we teach our students the fundamentals of web development so that they can learn any technology.</strong> We train our students to have a growth mindset, and instill the habits and the discipline necessary to continually practice and grow their developer skills. This gives them the unique ability to be able to take something completely unknown, relate it to something they do know, and convert that knowledge into learning power, allowing them to quickly contribute in a new environment.
 
                     With cohorts in-person in Chicago and fully live online, we have the same high-quality candidates across the U.S., including those who are willing to relocate for the right position. Our unique Job Hacking approach also includes group development with students in different classes and locations, making them ready to work remotely or collaborate with remote or partially-remote teams.
-
-                    <strong>Personalized matchmaking with the right candidates - for free.</strong>
-                    At Actualize, our focus is the success of our students and the employers who hire them. Contact us at hiring@actualize.co; we’ll review your priorities and connect you with students who’ll be strong candidates for your roles.
                 </p>
+
+                <h4 class="uppercase mb16">Personalized matchmaking with the right candidates - for free.</h4>
+                <p class="lead">
+                    <strong>At Actualize, our focus is the success of our students and the employers who hire them.</strong> Contact us at <a href="mailto:hiring@actualize.co">hiring@actualize.co</a>; we’ll review your priorities and connect you with students who’ll be strong candidates for your roles.
+                </p>
+                <!-- looks too small -->
                 <!--end of embed video container-->
             </div>
         </div>
@@ -88,8 +90,8 @@
     <div class="container">
         <div class="row mb40 mb-xs-0">
             <div class="col-sm-12 text-center">
-                <h4 class="uppercase">4 Week Prework Schedule</h4>
-                <p>The 4 weeks of prework are done remotely on your own schedule. Exercises are due at the end of each week.</p>
+                <h4 class="uppercase"></h4>
+                <p></p>
             </div>
         </div>
         <!--end of row-->
@@ -102,22 +104,21 @@
                     <br>
                     ~Ben Haley, Director of Engineering at HomeChef
                 </h4>
-                <%= image_tag "logos/groupon.png" %>
-                <%= image_tag "logos/inner_workings.png" %>
-                <%= image_tag "logos/oracle.png" %>
+                <%= image_tag "logos/Home_Chef_logo.png", :style => "width: 300px" %>
+
             </div>
             <div class="col-md-2 text-center hidden-sm hidden-xs">
-                <i class="ti-time icon icon-lg mt8 mt-xs-0"></i>
+                <!-- <i class="ti-time icon icon-lg mt8 mt-xs-0"></i> -->
             </div>
             <div class="col-sm-6 col-md-5 text-center-xs">
 
 
 
-                <%= image_tag "logos/cars_com.png" %>
-                <%= image_tag "logos/betterment.png" %>
-                <%= image_tag "logos/home_chef.png" %>
-                <%= image_tag "logos/avant.png" %>
-
+                <%= image_tag "logos/groupon.png", :style => "width: 300px" %>
+                <%= image_tag "logos/cars_com.png", :style => "width: 300px" %>
+                <%= image_tag "logos/betterment.png", :style => "width: 300px" %>
+                <%= image_tag "logos/avant.png", :style => "width: 300px" %>
+                <%= image_tag "logos/oracle.png", :style => "width: 300px" %>
 
             </div>
         </div>
@@ -135,22 +136,13 @@
             <div class="col-sm-6">
                 <h4 class="mb16">Have a question for us?</h4>
                 <p class="lead mb64">
-                    Ask away! We'll get back to you as quickly as we can. You can also call us directly at <a class="primary-color" href="tel:7737665965">(773) 766-5965</a>.
+                    Ask away! We'll get back to you as quickly as we can. You can also call us directly at <a class="primary-color" href="tel:7737665965">(773) 766-5965</a> or email us at <a href="mailto:hiring@actualize.co">hiring@actualize.co</a>.
                 </p>
             </div>
             <div class="col-sm-6">
                 <%= form_tag '/hiring', method: :post do %>
                     <input type="checkbox" name="contact_me_by_fax_only" value="1" style="display:none !important" tabindex="-1" autocomplete="off">
                     <!-- don't need to save employer info -->
-
-                    First Name
-                    Last Name
-                    Title
-                    Company Name
-                    Email Address
-                    Phone Number
-                    Please describe your current hiring needs
-                    What are the skills and experience that make a candidate stand out to you?
 
 
                     <input class="required" type="text" name="employer[first_name]" id="employer_first_name" placeholder="First Name" />

@@ -8,7 +8,7 @@ class AcltcMailer < ApplicationMailer
 
   def employer_email(employer)
     @employer = employer
-    mail(to: 'hiring@actualize.co', subject: "Contact Us (employer)")
+    mail(to: 'hiring@actualize.co', subject: "Contact Us #{@employer['company_name']}")
   end
 
   def complete_your_application_reminder(first_name, email, phone)
