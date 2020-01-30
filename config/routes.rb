@@ -133,7 +133,9 @@ Rails.application.routes.draw do
 
   post "/social-media" => 'social_media#new_post'
 
-  get "/open_prework" => "open_prework#index"
+  get "/coding_foundations" => "open_prework#index"
+  get "/enroll/coding_foundations" => "open_prework#enroll_form"
+  post "/enroll/coding_foundations" => "open_prework#enroll"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

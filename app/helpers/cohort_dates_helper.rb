@@ -1,4 +1,6 @@
 module CohortDatesHelper
+  NUMBER_OF_DAYS_BEFORE_IN_CLASS_START_DATE_TO_ACCEPT_STUDENTS = 17
+  
   def cohort_start_dates
     cohort_dates = [
       { early_bird: Date.new(2017, 12, 31), prework: Date.new(2018, 1, 28), live: Date.new(2018, 2, 25), location: "Chicago Night" },
@@ -41,5 +43,35 @@ module CohortDatesHelper
       { early_bird: Date.new(2020, 11, 30), prework: Date.new(2021, 1, 10), live: Date.new(2021, 2, 14), location: "Chicago Night" },
       { early_bird: Date.new(2020, 11, 30), prework: Date.new(2021, 1, 10), live: Date.new(2021, 2, 14), location: "Online Night" },
     ].sort_by { |cohort_date| cohort_date[:prework] }
+  end
+
+  def upcoming_chicago_cohorts(cohorts, num_cohorts)
+    valid_cohorts(cohorts)
+      .select { |cohort| cohort[:location].starts_with?("Chicago") }
+      .first(num_cohorts)
+  end
+
+  def upcoming_online_cohorts(cohorts, num_cohorts)
+    valid_cohorts(cohorts)
+      .select { |cohort| cohort[:location].start_with? "Online" }
+      .first(num_cohorts)
+  end
+
+  def valid_cohorts(cohorts)
+    result = []
+    cohorts.each do |cohort|
+      result << cohort if Time.zone.now <= cohort[:live] - NUMBER_OF_DAYS_BEFORE_IN_CLASS_START_DATE_TO_ACCEPT_STUDENTS
+    end
+    result
+  end
+
+  def valid_early_bird_deadline(cohorts)
+    return nil if cohorts.length < 1
+    upcoming_early_bird = cohorts[0][:early_bird]
+    if Time.zone.now <= upcoming_early_bird
+      upcoming_early_bird
+    else
+      nil
+    end
   end
 end

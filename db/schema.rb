@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190613171003) do
+ActiveRecord::Schema.define(version: 20200130192327) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -124,6 +124,16 @@ ActiveRecord::Schema.define(version: 20190613171003) do
     t.string   "project_name"
     t.string   "student_name"
     t.string   "youtube_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "coding_foundations_enrollments", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "phone_number"
+    t.string   "email"
+    t.boolean  "paid"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end

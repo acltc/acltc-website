@@ -1,0 +1,70 @@
+
+<section class="page-title page-title-3 bg-dark">
+<div class="background-image-holder very-darken-image">
+  <img alt="Background Image" class="background-image" src="<%= asset_path('rooftop.jpg') %>" />
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 text-center">
+          <% if @referral == "wwcode" %>
+            <h3 class="uppercase mb0">Actualize <> Women Who Code</h3>
+          <% else %>
+            <h3 class="uppercase mb0">Enroll in Coding Foundations</h3>
+          <% end %>
+        </div>
+    </div>
+    <!--end of row-->
+</div>
+<!--end of container-->
+<ol class="breadcrumb breadcrumb-2 hide-on-mobile">
+    <li>
+      <% if @referral == "wwcode" %>
+        <span>
+          Actualize has partnered with Women Who Code to offer<br>scholarships for its members! Begin your application here.
+        </span>
+      <% else %>
+        <span style="font-size: 18px">
+          <strong>Thank you for your interest in Actualize.</strong><br>
+        </span>
+      <% end %>
+    </li>
+</ol>
+</section>
+
+
+<section>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <%= form_tag '/enroll/coding_foundations', method: :post, class: "form-validate", data: {success: "Thanks for your submission.", error: "Please fill all fields correctly."} do %>
+              <div class="input-with-label text-left">
+                <%= label_tag :first_name, "First Name" %>
+                <%= text_field_tag :first_name, @coding_foundations_enrollment.first_name, class: "validate-required" %>
+              </div>
+              <div class="input-with-label text-left">
+                <%= label_tag :last_name, "Last Name" %>
+                <%= text_field_tag :last_name, @coding_foundations_enrollment.last_name, class: "validate-required" %>
+              </div>
+              <div class="input-with-label text-left">
+                <%= label_tag :email, "Email Address" %>
+                <%= text_field_tag :email, @coding_foundations_enrollment.email, class: "validate-required validate-email" %>
+              </div>
+              <div class="input-with-label text-left">
+                <%= label_tag :phone_number, "Phone Number" %>
+                <%= text_field_tag :phone_number, @coding_foundations_enrollment.phone_number, class: "validate-required" %>
+              </div>
+                <%= hidden_field_tag :mousetrap, nil, :value => "Started Application" %>
+                <% if @referral %>
+                  <%= hidden_field_tag :referral, nil, :value => @referral %>
+                <% end %>
+                <input type="checkbox" name="contact_me_by_fax_only" value="1" style="display:none !important" tabindex="-1" autocomplete="off">
+              <div class="form-group">
+                <%= submit_tag "Get Started!", class: "button button-3d nomargin nopadding primary-color" %>
+              </div>
+            <% end %>
+        </div>
+    </div>
+    <!--end of row-->
+</div>
+<!--end of container-->
+</section>
