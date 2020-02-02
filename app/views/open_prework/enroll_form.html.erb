@@ -1,3 +1,9 @@
+<% content_for :head do %>
+  <!-- stripe docs say to load directly from them and not host yourself -->
+  <script src="https://js.stripe.com/v3/"></script>  
+<% end %>
+
+
 
 <section class="page-title page-title-3 bg-dark">
 <div class="background-image-holder very-darken-image">
@@ -35,36 +41,79 @@
 <section>
 <div class="container">
     <div class="row">
+      <div id="errors" class="text-danger"></div>
         <div class="col-md-6 col-md-offset-3">
-            <%= form_tag '/enroll/coding_foundations', method: :post, class: "form-validate", data: {success: "Thanks for your submission.", error: "Please fill all fields correctly."} do %>
-              <div class="input-with-label text-left">
-                <%= label_tag :first_name, "First Name" %>
-                <%= text_field_tag :first_name, @coding_foundations_enrollment.first_name, class: "validate-required" %>
-              </div>
-              <div class="input-with-label text-left">
-                <%= label_tag :last_name, "Last Name" %>
-                <%= text_field_tag :last_name, @coding_foundations_enrollment.last_name, class: "validate-required" %>
-              </div>
-              <div class="input-with-label text-left">
-                <%= label_tag :email, "Email Address" %>
-                <%= text_field_tag :email, @coding_foundations_enrollment.email, class: "validate-required validate-email" %>
-              </div>
-              <div class="input-with-label text-left">
-                <%= label_tag :phone_number, "Phone Number" %>
-                <%= text_field_tag :phone_number, @coding_foundations_enrollment.phone_number, class: "validate-required" %>
-              </div>
-                <%= hidden_field_tag :mousetrap, nil, :value => "Started Application" %>
-                <% if @referral %>
-                  <%= hidden_field_tag :referral, nil, :value => @referral %>
-                <% end %>
-                <input type="checkbox" name="contact_me_by_fax_only" value="1" style="display:none !important" tabindex="-1" autocomplete="off">
-              <div class="form-group">
-                <%= submit_tag "Get Started!", class: "button button-3d nomargin nopadding primary-color" %>
-              </div>
-            <% end %>
+          <form id="signup-form" class="form-validate" data-success="Thanks for your submission." data-error="Please fill all fields correctly." action="/enroll/coding_foundations" accept-charset="UTF-8" method="post" onsubmit="runCheckout('<%= @session_id %>')">
+            <div class="input-with-label text-left">
+              <label for="first_name">First Name</label>
+              <input type="text" value="asdf" name="first_name" id="first_name" class="validate-required">
+            </div>
+            <div class="input-with-label text-left">
+              <label for="last_name">Last Name</label>
+              <input type="text" value="asdffff" name="last_name" id="last_name" class="validate-required">
+            </div>
+            <div class="input-with-label text-left">
+              <label for="email">Email Address</label>
+              <input type="text" value="asdf@gmail.com" name="email" id="email" class="validate-required validate-email">
+            </div>
+            <div class="input-with-label text-left">
+              <label for="phone_number">Phone Number</label>
+              <input type="text" value="444" name="phone_number" id="phone_number" class="validate-required">
+            </div>
+              <input type="hidden" name="mousetrap" id="mousetrap" value="Started Application">
+              <input type="checkbox" name="contact_me_by_fax_only" value="1" style="display:none !important" tabindex="-1" autocomplete="off">
+            <div class="form-group">
+              <input type="submit" name="commit" value="Proceed to Payment" class="button button-3d nomargin nopadding primary-color">
+            </div>
+          </form>                
         </div>
     </div>
-    <!--end of row-->
-</div>
-<!--end of container-->
 </section>
+
+
+
+
+<script>
+var stripe = Stripe('pk_test_Duc1D5cfFcQcpkMZcUrPOkeU00LnOQ7GTI');
+
+
+
+function runCheckout(sessionId) {
+  // # grab first_name, last_name, email, phone_number
+  // # prevent default
+  event.preventDefault()
+
+  var params = {
+    first_name: $('#first_name').val(),
+    last_name: $('#last_name').val(),
+    email: $('#email').val(),
+    phone_number: $('#phone_number').val(),
+    session_id: sessionId
+  }
+  
+  $.post(
+    '/enroll/coding_foundations',
+    params,
+    function(data) {
+      stripe.redirectToCheckout({    
+        sessionId: sessionId
+      }).then(function (result) {
+        // If `redirectToCheckout` fails due to a browser or network
+        // error, display the localized error message to your customer
+        // using `result.error.message`.
+      });
+    },
+  ).fail(function(errors) {
+    var finalText = "";
+    for( var i = 0; i < errors.responseJSON.errors.length; i++) {
+      finalText += ("<p class='text-danger'>" + errors.responseJSON.errors[i] + "</p>");
+    }
+    $('#errors').html(finalText);
+
+  });
+  
+  // # console.log(sessionId);
+  
+}
+
+</script>
