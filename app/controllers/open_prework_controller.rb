@@ -7,7 +7,7 @@ class OpenPreworkController < ApplicationController
   end
 
   def enroll_form
-    Stripe.api_key = ENV['STRIPE_KEY_TEST']
+    Stripe.api_key = ENV['STRIPE_KEY']
 
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
