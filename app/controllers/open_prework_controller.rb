@@ -21,7 +21,7 @@ class OpenPreworkController < ApplicationController
         name: 'Coding Foundations',
         description: 'Introduction to Coding Foundations',
         images: ['https://anyonecanlearntocode.com/assets/actualize-logo-158d4b4cceb72d78f91dbd8bde4eabb9c71a2eba651c10dbc5d4cbf6c96c3afa.png'],
-        amount: 50000,
+        amount: 100,
         currency: 'usd',
         quantity: 1,
       }],
