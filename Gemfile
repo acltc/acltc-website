@@ -60,6 +60,9 @@ gem 'vuejs-rails'
 gem "hubspot-ruby"
 gem 'unirest'
 gem 'delayed_job_active_record'
+gem 'stripe'
+
+
 
 group :development, :test do
   gem 'dotenv-rails'

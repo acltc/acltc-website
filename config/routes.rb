@@ -36,6 +36,7 @@ Rails.application.routes.draw do
   get '/sitemap.xml', :to => 'sitemaps#index', :defaults => {:format => 'xml'}
 
   get '/pages/thank_you'
+  get '/coding_foundations/thank_you' => "open_prework#thank_you"
   get '/pages/webinar_thank_you'
   get '/pages/tlase_thank_you'
   get '/pages/contacts_thank_you', :as => :contacts_thank_you
@@ -133,7 +134,10 @@ Rails.application.routes.draw do
 
   post "/social-media" => 'social_media#new_post'
 
-  get "/open_prework" => "open_prework#index"
+  get "/coding_foundations" => "open_prework#index"
+  get "/enroll/coding_foundations" => "open_prework#enroll_form"
+  post "/enroll/coding_foundations" => "open_prework#enroll"
+  get "/enroll/email" => "open_prework#email"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
