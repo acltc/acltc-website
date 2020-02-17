@@ -9,6 +9,12 @@ class OpenPreworkController < ApplicationController
   def enroll_form
     Stripe.api_key = ENV['STRIPE_KEY']
 
+    if Rails.env.production?
+      base_url = 'anyonecanlearntocode.com'
+    else
+      base_url = 'localhost:3000'
+    end
+
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       line_items: [{
@@ -19,8 +25,8 @@ class OpenPreworkController < ApplicationController
         currency: 'usd',
         quantity: 1,
       }],
-      success_url: 'https://anyonecanlearntocode.com/enroll/email?session_id={CHECKOUT_SESSION_ID}',
-      cancel_url: 'https://anyonecanlearntocode.com/enroll/coding_foundations',
+      success_url: "https://#{base_url}/enroll/email?session_id={CHECKOUT_SESSION_ID}",
+      cancel_url: "https://#{base_url}/enroll/coding_foundations",
     )
     @session_id = session['id']
     
