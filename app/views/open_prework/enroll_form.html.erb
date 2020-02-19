@@ -30,7 +30,7 @@
         </span>
       <% else %>
         <span style="font-size: 18px">
-          <strong>Thank you for your interest in Actualize.</strong><br>
+          
         </span>
       <% end %>
     </li>
@@ -38,12 +38,17 @@
 </section>
 
 
+
 <section>
 <div class="container">
     <div class="row">
       <div id="errors" class="text-danger"></div>
         <div class="col-md-6 col-md-offset-3">
-          <form id="signup-form" class="form-validate" data-success="Thanks for your submission." data-error="Please fill all fields correctly." action="/enroll/coding_foundations" accept-charset="UTF-8" method="post" onsubmit="runCheckout('<%= @session_id %>')">
+          <form id="signup-form" class="form-validate" data-success="Thanks for your submission." data-error="Please fill all fields correctly." action="/enroll/coding-foundations" accept-charset="UTF-8" method="post" onsubmit="runCheckout('<%= @session_id %>')">
+            <h3>Sign up here</h3>
+            <p>
+              After you sign up, continue to payment. After payment you will be contacted by someone at Actualize and we will send you the starting materials. 
+            </p>
             <div class="input-with-label text-left">
               <label for="first_name">First Name</label>
               <input type="text"  name="first_name" id="first_name" class="validate-required">
@@ -62,6 +67,7 @@
             </div>
               <input type="hidden" name="mousetrap" id="mousetrap" value="Started Application">
               <input type="checkbox" name="contact_me_by_fax_only" value="1" style="display:none !important" tabindex="-1" autocomplete="off">
+              <a href="/coding-foundations/terms-of-service">Terms of Service</a>
             <div class="form-group">
               <input type="submit" name="commit" value="Proceed to Payment" class="button button-3d nomargin nopadding primary-color">
             </div>
@@ -92,7 +98,7 @@ function runCheckout(sessionId) {
   }
   
   $.post(
-    '/enroll/coding_foundations',
+    '/enroll/coding-foundations',
     params,
     function(data) {
       stripe.redirectToCheckout({    

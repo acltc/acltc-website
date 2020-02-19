@@ -26,7 +26,7 @@ class OpenPreworkController < ApplicationController
         quantity: 1,
       }],
       success_url: "https://#{base_url}/enroll/email?session_id={CHECKOUT_SESSION_ID}",
-      cancel_url: "https://#{base_url}/enroll/coding_foundations",
+      cancel_url: "https://#{base_url}/enroll/coding-foundations",
     )
     @session_id = session['id']
     
@@ -55,10 +55,15 @@ class OpenPreworkController < ApplicationController
     @student.update(paid: true)
     # send peter an email so that he can add them to prework
     AcltcMailer.coding_foundations_email(@student).deliver_now
-    redirect_to "/coding_foundations/thank_you"
+    AcltcMailer.coding_foundations_email_user(@student).deliver_now
+    redirect_to "/coding-foundations/thank-you"
   end
 
   def thank_you
+    render layout: 'main'
+  end
+
+  def terms_of_service
     render layout: 'main'
   end
 end

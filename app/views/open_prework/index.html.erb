@@ -20,7 +20,7 @@
 <!-- Page #1 -->
 <section class="image-bg overlay fullscreen cover parallax">
     <div class="background-image-holder darken-image">
-        <img alt="Become a software developer" class="background-image" src="<%= asset_path('hand_on_screen.jpg') %>">
+        <img alt="Become a software developer" class="background-image" src="<%= asset_path('screen_with_code.png') %>">
     </div>
     <div class="fs-vid-background">
         <video autoplay muted loop>
@@ -48,7 +48,7 @@
         <!--end of row-->
         <!-- <div class="row">
             <div class="col-sm-12 text-center">
-                <a class="btn btn-lg" href="/enroll/coding_foundations">Enroll Now</a>
+                <a class="btn btn-lg" href="/enroll/coding-foundations">Enroll Now</a>
             </div>
         </div> -->
     </div>
@@ -100,7 +100,7 @@
                 <p>
                 Jay brings his educational expertise to these topics, making complex topics simple through clear instruction and proper sequencing of lessons. Instead of a hodgepodge of information, Actualize's Coding Foundations is a carefully designed course, building the student up with each clear lesson, one at a time.
                 </p>
-                <a class="btn btn-lg btn-filled" href="/enroll/coding_foundations">Enroll Now</a>
+                <a class="btn btn-lg btn-filled" href="/enroll/coding-foundations">Enroll Now</a>
             </div>
         </div>
         <!--end of row-->
@@ -207,16 +207,16 @@
     </div>
     <!--end of row-->
     <div class="row company-logos">
-      <div class="col-md-3 col-xs-6"><h3>Integers <i class="ti-ruler" style="color: #47b475;"></h3></i></div>
-      <div class="col-md-3 col-xs-6"><h3>Strings <i class="ti-smallcap" style="color: #47b475;"></i></h3></div>
-      <div class="col-md-3 col-xs-6"><h3>Code Flow <i class="ti-back-right" style="color: #47b475;"></i></h3></div>
-      <div class="col-md-3 col-xs-6"><h3>Debugging <i class="ti-eye" style="color: #47b475;"></i></h3></div>
-      <div class="col-md-3 col-xs-6"><h3>Conditionals <i class="ti-control-shuffle" style="color: #47b475;"></i></h3></div>
-      <div class="col-md-3 col-xs-6"><h3>Loops <i class="ti-reload" style="color: #47b475;"></i></h3></div>
-      <div class="col-md-3 col-xs-6"><h3>Functions <i class="ti-panel" style="color: #47b475;"></i></h3></div>
-      <div class="col-md-3 col-xs-6"><h3>Arrays <i class="ti-layout-column4" style="color: #47b475;"></i></h3></div>
-      <div class="col-md-3 col-xs-6"><h3>Object Oriented Programming <i class="ti-layout-grid3" style="color: #47b475;"></i></h3></div>
-      <div class="col-md-3 col-xs-6"><h3>Hashes <i class="ti-key" style="color: #47b475;"></i></h3></div>
+      <div class="col-md-3 col-xs-6 text-justify"><h3><i class="ti-ruler" style="color: #47b475;"></i> Integers </h3></div>
+      <div class="col-md-3 col-xs-6 text-justify"><h3><i class="ti-smallcap" style="color: #47b475;"></i> Strings </h3></div>
+      <div class="col-md-3 col-xs-6 text-justify"><h3><i class="ti-back-right" style="color: #47b475;"></i> Code Flow </h3></div>
+      <div class="col-md-3 col-xs-6 text-justify"><h3><i class="ti-eye" style="color: #47b475;"></i> Debugging </h3></div>
+      <div class="col-md-3 col-xs-6 text-justify"><h3><i class="ti-control-shuffle" style="color: #47b475;"></i> Conditionals </h3></div>
+      <div class="col-md-3 col-xs-6 text-justify"><h3><i class="ti-reload" style="color: #47b475;"></i> Loops </h3></div>
+      <div class="col-md-3 col-xs-6 text-justify"><h3><i class="ti-panel" style="color: #47b475;"></i> Functions </h3></div>
+      <div class="col-md-3 col-xs-6 text-justify"><h3><i class="ti-layout-column4" style="color: #47b475;"></i> Arrays </h3></div>
+      <div class="col-md-3 col-xs-6 text-justify"><h3><i class="ti-layout-grid3" style="color: #47b475;"></i> Object Oriented Programming </h3></div>
+      <div class="col-md-3 col-xs-6 text-justify"><h3><i class="ti-key" style="color: #47b475;"></i> Hashes </h3></div>
     </div>
     <!--end of row-->
 
@@ -234,32 +234,27 @@
             <div class="col-sm-12">
               <h3 class="mb40 mb-xs-16">Upcoming Dates</h3>
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-4">
                         <table class="table table-hover table-striped">
                             <thead>
                                 <tr>
-                                    <th>Prework Start Date</th>
-                                    <th>Live Training Start Date</th>
-                                    
+                                    <th>Start Date</th>
                                 </tr>
                             </thead>
                             <tbody>
                             <% @cohorts.each do |cohort| %>
                                 <tr>
                                     <th><%= cohort[:prework].strftime("%B %e, %Y") %></th>
-                                    <th><%= cohort[:live].strftime("%B %e, %Y") %></th>
+                                    
                                     
                                 </tr>
                             <% end %>
                             </tbody>
                         </table>
 
-                        <% if @early_bird_deadline %>
-                            <h5 class="text-success"><strong>Early Bird Special!</strong> Enroll for the next cohort by <%= @early_bird_deadline.strftime("%B %e") %> and recieve $500 off tuition.</h5>
-                        <% end %>
                     </div>
                     <div class="col-md-4">
-                        <h5 class="uppercase pull-right"><strong>Tuition:</strong> $13,900</h5>
+                        <h5 class="uppercase pull-right"><strong>Tuition:</strong> $500</h5>
                     </div>
                 </div>
                 <hr>                
@@ -282,7 +277,7 @@
             <div class="col-sm-12 text-center">
                 <h3 class="mb40 mb-xs-16">Price</h3>
                 <p>Actualize Coding Bootcamp Prep is priced at $1,000, but is currently $500 for a limited time.</p>
-                <a class="btn btn-lg btn-filled" href="/enroll/coding_foundations">Enroll Now</a>
+                <a class="btn btn-lg btn-filled" href="/enroll/coding-foundations">Enroll Now</a>
             </div>
         </div>
         <!--end of row-->
