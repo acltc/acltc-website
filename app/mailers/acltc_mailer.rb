@@ -14,7 +14,12 @@ class AcltcMailer < ApplicationMailer
 
   def coding_foundations_email(student)
     @student = student
-    mail(to: 'peter@actualize.co', subject: "New Enrollment for coding foundations course")
+    mail(to: 'peter@actualize.co', cc: 'jay@actualize.co', subject: "New Enrollment for coding foundations course")
+  end
+
+  def coding_foundations_email_user(student)
+    @student = student
+    mail(to: @student.email, subject: "Welcome to Coding foundations")
   end
 
   def complete_your_application_reminder(first_name, email, phone)
