@@ -141,6 +141,10 @@ Rails.application.routes.draw do
   get "/coding-foundations/thank-you" => "open_prework#thank_you"
   get "/enroll/email" => "open_prework#email"
 
+  get "/josh/appreciation/new" => "pages#josh_new"
+  post "/josh/appreciation" => "pages#josh_create"
+  get "/josh/appreciation" => "pages#josh_index"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

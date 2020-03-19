@@ -1,0 +1,37 @@
+    
+        <div class="main-container">
+            <section class="bg-dark">
+              <div class="text-center">
+                <a class="btn btn-sm" href="/josh/appreciation/new">Say Something Nice about Josh!</a>
+              </div>
+                <div class="container">
+                    <div class="row masonry-loader">
+                        <div class="col-sm-12 text-center">
+                            <div class="spinner"></div>
+                        </div>
+                    </div>
+                    <div class="row masonry mb40">
+                      <% @appreciations.each do |appreciation| %>
+                        <div class="col-sm-4 post-snippet masonry-item">
+                            <a href="#">
+                                <blockquote>
+                                    <%= appreciation.post %>
+                                    <span class="author"><%= appreciation.name %></span>
+                                </blockquote>
+                            </a>
+                        </div>
+                      <% end %>
+                        <!--end of snippet-->
+                    </div>
+                    <!--end of row-->
+
+                    <!--end of row-->
+                </div>
+                <!--end of container-->
+            </section>
+
+        </div>
+        
+        <script src="/assets/theme/masonry/js/masonry.min.js"></script>
+        <script src="/assets/theme/masonry/js/scripts.js"></script>
+    

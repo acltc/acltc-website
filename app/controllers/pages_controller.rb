@@ -190,6 +190,25 @@ class PagesController < ApplicationController
     redirect_to "/pages/contacts_thank_you"
   end
 
+  def josh_new
+    @appreciation = Appreciation.new
+    render layout: 'main'
+  end
+
+  def josh_create
+    @appreciation = Appreciation.new(
+      name: params[:name],
+      post: params[:post][0]
+    )
+    @appreciation.save
+    redirect_to "/josh/appreciation"
+  end
+
+  def josh_index
+    @appreciations = Appreciation.all
+    render layout: 'main'
+  end
+
   private
     def tour_params
       params.require(:tour).permit(
