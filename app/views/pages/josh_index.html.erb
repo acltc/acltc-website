@@ -1,10 +1,18 @@
     
-        <div class="main-container">
-            <section class="bg-dark">
+       <style>
+       body {
+         background-image: url(<%= "/assets/josh/#{@josh_image}" %>);
+         background-size: cover;
+         /* background-image: url('/assets/josh.jpg'); */
+       }
+       </style>
+          
+            <section class="">
               <div class="text-center">
                 <a class="btn btn-sm" href="/josh/appreciation/new">Say Something Nice about Josh!</a>
               </div>
                 <div class="container">
+                
                     <div class="row masonry-loader">
                         <div class="col-sm-12 text-center">
                             <div class="spinner"></div>
@@ -30,7 +38,7 @@
                 <!--end of container-->
             </section>
 
-        </div>
+    
         
         <script src="/assets/theme/masonry/js/masonry.min.js"></script>
         <script src="/assets/theme/masonry/js/scripts.js"></script>
