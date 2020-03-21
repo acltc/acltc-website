@@ -218,16 +218,16 @@ class PagesController < ApplicationController
 
   def josh_index
     images = ["_SSW4859.JPG",
-    "_SSW4856.JPG",
-    "_SSW4855.JPG",
-    "_SSW4853.JPG",
-    "_SSW4790.JPG",
-    "_SSW4780.JPG",
-    "_SSW4777.JPG",
-    "_SSW4776.JPG",
-    "_SSW4689.JPG",
-    "_SSW4688.JPG",
-    "_SSW4669.JPG"]
+    "josh/_SSW4856.JPG",
+    "josh/_SSW4855.JPG",
+    "josh/_SSW4853.JPG",
+    "josh/_SSW4790.JPG",
+    "josh/_SSW4780.JPG",
+    "josh/_SSW4777.JPG",
+    "josh/_SSW4776.JPG",
+    "josh/_SSW4689.JPG",
+    "josh/_SSW4688.JPG",
+    "josh/_SSW4669.JPG"]
     @josh_image = images.sample
     @appreciations = Appreciation.all
     render layout: 'main'
