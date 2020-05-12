@@ -35,7 +35,7 @@ class SubscribersController < ApplicationController
 
   def create_from_curriculum 
     create_new_lead unless params[:contact_me_by_fax_only]# contact_me_by_fax_only is a spam honeypot
-    send_file "#{Rails.root}/public/pdfs/Actualize-2019-Curriculum.pdf"
+    send_file "#{Rails.root}/public/pdfs/Actualize-2020-Curriculum.pdf"
   end
 
   def create_from_career_pdf
