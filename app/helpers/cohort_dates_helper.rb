@@ -37,6 +37,7 @@ module CohortDatesHelper
       # { early_bird: Date.new(2020, 5, 31), prework: Date.new(2020, 7, 26), live: Date.new(2020, 8, 31), location: "Chicago Day" },
       { early_bird: Date.new(2020, 5, 31), prework: Date.new(2020, 7, 26), live: Date.new(2020, 8, 31), location: "Online Day" },
       { early_bird: Date.new(2020, 5, 31), prework: Date.new(2020, 7, 19), live: Date.new(2020, 8, 23), location: "Chicago Night" },
+      { early_bird: Date.new(2020, 5, 31), prework: Date.new(2020, 7, 19), live: Date.new(2020, 8, 23), location: "Online Night" },
       # { early_bird: Date.new(2020, 7, 31), prework: Date.new(2020, 9, 20), live: Date.new(2020, 10, 25), location: "Chicago Night" },
       { early_bird: Date.new(2020, 7, 31), prework: Date.new(2020, 9, 20), live: Date.new(2020, 10, 25), location: "Online Night" },
       # { early_bird: Date.new(2020, 10, 31), prework: Date.new(2020, 11, 29), live: Date.new(2021, 1, 4), location: "Chicago Day" },
