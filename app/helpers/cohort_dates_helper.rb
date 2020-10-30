@@ -48,9 +48,7 @@ module CohortDatesHelper
       { early_bird: Date.new(2020, 11, 30), prework: Date.new(2021, 1, 10), live: Date.new(2021, 2, 14), location: "Online Night" },
       { early_bird: Date.new(2020, 8, 9), prework: Date.new(2020, 9, 13), live: Date.new(2020, 10, 19), location: "Online Day" },
       { early_bird: Date.new(2020, 8, 9), prework: Date.new(2020, 9, 13), live: Date.new(2020, 10, 19), location: "Chicago Day" },
-      { early_bird: Date.new(2020, 11, 30), prework: Date.new(2021, 1, 10), live: Date.new(2021, 2, 15), location: "Online Day" },
-      { early_bird: Date.new(2020, 11, 30), prework: Date.new(2021, 1, 10), live: Date.new(2021, 2, 15), location: "Chicago Day" },
-    ].sort_by { |cohort_date| [cohort_date[:prework], cohort_date[:live]] },
+    ].sort_by { |cohort_date| cohort_date[:prework] }
   end
 
   def upcoming_chicago_cohorts(cohorts, num_cohorts)
